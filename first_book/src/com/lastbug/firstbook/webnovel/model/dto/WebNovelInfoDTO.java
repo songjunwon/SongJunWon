@@ -1,6 +1,10 @@
 package com.lastbug.firstbook.webnovel.model.dto;
 
-public class WebNovelInfoDTO {
+import java.io.Serializable;
+
+public class WebNovelInfoDTO implements Serializable{
+
+	private static final long serialVersionUID = 4694686975276953035L;
 	public WebNovelInfoDTO() {
 	}
 	
@@ -15,9 +19,14 @@ public class WebNovelInfoDTO {
 	private String dayOfWeek;
 	private String webNovOpenOrClose;
 	private String finishedOrNot;
+	private WebNovelDetailDTO chapNum;
+	private WebNovelDetailDTO webNovContent;
+	
+	
 	public WebNovelInfoDTO(int webNovNum, String categoryCode, String webNovTitle, String webNovAuthor, int chapPerCoin,
 			String webNovPublisher, String webNovInform, String webNovImgLocation, String dayOfWeek,
-			String webNovOpenOrClose, String finishedOrNot) {
+			String webNovOpenOrClose, String finishedOrNot, WebNovelDetailDTO chapNum,
+			WebNovelDetailDTO webNovContent) {
 		super();
 		this.webNovNum = webNovNum;
 		this.categoryCode = categoryCode;
@@ -30,6 +39,8 @@ public class WebNovelInfoDTO {
 		this.dayOfWeek = dayOfWeek;
 		this.webNovOpenOrClose = webNovOpenOrClose;
 		this.finishedOrNot = finishedOrNot;
+		this.chapNum = chapNum;
+		this.webNovContent = webNovContent;
 	}
 	@Override
 	public String toString() {
@@ -37,7 +48,7 @@ public class WebNovelInfoDTO {
 				+ webNovTitle + ", webNovAuthor=" + webNovAuthor + ", chapPerCoin=" + chapPerCoin + ", webNovPublisher="
 				+ webNovPublisher + ", webNovInform=" + webNovInform + ", webNovImgLocation=" + webNovImgLocation
 				+ ", dayOfWeek=" + dayOfWeek + ", webNovOpenOrClose=" + webNovOpenOrClose + ", finishedOrNot="
-				+ finishedOrNot + "]";
+				+ finishedOrNot + ", chapNum=" + chapNum + ", webNovContent=" + webNovContent + "]";
 	}
 	public int getWebNovNum() {
 		return webNovNum;
@@ -105,6 +116,22 @@ public class WebNovelInfoDTO {
 	public void setFinishedOrNot(String finishedOrNot) {
 		this.finishedOrNot = finishedOrNot;
 	}
+	public WebNovelDetailDTO getChapNum() {
+		return chapNum;
+	}
+	public void setChapNum(WebNovelDetailDTO chapNum) {
+		this.chapNum = chapNum;
+	}
+	public WebNovelDetailDTO getWebNovContent() {
+		return webNovContent;
+	}
+	public void setWebNovContent(WebNovelDetailDTO webNovContent) {
+		this.webNovContent = webNovContent;
+	}
+	public static long getSerialversionuid() {
+		return serialVersionUID;
+	}
+	
 	
 	
 }

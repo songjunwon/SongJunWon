@@ -14,6 +14,7 @@
 </head>
 <body>
 	<!-- header 삽입 해야 함 -->	
+	<jsp:include page="../common/header.jsp"/>
 	<div >
 		<br>
 		<h2 align="center">웹소설 목록</h2>

@@ -2,12 +2,23 @@
 <!DOCTYPE properties SYSTEM "http://java.sun.com/dtd/properties.dtd">
 <properties>
 	<entry key="seletAllNovel">
-        SELECT
+        SELECT /* com.lastbug.firstbook.webnovel.model.dao.WebNovelDAO#seletAllNovel() */
                A.WEB_NOV_NUM
              , A.WEB_NOV_TITLE
              , A.WEB_NOV_AUTHOR
              , A.WEB_NOV_INFORM
           FROM WEB_NOV_INFO A
+	</entry>
+	<entry key="selectWebNovelDetail">
+        SELECT /* com.lastbug.firstbook.webnovel.model.dao.WebNovelDAO#selectWebNovelDetail() */
+               A.WEB_NOV_NUM
+             , A.WEB_NOV_TITLE
+             , A.WEB_NOV_AUTHOR
+             , B.CHAPTER_NUM
+             , B.WEB_NOV_CONTENT
+          FROM WEB_NOV_INFO A
+          JOIN WEB_NOV_DETAIL B ON (A.WEB_NOV_NUM = B.WEB_NOV_NUM)
+         WHERE B.WEB_NOV_NUM = ?
 	</entry>
 
 </properties>
