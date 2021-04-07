@@ -19,7 +19,7 @@ public class ShowAllWebNovelServlet extends HttpServlet {
  
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		
-		System.out.println("여기왓니?");
+//		System.out.println("여기왓니?");
 		List<WebNovelInfoDTO> webNovelList = new WebNovelService().selectAllNovel();
 	
 		String path = "";
