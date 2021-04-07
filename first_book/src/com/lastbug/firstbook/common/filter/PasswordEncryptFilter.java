@@ -17,11 +17,7 @@ import com.lastbug.firstbook.common.wrapper.EncryptRequestWrapper;
 @WebFilter("/member/*")
 public class PasswordEncryptFilter implements Filter {
 
-
-
-
 	public void destroy() {
-	
 	
 	}
 
@@ -35,8 +31,6 @@ public class PasswordEncryptFilter implements Filter {
 		String uri = hrequest.getRequestURI();
 		//System.out.println("uri : " + uri);
 		
-		
-		
 		String intent = uri.substring(uri.lastIndexOf("/"));
 		
 		//System.out.println("intent : " + intent);
@@ -45,7 +39,6 @@ public class PasswordEncryptFilter implements Filter {
 			
 			EncryptRequestWrapper wrapper = new EncryptRequestWrapper(hrequest);
 				
-		
 			chain.doFilter(wrapper, response);
 		
 		} else {
@@ -54,13 +47,10 @@ public class PasswordEncryptFilter implements Filter {
 			
 		}
 	
-	
 	}
 
 	public void init(FilterConfig fConfig) throws ServletException {
 
-	
-	
 	}
 
 }

@@ -14,7 +14,7 @@
 
 body {
   overflow-x: hidden;
-  font-family: "Nanum Gothic", serif;
+  font-family: "Malgun Gothic";
   background: #ffffff;
   color: #4c4c4c;
   font-size: 12px;
@@ -26,14 +26,8 @@ body {
   clear: both;
 }
 
-ol,
-
-ul,
-
-li,
-
-dl {
-  /* display: none; */
+ol, ul, li, dl {
+  list-style:none;
 }
 
 a {
@@ -54,8 +48,9 @@ table {
 
 input {
   -webkit-appearance: none;
-     -moz-appearance: none;
-          appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  border: none;
 }
 
 button{
