@@ -14,13 +14,17 @@
                A.WEB_NOV_NUM
              , A.WEB_NOV_TITLE
              , A.WEB_NOV_AUTHOR
-             , B.CHAPTER_NUM
-             , B.WEB_NOV_CONTENT
+             , A.DAY_OF_WEEK
           FROM WEB_NOV_INFO A
-          JOIN WEB_NOV_DETAIL B ON (A.WEB_NOV_NUM = B.WEB_NOV_NUM)
-         WHERE B.WEB_NOV_NUM = ?
+         WHERE A.WEB_NOV_NUM = ?
 	</entry>
-
+	<entry key="selectWebNovelDetail2">
+	    SELECT
+               CHAPTER_NUM
+             , WEB_NOV_CONTENT
+          FROM WEB_NOV_DETAIL
+         WHERE WEB_NOV_NUM = ?
+	</entry>
 </properties>
 
 

@@ -47,8 +47,8 @@
 			},function(){
 				$(this).parent().css("background", "black");
 			}).click(function(){
-				const no = $(this).parent().children(":eq(0)").text();
-				location.href = "${ pageContext.servletContext.contextPath }/notice/detail?no=" + no;
+				const webNovNum = $(this).parent().children(":eq(0)").text();
+				location.href = "${ pageContext.servletContext.contextPath }/webnovel/detail?webNovNum=" + webNovNum;
 			})
 		})
 		
