@@ -7,9 +7,9 @@
 <meta charset="UTF-8">
 <title>Insert title here</title>
 <script src="http://code.jquery.com/jquery-latest.min.js"></script>
-<link rel="stylesheet" href="/firstbook/resources/css/webnovel/webnovel.css">
-<link rel="stylesheet" href="/firstbook/resources/css/common/reset.css">
-<link rel="stylesheet" href="/firstbook/resources/css/common/style.css">
+<link rel="stylesheet" href="/jsp/resources/css/webnovel/webnovel.css">
+<link rel="stylesheet" href="/jsp/resources/css/common/reset.css">
+<link rel="stylesheet" href="/jsp/resources/css/common/style.css">
 </head>
 <body>
 <jsp:include page="../common/header.jsp"/>
