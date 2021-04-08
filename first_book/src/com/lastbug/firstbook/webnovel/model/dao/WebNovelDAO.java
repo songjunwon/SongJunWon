@@ -14,6 +14,7 @@ import java.util.List;
 import java.util.Properties;
 
 import com.lastbug.firstbook.common.config.ConfigLocation;
+import com.lastbug.firstbook.webnovel.model.dto.GenreCategoryDTO;
 import com.lastbug.firstbook.webnovel.model.dto.WebNovelDetailDTO;
 import com.lastbug.firstbook.webnovel.model.dto.WebNovelInfoDTO;
 
@@ -87,11 +88,15 @@ private final Properties prop;
 			
 			if(rset.next()) {
 			webNovelDetail = new WebNovelInfoDTO();
+			webNovelDetail.setCategoryName(new GenreCategoryDTO());
 			
 			webNovelDetail.setWebNovNum(rset.getInt("WEB_NOV_NUM"));
 			webNovelDetail.setWebNovTitle(rset.getString("WEB_NOV_TITLE"));
 			webNovelDetail.setWebNovAuthor(rset.getString("WEB_NOV_AUTHOR"));
 			webNovelDetail.setDayOfWeek(rset.getString("DAY_OF_WEEK"));
+			webNovelDetail.setWebNovInform(rset.getString("WEB_NOV_INFORM"));
+			webNovelDetail.getCategoryName().setCategoryName(rset.getString("CATEGORY_NAME"));
+//			webNovelDetail.setCategoryName(rset.getString("CATEGORY_NAME"));
 			
 			}
 		} catch (SQLException e) {

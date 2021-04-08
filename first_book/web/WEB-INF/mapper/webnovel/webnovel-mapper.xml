@@ -15,7 +15,10 @@
              , A.WEB_NOV_TITLE
              , A.WEB_NOV_AUTHOR
              , A.DAY_OF_WEEK
+             , A.WEB_NOV_INFORM
+             , B.CATEGORY_NAME
           FROM WEB_NOV_INFO A
+          JOIN GENRE_CATEGORY B ON(A.CATEGORY_CODE = B.CATEGORY_CODE)
          WHERE A.WEB_NOV_NUM = ?
 	</entry>
 	<entry key="selectWebNovelDetail2">

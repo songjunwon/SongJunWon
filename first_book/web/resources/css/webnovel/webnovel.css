@@ -10,7 +10,7 @@
 /* 1화부터 마지막화 까지 부분 크기 지정 */
 .sec2 {
 	width: 800px;
-	height: 600px;
+	height: auto;
 	margin: 0px auto;
 	/* background-color: yellow; */
 }
@@ -54,11 +54,15 @@
 
 /* 메인 설명글 div */
 .tab_main .title_div {
-	height: auto;
+    height: 110px;
+    width: 450px;
+    
 }
 
 .tab_main .subtitle_div {
-	height: auto;
+    height: 80px;
+    width: 450px;
+
 }
 
 /* 메인 설명글  */

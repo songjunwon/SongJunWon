@@ -28,7 +28,7 @@ public class WebNovelService {
 
 		close(con);
 
-		System.out.println("service의 목록" + webNovelList);
+//		System.out.println("service의 목록" + webNovelList);
 
 		return webNovelList;
 	}
