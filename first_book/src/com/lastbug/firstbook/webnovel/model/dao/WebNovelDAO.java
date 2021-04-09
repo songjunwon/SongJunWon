@@ -148,6 +148,58 @@ private final Properties prop;
 		return novelDetail2;
 	}
 
+	public WebNovelDetailDTO selectPerChap(Connection con, int currentChap, int currentChapNum) {
+
+		PreparedStatement pstmt = null;
+		ResultSet rset = null;
+		
+		WebNovelDetailDTO perChap = null;
+		
+		String query = prop.getProperty("selectPerChap");
+		
+		try {
+			pstmt = con.prepareStatement(query);
+			pstmt.setInt(1, currentChap);
+			pstmt.setInt(2, currentChapNum);
+			
+			rset = pstmt.executeQuery();
+			
+			if(rset.next()) {
+				perChap = new WebNovelDetailDTO();
+				
+				perChap.setWebNovContent(rset.getString("WEB_NOV_CONTENT"));
+		
+			}
+			
+			
+		} catch (SQLException e) {
+
+			e.printStackTrace();
+		}finally {
+			close(rset);
+			close(pstmt);
+		}
+		
+		
+		return perChap;
+	}
+
 
 
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

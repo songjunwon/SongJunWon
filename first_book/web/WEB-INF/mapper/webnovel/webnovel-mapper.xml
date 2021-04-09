@@ -22,10 +22,17 @@
          WHERE A.WEB_NOV_NUM = ?
 	</entry>
 	<entry key="selectWebNovelDetail2">
-	    SELECT
+	    SELECT  /* com.lastbug.firstbook.webnovel.model.dao.WebNovelDAO#selectWebNovelDetail2() */
                CHAPTER_NUM
              , WEB_NOV_CONTENT
           FROM WEB_NOV_DETAIL
          WHERE WEB_NOV_NUM = ?
+	</entry>
+	<entry key="selectPerChap">
+    	SELECT  /* com.lastbug.firstbook.webnovel.model.dao.WebNovelDAO#selectPerChap() */
+               A.WEB_NOV_CONTENT
+          FROM WEB_NOV_DETAIL A
+         WHERE WEB_NOV_NUM = ?
+           AND CHAPTER_NUM = ?
 	</entry>
 </properties>

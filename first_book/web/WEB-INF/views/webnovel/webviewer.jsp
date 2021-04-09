@@ -7,6 +7,8 @@
 <title>Insert title here</title>
 </head>
 <body>
+${ requestScope.perChap.webNovContent }
 
+나왔어?
 </body>
 </html>

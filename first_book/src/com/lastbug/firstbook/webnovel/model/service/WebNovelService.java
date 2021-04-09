@@ -73,4 +73,39 @@ public class WebNovelService {
 		return novelDetail2;
 	}
 
+	public WebNovelDetailDTO selectPerChap(int currentChap, int currentChapNum) {
+
+		Connection con = getConnection();
+		WebNovelDetailDTO perChap = null;
+		
+		perChap = webNovelDAO.selectPerChap(con, currentChap, currentChapNum);
+		
+		System.out.println("14 + 5" + perChap);
+		if(perChap != null) {
+			commit(con);
+		}else {
+			rollback(con);
+		}
+		
+		close(con);
+		
+		return perChap;
+	}
+
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

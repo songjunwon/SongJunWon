@@ -9,7 +9,7 @@
 <script src="http://code.jquery.com/jquery-latest.min.js"></script>
 <link rel="stylesheet" href="/firstbook/resources/css/webnovel/webnovel.css">
 <link rel="stylesheet" href="/firstbook/resources/css/common/reset.css">
-<link rel="stylesheet" href="/firstbook/resources/css/common/style.css">
+<link rel="stylesheet" href="/firstbook/resources/css/member/style.css">
 <link rel="shortcut icon" href="#">
 </head>
 <body>
@@ -70,7 +70,12 @@
                         <h2 class="prolog_text"> 프롤로그</h2>
                         <h2 class="chap_date"> 14.08.19 </h2>                       
                     </td> 
-                    <td class="freeBtn"> <button class="freebtn_real" id="freebtn_real_2" type="button" value="${ webnoveldetail.chapNum}">무료보기</button> </td>
+                    <td class="freeBtn">
+
+                     <button class="freebtn_real" id="freebtn_real_2" type="button" value="${ webnoveldetail.chapNum}" onclick="test(this)">
+                    ${ webnoveldetail.chapNum}화보기 </button>
+                    <input type="hidden" id="webNovNum" value= "${ webnoveldetail.webNovNum}"> 
+             		</td>
                 </tr>
                 </c:forEach>
             </table>
@@ -86,6 +91,7 @@
             <button type="submit" class="repliedbtn"> 등록하기 </button>
             <br><br>
             <table class="tab_reply">
+<%--             <c:forEach var="webnoveldetail" items="${ requestScope.webnoveldetail}"> --%>
                 <tr>
                     <td class="repliedId">
                         <p class="repliedId_real"> 여행을 가본다 </p>
@@ -99,20 +105,25 @@
                         <p class="replied_real"> 아니 난 다이아급이라고!</p>
                     </td>
                 </tr>
+    <%--            </c:forEach> --%>
             </table>
         </section>
     </div>
-<%--  <script type="text/javascript">
+  <script>
    
 	const link = "${ pageContext.servletContext.contextPath}/webnovel/chapList";
 
-	if(document.getElementById("freebtn_real_2")) {
-		const $freebtn_real_2 = document.getElementById("freebtn_real_2");
-		$freebtn_real_2.onclick = function() {
-			location.href = link + "?currentChap=${ requestScope.webnoveldetail.chapNum}";
+	/* if(document.getElementById("freebtn_real_2")) { */
+		/* const $freebtn_real_2 = document.getElementById("freebtn_real_2"); */
+		<%--$freebtn_real_2.onclick = function() { --%>
+	function test(testP){
+			
+			var t = testP.value;
+
+			location.href = link  + "?currentWebNov=" + ${ requestScope.webnovel.webNovNum} + "&currentChap=" + t;
 		}
 	
-	</script> --%>  
+	</script> 
 	
 </body>
 </html>
