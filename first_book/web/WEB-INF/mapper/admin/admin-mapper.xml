@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE properties SYSTEM "http://java.sun.com/dtd/properties.dtd">
+<properties>
+	<entry key="selectAllMemList">
+     	SELECT /* com.lastbug.firstbook.admin.model.dao.AdminDAO#selectAllMemList()*/
+     	*
+     	FROM MEM_INFO
+	</entry>
+	<entry key="">
+
+	</entry>
+	<entry key="">
+
+	</entry>
+	
+	<entry key="">
+
+	</entry>
+	<entry key="">
+
+	</entry>
+	<entry key="">
+
+	</entry>
+
+</properties>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
