@@ -19,14 +19,10 @@ public class WebNovelInfoDTO implements Serializable{
 	private String dayOfWeek;
 	private String webNovOpenOrClose;
 	private String finishedOrNot;
-	private WebNovelDetailDTO chapNum;
-	private WebNovelDetailDTO webNovContent;
-	
-	
+	private GenreCategoryDTO categoryName;
 	public WebNovelInfoDTO(int webNovNum, String categoryCode, String webNovTitle, String webNovAuthor, int chapPerCoin,
 			String webNovPublisher, String webNovInform, String webNovImgLocation, String dayOfWeek,
-			String webNovOpenOrClose, String finishedOrNot, WebNovelDetailDTO chapNum,
-			WebNovelDetailDTO webNovContent) {
+			String webNovOpenOrClose, String finishedOrNot, GenreCategoryDTO categoryName) {
 		super();
 		this.webNovNum = webNovNum;
 		this.categoryCode = categoryCode;
@@ -39,8 +35,7 @@ public class WebNovelInfoDTO implements Serializable{
 		this.dayOfWeek = dayOfWeek;
 		this.webNovOpenOrClose = webNovOpenOrClose;
 		this.finishedOrNot = finishedOrNot;
-		this.chapNum = chapNum;
-		this.webNovContent = webNovContent;
+		this.categoryName = categoryName;
 	}
 	@Override
 	public String toString() {
@@ -48,7 +43,7 @@ public class WebNovelInfoDTO implements Serializable{
 				+ webNovTitle + ", webNovAuthor=" + webNovAuthor + ", chapPerCoin=" + chapPerCoin + ", webNovPublisher="
 				+ webNovPublisher + ", webNovInform=" + webNovInform + ", webNovImgLocation=" + webNovImgLocation
 				+ ", dayOfWeek=" + dayOfWeek + ", webNovOpenOrClose=" + webNovOpenOrClose + ", finishedOrNot="
-				+ finishedOrNot + ", chapNum=" + chapNum + ", webNovContent=" + webNovContent + "]";
+				+ finishedOrNot + ", categoryName=" + categoryName + "]";
 	}
 	public int getWebNovNum() {
 		return webNovNum;
@@ -116,21 +111,16 @@ public class WebNovelInfoDTO implements Serializable{
 	public void setFinishedOrNot(String finishedOrNot) {
 		this.finishedOrNot = finishedOrNot;
 	}
-	public WebNovelDetailDTO getChapNum() {
-		return chapNum;
+	public GenreCategoryDTO getCategoryName() {
+		return categoryName;
 	}
-	public void setChapNum(WebNovelDetailDTO chapNum) {
-		this.chapNum = chapNum;
-	}
-	public WebNovelDetailDTO getWebNovContent() {
-		return webNovContent;
-	}
-	public void setWebNovContent(WebNovelDetailDTO webNovContent) {
-		this.webNovContent = webNovContent;
+	public void setCategoryName(GenreCategoryDTO categoryName) {
+		this.categoryName = categoryName;
 	}
 	public static long getSerialversionuid() {
 		return serialVersionUID;
 	}
+	
 	
 	
 	

@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 package com.lastbug.firstbook.member.model.dao;
 
 import static com.lastbug.firstbook.common.jdbc.JDBCTemplate.*;
@@ -44,3 +45,4 @@ public class MemberDAO {
 		return result;
 	}
 }
+
