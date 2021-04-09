@@ -31,6 +31,17 @@ public class MemberService {
 		
 		return result;
 	}
+
+	public String idCheck(String memId) {
+		
+		Connection con = getConnection();
+		
+		String result = memberDAO.idCheck(con, memId);
+		
+		close(con);
+		
+		return result;
+	}
 	
 	
 }

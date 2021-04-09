@@ -6,9 +6,7 @@
 <head>
 <meta charset="UTF-8">
 
-<link rel="stylesheet" type="text/css" href="/firstbook/resources/css/common.css">
 
-<script type="text/javascript" src="/firstbook/resources/js/event.js"> </script>
 
 <title>Insert title here</title>
 

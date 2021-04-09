@@ -26,7 +26,6 @@ public class MemberRegistServlet extends HttpServlet {
 		String memName = request.getParameter("memName");
 		String memId = request.getParameter("memId");
 		String memPwd = request.getParameter("memPwd");
-		String memPwYn = request.getParameter("memPwYn");
 		java.sql.Date memBirthDate = java.sql.Date.valueOf(request.getParameter("memBirthDate"));
 		String memEmail = request.getParameter("memEmail");
 		String memZipCode = request.getParameter("memZipCode");

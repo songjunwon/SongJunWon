@@ -5,8 +5,8 @@
 <head>
 <meta charset="UTF-8">
 <title>FirstBook</title>
-<link rel="stylesheet" href="/firstbook/resources/css/reset.css">
-    <link rel="stylesheet" href="/firstbook/resources/css/style.css">
+<link rel="stylesheet" href="/firstbook/resources/css/common/reset.css">
+<link rel="stylesheet" href="/firstbook/resources/css/member/style.css">
 </head>
 <body>
     <div id="wrap">

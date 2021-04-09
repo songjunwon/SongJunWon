@@ -1,11 +1,12 @@
 package com.lastbug.firstbook.member.model.dao;
 
-import static com.lastbug.firstbook.common.jdbc.JDBCTemplate.*;
+import static com.lastbug.firstbook.common.jdbc.JDBCTemplate.close;
 
 import java.io.FileInputStream;
 import java.io.IOException;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
+import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.Properties;
 
@@ -49,6 +50,31 @@ public class MemberDAO {
 			close(pstmt);
 		}
 		
+		return result;
+	}
+
+	public String idCheck(Connection con, String memId) {
+		
+		PreparedStatement pstmt = null;
+		ResultSet rs = null;
+		
+		String result = "";
+		
+		String query = prop.getProperty("idCheck");
+		
+		try {
+			pstmt = con.prepareStatement(query);
+			pstmt.setString(1, memId);
+			
+			rs = pstmt.executeQuery();
+			
+			if(rs.next()) {
+				result = rs.getString("MEM_ID");
+			}
+		} catch (SQLException e) {
+			e.printStackTrace();
+		}
+				
 		return result;
 	}
 }

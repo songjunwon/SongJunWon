@@ -22,7 +22,7 @@
 		case "insertMember" : 
 			
 			failedMessage = "회원 가입에 실패하셨습니다!";
-			movePath = "${ pageContext.servletContext.contextPath}";
+			movePath = "${ pageContext.servletContext.contextPath}/member/regist";
 			break;
 		
 		
