@@ -29,6 +29,9 @@ public class MemberRegistServlet extends HttpServlet {
 		String memPwYn = request.getParameter("memPwYn");
 		java.sql.Date memBirthDate = java.sql.Date.valueOf(request.getParameter("memBirthDate"));
 		String memEmail = request.getParameter("memEmail");
+		String memZipCode = request.getParameter("memZipCode");
+		String memAddress = request.getParameter("memAddress");
+		String memDetailAddress = request.getParameter("memDetailAddress");
 		
 //		System.out.println(name + memberId + memberPw + memberPwYn + birth + email);
 		
@@ -38,6 +41,7 @@ public class MemberRegistServlet extends HttpServlet {
 		newMember.setMemPwd(memPwd);
 		newMember.setMemBirthDate(memBirthDate);
 		newMember.setMemEmail(memEmail);
+		newMember.setMemAddress(memZipCode + "$" + memAddress + "$" + memDetailAddress);
 		
 //		System.out.println(newMember.toString());
 		

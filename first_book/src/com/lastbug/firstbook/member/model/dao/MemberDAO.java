@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 package com.lastbug.firstbook.member.model.dao;
 
 import static com.lastbug.firstbook.common.jdbc.JDBCTemplate.*;
@@ -36,6 +35,14 @@ public class MemberDAO {
 		
 		try {
 			pstmt = con.prepareStatement(query);
+			pstmt.setString(1, newMember.getMemName());
+			pstmt.setString(2, newMember.getMemId());
+			pstmt.setString(3, newMember.getMemPwd());
+			pstmt.setString(4, newMember.getMemEmail());
+			pstmt.setString(5, newMember.getMemAddress());
+			pstmt.setDate(6, newMember.getMemBirthDate());
+			
+			result = pstmt.executeUpdate();
 		} catch (SQLException e) {
 			e.printStackTrace();
 		} finally {
