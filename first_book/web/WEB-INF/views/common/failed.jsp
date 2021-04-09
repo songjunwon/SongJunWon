@@ -7,12 +7,34 @@
 <title>Insert title here</title>
 </head>
 <body>
-	<h1 align="center">
+<script>
+	
+	(function(){
 		
-		${ requestScope.message }
+		const failedCode = "${requestScope.failedCode}";
+		
+		var failedMessage = "";
+		
+		var movePath = "";
+		
+		switch(failedCode){
+		
+		case "insertMember" : 
+			
+			failedMessage = "회원 가입에 실패하셨습니다!";
+			movePath = "${ pageContext.servletContext.contextPath}";
+			break;
+		
+		
+		}
+			alert(failedMessage);
+		
+			location.replace(movePath);
+			
+	})();
+
+</script>
 	
-	</h1>
 	
-	<button onclick="location.href='${pageContext.servletContext.contextPath}/home'">홈으로 이동</button>	
 </body>
 </html>

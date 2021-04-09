@@ -2,27 +2,35 @@
 <!DOCTYPE properties SYSTEM "http://java.sun.com/dtd/properties.dtd">
 <properties>
 	<entry key="insertMember">
-	    INSERT /* com.greedy.jsp.member.model.dao.MemberDAO#insertMember() */
-	      INTO TBL_MEMBER A
+	    INSERT
+	      INTO MEM_INFO A
 	    (
-	      A.MEMBER_NO
-	    , A.MEMBER_ID
-	    , A.MEMBER_PWD
-	    , A.NICKNAME
-    	, A.PHONE
-	    , A.EMAIL
-	    , A.ADDRESS
-	    )	
+	      MEM_NUM
+	    , MEM_NAME
+	    , MEM_ID
+	    , MEM_PWD
+	    , MEM_EMAIL
+	    , MEM_ADDRESS
+	    , MEM_BIRTHDATE
+	    , MEM_WITHDRAW_DATE
+	    , MEM_CLASS
+	    , MEM_BLOCK_DATE
+	    , MEM_ENROLL_DATE
+	    )
 	    VALUES
 	    (
-	      SEQ_MEMBER_NO.NEXTVAL
+	      SEQ_MEM_NO.NEXTVAL
 	    , ?
 	    , ?
 	    , ?
 	    , ?
 	    , ?
 	    , ?
-	    )	     
+	    , NULL
+	    , '회원'
+	    , NULL
+	    , SYSDATE
+	    )
 	</entry>
 	<entry key="selectEncryptedPwd">
 	    SELECT /* com.greedy.jsp.member.model.dao.MemberDAO#selectEncryptedPwd() */
