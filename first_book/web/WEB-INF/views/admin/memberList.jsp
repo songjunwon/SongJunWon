@@ -8,32 +8,7 @@
 <title>Insert title here</title>
 </head>
 
-<style>
-	section { margin-top: 85px; margin-left : 50px; }
-	
-	section table {	 text-align : center; border-collapse: collapse; border-spacing: 0; border: 1px solid #444444;}	
-	section table thead { background-color: red; color : white; }
-	section table thead>tr>th { height : 40px; width: 100px;	}
-	section table tbody>tr:nth-child(odd) { background-color: #CFCFCF; }
-	
-	
-	aside { float:right; margin-top: 85px; margin-right : 50px; height : 600px; width : 400px; border: 1px solid #444444;}
-	
-	.inbox { display: -webkit-box; display: -moz-box; display: -ms-flexbox; display: flex; -webkit-box-align: center; 
-        -moz-box-align: center; -ms-flex-align: center; align-items: center; /* 수직 정렬 */
-        -webkit-box-pack: center; -moz-box-pack: center; -ms-flex-pack: center; justify-content: center; /* 수평 정렬 */ }
-	
-	#memSearchFormHead { font-size : 20px; text-align : center; background-color: red;
-		color : white; width : 400px; height: 50px; }
-		
-	#memSearchFormBody { margin-top: 20px; }
-	
-	.memSearchTable { margin-top : 15px; text-align: center; border-spacing: 30px;}
-	
-	.btn { font-size : 20px; border : 0px; outline : 0px; color : white; background-color: red; width: 200px;}
-	.btn:hover { background-color: #333333; color: white;}
-	
-</style>
+<link rel="stylesheet" href="/firstbook/resources/css/admin/memList.css">
 
 <body>
 	<jsp:include page="../common/header.jsp"></jsp:include>
@@ -43,52 +18,81 @@
 		<div id="memSearchFormHead" class="inbox"> 회원조회 </div>
 		
 		<div id="memSearchFormBody" class="inbox">
-		<form action="">
+		<form action="${ pageContext.servletContext.contextPath }/admin/search" method="get">
 		
 			<table class="memSearchTable">
-				<tr>
-					<td> <label>회원번호 : </label> </td>
-					<td> <input type="text"></td>
-				</tr>
+				
+					<c:choose>
+					
+						<c:when test="${ !empty requestScope.memSearchValue }">
+							<tr>
+								<td> 
 
-				<tr>	
-					<td> <label>회원코드 : </label> </td>	
-					<td><input type="text"></td>
-				</tr>
-
-				<tr>	
-					<td> <label>회원명 : </label> </td>
-					<td><input type="text"></td>	
-				</tr>
-
-				<tr>	
-					<td> <label>생년월일 : </label>  </td>
-					<td><input type="text"></td>	
-				</tr>
-
-				<tr>	
-					<td> <label>이메일 : </label>  </td>
-					<td> <input type="text"></td>	
-				</tr>
-
-				<tr>	
-					<td> <label>가입일시 : </label>  </td>
-					<td><input type="text"></td>	
-				</tr>
-
-				<tr>	
-					<td> <label>블랙리스트 : </label>  </td>
-					<td>
-
-					<label>Y </label><input type="radio" name="blockCheck">
-					<label>N </label><input type="radio" name="blockCheck">
-
-					</td>	
-				</tr>
-				<tr></tr>
+									<select id="memSearchCondition" name="memSearchCondition">
+	 
+									<option value="memNum" <c:if test="${requestScope.memSearchCondition eq 'memNum' }">selected</c:if>>회원번호</option>
+									<option value="name" <c:if test="${requestScope.memSearchCondition eq 'name' }">selected</c:if>>이름</option>
+									<option value="email" <c:if test="${requestScope.memSearchCondition eq 'email' }">selected</c:if>>이메일</option>
+									<option value="birthDate" <c:if test="${requestScope.memSearchCondition eq 'birthDate' }">selected</c:if> >생년월일</option>
+									<option value="enrollDate" <c:if test="${requestScope.memSearchCondition eq 'enrollDate' }">selected</c:if> >가입일시</option>
+						
+									</select> 
+								</td>
+								
+								<td> <input type="search" id="memSearchValue" name="memSearchValue" value="${requestScope.memSearchValue}"></td>
+							</tr>
+			
+							<tr>	
+								<td> <label>블랙리스트 : </label>  </td>
+								<td>
+			
+								<label>Y </label><input type="radio" name="blockCheck">
+								<label>N </label><input type="radio" name="blockCheck" checked="checked">
+			
+								</td>	
+							</tr>
+							<tr></tr>
+						
+						
+						</c:when>
+				
+						<c:otherwise>
+							<tr>
+								<td>
+									<select id="memSearchCondition" name="memSearchCondition">
+	 
+									<option value="memNum">회원번호</option>
+									<option value="name">이름</option>
+									<option value="email">이메일</option>
+									<option value="birthDate">생년월일</option>
+									<option value="enrollDate">가입일자</option>
+						
+									</select> 
+								</td>
+								
+								<td> <input type="search" id="memSearchValue" name="memSearchValue"></td>
+							</tr>
+			
+							<tr>	
+								<td> <label>블랙리스트 : </label>  </td>
+								<td>
+			
+								<label>Y </label><input type="radio" name="blockCheck">
+								<label>N </label><input type="radio" name="blockCheck" checked="checked">
+			
+								</td>	
+							</tr>
+							<tr></tr>
+						</c:otherwise>
+						
+					</c:choose>
+				
+						
+					
+				
 				<tfoot>
 				<tr>	
-					<td colspan="2"> <button type="button" class="btn">검색</button> </td>
+					<td colspan="2"> <button type="submit" class="btn">검색</button> </td>
 						
 				</tr>
 				</tfoot>
@@ -97,8 +101,6 @@
 	
 		</form>
 		</div>
-
-		
 
 		
 	</aside>
@@ -130,24 +132,31 @@
 		<c:forEach var="mem" items="${ requestScope.memList }">	
 		
 			<tr>
-				<td>${ mem.memNum }</td>
-				<td>${ mem.memName }</td>
-				<td>${ mem.memId }</td>
-				<td>${ mem.memEmail }</td>
-				<td>${ mem.memBirthDate }</td>
-				<td>${ mem.memWithdrawYn }</td>
-				<td>${ mem.memWithdrawDate }</td>
-				<td>${ mem.memClass }</td>
-				<td>${ mem.memBlockYn }</td>
-				<td>${ mem.memBlockDate }</td>
-				<td>${ mem.memEnrollDate }</td>	
+				<td><c:out value="${ mem.memNum }"/></td>
+				<td><c:out value="${ mem.memName }"/></td>
+				<td><c:out value="${ mem.memId }"/></td>
+				<td><c:out value="${ mem.memEmail }"/></td>
+				<td><c:out value="${ mem.memBirthDate }"/></td>
+				<td><c:out value="${ mem.memWithdrawYn }"/></td>
+				<td><c:out value="${ mem.memWithdrawDate }"/></td>
+				<td><c:out value="${ mem.memClass }"/></td>
+				<td><c:out value="${ mem.memBlockYn }"/></td>
+				<td><c:out value="${ mem.memBlockDate }"/></td>
+				<td><c:out value="${ mem.memEnrollDate }"/></td>	
 			</tr>
 		
 		</c:forEach>
 		</tbody>
 	</table>
 	</section>
-
+	
+	<script type="text/javascript">
+		
+	const searchLink = "{ pageContext.servletContext.contextPath }/admin/search"
+	
+	</script>
+	
+	
 	
 </body>
 </html>

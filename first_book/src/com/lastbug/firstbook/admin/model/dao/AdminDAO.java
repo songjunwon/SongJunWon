@@ -3,6 +3,7 @@ package com.lastbug.firstbook.admin.model.dao;
 import java.io.FileInputStream;
 import java.io.IOException;
 import java.sql.Connection;
+import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
@@ -94,6 +95,85 @@ public class AdminDAO {
 		
 		return memList;
 	
+	}
+
+
+	public List<MemberDTO> searchMemList(Connection con, String condition, String value) {
+		
+		PreparedStatement pstmt = null;
+		
+		ResultSet rset = null;
+		
+		String query = null;
+						
+		List<MemberDTO> searchMemList = null;
+		
+		if(condition.equals("memNum")) {
+			
+			query = prop.getProperty("searchMemberNumber");
+			
+		} else if (condition.equals("name")) {
+			
+			query = prop.getProperty("searchMemberName");
+			
+			
+		} else if (condition.equals("email")) {
+			
+			query = prop.getProperty("searchMemberEmail");
+			
+			
+		} else if (condition.equals("birthDate")) {
+			
+			query = prop.getProperty("searchMemberBirthDate");
+			
+			
+		} else if (condition.equals("enrollDate")) {
+			
+			query = prop.getProperty("searchMemberEnrollDate");
+			
+		}
+		
+		try {
+			pstmt =con.prepareStatement(query);
+			
+			pstmt.setString(1, value);
+			
+			rset = pstmt.executeQuery();
+			
+			searchMemList = new ArrayList<>();
+			
+			if(rset.next()) {
+				
+				MemberDTO sMem = new MemberDTO();
+				
+				sMem.setMemNum(rset.getInt("MEM_NUM"));
+				sMem.setMemName(rset.getString("MEM_NAME"));
+				sMem.setMemId(rset.getString("MEM_ID"));
+				sMem.setMemEmail(rset.getString("MEM_EMAIL"));
+				sMem.setMemBirthDate(rset.getDate("MEM_BIRTHDATE"));
+				sMem.setMemWithdrawYn(rset.getString("MEM_WITHDRAW_YN"));
+				sMem.setMemWithdrawDate(rset.getDate("MEM_WITHDRAW_DATE"));
+				sMem.setMemClass(rset.getString("MEM_CLASS"));
+				sMem.setMemBlockYn(rset.getString("MEM_BLOCK_YN"));
+				sMem.setMemBlockDate(rset.getDate("MEM_BLOCK_DATE"));
+				sMem.setMemEnrollDate(rset.getDate("MEM_ENROLL_DATE"));
+				
+				searchMemList.add(sMem);
+			}
+			
+			
+		} catch (SQLException e) {
+
+			e.printStackTrace();
+		
+		} finally {
+			
+			close(rset);
+			close(pstmt);
+			
+		}
+		
+		return searchMemList;
 	}
 	
 	

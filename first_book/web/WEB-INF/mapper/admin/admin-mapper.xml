@@ -6,21 +6,36 @@
      	*
      	FROM MEM_INFO
 	</entry>
-	<entry key="">
-
+	<entry key="searchMemberNumber">
+		SELECT
+		*
+		FROM MEM_INFO A
+		WHERE A.MEM_NUM = ?
 	</entry>
-	<entry key="">
-
+	<entry key="searchMemberName">
+		SELECT
+		*
+		FROM MEM_INFO A
+		WHERE A.MEM_NAME LIKE '%' || ? || '%'
 	</entry>
-	
-	<entry key="">
-
+		
+	<entry key="searchMemberEmail">
+		SELECT
+		*
+		FROM MEM_INFO A
+		WHERE A.MEM_EMAIL LIKE '%' || ? || '%'
 	</entry>
-	<entry key="">
-
+	<entry key="searchMemberBirthDate">
+		SELECT
+		*
+		FROM MEM_INFO A
+		WHERE A.MEM_BIRTHDATE LIKE '%' || ? || '%'
 	</entry>
-	<entry key="">
-
+	<entry key="searchMemberEnrollDate">
+		SELECT
+		*
+		FROM MEM_INFO A
+		WHERE A.MEM_ENROLL_DATE LIKE '%' || ? || '%'
 	</entry>
 
 </properties>

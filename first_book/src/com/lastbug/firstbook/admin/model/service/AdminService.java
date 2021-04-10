@@ -29,5 +29,17 @@ public class AdminService {
 		
 		return memList;
 	}
+
+	public List<MemberDTO> searchMemList(String condition, String value) {
+		
+		Connection con = getConnection();
+		
+		List<MemberDTO> searchMemList = adminDAO.searchMemList(con, condition, value);
+		
+		close(con);
+		
+		
+		return searchMemList;
+	}
 	
 }
