@@ -11,7 +11,7 @@
 <link rel="stylesheet" href="/firstbook/resources/css/admin/memList.css">
 
 <body>
-	<jsp:include page="../common/header.jsp"></jsp:include>
+	<jsp:include page="adminHeader.jsp"></jsp:include>
 	
 	<aside>
 
@@ -152,8 +152,9 @@
 	
 	<script type="text/javascript">
 		
-	const searchLink = "{ pageContext.servletContext.contextPath }/admin/search"
-	
+		const link = "{ pageContext.servletContext.contextPath }/admin/list"
+		const searchLink = "{ pageContext.servletContext.contextPath }/admin/search"
+		
 	</script>
 	
 	

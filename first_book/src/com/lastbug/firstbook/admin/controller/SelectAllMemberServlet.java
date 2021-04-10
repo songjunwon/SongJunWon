@@ -13,7 +13,7 @@ import com.lastbug.firstbook.admin.model.service.AdminService;
 import com.lastbug.firstbook.member.model.dto.MemberDTO;
 
 
-@WebServlet("/admin/list")
+@WebServlet("/admin/memlist")
 public class SelectAllMemberServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 

@@ -43,7 +43,7 @@ public class SearchMemberListServlet extends HttpServlet {
 		
 		if(!searchMemList.isEmpty()) {
 			
-			path = "/WEB-INF/views/admin/search.jsp";
+			path = "/WEB-INF/views/admin/list.jsp";
 			request.setAttribute("searchMemList", searchMemList);
 			request.setAttribute("memSearchCondition", condition);
 			request.setAttribute("memSearchValue" , value);

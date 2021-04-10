@@ -142,7 +142,7 @@ public class AdminDAO {
 			
 			searchMemList = new ArrayList<>();
 			
-			if(rset.next()) {
+			while(rset.next()) {
 				
 				MemberDTO sMem = new MemberDTO();
 				

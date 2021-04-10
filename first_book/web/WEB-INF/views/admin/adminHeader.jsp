@@ -16,11 +16,12 @@
 		<div class="nav-area">
 			<ul>
 				<li><a href="${ pageContext.servletContext.contextPath }">HOME</a></li>
-				<li><a href="${ pageContext.servletContext.contextPath }/member/login">로그인</a></li>
-				<li><a href="${ pageContext.servletContext.contextPath }/webnovel/list">웹소설리스트</a></li>
-				<li><a href="${ pageContext.servletContext.contextPath }/board/list">기능1</a></li>
-				<li><a href="${ pageContext.servletContext.contextPath }/thmbnail/list">기능 2</a></li>
 				<li><a href="${ pageContext.servletContext.contextPath }/admin/main">관리자 메인</a></li>
+				<li><a href="${ pageContext.servletContext.contextPath }/admin/memlist">회원 조회</a></li>
+				<li><a href="${ pageContext.servletContext.contextPath }/admin/webNovel">웹소설 관리</a></li>
+				<li><a href="${ pageContext.servletContext.contextPath }/admin/novel">단행본 관리</a></li>
+				<li><a href="${ pageContext.servletContext.contextPath }/admin/QNA">문의관리</a></li>
+				<li><a href="${ pageContext.servletContext.contextPath }/admin/contest">공모전</a></li>
 			</ul>
 		</div> <!-- nav-area end -->
 	</div> <!-- menu-area end -->
