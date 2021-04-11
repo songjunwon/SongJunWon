@@ -15,19 +15,22 @@ import java.util.Properties;
 
 import com.lastbug.firstbook.common.config.ConfigLocation;
 import com.lastbug.firstbook.webnovel.model.dto.GenreCategoryDTO;
-import com.lastbug.firstbook.webnovel.model.dto.WebNovelDetailDTO;
+import com.lastbug.firstbook.webnovel.model.dto.WebNovChapNumDTO;
+import com.lastbug.firstbook.webnovel.model.dto.WebNovChapSearchDTO;
+import com.lastbug.firstbook.webnovel.model.dto.WebNovContentDetailDTO;
+import com.lastbug.firstbook.webnovel.model.dto.WebNovPageNumDTO;
 import com.lastbug.firstbook.webnovel.model.dto.WebNovelInfoDTO;
 
 public class WebNovelDAO {
-	
-private final Properties prop;
-	
+
+	private final Properties prop;
+
 	public WebNovelDAO() {
 		prop = new Properties();
-		
+
 		try {
 			prop.loadFromXML(new FileInputStream(ConfigLocation.MAPPER_LOCATION + "webnovel/webnovel-mapper.xml"));
-			
+
 		} catch (IOException e) {
 			e.printStackTrace();
 		}
@@ -37,29 +40,29 @@ private final Properties prop;
 
 		Statement stmt = null;
 		ResultSet rset = null;
-		
+
 		List<WebNovelInfoDTO> webNovelList = null;
-		
+
 		String query = prop.getProperty("seletAllNovel");
-		
+
 		try {
 			stmt = con.createStatement();
 			rset = stmt.executeQuery(query);
-			
+
 			webNovelList = new ArrayList<>();
-			
+
 			while(rset.next()) {
 				WebNovelInfoDTO webNovel = new WebNovelInfoDTO();
-				
+
 				webNovel.setWebNovNum(rset.getInt("WEB_NOV_NUM"));
 				webNovel.setWebNovTitle(rset.getString("WEB_NOV_TITLE"));
 				webNovel.setWebNovAuthor(rset.getString("WEB_NOV_AUTHOR"));
 				webNovel.setWebNovInform(rset.getString("WEB_NOV_INFORM"));
-				
+
 				webNovelList.add(webNovel);
 			}
-			
-			
+
+
 		} catch (SQLException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
@@ -67,7 +70,7 @@ private final Properties prop;
 			close(rset);
 			close(stmt);
 		}
-		
+
 		return webNovelList;
 	}
 
@@ -75,29 +78,29 @@ private final Properties prop;
 
 		PreparedStatement pstmt = null;
 		ResultSet rset = null;
-		
+
 		WebNovelInfoDTO webNovelDetail = null;
-		
+
 		String query = prop.getProperty("selectWebNovelDetail");
-		
+
 		try {
 			pstmt = con.prepareStatement(query);
 			pstmt.setInt(1, no);
-			
+
 			rset = pstmt.executeQuery();
-			
+
 			if(rset.next()) {
-			webNovelDetail = new WebNovelInfoDTO();
-			webNovelDetail.setCategoryName(new GenreCategoryDTO());
-			
-			webNovelDetail.setWebNovNum(rset.getInt("WEB_NOV_NUM"));
-			webNovelDetail.setWebNovTitle(rset.getString("WEB_NOV_TITLE"));
-			webNovelDetail.setWebNovAuthor(rset.getString("WEB_NOV_AUTHOR"));
-			webNovelDetail.setDayOfWeek(rset.getString("DAY_OF_WEEK"));
-			webNovelDetail.setWebNovInform(rset.getString("WEB_NOV_INFORM"));
-			webNovelDetail.getCategoryName().setCategoryName(rset.getString("CATEGORY_NAME"));
-//			webNovelDetail.setCategoryName(rset.getString("CATEGORY_NAME"));
-			
+				webNovelDetail = new WebNovelInfoDTO();
+				webNovelDetail.setCategoryName(new GenreCategoryDTO());
+
+				webNovelDetail.setWebNovNum(rset.getInt("WEB_NOV_NUM"));
+				webNovelDetail.setWebNovTitle(rset.getString("WEB_NOV_TITLE"));
+				webNovelDetail.setWebNovAuthor(rset.getString("WEB_NOV_AUTHOR"));
+				webNovelDetail.setDayOfWeek(rset.getString("DAY_OF_WEEK"));
+				webNovelDetail.setWebNovInform(rset.getString("WEB_NOV_INFORM"));
+				webNovelDetail.getCategoryName().setCategoryName(rset.getString("CATEGORY_NAME"));
+				//			webNovelDetail.setCategoryName(rset.getString("CATEGORY_NAME"));
+
 			}
 		} catch (SQLException e) {
 			e.printStackTrace();
@@ -105,73 +108,97 @@ private final Properties prop;
 			close(rset);
 			close(pstmt);
 		}
-		
-		
+
+
 		return webNovelDetail;
 	}
 
-	public List<WebNovelDetailDTO> selectWebNovelDetail2(Connection con, WebNovelInfoDTO novelDetail) {
+	public List<WebNovChapSearchDTO> selectWebNovelallChapter(Connection con, WebNovelInfoDTO webDetail) {
 
 		PreparedStatement pstmt = null;
 		ResultSet rset = null;
-		
-		List<WebNovelDetailDTO> novelDetail2 = null;
-		
-		String query = prop.getProperty("selectWebNovelDetail2");
-		
+
+		System.out.println("webdetail" + webDetail);
+		List<WebNovChapSearchDTO> webNovelChap = null;
+
+		String query = prop.getProperty("selectWebNovelallChapter");
 		try {
 			pstmt = con.prepareStatement(query);
-			pstmt.setInt(1, novelDetail.getWebNovNum());
-			
+
+			pstmt.setInt(1, webDetail.getWebNovNum());
+
+			//			System.out.println("db전 웹소설 고유 번호" + webDetail.getWebNovNum());
+
 			rset = pstmt.executeQuery();
-			
-			novelDetail2 = new ArrayList<>();
-			
+
+			System.out.println("query문" + query);
+			webNovelChap = new ArrayList<WebNovChapSearchDTO>();
+
 			while(rset.next()) {
-				WebNovelDetailDTO wbdDTO = new WebNovelDetailDTO();
-				wbdDTO.setChapNum(rset.getInt("CHAPTER_NUM"));
-				wbdDTO.setWebNovContent(rset.getString("WEB_NOV_CONTENT"));
-				
-				novelDetail2.add(wbdDTO);
+				WebNovChapSearchDTO wbdDTO = new WebNovChapSearchDTO();
+				wbdDTO.setWebNovNum(new WebNovelInfoDTO());
+				wbdDTO.setWebNovChapNum(new WebNovChapNumDTO());
+
+				//				wbdDTO.setWebNovNum(rset.getInt("WEB_NOV_NUM"));
+				wbdDTO.getWebNovNum().setWebNovNum(rset.getInt("WEB_NOV_NUM"));
+				wbdDTO.getWebNovChapNum().setWebNovChapNum(rset.getInt("CHAP_NUM"));
+
+				//				System.out.println("wbdDTO" + wbdDTO);
+
+				webNovelChap.add(wbdDTO);
+
+				//				System.out.println("DAO챕터별 정보" + webNovelChap);
 			}
-			
+
 		} catch (SQLException e) {
-			// TODO Auto-generated catch block
+
 			e.printStackTrace();
 		}finally {
 			close(rset);
 			close(pstmt);
 		}
-		
-		
-		
-		return novelDetail2;
+
+
+		return webNovelChap;
+
+
 	}
 
-	public WebNovelDetailDTO selectPerChap(Connection con, int currentChap, int currentChapNum) {
+	public List<WebNovContentDetailDTO> selectPerChap(Connection con, int currentWebNovNum, int currentChapNum) {
 
 		PreparedStatement pstmt = null;
-		ResultSet rset = null;
-		
-		WebNovelDetailDTO perChap = null;
-		
+		ResultSet rset = null;	
+
+		List<WebNovContentDetailDTO> perChap = null;
+
 		String query = prop.getProperty("selectPerChap");
-		
+
 		try {
 			pstmt = con.prepareStatement(query);
-			pstmt.setInt(1, currentChap);
+			pstmt.setInt(1, currentWebNovNum);
 			pstmt.setInt(2, currentChapNum);
-			
+
 			rset = pstmt.executeQuery();
-			
-			if(rset.next()) {
-				perChap = new WebNovelDetailDTO();
+
+			perChap = new ArrayList<WebNovContentDetailDTO>();
+
+			while(rset.next()) {
+
+				WebNovContentDetailDTO webnovel = new WebNovContentDetailDTO();
+
+				webnovel.setWebNovNum(new WebNovelInfoDTO());
+				webnovel.setWebNovChapNum(new WebNovChapNumDTO());
+				webnovel.setWebNovPageNum(new WebNovPageNumDTO());
 				
-				perChap.setWebNovContent(rset.getString("WEB_NOV_CONTENT"));
-		
+				webnovel.getWebNovNum().setWebNovNum(rset.getInt("WEB_NOV_NUM"));
+				webnovel.getWebNovChapNum().setWebNovChapNum(rset.getInt("CHAP_NUM"));
+				webnovel.getWebNovPageNum().setWebNovPageNum(rset.getInt("WEB_NOV_PAGE_NUM"));
+				webnovel.setWebNovPageContent(rset.getString("WEB_NOV_PAGE_CONTENT"));
+				
+				perChap.add(webnovel);
 			}
-			
-			
+
+
 		} catch (SQLException e) {
 
 			e.printStackTrace();
@@ -179,11 +206,11 @@ private final Properties prop;
 			close(rset);
 			close(pstmt);
 		}
-		
-		
-		return perChap;
-	}
 
+
+		return perChap;
+
+	}
 
 
 }

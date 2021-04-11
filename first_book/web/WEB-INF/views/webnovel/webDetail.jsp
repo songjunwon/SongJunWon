@@ -62,7 +62,7 @@
             <h4 class="everynday">매주 <c:out value="${ requestScope.webnovel.dayOfWeek }" /> 연재</h4>
             <br><br>
             <table class="tab_mid">
-            	<c:forEach var="webnoveldetail" items="${ requestScope.webnoveldetail}"> 
+            	<c:forEach var="webNovelChap" items="${ requestScope.webnoveldetail}"> 
             	<tr>
                     <td class="chap_img"><img src="/firstbook/resources/image/flower1.PNG" class="chap_img_real" alt="1화부터사진">
                     </td>
@@ -72,9 +72,9 @@
                     </td> 
                     <td class="freeBtn">
 
-                     <button class="freebtn_real" id="freebtn_real_2" type="button" value="${ webnoveldetail.chapNum}" onclick="test(this)">
-                    ${ webnoveldetail.chapNum}화보기 </button>
-                    <input type="hidden" id="webNovNum" value= "${ webnoveldetail.webNovNum}"> 
+                     <button class="freebtn_real" id="freebtn_real_2" type="button" value="${ webNovelChap.webNovChapNum.webNovChapNum}" onclick="test(this)">
+                    ${ webNovelChap.webNovChapNum.webNovChapNum}화보기 </button>
+                    <input type="hidden" id="webNovNum" value= "${ webNovelChap.webNovChapNum.webNovChapNum}"> 
              		</td>
                 </tr>
                 </c:forEach>
