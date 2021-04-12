@@ -51,7 +51,7 @@
                     <div class="login_input_box">
                         상세주소 <input type="text" name="memDetailAddress" id="memDetailAddress" required>
                     </div>
-                    <button type="submit" id="joinButton">
+                    <button type="submit" onclick="return check();">
                         Join
                     </button>
                 </form>
@@ -67,8 +67,8 @@
 	<script src="//t1.daumcdn.net/mapjsapi/bundle/postcode/prod/postcode.v2.js"></script>
 	<script>
 		const $searchZipCode = document.getElementById("searchZipCode");
-		var IdYn = "N";
-		var PwYn = "N";
+		var idYn = "N";
+		var pwYn = "N";
 		
 		$searchZipCode.onclick = function(){
 			
@@ -92,9 +92,10 @@
 					success: function(data){
 						if(data == ""){
 							$("#idCheckResult").text("사용가능한 아이디 입니다.");
+							idYn = "Y";
 						} else {
 							$("#idCheckResult").text("이미 사용중인 아이디 입니다.");
-							JoinYn = "N"
+							idYn = "N"
 						}
 					},
 					error: function(request, status, error){
@@ -103,7 +104,7 @@
 				});
 			} else if($("#memId").val().length <= 3) {
 				$("#idCheckResult").text("아이디는 4글자 이상 작성해주세요.");
-				JoinYn = "N"
+				idYn = "N"
 			}	
 		});
 		
@@ -113,14 +114,14 @@
 				var memPwYn = $("#memPwYn").val();
 				if(memPwd == memPwYn){
 					$("#pwCheckResult").text("비밀번호가 일치합니다.");
-					PwYn = "Y"
+					pwYn = "Y"
 				} else {
 					$("#pwCheckResult").text("비밀번호가 일치하지않습니다.");
-					PwYn = "N"
+					pwYn = "N"
 				}
 			} else if($("#memPwYn").val().length <= 3 ) {
 				$("#pwCheckResult").text("비밀번호는 4글자 이상 작성해주세요.");
-				PwYn = "N"
+				pwYn = "N"
 			}	
 		});
 		
@@ -130,16 +131,31 @@
 				var memPwYn = $("#memPwYn").val();
 				if(memPwd == memPwYn){
 					$("#pwCheckResult").text("비밀번호가 일치합니다.");
-					PwYn = "Y"
+					pwYn = "Y"
 				} else {
 					$("#pwCheckResult").text("비밀번호가 일치하지않습니다.");
-					PwYn = "N"
+					pwYn = "N"
 				}
 			} else if($("#memPwd").val().length <= 3 ) {
 				$("#pwCheckResult").text("비밀번호는 4글자 이상 작성해주세요.");
-				PwYn = "N"
+				pwYn = "N"
 			}	
 		});
+		
+		function check() {
+			if(idYn == "N"){
+				alert("아이디 중복확인이 완료되지 않았습니다.");
+				return false;
+			} else if(pwYn == "N") {
+				alert("비밀번호확인이 완료되지 않았습니다.");
+				return false;
+			} else if($("#memZipCode").val() == "") {
+				alert("빈칸 없이 입력해주세요.");
+				return false;
+			} else {
+				return true;
+			}
+		}
 		
 	</script>
 </body>

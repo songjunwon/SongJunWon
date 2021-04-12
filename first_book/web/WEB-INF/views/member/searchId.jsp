@@ -14,25 +14,21 @@
         <main id="main" class="top_main">
             <div class="login_form">
                 <div class="login_title">
-                    로그인
+                    아이디 찾기
                 </div>
-                <form action="${ pageContext.servletContext.contextPath }/member/login" method="post">
+                <form action="${ pageContext.servletContext.contextPath }/member/searchId" method="post">
                     <div class="login_input_box">
-                        아이디 <input type="text" name="memId" required>
+                        이름 <input type="text" name="memName" required>
                     </div>
                     <div class="login_input_box">
-                        비밀번호 <input type="password" name="memPwd" required>
+                        이메일 <input type="email" name="memEmail" required>
                     </div>
                     <button type="submit">
-                        Login
+                        Search
                     </button>
                 </form>
                 <div class="login_nav">
-                    <ul>
-                        <li><a href="${ pageContext.servletContext.contextPath }/member/searchId">아이디 찾기</a></li>
-                        <li><a href="${ pageContext.servletContext.contextPath }/member/searchPwd">비밀번호 찾기</a></li>
-                        <li><a href="${ pageContext.servletContext.contextPath }/member/regist">회원가입</a></li>
-                    </ul>
+                    <a href="${ pageContext.servletContext.contextPath}">홈으로</a>
                 </div>
             </div>
         </main>

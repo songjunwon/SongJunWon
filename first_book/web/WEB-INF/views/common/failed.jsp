@@ -20,9 +20,13 @@
 		switch(failedCode){
 		
 		case "insertMember" : 
-			
 			failedMessage = "회원 가입에 실패하셨습니다!";
 			movePath = "${ pageContext.servletContext.contextPath}/member/regist";
+			break;
+			
+		case "loginMember" : 
+			failedMessage = "아이디 혹은 비밀번호가 다릅니다.";
+			movePath = "${ pageContext.servletContext.contextPath}/member/login";
 			break;
 		
 		
