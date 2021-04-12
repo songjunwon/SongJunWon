@@ -67,8 +67,7 @@
                     <td class="chap_img"><img src="/firstbook/resources/image/flower1.PNG" class="chap_img_real" alt="1화부터사진">
                     </td>
                     <td class="prolog">
-                        <h2 class="prolog_text"> 프롤로그</h2>
-                        <h2 class="chap_date"> 14.08.19 </h2>                       
+                        <h2 class="chap_date"><%--  ${ webNovelChap.webNovelChapDate.webNovelChapDate}  --%></h2>                       
                     </td> 
                     <td class="freeBtn">
 

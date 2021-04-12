@@ -53,7 +53,13 @@
 		 WHERE A.MEMBER_STATUS = 'Y'
 		   AND A.MEMBER_ID = ?
 	</entry>
-
+	<entry key="searchWebNovelCount">
+	    SELECT
+               COUNT(*)
+          FROM WEB_NOV_CONTENT_DETAIL
+         WHERE WEB_NOV_NUM = ?
+           AND CHAP_NUM = ?
+	</entry>
 </properties>
 
 

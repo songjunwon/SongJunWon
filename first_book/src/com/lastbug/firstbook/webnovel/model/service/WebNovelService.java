@@ -10,6 +10,7 @@ import java.sql.Connection;
 import java.util.List;
 
 import com.lastbug.firstbook.webnovel.model.dao.WebNovelDAO;
+import com.lastbug.firstbook.webnovel.model.dto.PageInfoDTO;
 import com.lastbug.firstbook.webnovel.model.dto.WebNovChapSearchDTO;
 import com.lastbug.firstbook.webnovel.model.dto.WebNovContentDetailDTO;
 import com.lastbug.firstbook.webnovel.model.dto.WebNovelInfoDTO;
@@ -79,11 +80,11 @@ public class WebNovelService {
 		return webNovelChap;
 	}
 
-	public List<WebNovContentDetailDTO> selectPerChap(int currentWebNovNum, int currentChapNum) {
+	public List<WebNovContentDetailDTO> selectPerChap(PageInfoDTO pageInfo, int currentWebNovNum, int currentChapNum) {
 
 		Connection con = getConnection();
 		List<WebNovContentDetailDTO> perChap = null;
-		perChap = webNovelDAO.selectPerChap(con, currentWebNovNum, currentChapNum);
+		perChap = webNovelDAO.selectPerChap(con, pageInfo, currentWebNovNum, currentChapNum);
 
 		if(perChap != null) {
 			commit(con);
@@ -94,6 +95,24 @@ public class WebNovelService {
 		close(con);
 
 		return perChap;
+	}
+
+	/* 선택한 웹소설의 챕터의 쪽수 계산 */
+	public int searchWebNovelCount(int currentWebNovNum, int currentChapNum) {
+
+		Connection con = getConnection();
+		
+		int totalCount = webNovelDAO.searchWebNovelCount(con, currentWebNovNum, currentChapNum);
+		
+		if(totalCount > 0) {
+			commit(con);
+		} else {
+			rollback(con);
+		}
+		
+		close(con);
+		
+		return totalCount;
 	}
 
 }

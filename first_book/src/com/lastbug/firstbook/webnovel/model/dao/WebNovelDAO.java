@@ -13,8 +13,11 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Properties;
 
+import org.apache.jasper.tagplugins.jstl.core.Set;
+
 import com.lastbug.firstbook.common.config.ConfigLocation;
 import com.lastbug.firstbook.webnovel.model.dto.GenreCategoryDTO;
+import com.lastbug.firstbook.webnovel.model.dto.PageInfoDTO;
 import com.lastbug.firstbook.webnovel.model.dto.WebNovChapNumDTO;
 import com.lastbug.firstbook.webnovel.model.dto.WebNovChapSearchDTO;
 import com.lastbug.firstbook.webnovel.model.dto.WebNovContentDetailDTO;
@@ -118,7 +121,7 @@ public class WebNovelDAO {
 		PreparedStatement pstmt = null;
 		ResultSet rset = null;
 
-		System.out.println("webdetail" + webDetail);
+//		System.out.println("webdetail" + webDetail);
 		List<WebNovChapSearchDTO> webNovelChap = null;
 
 		String query = prop.getProperty("selectWebNovelallChapter");
@@ -164,7 +167,7 @@ public class WebNovelDAO {
 
 	}
 
-	public List<WebNovContentDetailDTO> selectPerChap(Connection con, int currentWebNovNum, int currentChapNum) {
+	public List<WebNovContentDetailDTO> selectPerChap(Connection con, PageInfoDTO pageInfo, int currentWebNovNum, int currentChapNum) {
 
 		PreparedStatement pstmt = null;
 		ResultSet rset = null;	
@@ -177,6 +180,8 @@ public class WebNovelDAO {
 			pstmt = con.prepareStatement(query);
 			pstmt.setInt(1, currentWebNovNum);
 			pstmt.setInt(2, currentChapNum);
+			pstmt.setInt(3, pageInfo.getStartRow());
+			pstmt.setInt(4, pageInfo.getEndRow());
 
 			rset = pstmt.executeQuery();
 
@@ -210,6 +215,37 @@ public class WebNovelDAO {
 
 		return perChap;
 
+	}
+
+	public int searchWebNovelCount(Connection con, int currentWebNovNum, int currentChapNum) {
+
+		PreparedStatement pstmt = null;
+		ResultSet rset = null;
+		
+		
+		String query = prop.getProperty("searchWebNovelCount");
+		
+		int webNovCount = 0;
+		try {
+			pstmt = con.prepareStatement(query);
+			pstmt.setInt(1, currentWebNovNum);
+			pstmt.setInt(2, currentChapNum);
+			
+			rset = pstmt.executeQuery();
+			
+			if(rset.next()) {
+				webNovCount = rset.getInt("COUNT(*)");
+			}
+			
+			
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		
+		
+		
+		return webNovCount;
 	}
 
 
