@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE properties SYSTEM "http://java.sun.com/dtd/properties.dtd">
+<properties>
+	<entry key="selectAllContestList">
+	  		SELECT
+       	           C.*
+              FROM COMPET_INFO C
+             WHERE COMPET_SSN = ?
+	</entry>
+	<entry key="selectVoting">
+	  
+	</entry>
+	<entry key="">
+	   
+	</entry>
+
+</properties>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
