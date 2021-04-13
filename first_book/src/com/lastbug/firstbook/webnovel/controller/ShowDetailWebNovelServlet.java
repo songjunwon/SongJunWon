@@ -1,7 +1,5 @@
 package com.lastbug.firstbook.webnovel.controller;
 
-import static com.lastbug.firstbook.common.jdbc.JDBCTemplate.commit;
-import static com.lastbug.firstbook.common.jdbc.JDBCTemplate.rollback;
 
 import java.io.IOException;
 import java.util.List;
@@ -13,7 +11,6 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import com.lastbug.firstbook.webnovel.model.dto.WebNovChapSearchDTO;
-import com.lastbug.firstbook.webnovel.model.dto.WebNovContentDetailDTO;
 import com.lastbug.firstbook.webnovel.model.dto.WebNovelInfoDTO;
 import com.lastbug.firstbook.webnovel.model.service.WebNovelService;
 
@@ -35,7 +32,7 @@ public class ShowDetailWebNovelServlet extends HttpServlet {
 		List<WebNovChapSearchDTO> webNovelChap = null;
 		
 		
-//		System.out.println("내가 선택한 회차는 " + webDetail);
+		System.out.println("내가 선택한 회차는 " + webDetail);
 		
 		String path = "";
 		/* 선택한 웹소설 조회가 null이 아닌 경우 */
@@ -44,7 +41,7 @@ public class ShowDetailWebNovelServlet extends HttpServlet {
 			webNovelChap = webNovelService.selectWebNovelallChapter(webDetail);
 	
 			
-//			System.out.println("회차정보가 있나? " + webNovelChap);
+			System.out.println("회차정보가 있나? " + webNovelChap);
 			path = "/WEB-INF/views/webnovel/webDetail.jsp";
 			request.setAttribute("webnovel", webDetail);
 			request.setAttribute("webnoveldetail", webNovelChap);

@@ -13,8 +13,11 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Properties;
 
+import org.apache.jasper.tagplugins.jstl.core.Set;
+
 import com.lastbug.firstbook.common.config.ConfigLocation;
 import com.lastbug.firstbook.webnovel.model.dto.GenreCategoryDTO;
+import com.lastbug.firstbook.webnovel.model.dto.PageInfoDTO;
 import com.lastbug.firstbook.webnovel.model.dto.WebNovChapNumDTO;
 import com.lastbug.firstbook.webnovel.model.dto.WebNovChapSearchDTO;
 import com.lastbug.firstbook.webnovel.model.dto.WebNovContentDetailDTO;
@@ -42,8 +45,9 @@ public class WebNovelDAO {
 		ResultSet rset = null;
 
 		List<WebNovelInfoDTO> webNovelList = null;
-
-		String query = prop.getProperty("seletAllNovel");
+//System.out.println("DAO는?");
+		String query = prop.getProperty("selectAllNovel");
+		System.out.println("쿼리" + query);
 
 		try {
 			stmt = con.createStatement();
@@ -62,6 +66,7 @@ public class WebNovelDAO {
 				webNovelList.add(webNovel);
 			}
 
+			System.out.println(webNovelList);
 
 		} catch (SQLException e) {
 			// TODO Auto-generated catch block
@@ -98,6 +103,7 @@ public class WebNovelDAO {
 				webNovelDetail.setWebNovAuthor(rset.getString("WEB_NOV_AUTHOR"));
 				webNovelDetail.setDayOfWeek(rset.getString("DAY_OF_WEEK"));
 				webNovelDetail.setWebNovInform(rset.getString("WEB_NOV_INFORM"));
+				webNovelDetail.setWebNovImgLocation(rset.getString("WEB_NOV_IMG_LOCATION"));
 				webNovelDetail.getCategoryName().setCategoryName(rset.getString("CATEGORY_NAME"));
 				//			webNovelDetail.setCategoryName(rset.getString("CATEGORY_NAME"));
 
@@ -118,7 +124,7 @@ public class WebNovelDAO {
 		PreparedStatement pstmt = null;
 		ResultSet rset = null;
 
-		System.out.println("webdetail" + webDetail);
+//		System.out.println("webdetail" + webDetail);
 		List<WebNovChapSearchDTO> webNovelChap = null;
 
 		String query = prop.getProperty("selectWebNovelallChapter");
@@ -164,7 +170,7 @@ public class WebNovelDAO {
 
 	}
 
-	public List<WebNovContentDetailDTO> selectPerChap(Connection con, int currentWebNovNum, int currentChapNum) {
+	public List<WebNovContentDetailDTO> selectPerChap(Connection con, PageInfoDTO pageInfo, int currentWebNovNum, int currentChapNum) {
 
 		PreparedStatement pstmt = null;
 		ResultSet rset = null;	
@@ -177,6 +183,8 @@ public class WebNovelDAO {
 			pstmt = con.prepareStatement(query);
 			pstmt.setInt(1, currentWebNovNum);
 			pstmt.setInt(2, currentChapNum);
+			pstmt.setInt(3, pageInfo.getStartRow());
+			pstmt.setInt(4, pageInfo.getEndRow());
 
 			rset = pstmt.executeQuery();
 
@@ -210,6 +218,75 @@ public class WebNovelDAO {
 
 		return perChap;
 
+	}
+
+	public int searchWebNovelCount(Connection con, int currentWebNovNum, int currentChapNum) {
+
+		PreparedStatement pstmt = null;
+		ResultSet rset = null;
+		
+		
+		String query = prop.getProperty("searchWebNovelCount");
+		
+		int webNovCount = 0;
+		try {
+			pstmt = con.prepareStatement(query);
+			pstmt.setInt(1, currentWebNovNum);
+			pstmt.setInt(2, currentChapNum);
+			
+			rset = pstmt.executeQuery();
+			
+			if(rset.next()) {
+				webNovCount = rset.getInt("COUNT(*)");
+			}
+			
+			
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		
+		
+		
+		return webNovCount;
+	}
+
+	public WebNovelInfoDTO searchTitle(Connection con, int currentWebNovNum) {
+
+		PreparedStatement pstmt = null;
+		ResultSet rset = null;
+
+		WebNovelInfoDTO webNovelDetail = null;
+
+		String query = prop.getProperty("searchTitle");
+
+		try {
+			pstmt = con.prepareStatement(query);
+			pstmt.setInt(1, currentWebNovNum);
+
+			rset = pstmt.executeQuery();
+
+			if(rset.next()) {
+				webNovelDetail = new WebNovelInfoDTO();
+				webNovelDetail.setCategoryName(new GenreCategoryDTO());
+
+				webNovelDetail.setWebNovNum(rset.getInt("WEB_NOV_NUM"));
+				webNovelDetail.setWebNovTitle(rset.getString("WEB_NOV_TITLE"));
+				webNovelDetail.setWebNovAuthor(rset.getString("WEB_NOV_AUTHOR"));
+				webNovelDetail.setDayOfWeek(rset.getString("DAY_OF_WEEK"));
+				webNovelDetail.setWebNovInform(rset.getString("WEB_NOV_INFORM"));
+				webNovelDetail.getCategoryName().setCategoryName(rset.getString("CATEGORY_NAME"));
+
+			}
+		} catch (SQLException e) {
+			e.printStackTrace();
+		}finally {
+			close(rset);
+			close(pstmt);
+		}
+
+
+		return webNovelDetail;
 	}
 
 

@@ -19,18 +19,23 @@ public class ShowAllWebNovelServlet extends HttpServlet {
  
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		
-//		System.out.println("여기왓니?");
+		System.out.println("여기왓니?");
 		List<WebNovelInfoDTO> webNovelList = new WebNovelService().selectAllNovel();
 	
+		for(WebNovelInfoDTO d : webNovelList) {
+			System.out.println(d);
+		}
 		String path = "";
 		
-		if(!webNovelList.isEmpty()) {		// 공지사항이 조회 되었다면
+		if(!webNovelList.isEmpty()) {		// 웹소설이 조회 되었다면
+			System.out.println("조회됨?");
 			path = "/WEB-INF/views/webnovel/webMain.jsp";
 			request.setAttribute("webNovelList", webNovelList);
 			
-		}else {							// 공지사항이 조회 되지 않았다면
+		}else {							// 웹소설이 조회 되지 않았다면
 			path = "/WEB-INF/views/common/failed.jsp";
-			request.setAttribute("message", "공지사항 조회 실패!");
+			request.setAttribute("failedCode", "selectAllWebNovel");
+			
 			
 		}
 		request.getRequestDispatcher(path).forward(request, response);

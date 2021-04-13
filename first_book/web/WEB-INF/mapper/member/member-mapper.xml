@@ -67,6 +67,7 @@
 	     WHERE A.MEM_WITHDRAW_YN = 'N'
 	       AND A.MEM_ID = ?
 	</entry>
+
 	<entry key="selectUseCoin">
 		SELECT
 		       A.COIN_USE_NUM
@@ -88,6 +89,15 @@
 		  FROM COIN_USE_HIS A
 		  JOIN WEB_NOV_INFO C ON (C.WEB_NOV_NUM = A.WEB_NOV_NUM)
 		 WHERE A.MEM_NUM = ?
+	</entry>
+
+
+	<entry key="searchWebNovelCount">
+	    SELECT
+               COUNT(*)
+          FROM WEB_NOV_CONTENT_DETAIL
+         WHERE WEB_NOV_NUM = ?
+           AND CHAP_NUM = ?
 	</entry>
 
 </properties>
