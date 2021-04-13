@@ -1,13 +1,18 @@
 package com.lastbug.firstbook.member.model.service;
 
-import static com.lastbug.firstbook.common.jdbc.JDBCTemplate.*;
+import static com.lastbug.firstbook.common.jdbc.JDBCTemplate.close;
+import static com.lastbug.firstbook.common.jdbc.JDBCTemplate.commit;
+import static com.lastbug.firstbook.common.jdbc.JDBCTemplate.getConnection;
+import static com.lastbug.firstbook.common.jdbc.JDBCTemplate.rollback;
 
 import java.sql.Connection;
+import java.util.List;
 
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 
 import com.lastbug.firstbook.member.model.dao.MemberDAO;
 import com.lastbug.firstbook.member.model.dto.MemberDTO;
+import com.lastbug.firstbook.member.model.dto.UseCoinDTO;
 
 public class MemberService {
 	
@@ -63,6 +68,18 @@ public class MemberService {
 		}
 		
 		return loginMember;
+	}
+
+	/* 코인 사용 내역 조회용 메소드 */
+	public List<UseCoinDTO> selectUseCoin(int memNum) {
+		
+		Connection con = getConnection();
+		
+		List<UseCoinDTO> useCoinList = memberDAO.selectUseCoin(con, memNum);
+		
+		close(con);
+		
+		return useCoinList;
 	}
 	
 	

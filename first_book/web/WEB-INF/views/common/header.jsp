@@ -9,22 +9,10 @@
 
 
 <title>Insert title here</title>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
 <link rel="stylesheet" href="/firstbook/resources/css/contest/header.css">
 </head>
 <body>
-		<%-- <div class="menu-area">
-		<div class="nav-area">
-			<ul>
-				<li><a href="${ pageContext.servletContext.contextPath }">HOME</a></li>
-				<li><a href="${ pageContext.servletContext.contextPath }/member/login">로그인</a></li>
-				<li><a href="${ pageContext.servletContext.contextPath }/webnovel/list">웹소설리스트</a></li>
-				<li><a href="${ pageContext.servletContext.contextPath }/contest/list">공모전</a></li>
-				<li><a href="${ pageContext.servletContext.contextPath }/board/list">기능1</a></li>
-				<li><a href="${ pageContext.servletContext.contextPath }/thmbnail/list">기능 2</a></li>
-				<li><a href="${ pageContext.servletContext.contextPath }/admin/list">(test)계정 전체 조회</a></li>
-			</ul>
-		</div> <!-- nav-area end -->
-	</div> <!-- menu-area end --> --%>
 	
 	<header class="header" class="fixed">
             <div class="border">
@@ -33,29 +21,58 @@
 
                 </div>
 
-                <div class="menu_box">
-
-                    <nav class="nav">
-
-                        <ul>
-                            <li><a href="${ pageContext.servletContext.contextPath }/webnovel/list" class="main-btn">연재</a></li>
-                            <li><a href="#" class="main-btn">완결</a></li>
-                            <li><a href="${ pageContext.servletContext.contextPath }/contest/list" class="main-btn">공모전</a></li>
-                            <li><a href="#" class="main-btn">이벤트</a></li>
-                            <li><a href="${ pageContext.servletContext.contextPath }/board/list" class="main-btn">고객문의</a></li>
-                            <li><a href="#" class="main-btn">단행본</a></li>
-                        </ul>
-                    </nav>
-                </div>
+				<c:if test="${ empty sessionScope.loginMember }">
+	                <div class="menu_box" id="menu_box">
+	                    <nav class="nav">
+	                        <ul>
+	                            <li><a href="" class="main-btn">연재</a></li>
+	                            <li><a href="" class="main-btn">완결</a></li>
+	                            <li><a href="" class="main-btn">공모전</a></li>
+	                            <li><a href="" class="main-btn">이벤트</a></li>
+	                            <li><a href="" class="main-btn">고객문의</a></li>
+	                            <li><a href="" class="main-btn">단행본</a></li>
+	                        </ul>
+	                    </nav>
+	                </div>
+                </c:if>
+				<c:if test="${ !empty sessionScope.loginMember }">
+	                <div class="menu_box">
+	                    <nav class="nav">
+	                        <ul>
+	                            <li><a href="${ pageContext.servletContext.contextPath }/webnovel/list" class="main-btn">연재</a></li>
+	                            <li><a href="#" class="main-btn">완결</a></li>
+	                            <li><a href="${ pageContext.servletContext.contextPath }/contest/list" class="main-btn">공모전</a></li>
+	                            <li><a href="#" class="main-btn">이벤트</a></li>
+	                            <li><a href="${ pageContext.servletContext.contextPath }/board/list" class="main-btn">고객문의</a></li>
+	                            <li><a href="#" class="main-btn">단행본</a></li>
+	                        </ul>
+	                    </nav>
+	                </div>
+                </c:if>
                 <div class="login_box">
-                    <ul>
-                        <!-- <li><a href="#" class="main-btn">충전하기</a></li> -->
-                        <li><a href="${ pageContext.servletContext.contextPath }/member/login" class="main-btn">로그인</a></li>
-                        <!-- <li><a href="#" class="main-btn">ㅁㅁㅁ님</a></li> -->
-                    </ul>
+	                <c:if test="${ empty sessionScope.loginMember }">
+	                    <ul>
+	                        <li><a href="${ pageContext.servletContext.contextPath }/member/regist" class="main-btn">회원가입</a></li>
+	                        <li><a href="${ pageContext.servletContext.contextPath }/member/login" class="main-btn">로그인</a></li>
+	                    </ul>
+	                </c:if>
+	                <c:if test="${ !empty sessionScope.loginMember }">
+	                    <ul>
+	                        <li><a href="${ pageContext.servletContext.contextPath }/member/logout" class="main-btn">로그아웃</a></li>
+	                        <li><a href="${ pageContext.servletContext.contextPath }/member/mypage" class="main-btn"><c:out value="${ sessionScope.loginMember.memName }"/>님</a></li>
+	                        <li><a href="#" class="main-btn">코인: <c:out value="${ sessionScope.loginMember.memCoin }"/></a></li>
+	                    </ul>
+	                </c:if>
                 </div>
 
             </div>
         </header>
+        <script>
+        	$("#menu_box").click(function() {
+        		if(${ empty sessionScope.loginMember }){
+        			alert("로그인 후 이용가능합니다.");
+        		}
+        	});
+        </script>
 </body>
 </html>

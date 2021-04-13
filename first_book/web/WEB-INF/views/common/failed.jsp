@@ -28,7 +28,11 @@
 			failedMessage = "아이디 혹은 비밀번호가 다릅니다.";
 			movePath = "${ pageContext.servletContext.contextPath}/member/login";
 			break;
-		
+
+		case "noLogin" : 
+			failedMessage = "로그인 후 이용 가능합니다.";
+			movePath = "${ pageContext.servletContext.contextPath}/member/login";
+			break;
 		
 		}
 			alert(failedMessage);

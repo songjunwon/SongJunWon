@@ -34,10 +34,51 @@
 .login_nav > ul > li > a:hover {font-weight:700; color : #ED1C24;}
 
 /* mypage */
-.mypage {width: 1100px; height: 600px; border: 1px solid #d3d3d3; border-radius: 20px; margin: 50px auto;}
+.mypage {width: 1100px; height: 600px; border: 1px solid #d3d3d3; border-radius: 20px; margin-top: 200px; margin-bottom: 100px;}
 .my_nav {width: 150px; height: 600px; background-color: #ED1C24; border-radius: 20px 0 0 20px; padding: 10px; float: left;}
 .my_nav > ul {margin: 30px 10px; font-size: 15px; color: #fff; line-height: 30px;}
+.my_nav > p {margin: 30px 10px; font-size: 15px; color: #fff; line-height: 30px;}
 .my_nav_line {border-bottom: 1px solid #fff;}
 .my_contents {width: 948px; height: 600px; float: left;}
+.my_contents div {display: none;}
+.my_contents div.on {display: block;}
+.my_home {margin: 0px auto; padding: 0px 20px;}
+.my_home > h2 {color: #000; clear: both; margin: 20px 0px;}
+.my_home > div {display: block; float: left; text-align: center; margin: 0px 20px 20px 20px;}
+.my_home > div > img {width: 120px; height: 160px;}
+.my_home > div > p {color: #000; font-weight: 600; font-size: 14px;}
+.my_lib {margin: 0px auto; padding: 0px 20px;}
+.my_lib > h2 {color: #000; clear: both; margin: 20px 0px;}
+.my_lib > div {display: block; float: left; text-align: center; margin: 0px 20px 20px 20px;}
+.my_lib > div > img {width: 120px; height: 160px;}
+.my_lib > div > p {color: #000; font-weight: 600; font-size: 14px;}
+.my_wish {margin: 0px auto; padding: 0px 20px;}
+.my_wish > h2 {color: #000; clear: both; margin: 20px 0px;}
+.my_wish > div {display: block; float: left; text-align: center; margin: 0px 20px 20px 20px;}
+.my_wish > div > img {width: 120px; height: 160px;}
+.my_wish > div > p {color: #000; font-weight: 600; font-size: 14px;}
+.my_member {margin: 0px auto; padding: 0px 20px;}
+.my_member > h2 {color: #000; clear: both; margin: 20px 0px;}
+.my_member > div {display: block; float: left; text-align: center; margin: 0px 20px 20px 20px;}
+.my_weblist {margin: 0px auto; padding: 0px 20px;}
+.my_weblist > h2 {color: #000; clear: both; margin: 20px 0px;}
+.my_weblist > div {display: block; float: left; text-align: center; margin: 0px 20px 20px 20px;}
+
+
+.my_bye {margin: 0px auto; padding: 0px 20px; text-align: center;}
+.my_bye > div {display: block; margin: 150px auto; width: 300px; height: 400px;}
+.my_bye > div > h2 {color: #000; clear: both; margin: 40px 0px; font-size: 25px;}
+.my_bye > div > form > input {width:300px; height: 40px; text-align: center; margin: 20px auto; border: 1px solid black;}
+.my_bye > div > form > button {width:300px; height: 40px; background-color: #ED1C24; color: white; font-size:19px;}
+.my_bye > div > form > button:hover {background-color: #333333; color: white;}
+
+.my_basket {margin: 0px auto; padding: 0px 20px;}
+.my_basket > h2 {color: #000; clear: both; margin: 20px 0px;}
+.my_basket > div {display: block; float: left; text-align: center; margin: 0px 20px 20px 20px;}
+.my_basket > div > img {width: 120px; height: 160px;}
+.my_basket > div > p {color: #000; font-weight: 600; font-size: 14px;}
+.my_booklist {margin: 0px auto; padding: 0px 20px;}
+.my_booklist > h2 {color: #000; clear: both; margin: 20px 0px;}
+.my_booklist > div {display: block; float: left; text-align: center; margin: 0px 20px 20px 20px;}
 
 /* notice */

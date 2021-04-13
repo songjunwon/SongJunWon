@@ -9,8 +9,8 @@
 <link rel="stylesheet" href="/firstbook/resources/css/member/style.css">
 </head>
 <body>
+    <jsp:include page="../common/header.jsp"/>
     <div id="wrap">
-    	<jsp:include page="../common/header.jsp"/>
         <main id="main" class="top_main">
             <div class="login_form">
                 <div class="login_title">
@@ -36,7 +36,7 @@
                 </div>
             </div>
         </main>
-        <jsp:include page="../common/footer_member.jsp"/>
     </div>
+    <jsp:include page="../common/footer_member.jsp"/>
 </body>
 </html>

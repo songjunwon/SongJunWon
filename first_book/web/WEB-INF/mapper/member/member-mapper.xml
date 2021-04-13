@@ -67,6 +67,28 @@
 	     WHERE A.MEM_WITHDRAW_YN = 'N'
 	       AND A.MEM_ID = ?
 	</entry>
+	<entry key="selectUseCoin">
+		SELECT
+		       A.COIN_USE_NUM
+		     , A.WEB_NOV_NUM
+		     , A.MEM_NUM
+		     , A.COIN_USE_DATE
+		     , A.COIN_USAGE
+		     , A.CHAPTER_NUM
+		     , C.CATEGORY_CODE
+		     , C.WEB_NOV_TITLE
+		     , C.WEB_NOV_AUTHOR
+		     , C.CHAP_PER_COIN
+		     , C.WEB_NOV_PUBLISHER
+		     , C.WEB_NOV_INFORM
+		     , C.WEB_NOV_IMG_LOCATION
+		     , C.DAY_OF_WEEK
+		     , C.WEB_NOV_OPEN_OR_CLOSE
+		     , C.FINISHED_OR_NOT
+		  FROM COIN_USE_HIS A
+		  JOIN WEB_NOV_INFO C ON (C.WEB_NOV_NUM = A.WEB_NOV_NUM)
+		 WHERE A.MEM_NUM = ?
+	</entry>
 
 </properties>
 

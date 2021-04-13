@@ -36,8 +36,13 @@
                     <div class="login_input_box">
                         생년월일 <input type="date" name="memBirthDate" required>
                     </div>
-                    <div class="login_input_box">
-                        이메일 <input type="email" name="memEmail">
+                    <div class="email_input_box">
+                        이메일 <input type="text" name="memEmail">
+                         @ 
+                        <select name="memEmail2">
+                        	<option value="naver.com">naver.com</option>
+                        	<option value="google.com">google.com</option>
+                        </select>
                     </div>
                     <button type="button" id="searchZipCode" class="chkButton">
                         주소 검색
@@ -60,8 +65,9 @@
                 </div>
             </div>
         </main>
-        <jsp:include page="../common/footer_member.jsp"/>
     </div>
+    
+    <jsp:include page="../common/footer_member.jsp"/>
 	
 	<!-- 다음 우편번호 api -->
 	<script src="//t1.daumcdn.net/mapjsapi/bundle/postcode/prod/postcode.v2.js"></script>
