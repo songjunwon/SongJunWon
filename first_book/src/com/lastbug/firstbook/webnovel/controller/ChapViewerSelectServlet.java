@@ -12,6 +12,7 @@ import javax.servlet.http.HttpServletResponse;
 import com.lastbug.firstbook.common.paging.Pagenation;
 import com.lastbug.firstbook.webnovel.model.dto.PageInfoDTO;
 import com.lastbug.firstbook.webnovel.model.dto.WebNovContentDetailDTO;
+import com.lastbug.firstbook.webnovel.model.dto.WebNovelInfoDTO;
 import com.lastbug.firstbook.webnovel.model.service.WebNovelService;
 
 
@@ -28,16 +29,19 @@ public class ChapViewerSelectServlet extends HttpServlet {
 		int currentWebNovNum = Integer.valueOf(request.getParameter("currentWebNov"));
 		int currentChapNum = Integer.valueOf(request.getParameter("currentChap"));
 		
-		System.out.println("현재 웹소설 번호" + currentWebNovNum);
-		System.out.println("현재 웹소설의 챕터 번호" + currentChapNum);
+//		System.out.println("현재 웹소설 번호" + currentWebNovNum);
+//		System.out.println("현재 웹소설의 챕터 번호" + currentChapNum);
 		/* 1. 현재 페이지 관련 설정 */
 		
 		String currentPage = request.getParameter("currentPage");
 		/* 선택한 웹소설 챕터에 대한 모든 정보를 불러옴 */
 		WebNovelService webService = new WebNovelService();
 		int totalCount = webService.searchWebNovelCount(currentWebNovNum, currentChapNum);
+		WebNovelInfoDTO title = webService.searchTitle(currentWebNovNum);
 		
-		System.out.println("1화 1챕터 " + totalCount);
+		
+		
+//		System.out.println("1화 1챕터 " + totalCount);
 		
 		
 		int pageNo = 1;
@@ -51,7 +55,7 @@ public class ChapViewerSelectServlet extends HttpServlet {
 		}
 		
 		/* 한 페이지에 보여줄 컬럼 수 */
-		int limit = 10;
+		int limit = 2;
 		
 		int buttonAmount = 5;
 		
@@ -60,11 +64,11 @@ public class ChapViewerSelectServlet extends HttpServlet {
 		
 		List<WebNovContentDetailDTO> perChap = webService.selectPerChap(pageInfo, currentWebNovNum, currentChapNum);
 	
-		for(WebNovContentDetailDTO wnd : perChap) {
-			System.out.println("db에서 각 챕터별 몇개 잇는지" + wnd);
-		}
+//		for(WebNovContentDetailDTO wnd : perChap) {
+//			System.out.println("db에서 각 챕터별 몇개 잇는지" + wnd);
+//		}
 		
-		
+//		System.out.println("pageInfo" + pageInfo);
 		String path = "";
 		if(!perChap.isEmpty()) {
 			path = "/WEB-INF/views/webnovel/webviewer.jsp";
@@ -72,6 +76,7 @@ public class ChapViewerSelectServlet extends HttpServlet {
 			request.setAttribute("pageInfo", pageInfo);
 			request.setAttribute("currentWebNov", currentWebNovNum);
 			request.setAttribute("currentChap", currentChapNum);
+			request.setAttribute("title", title);
 		} else {
 			path = "/WEB-INF/views/common/failed.jsp";
 			request.setAttribute("message", "웹소설 검색 결과 조회 실패!");

@@ -26,6 +26,8 @@ public class WebNovelService {
 	public List<WebNovelInfoDTO> selectAllNovel() {
 
 		Connection con = getConnection();
+		
+		System.out.println("커넥션에 왓니?");
 
 		List<WebNovelInfoDTO> webNovelList = webNovelDAO.selectAllNovel(con);
 
@@ -113,6 +115,24 @@ public class WebNovelService {
 		close(con);
 		
 		return totalCount;
+	}
+
+	public WebNovelInfoDTO searchTitle(int currentWebNovNum) {
+
+		Connection con = getConnection();
+		
+		WebNovelInfoDTO title = webNovelDAO.searchTitle(con, currentWebNovNum);
+		
+		if(title != null) {
+			commit(con);
+		}else {
+			rollback(con);
+		}
+
+		
+		close(con);
+		
+		return title;
 	}
 
 }

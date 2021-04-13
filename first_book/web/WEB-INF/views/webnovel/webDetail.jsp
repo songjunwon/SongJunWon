@@ -14,13 +14,13 @@
 </head>
 <body>
 <jsp:include page="../common/header.jsp"/>
-		
+		<br><br><br><br><br><br>
   <div id="wrap">
         <section class="sec1">
             <table class="tab_main">
                 <tr>
                     <td rowspan="5" class="main_img">
-                        <img src="/firstbook/resources/image/city1.PNG" class="main_img_real" alt="메인사진">
+                        <img src="${ requestScope.webnovel.webNovImgLocation}" class="main_img_real" alt="메인사진">
                     </td>
                     <td rowspan="5" class="space"></td>
                     <td class="space2"></td>
@@ -46,7 +46,7 @@
                 <tr>
                 </tr>
                 <tr>
-                    <td> <button type="button" class="firstBtn">첫화보기</button> 
+                    <td> <button type="button" class="firstBtn" onclick="first2()">첫화보기</button> 
                         <button  type="button" class="likeBtn">하트</button>
                     </td>
                 </tr>
@@ -59,12 +59,12 @@
         
         <section class="sec2">
             <hr>
-            <h4 class="everynday">매주 <c:out value="${ requestScope.webnovel.dayOfWeek }" /> 연재</h4>
+            <h4 class="everynday">매주 <c:out value="${ requestScope.webnovel.dayOfWeek }" />요일 연재</h4>
             <br><br>
             <table class="tab_mid">
             	<c:forEach var="webNovelChap" items="${ requestScope.webnoveldetail}"> 
             	<tr>
-                    <td class="chap_img"><img src="/firstbook/resources/image/flower1.PNG" class="chap_img_real" alt="1화부터사진">
+                    <td class="chap_img"><img src="${ requestScope.webnovel.webNovImgLocation}" class="chap_img_real" alt="1화부터사진">
                     </td>
                     <td class="prolog">
                         <h2 class="chap_date"><%--  ${ webNovelChap.webNovelChapDate.webNovelChapDate}  --%></h2>                       
@@ -72,7 +72,7 @@
                     <td class="freeBtn">
 
                      <button class="freebtn_real" id="freebtn_real_2" type="button" value="${ webNovelChap.webNovChapNum.webNovChapNum}" onclick="test(this)">
-                    ${ webNovelChap.webNovChapNum.webNovChapNum}화보기 </button>
+                    ${ webNovelChap.webNovChapNum.webNovChapNum}화 보기 </button>
                     <input type="hidden" id="webNovNum" value= "${ webNovelChap.webNovChapNum.webNovChapNum}"> 
              		</td>
                 </tr>
@@ -112,16 +112,19 @@
    
 	const link = "${ pageContext.servletContext.contextPath}/webnovel/chapList";
 
-	/* if(document.getElementById("freebtn_real_2")) { */
-		/* const $freebtn_real_2 = document.getElementById("freebtn_real_2"); */
-		<%--$freebtn_real_2.onclick = function() { --%>
+
 	function test(testP){
 			
 			var t = testP.value;
 
 			location.href = link  + "?currentWebNov=" + ${ requestScope.webnovel.webNovNum} + "&currentChap=" + t;
 		}
+	function first2(){
 	
+
+		location.href = link  + "?currentWebNov=" + ${ requestScope.webnovel.webNovNum} + "&currentChap=" + 1;
+
+	}
 	</script> 
 	
 </body>

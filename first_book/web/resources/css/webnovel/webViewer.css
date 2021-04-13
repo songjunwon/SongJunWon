@@ -14,29 +14,19 @@ table td, table th {
     border: 0.5px solid #D6D6D6;
     }
 /* 확대 축소 칸 테이블 */
-.sec1 .plusminus{
-    width: 150px;
-    height: 50px;
-    padding-left: 25px;
-}
-/* 확대 버튼 css */
-.sec1 .plusminus .plusbtn{
-    color: white;
-    background-color: red;
-    width: 40px;
-    height: 40px;
-    border-radius: 70%;
-    font-size: 25pt;
-}
-/* 축소 버튼 css */
-.sec1 .plusminus .minusbtn{
-    color: white;
-    background-color: red;
-    width: 40px;
-    height: 40px;
-    border-radius: 70%;
-    font-size: 25pt;
-}
+.sec1 .goback {
+      width: 150px;
+      height: 50px;
+      text-align: center;            
+  }
+
+  .sec1 .goback .gobackToMain {
+      width: 70px;
+      height: 40px;
+      border-radius: 12pt;
+      color: white;
+      background-color: red;
+  }
 /* 제목있는 테이블 */
 .sec1 .title{
     width: 600px;
@@ -81,14 +71,17 @@ table td, table th {
 /* 첫 번째 페이지 내용 div */
 .sec1 .page .pagediv1{
     height: 500px;
-    width: 450px;
+    width: 500px;
     /* padding-left: 5px; */
     padding-top: 20px;
     /* border: 1px solid black; */
     text-align: left;
     font-size: 15pt;
-    line-height: px;
+    line-height: 45px;
     font-family: "맑은 고딕";
+    position:relative;
+    left : 40px;
+    top : -10px;
     
 }
 .sec1 .page .pagediv2{

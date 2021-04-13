@@ -28,6 +28,10 @@
 			failedMessage = "아이디 혹은 비밀번호가 다릅니다.";
 			movePath = "${ pageContext.servletContext.contextPath}/member/login";
 			break;
+		case "selectAllWebNovel" : 
+			failedMessage = "조회된 웹소설이 없습니다.";
+			movePath = "${ pageContext.servletContext.contextPath}";
+			break;
 		
 		
 		}

@@ -45,8 +45,9 @@ public class WebNovelDAO {
 		ResultSet rset = null;
 
 		List<WebNovelInfoDTO> webNovelList = null;
-
-		String query = prop.getProperty("seletAllNovel");
+//System.out.println("DAO는?");
+		String query = prop.getProperty("selectAllNovel");
+		System.out.println("쿼리" + query);
 
 		try {
 			stmt = con.createStatement();
@@ -65,6 +66,7 @@ public class WebNovelDAO {
 				webNovelList.add(webNovel);
 			}
 
+			System.out.println(webNovelList);
 
 		} catch (SQLException e) {
 			// TODO Auto-generated catch block
@@ -101,6 +103,7 @@ public class WebNovelDAO {
 				webNovelDetail.setWebNovAuthor(rset.getString("WEB_NOV_AUTHOR"));
 				webNovelDetail.setDayOfWeek(rset.getString("DAY_OF_WEEK"));
 				webNovelDetail.setWebNovInform(rset.getString("WEB_NOV_INFORM"));
+				webNovelDetail.setWebNovImgLocation(rset.getString("WEB_NOV_IMG_LOCATION"));
 				webNovelDetail.getCategoryName().setCategoryName(rset.getString("CATEGORY_NAME"));
 				//			webNovelDetail.setCategoryName(rset.getString("CATEGORY_NAME"));
 
@@ -246,6 +249,44 @@ public class WebNovelDAO {
 		
 		
 		return webNovCount;
+	}
+
+	public WebNovelInfoDTO searchTitle(Connection con, int currentWebNovNum) {
+
+		PreparedStatement pstmt = null;
+		ResultSet rset = null;
+
+		WebNovelInfoDTO webNovelDetail = null;
+
+		String query = prop.getProperty("searchTitle");
+
+		try {
+			pstmt = con.prepareStatement(query);
+			pstmt.setInt(1, currentWebNovNum);
+
+			rset = pstmt.executeQuery();
+
+			if(rset.next()) {
+				webNovelDetail = new WebNovelInfoDTO();
+				webNovelDetail.setCategoryName(new GenreCategoryDTO());
+
+				webNovelDetail.setWebNovNum(rset.getInt("WEB_NOV_NUM"));
+				webNovelDetail.setWebNovTitle(rset.getString("WEB_NOV_TITLE"));
+				webNovelDetail.setWebNovAuthor(rset.getString("WEB_NOV_AUTHOR"));
+				webNovelDetail.setDayOfWeek(rset.getString("DAY_OF_WEEK"));
+				webNovelDetail.setWebNovInform(rset.getString("WEB_NOV_INFORM"));
+				webNovelDetail.getCategoryName().setCategoryName(rset.getString("CATEGORY_NAME"));
+
+			}
+		} catch (SQLException e) {
+			e.printStackTrace();
+		}finally {
+			close(rset);
+			close(pstmt);
+		}
+
+
+		return webNovelDetail;
 	}
 
 

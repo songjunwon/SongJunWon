@@ -55,13 +55,13 @@
 /* 메인 설명글 div */
 .tab_main .title_div {
     height: 110px;
-    width: 450px;
+    width: auto;
     
 }
 
 .tab_main .subtitle_div {
     height: 80px;
-    width: 450px;
+    width: auto;
 
 }
 

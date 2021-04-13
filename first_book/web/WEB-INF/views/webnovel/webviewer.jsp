@@ -10,85 +10,109 @@
 <link rel="stylesheet"
 	href="/firstbook/resources/css/webnovel/webViewer.css">
 <link rel="stylesheet" href="/firstbook/resources/css/common/reset.css">
-<link rel="stylesheet" href="/firstbook/resources/css/common/style.css">
+<link rel="stylesheet" href="/firstbook/resources/css/member/style.css">
+<link rel="shortcut icon" href="#">
 </head>
 
 
 <body>
+	<br><br><br><br><br><br>
 	<div id="wrap">
+		<h1>${requestScope.pageInfo.pageNo }</h1>
 		<section class="sec1">
 			<table class="tab_viewer">
 				<c:choose>
 					<c:when test="${!empty requestScope.currentChap }">
 						<tr>
-							<td class="plusminus">
-								<button type="button">목록으로</button>
+							<td class="goback">
+								<button onclick="goback()" class="gobackToMain" type="button">목록으로</button>
 							</td>
 							<td colspan="2" class="title">
-								<p class="title_real">제목이 있는 곳</p>
+								<p class="title_real"> <c:out value="${ requestScope.title.webNovTitle }"/></p>
 							</td>
-							<td class="nextback">
-								<c:if test="${requestScope.pageInfo.pageNo == 1 }">
-									<button  class="nextbtn" disabled><</button>
-								</c:if>
-								<c:if test="${requestScope.pageInfo.pageNo > 1 }">
-									<button  id="searchStartPage" class="nextbtn"><</button>
-								</c:if>
-								
-								<c:if test="${ requestScope.pageInfo.pageNo == requestScope.pageInfo.maxPage }">
-									<button class="backbtn" disabled>></button>
-								</c:if> 
-								<c:if test="${ requestScope.pageInfo.pageNo < requestScope.pageInfo.maxPage }">
-									<button id="searchNextPage" class="backbtn">></button>
-								</c:if>
-								</td>
+							<td class="nextback"><c:if
+									test="${requestScope.pageInfo.pageNo == 1 }">
+									<button class="backbtn" disabled><</button>
+								</c:if> <c:if test="${requestScope.pageInfo.pageNo > 1 }">
+									<button id="searchStartPage" class="backbtn"
+										onclick="back(this)"><</button>
+								</c:if> <c:if
+									test="${ requestScope.pageInfo.pageNo == requestScope.pageInfo.maxPage }">
+									<button class="nextbtn" onclick="finish()">></button>
+								</c:if> <c:if
+									test="${ requestScope.pageInfo.pageNo < requestScope.pageInfo.maxPage }">
+									<button id="searchNextPage" class="nextbtn" onclick="next()">></button>
+								</c:if></td>
 						</tr>
 					</c:when>
 				</c:choose>
-				<c:forEach var="perChapter" items="${requestScope.perChap }" >
-					<div>
-						 <td colspan="2" class="page">
-						 <pre class="pagediv1">	
-					 	<c:out value="${ perChapter.webNovPageContent }"></c:out> 
-<%-- 						 <c:out value="${ perChapter.index}"> </c:out> --%>
-	
-                    	</pre>
-                    	</td> 
-
-					</div>
+			
+						<tr>
+				<c:forEach var="perChapter" items="${requestScope.perChap }">
+							<td colspan="2" class="page"><pre class="pagediv1"><c:out value="${ perChapter.webNovPageContent }"/></pre>
+                    	</td>
 				</c:forEach>
+						</tr>
+				
 				<tr>
+				
+				<c:forEach var="perChapter" items="${requestScope.perChap }">
 					<td colspan="2" class="pageNum">
-						<p class="page1Num_real">1pg</p>
+						<p class="page1Num_real"> <c:out value="${ perChapter.webNovPageNum.webNovPageNum }"/> pg</p>
 					</td>
-					<td colspan="2" class="pageNum">
-						<p class="page2Num_real">2pg</p>
-					</td>
+				</c:forEach>
+
 				</tr>
 			</table>
 		</section>
-<%-- 	<h1>${ perChapter.webNovNum.webNovNum}</h1>
+		<%-- 	<h1>${ perChapter.webNovNum.webNovNum}</h1>
 	<h1>${ perChapter.webNovChapNum.webNovChapNum}</h1>  --%>
-		
+
 	</div>
-	
+
 	<script>
-		
-	const searchLink = "${ pageContext.servletContext.contextPath }/webnovel/chapList";
+/* 	 const $searchNextPage = document.getElementById("searchNextPage"); 
+	console.log($searchNextPage); */
+	const link = "${ pageContext.servletContext.contextPath }/webnovel/chapList"; 
+	const gobackLink = "${ pageContext.servletContext.contextPath }/webnovel/detail"; 
+	<%--	
 	if(document.getElementById("searchStartPage")){
 		const $searchStartPage = document.getElementById("searchStartPage");
 		$searchStartPage.onclick = function(){
 			location.href = searchLink + "?currentPage=${ requestScope.pageInfo.pageNo - 1 }";
 		}
 	}
+		
 	
 	if(document.getElementById("searchNextPage")){
 		const $searchNextPage = document.getElementById("searchNextPage");
 		$searchNextPage.onclick = function(){
 			location.href = searchLink + "?currentPage=${ requestScope.pageInfo.pageNo + 1 }";
 		}
-	} 
+	} --%>
 	
+	
+	function next(){
+		
+		var t = ${pageInfo.pageNo};
+
+		location.href = link  + "?currentWebNov=${ requestScope.currentWebNov}&currentChap=${ requestScope.currentChap}&currentPage=" + (parseInt(t) + 1);
+	}
+	function back(){
+		
+		var t = ${pageInfo.pageNo};
+
+		location.href = link  + "?currentWebNov=${ requestScope.currentWebNov}&currentChap=${ requestScope.currentChap}&currentPage=" + (parseInt(t) - 1);
+	}
+	function goback(){
+		
+		location.href = gobackLink  + "?webNovNum=${ requestScope.currentWebNov}";
+	}
+	
+	function finish(){
+		
+		alert("${ requestScope.title.webNovTitle }의 ${ requestScope.currentChap} 화를 모두 보셨습니다! ");
+	}
 	</script>
 </body>
 </html>
