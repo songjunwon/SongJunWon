@@ -20,11 +20,13 @@
 		switch(successCode){
 		
 		case "insertMember" : 
-			
 			successMessage = "회원 가입에 성공하셨습니다!";
 			movePath = "${ pageContext.servletContext.contextPath}";
-			break;
-		
+			break;	
+		case "insertWebnovel" : 
+			successMessage = "웹소설 등록을 완료하였습니다.";
+			movePath = "${ pageContext.servletContext.contextPath}/admin/webNovel";
+			break;	
 		
 		}
 			alert(successMessage);

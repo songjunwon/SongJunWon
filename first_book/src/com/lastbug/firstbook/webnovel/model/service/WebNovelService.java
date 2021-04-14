@@ -27,7 +27,7 @@ public class WebNovelService {
 
 		Connection con = getConnection();
 		
-		System.out.println("커넥션에 왓니?");
+//		System.out.println("커넥션에 왓니?");
 
 		List<WebNovelInfoDTO> webNovelList = webNovelDAO.selectAllNovel(con);
 

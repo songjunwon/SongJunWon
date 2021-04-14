@@ -40,8 +40,14 @@
 			movePath = "${ pageContext.servletContext.contextPath}";
 			break;
 		
-
-		
+		case "adminSelectAllWebNovel" : 
+			failedMessage = "관리자 페이지에서 조회된 웹소설이 없습니다.";
+			movePath = "${ pageContext.servletContext.contextPath}";
+			break;
+		case "adminInsertNewWebNovel" : 
+			failedMessage = "관리자 페이지에서  웹소설 등록을 실패하였습니다.";
+			movePath = "${ pageContext.servletContext.contextPath}";
+			break;
 		}
 			alert(failedMessage);
 		

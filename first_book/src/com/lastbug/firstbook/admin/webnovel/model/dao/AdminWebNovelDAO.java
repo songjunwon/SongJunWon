@@ -1,0 +1,127 @@
+package com.lastbug.firstbook.admin.webnovel.model.dao;
+
+import static com.lastbug.firstbook.common.jdbc.JDBCTemplate.close;
+
+import java.io.FileInputStream;
+import java.io.IOException;
+import java.sql.Connection;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+import java.sql.SQLException;
+import java.sql.Statement;
+import java.util.ArrayList;
+import java.util.List;
+import java.util.Properties;
+
+import com.lastbug.firstbook.common.config.ConfigLocation;
+import com.lastbug.firstbook.webnovel.model.dto.WebNovelInfoDTO;
+
+public class AdminWebNovelDAO {
+	
+	private final Properties prop;
+	
+	public AdminWebNovelDAO() {
+		
+		prop = new Properties();
+
+		try {
+			prop.loadFromXML(new FileInputStream(ConfigLocation.MAPPER_LOCATION + "admin/adminWebnovel/admin-webnovel-mapper.xml"));
+
+		} catch (IOException e) {
+			e.printStackTrace();
+		}
+	}
+
+	public List<WebNovelInfoDTO> selectAllNovel(Connection con) {
+
+		Statement stmt = null;
+		ResultSet rset = null;
+
+		List<WebNovelInfoDTO> adminWebNovelList = null;
+
+		String query = prop.getProperty("adminSelectAllNovel");
+//		System.out.println("쿼리" + query);
+		
+		try {
+			stmt = con.createStatement();
+			rset = stmt.executeQuery(query);
+
+			adminWebNovelList = new ArrayList<>();
+
+			while(rset.next()) {
+				WebNovelInfoDTO webNovel = new WebNovelInfoDTO();
+
+				webNovel.setWebNovNum(rset.getInt("WEB_NOV_NUM"));
+				webNovel.setWebNovTitle(rset.getString("WEB_NOV_TITLE"));
+				webNovel.setWebNovAuthor(rset.getString("WEB_NOV_AUTHOR"));
+				webNovel.setWebNovInform(rset.getString("WEB_NOV_INFORM"));
+				webNovel.setCategoryCode(rset.getString("CATEGORY_CODE"));
+				webNovel.setWebNovPublisher(rset.getString("WEB_NOV_PUBLISHER"));
+				webNovel.setDayOfWeek(rset.getString("DAY_OF_WEEK"));
+				webNovel.setWebNovImgLocation(rset.getString("WEB_NOV_IMG_LOCATION"));
+				webNovel.setFinishedOrNot(rset.getString("FINISHED_OR_NOT"));
+				webNovel.setWebNovOpenOrClose(rset.getString("WEB_NOV_OPEN_OR_CLOSE"));
+				
+				adminWebNovelList.add(webNovel);
+				
+			}
+//			System.out.println(adminWebNovelList);
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}finally {
+			close(rset);
+			close(stmt);
+		}
+		return adminWebNovelList;
+	}
+
+	public int insertNewWebnovel(Connection con, WebNovelInfoDTO thumbnail) {
+
+		PreparedStatement pstmt = null;
+		
+		int result = 0;
+		
+		String query = prop.getProperty("insertNewWebnovel");
+		
+		try {
+			pstmt = con.prepareStatement(query);
+			pstmt.setString(1, thumbnail.getCategoryCode());
+			pstmt.setString(2, thumbnail.getWebNovTitle());
+			pstmt.setString(3, thumbnail.getWebNovAuthor());
+			pstmt.setString(4, thumbnail.getWebNovPublisher());
+			pstmt.setString(5, thumbnail.getWebNovInform());
+			pstmt.setString(6, thumbnail.getWebNovImgLocation());
+			pstmt.setString(7, thumbnail.getDayOfWeek());
+			pstmt.setString(8, thumbnail.getWebNovOpenOrClose());
+			
+			result = pstmt.executeUpdate();
+			
+		} catch (SQLException e) {
+
+
+			e.printStackTrace();
+		}finally {
+			close(pstmt);
+		}
+		
+		
+		return result;
+	}
+
+
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
