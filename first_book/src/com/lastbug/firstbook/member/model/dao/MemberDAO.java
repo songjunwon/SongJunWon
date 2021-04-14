@@ -8,10 +8,14 @@ import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Properties;
 
 import com.lastbug.firstbook.common.config.ConfigLocation;
 import com.lastbug.firstbook.member.model.dto.MemberDTO;
+import com.lastbug.firstbook.member.model.dto.UseCoinDTO;
+import com.lastbug.firstbook.webnovel.model.dto.WebNovelInfoDTO;
 
 public class MemberDAO {
 
@@ -150,7 +154,61 @@ public class MemberDAO {
 			close(rs);
 			close(pstmt);
 		}
+		
 		return loginMember;
+	}
+
+	/* 회원 코인 사용 내역 전체 조회용 메소드 */
+	public List<UseCoinDTO> selectUseCoin(Connection con, int memNum) {
+		
+		PreparedStatement pstmt = null;
+		ResultSet rs = null;
+		
+		List<UseCoinDTO> useCoinList = null;
+		
+		String query = prop.getProperty("selectUseCoin");
+		
+		try {
+			pstmt = con.prepareStatement(query);
+			pstmt.setInt(1, memNum);
+			
+			rs = pstmt.executeQuery();
+			
+			useCoinList = new ArrayList<>();
+			
+			while(rs.next()) {
+				UseCoinDTO useCoin = new UseCoinDTO();
+				WebNovelInfoDTO webNov = new WebNovelInfoDTO();
+				
+				useCoin.setCoinUseNum(rs.getInt("COIN_USE_NUM"));
+				useCoin.setCoinUseDate(rs.getDate("COIN_USE_DATE"));
+				useCoin.setCoinUsage(rs.getInt("COIN_USAGE"));
+				useCoin.setChapterNum(rs.getInt("CHAPTER_NUM"));
+				useCoin.setMemNum(rs.getInt("MEM_NUM"));
+				
+				webNov.setWebNovNum(rs.getInt("WEB_NOV_NUM"));
+				webNov.setCategoryCode(rs.getString("CATEGORY_CODE"));
+				webNov.setWebNovTitle(rs.getString("WEB_NOV_TITLE"));
+				webNov.setWebNovAuthor(rs.getString("WEB_NOV_AUTHOR"));
+				webNov.setChapPerCoin(rs.getInt("CHAP_PER_COIN"));
+				webNov.setWebNovPublisher(rs.getString("WEB_NOV_PUBLISHER"));
+				webNov.setWebNovInform(rs.getString("WEB_NOV_INFORM"));
+				webNov.setWebNovImgLocation(rs.getString("WEB_NOV_IMG_LOCATION"));
+				webNov.setDayOfWeek(rs.getString("DAY_OF_WEEK"));
+				webNov.setWebNovOpenOrClose(rs.getString("WEB_NOV_OPEN_OR_CLOSE"));
+				webNov.setFinishedOrNot(rs.getString("FINISHED_OR_NOT"));
+				
+				useCoin.setWebNov(webNov);
+				useCoinList.add(useCoin);
+			}
+		} catch (SQLException e) {
+			e.printStackTrace();
+		} finally {
+			close(rs);
+			close(pstmt);
+		}
+		
+		return useCoinList;
 	}
 }
 
