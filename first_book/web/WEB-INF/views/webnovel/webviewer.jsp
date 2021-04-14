@@ -36,12 +36,9 @@
 								</c:if> <c:if test="${requestScope.pageInfo.pageNo > 1 }">
 									<button id="searchStartPage" class="backbtn"
 										onclick="back(this)"><</button>
-								</c:if> <c:if
-									test="${ requestScope.pageInfo.pageNo == requestScope.pageInfo.maxPage }">
-									<button class="nextbtn" onclick="finish()">></button>
-								</c:if> <c:if
-									test="${ requestScope.pageInfo.pageNo < requestScope.pageInfo.maxPage }">
-									<button id="searchNextPage" class="nextbtn" onclick="next()">></button>
+								</c:if>
+								 <c:if test="${ requestScope.pageInfo.pageNo lt requestScope.pageInfo.maxPage }">
+									<button type="button" id="searchNextPage" class="nextbtn" onclick="next()">></button>
 								</c:if></td>
 						</tr>
 					</c:when>
@@ -95,24 +92,27 @@
 	function next(){
 		
 		var t = ${pageInfo.pageNo};
-
+		/* 다음 쪽이 계속 있을 때 */
+		if(${pageInfo.pageNo}>= ${pageInfo.maxPage}){
 		location.href = link  + "?currentWebNov=${ requestScope.currentWebNov}&currentChap=${ requestScope.currentChap}&currentPage=" + (parseInt(t) + 1);
+		}else{		// 모든 내용을 봤을 때 알람!
+			alert('${ requestScope.title.webNovTitle }의 ${ requestScope.currentChap} 화를 모두 보셨습니다! ');
+		}	
 	}
+	/* 뒤쪽 내용을 볼 때 */
 	function back(){
 		
 		var t = ${pageInfo.pageNo};
 
 		location.href = link  + "?currentWebNov=${ requestScope.currentWebNov}&currentChap=${ requestScope.currentChap}&currentPage=" + (parseInt(t) - 1);
 	}
+	/* 목록으로 돌아가기 */
 	function goback(){
 		
 		location.href = gobackLink  + "?webNovNum=${ requestScope.currentWebNov}";
 	}
 	
-	function finish(){
-		
-		alert("${ requestScope.title.webNovTitle }의 ${ requestScope.currentChap} 화를 모두 보셨습니다! ");
-	}
+
 	</script>
 </body>
 </html>

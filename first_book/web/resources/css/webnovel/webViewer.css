@@ -25,7 +25,7 @@ table td, table th {
       height: 40px;
       border-radius: 12pt;
       color: white;
-      background-color: red;
+      background-color: #ED1C24;
   }
 /* 제목있는 테이블 */
 .sec1 .title{
@@ -46,7 +46,7 @@ table td, table th {
 /* 다음화 버튼 */
 .sec1 .nextback .nextbtn{
     color: white;
-    background-color: red;
+    background-color: #ED1C24;
     width: 40px;
     height: 40px;
     border-radius: 70%;
@@ -55,7 +55,7 @@ table td, table th {
 /* 이전화 버튼 */
 .sec1 .nextback .backbtn{
     color: white;
-    background-color: red;
+    background-color: #ED1C24;
     width: 40px;
     height: 40px;
     border-radius: 70%;

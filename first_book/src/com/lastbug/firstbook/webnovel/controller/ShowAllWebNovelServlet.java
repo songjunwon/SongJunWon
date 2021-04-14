@@ -28,7 +28,7 @@ public class ShowAllWebNovelServlet extends HttpServlet {
 		String path = "";
 		
 		if(!webNovelList.isEmpty()) {		// 웹소설이 조회 되었다면
-			System.out.println("조회됨?");
+//			System.out.println("조회됨?");
 			path = "/WEB-INF/views/webnovel/webMain.jsp";
 			request.setAttribute("webNovelList", webNovelList);
 			

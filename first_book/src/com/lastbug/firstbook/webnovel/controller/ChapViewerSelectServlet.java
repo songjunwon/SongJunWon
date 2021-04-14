@@ -57,7 +57,7 @@ public class ChapViewerSelectServlet extends HttpServlet {
 		/* 한 페이지에 보여줄 컬럼 수 */
 		int limit = 2;
 		
-		int buttonAmount = 5;
+		int buttonAmount = 10;
 		
 		PageInfoDTO pageInfo = Pagenation.getPageInfo(pageNo, totalCount, limit, buttonAmount);
 		

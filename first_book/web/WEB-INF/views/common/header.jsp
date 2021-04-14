@@ -20,7 +20,8 @@
                     <a href="${ pageContext.servletContext.contextPath }" title="more"><img src="/firstbook/resources/image/contest/logo.png" alt="more"></a>
 
                 </div>
-
+<li><a href="${ pageContext.servletContext.contextPath }/webnovel/list" class="main-btn">연재</a></li>
+	                            <li><a href="#" class="main-btn">완결</a></li>
 <<<<<<< HEAD
 				<c:if test="${ empty sessionScope.loginMember }">
 	                <div class="menu_box" id="menu_box">

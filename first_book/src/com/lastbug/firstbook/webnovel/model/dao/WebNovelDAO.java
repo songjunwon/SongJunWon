@@ -62,6 +62,13 @@ public class WebNovelDAO {
 				webNovel.setWebNovTitle(rset.getString("WEB_NOV_TITLE"));
 				webNovel.setWebNovAuthor(rset.getString("WEB_NOV_AUTHOR"));
 				webNovel.setWebNovInform(rset.getString("WEB_NOV_INFORM"));
+				webNovel.setCategoryCode(rset.getString("CATEGORY_CODE"));
+				webNovel.setWebNovPublisher(rset.getString("WEB_NOV_PUBLISHER"));
+				webNovel.setDayOfWeek(rset.getString("DAY_OF_WEEK"));
+				webNovel.setWebNovImgLocation(rset.getString("WEB_NOV_IMG_LOCATION"));
+				webNovel.setFinishedOrNot(rset.getString("FINISHED_OR_NOT"));
+				webNovel.setWebNovOpenOrClose(rset.getString("WEB_NOV_OPEN_OR_CLOSE"));
+				
 
 				webNovelList.add(webNovel);
 			}
@@ -137,7 +144,7 @@ public class WebNovelDAO {
 
 			rset = pstmt.executeQuery();
 
-			System.out.println("query문" + query);
+//			System.out.println("query문" + query);
 			webNovelChap = new ArrayList<WebNovChapSearchDTO>();
 
 			while(rset.next()) {
@@ -148,6 +155,8 @@ public class WebNovelDAO {
 				//				wbdDTO.setWebNovNum(rset.getInt("WEB_NOV_NUM"));
 				wbdDTO.getWebNovNum().setWebNovNum(rset.getInt("WEB_NOV_NUM"));
 				wbdDTO.getWebNovChapNum().setWebNovChapNum(rset.getInt("CHAP_NUM"));
+				wbdDTO.setWebChapNumDate(rset.getDate("CHAP_WRITTEN_DATE"));
+				wbdDTO.setChapReadOrNot(rset.getString("CHAP_READ_OR_NOT"));
 
 				//				System.out.println("wbdDTO" + wbdDTO);
 

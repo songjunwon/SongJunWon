@@ -7,6 +7,12 @@
              , A.WEB_NOV_TITLE
              , A.WEB_NOV_AUTHOR
              , A.WEB_NOV_INFORM
+             , A.CATEGORY_CODE
+             , A.WEB_NOV_PUBLISHER
+             , A.DAY_OF_WEEK
+             , A.WEB_NOV_IMG_LOCATION
+             , A.FINISHED_OR_NOT
+             , A.WEB_NOV_OPEN_OR_CLOSE
           FROM WEB_NOV_INFO A
 	</entry>
 	<entry key="selectWebNovelDetail">
@@ -23,13 +29,16 @@
          WHERE A.WEB_NOV_NUM = ?
 	</entry>
 	<entry key="selectWebNovelallChapter">
-SELECT  
-       A.WEB_NOV_NUM
-     , A.CHAP_NUM
-  FROM WEB_NOV_CHAP_SEARCH A
-  JOIN WEB_NOV_INFO B ON (A.WEB_NOV_NUM = B.WEB_NOV_NUM)
-  JOIN WEB_NOV_CHAP_NUM C ON (A.CHAP_NUM = C.CHAP_NUM)
- WHERE B.WEB_NOV_NUM = ?
+		SELECT  /* com.lastbug.firstbook.webnovel.model.dao.WebNovelDAO#selectWebNovelallChapter() */
+		       A.WEB_NOV_NUM
+		     , A.CHAP_NUM
+		     , A.CHAP_WRITTEN_DATE
+		     , A.CHAP_READ_OR_NOT
+		  FROM WEB_NOV_CHAP_SEARCH A
+		  JOIN WEB_NOV_INFO B ON (A.WEB_NOV_NUM = B.WEB_NOV_NUM)
+		  JOIN WEB_NOV_CHAP_NUM C ON (A.CHAP_NUM = C.CHAP_NUM)
+		 WHERE B.WEB_NOV_NUM = ?
+		 ORDER BY A.CHAP_NUM ASC
 	</entry>
 	<entry key="searchWebNovelCount">
 	    SELECT /* com.lastbug.firstbook.webnovel.model.dao.WebNovelDAO#searchWebNovelCount() */
@@ -41,27 +50,27 @@ SELECT
 	
 	<entry key="selectPerChap">
         SELECT /* com.lastbug.firstbook.webnovel.model.dao.WebNovelDAO#selectPerChap()*/
-              C.WEB_NOV_NUM
-            , C.CHAP_NUM
-            , C.WEB_NOV_PAGE_NUM
-            , C.WEB_NOV_PAGE_CONTENT
-         FROM (SELECT ROWNUM RNUM
-                    , WEB_NOV_NUM
-                    , CHAP_NUM
-                    , WEB_NOV_PAGE_NUM
-                    , WEB_NOV_PAGE_CONTENT
-                 FROM (SELECT 
-                              A.WEB_NOV_NUM
-                            , A.CHAP_NUM
-                            , A.WEB_NOV_PAGE_NUM
-                            , A.WEB_NOV_PAGE_CONTENT
-                         FROM WEB_NOV_CONTENT_DETAIL A
-                        ORDER BY A.WEB_NOV_PAGE_NUM ASC
-                     ) B
-                WHERE B.WEB_NOV_NUM = ?
-                  AND B.CHAP_NUM = ?
-             ) C
-      WHERE C.RNUM BETWEEN ? AND ?
+               C.WEB_NOV_NUM
+             , C.CHAP_NUM
+             , C.WEB_NOV_PAGE_NUM
+             , C.WEB_NOV_PAGE_CONTENT
+          FROM (SELECT ROWNUM RNUM
+                     , WEB_NOV_NUM
+                     , CHAP_NUM
+                     , WEB_NOV_PAGE_NUM
+                     , WEB_NOV_PAGE_CONTENT
+                  FROM (SELECT 
+                               A.WEB_NOV_NUM
+                             , A.CHAP_NUM
+                             , A.WEB_NOV_PAGE_NUM
+                             , A.WEB_NOV_PAGE_CONTENT
+                          FROM Web_CONTENT A
+                         ORDER BY A.WEB_NOV_PAGE_NUM ASC
+                      ) B
+                 WHERE B.WEB_NOV_NUM = ?
+                   AND B.CHAP_NUM = ?
+              ) C
+       WHERE C.RNUM BETWEEN ? AND ?
 	</entry>
 	<entry key="searchTitle">
         SELECT /* com.lastbug.firstbook.webnovel.model.dao.WebNovelDAO#selectWebNovelDetail() */

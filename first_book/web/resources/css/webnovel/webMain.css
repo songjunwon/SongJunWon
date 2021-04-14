@@ -1,0 +1,66 @@
+@charset "UTF-8";
+#wrap {margin: 0px auto; width: 100%;}
+.top_header {margin: 0px auto; width: 100%;}
+.top_main {margin: 0px auto; width: 1100px;}
+.top_footer {margin: 0px auto; width: 100%; background-color: #3A3A3A;}
+.top_footer_member {margin: 0px auto; width: 100%; border-top: 1px solid #ccc;}
+
+/* header */
+
+/* footer */
+.footer {width: 1100px; height: 250px; margin: 0 auto; padding: 50px 0;}
+.footer_logo {width: 150px; height: 150px; background-color: red; float: left; margin: 0px 25px;}
+.footer_contents {width: 800px; height: 150px; margin: 0px 25px; float: left; color: #fff; padding: 25px 0;}
+
+/* footer_member */
+.m_footer {height: 150px; margin: 30px auto; text-align: center; font-size: 13px; line-height: 30px;}
+.bold {font-weight: 700;}
+
+/* main_everyday */
+.everyday_div { text-align: center; width: 900px; height: 80px; background-color: #ED1C24; border-radius: 20px 20px 20px 20px; padding: 10px; float: left;}
+.everyday_div > button > p { font-size: 20pt; color: #fff; width: 100px; height: 50px; text-align: center; position: relative; top: 12px;}
+
+/* .everyday_div {border-bottom: 1px solid #fff;} */
+.everyday_contents {width: 900px; height: auto; float: left;  position: relative; top: 10px;}
+.everyday_contents div {display: none;}
+.everyday_contents div.on {display: block;}
+
+.monday {margin: 0px auto; padding: 0px 20px;}
+.monday > div {display: block; float: left; text-align: center; margin: 0px 20px 20px 20px;}
+.monday > div > button > img {width: 170px; height: 250px; border-radius: 10px;}
+.monday > div > button > p {color: #000; font-weight: 600; font-size: 16px;}
+
+.tuesday {margin: 0px auto; padding: 0px 20px;}
+.tuesday > div {display: block; float: left; text-align: center; margin: 0px 20px 20px 20px;}
+.tuesday > div > button > img {width: 170px; height: 250px; border-radius: 10px;}
+.tuesday > div > button > p {color: #000; font-weight: 600; font-size: 16px;}
+
+.wednesday {margin: 0px auto; padding: 0px 20px;}
+.wednesday > div {display: block; float: left; text-align: center; margin: 0px 20px 20px 20px;}
+.wednesday > div > button > img {width: 170px; height: 250px; border-radius: 10px;}
+.wednesday > div > button > p {color: #000; font-weight: 600; font-size: 16px;}
+
+.thursday {margin: 0px auto; padding: 0px 20px;}
+.thursday > div {display: block; float: left; text-align: center; margin: 0px 20px 20px 20px;}
+.thursday > div > button > img {width: 170px; height: 250px; border-radius: 10px;}
+.thursday > div > button > p {color: #000; font-weight: 600; font-size: 16px;}
+
+.friday {margin: 0px auto; padding: 0px 20px;}
+.friday > div {display: block; float: left; text-align: center; margin: 0px 20px 20px 20px;}
+.friday > div > button > img {width: 170px; height: 250px; border-radius: 10px;}
+.friday > div > button > p {color: #000; font-weight: 600; font-size: 16px;}
+
+.saturday {margin: 0px auto; padding: 0px 20px;}
+.saturday > div {display: block; float: left; text-align: center; margin: 0px 20px 20px 20px;}
+.saturday > div > button > img {width: 170px; height: 250px; border-radius: 10px;}
+.saturday > div > button > p {color: #000; font-weight: 600; font-size: 16px;}
+
+.sunday {margin: 0px auto; padding: 0px 20px;}
+.sunday > div {display: block; float: left; text-align: center; margin: 0px 20px 20px 20px;}
+.sunday > div > button > img {width: 170px; height: 250px; border-radius: 10px;}
+.sunday > div > button > p {color: #000; font-weight: 600; font-size: 16px;}
+
+.finished {margin: 0px auto; padding: 0px 20px;}
+.finished > div {display: block; float: left; text-align: center; margin: 0px 20px 20px 20px;}
+.finished > div > button > img {width: 170px; height: 250px; border-radius: 10px;}
+.finished > div > button > p {color: #000; font-weight: 600; font-size: 16px;}
