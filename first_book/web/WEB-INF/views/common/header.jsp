@@ -24,7 +24,7 @@
 <li><a href="${ pageContext.servletContext.contextPath }/webnovel/list" class="main-btn">연재</a></li>
 	                            <li><a href="#" class="main-btn">완결</a></li>
 	                            <li><a href="${ pageContext.servletContext.contextPath }/admin/main" class="main-btn">관리자 메인</a></li>
-<<<<<<< HEAD
+
 				<c:if test="${ empty sessionScope.loginMember }">
 	                <div class="menu_box" id="menu_box">
 	                    <nav class="nav">
