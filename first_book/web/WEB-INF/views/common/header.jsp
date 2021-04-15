@@ -50,7 +50,7 @@
 	                            <li><a href="#" class="main-btn">이벤트</a></li>
 	                            <li><a href="${ pageContext.servletContext.contextPath }/board/list" class="main-btn">고객문의</a></li>
 	                            <li><a href="#" class="main-btn">단행본</a></li>
-	                            <c:if test="${ !empty sessionScope.loginMember eq 'admin'}">
+								<c:if test="${ sessionScope.loginMember.memId eq 'admin' }">
 
 									<li><a href="${ pageContext.servletContext.contextPath }/admin/main" class="main-btn">관리자 메인</a></li>
 
