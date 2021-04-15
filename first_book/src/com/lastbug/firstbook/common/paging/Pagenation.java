@@ -9,7 +9,6 @@ public class Pagenation {
 		/* pageNo와 totalCount가 넘어온 상태이기 때문에
 		 * 페이징 처리에 필요한 나머지 변수만 선언을 한다.
 		 */
-		
 		int maxPage;
 		int startPage;
 		int endPage;
@@ -30,11 +29,7 @@ public class Pagenation {
 			endPage = maxPage;
 		}
 		
-		/* 마지막 페이지는 0이 될 수 없기 때문에 게시물이 아무 것도 존재하지 않으면 maxPage와 endPage는 0이 된다. */
-//		if(maxPage == 0 && endPage == 0) {
-//			maxPage = startPage;
-//			endPage = startPage;
-//		}
+
 		
 		/* DB 조회 할 시작 번호와 마지막 행 번호를 계산한다. */
 		startRow = (pageNo - 1) * limit + 1;

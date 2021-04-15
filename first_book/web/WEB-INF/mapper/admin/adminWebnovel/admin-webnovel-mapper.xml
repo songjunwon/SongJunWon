@@ -16,7 +16,7 @@
           FROM WEB_NOV_INFO A
 	</entry>
 	<entry key="insertNewWebnovel">
-	    INSERT 
+	    INSERT /* com.lastbug.firstbook.admin.webnovel.model.dao.AdminWebNovelDAO#insertNewWebnovel()*/
 	      INTO WEB_NOV_INFO A
              (
                A.WEB_NOV_NUM
@@ -41,6 +41,21 @@
              , ?
              , ?
             )
+	</entry>
+	<entry key="adminSelectWebNovelDetail">
+     	SELECT /* com.lastbug.firstbook.admin.webnovel.model.dao.AdminWebNovelDAO#adminSelectWebNovelDetail()*/
+               A.WEB_NOV_NUM
+             , A.WEB_NOV_TITLE
+             , A.WEB_NOV_AUTHOR
+             , A.WEB_NOV_INFORM
+             , A.CATEGORY_CODE
+             , A.WEB_NOV_PUBLISHER
+             , A.DAY_OF_WEEK
+             , A.WEB_NOV_IMG_LOCATION
+             , A.FINISHED_OR_NOT
+             , A.WEB_NOV_OPEN_OR_CLOSE
+          FROM WEB_NOV_INFO A
+         WHERE A.WEB_NOV_NUM = ?
 	</entry>
 
 </properties>

@@ -20,15 +20,15 @@ body {
   font-size: 12px;
 }
 
-.cf:after {
+ .cf:after {
   content: " ";
   display: block;
   clear: both;
-}
+} 
 
-ol, ul, li, dl {
+ ol, ul, li, dl {
   list-style:none;
-}
+} 
 
 a {
   text-decoration: none;
@@ -46,12 +46,12 @@ table {
   border-collapse: collapse;
 }
 
-input {
+ input {
   -webkit-appearance: none;
   -moz-appearance: none;
   appearance: none;
   border: none;
-}
+} 
 
 button{
   background: inherit;

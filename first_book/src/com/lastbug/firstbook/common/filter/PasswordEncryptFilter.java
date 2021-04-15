@@ -25,7 +25,6 @@ public class PasswordEncryptFilter implements Filter {
 		
 		/* 로그인을 하는 경우 자동 암호화 된 값으로 비교하게 되면 비교할 수 없다.*/
 		/* 따라서 로그인 요청은 암호화하는 필터에서 암호화 되지 않도록 해준다.*/
-		
 		HttpServletRequest hrequest = (HttpServletRequest) request;
 		
 		String uri = hrequest.getRequestURI();

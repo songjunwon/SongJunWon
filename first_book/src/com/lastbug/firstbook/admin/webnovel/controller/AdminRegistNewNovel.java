@@ -144,7 +144,7 @@ public class AdminRegistNewNovel extends HttpServlet {
 
 							fileList.add(fileMap);
 
-							 total = fileUploadDirectory + randomFileName;
+							 total = "/firstbook/resources/upload/original/" +  randomFileName;
 						}
 
 					} else {
@@ -193,6 +193,7 @@ public class AdminRegistNewNovel extends HttpServlet {
 //		System.out.println(dayOfWeekList);
 //		System.out.println(webNovelIntro);
 //		System.out.println(price);
+				System.out.println("total" + total);
 				
 				/* 서비스를 요청 할 수 있도록 하나의 사진 게시판 내용을 하나의 BoardDTO에 담는다. */
 				WebNovelInfoDTO thumbnail = new WebNovelInfoDTO();

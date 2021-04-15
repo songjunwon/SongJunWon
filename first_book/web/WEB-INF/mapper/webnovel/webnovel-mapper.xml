@@ -2,7 +2,7 @@
 <!DOCTYPE properties SYSTEM "http://java.sun.com/dtd/properties.dtd">
 <properties>
 	<entry key="selectAllNovel">
-        SELECT /* com.lastbug.firstbook.webnovel.model.dao.WebNovelDAO#seletAllNovel() */
+        SELECT 		/* com.lastbug.firstbook.webnovel.model.dao.WebNovelDAO#seletAllNovel() */
                A.WEB_NOV_NUM
              , A.WEB_NOV_TITLE
              , A.WEB_NOV_AUTHOR
@@ -14,9 +14,10 @@
              , A.FINISHED_OR_NOT
              , A.WEB_NOV_OPEN_OR_CLOSE
           FROM WEB_NOV_INFO A
+         ORDER BY A.WEB_NOV_COUNT ASC
 	</entry>
 	<entry key="selectWebNovelDetail">
-        SELECT /* com.lastbug.firstbook.webnovel.model.dao.WebNovelDAO#selectWebNovelDetail() */
+        SELECT 		/* com.lastbug.firstbook.webnovel.model.dao.WebNovelDAO#selectWebNovelDetail() */
                A.WEB_NOV_NUM
              , A.WEB_NOV_TITLE
              , A.WEB_NOV_AUTHOR
@@ -29,7 +30,7 @@
          WHERE A.WEB_NOV_NUM = ?
 	</entry>
 	<entry key="selectWebNovelallChapter">
-		SELECT  /* com.lastbug.firstbook.webnovel.model.dao.WebNovelDAO#selectWebNovelallChapter() */
+		SELECT  	/* com.lastbug.firstbook.webnovel.model.dao.WebNovelDAO#selectWebNovelallChapter() */
 		       A.WEB_NOV_NUM
 		     , A.CHAP_NUM
 		     , A.CHAP_WRITTEN_DATE
@@ -41,7 +42,7 @@
 		 ORDER BY A.CHAP_NUM ASC
 	</entry>
 	<entry key="searchWebNovelCount">
-	    SELECT /* com.lastbug.firstbook.webnovel.model.dao.WebNovelDAO#searchWebNovelCount() */
+	    SELECT 		/* com.lastbug.firstbook.webnovel.model.dao.WebNovelDAO#searchWebNovelCount() */
                COUNT(*)
           FROM WEB_NOV_CONTENT_DETAIL A
          WHERE A.WEB_NOV_NUM = ?
@@ -49,7 +50,7 @@
 	</entry>
 	
 	<entry key="selectPerChap">
-        SELECT /* com.lastbug.firstbook.webnovel.model.dao.WebNovelDAO#selectPerChap()*/
+        SELECT 		/* com.lastbug.firstbook.webnovel.model.dao.WebNovelDAO#selectPerChap()*/
                C.WEB_NOV_NUM
              , C.CHAP_NUM
              , C.WEB_NOV_PAGE_NUM
@@ -73,7 +74,7 @@
        WHERE C.RNUM BETWEEN ? AND ?
 	</entry>
 	<entry key="searchTitle">
-        SELECT /* com.lastbug.firstbook.webnovel.model.dao.WebNovelDAO#selectWebNovelDetail() */
+        SELECT 		/* com.lastbug.firstbook.webnovel.model.dao.WebNovelDAO#searchTitle() */
                A.WEB_NOV_NUM
              , A.WEB_NOV_TITLE
              , A.WEB_NOV_AUTHOR
@@ -83,5 +84,19 @@
           FROM WEB_NOV_INFO A
           JOIN GENRE_CATEGORY B ON(A.CATEGORY_CODE = B.CATEGORY_CODE)
          WHERE A.WEB_NOV_NUM = ?	
+	</entry>
+	<entry key="incrementWebnovelCount">
+	    UPDATE 		/* com.lastbug.firstbook.webnovel.model.dao.WebNovelDAO#incrementWebnovelCount() */
+               WEB_NOV_INFO A
+       SET A.WEB_NOV_COUNT = (SELECT B.WEB_NOV_COUNT
+                              FROM WEB_NOV_INFO B
+                             WHERE B.WEB_NOV_NUM = ?
+                           ) + 1
+     WHERE A.WEB_NOV_NUM = ?
+	</entry>
+	<entry key="searchWebNovelCount">
+	    SELECT 		/* com.lastbug.firstbook.webnovel.model.dao.WebNovelDAO#searchWebNovelCount() */
+               COUNT(*)
+          FROM WEB_NOV_INFO A
 	</entry>
 </properties>

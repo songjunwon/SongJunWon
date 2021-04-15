@@ -13,7 +13,6 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Properties;
 
-import org.apache.jasper.tagplugins.jstl.core.Set;
 
 import com.lastbug.firstbook.common.config.ConfigLocation;
 import com.lastbug.firstbook.webnovel.model.dto.GenreCategoryDTO;
@@ -229,6 +228,7 @@ public class WebNovelDAO {
 
 	}
 
+	/* 웹소설 내용이 총 몇개인지 세는 메소드 */
 	public int searchWebNovelCount(Connection con, int currentWebNovNum, int currentChapNum) {
 
 		PreparedStatement pstmt = null;
@@ -260,6 +260,7 @@ public class WebNovelDAO {
 		return webNovCount;
 	}
 
+	/* 선택한 웹소설 웹뷰어 페이지에 제목을 조회하는 메소드 */
 	public WebNovelInfoDTO searchTitle(Connection con, int currentWebNovNum) {
 
 		PreparedStatement pstmt = null;
@@ -296,6 +297,61 @@ public class WebNovelDAO {
 
 
 		return webNovelDetail;
+	}
+
+	public int incrementWebnovelCount(Connection con, int no) {
+
+		PreparedStatement pstmt = null;
+		
+		int result = 0;
+		
+		String query = prop.getProperty("incrementWebnovelCount");
+		
+		try {
+			pstmt = con.prepareStatement(query);
+			pstmt.setInt(1, no);
+			pstmt.setInt(2, no);
+			
+			result = pstmt.executeUpdate();			
+			
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		} finally {
+			close(pstmt);
+		}
+		
+		
+		return result;
+	}
+
+	public int selectTotalCount(Connection con) {
+
+		Statement stmt = null;
+		ResultSet rset = null;
+		
+		int totalCount = 0;
+		
+		String query = prop.getProperty("selectTotalCount");
+		
+		try {
+			stmt = con.createStatement();
+			rset = stmt.executeQuery(query);
+			
+			if(rset.next()) {
+				totalCount = rset.getInt(1);
+			}
+			
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}finally {
+			close(rset);
+			close(stmt);
+		}
+		
+		
+		return totalCount;
 	}
 
 

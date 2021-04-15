@@ -1,4 +1,5 @@
 @charset "UTF-8";
+
 #wrap {margin: 0px auto; width: 100%;}
 .top_header {margin: 0px auto; width: 100%;}
 .top_main {margin: 0px auto; width: 1100px;}
@@ -25,41 +26,49 @@
 .everyday_contents div {display: none;}
 .everyday_contents div.on {display: block;}
 
+/* 월요일관련 css */
 .monday {margin: 0px auto; padding: 0px 20px;}
 .monday > div {display: block; float: left; text-align: center; margin: 0px 20px 20px 20px;}
 .monday > div > button > img {width: 170px; height: 250px; border-radius: 10px;}
 .monday > div > button > p {color: #000; font-weight: 600; font-size: 16px;}
 
+/* 화요일관련 css */
 .tuesday {margin: 0px auto; padding: 0px 20px;}
 .tuesday > div {display: block; float: left; text-align: center; margin: 0px 20px 20px 20px;}
 .tuesday > div > button > img {width: 170px; height: 250px; border-radius: 10px;}
 .tuesday > div > button > p {color: #000; font-weight: 600; font-size: 16px;}
 
+/* 수요일관련 css */
 .wednesday {margin: 0px auto; padding: 0px 20px;}
 .wednesday > div {display: block; float: left; text-align: center; margin: 0px 20px 20px 20px;}
 .wednesday > div > button > img {width: 170px; height: 250px; border-radius: 10px;}
 .wednesday > div > button > p {color: #000; font-weight: 600; font-size: 16px;}
 
+/* 목요일관련 css */
 .thursday {margin: 0px auto; padding: 0px 20px;}
 .thursday > div {display: block; float: left; text-align: center; margin: 0px 20px 20px 20px;}
 .thursday > div > button > img {width: 170px; height: 250px; border-radius: 10px;}
 .thursday > div > button > p {color: #000; font-weight: 600; font-size: 16px;}
 
+/* 금요일관련 css */
 .friday {margin: 0px auto; padding: 0px 20px;}
 .friday > div {display: block; float: left; text-align: center; margin: 0px 20px 20px 20px;}
 .friday > div > button > img {width: 170px; height: 250px; border-radius: 10px;}
 .friday > div > button > p {color: #000; font-weight: 600; font-size: 16px;}
 
+/* 토요일관련 css */
 .saturday {margin: 0px auto; padding: 0px 20px;}
 .saturday > div {display: block; float: left; text-align: center; margin: 0px 20px 20px 20px;}
 .saturday > div > button > img {width: 170px; height: 250px; border-radius: 10px;}
 .saturday > div > button > p {color: #000; font-weight: 600; font-size: 16px;}
 
+/* 일요일관련 css */
 .sunday {margin: 0px auto; padding: 0px 20px;}
 .sunday > div {display: block; float: left; text-align: center; margin: 0px 20px 20px 20px;}
 .sunday > div > button > img {width: 170px; height: 250px; border-radius: 10px;}
 .sunday > div > button > p {color: #000; font-weight: 600; font-size: 16px;}
 
+/* 완작관련 css */
 .finished {margin: 0px auto; padding: 0px 20px;}
 .finished > div {display: block; float: left; text-align: center; margin: 0px 20px 20px 20px;}
 .finished > div > button > img {width: 170px; height: 250px; border-radius: 10px;}

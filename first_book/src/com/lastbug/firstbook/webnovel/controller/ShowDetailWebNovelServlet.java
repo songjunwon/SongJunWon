@@ -29,6 +29,7 @@ public class ShowDetailWebNovelServlet extends HttpServlet {
 		/* 앞에서 전체 웹소설 목록 중에서 선택한 웹소설 번호로 웹소설 정보 조회 */
 		WebNovelInfoDTO webDetail = webNovelService.selectWebNovelDetail(no);
 		
+		
 		List<WebNovChapSearchDTO> webNovelChap = null;
 		
 		
@@ -47,7 +48,7 @@ public class ShowDetailWebNovelServlet extends HttpServlet {
 			request.setAttribute("webnoveldetail", webNovelChap);
 		} else {
 			path = "/WEB-INF/views/common/failed.jsp";
-			request.setAttribute("message", "웹소설 상세 보기 조회에 실패하셨습니다.");
+			request.setAttribute("failedCode", "webnovelPerChap");
 		}
 	
 		request.getRequestDispatcher(path).forward(request, response);

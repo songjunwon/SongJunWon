@@ -31,19 +31,19 @@ public class ChapViewerSelectServlet extends HttpServlet {
 		
 //		System.out.println("현재 웹소설 번호" + currentWebNovNum);
 //		System.out.println("현재 웹소설의 챕터 번호" + currentChapNum);
-		/* 1. 현재 페이지 관련 설정 */
 		
+		/* 1. 현재 페이지 관련 설정 */
 		String currentPage = request.getParameter("currentPage");
-		/* 선택한 웹소설 챕터에 대한 모든 정보를 불러옴 */
+		
 		WebNovelService webService = new WebNovelService();
+		
+		/* 선택한 웹소설 챕터에 대한 모든 정보를 불러옴 */
 		int totalCount = webService.searchWebNovelCount(currentWebNovNum, currentChapNum);
 		WebNovelInfoDTO title = webService.searchTitle(currentWebNovNum);
 		
-		
-		
 //		System.out.println("1화 1챕터 " + totalCount);
 		
-		
+		/* 페이지 넘버 초기화 */
 		int pageNo = 1;
 		
 		if(currentPage != null && !"".equals(currentPage)) {
@@ -57,11 +57,13 @@ public class ChapViewerSelectServlet extends HttpServlet {
 		/* 한 페이지에 보여줄 컬럼 수 */
 		int limit = 2;
 		
+		/* 한 페이지에 보여줄 페이지 수 이지만 본 프로젝트에서는 크게 의의룰 두지 않아도 되서 10으로 세팅 */
 		int buttonAmount = 10;
 		
+		/* 페이징 처리를 위한 논리를 다른 클래스에서 진행 */
 		PageInfoDTO pageInfo = Pagenation.getPageInfo(pageNo, totalCount, limit, buttonAmount);
 		
-		
+		/* 각 페이지 (웹뷰어에서 2페이지씩 보여지도록)에 보여줄 웹소설 챕터별 내용 뽑아오기 */
 		List<WebNovContentDetailDTO> perChap = webService.selectPerChap(pageInfo, currentWebNovNum, currentChapNum);
 	
 //		for(WebNovContentDetailDTO wnd : perChap) {
@@ -79,7 +81,7 @@ public class ChapViewerSelectServlet extends HttpServlet {
 			request.setAttribute("title", title);
 		} else {
 			path = "/WEB-INF/views/common/failed.jsp";
-			request.setAttribute("message", "웹소설 검색 결과 조회 실패!");
+			request.setAttribute("failedCode", "perChapContext");
 		}
 		
 		request.getRequestDispatcher(path).forward(request, response);

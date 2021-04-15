@@ -7,6 +7,7 @@ import java.util.List;
 
 import com.lastbug.firstbook.admin.model.dao.AdminDAO;
 import com.lastbug.firstbook.member.model.dto.MemberDTO;
+import com.lastbug.firstbook.webnovel.model.dto.WebNovelInfoDTO;
 
 public class AdminService {
 
@@ -41,5 +42,29 @@ public class AdminService {
 		
 		return searchMemList;
 	}
+
+
 	
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

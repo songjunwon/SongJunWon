@@ -52,6 +52,19 @@ public class AdminWebNovelService {
 		return result;
 	}
 
+	public WebNovelInfoDTO adminSelectWebNovelDetail(int no) {
+
+		Connection con = getConnection();
+		
+		WebNovelInfoDTO webNovelUpdate = null;
+		
+		webNovelUpdate = adminWebNovelDAO.adminSelectWebNovelDetail(con, no);
+		
+		
+		
+		return webNovelUpdate;
+	}
+
 }
 
 
