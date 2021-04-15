@@ -19,10 +19,19 @@ public class ContestServlet extends HttpServlet {
 protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		
 	List<ContestDTO> contestList = new ContestService().selectAllconstList();
+	List<ContestDTO> contestListRankEight = new ContestService().rankEightconstList();
+	int date = new ContestService().selectdate(contestList);
+	int date8 = new ContestService().selectdate8();
+	int date4 = new ContestService().selectdate4();
 		String path = "";
 		if(!contestList.isEmpty()) {		// 공모전 작품이 검색되면
 			path = "/WEB-INF/views/contest/contestForm.jsp";
 			request.setAttribute("contestList", contestList);
+			request.setAttribute("contestListRankEight", contestListRankEight);
+			request.setAttribute("date", date);
+			request.setAttribute("date8", date8);
+			request.setAttribute("date4", date4);
+			
 		} else {						// 공모전 실패 하면
 		
 			path = "/WEB-INF/views/common/failed.jsp";

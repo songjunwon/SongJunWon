@@ -10,6 +10,8 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import com.lastbug.firstbook.contest.model.dto.ContestDTO;
+import com.lastbug.firstbook.contest.model.dto.ContestDetalDTO;
+import com.lastbug.firstbook.contest.model.service.ContestDetail;
 import com.lastbug.firstbook.contest.model.service.ContestService;
 
 @WebServlet("/contest/voting")
@@ -17,16 +19,19 @@ public class voting extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		System.out.println("와지냐");
+		int competNum = Integer.valueOf(request.getParameter("competNum"));
 		
-		int result = new ContestService().selectVoting();
+		List<ContestDetalDTO> contestDetailList = new ContestDetail().selectContestDetal(competNum);
+		List<ContestDTO> contestlList = new ContestDetail().selectContestList(competNum);
+		
 		String path = "";
-		if(result != 0) {		// 공모전 작품이 검색되면
-			path = "/WEB-INF/views/contest/contestForm.jsp";
-			
-		} else {						// 공모전 실패 하면
+		if(!contestDetailList.isEmpty()) {		// 공모전 작품이 검색되면
+			path = "/WEB-INF/views/contest/contestDetail.jsp";
+			request.setAttribute("contestDetailList", contestDetailList);
+			request.setAttribute("contestlList", contestlList);
+		} else {						  		// 공모전 실패 하면
 			path = "/WEB-INF/views/common/failed.jsp";
-			request.setAttribute("message", "공모전 조회 실패!");
+			request.setAttribute("contestFailed", "작품 보러가기 실패");
 		}
 		
 		request.getRequestDispatcher(path).forward(request, response);
