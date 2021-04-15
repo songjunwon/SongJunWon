@@ -4,7 +4,10 @@ DROP TABLE COMPET_DETAIL CASCADE CONSTRAINTS;
 DROP TABLE COMPET_FIXTURE CASCADE CONSTRAINTS;
 DROP TABLE GENRE_CATEGORY CASCADE CONSTRAINTS;
 DROP TABLE WEB_NOV_INFO CASCADE CONSTRAINTS;
-DROP TABLE WEB_NOV_DETAIL CASCADE CONSTRAINTS;
+DROP TABLE WEB_NOV_CHAP_NUM CASCADE CONSTRAINTS;
+DROP TABLE WEB_NOV_PAGE_NUM CASCADE CONSTRAINTS;
+DROP TABLE WEB_NOV_CONTENT_DETAIL CASCADE CONSTRAINTS;
+DROP TABLE WEB_NOV_CHAP_SEARCH CASCADE CONSTRAINTS;
 DROP TABLE WEB_NOV_REPLY CASCADE CONSTRAINTS;
 DROP TABLE ACCUM_REPORT CASCADE CONSTRAINTS;
 DROP TABLE WISH_LIST CASCADE CONSTRAINTS;
@@ -23,7 +26,7 @@ CREATE TABLE MEM_INFO
     MEM_NUM           NUMBER PRIMARY KEY,
     MEM_NAME          VARCHAR2(30)                                              NOT NULL,
     MEM_ID            VARCHAR2(30)                                              NOT NULL UNIQUE,
-    MEM_PWD           VARCHAR2(30)                                              NOT NULL,
+    MEM_PWD           VARCHAR2(200)                                              NOT NULL,
     MEM_EMAIL         VARCHAR2(320)                                             NOT NULL,
     MEM_ADDRESS       VARCHAR2(320),
     MEM_BIRTHDATE     DATE                                                      NOT NULL,
@@ -39,163 +42,167 @@ CREATE TABLE MEM_INFO
 );
 
 
+DROP SEQUENCE SEQ_MEM_NO;
+CREATE SEQUENCE SEQ_MEM_NO INCREMENT BY 1 START WITH 1;
 
 
 
+COMMIT;
 
 
 INSERT INTO MEM_INFO (MEM_NUM,  MEM_NAME, MEM_ID, MEM_PWD, MEM_EMAIL, MEM_ADDRESS, MEM_BIRTHDATE, MEM_LOGIN_COUNT,
                       MEM_COIN, MEM_CAN_VOTE_YN, MEM_WITHDRAW_YN, MEM_WITHDRAW_DATE, MEM_CLASS, MEM_BLOCK_YN,
                       MEM_BLOCK_DATE, MEM_ENROLL_DATE)
-VALUES ('1', '관리자', 'manager01', 'manager01', 'manager@naver.com', '서울시 강남구', TO_DATE('92/08/10', 'RR/MM/DD'),
-        10000, 100000000, 'Y', 'N', '-', '관리자', 'N', '-', TO_DATE('19/06/01', 'RR/MM/DD'));
+VALUES ('1', '관리자', 'admin', '$2a$10$dwzOsdvJXsTse0TpcB80heAnHoOOy8QA7bIUNj4/ur2tSKp.3OidG', 'manager@naver.com', '서울시 강남구', TO_DATE('92/08/10', 'RR/MM/DD'),
+        10000, 100000000, 'Y', 'N', NULL, '관리자', 'N', NULL, TO_DATE('19/06/01', 'RR/MM/DD'));
 INSERT INTO MEM_INFO (MEM_NUM,  MEM_NAME, MEM_ID, MEM_PWD, MEM_EMAIL, MEM_ADDRESS, MEM_BIRTHDATE, MEM_LOGIN_COUNT,
                       MEM_COIN, MEM_CAN_VOTE_YN, MEM_WITHDRAW_YN, MEM_WITHDRAW_DATE, MEM_CLASS, MEM_BLOCK_YN,
                       MEM_BLOCK_DATE, MEM_ENROLL_DATE)
-VALUES ('2', '김용승', 'dlagon77', 'dlagon', 'dlagon77@gmail.com', '서울시 서초구', TO_DATE('85/01/05', 'RR/MM/DD'), 100,
-        19500, 'Y', 'N', '-', '회원', 'N', '-', TO_DATE('19/06/02', 'RR/MM/DD'));
+VALUES ('2', '김용승', 'dlagon77', '$2a$10$TYfCFXVHDv0XzDWw0hr2Mub0yGmBA/zQ/o/3lYC1dYGMDp5bCVDIy', 'dlagon77@gmail.com', '서울시 서초구', TO_DATE('85/01/05', 'RR/MM/DD'), 100,
+        19500, 'Y', 'N', NULL, '회원', 'N', NULL, TO_DATE('19/06/02', 'RR/MM/DD'));
 INSERT INTO MEM_INFO (MEM_NUM,  MEM_NAME, MEM_ID, MEM_PWD, MEM_EMAIL, MEM_ADDRESS, MEM_BIRTHDATE, MEM_LOGIN_COUNT,
                       MEM_COIN, MEM_CAN_VOTE_YN, MEM_WITHDRAW_YN, MEM_WITHDRAW_DATE, MEM_CLASS, MEM_BLOCK_YN,
                       MEM_BLOCK_DATE, MEM_ENROLL_DATE)
 VALUES ('3', '조영석', 'yscho', 'yscho0819', 'dongr52@naver.com', '서울시 서초구', TO_DATE('92/08/19', 'RR/MM/DD'), 94, 9600,
-        'Y', 'N', '-', '회원', 'N', '-', TO_DATE('19/06/05', 'RR/MM/DD'));
+        'Y', 'N', NULL, '회원', 'N', NULL, TO_DATE('19/06/05', 'RR/MM/DD'));
 INSERT INTO MEM_INFO (MEM_NUM,  MEM_NAME, MEM_ID, MEM_PWD, MEM_EMAIL, MEM_ADDRESS, MEM_BIRTHDATE, MEM_LOGIN_COUNT,
                       MEM_COIN, MEM_CAN_VOTE_YN, MEM_WITHDRAW_YN, MEM_WITHDRAW_DATE, MEM_CLASS, MEM_BLOCK_YN,
                       MEM_BLOCK_DATE, MEM_ENROLL_DATE)
 VALUES ('4', '임창훈', 'chim', 'chim2010', 'chim12@gmail.com', '서울시 강동구', TO_DATE('90/06/21', 'RR/MM/DD'), 54, 15000,
-        'Y', 'N', '-', '회원', 'N', '-', TO_DATE('19/06/05', 'RR/MM/DD'));
+        'Y', 'N', NULL, '회원', 'N', NULL, TO_DATE('19/06/05', 'RR/MM/DD'));
 INSERT INTO MEM_INFO (MEM_NUM,  MEM_NAME, MEM_ID, MEM_PWD, MEM_EMAIL, MEM_ADDRESS, MEM_BIRTHDATE, MEM_LOGIN_COUNT,
                       MEM_COIN, MEM_CAN_VOTE_YN, MEM_WITHDRAW_YN, MEM_WITHDRAW_DATE, MEM_CLASS, MEM_BLOCK_YN,
                       MEM_BLOCK_DATE, MEM_ENROLL_DATE)
 VALUES ('5', '송준원', 'jwsong', 'jwsong2011', 'jwsong08@gmail.com', '서울시 동작구', TO_DATE('96/05/19', 'RR/MM/DD'), 120,
-        20000, 'Y', 'N', '-', '회원', 'N', '-', TO_DATE('19/06/05', 'RR/MM/DD'));
+        20000, 'Y', 'N', NULL, '회원', 'N', NULL, TO_DATE('19/06/05', 'RR/MM/DD'));
 INSERT INTO MEM_INFO (MEM_NUM,  MEM_NAME, MEM_ID, MEM_PWD, MEM_EMAIL, MEM_ADDRESS, MEM_BIRTHDATE, MEM_LOGIN_COUNT,
                       MEM_COIN, MEM_CAN_VOTE_YN, MEM_WITHDRAW_YN, MEM_WITHDRAW_DATE, MEM_CLASS, MEM_BLOCK_YN,
                       MEM_BLOCK_DATE, MEM_ENROLL_DATE)
 VALUES ('6', '천진민', 'jmchun', 'jmchun2012', 'jmchun88@gmail.com', '서울시 종로구', TO_DATE('97/10/18', 'RR/MM/DD'), 65,
-        60000, 'Y', 'N', '-', '회원', 'N', '-', TO_DATE('19/06/05', 'RR/MM/DD'));
+        60000, 'Y', 'N', NULL, '회원', 'N', NULL, TO_DATE('19/06/05', 'RR/MM/DD'));
 INSERT INTO MEM_INFO (MEM_NUM,  MEM_NAME, MEM_ID, MEM_PWD, MEM_EMAIL, MEM_ADDRESS, MEM_BIRTHDATE, MEM_LOGIN_COUNT,
                       MEM_COIN, MEM_CAN_VOTE_YN, MEM_WITHDRAW_YN, MEM_WITHDRAW_DATE, MEM_CLASS, MEM_BLOCK_YN,
                       MEM_BLOCK_DATE, MEM_ENROLL_DATE)
 VALUES ('7', '김세정', 'sjkim', 'sjkim2012', 'jwkim8080@gmail.com', '경기도 과천시', TO_DATE('89/04/19', 'RR/MM/DD'), 21,
-        3300, 'Y', 'N', '-', '회원', 'N', '-', TO_DATE('19/06/06', 'RR/MM/DD'));
+        3300, 'Y', 'N', NULL, '회원', 'N', NULL, TO_DATE('19/06/06', 'RR/MM/DD'));
 INSERT INTO MEM_INFO (MEM_NUM,  MEM_NAME, MEM_ID, MEM_PWD, MEM_EMAIL, MEM_ADDRESS, MEM_BIRTHDATE, MEM_LOGIN_COUNT,
                       MEM_COIN, MEM_CAN_VOTE_YN, MEM_WITHDRAW_YN, MEM_WITHDRAW_DATE, MEM_CLASS, MEM_BLOCK_YN,
                       MEM_BLOCK_DATE, MEM_ENROLL_DATE)
 VALUES ('8', '강동원', 'tuna10', 'dw2020', 'tunakang@gmail.com', '서울시 송파구', TO_DATE('70/10/12', 'RR/MM/DD'), 98, 20100,
-        'Y', 'N', '-', '회원', 'N', '-', TO_DATE('19/06/07', 'RR/MM/DD'));
+        'Y', 'N', NULL, '회원', 'N', NULL, TO_DATE('19/06/07', 'RR/MM/DD'));
 INSERT INTO MEM_INFO (MEM_NUM,  MEM_NAME, MEM_ID, MEM_PWD, MEM_EMAIL, MEM_ADDRESS, MEM_BIRTHDATE, MEM_LOGIN_COUNT,
                       MEM_COIN, MEM_CAN_VOTE_YN, MEM_WITHDRAW_YN, MEM_WITHDRAW_DATE, MEM_CLASS, MEM_BLOCK_YN,
                       MEM_BLOCK_DATE, MEM_ENROLL_DATE)
 VALUES ('9', '황정민', 'jmhwang', 'jmjm1111', 'jmjm@naver.com', '서울시 금천구', TO_DATE('65/03/13', 'RR/MM/DD'), 20, 1700,
-        'Y', 'Y', '01/01/2021', '회원', 'N', '-', TO_DATE('19/06/07', 'RR/MM/DD'));
+        'Y', 'Y', '01/01/2021', '회원', 'N', NULL, TO_DATE('19/06/07', 'RR/MM/DD'));
 INSERT INTO MEM_INFO (MEM_NUM,  MEM_NAME, MEM_ID, MEM_PWD, MEM_EMAIL, MEM_ADDRESS, MEM_BIRTHDATE, MEM_LOGIN_COUNT,
                       MEM_COIN, MEM_CAN_VOTE_YN, MEM_WITHDRAW_YN, MEM_WITHDRAW_DATE, MEM_CLASS, MEM_BLOCK_YN,
                       MEM_BLOCK_DATE, MEM_ENROLL_DATE)
 VALUES ('10', '김수홍', 'shkim', 'shhs1234', 'sh4000@naver.com', '인천 남동구', TO_DATE('71/01/30', 'RR/MM/DD'), 333, 10000,
-        'N', 'N', '-', '회원', 'Y', '11/15/2019', TO_DATE('19/06/11', 'RR/MM/DD'));
+        'N', 'N', NULL, '회원', 'Y', '11/15/2019', TO_DATE('19/06/11', 'RR/MM/DD'));
 INSERT INTO MEM_INFO (MEM_NUM,  MEM_NAME, MEM_ID, MEM_PWD, MEM_EMAIL, MEM_ADDRESS, MEM_BIRTHDATE, MEM_LOGIN_COUNT,
                       MEM_COIN, MEM_CAN_VOTE_YN, MEM_WITHDRAW_YN, MEM_WITHDRAW_DATE, MEM_CLASS, MEM_BLOCK_YN,
                       MEM_BLOCK_DATE, MEM_ENROLL_DATE)
 VALUES ('11', '유재석', 'jsyoo', 'green12', 'jsyoo10@gmail.com', '서울시 금천구', TO_DATE('80/10/10', 'RR/MM/DD'), 51, 10000,
-        'Y', 'N', '-', '회원', 'N', NULL, TO_DATE('19/07/01', 'RR/MM/DD'));
+        'Y', 'N', NULL, '회원', 'N', NULL, TO_DATE('19/07/01', 'RR/MM/DD'));
 INSERT INTO MEM_INFO (MEM_NUM,  MEM_NAME, MEM_ID, MEM_PWD, MEM_EMAIL, MEM_ADDRESS, MEM_BIRTHDATE, MEM_LOGIN_COUNT,
                       MEM_COIN, MEM_CAN_VOTE_YN, MEM_WITHDRAW_YN, MEM_WITHDRAW_DATE, MEM_CLASS, MEM_BLOCK_YN,
                       MEM_BLOCK_DATE, MEM_ENROLL_DATE)
 VALUES ('12', '양세찬', 'scyang', 'scvscv', 'scyang180@gmail.com', '경기도 분당', TO_DATE('86/04/15', 'RR/MM/DD'), 20, 5600,
-        'Y', 'Y', '10/24/2020', '회원', 'N', '-', TO_DATE('19/07/02', 'RR/MM/DD'));
+        'Y', 'Y', '10/24/2020', '회원', 'N', NULL, TO_DATE('19/07/02', 'RR/MM/DD'));
 INSERT INTO MEM_INFO (MEM_NUM,  MEM_NAME, MEM_ID, MEM_PWD, MEM_EMAIL, MEM_ADDRESS, MEM_BIRTHDATE, MEM_LOGIN_COUNT,
                       MEM_COIN, MEM_CAN_VOTE_YN, MEM_WITHDRAW_YN, MEM_WITHDRAW_DATE, MEM_CLASS, MEM_BLOCK_YN,
                       MEM_BLOCK_DATE, MEM_ENROLL_DATE)
 VALUES ('13', '송중기', 'jksong', 'songsong', 'jksong19@gmail.com', '서울시 종로구', TO_DATE('85/01/05', 'RR/MM/DD'), 31, 0,
-        'Y', 'N', '-', '회원', 'N', '-', TO_DATE('19/07/02', 'RR/MM/DD'));
+        'Y', 'N', NULL, '회원', 'N', NULL, TO_DATE('19/07/02', 'RR/MM/DD'));
 INSERT INTO MEM_INFO (MEM_NUM,  MEM_NAME, MEM_ID, MEM_PWD, MEM_EMAIL, MEM_ADDRESS, MEM_BIRTHDATE, MEM_LOGIN_COUNT,
                       MEM_COIN, MEM_CAN_VOTE_YN, MEM_WITHDRAW_YN, MEM_WITHDRAW_DATE, MEM_CLASS, MEM_BLOCK_YN,
                       MEM_BLOCK_DATE, MEM_ENROLL_DATE)
 VALUES ('14', '송혜교', 'hksong', 'hkhksong', 'hksong78@gmail.com', '서울시 금천구', TO_DATE('83/03/25', 'RR/MM/DD'), 32,
-        6300, 'Y', 'N', '-', '회원', 'N', '-', TO_DATE('19/07/03', 'RR/MM/DD'));
+        6300, 'Y', 'N', NULL, '회원', 'N', NULL, TO_DATE('19/07/03', 'RR/MM/DD'));
 INSERT INTO MEM_INFO (MEM_NUM,  MEM_NAME, MEM_ID, MEM_PWD, MEM_EMAIL, MEM_ADDRESS, MEM_BIRTHDATE, MEM_LOGIN_COUNT,
                       MEM_COIN, MEM_CAN_VOTE_YN, MEM_WITHDRAW_YN, MEM_WITHDRAW_DATE, MEM_CLASS, MEM_BLOCK_YN,
                       MEM_BLOCK_DATE, MEM_ENROLL_DATE)
 VALUES ('15', '김태희', 'thkim', 'snukim', 'snukim@gmail.com', '부산 남동구', TO_DATE('86/10/19', 'RR/MM/DD'), 50, 5000, 'Y',
-        'N', '-', '회원', 'N', '-', TO_DATE('19/07/15', 'RR/MM/DD'));
+        'N', NULL, '회원', 'N', NULL, TO_DATE('19/07/15', 'RR/MM/DD'));
 INSERT INTO MEM_INFO (MEM_NUM,  MEM_NAME, MEM_ID, MEM_PWD, MEM_EMAIL, MEM_ADDRESS, MEM_BIRTHDATE, MEM_LOGIN_COUNT,
                       MEM_COIN, MEM_CAN_VOTE_YN, MEM_WITHDRAW_YN, MEM_WITHDRAW_DATE, MEM_CLASS, MEM_BLOCK_YN,
                       MEM_BLOCK_DATE, MEM_ENROLL_DATE)
 VALUES ('16', '정지훈', 'jhjung', 'rainism', 'thief@gmail.com', '울산시', TO_DATE('85/07/05', 'RR/MM/DD'), 55, 60000, 'Y',
-        'N', '-', '회원', 'N', '-', TO_DATE('19/07/18', 'RR/MM/DD'));
+        'N', NULL, '회원', 'N', NULL, TO_DATE('19/07/18', 'RR/MM/DD'));
 INSERT INTO MEM_INFO (MEM_NUM,  MEM_NAME, MEM_ID, MEM_PWD, MEM_EMAIL, MEM_ADDRESS, MEM_BIRTHDATE, MEM_LOGIN_COUNT,
                       MEM_COIN, MEM_CAN_VOTE_YN, MEM_WITHDRAW_YN, MEM_WITHDRAW_DATE, MEM_CLASS, MEM_BLOCK_YN,
                       MEM_BLOCK_DATE, MEM_ENROLL_DATE)
 VALUES ('17', '태연', 'tysnsd', 'tyty10', 'snsd@naver.com', '광주광역시', TO_DATE('89/05/16', 'RR/MM/DD'), 56, 0, 'N', 'N',
-        '-', '회원', 'N', '-', TO_DATE('19/07/20', 'RR/MM/DD'));
+        NULL, '회원', 'N', NULL, TO_DATE('19/07/20', 'RR/MM/DD'));
 INSERT INTO MEM_INFO (MEM_NUM,  MEM_NAME, MEM_ID, MEM_PWD, MEM_EMAIL, MEM_ADDRESS, MEM_BIRTHDATE, MEM_LOGIN_COUNT,
                       MEM_COIN, MEM_CAN_VOTE_YN, MEM_WITHDRAW_YN, MEM_WITHDRAW_DATE, MEM_CLASS, MEM_BLOCK_YN,
                       MEM_BLOCK_DATE, MEM_ENROLL_DATE)
 VALUES ('18', '임윤아', 'yaim', 'imim11', 'imya@gmail.com', '서울시 동작구', TO_DATE('90/03/31', 'RR/MM/DD'), 70, 10800, 'Y',
-        'N', '-', '회원', 'N', '-', TO_DATE('19/07/21', 'RR/MM/DD'));
+        'N', NULL, '회원', 'N', NULL, TO_DATE('19/07/21', 'RR/MM/DD'));
 INSERT INTO MEM_INFO (MEM_NUM,  MEM_NAME, MEM_ID, MEM_PWD, MEM_EMAIL, MEM_ADDRESS, MEM_BIRTHDATE, MEM_LOGIN_COUNT,
                       MEM_COIN, MEM_CAN_VOTE_YN, MEM_WITHDRAW_YN, MEM_WITHDRAW_DATE, MEM_CLASS, MEM_BLOCK_YN,
                       MEM_BLOCK_DATE, MEM_ENROLL_DATE)
 VALUES ('19', '조수영', 'sycho', 'chochosy', 'sycho11@gmail.com', '서울시 강서구', TO_DATE('92/11/05', 'RR/MM/DD'), 100,
-        15000, 'Y', 'N', '-', '회원', 'N', '-', TO_DATE('19/07/22', 'RR/MM/DD'));
+        15000, 'Y', 'N', NULL, '회원', 'N', NULL, TO_DATE('19/07/22', 'RR/MM/DD'));
 INSERT INTO MEM_INFO (MEM_NUM,  MEM_NAME, MEM_ID, MEM_PWD, MEM_EMAIL, MEM_ADDRESS, MEM_BIRTHDATE, MEM_LOGIN_COUNT,
                       MEM_COIN, MEM_CAN_VOTE_YN, MEM_WITHDRAW_YN, MEM_WITHDRAW_DATE, MEM_CLASS, MEM_BLOCK_YN,
                       MEM_BLOCK_DATE, MEM_ENROLL_DATE)
 VALUES ('20', '공유', 'coffeecanu', 'sharingcanu', 'canu@gmail.com', '서울시 강서구', TO_DATE('79/02/15', 'RR/MM/DD'), 105,
-        20000, 'Y', 'N', '-', '회원', 'N', '-', TO_DATE('19/07/23', 'RR/MM/DD'));
+        20000, 'Y', 'N', NULL, '회원', 'N', NULL, TO_DATE('19/07/23', 'RR/MM/DD'));
 INSERT INTO MEM_INFO (MEM_NUM,  MEM_NAME, MEM_ID, MEM_PWD, MEM_EMAIL, MEM_ADDRESS, MEM_BIRTHDATE, MEM_LOGIN_COUNT,
                       MEM_COIN, MEM_CAN_VOTE_YN, MEM_WITHDRAW_YN, MEM_WITHDRAW_DATE, MEM_CLASS, MEM_BLOCK_YN,
                       MEM_BLOCK_DATE, MEM_ENROLL_DATE)
 VALUES ('21', '임창정', 'cjim', 'sojujjang', 'soju1shot@gmail.com', '경기도 안성시', TO_DATE('75/05/03', 'RR/MM/DD'), 110,
-        13000, 'Y', 'N', '-', '회원', 'N', '-', TO_DATE('19/08/02', 'RR/MM/DD'));
+        13000, 'Y', 'N', NULL, '회원', 'N', NULL, TO_DATE('19/08/02', 'RR/MM/DD'));
 INSERT INTO MEM_INFO (MEM_NUM,  MEM_NAME, MEM_ID, MEM_PWD, MEM_EMAIL, MEM_ADDRESS, MEM_BIRTHDATE, MEM_LOGIN_COUNT,
                       MEM_COIN, MEM_CAN_VOTE_YN, MEM_WITHDRAW_YN, MEM_WITHDRAW_DATE, MEM_CLASS, MEM_BLOCK_YN,
                       MEM_BLOCK_DATE, MEM_ENROLL_DATE)
 VALUES ('22', '배수지', 'suji', 'baesuji', 'sujiii@gmail.com', '경기도 안양시', TO_DATE('80/06/01', 'RR/MM/DD'), 120, 6000,
-        'Y', 'N', '-', '회원', 'N', '-', TO_DATE('19/08/03', 'RR/MM/DD'));
+        'Y', 'N', NULL, '회원', 'N', NULL, TO_DATE('19/08/03', 'RR/MM/DD'));
 INSERT INTO MEM_INFO (MEM_NUM,  MEM_NAME, MEM_ID, MEM_PWD, MEM_EMAIL, MEM_ADDRESS, MEM_BIRTHDATE, MEM_LOGIN_COUNT,
                       MEM_COIN, MEM_CAN_VOTE_YN, MEM_WITHDRAW_YN, MEM_WITHDRAW_DATE, MEM_CLASS, MEM_BLOCK_YN,
                       MEM_BLOCK_DATE, MEM_ENROLL_DATE)
 VALUES ('23', '양동근', 'dgyang', 'golmok', 'golmokgil@gmail.com', '경기도 이천시', TO_DATE('81/09/11', 'RR/MM/DD'), 210,
-        5000, 'N', 'N', '-', '회원', 'N', '-', TO_DATE('19/08/05', 'RR/MM/DD'));
+        5000, 'N', 'N', NULL, '회원', 'N', NULL, TO_DATE('19/08/05', 'RR/MM/DD'));
 INSERT INTO MEM_INFO (MEM_NUM,  MEM_NAME, MEM_ID, MEM_PWD, MEM_EMAIL, MEM_ADDRESS, MEM_BIRTHDATE, MEM_LOGIN_COUNT,
                       MEM_COIN, MEM_CAN_VOTE_YN, MEM_WITHDRAW_YN, MEM_WITHDRAW_DATE, MEM_CLASS, MEM_BLOCK_YN,
                       MEM_BLOCK_DATE, MEM_ENROLL_DATE)
 VALUES ('24', '박서준', 'sjpark', 'sjsjpark', 'sjpark41@gmail.com', '경기도 일산시', TO_DATE('82/06/10', 'RR/MM/DD'), 9, 7000,
-        'Y', 'Y', '11/06/2020', '회원', 'N', '-', TO_DATE('19/09/10', 'RR/MM/DD'));
+        'Y', 'Y', '11/06/2020', '회원', 'N', NULL, TO_DATE('19/09/10', 'RR/MM/DD'));
 INSERT INTO MEM_INFO (MEM_NUM,  MEM_NAME, MEM_ID, MEM_PWD, MEM_EMAIL, MEM_ADDRESS, MEM_BIRTHDATE, MEM_LOGIN_COUNT,
                       MEM_COIN, MEM_CAN_VOTE_YN, MEM_WITHDRAW_YN, MEM_WITHDRAW_DATE, MEM_CLASS, MEM_BLOCK_YN,
                       MEM_BLOCK_DATE, MEM_ENROLL_DATE)
 VALUES ('25', '박보검', 'bkpark', 'parkbk11', 'cutepark@gmail.com', '경기도 안양시', TO_DATE('90/08/01', 'RR/MM/DD'), 50,
-        1000, 'Y', 'N', '-', '회원', 'Y', '08/15/2020', TO_DATE('19/10/11', 'RR/MM/DD'));
+        1000, 'Y', 'N', NULL, '회원', 'Y', '08/15/2020', TO_DATE('19/10/11', 'RR/MM/DD'));
 INSERT INTO MEM_INFO (MEM_NUM,  MEM_NAME, MEM_ID, MEM_PWD, MEM_EMAIL, MEM_ADDRESS, MEM_BIRTHDATE, MEM_LOGIN_COUNT,
                       MEM_COIN, MEM_CAN_VOTE_YN, MEM_WITHDRAW_YN, MEM_WITHDRAW_DATE, MEM_CLASS, MEM_BLOCK_YN,
                       MEM_BLOCK_DATE, MEM_ENROLL_DATE)
 VALUES ('26', '김태리', 'tlkim', '일shine', 'shinekim@gmail.com', '경기도 분당구', TO_DATE('87/03/05', 'RR/MM/DD'), 37, 3000,
-        'Y', 'N', '-', '회원', 'N', NULL, TO_DATE('19/10/15', 'RR/MM/DD'));
+        'Y', 'N', NULL, '회원', 'N', NULL, TO_DATE('19/10/15', 'RR/MM/DD'));
 INSERT INTO MEM_INFO (MEM_NUM,  MEM_NAME, MEM_ID, MEM_PWD, MEM_EMAIL, MEM_ADDRESS, MEM_BIRTHDATE, MEM_LOGIN_COUNT,
                       MEM_COIN, MEM_CAN_VOTE_YN, MEM_WITHDRAW_YN, MEM_WITHDRAW_DATE, MEM_CLASS, MEM_BLOCK_YN,
                       MEM_BLOCK_DATE, MEM_ENROLL_DATE)
 VALUES ('27', '손나은', 'neson', 'sonne111', 'handson@gmail.com', '서울시 강남구', TO_DATE('88/12/11', 'RR/MM/DD'), 26, 8300,
-        'Y', 'N', '-', '회원', 'N', NULL, TO_DATE('19/10/16', 'RR/MM/DD'));
+        'Y', 'N', NULL, '회원', 'N', NULL, TO_DATE('19/10/16', 'RR/MM/DD'));
 INSERT INTO MEM_INFO (MEM_NUM,  MEM_NAME, MEM_ID, MEM_PWD, MEM_EMAIL, MEM_ADDRESS, MEM_BIRTHDATE, MEM_LOGIN_COUNT,
                       MEM_COIN, MEM_CAN_VOTE_YN, MEM_WITHDRAW_YN, MEM_WITHDRAW_DATE, MEM_CLASS, MEM_BLOCK_YN,
                       MEM_BLOCK_DATE, MEM_ENROLL_DATE)
 VALUES ('28', '이효리', 'hllee', 'leejeju', '10minute@gmail.com', '서울시 강북구', TO_DATE('88/11/10', 'RR/MM/DD'), 56, 0,
-        'Y', 'N', '-', '회원', 'N', NULL, TO_DATE('19/10/23', 'RR/MM/DD'));
+        'Y', 'N', NULL, '회원', 'N', NULL, TO_DATE('19/10/23', 'RR/MM/DD'));
 INSERT INTO MEM_INFO (MEM_NUM,  MEM_NAME, MEM_ID, MEM_PWD, MEM_EMAIL, MEM_ADDRESS, MEM_BIRTHDATE, MEM_LOGIN_COUNT,
                       MEM_COIN, MEM_CAN_VOTE_YN, MEM_WITHDRAW_YN, MEM_WITHDRAW_DATE, MEM_CLASS, MEM_BLOCK_YN,
                       MEM_BLOCK_DATE, MEM_ENROLL_DATE)
 VALUES ('29', '권상우', 'swkwon', 'kwonsw24', 'sixpack@gmail.com', '인천 남동구', TO_DATE('75/01/19', 'RR/MM/DD'), 3, 24300,
-        'Y', 'N', '-', '회원', 'N', NULL, TO_DATE('19/10/25', 'RR/MM/DD'));
+        'Y', 'N', NULL, '회원', 'N', NULL, TO_DATE('19/10/25', 'RR/MM/DD'));
 INSERT INTO MEM_INFO (MEM_NUM,  MEM_NAME, MEM_ID, MEM_PWD, MEM_EMAIL, MEM_ADDRESS, MEM_BIRTHDATE, MEM_LOGIN_COUNT,
                       MEM_COIN, MEM_CAN_VOTE_YN, MEM_WITHDRAW_YN, MEM_WITHDRAW_DATE, MEM_CLASS, MEM_BLOCK_YN,
                       MEM_BLOCK_DATE, MEM_ENROLL_DATE)
 VALUES ('30', '박재상', 'jspark', 'psypsy', 'gangnamstyle@gmail.com', '서울시 강동구', TO_DATE('77/12/10', 'RR/MM/DD'), 2, 0,
-        'Y', 'N', '-', '회원', 'N', NULL, TO_DATE('19/10/28', 'RR/MM/DD'));
+        'Y', 'N', NULL, '회원', 'N', NULL, TO_DATE('19/10/28', 'RR/MM/DD'));
 
 COMMIT;
+
 
 -----------COMPET_INFO
 
@@ -209,294 +216,74 @@ CREATE TABLE COMPET_INFO
     COMPET_SSN              VARCHAR2(10)   NOT NULL,
     COMPET_NOV_IMG_LOCATION VARCHAR2(200),
     SCORE                   NUMBER  DEFAULT 0,
-    COMPET_ACT_YN           CHAR(2) DEFAULT 'Y' CHECK (COMPET_ACT_YN IN ('Y', 'N'))
+    COMPET_ACT_YN           CHAR(2) DEFAULT 'Y' CHECK (COMPET_ACT_YN IN ('Y', 'N')),
+    AGE_LIMIT               NUMBER,
+    CATEGORY_CODE       VARCHAR2(5) REFERENCES GENRE_CATEGORY(CATEGORY_CODE)
 );
 
 INSERT INTO COMPET_INFO (COMPET_NUM, MEM_NUM,  COMPET_PAPER_YN, NOV_TITLE, NOV_INFO, COMPET_SSN, COMPET_NOV_IMG_LOCATION,
-                         SCORE, COMPET_ACT_YN)
-VALUES ('1', '2', 'Y', '무림속 외노자가 너무 강하다', '어느 날 갑자기 무림에 떨어지고 이래저래 5년이 지났다.
-올해는 드디어 정규직이 되었다.', '2019Q4', '경로1', 0, 'Y');
-INSERT INTO COMPET_INFO (COMPET_NUM, MEM_NUM,  COMPET_PAPER_YN, NOV_TITLE, NOV_INFO, COMPET_SSN, COMPET_NOV_IMG_LOCATION,
-                         SCORE, COMPET_ACT_YN)
-VALUES ('2', '3', 'Y', '마왕 삼촌이 돌아왔다', '"삼촌, 삼촌도 헌터야?"
-"아니."
-"그럼 뭐야?"
-"삼촌은... 마왕이야."
-', '2019Q4', '경로1', 0, 'Y');
-INSERT INTO COMPET_INFO (COMPET_NUM, MEM_NUM,  COMPET_PAPER_YN, NOV_TITLE, NOV_INFO, COMPET_SSN, COMPET_NOV_IMG_LOCATION,
-                         SCORE, COMPET_ACT_YN)
-VALUES ('3', '4', 'Y', '천재 투수가 장타력을 숨김', '쿠바에서 온 KBO 생태계 교란종', '2019Q4', '경로1', 0, 'Y');
-INSERT INTO COMPET_INFO (COMPET_NUM, MEM_NUM,  COMPET_PAPER_YN, NOV_TITLE, NOV_INFO, COMPET_SSN, COMPET_NOV_IMG_LOCATION,
-                         SCORE, COMPET_ACT_YN)
-VALUES ('4', '5', 'Y', '타임머신으로 인생역전', '내 머릿속에는 최첨단 미래기술이 있다.', '2019Q4', '경로1', 0, 'Y');
-INSERT INTO COMPET_INFO (COMPET_NUM, MEM_NUM,  COMPET_PAPER_YN, NOV_TITLE, NOV_INFO, COMPET_SSN, COMPET_NOV_IMG_LOCATION,
-                         SCORE, COMPET_ACT_YN)
-VALUES ('5', '6', 'Y', '국가직 소환술사', '몬스터와 악마를 사냥하는 국가직 공무원.', '2019Q4', '경로1', 0, 'Y');
-INSERT INTO COMPET_INFO (COMPET_NUM, MEM_NUM,  COMPET_PAPER_YN, NOV_TITLE, NOV_INFO, COMPET_SSN, COMPET_NOV_IMG_LOCATION,
-                         SCORE, COMPET_ACT_YN)
-VALUES ('6', '7', 'Y', '게임속 위병으로 살아가기', '평소 즐겨하던 게임의 위병이 되었다.', '2019Q4', '경로1', 0, 'Y');
-INSERT INTO COMPET_INFO (COMPET_NUM, MEM_NUM,  COMPET_PAPER_YN, NOV_TITLE, NOV_INFO, COMPET_SSN, COMPET_NOV_IMG_LOCATION,
-                         SCORE, COMPET_ACT_YN)
-VALUES ('7', '8', 'Y', '보석을 먹는 플레이어', '이번 생에는, 진짜 천재가 되어주겠다.', '2019Q4', '경로1', 0, 'Y');
-INSERT INTO COMPET_INFO (COMPET_NUM, MEM_NUM,  COMPET_PAPER_YN, NOV_TITLE, NOV_INFO, COMPET_SSN, COMPET_NOV_IMG_LOCATION,
-                         SCORE, COMPET_ACT_YN)
-VALUES ('8', '9', 'Y', '투르크의 술탄이 됐다', '술탄이 되는 왕자, 단 한 명만 살아남는 오스만 제국에 떨어졌다.
-하렘은 개뿔, 살아 남기 위해 술탄이 돼야 한다.
+                         SCORE, COMPET_ACT_YN, AGE_LIMIT, CATEGORY_CODE)
+VALUES ('65', '8', 'Y', '방패용사성공담', '내용1','2021Q2', '경로1', 199, 'Y' , 15, 'MF' );
 
-#오스만 제국 #영지물 #since 1499', '2019Q4', '경로1', 0, 'Y');
 INSERT INTO COMPET_INFO (COMPET_NUM, MEM_NUM,  COMPET_PAPER_YN, NOV_TITLE, NOV_INFO, COMPET_SSN, COMPET_NOV_IMG_LOCATION,
-                         SCORE, COMPET_ACT_YN)
-VALUES ('9', '10', 'Y', '마법사들의 이능마켓', '여기 마켓은 엄청난 물건을 퍼준다.
-능력은 덤이고.
+                         SCORE, COMPET_ACT_YN, AGE_LIMIT, CATEGORY_CODE)
+VALUES ('66', '9', 'Y', '루팡 17세', '내용2','2021Q2', '경로1', 25, 'Y', 17, 'OF');
 
+INSERT INTO COMPET_INFO (COMPET_NUM, MEM_NUM,  COMPET_PAPER_YN, NOV_TITLE, NOV_INFO, COMPET_SSN, COMPET_NOV_IMG_LOCATION,
+                         SCORE, COMPET_ACT_YN, AGE_LIMIT, CATEGORY_CODE)
+VALUES ('67', '10', 'Y', '1412 괴도키드','내용3', '2021Q2', '경로1', 77, 'Y', 17, 'F');
 
-<평화나라 아니고 이능마켓> <아카데미>', '2019Q4', '경로1', 0, 'Y');
 INSERT INTO COMPET_INFO (COMPET_NUM, MEM_NUM,  COMPET_PAPER_YN, NOV_TITLE, NOV_INFO, COMPET_SSN, COMPET_NOV_IMG_LOCATION,
-                         SCORE, COMPET_ACT_YN)
-VALUES ('10', '11', 'Y', '이번 생은 재벌3세', '어쩌다 재벌', '2019Q4', '경로1', 0, 'Y');
-INSERT INTO COMPET_INFO (COMPET_NUM, MEM_NUM,  COMPET_PAPER_YN, NOV_TITLE, NOV_INFO, COMPET_SSN, COMPET_NOV_IMG_LOCATION,
-                         SCORE, COMPET_ACT_YN)
-VALUES ('11', '12', 'Y', '천재 조각가의 재능은 끝이 없다', '화려한 천재조각가의 삶.
-재능은 끝이 보이지 않는다.', '2019Q4', '경로1', 0, 'Y');
-INSERT INTO COMPET_INFO (COMPET_NUM, MEM_NUM,  COMPET_PAPER_YN, NOV_TITLE, NOV_INFO, COMPET_SSN, COMPET_NOV_IMG_LOCATION,
-                         SCORE, COMPET_ACT_YN)
-VALUES ('12', '13', 'Y', '천재 베이스', '5년간 활동했던 인디 밴드에서 버림받은 박현우
-집으로 돌아가는 길에 테이저건을 맞고 쓰러졌다.
-어...? 그런데 재능이 생겨 버렸다.
+                         SCORE, COMPET_ACT_YN, AGE_LIMIT, CATEGORY_CODE)
+VALUES ('68', '11', 'Y', '어른제국의 역습','내용4', '2021Q2', '경로1', 8, 'Y', 15, 'MF');
 
-#천재 #뮤지션 #음악 #엔터 #테이저건', '2019Q4', '경로1', 0, 'Y');
 INSERT INTO COMPET_INFO (COMPET_NUM, MEM_NUM,  COMPET_PAPER_YN, NOV_TITLE, NOV_INFO, COMPET_SSN, COMPET_NOV_IMG_LOCATION,
-                         SCORE, COMPET_ACT_YN)
-VALUES ('13', '14', 'Y', '명왕성 채굴로 우주재벌', '현대 판타지 // 이능력물 // 성장물 // 재벌물 // 우주 개척물', '2019Q4', '경로1', 0, 'Y');
-INSERT INTO COMPET_INFO (COMPET_NUM, MEM_NUM,  COMPET_PAPER_YN, NOV_TITLE, NOV_INFO, COMPET_SSN, COMPET_NOV_IMG_LOCATION,
-                         SCORE, COMPET_ACT_YN)
-VALUES ('14', '15', 'Y', '레벨업하는 해적왕', '배를 얻었다.
-모조리 약탈해서 성장한다', '2019Q4', '경로1', 0, 'Y');
-INSERT INTO COMPET_INFO (COMPET_NUM, MEM_NUM,  COMPET_PAPER_YN, NOV_TITLE, NOV_INFO, COMPET_SSN, COMPET_NOV_IMG_LOCATION,
-                         SCORE, COMPET_ACT_YN)
-VALUES ('15', '16', 'Y', '순정만화에서 살아남기', '[Mission]
-: 지면을 차지하고 분량을 확보해 완결까지 살아남으시오
+                         SCORE, COMPET_ACT_YN, AGE_LIMIT, CATEGORY_CODE)
+VALUES ('69', '12', 'Y', '짱구는 못말려', '내용5','2021Q2', '경로1', 7, 'Y' , 19, 'FH');
 
-만화 속 ''행인1''에 빙의되었다.
-근데 그게 첫 화를 끝으로 사라지는 엑스트라다.', '2019Q4', '경로1', 0, 'Y');
 INSERT INTO COMPET_INFO (COMPET_NUM, MEM_NUM,  COMPET_PAPER_YN, NOV_TITLE, NOV_INFO, COMPET_SSN, COMPET_NOV_IMG_LOCATION,
-                         SCORE, COMPET_ACT_YN)
-VALUES ('16', '17', 'Y', '2살부터 허준', '나는 태어날 때부터 한의사였다', '2019Q4', '경로1', 0, 'Y');
-INSERT INTO COMPET_INFO (COMPET_NUM, MEM_NUM,  COMPET_PAPER_YN, NOV_TITLE, NOV_INFO, COMPET_SSN, COMPET_NOV_IMG_LOCATION,
-                         SCORE, COMPET_ACT_YN)
-VALUES ('17', '18', 'Y', 'K-영화 천재로 회귀했다', '영화사 신입 시절로 회귀해버렸다.
-어차피 다 아는 전개.
-이젠 내 멋대로 치고 올라간다.', '2020Q3', '경로1', 0, 'Y');
-INSERT INTO COMPET_INFO (COMPET_NUM, MEM_NUM,  COMPET_PAPER_YN, NOV_TITLE, NOV_INFO, COMPET_SSN, COMPET_NOV_IMG_LOCATION,
-                         SCORE, COMPET_ACT_YN)
-VALUES ('18', '19', 'Y', '아카데미의 정령사', '경지에 이른 정령술은 마법과 구별할 수 없다.
+                         SCORE, COMPET_ACT_YN, AGE_LIMIT, CATEGORY_CODE)
+VALUES ('70', '13', 'Y', '아땀맘마 완결', '내용6','2021Q2', '경로1', 44, 'Y',12,'ROM');
 
-그리고 나는 아카데미의 유일무이한 정령사다.', '2020Q3', '경로1', 0, 'Y');
 INSERT INTO COMPET_INFO (COMPET_NUM, MEM_NUM,  COMPET_PAPER_YN, NOV_TITLE, NOV_INFO, COMPET_SSN, COMPET_NOV_IMG_LOCATION,
-                         SCORE, COMPET_ACT_YN)
-VALUES ('19', '20', 'Y', '게임속 어쌔신이 되었다', '게임 속 어쌔신이 되었다.
+                         SCORE, COMPET_ACT_YN, AGE_LIMIT, CATEGORY_CODE)
+VALUES ('71', '14', 'Y', '오징어땅콩 맛있어', '내용7','2021Q2', '경로1', 7, 'Y', 15, 'F');
 
-그런데 시점이 엔딩으로부터 20년이나 흐른 후다….', '2020Q3', '경로1', 0, 'Y');
 INSERT INTO COMPET_INFO (COMPET_NUM, MEM_NUM,  COMPET_PAPER_YN, NOV_TITLE, NOV_INFO, COMPET_SSN, COMPET_NOV_IMG_LOCATION,
-                         SCORE, COMPET_ACT_YN)
-VALUES ('20', '21', 'Y', '경이로운 회귀 타자', '회귀는 개소리를 동반한다.', '2020Q3', '경로1', 0, 'Y');
-INSERT INTO COMPET_INFO (COMPET_NUM, MEM_NUM,  COMPET_PAPER_YN, NOV_TITLE, NOV_INFO, COMPET_SSN, COMPET_NOV_IMG_LOCATION,
-                         SCORE, COMPET_ACT_YN)
-VALUES ('21', '22', 'Y', '멸망한 세계의 창술사', '31세기 디스토피아.
-이계에서 온 창술사는 정의와 명예를 외친다.', '2020Q3', '경로1', 0, 'Y');
-INSERT INTO COMPET_INFO (COMPET_NUM, MEM_NUM,  COMPET_PAPER_YN, NOV_TITLE, NOV_INFO, COMPET_SSN, COMPET_NOV_IMG_LOCATION,
-                         SCORE, COMPET_ACT_YN)
-VALUES ('22', '23', 'Y', '신라, 삼국지를 먹다', '신라가 삼국지 시대 중국을 제패해버리다.', '2020Q3', '경로1', 0, 'Y');
-INSERT INTO COMPET_INFO (COMPET_NUM, MEM_NUM,  COMPET_PAPER_YN, NOV_TITLE, NOV_INFO, COMPET_SSN, COMPET_NOV_IMG_LOCATION,
-                         SCORE, COMPET_ACT_YN)
-VALUES ('23', '24', 'Y', '망나니의 약혼자가 되었다', '약혼 상대가 귀족 가문의 망나니다.
-내 인생 망해버린 건가?', '2020Q3', '경로1', 0, 'Y');
-INSERT INTO COMPET_INFO (COMPET_NUM, MEM_NUM,  COMPET_PAPER_YN, NOV_TITLE, NOV_INFO, COMPET_SSN, COMPET_NOV_IMG_LOCATION,
-                         SCORE, COMPET_ACT_YN)
-VALUES ('24', '25', 'Y', '빙의한 악역이 너무 약함', '소설 속 등장인물이 되었다.
-문제는 검 같은 건 손도 댄적 없다는 건데...
-어쩌지', '2020Q3', '경로1', 0, 'Y');
-INSERT INTO COMPET_INFO (COMPET_NUM, MEM_NUM,  COMPET_PAPER_YN, NOV_TITLE, NOV_INFO, COMPET_SSN, COMPET_NOV_IMG_LOCATION,
-                         SCORE, COMPET_ACT_YN)
-VALUES ('25', '26', 'Y', '눈떠보니 천재영화감독', '평행세계의 김정훈
-재생시간 13,534 시간짜리 DVD를 얻게 되는데...', '2020Q3', '경로1', 0, 'Y');
-INSERT INTO COMPET_INFO (COMPET_NUM, MEM_NUM,  COMPET_PAPER_YN, NOV_TITLE, NOV_INFO, COMPET_SSN, COMPET_NOV_IMG_LOCATION,
-                         SCORE, COMPET_ACT_YN)
-VALUES ('26', '27', 'Y', '빌런의 경영학', '평행세계의 미래와 접촉한 결과가 빌런?
+                         SCORE, COMPET_ACT_YN, AGE_LIMIT, CATEGORY_CODE)
+VALUES ('72', '15', 'Y', '떡국열차', '내용8','2021Q2', '경로1', 4, 'Y', 15, 'MF');
 
-아무렴 어때. 빌런도 제법 뛰어난 빌런이 될 것 같은데.', '2020Q3', '경로1', 0, 'Y');
 INSERT INTO COMPET_INFO (COMPET_NUM, MEM_NUM,  COMPET_PAPER_YN, NOV_TITLE, NOV_INFO, COMPET_SSN, COMPET_NOV_IMG_LOCATION,
-                         SCORE, COMPET_ACT_YN)
-VALUES ('27', '28', 'Y', '상태창빨로 세계정복', '멸망하는 세상 속에서 환생했다.
-[상태창] ', '2020Q3', '경로1', 0, 'Y');
-INSERT INTO COMPET_INFO (COMPET_NUM, MEM_NUM,  COMPET_PAPER_YN, NOV_TITLE, NOV_INFO, COMPET_SSN, COMPET_NOV_IMG_LOCATION,
-                         SCORE, COMPET_ACT_YN)
-VALUES ('28', '29', 'Y', '흰머리 맥아더', '1911년.
-미 육군사관학교에 최초의 한인 생도가 입학했다.', '2020Q3', '경로1', 0, 'Y');
-INSERT INTO COMPET_INFO (COMPET_NUM, MEM_NUM,  COMPET_PAPER_YN, NOV_TITLE, NOV_INFO, COMPET_SSN, COMPET_NOV_IMG_LOCATION,
-                         SCORE, COMPET_ACT_YN)
-VALUES ('29', '30', 'Y', '빌어먹을 회귀', '마왕의 후손으로 환생했다.', '2020Q3', '경로1', 0, 'Y');
-INSERT INTO COMPET_INFO (COMPET_NUM, MEM_NUM,  COMPET_PAPER_YN, NOV_TITLE, NOV_INFO, COMPET_SSN, COMPET_NOV_IMG_LOCATION,
-                         SCORE, COMPET_ACT_YN)
-VALUES ('30', '2', 'Y', '서바이벌로 우주 최강', '전역하고 일주일. 이제 민간인 기분좀 내려는데 응? 이계로 강제 납치?
-''뭐? 무림인과 마법사 기사들과 서바이벌 게임을 하라고?''
-최강운의 우주 정복기.', '2020Q3', '경로1', 0, 'Y');
-INSERT INTO COMPET_INFO (COMPET_NUM, MEM_NUM,  COMPET_PAPER_YN, NOV_TITLE, NOV_INFO, COMPET_SSN, COMPET_NOV_IMG_LOCATION,
-                         SCORE, COMPET_ACT_YN)
-VALUES ('31', '3', 'Y', '신입사원 백현수', '회귀해보니 입사 첫날이었다.', '2020Q3', '경로1', 0, 'Y');
-INSERT INTO COMPET_INFO (COMPET_NUM, MEM_NUM,  COMPET_PAPER_YN, NOV_TITLE, NOV_INFO, COMPET_SSN, COMPET_NOV_IMG_LOCATION,
-                         SCORE, COMPET_ACT_YN)
-VALUES ('32', '4', 'Y', '드루와(격투마스터의 부활)', '대기만성 격투가.
+                         SCORE, COMPET_ACT_YN, AGE_LIMIT, CATEGORY_CODE)
+VALUES ('73', '8', 'Y', '호카게는 아무나 되냐?', '내용9','2021Q2', '경로1', 15, 'Y', 15, 'MF');
 
-늦깍이 파이터의 옥타곤 도전기!', '2020Q3', '경로1', 0, 'Y');
 INSERT INTO COMPET_INFO (COMPET_NUM, MEM_NUM,  COMPET_PAPER_YN, NOV_TITLE, NOV_INFO, COMPET_SSN, COMPET_NOV_IMG_LOCATION,
-                         SCORE, COMPET_ACT_YN)
-VALUES ('33', '5', 'Y', '엔젤 소드', '어머니의 당부를 잊고 칼을 잡았다.
-칼을 휙! 휘둘렀더니,왕자님이 픽! 죽었다.', '2020Q4', '경로1', 0, 'Y');
-INSERT INTO COMPET_INFO (COMPET_NUM, MEM_NUM,  COMPET_PAPER_YN, NOV_TITLE, NOV_INFO, COMPET_SSN, COMPET_NOV_IMG_LOCATION,
-                         SCORE, COMPET_ACT_YN)
-VALUES ('34', '6', 'Y', '게임속 정령사로 살아가는 법', '평소 즐겨하던 게임의 정령사 캐릭터가 되어버렸다.', '2020Q4', '경로1', 0, 'Y');
-INSERT INTO COMPET_INFO (COMPET_NUM, MEM_NUM,  COMPET_PAPER_YN, NOV_TITLE, NOV_INFO, COMPET_SSN, COMPET_NOV_IMG_LOCATION,
-                         SCORE, COMPET_ACT_YN)
-VALUES ('35', '7', 'Y', '약먹는 천재저격수', '천재적인 재능을 가졌지만 약 없이는 걷는것조차 힘들다.
-세번째 부캐로 만들었던 저격수 캐릭터.
-그 캐릭터의 세상 속에 들어오고 말았다', '2020Q4', '경로1', 0, 'Y');
-INSERT INTO COMPET_INFO (COMPET_NUM, MEM_NUM,  COMPET_PAPER_YN, NOV_TITLE, NOV_INFO, COMPET_SSN, COMPET_NOV_IMG_LOCATION,
-                         SCORE, COMPET_ACT_YN)
-VALUES ('36', '8', 'Y', '방랑힐러로 살아가는 법', '신성 제국의 기사 가문인 에이츠 가문.
-그 가문에서 천재 힐러로 태어난 한철수의 이야기.', '2020Q4', '경로1', 0, 'Y');
-INSERT INTO COMPET_INFO (COMPET_NUM, MEM_NUM,  COMPET_PAPER_YN, NOV_TITLE, NOV_INFO, COMPET_SSN, COMPET_NOV_IMG_LOCATION,
-                         SCORE, COMPET_ACT_YN)
-VALUES ('37', '9', 'Y', '올지능스탯 황제가 되었다', '게임 속 최종 보스.
-책략으로 황위를 찬탈한 황제가 되었다.', '2020Q4', '경로1', 0, 'Y');
-INSERT INTO COMPET_INFO (COMPET_NUM, MEM_NUM,  COMPET_PAPER_YN, NOV_TITLE, NOV_INFO, COMPET_SSN, COMPET_NOV_IMG_LOCATION,
-                         SCORE, COMPET_ACT_YN)
-VALUES ('38', '10', 'Y', '미래에서 재능이 쏟아져', '미래의 물건에서 재능을 가져올 수 있다고?', '2020Q4', '경로1', 0, 'Y');
-INSERT INTO COMPET_INFO (COMPET_NUM, MEM_NUM,  COMPET_PAPER_YN, NOV_TITLE, NOV_INFO, COMPET_SSN, COMPET_NOV_IMG_LOCATION,
-                         SCORE, COMPET_ACT_YN)
-VALUES ('39', '11', 'Y', '신성로마 재벌가의 망나니', '평생을 흙수저로 살아왔던 이명훈
+                         SCORE, COMPET_ACT_YN, AGE_LIMIT, CATEGORY_CODE)
+VALUES ('74', '9', 'Y', '난 해적왕이 될꺼냐', '내용10','2021Q2', '경로1', 25, 'Y', 12, 'SPO');
 
-과로에 찌들어 도서관에서 잠깐 감았던 눈을 다시 뜨자 그는 신성로마 최고 재벌가의 장남이 되어 있었다.
+INSERT INTO COMPET_INFO (COMPET_NUM, MEM_NUM,  COMPET_PAPER_YN, NOV_TITLE, NOV_INFO, COMPET_SSN, COMPET_NOV_IMG_LOCATION,
+                         SCORE, COMPET_ACT_YN, AGE_LIMIT, CATEGORY_CODE)
+VALUES ('75', '10', 'Y', '원피스 딴따~','내용11', '2021Q2', '경로1', 14, 'Y',15, 'OF');
 
-다시 한 번 시작된 새로운 삶. 이번에는 원없이 돈을 휘두르며 제대로 살아보련다.', '2020Q4', '경로1', 0, 'Y');
 INSERT INTO COMPET_INFO (COMPET_NUM, MEM_NUM,  COMPET_PAPER_YN, NOV_TITLE, NOV_INFO, COMPET_SSN, COMPET_NOV_IMG_LOCATION,
-                         SCORE, COMPET_ACT_YN)
-VALUES ('40', '12', 'Y', '아포칼립스 속 마법사', '종말을 앞둔 세계, 엘드윈을 구원한 마법사.
-십여 년만에 그리운 고향, 지구로 귀환했다.
-그런데 그날 밤.
-평화롭던 지구에 종말이 찾아왔다.', '2020Q4', '경로1', 0, 'Y');
-INSERT INTO COMPET_INFO (COMPET_NUM, MEM_NUM,  COMPET_PAPER_YN, NOV_TITLE, NOV_INFO, COMPET_SSN, COMPET_NOV_IMG_LOCATION,
-                         SCORE, COMPET_ACT_YN)
-VALUES ('41', '13', 'Y', '곤륜파 천재권법가', '사파제일검. 검귀 독고.
-곤륜파의 대사형이 되었다.', '2020Q4', '경로1', 0, 'Y');
-INSERT INTO COMPET_INFO (COMPET_NUM, MEM_NUM,  COMPET_PAPER_YN, NOV_TITLE, NOV_INFO, COMPET_SSN, COMPET_NOV_IMG_LOCATION,
-                         SCORE, COMPET_ACT_YN)
-VALUES ('42', '14', 'Y', '골키퍼가 축구를 너무 잘함', '미친 피지컬과 미친 슈팅력을 가진 골키퍼.
-이 골키퍼가 축구를 너무 잘한다.', '2020Q4', '경로1', 0, 'Y');
-INSERT INTO COMPET_INFO (COMPET_NUM, MEM_NUM,  COMPET_PAPER_YN, NOV_TITLE, NOV_INFO, COMPET_SSN, COMPET_NOV_IMG_LOCATION,
-                         SCORE, COMPET_ACT_YN)
-VALUES ('43', '15', 'Y', '치트키로 월드컵 우승', '성한 곳 하나 없는 몸으로 꿈을 포기하게 된 내게,
-온 몸을 치트키 할 수 있는 능력이 주어졌다.', '2020Q4', '경로1', 0, 'Y');
-INSERT INTO COMPET_INFO (COMPET_NUM, MEM_NUM,  COMPET_PAPER_YN, NOV_TITLE, NOV_INFO, COMPET_SSN, COMPET_NOV_IMG_LOCATION,
-                         SCORE, COMPET_ACT_YN)
-VALUES ('44', '16', 'Y', '역대급 도루왕의 탄생', 'KBO 타격왕, 메이저리그 3번 타자 최강남.
-이번엔 메이저리그 도루왕에 도전한다.', '2020Q4', '경로1', 0, 'Y');
-INSERT INTO COMPET_INFO (COMPET_NUM, MEM_NUM,  COMPET_PAPER_YN, NOV_TITLE, NOV_INFO, COMPET_SSN, COMPET_NOV_IMG_LOCATION,
-                         SCORE, COMPET_ACT_YN)
-VALUES ('45', '17', 'Y', '천재 냥통령이 되었다', '그 녀석이 떠난 뒤, 모든 게 시작됐다.', '2020Q4', '경로1', 0, 'Y');
-INSERT INTO COMPET_INFO (COMPET_NUM, MEM_NUM,  COMPET_PAPER_YN, NOV_TITLE, NOV_INFO, COMPET_SSN, COMPET_NOV_IMG_LOCATION,
-                         SCORE, COMPET_ACT_YN)
-VALUES ('46', '18', 'Y', '삼국지 : 어부라로 천하통일', '아무도 알아주지 않지만 천하통일의 그릇이라며 뻔뻔함을 지닌 나. 대업에 도전한다!!', '2020Q4', '경로1',
-        0, 'Y');
-INSERT INTO COMPET_INFO (COMPET_NUM, MEM_NUM,  COMPET_PAPER_YN, NOV_TITLE, NOV_INFO, COMPET_SSN, COMPET_NOV_IMG_LOCATION,
-                         SCORE, COMPET_ACT_YN)
-VALUES ('47', '19', 'Y', '해를 품은 9서클 마도사', '높디높은 밤하늘에 있지 않더라도.
-아무도 보지 못하는 곳에 떨어져 있더라도
-스스로가 빛나기를 원한다면
-그렇다면 그것은 태양이다.', '2020Q4', '경로1', 0, 'Y');
-INSERT INTO COMPET_INFO (COMPET_NUM, MEM_NUM,  COMPET_PAPER_YN, NOV_TITLE, NOV_INFO, COMPET_SSN, COMPET_NOV_IMG_LOCATION,
-                         SCORE, COMPET_ACT_YN)
-VALUES ('48', '20', 'Y', '회귀했는데 여대생이 되었다', '간신히 회귀해서 복수할 수 있는 기회를 거머쥐었는데.
-뭐? 여대생이라고?', '2020Q4', '경로1', 0, 'Y');
-INSERT INTO COMPET_INFO (COMPET_NUM, MEM_NUM,  COMPET_PAPER_YN, NOV_TITLE, NOV_INFO, COMPET_SSN, COMPET_NOV_IMG_LOCATION,
-                         SCORE, COMPET_ACT_YN)
-VALUES ('49', '21', 'Y', '특성카피로 야구도사', '죽을 뻔한 위기를 겪고 나자 선수들의 능력을 카피 할 수 있게 되었다.
+                         SCORE, COMPET_ACT_YN, AGE_LIMIT, CATEGORY_CODE)
+VALUES ('76', '11', 'Y', '디아블로 잡아본 사람','내용12', '2021Q2', '경로1', 78, 'Y', 15, 'MF');
 
-세계 최고가 되리라.', '2021Q1', '경로1', 0, 'Y');
 INSERT INTO COMPET_INFO (COMPET_NUM, MEM_NUM,  COMPET_PAPER_YN, NOV_TITLE, NOV_INFO, COMPET_SSN, COMPET_NOV_IMG_LOCATION,
-                         SCORE, COMPET_ACT_YN)
-VALUES ('50', '22', 'Y', '엘프가 너무 강함', '게이트의 출현과 대 헌터 시대의 개막.
-지구를 멸망시킨 것은 인간도, 오크도, 드래곤도 아닌 엘프였다.', '2021Q1', '경로1', 0, 'Y');
-INSERT INTO COMPET_INFO (COMPET_NUM, MEM_NUM,  COMPET_PAPER_YN, NOV_TITLE, NOV_INFO, COMPET_SSN, COMPET_NOV_IMG_LOCATION,
-                         SCORE, COMPET_ACT_YN)
-VALUES ('51', '23', 'Y', '공작가의 검술 천재 ', '나도 특별한데, 내가 만든 성검은 더 특별하다.', '2021Q1', '경로1', 0, 'Y');
-INSERT INTO COMPET_INFO (COMPET_NUM, MEM_NUM,  COMPET_PAPER_YN, NOV_TITLE, NOV_INFO, COMPET_SSN, COMPET_NOV_IMG_LOCATION,
-                         SCORE, COMPET_ACT_YN)
-VALUES ('52', '24', 'Y', '무협 속 거지가 되었다', 'WFC 라이트급 챔피언. 그 꿈을 이루기 직전 나는 뜬금없이 거지소년A로 환생 했다. 이런 X같은 이야기가 또 있을까?',
-        '2021Q1', '경로1', 0, 'Y');
-INSERT INTO COMPET_INFO (COMPET_NUM, MEM_NUM,  COMPET_PAPER_YN, NOV_TITLE, NOV_INFO, COMPET_SSN, COMPET_NOV_IMG_LOCATION,
-                         SCORE, COMPET_ACT_YN)
-VALUES ('53', '25', 'Y', '보물의 목소리가 들려', '박물관 학예사 진호.
+                         SCORE, COMPET_ACT_YN, AGE_LIMIT, CATEGORY_CODE)
+VALUES ('77', '12', 'Y', '오버 시계', '내용13','2021Q2', '경로1', 52, 'Y', 19, 'F');
 
-시험 탈락 후 벼락을 맞았는데, 돌연 보물의 목소리가 들린다?
+INSERT INTO COMPET_INFO (COMPET_NUM, MEM_NUM,  COMPET_PAPER_YN, NOV_TITLE, NOV_INFO, COMPET_SSN, COMPET_NOV_IMG_LOCATION,
+                         SCORE, COMPET_ACT_YN, AGE_LIMIT, CATEGORY_CODE)
+VALUES ('78', '13', 'Y', '리그오브레전더리링', '내용14','2021Q2', '경로1', 96, 'Y', 12, 'MF');
 
-[뭘 꼬나보냐?]', '2021Q1', '경로1', 0, 'Y');
 INSERT INTO COMPET_INFO (COMPET_NUM, MEM_NUM,  COMPET_PAPER_YN, NOV_TITLE, NOV_INFO, COMPET_SSN, COMPET_NOV_IMG_LOCATION,
-                         SCORE, COMPET_ACT_YN)
-VALUES ('54', '26', 'Y', '타자 끝, 투수 시작', '비참한 순간에 겪은 회귀.
-새로운 삶에서는 투수의 길을 걷는다.', '2021Q1', '경로1', 0, 'Y');
-INSERT INTO COMPET_INFO (COMPET_NUM, MEM_NUM,  COMPET_PAPER_YN, NOV_TITLE, NOV_INFO, COMPET_SSN, COMPET_NOV_IMG_LOCATION,
-                         SCORE, COMPET_ACT_YN)
-VALUES ('55', '27', 'Y', '범생이가 조상을 수집함', '조상의 힘으로 강해지는 괴작 RPG.
-그곳에 처박힌 내 신분은 족보 없는 범생이였다.', '2021Q1', '경로1', 0, 'Y');
-INSERT INTO COMPET_INFO (COMPET_NUM, MEM_NUM,  COMPET_PAPER_YN, NOV_TITLE, NOV_INFO, COMPET_SSN, COMPET_NOV_IMG_LOCATION,
-                         SCORE, COMPET_ACT_YN)
-VALUES ('56', '28', 'Y', '협상가의 영지', '판타지 세계! 생존을 위해 협상의 기술을 발휘하고, 권력을 탐하다!
-중세 판타지 세계를 배경으로 하는 이계진입, 영지 경영, 전쟁 정복물입니다.', '2021Q1', '경로1', 0, 'Y');
-INSERT INTO COMPET_INFO (COMPET_NUM, MEM_NUM,  COMPET_PAPER_YN, NOV_TITLE, NOV_INFO, COMPET_SSN, COMPET_NOV_IMG_LOCATION,
-                         SCORE, COMPET_ACT_YN)
-VALUES ('57', '29', 'Y', '마도문명 고려에서 부활하다', '마도 신성고려제국의 탄생!
-이제 신시대의 대세는 마법이다.
-전세계를 포탈로 연결하니, 모든 길이 남경으로 통한다.', '2021Q1', '경로1', 0, 'Y');
-INSERT INTO COMPET_INFO (COMPET_NUM, MEM_NUM,  COMPET_PAPER_YN, NOV_TITLE, NOV_INFO, COMPET_SSN, COMPET_NOV_IMG_LOCATION,
-                         SCORE, COMPET_ACT_YN)
-VALUES ('58', '30', 'Y', '바이올린의 신', '슈만, 파가니니, 모차르트, 바흐
+                         SCORE, COMPET_ACT_YN, AGE_LIMIT, CATEGORY_CODE)
+VALUES ('79', '14', 'Y', '메이플월드를 지켜라', '내용15','2021Q2', '경로1', 14, 'Y', 12, 'SPO');
 
-이 세상 어떤 음악가든, 그의 경험은 내 것이 된다.', '2021Q1', '경로1', 0, 'Y');
 INSERT INTO COMPET_INFO (COMPET_NUM, MEM_NUM,  COMPET_PAPER_YN, NOV_TITLE, NOV_INFO, COMPET_SSN, COMPET_NOV_IMG_LOCATION,
-                         SCORE, COMPET_ACT_YN)
-VALUES ('59', '2', 'Y', '신들의 킹근갓켓', '제우스 :번개 팝니다 그리스 직거래 가능.
-마호메트: 각종 생활 필수품 팝니다.
-대천사 미카엘 : 신성 속성 개당 500골드에 부여. 4개이상 할인
-
-"이거 실화인가?"', '2021Q1', '경로1', 0, 'Y');
-INSERT INTO COMPET_INFO (COMPET_NUM, MEM_NUM,  COMPET_PAPER_YN, NOV_TITLE, NOV_INFO, COMPET_SSN, COMPET_NOV_IMG_LOCATION,
-                         SCORE, COMPET_ACT_YN)
-VALUES ('60', '3', 'Y', '사후세계에 어서오세요', '죽음. 그 이후 세계에 대하여.
-
-지구에서의 삶은 첫 번째 페이지.
-이제 당신의 책에 기록될 두 번째 이야기를 써내려갑니다.', '2021Q1', '경로1', 0, 'Y');
-INSERT INTO COMPET_INFO (COMPET_NUM, MEM_NUM,  COMPET_PAPER_YN, NOV_TITLE, NOV_INFO, COMPET_SSN, COMPET_NOV_IMG_LOCATION,
-                         SCORE, COMPET_ACT_YN)
-VALUES ('61', '4', 'Y', '유럽 심시티', '고대 로마시대 유럽에 떨어진 김우진, 어떻게든 로마의 침공을 대비하고 살아남아야한다... ', '2021Q1', '경로1', 0,
-        'Y');
-INSERT INTO COMPET_INFO (COMPET_NUM, MEM_NUM,  COMPET_PAPER_YN, NOV_TITLE, NOV_INFO, COMPET_SSN, COMPET_NOV_IMG_LOCATION,
-                         SCORE, COMPET_ACT_YN)
-VALUES ('62', '5', 'Y', '초밥 말고 레벨업!', '억울하게 죽임 당한 40대 가장 ‘김초식’의 인생 2회차 Story
-이번 삶에서 그는 초밥 말면서 레벨 업 한다!!
-
-십수년을 개처럼 일만했다.
-오너의 딸과 결혼한 운좋은 싸가지 밑에서.', '2021Q1', '경로1', 0, 'Y');
-INSERT INTO COMPET_INFO (COMPET_NUM, MEM_NUM,  COMPET_PAPER_YN, NOV_TITLE, NOV_INFO, COMPET_SSN, COMPET_NOV_IMG_LOCATION,
-                         SCORE, COMPET_ACT_YN)
-VALUES ('63', '6', 'Y', '내가 김두환이다', '이 나라의 정점에 올라간다.
-그리고 대한민국의 초대 대통령이되겠다.
-미친놈이 될지라도.', '2021Q1', '경로1', 0, 'Y');
-INSERT INTO COMPET_INFO (COMPET_NUM, MEM_NUM,  COMPET_PAPER_YN, NOV_TITLE, NOV_INFO, COMPET_SSN, COMPET_NOV_IMG_LOCATION,
-                         SCORE, COMPET_ACT_YN)
-VALUES ('64', '7', 'Y', '비타민이 신선함', '비타민, 칼슘, 오메가-3, 프로폴리스, 글루코사민......
-
-그 모두가 레벨업 재료다', '2021Q1', '경로1', 0, 'Y');
+                         SCORE, COMPET_ACT_YN, AGE_LIMIT, CATEGORY_CODE)
+VALUES ('80', '15', 'Y', '메이플스토리 운명의소녀', '내용16','2021Q2', '경로1', 63, 'Y', 12, 'SPO');
 
 COMMIT;
 
@@ -507,648 +294,152 @@ CREATE TABLE COMPET_DETAIL
     CHAPTER_NUM NUMBER,
     COMPET_NUM  NUMBER REFERENCES COMPET_INFO(COMPET_NUM),
     NOV_CONTENT VARCHAR2(1000) NOT NULL,
-    CONSTRAINT PK_COMPET_DETAIL PRIMARY KEY (CHAPTER_NUM, COMPET_NUM)
+    CONSTRAINT PK_COMPET_DETAIL PRIMARY KEY (CHAPTER_NUM, COMPET_NUM),
+    COMPET_DATE VARCHAR2(30)
 );
-INSERT INTO COMPET_DETAIL (CHAPTER_NUM, COMPET_NUM, NOV_CONTENT)
-VALUES (1, '1', '내용');
-INSERT INTO COMPET_DETAIL (CHAPTER_NUM, COMPET_NUM, NOV_CONTENT)
-VALUES (2, '1', '내용');
-INSERT INTO COMPET_DETAIL (CHAPTER_NUM, COMPET_NUM, NOV_CONTENT)
-VALUES (3, '1', '내용');
-INSERT INTO COMPET_DETAIL (CHAPTER_NUM, COMPET_NUM, NOV_CONTENT)
-VALUES (4, '1', '내용');
-INSERT INTO COMPET_DETAIL (CHAPTER_NUM, COMPET_NUM, NOV_CONTENT)
-VALUES (5, '1', '내용');
-INSERT INTO COMPET_DETAIL (CHAPTER_NUM, COMPET_NUM, NOV_CONTENT)
-VALUES (1, '2', '내용');
-INSERT INTO COMPET_DETAIL (CHAPTER_NUM, COMPET_NUM, NOV_CONTENT)
-VALUES (2, '2', '내용');
-INSERT INTO COMPET_DETAIL (CHAPTER_NUM, COMPET_NUM, NOV_CONTENT)
-VALUES (3, '2', '내용');
-INSERT INTO COMPET_DETAIL (CHAPTER_NUM, COMPET_NUM, NOV_CONTENT)
-VALUES (4, '2', '내용');
-INSERT INTO COMPET_DETAIL (CHAPTER_NUM, COMPET_NUM, NOV_CONTENT)
-VALUES (5, '2', '내용');
-INSERT INTO COMPET_DETAIL (CHAPTER_NUM, COMPET_NUM, NOV_CONTENT)
-VALUES (1, '3', '내용');
-INSERT INTO COMPET_DETAIL (CHAPTER_NUM, COMPET_NUM, NOV_CONTENT)
-VALUES (2, '3', '내용');
-INSERT INTO COMPET_DETAIL (CHAPTER_NUM, COMPET_NUM, NOV_CONTENT)
-VALUES (3, '3', '내용');
-INSERT INTO COMPET_DETAIL (CHAPTER_NUM, COMPET_NUM, NOV_CONTENT)
-VALUES (4, '3', '내용');
-INSERT INTO COMPET_DETAIL (CHAPTER_NUM, COMPET_NUM, NOV_CONTENT)
-VALUES (5, '3', '내용');
-INSERT INTO COMPET_DETAIL (CHAPTER_NUM, COMPET_NUM, NOV_CONTENT)
-VALUES (1, '4', '내용');
-INSERT INTO COMPET_DETAIL (CHAPTER_NUM, COMPET_NUM, NOV_CONTENT)
-VALUES (2, '4', '내용');
-INSERT INTO COMPET_DETAIL (CHAPTER_NUM, COMPET_NUM, NOV_CONTENT)
-VALUES (3, '4', '내용');
-INSERT INTO COMPET_DETAIL (CHAPTER_NUM, COMPET_NUM, NOV_CONTENT)
-VALUES (4, '4', '내용');
-INSERT INTO COMPET_DETAIL (CHAPTER_NUM, COMPET_NUM, NOV_CONTENT)
-VALUES (5, '4', '내용');
-INSERT INTO COMPET_DETAIL (CHAPTER_NUM, COMPET_NUM, NOV_CONTENT)
-VALUES (1, '5', '내용');
-INSERT INTO COMPET_DETAIL (CHAPTER_NUM, COMPET_NUM, NOV_CONTENT)
-VALUES (2, '5', '내용');
-INSERT INTO COMPET_DETAIL (CHAPTER_NUM, COMPET_NUM, NOV_CONTENT)
-VALUES (3, '5', '내용');
-INSERT INTO COMPET_DETAIL (CHAPTER_NUM, COMPET_NUM, NOV_CONTENT)
-VALUES (4, '5', '내용');
-INSERT INTO COMPET_DETAIL (CHAPTER_NUM, COMPET_NUM, NOV_CONTENT)
-VALUES (5, '5', '내용');
-INSERT INTO COMPET_DETAIL (CHAPTER_NUM, COMPET_NUM, NOV_CONTENT)
-VALUES (1, '6', '내용');
-INSERT INTO COMPET_DETAIL (CHAPTER_NUM, COMPET_NUM, NOV_CONTENT)
-VALUES (2, '6', '내용');
-INSERT INTO COMPET_DETAIL (CHAPTER_NUM, COMPET_NUM, NOV_CONTENT)
-VALUES (3, '6', '내용');
-INSERT INTO COMPET_DETAIL (CHAPTER_NUM, COMPET_NUM, NOV_CONTENT)
-VALUES (4, '6', '내용');
-INSERT INTO COMPET_DETAIL (CHAPTER_NUM, COMPET_NUM, NOV_CONTENT)
-VALUES (5, '6', '내용');
-INSERT INTO COMPET_DETAIL (CHAPTER_NUM, COMPET_NUM, NOV_CONTENT)
-VALUES (1, '7', '내용');
-INSERT INTO COMPET_DETAIL (CHAPTER_NUM, COMPET_NUM, NOV_CONTENT)
-VALUES (2, '7', '내용');
-INSERT INTO COMPET_DETAIL (CHAPTER_NUM, COMPET_NUM, NOV_CONTENT)
-VALUES (3, '7', '내용');
-INSERT INTO COMPET_DETAIL (CHAPTER_NUM, COMPET_NUM, NOV_CONTENT)
-VALUES (4, '7', '내용');
-INSERT INTO COMPET_DETAIL (CHAPTER_NUM, COMPET_NUM, NOV_CONTENT)
-VALUES (5, '7', '내용');
-INSERT INTO COMPET_DETAIL (CHAPTER_NUM, COMPET_NUM, NOV_CONTENT)
-VALUES (1, '8', '내용');
-INSERT INTO COMPET_DETAIL (CHAPTER_NUM, COMPET_NUM, NOV_CONTENT)
-VALUES (2, '8', '내용');
-INSERT INTO COMPET_DETAIL (CHAPTER_NUM, COMPET_NUM, NOV_CONTENT)
-VALUES (3, '8', '내용');
-INSERT INTO COMPET_DETAIL (CHAPTER_NUM, COMPET_NUM, NOV_CONTENT)
-VALUES (4, '8', '내용');
-INSERT INTO COMPET_DETAIL (CHAPTER_NUM, COMPET_NUM, NOV_CONTENT)
-VALUES (5, '8', '내용');
-INSERT INTO COMPET_DETAIL (CHAPTER_NUM, COMPET_NUM, NOV_CONTENT)
-VALUES (1, '9', '내용');
-INSERT INTO COMPET_DETAIL (CHAPTER_NUM, COMPET_NUM, NOV_CONTENT)
-VALUES (2, '9', '내용');
-INSERT INTO COMPET_DETAIL (CHAPTER_NUM, COMPET_NUM, NOV_CONTENT)
-VALUES (3, '9', '내용');
-INSERT INTO COMPET_DETAIL (CHAPTER_NUM, COMPET_NUM, NOV_CONTENT)
-VALUES (4, '9', '내용');
-INSERT INTO COMPET_DETAIL (CHAPTER_NUM, COMPET_NUM, NOV_CONTENT)
-VALUES (5, '9', '내용');
-INSERT INTO COMPET_DETAIL (CHAPTER_NUM, COMPET_NUM, NOV_CONTENT)
-VALUES (1, '10', '내용');
-INSERT INTO COMPET_DETAIL (CHAPTER_NUM, COMPET_NUM, NOV_CONTENT)
-VALUES (2, '10', '내용');
-INSERT INTO COMPET_DETAIL (CHAPTER_NUM, COMPET_NUM, NOV_CONTENT)
-VALUES (3, '10', '내용');
-INSERT INTO COMPET_DETAIL (CHAPTER_NUM, COMPET_NUM, NOV_CONTENT)
-VALUES (4, '10', '내용');
-INSERT INTO COMPET_DETAIL (CHAPTER_NUM, COMPET_NUM, NOV_CONTENT)
-VALUES (5, '10', '내용');
-INSERT INTO COMPET_DETAIL (CHAPTER_NUM, COMPET_NUM, NOV_CONTENT)
-VALUES (1, '11', '내용');
-INSERT INTO COMPET_DETAIL (CHAPTER_NUM, COMPET_NUM, NOV_CONTENT)
-VALUES (2, '11', '내용');
-INSERT INTO COMPET_DETAIL (CHAPTER_NUM, COMPET_NUM, NOV_CONTENT)
-VALUES (3, '11', '내용');
-INSERT INTO COMPET_DETAIL (CHAPTER_NUM, COMPET_NUM, NOV_CONTENT)
-VALUES (4, '11', '내용');
-INSERT INTO COMPET_DETAIL (CHAPTER_NUM, COMPET_NUM, NOV_CONTENT)
-VALUES (5, '11', '내용');
-INSERT INTO COMPET_DETAIL (CHAPTER_NUM, COMPET_NUM, NOV_CONTENT)
-VALUES (1, '12', '내용');
-INSERT INTO COMPET_DETAIL (CHAPTER_NUM, COMPET_NUM, NOV_CONTENT)
-VALUES (2, '12', '내용');
-INSERT INTO COMPET_DETAIL (CHAPTER_NUM, COMPET_NUM, NOV_CONTENT)
-VALUES (3, '12', '내용');
-INSERT INTO COMPET_DETAIL (CHAPTER_NUM, COMPET_NUM, NOV_CONTENT)
-VALUES (4, '12', '내용');
-INSERT INTO COMPET_DETAIL (CHAPTER_NUM, COMPET_NUM, NOV_CONTENT)
-VALUES (5, '12', '내용');
-INSERT INTO COMPET_DETAIL (CHAPTER_NUM, COMPET_NUM, NOV_CONTENT)
-VALUES (1, '13', '내용');
-INSERT INTO COMPET_DETAIL (CHAPTER_NUM, COMPET_NUM, NOV_CONTENT)
-VALUES (2, '13', '내용');
-INSERT INTO COMPET_DETAIL (CHAPTER_NUM, COMPET_NUM, NOV_CONTENT)
-VALUES (3, '13', '내용');
-INSERT INTO COMPET_DETAIL (CHAPTER_NUM, COMPET_NUM, NOV_CONTENT)
-VALUES (4, '13', '내용');
-INSERT INTO COMPET_DETAIL (CHAPTER_NUM, COMPET_NUM, NOV_CONTENT)
-VALUES (5, '13', '내용');
-INSERT INTO COMPET_DETAIL (CHAPTER_NUM, COMPET_NUM, NOV_CONTENT)
-VALUES (1, '14', '내용');
-INSERT INTO COMPET_DETAIL (CHAPTER_NUM, COMPET_NUM, NOV_CONTENT)
-VALUES (2, '14', '내용');
-INSERT INTO COMPET_DETAIL (CHAPTER_NUM, COMPET_NUM, NOV_CONTENT)
-VALUES (3, '14', '내용');
-INSERT INTO COMPET_DETAIL (CHAPTER_NUM, COMPET_NUM, NOV_CONTENT)
-VALUES (4, '14', '내용');
-INSERT INTO COMPET_DETAIL (CHAPTER_NUM, COMPET_NUM, NOV_CONTENT)
-VALUES (5, '14', '내용');
-INSERT INTO COMPET_DETAIL (CHAPTER_NUM, COMPET_NUM, NOV_CONTENT)
-VALUES (1, '15', '내용');
-INSERT INTO COMPET_DETAIL (CHAPTER_NUM, COMPET_NUM, NOV_CONTENT)
-VALUES (2, '15', '내용');
-INSERT INTO COMPET_DETAIL (CHAPTER_NUM, COMPET_NUM, NOV_CONTENT)
-VALUES (3, '15', '내용');
-INSERT INTO COMPET_DETAIL (CHAPTER_NUM, COMPET_NUM, NOV_CONTENT)
-VALUES (4, '15', '내용');
-INSERT INTO COMPET_DETAIL (CHAPTER_NUM, COMPET_NUM, NOV_CONTENT)
-VALUES (5, '15', '내용');
-INSERT INTO COMPET_DETAIL (CHAPTER_NUM, COMPET_NUM, NOV_CONTENT)
-VALUES (1, '16', '내용');
-INSERT INTO COMPET_DETAIL (CHAPTER_NUM, COMPET_NUM, NOV_CONTENT)
-VALUES (2, '16', '내용');
-INSERT INTO COMPET_DETAIL (CHAPTER_NUM, COMPET_NUM, NOV_CONTENT)
-VALUES (3, '16', '내용');
-INSERT INTO COMPET_DETAIL (CHAPTER_NUM, COMPET_NUM, NOV_CONTENT)
-VALUES (4, '16', '내용');
-INSERT INTO COMPET_DETAIL (CHAPTER_NUM, COMPET_NUM, NOV_CONTENT)
-VALUES (5, '16', '내용');
-INSERT INTO COMPET_DETAIL (CHAPTER_NUM, COMPET_NUM, NOV_CONTENT)
-VALUES (1, '17', '내용');
-INSERT INTO COMPET_DETAIL (CHAPTER_NUM, COMPET_NUM, NOV_CONTENT)
-VALUES (2, '17', '내용');
-INSERT INTO COMPET_DETAIL (CHAPTER_NUM, COMPET_NUM, NOV_CONTENT)
-VALUES (3, '17', '내용');
-INSERT INTO COMPET_DETAIL (CHAPTER_NUM, COMPET_NUM, NOV_CONTENT)
-VALUES (4, '17', '내용');
-INSERT INTO COMPET_DETAIL (CHAPTER_NUM, COMPET_NUM, NOV_CONTENT)
-VALUES (5, '17', '내용');
-INSERT INTO COMPET_DETAIL (CHAPTER_NUM, COMPET_NUM, NOV_CONTENT)
-VALUES (1, '18', '내용');
-INSERT INTO COMPET_DETAIL (CHAPTER_NUM, COMPET_NUM, NOV_CONTENT)
-VALUES (2, '18', '내용');
-INSERT INTO COMPET_DETAIL (CHAPTER_NUM, COMPET_NUM, NOV_CONTENT)
-VALUES (3, '18', '내용');
-INSERT INTO COMPET_DETAIL (CHAPTER_NUM, COMPET_NUM, NOV_CONTENT)
-VALUES (4, '18', '내용');
-INSERT INTO COMPET_DETAIL (CHAPTER_NUM, COMPET_NUM, NOV_CONTENT)
-VALUES (5, '18', '내용');
-INSERT INTO COMPET_DETAIL (CHAPTER_NUM, COMPET_NUM, NOV_CONTENT)
-VALUES (1, '19', '내용');
-INSERT INTO COMPET_DETAIL (CHAPTER_NUM, COMPET_NUM, NOV_CONTENT)
-VALUES (2, '19', '내용');
-INSERT INTO COMPET_DETAIL (CHAPTER_NUM, COMPET_NUM, NOV_CONTENT)
-VALUES (3, '19', '내용');
-INSERT INTO COMPET_DETAIL (CHAPTER_NUM, COMPET_NUM, NOV_CONTENT)
-VALUES (4, '19', '내용');
-INSERT INTO COMPET_DETAIL (CHAPTER_NUM, COMPET_NUM, NOV_CONTENT)
-VALUES (5, '19', '내용');
-INSERT INTO COMPET_DETAIL (CHAPTER_NUM, COMPET_NUM, NOV_CONTENT)
-VALUES (1, '20', '내용');
-INSERT INTO COMPET_DETAIL (CHAPTER_NUM, COMPET_NUM, NOV_CONTENT)
-VALUES (2, '20', '내용');
-INSERT INTO COMPET_DETAIL (CHAPTER_NUM, COMPET_NUM, NOV_CONTENT)
-VALUES (3, '20', '내용');
-INSERT INTO COMPET_DETAIL (CHAPTER_NUM, COMPET_NUM, NOV_CONTENT)
-VALUES (4, '20', '내용');
-INSERT INTO COMPET_DETAIL (CHAPTER_NUM, COMPET_NUM, NOV_CONTENT)
-VALUES (5, '20', '내용');
-INSERT INTO COMPET_DETAIL (CHAPTER_NUM, COMPET_NUM, NOV_CONTENT)
-VALUES (1, '21', '내용');
-INSERT INTO COMPET_DETAIL (CHAPTER_NUM, COMPET_NUM, NOV_CONTENT)
-VALUES (2, '21', '내용');
-INSERT INTO COMPET_DETAIL (CHAPTER_NUM, COMPET_NUM, NOV_CONTENT)
-VALUES (3, '21', '내용');
-INSERT INTO COMPET_DETAIL (CHAPTER_NUM, COMPET_NUM, NOV_CONTENT)
-VALUES (4, '21', '내용');
-INSERT INTO COMPET_DETAIL (CHAPTER_NUM, COMPET_NUM, NOV_CONTENT)
-VALUES (5, '21', '내용');
-INSERT INTO COMPET_DETAIL (CHAPTER_NUM, COMPET_NUM, NOV_CONTENT)
-VALUES (1, '22', '내용');
-INSERT INTO COMPET_DETAIL (CHAPTER_NUM, COMPET_NUM, NOV_CONTENT)
-VALUES (2, '22', '내용');
-INSERT INTO COMPET_DETAIL (CHAPTER_NUM, COMPET_NUM, NOV_CONTENT)
-VALUES (3, '22', '내용');
-INSERT INTO COMPET_DETAIL (CHAPTER_NUM, COMPET_NUM, NOV_CONTENT)
-VALUES (4, '22', '내용');
-INSERT INTO COMPET_DETAIL (CHAPTER_NUM, COMPET_NUM, NOV_CONTENT)
-VALUES (5, '22', '내용');
-INSERT INTO COMPET_DETAIL (CHAPTER_NUM, COMPET_NUM, NOV_CONTENT)
-VALUES (1, '23', '내용');
-INSERT INTO COMPET_DETAIL (CHAPTER_NUM, COMPET_NUM, NOV_CONTENT)
-VALUES (2, '23', '내용');
-INSERT INTO COMPET_DETAIL (CHAPTER_NUM, COMPET_NUM, NOV_CONTENT)
-VALUES (3, '23', '내용');
-INSERT INTO COMPET_DETAIL (CHAPTER_NUM, COMPET_NUM, NOV_CONTENT)
-VALUES (4, '23', '내용');
-INSERT INTO COMPET_DETAIL (CHAPTER_NUM, COMPET_NUM, NOV_CONTENT)
-VALUES (5, '23', '내용');
-INSERT INTO COMPET_DETAIL (CHAPTER_NUM, COMPET_NUM, NOV_CONTENT)
-VALUES (1, '24', '내용');
-INSERT INTO COMPET_DETAIL (CHAPTER_NUM, COMPET_NUM, NOV_CONTENT)
-VALUES (2, '24', '내용');
-INSERT INTO COMPET_DETAIL (CHAPTER_NUM, COMPET_NUM, NOV_CONTENT)
-VALUES (3, '24', '내용');
-INSERT INTO COMPET_DETAIL (CHAPTER_NUM, COMPET_NUM, NOV_CONTENT)
-VALUES (4, '24', '내용');
-INSERT INTO COMPET_DETAIL (CHAPTER_NUM, COMPET_NUM, NOV_CONTENT)
-VALUES (5, '24', '내용');
-INSERT INTO COMPET_DETAIL (CHAPTER_NUM, COMPET_NUM, NOV_CONTENT)
-VALUES (1, '25', '내용');
-INSERT INTO COMPET_DETAIL (CHAPTER_NUM, COMPET_NUM, NOV_CONTENT)
-VALUES (2, '25', '내용');
-INSERT INTO COMPET_DETAIL (CHAPTER_NUM, COMPET_NUM, NOV_CONTENT)
-VALUES (3, '25', '내용');
-INSERT INTO COMPET_DETAIL (CHAPTER_NUM, COMPET_NUM, NOV_CONTENT)
-VALUES (4, '25', '내용');
-INSERT INTO COMPET_DETAIL (CHAPTER_NUM, COMPET_NUM, NOV_CONTENT)
-VALUES (5, '25', '내용');
-INSERT INTO COMPET_DETAIL (CHAPTER_NUM, COMPET_NUM, NOV_CONTENT)
-VALUES (1, '26', '내용');
-INSERT INTO COMPET_DETAIL (CHAPTER_NUM, COMPET_NUM, NOV_CONTENT)
-VALUES (2, '26', '내용');
-INSERT INTO COMPET_DETAIL (CHAPTER_NUM, COMPET_NUM, NOV_CONTENT)
-VALUES (3, '26', '내용');
-INSERT INTO COMPET_DETAIL (CHAPTER_NUM, COMPET_NUM, NOV_CONTENT)
-VALUES (4, '26', '내용');
-INSERT INTO COMPET_DETAIL (CHAPTER_NUM, COMPET_NUM, NOV_CONTENT)
-VALUES (5, '26', '내용');
-INSERT INTO COMPET_DETAIL (CHAPTER_NUM, COMPET_NUM, NOV_CONTENT)
-VALUES (1, '27', '내용');
-INSERT INTO COMPET_DETAIL (CHAPTER_NUM, COMPET_NUM, NOV_CONTENT)
-VALUES (2, '27', '내용');
-INSERT INTO COMPET_DETAIL (CHAPTER_NUM, COMPET_NUM, NOV_CONTENT)
-VALUES (3, '27', '내용');
-INSERT INTO COMPET_DETAIL (CHAPTER_NUM, COMPET_NUM, NOV_CONTENT)
-VALUES (4, '27', '내용');
-INSERT INTO COMPET_DETAIL (CHAPTER_NUM, COMPET_NUM, NOV_CONTENT)
-VALUES (5, '27', '내용');
-INSERT INTO COMPET_DETAIL (CHAPTER_NUM, COMPET_NUM, NOV_CONTENT)
-VALUES (1, '28', '내용');
-INSERT INTO COMPET_DETAIL (CHAPTER_NUM, COMPET_NUM, NOV_CONTENT)
-VALUES (2, '28', '내용');
-INSERT INTO COMPET_DETAIL (CHAPTER_NUM, COMPET_NUM, NOV_CONTENT)
-VALUES (3, '28', '내용');
-INSERT INTO COMPET_DETAIL (CHAPTER_NUM, COMPET_NUM, NOV_CONTENT)
-VALUES (4, '28', '내용');
-INSERT INTO COMPET_DETAIL (CHAPTER_NUM, COMPET_NUM, NOV_CONTENT)
-VALUES (5, '28', '내용');
-INSERT INTO COMPET_DETAIL (CHAPTER_NUM, COMPET_NUM, NOV_CONTENT)
-VALUES (1, '29', '내용');
-INSERT INTO COMPET_DETAIL (CHAPTER_NUM, COMPET_NUM, NOV_CONTENT)
-VALUES (2, '29', '내용');
-INSERT INTO COMPET_DETAIL (CHAPTER_NUM, COMPET_NUM, NOV_CONTENT)
-VALUES (3, '29', '내용');
-INSERT INTO COMPET_DETAIL (CHAPTER_NUM, COMPET_NUM, NOV_CONTENT)
-VALUES (4, '29', '내용');
-INSERT INTO COMPET_DETAIL (CHAPTER_NUM, COMPET_NUM, NOV_CONTENT)
-VALUES (5, '29', '내용');
-INSERT INTO COMPET_DETAIL (CHAPTER_NUM, COMPET_NUM, NOV_CONTENT)
-VALUES (1, '30', '내용');
-INSERT INTO COMPET_DETAIL (CHAPTER_NUM, COMPET_NUM, NOV_CONTENT)
-VALUES (2, '30', '내용');
-INSERT INTO COMPET_DETAIL (CHAPTER_NUM, COMPET_NUM, NOV_CONTENT)
-VALUES (3, '30', '내용');
-INSERT INTO COMPET_DETAIL (CHAPTER_NUM, COMPET_NUM, NOV_CONTENT)
-VALUES (4, '30', '내용');
-INSERT INTO COMPET_DETAIL (CHAPTER_NUM, COMPET_NUM, NOV_CONTENT)
-VALUES (5, '30', '내용');
-INSERT INTO COMPET_DETAIL (CHAPTER_NUM, COMPET_NUM, NOV_CONTENT)
-VALUES (1, '31', '내용');
-INSERT INTO COMPET_DETAIL (CHAPTER_NUM, COMPET_NUM, NOV_CONTENT)
-VALUES (2, '31', '내용');
-INSERT INTO COMPET_DETAIL (CHAPTER_NUM, COMPET_NUM, NOV_CONTENT)
-VALUES (3, '31', '내용');
-INSERT INTO COMPET_DETAIL (CHAPTER_NUM, COMPET_NUM, NOV_CONTENT)
-VALUES (4, '31', '내용');
-INSERT INTO COMPET_DETAIL (CHAPTER_NUM, COMPET_NUM, NOV_CONTENT)
-VALUES (5, '31', '내용');
-INSERT INTO COMPET_DETAIL (CHAPTER_NUM, COMPET_NUM, NOV_CONTENT)
-VALUES (1, '32', '내용');
-INSERT INTO COMPET_DETAIL (CHAPTER_NUM, COMPET_NUM, NOV_CONTENT)
-VALUES (2, '32', '내용');
-INSERT INTO COMPET_DETAIL (CHAPTER_NUM, COMPET_NUM, NOV_CONTENT)
-VALUES (3, '32', '내용');
-INSERT INTO COMPET_DETAIL (CHAPTER_NUM, COMPET_NUM, NOV_CONTENT)
-VALUES (4, '32', '내용');
-INSERT INTO COMPET_DETAIL (CHAPTER_NUM, COMPET_NUM, NOV_CONTENT)
-VALUES (5, '32', '내용');
-INSERT INTO COMPET_DETAIL (CHAPTER_NUM, COMPET_NUM, NOV_CONTENT)
-VALUES (1, '33', '내용');
-INSERT INTO COMPET_DETAIL (CHAPTER_NUM, COMPET_NUM, NOV_CONTENT)
-VALUES (2, '33', '내용');
-INSERT INTO COMPET_DETAIL (CHAPTER_NUM, COMPET_NUM, NOV_CONTENT)
-VALUES (3, '33', '내용');
-INSERT INTO COMPET_DETAIL (CHAPTER_NUM, COMPET_NUM, NOV_CONTENT)
-VALUES (4, '33', '내용');
-INSERT INTO COMPET_DETAIL (CHAPTER_NUM, COMPET_NUM, NOV_CONTENT)
-VALUES (5, '33', '내용');
-INSERT INTO COMPET_DETAIL (CHAPTER_NUM, COMPET_NUM, NOV_CONTENT)
-VALUES (1, '34', '내용');
-INSERT INTO COMPET_DETAIL (CHAPTER_NUM, COMPET_NUM, NOV_CONTENT)
-VALUES (2, '34', '내용');
-INSERT INTO COMPET_DETAIL (CHAPTER_NUM, COMPET_NUM, NOV_CONTENT)
-VALUES (3, '34', '내용');
-INSERT INTO COMPET_DETAIL (CHAPTER_NUM, COMPET_NUM, NOV_CONTENT)
-VALUES (4, '34', '내용');
-INSERT INTO COMPET_DETAIL (CHAPTER_NUM, COMPET_NUM, NOV_CONTENT)
-VALUES (5, '34', '내용');
-INSERT INTO COMPET_DETAIL (CHAPTER_NUM, COMPET_NUM, NOV_CONTENT)
-VALUES (1, '35', '내용');
-INSERT INTO COMPET_DETAIL (CHAPTER_NUM, COMPET_NUM, NOV_CONTENT)
-VALUES (2, '35', '내용');
-INSERT INTO COMPET_DETAIL (CHAPTER_NUM, COMPET_NUM, NOV_CONTENT)
-VALUES (3, '35', '내용');
-INSERT INTO COMPET_DETAIL (CHAPTER_NUM, COMPET_NUM, NOV_CONTENT)
-VALUES (4, '35', '내용');
-INSERT INTO COMPET_DETAIL (CHAPTER_NUM, COMPET_NUM, NOV_CONTENT)
-VALUES (5, '35', '내용');
-INSERT INTO COMPET_DETAIL (CHAPTER_NUM, COMPET_NUM, NOV_CONTENT)
-VALUES (1, '36', '내용');
-INSERT INTO COMPET_DETAIL (CHAPTER_NUM, COMPET_NUM, NOV_CONTENT)
-VALUES (2, '36', '내용');
-INSERT INTO COMPET_DETAIL (CHAPTER_NUM, COMPET_NUM, NOV_CONTENT)
-VALUES (3, '36', '내용');
-INSERT INTO COMPET_DETAIL (CHAPTER_NUM, COMPET_NUM, NOV_CONTENT)
-VALUES (4, '36', '내용');
-INSERT INTO COMPET_DETAIL (CHAPTER_NUM, COMPET_NUM, NOV_CONTENT)
-VALUES (5, '36', '내용');
-INSERT INTO COMPET_DETAIL (CHAPTER_NUM, COMPET_NUM, NOV_CONTENT)
-VALUES (1, '37', '내용');
-INSERT INTO COMPET_DETAIL (CHAPTER_NUM, COMPET_NUM, NOV_CONTENT)
-VALUES (2, '37', '내용');
-INSERT INTO COMPET_DETAIL (CHAPTER_NUM, COMPET_NUM, NOV_CONTENT)
-VALUES (3, '37', '내용');
-INSERT INTO COMPET_DETAIL (CHAPTER_NUM, COMPET_NUM, NOV_CONTENT)
-VALUES (4, '37', '내용');
-INSERT INTO COMPET_DETAIL (CHAPTER_NUM, COMPET_NUM, NOV_CONTENT)
-VALUES (5, '37', '내용');
-INSERT INTO COMPET_DETAIL (CHAPTER_NUM, COMPET_NUM, NOV_CONTENT)
-VALUES (1, '38', '내용');
-INSERT INTO COMPET_DETAIL (CHAPTER_NUM, COMPET_NUM, NOV_CONTENT)
-VALUES (2, '38', '내용');
-INSERT INTO COMPET_DETAIL (CHAPTER_NUM, COMPET_NUM, NOV_CONTENT)
-VALUES (3, '38', '내용');
-INSERT INTO COMPET_DETAIL (CHAPTER_NUM, COMPET_NUM, NOV_CONTENT)
-VALUES (4, '38', '내용');
-INSERT INTO COMPET_DETAIL (CHAPTER_NUM, COMPET_NUM, NOV_CONTENT)
-VALUES (5, '38', '내용');
-INSERT INTO COMPET_DETAIL (CHAPTER_NUM, COMPET_NUM, NOV_CONTENT)
-VALUES (1, '39', '내용');
-INSERT INTO COMPET_DETAIL (CHAPTER_NUM, COMPET_NUM, NOV_CONTENT)
-VALUES (2, '39', '내용');
-INSERT INTO COMPET_DETAIL (CHAPTER_NUM, COMPET_NUM, NOV_CONTENT)
-VALUES (3, '39', '내용');
-INSERT INTO COMPET_DETAIL (CHAPTER_NUM, COMPET_NUM, NOV_CONTENT)
-VALUES (4, '39', '내용');
-INSERT INTO COMPET_DETAIL (CHAPTER_NUM, COMPET_NUM, NOV_CONTENT)
-VALUES (5, '39', '내용');
-INSERT INTO COMPET_DETAIL (CHAPTER_NUM, COMPET_NUM, NOV_CONTENT)
-VALUES (1, '40', '내용');
-INSERT INTO COMPET_DETAIL (CHAPTER_NUM, COMPET_NUM, NOV_CONTENT)
-VALUES (2, '40', '내용');
-INSERT INTO COMPET_DETAIL (CHAPTER_NUM, COMPET_NUM, NOV_CONTENT)
-VALUES (3, '40', '내용');
-INSERT INTO COMPET_DETAIL (CHAPTER_NUM, COMPET_NUM, NOV_CONTENT)
-VALUES (4, '40', '내용');
-INSERT INTO COMPET_DETAIL (CHAPTER_NUM, COMPET_NUM, NOV_CONTENT)
-VALUES (5, '40', '내용');
-INSERT INTO COMPET_DETAIL (CHAPTER_NUM, COMPET_NUM, NOV_CONTENT)
-VALUES (1, '41', '내용');
-INSERT INTO COMPET_DETAIL (CHAPTER_NUM, COMPET_NUM, NOV_CONTENT)
-VALUES (2, '41', '내용');
-INSERT INTO COMPET_DETAIL (CHAPTER_NUM, COMPET_NUM, NOV_CONTENT)
-VALUES (3, '41', '내용');
-INSERT INTO COMPET_DETAIL (CHAPTER_NUM, COMPET_NUM, NOV_CONTENT)
-VALUES (4, '41', '내용');
-INSERT INTO COMPET_DETAIL (CHAPTER_NUM, COMPET_NUM, NOV_CONTENT)
-VALUES (5, '41', '내용');
-INSERT INTO COMPET_DETAIL (CHAPTER_NUM, COMPET_NUM, NOV_CONTENT)
-VALUES (1, '42', '내용');
-INSERT INTO COMPET_DETAIL (CHAPTER_NUM, COMPET_NUM, NOV_CONTENT)
-VALUES (2, '42', '내용');
-INSERT INTO COMPET_DETAIL (CHAPTER_NUM, COMPET_NUM, NOV_CONTENT)
-VALUES (3, '42', '내용');
-INSERT INTO COMPET_DETAIL (CHAPTER_NUM, COMPET_NUM, NOV_CONTENT)
-VALUES (4, '42', '내용');
-INSERT INTO COMPET_DETAIL (CHAPTER_NUM, COMPET_NUM, NOV_CONTENT)
-VALUES (5, '42', '내용');
-INSERT INTO COMPET_DETAIL (CHAPTER_NUM, COMPET_NUM, NOV_CONTENT)
-VALUES (1, '43', '내용');
-INSERT INTO COMPET_DETAIL (CHAPTER_NUM, COMPET_NUM, NOV_CONTENT)
-VALUES (2, '43', '내용');
-INSERT INTO COMPET_DETAIL (CHAPTER_NUM, COMPET_NUM, NOV_CONTENT)
-VALUES (3, '43', '내용');
-INSERT INTO COMPET_DETAIL (CHAPTER_NUM, COMPET_NUM, NOV_CONTENT)
-VALUES (4, '43', '내용');
-INSERT INTO COMPET_DETAIL (CHAPTER_NUM, COMPET_NUM, NOV_CONTENT)
-VALUES (5, '43', '내용');
-INSERT INTO COMPET_DETAIL (CHAPTER_NUM, COMPET_NUM, NOV_CONTENT)
-VALUES (1, '44', '내용');
-INSERT INTO COMPET_DETAIL (CHAPTER_NUM, COMPET_NUM, NOV_CONTENT)
-VALUES (2, '44', '내용');
-INSERT INTO COMPET_DETAIL (CHAPTER_NUM, COMPET_NUM, NOV_CONTENT)
-VALUES (3, '44', '내용');
-INSERT INTO COMPET_DETAIL (CHAPTER_NUM, COMPET_NUM, NOV_CONTENT)
-VALUES (4, '44', '내용');
-INSERT INTO COMPET_DETAIL (CHAPTER_NUM, COMPET_NUM, NOV_CONTENT)
-VALUES (5, '44', '내용');
-INSERT INTO COMPET_DETAIL (CHAPTER_NUM, COMPET_NUM, NOV_CONTENT)
-VALUES (1, '45', '내용');
-INSERT INTO COMPET_DETAIL (CHAPTER_NUM, COMPET_NUM, NOV_CONTENT)
-VALUES (2, '45', '내용');
-INSERT INTO COMPET_DETAIL (CHAPTER_NUM, COMPET_NUM, NOV_CONTENT)
-VALUES (3, '45', '내용');
-INSERT INTO COMPET_DETAIL (CHAPTER_NUM, COMPET_NUM, NOV_CONTENT)
-VALUES (4, '45', '내용');
-INSERT INTO COMPET_DETAIL (CHAPTER_NUM, COMPET_NUM, NOV_CONTENT)
-VALUES (5, '45', '내용');
-INSERT INTO COMPET_DETAIL (CHAPTER_NUM, COMPET_NUM, NOV_CONTENT)
-VALUES (1, '46', '내용');
-INSERT INTO COMPET_DETAIL (CHAPTER_NUM, COMPET_NUM, NOV_CONTENT)
-VALUES (2, '46', '내용');
-INSERT INTO COMPET_DETAIL (CHAPTER_NUM, COMPET_NUM, NOV_CONTENT)
-VALUES (3, '46', '내용');
-INSERT INTO COMPET_DETAIL (CHAPTER_NUM, COMPET_NUM, NOV_CONTENT)
-VALUES (4, '46', '내용');
-INSERT INTO COMPET_DETAIL (CHAPTER_NUM, COMPET_NUM, NOV_CONTENT)
-VALUES (5, '46', '내용');
-INSERT INTO COMPET_DETAIL (CHAPTER_NUM, COMPET_NUM, NOV_CONTENT)
-VALUES (1, '47', '내용');
-INSERT INTO COMPET_DETAIL (CHAPTER_NUM, COMPET_NUM, NOV_CONTENT)
-VALUES (2, '47', '내용');
-INSERT INTO COMPET_DETAIL (CHAPTER_NUM, COMPET_NUM, NOV_CONTENT)
-VALUES (3, '47', '내용');
-INSERT INTO COMPET_DETAIL (CHAPTER_NUM, COMPET_NUM, NOV_CONTENT)
-VALUES (4, '47', '내용');
-INSERT INTO COMPET_DETAIL (CHAPTER_NUM, COMPET_NUM, NOV_CONTENT)
-VALUES (5, '47', '내용');
-INSERT INTO COMPET_DETAIL (CHAPTER_NUM, COMPET_NUM, NOV_CONTENT)
-VALUES (1, '48', '내용');
-INSERT INTO COMPET_DETAIL (CHAPTER_NUM, COMPET_NUM, NOV_CONTENT)
-VALUES (2, '48', '내용');
-INSERT INTO COMPET_DETAIL (CHAPTER_NUM, COMPET_NUM, NOV_CONTENT)
-VALUES (3, '48', '내용');
-INSERT INTO COMPET_DETAIL (CHAPTER_NUM, COMPET_NUM, NOV_CONTENT)
-VALUES (4, '48', '내용');
-INSERT INTO COMPET_DETAIL (CHAPTER_NUM, COMPET_NUM, NOV_CONTENT)
-VALUES (5, '48', '내용');
-INSERT INTO COMPET_DETAIL (CHAPTER_NUM, COMPET_NUM, NOV_CONTENT)
-VALUES (1, '49', '내용');
-INSERT INTO COMPET_DETAIL (CHAPTER_NUM, COMPET_NUM, NOV_CONTENT)
-VALUES (2, '49', '내용');
-INSERT INTO COMPET_DETAIL (CHAPTER_NUM, COMPET_NUM, NOV_CONTENT)
-VALUES (3, '49', '내용');
-INSERT INTO COMPET_DETAIL (CHAPTER_NUM, COMPET_NUM, NOV_CONTENT)
-VALUES (4, '49', '내용');
-INSERT INTO COMPET_DETAIL (CHAPTER_NUM, COMPET_NUM, NOV_CONTENT)
-VALUES (5, '49', '내용');
-INSERT INTO COMPET_DETAIL (CHAPTER_NUM, COMPET_NUM, NOV_CONTENT)
-VALUES (1, '50', '내용');
-INSERT INTO COMPET_DETAIL (CHAPTER_NUM, COMPET_NUM, NOV_CONTENT)
-VALUES (2, '50', '내용');
-INSERT INTO COMPET_DETAIL (CHAPTER_NUM, COMPET_NUM, NOV_CONTENT)
-VALUES (3, '50', '내용');
-INSERT INTO COMPET_DETAIL (CHAPTER_NUM, COMPET_NUM, NOV_CONTENT)
-VALUES (4, '50', '내용');
-INSERT INTO COMPET_DETAIL (CHAPTER_NUM, COMPET_NUM, NOV_CONTENT)
-VALUES (5, '50', '내용');
-INSERT INTO COMPET_DETAIL (CHAPTER_NUM, COMPET_NUM, NOV_CONTENT)
-VALUES (1, '51', '내용');
-INSERT INTO COMPET_DETAIL (CHAPTER_NUM, COMPET_NUM, NOV_CONTENT)
-VALUES (2, '51', '내용');
-INSERT INTO COMPET_DETAIL (CHAPTER_NUM, COMPET_NUM, NOV_CONTENT)
-VALUES (3, '51', '내용');
-INSERT INTO COMPET_DETAIL (CHAPTER_NUM, COMPET_NUM, NOV_CONTENT)
-VALUES (4, '51', '내용');
-INSERT INTO COMPET_DETAIL (CHAPTER_NUM, COMPET_NUM, NOV_CONTENT)
-VALUES (5, '51', '내용');
-INSERT INTO COMPET_DETAIL (CHAPTER_NUM, COMPET_NUM, NOV_CONTENT)
-VALUES (1, '52', '내용');
-INSERT INTO COMPET_DETAIL (CHAPTER_NUM, COMPET_NUM, NOV_CONTENT)
-VALUES (2, '52', '내용');
-INSERT INTO COMPET_DETAIL (CHAPTER_NUM, COMPET_NUM, NOV_CONTENT)
-VALUES (3, '52', '내용');
-INSERT INTO COMPET_DETAIL (CHAPTER_NUM, COMPET_NUM, NOV_CONTENT)
-VALUES (4, '52', '내용');
-INSERT INTO COMPET_DETAIL (CHAPTER_NUM, COMPET_NUM, NOV_CONTENT)
-VALUES (5, '52', '내용');
-INSERT INTO COMPET_DETAIL (CHAPTER_NUM, COMPET_NUM, NOV_CONTENT)
-VALUES (1, '53', '내용');
-INSERT INTO COMPET_DETAIL (CHAPTER_NUM, COMPET_NUM, NOV_CONTENT)
-VALUES (2, '53', '내용');
-INSERT INTO COMPET_DETAIL (CHAPTER_NUM, COMPET_NUM, NOV_CONTENT)
-VALUES (3, '53', '내용');
-INSERT INTO COMPET_DETAIL (CHAPTER_NUM, COMPET_NUM, NOV_CONTENT)
-VALUES (4, '53', '내용');
-INSERT INTO COMPET_DETAIL (CHAPTER_NUM, COMPET_NUM, NOV_CONTENT)
-VALUES (5, '53', '내용');
-INSERT INTO COMPET_DETAIL (CHAPTER_NUM, COMPET_NUM, NOV_CONTENT)
-VALUES (1, '54', '내용');
-INSERT INTO COMPET_DETAIL (CHAPTER_NUM, COMPET_NUM, NOV_CONTENT)
-VALUES (2, '54', '내용');
-INSERT INTO COMPET_DETAIL (CHAPTER_NUM, COMPET_NUM, NOV_CONTENT)
-VALUES (3, '54', '내용');
-INSERT INTO COMPET_DETAIL (CHAPTER_NUM, COMPET_NUM, NOV_CONTENT)
-VALUES (4, '54', '내용');
-INSERT INTO COMPET_DETAIL (CHAPTER_NUM, COMPET_NUM, NOV_CONTENT)
-VALUES (5, '54', '내용');
-INSERT INTO COMPET_DETAIL (CHAPTER_NUM, COMPET_NUM, NOV_CONTENT)
-VALUES (1, '55', '내용');
-INSERT INTO COMPET_DETAIL (CHAPTER_NUM, COMPET_NUM, NOV_CONTENT)
-VALUES (2, '55', '내용');
-INSERT INTO COMPET_DETAIL (CHAPTER_NUM, COMPET_NUM, NOV_CONTENT)
-VALUES (3, '55', '내용');
-INSERT INTO COMPET_DETAIL (CHAPTER_NUM, COMPET_NUM, NOV_CONTENT)
-VALUES (4, '55', '내용');
-INSERT INTO COMPET_DETAIL (CHAPTER_NUM, COMPET_NUM, NOV_CONTENT)
-VALUES (5, '55', '내용');
-INSERT INTO COMPET_DETAIL (CHAPTER_NUM, COMPET_NUM, NOV_CONTENT)
-VALUES (1, '56', '내용');
-INSERT INTO COMPET_DETAIL (CHAPTER_NUM, COMPET_NUM, NOV_CONTENT)
-VALUES (2, '56', '내용');
-INSERT INTO COMPET_DETAIL (CHAPTER_NUM, COMPET_NUM, NOV_CONTENT)
-VALUES (3, '56', '내용');
-INSERT INTO COMPET_DETAIL (CHAPTER_NUM, COMPET_NUM, NOV_CONTENT)
-VALUES (4, '56', '내용');
-INSERT INTO COMPET_DETAIL (CHAPTER_NUM, COMPET_NUM, NOV_CONTENT)
-VALUES (5, '56', '내용');
-INSERT INTO COMPET_DETAIL (CHAPTER_NUM, COMPET_NUM, NOV_CONTENT)
-VALUES (1, '57', '내용');
-INSERT INTO COMPET_DETAIL (CHAPTER_NUM, COMPET_NUM, NOV_CONTENT)
-VALUES (2, '57', '내용');
-INSERT INTO COMPET_DETAIL (CHAPTER_NUM, COMPET_NUM, NOV_CONTENT)
-VALUES (3, '57', '내용');
-INSERT INTO COMPET_DETAIL (CHAPTER_NUM, COMPET_NUM, NOV_CONTENT)
-VALUES (4, '57', '내용');
-INSERT INTO COMPET_DETAIL (CHAPTER_NUM, COMPET_NUM, NOV_CONTENT)
-VALUES (5, '57', '내용');
-INSERT INTO COMPET_DETAIL (CHAPTER_NUM, COMPET_NUM, NOV_CONTENT)
-VALUES (1, '58', '내용');
-INSERT INTO COMPET_DETAIL (CHAPTER_NUM, COMPET_NUM, NOV_CONTENT)
-VALUES (2, '58', '내용');
-INSERT INTO COMPET_DETAIL (CHAPTER_NUM, COMPET_NUM, NOV_CONTENT)
-VALUES (3, '58', '내용');
-INSERT INTO COMPET_DETAIL (CHAPTER_NUM, COMPET_NUM, NOV_CONTENT)
-VALUES (4, '58', '내용');
-INSERT INTO COMPET_DETAIL (CHAPTER_NUM, COMPET_NUM, NOV_CONTENT)
-VALUES (5, '58', '내용');
-INSERT INTO COMPET_DETAIL (CHAPTER_NUM, COMPET_NUM, NOV_CONTENT)
-VALUES (1, '59', '내용');
-INSERT INTO COMPET_DETAIL (CHAPTER_NUM, COMPET_NUM, NOV_CONTENT)
-VALUES (2, '59', '내용');
-INSERT INTO COMPET_DETAIL (CHAPTER_NUM, COMPET_NUM, NOV_CONTENT)
-VALUES (3, '59', '내용');
-INSERT INTO COMPET_DETAIL (CHAPTER_NUM, COMPET_NUM, NOV_CONTENT)
-VALUES (4, '59', '내용');
-INSERT INTO COMPET_DETAIL (CHAPTER_NUM, COMPET_NUM, NOV_CONTENT)
-VALUES (5, '59', '내용');
-INSERT INTO COMPET_DETAIL (CHAPTER_NUM, COMPET_NUM, NOV_CONTENT)
-VALUES (1, '60', '내용');
-INSERT INTO COMPET_DETAIL (CHAPTER_NUM, COMPET_NUM, NOV_CONTENT)
-VALUES (2, '60', '내용');
-INSERT INTO COMPET_DETAIL (CHAPTER_NUM, COMPET_NUM, NOV_CONTENT)
-VALUES (3, '60', '내용');
-INSERT INTO COMPET_DETAIL (CHAPTER_NUM, COMPET_NUM, NOV_CONTENT)
-VALUES (4, '60', '내용');
-INSERT INTO COMPET_DETAIL (CHAPTER_NUM, COMPET_NUM, NOV_CONTENT)
-VALUES (5, '60', '내용');
-INSERT INTO COMPET_DETAIL (CHAPTER_NUM, COMPET_NUM, NOV_CONTENT)
-VALUES (1, '61', '내용');
-INSERT INTO COMPET_DETAIL (CHAPTER_NUM, COMPET_NUM, NOV_CONTENT)
-VALUES (2, '61', '내용');
-INSERT INTO COMPET_DETAIL (CHAPTER_NUM, COMPET_NUM, NOV_CONTENT)
-VALUES (3, '61', '내용');
-INSERT INTO COMPET_DETAIL (CHAPTER_NUM, COMPET_NUM, NOV_CONTENT)
-VALUES (4, '61', '내용');
-INSERT INTO COMPET_DETAIL (CHAPTER_NUM, COMPET_NUM, NOV_CONTENT)
-VALUES (5, '61', '내용');
-INSERT INTO COMPET_DETAIL (CHAPTER_NUM, COMPET_NUM, NOV_CONTENT)
-VALUES (1, '62', '내용');
-INSERT INTO COMPET_DETAIL (CHAPTER_NUM, COMPET_NUM, NOV_CONTENT)
-VALUES (2, '62', '내용');
-INSERT INTO COMPET_DETAIL (CHAPTER_NUM, COMPET_NUM, NOV_CONTENT)
-VALUES (3, '62', '내용');
-INSERT INTO COMPET_DETAIL (CHAPTER_NUM, COMPET_NUM, NOV_CONTENT)
-VALUES (4, '62', '내용');
-INSERT INTO COMPET_DETAIL (CHAPTER_NUM, COMPET_NUM, NOV_CONTENT)
-VALUES (5, '62', '내용');
-INSERT INTO COMPET_DETAIL (CHAPTER_NUM, COMPET_NUM, NOV_CONTENT)
-VALUES (1, '63', '내용');
-INSERT INTO COMPET_DETAIL (CHAPTER_NUM, COMPET_NUM, NOV_CONTENT)
-VALUES (2, '63', '내용');
-INSERT INTO COMPET_DETAIL (CHAPTER_NUM, COMPET_NUM, NOV_CONTENT)
-VALUES (3, '63', '내용');
-INSERT INTO COMPET_DETAIL (CHAPTER_NUM, COMPET_NUM, NOV_CONTENT)
-VALUES (4, '63', '내용');
-INSERT INTO COMPET_DETAIL (CHAPTER_NUM, COMPET_NUM, NOV_CONTENT)
-VALUES (5, '63', '내용');
-INSERT INTO COMPET_DETAIL (CHAPTER_NUM, COMPET_NUM, NOV_CONTENT)
-VALUES (1, '64', '내용');
-INSERT INTO COMPET_DETAIL (CHAPTER_NUM, COMPET_NUM, NOV_CONTENT)
-VALUES (2, '64', '내용');
-INSERT INTO COMPET_DETAIL (CHAPTER_NUM, COMPET_NUM, NOV_CONTENT)
-VALUES (3, '64', '내용');
-INSERT INTO COMPET_DETAIL (CHAPTER_NUM, COMPET_NUM, NOV_CONTENT)
-VALUES (4, '64', '내용');
-INSERT INTO COMPET_DETAIL (CHAPTER_NUM, COMPET_NUM, NOV_CONTENT)
-VALUES (5, '64', '내용');
+INSERT INTO COMPET_DETAIL(CHAPTER_NUM,COMPET_NUM,NOV_CONTENT,COMPET_DATE)
+VALUES ('1', '65', '내용이 있다','21.04.15');
+INSERT INTO COMPET_DETAIL(CHAPTER_NUM,COMPET_NUM,NOV_CONTENT,COMPET_DATE)
+VALUES ('2', '65', '내용이 있다','21.04.17');
+INSERT INTO COMPET_DETAIL(CHAPTER_NUM,COMPET_NUM,NOV_CONTENT,COMPET_DATE)
+VALUES ('3', '65', '내용이 있다','21.04.18');
+INSERT INTO COMPET_DETAIL(CHAPTER_NUM,COMPET_NUM,NOV_CONTENT,COMPET_DATE)
+VALUES ('4', '65', '내용이 있다','21.04.20');
+
+INSERT INTO COMPET_DETAIL(CHAPTER_NUM,COMPET_NUM,NOV_CONTENT,COMPET_DATE)
+VALUES ('1', '66', '내용이 있다','21.04.15');
+INSERT INTO COMPET_DETAIL(CHAPTER_NUM,COMPET_NUM,NOV_CONTENT,COMPET_DATE)
+VALUES ('2', '66', '내용이 있다','21.04.17');
+INSERT INTO COMPET_DETAIL(CHAPTER_NUM,COMPET_NUM,NOV_CONTENT,COMPET_DATE)
+VALUES ('3', '66', '내용이 있다','21.04.18');
+INSERT INTO COMPET_DETAIL(CHAPTER_NUM,COMPET_NUM,NOV_CONTENT,COMPET_DATE)
+VALUES ('4', '66', '내용이 있다','21.04.20');
+
+INSERT INTO COMPET_DETAIL(CHAPTER_NUM,COMPET_NUM,NOV_CONTENT,COMPET_DATE)
+VALUES ('1', '67', '내용이 있다','21.04.15');
+INSERT INTO COMPET_DETAIL(CHAPTER_NUM,COMPET_NUM,NOV_CONTENT,COMPET_DATE)
+VALUES ('2', '67', '내용이 있다','21.04.17');
+INSERT INTO COMPET_DETAIL(CHAPTER_NUM,COMPET_NUM,NOV_CONTENT,COMPET_DATE)
+VALUES ('3', '67', '내용이 있다','21.04.18');
+INSERT INTO COMPET_DETAIL(CHAPTER_NUM,COMPET_NUM,NOV_CONTENT,COMPET_DATE)
+VALUES ('4', '67', '내용이 있다','21.04.20');
+
+INSERT INTO COMPET_DETAIL(CHAPTER_NUM,COMPET_NUM,NOV_CONTENT,COMPET_DATE)
+VALUES ('1', '68', '내용이 있다','21.04.15');
+INSERT INTO COMPET_DETAIL(CHAPTER_NUM,COMPET_NUM,NOV_CONTENT,COMPET_DATE)
+VALUES ('2', '68', '내용이 있다','21.04.17');
+INSERT INTO COMPET_DETAIL(CHAPTER_NUM,COMPET_NUM,NOV_CONTENT,COMPET_DATE)
+VALUES ('3', '68', '내용이 있다','21.04.18');
+INSERT INTO COMPET_DETAIL(CHAPTER_NUM,COMPET_NUM,NOV_CONTENT,COMPET_DATE)
+VALUES ('4', '68', '내용이 있다','21.04.20');
+
+INSERT INTO COMPET_DETAIL(CHAPTER_NUM,COMPET_NUM,NOV_CONTENT,COMPET_DATE)
+VALUES ('1', '69', '내용이 있다','21.04.15');
+INSERT INTO COMPET_DETAIL(CHAPTER_NUM,COMPET_NUM,NOV_CONTENT,COMPET_DATE)
+VALUES ('2', '69', '내용이 있다','21.04.17');
+INSERT INTO COMPET_DETAIL(CHAPTER_NUM,COMPET_NUM,NOV_CONTENT,COMPET_DATE)
+VALUES ('3', '69', '내용이 있다','21.04.18');
+INSERT INTO COMPET_DETAIL(CHAPTER_NUM,COMPET_NUM,NOV_CONTENT,COMPET_DATE)
+VALUES ('4', '69', '내용이 있다','21.04.20');
+
+INSERT INTO COMPET_DETAIL(CHAPTER_NUM,COMPET_NUM,NOV_CONTENT,COMPET_DATE)
+VALUES ('1', '70', '내용이 있다','21.04.15');
+INSERT INTO COMPET_DETAIL(CHAPTER_NUM,COMPET_NUM,NOV_CONTENT,COMPET_DATE)
+VALUES ('2', '70', '내용이 있다','21.04.17');
+INSERT INTO COMPET_DETAIL(CHAPTER_NUM,COMPET_NUM,NOV_CONTENT,COMPET_DATE)
+VALUES ('3', '70', '내용이 있다','21.04.18');
+INSERT INTO COMPET_DETAIL(CHAPTER_NUM,COMPET_NUM,NOV_CONTENT,COMPET_DATE)
+VALUES ('4', '70', '내용이 있다','21.04.20');
+
+INSERT INTO COMPET_DETAIL(CHAPTER_NUM,COMPET_NUM,NOV_CONTENT,COMPET_DATE)
+VALUES ('1', '71', '내용이 있다','21.04.15');
+INSERT INTO COMPET_DETAIL(CHAPTER_NUM,COMPET_NUM,NOV_CONTENT,COMPET_DATE)
+VALUES ('2', '71', '내용이 있다','21.04.17');
+INSERT INTO COMPET_DETAIL(CHAPTER_NUM,COMPET_NUM,NOV_CONTENT,COMPET_DATE)
+VALUES ('3', '71', '내용이 있다','21.04.18');
+INSERT INTO COMPET_DETAIL(CHAPTER_NUM,COMPET_NUM,NOV_CONTENT,COMPET_DATE)
+VALUES ('4', '71', '내용이 있다','21.04.20');
+
+INSERT INTO COMPET_DETAIL(CHAPTER_NUM,COMPET_NUM,NOV_CONTENT,COMPET_DATE)
+VALUES ('1', '72', '내용이 있다','21.04.15');
+INSERT INTO COMPET_DETAIL(CHAPTER_NUM,COMPET_NUM,NOV_CONTENT,COMPET_DATE)
+VALUES ('2', '72', '내용이 있다','21.04.17');
+INSERT INTO COMPET_DETAIL(CHAPTER_NUM,COMPET_NUM,NOV_CONTENT,COMPET_DATE)
+VALUES ('3', '72', '내용이 있다','21.04.18');
+INSERT INTO COMPET_DETAIL(CHAPTER_NUM,COMPET_NUM,NOV_CONTENT,COMPET_DATE)
+VALUES ('4', '72', '내용이 있다','21.04.20');
+
+INSERT INTO COMPET_DETAIL(CHAPTER_NUM,COMPET_NUM,NOV_CONTENT,COMPET_DATE)
+VALUES ('1', '73', '내용이 있다','21.04.15');
+INSERT INTO COMPET_DETAIL(CHAPTER_NUM,COMPET_NUM,NOV_CONTENT,COMPET_DATE)
+VALUES ('2', '73', '내용이 있다','21.04.17');
+INSERT INTO COMPET_DETAIL(CHAPTER_NUM,COMPET_NUM,NOV_CONTENT,COMPET_DATE)
+VALUES ('3', '73', '내용이 있다','21.04.18');
+INSERT INTO COMPET_DETAIL(CHAPTER_NUM,COMPET_NUM,NOV_CONTENT,COMPET_DATE)
+VALUES ('4', '73', '내용이 있다','21.04.20');
+
+INSERT INTO COMPET_DETAIL(CHAPTER_NUM,COMPET_NUM,NOV_CONTENT,COMPET_DATE)
+VALUES ('1', '74', '내용이 있다','21.04.15');
+INSERT INTO COMPET_DETAIL(CHAPTER_NUM,COMPET_NUM,NOV_CONTENT,COMPET_DATE)
+VALUES ('2', '74', '내용이 있다','21.04.17');
+INSERT INTO COMPET_DETAIL(CHAPTER_NUM,COMPET_NUM,NOV_CONTENT,COMPET_DATE)
+VALUES ('3', '74', '내용이 있다','21.04.18');
+INSERT INTO COMPET_DETAIL(CHAPTER_NUM,COMPET_NUM,NOV_CONTENT,COMPET_DATE)
+VALUES ('4', '74', '내용이 있다','21.04.20');
+
+INSERT INTO COMPET_DETAIL(CHAPTER_NUM,COMPET_NUM,NOV_CONTENT,COMPET_DATE)
+VALUES ('1', '75', '내용이 있다','21.04.15');
+INSERT INTO COMPET_DETAIL(CHAPTER_NUM,COMPET_NUM,NOV_CONTENT,COMPET_DATE)
+VALUES ('2', '75', '내용이 있다','21.04.17');
+INSERT INTO COMPET_DETAIL(CHAPTER_NUM,COMPET_NUM,NOV_CONTENT,COMPET_DATE)
+VALUES ('3', '75', '내용이 있다','21.04.18');
+INSERT INTO COMPET_DETAIL(CHAPTER_NUM,COMPET_NUM,NOV_CONTENT,COMPET_DATE)
+VALUES ('4', '75', '내용이 있다','21.04.20');
+
+INSERT INTO COMPET_DETAIL(CHAPTER_NUM,COMPET_NUM,NOV_CONTENT,COMPET_DATE)
+VALUES ('1', '76', '내용이 있다','21.04.15');
+INSERT INTO COMPET_DETAIL(CHAPTER_NUM,COMPET_NUM,NOV_CONTENT,COMPET_DATE)
+VALUES ('2', '76', '내용이 있다','21.04.17');
+INSERT INTO COMPET_DETAIL(CHAPTER_NUM,COMPET_NUM,NOV_CONTENT,COMPET_DATE)
+VALUES ('3', '76', '내용이 있다','21.04.18');
+INSERT INTO COMPET_DETAIL(CHAPTER_NUM,COMPET_NUM,NOV_CONTENT,COMPET_DATE)
+VALUES ('4', '76', '내용이 있다','21.04.20');
+
+INSERT INTO COMPET_DETAIL(CHAPTER_NUM,COMPET_NUM,NOV_CONTENT,COMPET_DATE)
+VALUES ('1', '77', '내용이 있다','21.04.15');
+INSERT INTO COMPET_DETAIL(CHAPTER_NUM,COMPET_NUM,NOV_CONTENT,COMPET_DATE)
+VALUES ('2', '77', '내용이 있다','21.04.17');
+INSERT INTO COMPET_DETAIL(CHAPTER_NUM,COMPET_NUM,NOV_CONTENT,COMPET_DATE)
+VALUES ('3', '77', '내용이 있다','21.04.18');
+INSERT INTO COMPET_DETAIL(CHAPTER_NUM,COMPET_NUM,NOV_CONTENT,COMPET_DATE)
+VALUES ('4', '77', '내용이 있다','21.04.20');
+
+INSERT INTO COMPET_DETAIL(CHAPTER_NUM,COMPET_NUM,NOV_CONTENT,COMPET_DATE)
+VALUES ('1', '78', '내용이 있다','21.04.15');
+INSERT INTO COMPET_DETAIL(CHAPTER_NUM,COMPET_NUM,NOV_CONTENT,COMPET_DATE)
+VALUES ('2', '78', '내용이 있다','21.04.17');
+INSERT INTO COMPET_DETAIL(CHAPTER_NUM,COMPET_NUM,NOV_CONTENT,COMPET_DATE)
+VALUES ('3', '78', '내용이 있다','21.04.18');
+INSERT INTO COMPET_DETAIL(CHAPTER_NUM,COMPET_NUM,NOV_CONTENT,COMPET_DATE)
+VALUES ('4', '78', '내용이 있다','21.04.20');
+
+INSERT INTO COMPET_DETAIL(CHAPTER_NUM,COMPET_NUM,NOV_CONTENT,COMPET_DATE)
+VALUES ('1', '79', '내용이 있다','21.04.15');
+INSERT INTO COMPET_DETAIL(CHAPTER_NUM,COMPET_NUM,NOV_CONTENT,COMPET_DATE)
+VALUES ('2', '79', '내용이 있다','21.04.17');
+INSERT INTO COMPET_DETAIL(CHAPTER_NUM,COMPET_NUM,NOV_CONTENT,COMPET_DATE)
+VALUES ('3', '79', '내용이 있다','21.04.18');
+INSERT INTO COMPET_DETAIL(CHAPTER_NUM,COMPET_NUM,NOV_CONTENT,COMPET_DATE)
+VALUES ('4', '79', '내용이 있다','21.04.20');
+
+INSERT INTO COMPET_DETAIL(CHAPTER_NUM,COMPET_NUM,NOV_CONTENT,COMPET_DATE)
+VALUES ('1', '80', '내용이 있다','21.04.15');
+INSERT INTO COMPET_DETAIL(CHAPTER_NUM,COMPET_NUM,NOV_CONTENT,COMPET_DATE)
+VALUES ('2', '80', '내용이 있다','21.04.17');
+INSERT INTO COMPET_DETAIL(CHAPTER_NUM,COMPET_NUM,NOV_CONTENT,COMPET_DATE)
+VALUES ('3', '80', '내용이 있다','21.04.18');
+INSERT INTO COMPET_DETAIL(CHAPTER_NUM,COMPET_NUM,NOV_CONTENT,COMPET_DATE)
+VALUES ('4', '80', '내용이 있다','21.04.20');
 
 COMMIT;
 
@@ -1252,9 +543,6 @@ VALUES ('FH', '대체역사');
 COMMIT;
 
 
-
-
-
 ----------WEB_NOV_INFO
 
 CREATE TABLE WEB_NOV_INFO
@@ -1274,7 +562,7 @@ CREATE TABLE WEB_NOV_INFO
 );
 INSERT INTO WEB_NOV_INFO (WEB_NOV_NUM, CATEGORY_CODE, WEB_NOV_TITLE, WEB_NOV_AUTHOR, CHAP_PER_COIN, WEB_NOV_PUBLISHER,
                           WEB_NOV_INFORM, WEB_NOV_IMG_LOCATION, DAY_OF_WEEK, WEB_NOV_OPEN_OR_CLOSE, FINISHED_OR_NOT)
-VALUES ('1', 'MF', '내 아들은 총잡이', '원빈', 100, '미디어그룹', '피치 못할 사정으로 총잡이 삶을 접어야 했던 베테랑 권총잡이 박찬영.', '사진경로1', '월', 'N ',
+VALUES ('1', 'MF', '내 아들은 총잡이', '원빈', 100, '미디어그룹', '피치 못할 사정으로 총잡이 삶을 접어야 했던 베테랑 권총잡이 박찬영.', '사진경로1', '월', 'N',
         'N ');
 INSERT INTO WEB_NOV_INFO (WEB_NOV_NUM, CATEGORY_CODE, WEB_NOV_TITLE, WEB_NOV_AUTHOR, CHAP_PER_COIN, WEB_NOV_PUBLISHER,
                           WEB_NOV_INFORM, WEB_NOV_IMG_LOCATION, DAY_OF_WEEK, WEB_NOV_OPEN_OR_CLOSE, FINISHED_OR_NOT)
@@ -1284,438 +572,271 @@ INSERT INTO WEB_NOV_INFO (WEB_NOV_NUM, CATEGORY_CODE, WEB_NOV_TITLE, WEB_NOV_AUT
                           WEB_NOV_INFORM, WEB_NOV_IMG_LOCATION, DAY_OF_WEEK, WEB_NOV_OPEN_OR_CLOSE, FINISHED_OR_NOT)
 VALUES ('3', 'F', '미술천재가 한국으로', '잘못된탄생', 100, '문학동네', '한국에서 천재가 태어나게 되는데…
 그러나…주입식교육으로 인해 힘들어하는 그림천재', '사진경로3', '월', 'N ', 'N ');
+
 INSERT INTO WEB_NOV_INFO (WEB_NOV_NUM, CATEGORY_CODE, WEB_NOV_TITLE, WEB_NOV_AUTHOR, CHAP_PER_COIN, WEB_NOV_PUBLISHER,
                           WEB_NOV_INFORM, WEB_NOV_IMG_LOCATION, DAY_OF_WEEK, WEB_NOV_OPEN_OR_CLOSE, FINISHED_OR_NOT)
-VALUES ('4', 'MF', '신들린닥터', '노마취수술', 100, '다산북스', '의학계의 떠오르는 샛별의 등장
+VALUES ('4', 'MF', '합기도의 신', '로우엔드', 100, 'abc미디어', '늙어 사라지지 않고 대가의 경지에 오른 괴물 시간을 되돌아오다', '사진경로3', '월', 'N ', 'N ');
+
+INSERT INTO WEB_NOV_INFO (WEB_NOV_NUM, CATEGORY_CODE, WEB_NOV_TITLE, WEB_NOV_AUTHOR, CHAP_PER_COIN, WEB_NOV_PUBLISHER,
+                          WEB_NOV_INFORM, WEB_NOV_IMG_LOCATION, DAY_OF_WEEK, WEB_NOV_OPEN_OR_CLOSE, FINISHED_OR_NOT)
+VALUES ('5', 'MF', '재활용 보이그룹 가나다라', '저게', 100, 'abc미디어', '마약, 불법도박, 학교폭력, 음주운전. 다른 데서 사고친 멤버들만 모아놓은 재활용 보이그룹.
+출근 첫날 그런 애들을 맡게 되었다.', '사진경로3', '월', 'N ', 'N ');
+
+INSERT INTO WEB_NOV_INFO (WEB_NOV_NUM, CATEGORY_CODE, WEB_NOV_TITLE, WEB_NOV_AUTHOR, CHAP_PER_COIN, WEB_NOV_PUBLISHER,
+                          WEB_NOV_INFORM, WEB_NOV_IMG_LOCATION, DAY_OF_WEEK, WEB_NOV_OPEN_OR_CLOSE, FINISHED_OR_NOT)
+VALUES ('6', 'F', '용기병', '진강현', 100, 'abc미디어', '공작가의 음모로 가문이 몰락한 제론은 그로 인해 얻게 된 빈털터리 유적에서 초고대 문명의 정수가 깃든 숨겨진 유적의 주인이 된다.
+그 유적의 비밀을 하나씩 파헤쳐 가며 기간트 라이더로 활동하면서 복수를 완성해 나간다.', '사진경로3', '월', 'N ', 'N ');
+
+INSERT INTO WEB_NOV_INFO (WEB_NOV_NUM, CATEGORY_CODE, WEB_NOV_TITLE, WEB_NOV_AUTHOR, CHAP_PER_COIN, WEB_NOV_PUBLISHER,
+                          WEB_NOV_INFORM, WEB_NOV_IMG_LOCATION, DAY_OF_WEEK, WEB_NOV_OPEN_OR_CLOSE, FINISHED_OR_NOT)
+VALUES ('7', 'F', '시한부 정령사가 되었다', '은의행', 100, 'abc미디어', '똥 밭에서 굴러도 이승이 낫다고 했던가. 또 한 번의 기회. 살아남기 위해서라면 무슨 짓이라도 할 것이다.', '사진경로3', '월', 'N ', 'N ');
+
+INSERT INTO WEB_NOV_INFO (WEB_NOV_NUM, CATEGORY_CODE, WEB_NOV_TITLE, WEB_NOV_AUTHOR, CHAP_PER_COIN, WEB_NOV_PUBLISHER,
+                          WEB_NOV_INFORM, WEB_NOV_IMG_LOCATION, DAY_OF_WEEK, WEB_NOV_OPEN_OR_CLOSE, FINISHED_OR_NOT)
+VALUES ('8', 'F', '벼락 맞은 재벌 3세', '골든후드', 100, 'abc미디어', '하루 아침에 개망나니 재벌 막둥이의 열 살로 돌아갔다? 개망나니 몸으로 들어갔으니 개망나니로 살 것 인가. 아니면 재벌가에서 한 자리 두둑이 챙길 것 인가.', '사진경로3', '월', 'N ', 'N ');
+
+INSERT INTO WEB_NOV_INFO (WEB_NOV_NUM, CATEGORY_CODE, WEB_NOV_TITLE, WEB_NOV_AUTHOR, CHAP_PER_COIN, WEB_NOV_PUBLISHER,
+                          WEB_NOV_INFORM, WEB_NOV_IMG_LOCATION, DAY_OF_WEEK, WEB_NOV_OPEN_OR_CLOSE, FINISHED_OR_NOT)
+VALUES ('9', 'F', '아카데미에 악마가 산다', '미디움웰던', 100, 'abc미디어', 'Lv.1 악마로 전생했다. 악마는 악한 일을 할 때 힘을 얻으니,
+어쩔 수 없이 악행을 저질러야 한다. 그런데 주변사람들이 뭔가 착각을 하는 거 같다...?', '사진경로3', '월', 'N ', 'N ');
+
+INSERT INTO WEB_NOV_INFO (WEB_NOV_NUM, CATEGORY_CODE, WEB_NOV_TITLE, WEB_NOV_AUTHOR, CHAP_PER_COIN, WEB_NOV_PUBLISHER,
+                          WEB_NOV_INFORM, WEB_NOV_IMG_LOCATION, DAY_OF_WEEK, WEB_NOV_OPEN_OR_CLOSE, FINISHED_OR_NOT)
+VALUES ('10', 'MF', '쉐프 프랑켄슈타인', '중우중우', 100, 'abc미디어', '좋은 쉐프란 무엇일까? 희생적인 쉐프? 양질의 요리를 제공하는 쉐프?', '사진경로3', '월', 'N ', 'N ');
+
+INSERT INTO WEB_NOV_INFO (WEB_NOV_NUM, CATEGORY_CODE, WEB_NOV_TITLE, WEB_NOV_AUTHOR, CHAP_PER_COIN, WEB_NOV_PUBLISHER,
+                          WEB_NOV_INFORM, WEB_NOV_IMG_LOCATION, DAY_OF_WEEK, WEB_NOV_OPEN_OR_CLOSE, FINISHED_OR_NOT)
+VALUES ('11', 'SPO', '야구괴물은 지옥에서 왔다', '원썸', 100, 'abc미디어', '올타임 레전드들과 20년 조기 야구 하고왔다. 질문 안받는다.', '사진경로3', '월', 'N ', 'N ');
+
+INSERT INTO WEB_NOV_INFO (WEB_NOV_NUM, CATEGORY_CODE, WEB_NOV_TITLE, WEB_NOV_AUTHOR, CHAP_PER_COIN, WEB_NOV_PUBLISHER,
+                          WEB_NOV_INFORM, WEB_NOV_IMG_LOCATION, DAY_OF_WEEK, WEB_NOV_OPEN_OR_CLOSE, FINISHED_OR_NOT)
+VALUES ('12', 'FH', '아메리카의 독재자가 되었다', '저너머', 100, 'abc미디어', '기회의 땅, 아메리카. 전세계 정복을 꿈꾼다', '사진경로3', '월', 'N ', 'N ');
+
+INSERT INTO WEB_NOV_INFO (WEB_NOV_NUM, CATEGORY_CODE, WEB_NOV_TITLE, WEB_NOV_AUTHOR, CHAP_PER_COIN, WEB_NOV_PUBLISHER,
+                          WEB_NOV_INFORM, WEB_NOV_IMG_LOCATION, DAY_OF_WEEK, WEB_NOV_OPEN_OR_CLOSE, FINISHED_OR_NOT)
+VALUES ('13', 'F', '게으른 소드마스터', '전자렌지1', 100, 'abc미디어', '...검들기도 귀찮아. 하지만 휘두르기만 하면...!', '사진경로3', '월', 'N ', 'N ');
+
+INSERT INTO WEB_NOV_INFO (WEB_NOV_NUM, CATEGORY_CODE, WEB_NOV_TITLE, WEB_NOV_AUTHOR, CHAP_PER_COIN, WEB_NOV_PUBLISHER,
+                          WEB_NOV_INFORM, WEB_NOV_IMG_LOCATION, DAY_OF_WEEK, WEB_NOV_OPEN_OR_CLOSE, FINISHED_OR_NOT)
+VALUES ('14', 'F', '일부러 시스템 교란종이 되어보았다', '새치', 100, 'abc미디어', '어쩌다 탑에 들어가 죽었는데 시스템 오류를 일으켰다. 어라? 몬스터도 속이고 각성자도 속는다.', '사진경로3', '월', 'N ', 'N ');
+
+INSERT INTO WEB_NOV_INFO (WEB_NOV_NUM, CATEGORY_CODE, WEB_NOV_TITLE, WEB_NOV_AUTHOR, CHAP_PER_COIN, WEB_NOV_PUBLISHER,
+                          WEB_NOV_INFORM, WEB_NOV_IMG_LOCATION, DAY_OF_WEEK, WEB_NOV_OPEN_OR_CLOSE, FINISHED_OR_NOT)
+VALUES ('15', 'F', '소림용사', '화산행', 100, 'abc미디어', '60억분의 1의 사나이. 영장류 최강의 격투가 모강철. 은퇴 경기를 하루 앞두고 잠든 그가 깨어난 곳은?', '사진경로3', '월', 'N ', 'N ');
+
+
+INSERT INTO WEB_NOV_INFO (WEB_NOV_NUM, CATEGORY_CODE, WEB_NOV_TITLE, WEB_NOV_AUTHOR, CHAP_PER_COIN, WEB_NOV_PUBLISHER,
+                          WEB_NOV_INFORM, WEB_NOV_IMG_LOCATION, DAY_OF_WEEK, WEB_NOV_OPEN_OR_CLOSE, FINISHED_OR_NOT)
+VALUES ('16', 'MF', '신들린닥터', '노마취수술', 100, '다산북스', '의학계의 떠오르는 샛별의 등장
 의학계를 뒤집어 놓은게 있엇으니… 그것은 마취 없는 수술의 시작…', '사진경로4', '화', 'N ', 'N ');
+
 INSERT INTO WEB_NOV_INFO (WEB_NOV_NUM, CATEGORY_CODE, WEB_NOV_TITLE, WEB_NOV_AUTHOR, CHAP_PER_COIN, WEB_NOV_PUBLISHER,
                           WEB_NOV_INFORM, WEB_NOV_IMG_LOCATION, DAY_OF_WEEK, WEB_NOV_OPEN_OR_CLOSE, FINISHED_OR_NOT)
-VALUES ('5', 'OF', '스타용병 이영호', '나는아이언', 100, '다산북스', '게임의 인기로 인해 유저들이 늘어나면서
+VALUES ('17', 'OF', '스타용병 이영호', '나는아이언', 100, '다산북스', '게임의 인기로 인해 유저들이 늘어나면서
 게임에 관심없던 이영호라는 소년이…방배중에서...게임을 시작하는데', '사진경로5', '화', 'Y ', 'N ');
+
 INSERT INTO WEB_NOV_INFO (WEB_NOV_NUM, CATEGORY_CODE, WEB_NOV_TITLE, WEB_NOV_AUTHOR, CHAP_PER_COIN, WEB_NOV_PUBLISHER,
                           WEB_NOV_INFORM, WEB_NOV_IMG_LOCATION, DAY_OF_WEEK, WEB_NOV_OPEN_OR_CLOSE, FINISHED_OR_NOT)
-VALUES ('6', 'ROM', '인간은 연약해', '코로나19', 100, '게임북스', '대한민국 전성기로 보였던2019년…
+VALUES ('18', 'ROM', '인간은 연약해', '코로나19', 100, '게임북스', '대한민국 전성기로 보였던2019년…
 예상치 못한 병이 찾아오기 시작한다!!', '사진경로6', '화', 'N ', 'N ');
+
 INSERT INTO WEB_NOV_INFO (WEB_NOV_NUM, CATEGORY_CODE, WEB_NOV_TITLE, WEB_NOV_AUTHOR, CHAP_PER_COIN, WEB_NOV_PUBLISHER,
                           WEB_NOV_INFORM, WEB_NOV_IMG_LOCATION, DAY_OF_WEEK, WEB_NOV_OPEN_OR_CLOSE, FINISHED_OR_NOT)
-VALUES ('7', 'ROM', '아웃사이드 인', '피셀', 100, '넥서스', '인사이드 아웃의 후속작!', '사진경로7', '수', 'N ', 'N ');
+VALUES ('19', 'MF', '너의 최애푸드가 보여!', '푸만두', 100, '에이비씨미디어', '사람들의 최애푸드가 보이기 시작했다.', '사진경로6', '화', 'N ', 'N ');
+
 INSERT INTO WEB_NOV_INFO (WEB_NOV_NUM, CATEGORY_CODE, WEB_NOV_TITLE, WEB_NOV_AUTHOR, CHAP_PER_COIN, WEB_NOV_PUBLISHER,
                           WEB_NOV_INFORM, WEB_NOV_IMG_LOCATION, DAY_OF_WEEK, WEB_NOV_OPEN_OR_CLOSE, FINISHED_OR_NOT)
-VALUES ('8', 'SPO', '0살부터미적분', '전공은경영', 100, '미디어그룹', '2살에 덧셈뺄셈…5살에..삼각함수…
+VALUES ('20', 'MF', '전장의 선율', '예스장', 100, '에이비씨미디어', '시각장애 피아니스트 전장에 선율의 꽃을 피우다다.', '사진경로6', '화', 'N ', 'N ');
+
+INSERT INTO WEB_NOV_INFO (WEB_NOV_NUM, CATEGORY_CODE, WEB_NOV_TITLE, WEB_NOV_AUTHOR, CHAP_PER_COIN, WEB_NOV_PUBLISHER,
+                          WEB_NOV_INFORM, WEB_NOV_IMG_LOCATION, DAY_OF_WEEK, WEB_NOV_OPEN_OR_CLOSE, FINISHED_OR_NOT)
+VALUES ('21', 'MF', '발가락의 노래', '김동신', 100, '에이비씨미디어', '특별한 뇌 호흡, 격투의 수법을 전수받으며 점점 ‘건강한 말기 암 환자’로 변신.', '사진경로6', '화', 'N ', 'N ');
+
+INSERT INTO WEB_NOV_INFO (WEB_NOV_NUM, CATEGORY_CODE, WEB_NOV_TITLE, WEB_NOV_AUTHOR, CHAP_PER_COIN, WEB_NOV_PUBLISHER,
+                          WEB_NOV_INFORM, WEB_NOV_IMG_LOCATION, DAY_OF_WEEK, WEB_NOV_OPEN_OR_CLOSE, FINISHED_OR_NOT)
+VALUES ('22', 'MF', '약자생존', '가렌', 100, '에이비씨미디어', '변화된 지구에서 살아남아라! 오직 약한(?) 자만 생존한다!', '사진경로6', '화', 'N ', 'N ');
+
+INSERT INTO WEB_NOV_INFO (WEB_NOV_NUM, CATEGORY_CODE, WEB_NOV_TITLE, WEB_NOV_AUTHOR, CHAP_PER_COIN, WEB_NOV_PUBLISHER,
+                          WEB_NOV_INFORM, WEB_NOV_IMG_LOCATION, DAY_OF_WEEK, WEB_NOV_OPEN_OR_CLOSE, FINISHED_OR_NOT)
+VALUES ('23', 'F', '지구게임의 사령관', '야행', 100, '에이비씨미디어', '사령관님 괜찮으십니까? 뭐 사령관? 난 그냥 게이머야! 사령관 같은 게 아니라고! 우주 전략 시뮬레이션 ‘스페이스 워’의 사령관이 되어버렸다.', '사진경로6', '화', 'N ', 'N ');
+
+INSERT INTO WEB_NOV_INFO (WEB_NOV_NUM, CATEGORY_CODE, WEB_NOV_TITLE, WEB_NOV_AUTHOR, CHAP_PER_COIN, WEB_NOV_PUBLISHER,
+                          WEB_NOV_INFORM, WEB_NOV_IMG_LOCATION, DAY_OF_WEEK, WEB_NOV_OPEN_OR_CLOSE, FINISHED_OR_NOT)
+VALUES ('24', 'MF', '타투', '스몰', 100, '에이비씨미디어', '문신 덕에 넘어간 세계는 몬스터를 잡으면 내공이 상승하고, 상금으로 금화까지!', '사진경로6', '화', 'N ', 'N ');
+
+INSERT INTO WEB_NOV_INFO (WEB_NOV_NUM, CATEGORY_CODE, WEB_NOV_TITLE, WEB_NOV_AUTHOR, CHAP_PER_COIN, WEB_NOV_PUBLISHER,
+                          WEB_NOV_INFORM, WEB_NOV_IMG_LOCATION, DAY_OF_WEEK, WEB_NOV_OPEN_OR_CLOSE, FINISHED_OR_NOT)
+VALUES ('25', 'F', '위키쓰는 법사', '로드롤러', 100, '에이비씨미디어', '다른 놈이 주문외울때 나는 위키 쓴다.', '사진경로6', '화', 'N ', 'N ');
+
+INSERT INTO WEB_NOV_INFO (WEB_NOV_NUM, CATEGORY_CODE, WEB_NOV_TITLE, WEB_NOV_AUTHOR, CHAP_PER_COIN, WEB_NOV_PUBLISHER,
+                          WEB_NOV_INFORM, WEB_NOV_IMG_LOCATION, DAY_OF_WEEK, WEB_NOV_OPEN_OR_CLOSE, FINISHED_OR_NOT)
+VALUES ('26', 'MF', '왕십리역 소드마스터', '왕십리턴', 100, '에이비씨미디어', '[과천역 4번출구 던전에 입장하셨습니다.]', '사진경로6', '화', 'N ', 'N ');
+
+INSERT INTO WEB_NOV_INFO (WEB_NOV_NUM, CATEGORY_CODE, WEB_NOV_TITLE, WEB_NOV_AUTHOR, CHAP_PER_COIN, WEB_NOV_PUBLISHER,
+                          WEB_NOV_INFORM, WEB_NOV_IMG_LOCATION, DAY_OF_WEEK, WEB_NOV_OPEN_OR_CLOSE, FINISHED_OR_NOT)
+VALUES ('27', 'MF', '책을 읽으면 레벨이 올라', '독서광', 100, '에이비씨미디어', '게임도 아니고, 책을 읽으면 경험치가 쌓인다고?', '사진경로6', '화', 'N ', 'N ');
+
+INSERT INTO WEB_NOV_INFO (WEB_NOV_NUM, CATEGORY_CODE, WEB_NOV_TITLE, WEB_NOV_AUTHOR, CHAP_PER_COIN, WEB_NOV_PUBLISHER,
+                          WEB_NOV_INFORM, WEB_NOV_IMG_LOCATION, DAY_OF_WEEK, WEB_NOV_OPEN_OR_CLOSE, FINISHED_OR_NOT)
+VALUES ('28', 'MF', '인셉션 라이프', '멱살캐리', 100, '에이비씨미디어', '두개의 몸, 두개의 세계, 동기화된 미래', '사진경로6', '화', 'N ', 'N ');
+
+INSERT INTO WEB_NOV_INFO (WEB_NOV_NUM, CATEGORY_CODE, WEB_NOV_TITLE, WEB_NOV_AUTHOR, CHAP_PER_COIN, WEB_NOV_PUBLISHER,
+                          WEB_NOV_INFORM, WEB_NOV_IMG_LOCATION, DAY_OF_WEEK, WEB_NOV_OPEN_OR_CLOSE, FINISHED_OR_NOT)
+VALUES ('29', 'F', '테이밍 슬레이브', '김태석', 100, '에이비씨미디어', '카일란 최고의 노답 직업인 소환술사?', '사진경로6', '화', 'N ', 'N ');
+
+INSERT INTO WEB_NOV_INFO (WEB_NOV_NUM, CATEGORY_CODE, WEB_NOV_TITLE, WEB_NOV_AUTHOR, CHAP_PER_COIN, WEB_NOV_PUBLISHER,
+                          WEB_NOV_INFORM, WEB_NOV_IMG_LOCATION, DAY_OF_WEEK, WEB_NOV_OPEN_OR_CLOSE, FINISHED_OR_NOT)
+VALUES ('30', 'F', '천국에서 돌아온 김대성', '귀차늠', 100, '에이비씨미디어', '지구로 돌아왔으니 이젠 유유자적 살고 싶었는데... [마수들이 절대자의 활약에 환호합니다!]
+[마수들이 절대자께 공물을 바칩니다!] 끈질긴 새끼들, 안 해! 안 한다고!', '사진경로6', '화', 'N ', 'N ');
+
+INSERT INTO WEB_NOV_INFO (WEB_NOV_NUM, CATEGORY_CODE, WEB_NOV_TITLE, WEB_NOV_AUTHOR, CHAP_PER_COIN, WEB_NOV_PUBLISHER,
+                          WEB_NOV_INFORM, WEB_NOV_IMG_LOCATION, DAY_OF_WEEK, WEB_NOV_OPEN_OR_CLOSE, FINISHED_OR_NOT)
+VALUES ('31', 'ROM', '아웃사이드 인', '피셀', 100, '넥서스', '인사이드 아웃의 후속작!', '사진경로7', '수', 'N ', 'N ');
+INSERT INTO WEB_NOV_INFO (WEB_NOV_NUM, CATEGORY_CODE, WEB_NOV_TITLE, WEB_NOV_AUTHOR, CHAP_PER_COIN, WEB_NOV_PUBLISHER,
+                          WEB_NOV_INFORM, WEB_NOV_IMG_LOCATION, DAY_OF_WEEK, WEB_NOV_OPEN_OR_CLOSE, FINISHED_OR_NOT)
+VALUES ('32', 'SPO', '0살부터미적분', '전공은경영', 100, '미디어그룹', '2살에 덧셈뺄셈…5살에..삼각함수…
 8살에 대학 미적분을 푸는 천재의 등장….', '사진경로8', '수', 'Y ', 'N ');
 INSERT INTO WEB_NOV_INFO (WEB_NOV_NUM, CATEGORY_CODE, WEB_NOV_TITLE, WEB_NOV_AUTHOR, CHAP_PER_COIN, WEB_NOV_PUBLISHER,
                           WEB_NOV_INFORM, WEB_NOV_IMG_LOCATION, DAY_OF_WEEK, WEB_NOV_OPEN_OR_CLOSE, FINISHED_OR_NOT)
-VALUES ('9', 'F', '귀머거리의전설', '베토벤', 100, '김영사', '1800년 르네상스 시대에 유럽에서 음악 천재가 태어나다
+VALUES ('33', 'F', '귀머거리의전설', '베토벤', 100, '김영사', '1800년 르네상스 시대에 유럽에서 음악 천재가 태어나다
 그러나..그는 얼마 못가 귀머거리가 되는데..', '사진경로9', '수', 'N ', 'Y ');
 INSERT INTO WEB_NOV_INFO (WEB_NOV_NUM, CATEGORY_CODE, WEB_NOV_TITLE, WEB_NOV_AUTHOR, CHAP_PER_COIN, WEB_NOV_PUBLISHER,
                           WEB_NOV_INFORM, WEB_NOV_IMG_LOCATION, DAY_OF_WEEK, WEB_NOV_OPEN_OR_CLOSE, FINISHED_OR_NOT)
-VALUES ('10', 'FH', '짝귀의삶', '빈센트반고흐', 100, '미디어그룹', '타짜의 세계에서….
+VALUES ('34', 'FH', '짝귀의삶', '빈센트반고흐', 100, '미디어그룹', '타짜의 세계에서….
 밑장빼다간 손모가지가 날아가는 사건이 비일비재하는데', '사진경로10', '목', 'N ', 'N ');
 INSERT INTO WEB_NOV_INFO (WEB_NOV_NUM, CATEGORY_CODE, WEB_NOV_TITLE, WEB_NOV_AUTHOR, CHAP_PER_COIN, WEB_NOV_PUBLISHER,
                           WEB_NOV_INFORM, WEB_NOV_IMG_LOCATION, DAY_OF_WEEK, WEB_NOV_OPEN_OR_CLOSE, FINISHED_OR_NOT)
-VALUES ('11', 'ROM', '금수저 백수생활', '김밥은헤븐', 100, '문학동네', 'N그룹 금수저로 태어난 K씨는…
+VALUES ('35', 'ROM', '금수저 백수생활', '김밥은헤븐', 100, '문학동네', 'N그룹 금수저로 태어난 K씨는…
 자신이 금수저라는 사실을 숨기고 지내는데', '사진경로11', '목', 'N ', 'N ');
 INSERT INTO WEB_NOV_INFO (WEB_NOV_NUM, CATEGORY_CODE, WEB_NOV_TITLE, WEB_NOV_AUTHOR, CHAP_PER_COIN, WEB_NOV_PUBLISHER,
                           WEB_NOV_INFORM, WEB_NOV_IMG_LOCATION, DAY_OF_WEEK, WEB_NOV_OPEN_OR_CLOSE, FINISHED_OR_NOT)
-VALUES ('12', 'FH', '신입사원이재용', '삼성1인자', 100, '미디어그룹', 'S그룹의 예비 후계자…
+VALUES ('36', 'FH', '신입사원이재용', '삼성1인자', 100, '미디어그룹', 'S그룹의 예비 후계자…
 회사를 알기위해 신입사원으로 위장해서 들어가면서..', '사진경로12', '목', 'Y ', 'N ');
 INSERT INTO WEB_NOV_INFO (WEB_NOV_NUM, CATEGORY_CODE, WEB_NOV_TITLE, WEB_NOV_AUTHOR, CHAP_PER_COIN, WEB_NOV_PUBLISHER,
                           WEB_NOV_INFORM, WEB_NOV_IMG_LOCATION, DAY_OF_WEEK, WEB_NOV_OPEN_OR_CLOSE, FINISHED_OR_NOT)
-VALUES ('13', 'FH', '슬기로운개발생활', '야근은선택이아닌필수', 100, '게임북스', '개발자의 길을 걷게다던 P씨의 개발 이야기', '사진경로13', '금', 'N ', 'N ');
+VALUES ('37', 'FH', '슬기로운개발생활', '야근은선택이아닌필수', 100, '게임북스', '개발자의 길을 걷게다던 P씨의 개발 이야기', '사진경로13', '금', 'N ', 'N ');
 INSERT INTO WEB_NOV_INFO (WEB_NOV_NUM, CATEGORY_CODE, WEB_NOV_TITLE, WEB_NOV_AUTHOR, CHAP_PER_COIN, WEB_NOV_PUBLISHER,
                           WEB_NOV_INFORM, WEB_NOV_IMG_LOCATION, DAY_OF_WEEK, WEB_NOV_OPEN_OR_CLOSE, FINISHED_OR_NOT)
-VALUES ('14', 'MF', '천생개발자', 'HTML은언어다', 100, '게임북스', '어렸을 때부터 장난감보단 코드 짜는 것에 흥미와 관심을 보였던 l씨
+VALUES ('38', 'MF', '천생개발자', 'HTML은언어다', 100, '게임북스', '어렸을 때부터 장난감보단 코드 짜는 것에 흥미와 관심을 보였던 l씨
 성인이 되어 유명회사에 입사하게 되는데', '사진경로14', '금', 'N ', 'N ');
 INSERT INTO WEB_NOV_INFO (WEB_NOV_NUM, CATEGORY_CODE, WEB_NOV_TITLE, WEB_NOV_AUTHOR, CHAP_PER_COIN, WEB_NOV_PUBLISHER,
                           WEB_NOV_INFORM, WEB_NOV_IMG_LOCATION, DAY_OF_WEEK, WEB_NOV_OPEN_OR_CLOSE, FINISHED_OR_NOT)
-VALUES ('15', 'SPO', '재벌가늦등이', '금수저라이프', 100, '넥서스', '대한민국 5대 재벌가의 집안에서 늦등이가 탄생했다
+VALUES ('39', 'SPO', '재벌가늦등이', '금수저라이프', 100, '넥서스', '대한민국 5대 재벌가의 집안에서 늦등이가 탄생했다
 그러면서 경영권자리에 첫 째가 눈독이 오르는데', '사진경로15', '금', 'Y ', 'Y ');
 INSERT INTO WEB_NOV_INFO (WEB_NOV_NUM, CATEGORY_CODE, WEB_NOV_TITLE, WEB_NOV_AUTHOR, CHAP_PER_COIN, WEB_NOV_PUBLISHER,
                           WEB_NOV_INFORM, WEB_NOV_IMG_LOCATION, DAY_OF_WEEK, WEB_NOV_OPEN_OR_CLOSE, FINISHED_OR_NOT)
-VALUES ('16', 'F', '메카닉이되었다', '마린파이어뱃', 100, '창비', '바이오닉계에서 전설이었던 M씨가
+VALUES ('40', 'F', '메카닉이되었다', '마린파이어뱃', 100, '창비', '바이오닉계에서 전설이었던 M씨가
 상대 계열사인 메카닉계로 떠나게 된다!', '사진경로16', '토', 'N ', 'N ');
 INSERT INTO WEB_NOV_INFO (WEB_NOV_NUM, CATEGORY_CODE, WEB_NOV_TITLE, WEB_NOV_AUTHOR, CHAP_PER_COIN, WEB_NOV_PUBLISHER,
                           WEB_NOV_INFORM, WEB_NOV_IMG_LOCATION, DAY_OF_WEEK, WEB_NOV_OPEN_OR_CLOSE, FINISHED_OR_NOT)
-VALUES ('17', 'MF', '축구황제가되기까지', '마이클조던', 100, '넥서스', '가난한 집안에서 태어났지만, 축구 능력 만큼은 우수했던 청년
+VALUES ('41', 'MF', '축구황제가되기까지', '마이클조던', 100, '넥서스', '가난한 집안에서 태어났지만, 축구 능력 만큼은 우수했던 청년
 우연치 않게 구단주를 만나게 되는데', '사진경로17', '토', 'N ', 'Y ');
 INSERT INTO WEB_NOV_INFO (WEB_NOV_NUM, CATEGORY_CODE, WEB_NOV_TITLE, WEB_NOV_AUTHOR, CHAP_PER_COIN, WEB_NOV_PUBLISHER,
                           WEB_NOV_INFORM, WEB_NOV_IMG_LOCATION, DAY_OF_WEEK, WEB_NOV_OPEN_OR_CLOSE, FINISHED_OR_NOT)
-VALUES ('18', 'F', '황제의자리', '요환과페이커', 100, '문학동네', '하늘아래 두 개의 태양은 존재 하지 않는 법!!
+VALUES ('42', 'F', '황제의자리', '요환과페이커', 100, '문학동네', '하늘아래 두 개의 태양은 존재 하지 않는 법!!
 황제의 자리를 놓고 벌여지는 숨막히는 티키타가의 스토리!', '사진경로18', '토', 'N ', 'N ');
 INSERT INTO WEB_NOV_INFO (WEB_NOV_NUM, CATEGORY_CODE, WEB_NOV_TITLE, WEB_NOV_AUTHOR, CHAP_PER_COIN, WEB_NOV_PUBLISHER,
                           WEB_NOV_INFORM, WEB_NOV_IMG_LOCATION, DAY_OF_WEEK, WEB_NOV_OPEN_OR_CLOSE, FINISHED_OR_NOT)
-VALUES ('19', 'F', '공대생의삶', '아이작뉴턴', 100, '게임북스', '사과…영어로는 APPLE…
+VALUES ('43', 'F', '공대생의삶', '아이작뉴턴', 100, '게임북스', '사과…영어로는 APPLE…
 그러나 그의 눈에는 사과가 아닌 다른 것이 보였다!?!?', '사진경로19', '일', 'N ', 'N ');
 INSERT INTO WEB_NOV_INFO (WEB_NOV_NUM, CATEGORY_CODE, WEB_NOV_TITLE, WEB_NOV_AUTHOR, CHAP_PER_COIN, WEB_NOV_PUBLISHER,
                           WEB_NOV_INFORM, WEB_NOV_IMG_LOCATION, DAY_OF_WEEK, WEB_NOV_OPEN_OR_CLOSE, FINISHED_OR_NOT)
-VALUES ('20', 'OF', '사랑의치유사', '아웃사이더', 100, '문학동네', '유명 랩퍼로 한 때 인기를 날렸던 O씨
+VALUES ('44', 'OF', '사랑의치유사', '아웃사이더', 100, '문학동네', '유명 랩퍼로 한 때 인기를 날렸던 O씨
 어느새 음악치유사가 되가는 이야기', '사진경로20', '일', 'N ', 'N ');
 INSERT INTO WEB_NOV_INFO (WEB_NOV_NUM, CATEGORY_CODE, WEB_NOV_TITLE, WEB_NOV_AUTHOR, CHAP_PER_COIN, WEB_NOV_PUBLISHER,
                           WEB_NOV_INFORM, WEB_NOV_IMG_LOCATION, DAY_OF_WEEK, WEB_NOV_OPEN_OR_CLOSE, FINISHED_OR_NOT)
-VALUES ('21', 'OF', '지구는돈다', '갈릴레이갈릴레오', 100, '문학동네', '먼 옛날, 지구가 평평하다고 생각했던 시기에
+VALUES ('45', 'OF', '지구는돈다', '갈릴레이갈릴레오', 100, '문학동네', '먼 옛날, 지구가 평평하다고 생각했던 시기에
 악동이 태어났으니….', '사진경로21', '일', 'N ', 'N ');
 INSERT INTO WEB_NOV_INFO (WEB_NOV_NUM, CATEGORY_CODE, WEB_NOV_TITLE, WEB_NOV_AUTHOR, CHAP_PER_COIN, WEB_NOV_PUBLISHER,
                           WEB_NOV_INFORM, WEB_NOV_IMG_LOCATION, DAY_OF_WEEK, WEB_NOV_OPEN_OR_CLOSE, FINISHED_OR_NOT)
-VALUES ('22', 'F', '삼국지 밖으로 가자', '중한한중', 100, '김영사', '고대 시대, 세 나라의 치열한 전투 이야기가 시작된다', '사진경로22', '완', 'N ', 'Y ');
+VALUES ('46', 'F', '삼국지 밖으로 가자', '중한한중', 100, '김영사', '고대 시대, 세 나라의 치열한 전투 이야기가 시작된다', '사진경로22', '완', 'N ', 'Y ');
 INSERT INTO WEB_NOV_INFO (WEB_NOV_NUM, CATEGORY_CODE, WEB_NOV_TITLE, WEB_NOV_AUTHOR, CHAP_PER_COIN, WEB_NOV_PUBLISHER,
                           WEB_NOV_INFORM, WEB_NOV_IMG_LOCATION, DAY_OF_WEEK, WEB_NOV_OPEN_OR_CLOSE, FINISHED_OR_NOT)
-VALUES ('23', 'F', '분열하고 싶은 자', '제법좁은강', 100, '김영사', '자아분열에 대해서 고뇌하던 유명 철학가가 직접  쓴 분열 이야기', '사진경로23', '완', 'N ',
+VALUES ('47', 'F', '분열하고 싶은 자', '제법좁은강', 100, '김영사', '자아분열에 대해서 고뇌하던 유명 철학가가 직접  쓴 분열 이야기', '사진경로23', '완', 'N ',
         'Y ');
 INSERT INTO WEB_NOV_INFO (WEB_NOV_NUM, CATEGORY_CODE, WEB_NOV_TITLE, WEB_NOV_AUTHOR, CHAP_PER_COIN, WEB_NOV_PUBLISHER,
                           WEB_NOV_INFORM, WEB_NOV_IMG_LOCATION, DAY_OF_WEEK, WEB_NOV_OPEN_OR_CLOSE, FINISHED_OR_NOT)
-VALUES ('24', 'OF', '포이즌 퀸', '유지권', 100, '문학동네', '독보다 강하고, 곰 같은 여우가 되겠다던 한 여왕의 삶의 이야기', '사진경로24', '완', 'N ', 'Y ');
+VALUES ('48', 'OF', '포이즌 퀸', '유지권', 100, '문학동네', '독보다 강하고, 곰 같은 여우가 되겠다던 한 여왕의 삶의 이야기', '사진경로24', '완', 'N ', 'Y ');
 INSERT INTO WEB_NOV_INFO (WEB_NOV_NUM, CATEGORY_CODE, WEB_NOV_TITLE, WEB_NOV_AUTHOR, CHAP_PER_COIN, WEB_NOV_PUBLISHER,
                           WEB_NOV_INFORM, WEB_NOV_IMG_LOCATION, DAY_OF_WEEK, WEB_NOV_OPEN_OR_CLOSE, FINISHED_OR_NOT)
-VALUES ('25', 'FH', '거지에서 고수까지', '요비비요', 100, '창비', '매일 취준의 늪에 빠져살던 백수가
+VALUES ('49', 'FH', '거지에서 고수까지', '요비비요', 100, '창비', '매일 취준의 늪에 빠져살던 백수가
 지나가다 우연치 않게 바둑을 보게 되면서', '사진경로25', '완', 'N ', 'Y ');
 INSERT INTO WEB_NOV_INFO (WEB_NOV_NUM, CATEGORY_CODE, WEB_NOV_TITLE, WEB_NOV_AUTHOR, CHAP_PER_COIN, WEB_NOV_PUBLISHER,
                           WEB_NOV_INFORM, WEB_NOV_IMG_LOCATION, DAY_OF_WEEK, WEB_NOV_OPEN_OR_CLOSE, FINISHED_OR_NOT)
-VALUES ('26', 'SPO', '리멤버 더 에이지', '중금하르방', 100, '창비', '나이를 잊고 사는 나라에
+VALUES ('50', 'SPO', '리멤버 더 에이지', '중금하르방', 100, '창비', '나이를 잊고 사는 나라에
 나이의 개념이 들어오면서 사람들이 혼란을 겪게 되는데', '사진경로26', '완', 'N ', 'Y ');
 
 INSERT INTO WEB_NOV_INFO (WEB_NOV_NUM, CATEGORY_CODE, WEB_NOV_TITLE, WEB_NOV_AUTHOR, CHAP_PER_COIN, WEB_NOV_PUBLISHER,
                           WEB_NOV_INFORM, WEB_NOV_IMG_LOCATION, DAY_OF_WEEK, WEB_NOV_OPEN_OR_CLOSE, FINISHED_OR_NOT)
-VALUES ('27', 'SPO', 'test', 'test', 100, 'test', 'test', '사진경로27', '완', 'N ', 'Y ');
+VALUES ('51', 'SPO', 'test', 'test', 100, 'test', 'test', '사진경로27', '완', 'N ', 'Y ');
 
 COMMIT;
 
----------------- WEB_NOV_DETAIL
 
 
-CREATE TABLE WEB_NOV_DETAIL
+----------------WEB_NOV_CHAP_NUM
+
+CREATE TABLE WEB_NOV_CHAP_NUM
 (
-    WEB_NOV_NUM     NUMBER REFERENCES WEB_NOV_INFO (WEB_NOV_NUM) NOT NULL,
-    CHAPTER_NUM     NUMBER,
-    PAY_OR_NOT      CHAR(2) CHECK (PAY_OR_NOT IN ('Y', 'N')),
-    WEB_NOV_CONTENT VARCHAR2(2000) NOT NULL,
-    CONSTRAINT PK_WEB_NOV_DETAIL PRIMARY KEY (WEB_NOV_NUM, CHAPTER_NUM)
+  CHAP_NUM NUMBER PRIMARY KEY,
+  CHAP_NAME VARCHAR2(90) NOT NULL
 );
 
-INSERT INTO WEB_NOV_DETAIL (WEB_NOV_NUM, CHAPTER_NUM, PAY_OR_NOT, WEB_NOV_CONTENT)
-VALUES ('1', 1, 'N ', '웹소설 내용');
-INSERT INTO WEB_NOV_DETAIL (WEB_NOV_NUM, CHAPTER_NUM, PAY_OR_NOT, WEB_NOV_CONTENT)
-VALUES ('1', 2, 'N ', '웹소설 내용');
-INSERT INTO WEB_NOV_DETAIL (WEB_NOV_NUM, CHAPTER_NUM, PAY_OR_NOT, WEB_NOV_CONTENT)
-VALUES ('1', 3, 'N ', '웹소설 내용');
-INSERT INTO WEB_NOV_DETAIL (WEB_NOV_NUM, CHAPTER_NUM, PAY_OR_NOT, WEB_NOV_CONTENT)
-VALUES ('1', 4, 'N ', '웹소설 내용');
-INSERT INTO WEB_NOV_DETAIL (WEB_NOV_NUM, CHAPTER_NUM, PAY_OR_NOT, WEB_NOV_CONTENT)
-VALUES ('1', 5, 'N ', '웹소설 내용');
-INSERT INTO WEB_NOV_DETAIL (WEB_NOV_NUM, CHAPTER_NUM, PAY_OR_NOT, WEB_NOV_CONTENT)
-VALUES ('1', 6, 'N ', '웹소설 내용');
-INSERT INTO WEB_NOV_DETAIL (WEB_NOV_NUM, CHAPTER_NUM, PAY_OR_NOT, WEB_NOV_CONTENT)
-VALUES ('1', 7, 'N ', '웹소설 내용');
-INSERT INTO WEB_NOV_DETAIL (WEB_NOV_NUM, CHAPTER_NUM, PAY_OR_NOT, WEB_NOV_CONTENT)
-VALUES ('1', 8, 'N ', '웹소설 내용');
-INSERT INTO WEB_NOV_DETAIL (WEB_NOV_NUM, CHAPTER_NUM, PAY_OR_NOT, WEB_NOV_CONTENT)
-VALUES ('1', 9, 'N ', '웹소설 내용');
-INSERT INTO WEB_NOV_DETAIL (WEB_NOV_NUM, CHAPTER_NUM, PAY_OR_NOT, WEB_NOV_CONTENT)
-VALUES ('1', 10, 'N ', '웹소설 내용');
-INSERT INTO WEB_NOV_DETAIL (WEB_NOV_NUM, CHAPTER_NUM, PAY_OR_NOT, WEB_NOV_CONTENT)
-VALUES ('1', 11, 'N ', '웹소설 내용');
-INSERT INTO WEB_NOV_DETAIL (WEB_NOV_NUM, CHAPTER_NUM, PAY_OR_NOT, WEB_NOV_CONTENT)
-VALUES ('1', 12, 'N ', '웹소설 내용');
-INSERT INTO WEB_NOV_DETAIL (WEB_NOV_NUM, CHAPTER_NUM, PAY_OR_NOT, WEB_NOV_CONTENT)
-VALUES ('2', 1, 'N ', '웹소설 내용');
-INSERT INTO WEB_NOV_DETAIL (WEB_NOV_NUM, CHAPTER_NUM, PAY_OR_NOT, WEB_NOV_CONTENT)
-VALUES ('2', 2, 'N ', '웹소설 내용');
-INSERT INTO WEB_NOV_DETAIL (WEB_NOV_NUM, CHAPTER_NUM, PAY_OR_NOT, WEB_NOV_CONTENT)
-VALUES ('2', 3, 'N ', '웹소설 내용');
-INSERT INTO WEB_NOV_DETAIL (WEB_NOV_NUM, CHAPTER_NUM, PAY_OR_NOT, WEB_NOV_CONTENT)
-VALUES ('2', 4, 'N ', '웹소설 내용');
-INSERT INTO WEB_NOV_DETAIL (WEB_NOV_NUM, CHAPTER_NUM, PAY_OR_NOT, WEB_NOV_CONTENT)
-VALUES ('2', 5, 'N ', '웹소설 내용');
-INSERT INTO WEB_NOV_DETAIL (WEB_NOV_NUM, CHAPTER_NUM, PAY_OR_NOT, WEB_NOV_CONTENT)
-VALUES ('2', 6, 'N ', '웹소설 내용');
-INSERT INTO WEB_NOV_DETAIL (WEB_NOV_NUM, CHAPTER_NUM, PAY_OR_NOT, WEB_NOV_CONTENT)
-VALUES ('2', 7, 'N ', '웹소설 내용');
-INSERT INTO WEB_NOV_DETAIL (WEB_NOV_NUM, CHAPTER_NUM, PAY_OR_NOT, WEB_NOV_CONTENT)
-VALUES ('2', 8, 'N ', '웹소설 내용');
-INSERT INTO WEB_NOV_DETAIL (WEB_NOV_NUM, CHAPTER_NUM, PAY_OR_NOT, WEB_NOV_CONTENT)
-VALUES ('2', 9, 'N ', '웹소설 내용');
-INSERT INTO WEB_NOV_DETAIL (WEB_NOV_NUM, CHAPTER_NUM, PAY_OR_NOT, WEB_NOV_CONTENT)
-VALUES ('2', 10, 'N ', '웹소설 내용');
-INSERT INTO WEB_NOV_DETAIL (WEB_NOV_NUM, CHAPTER_NUM, PAY_OR_NOT, WEB_NOV_CONTENT)
-VALUES ('3', 1, 'N ', '웹소설 내용');
-INSERT INTO WEB_NOV_DETAIL (WEB_NOV_NUM, CHAPTER_NUM, PAY_OR_NOT, WEB_NOV_CONTENT)
-VALUES ('3', 2, 'N ', '웹소설 내용');
-INSERT INTO WEB_NOV_DETAIL (WEB_NOV_NUM, CHAPTER_NUM, PAY_OR_NOT, WEB_NOV_CONTENT)
-VALUES ('3', 3, 'N ', '웹소설 내용');
-INSERT INTO WEB_NOV_DETAIL (WEB_NOV_NUM, CHAPTER_NUM, PAY_OR_NOT, WEB_NOV_CONTENT)
-VALUES ('3', 4, 'N ', '웹소설 내용');
-INSERT INTO WEB_NOV_DETAIL (WEB_NOV_NUM, CHAPTER_NUM, PAY_OR_NOT, WEB_NOV_CONTENT)
-VALUES ('3', 5, 'N ', '웹소설 내용');
-INSERT INTO WEB_NOV_DETAIL (WEB_NOV_NUM, CHAPTER_NUM, PAY_OR_NOT, WEB_NOV_CONTENT)
-VALUES ('3', 6, 'N ', '웹소설 내용');
-INSERT INTO WEB_NOV_DETAIL (WEB_NOV_NUM, CHAPTER_NUM, PAY_OR_NOT, WEB_NOV_CONTENT)
-VALUES ('3', 7, 'N ', '웹소설 내용');
-INSERT INTO WEB_NOV_DETAIL (WEB_NOV_NUM, CHAPTER_NUM, PAY_OR_NOT, WEB_NOV_CONTENT)
-VALUES ('3', 8, 'N ', '웹소설 내용');
-INSERT INTO WEB_NOV_DETAIL (WEB_NOV_NUM, CHAPTER_NUM, PAY_OR_NOT, WEB_NOV_CONTENT)
-VALUES ('3', 9, 'N ', '웹소설 내용');
-INSERT INTO WEB_NOV_DETAIL (WEB_NOV_NUM, CHAPTER_NUM, PAY_OR_NOT, WEB_NOV_CONTENT)
-VALUES ('3', 10, 'N ', '웹소설 내용');
-INSERT INTO WEB_NOV_DETAIL (WEB_NOV_NUM, CHAPTER_NUM, PAY_OR_NOT, WEB_NOV_CONTENT)
-VALUES ('4', 1, 'Y ', '웹소설 내용');
-INSERT INTO WEB_NOV_DETAIL (WEB_NOV_NUM, CHAPTER_NUM, PAY_OR_NOT, WEB_NOV_CONTENT)
-VALUES ('4', 2, 'Y ', '웹소설 내용');
-INSERT INTO WEB_NOV_DETAIL (WEB_NOV_NUM, CHAPTER_NUM, PAY_OR_NOT, WEB_NOV_CONTENT)
-VALUES ('4', 3, 'Y ', '웹소설 내용');
-INSERT INTO WEB_NOV_DETAIL (WEB_NOV_NUM, CHAPTER_NUM, PAY_OR_NOT, WEB_NOV_CONTENT)
-VALUES ('4', 4, 'Y ', '웹소설 내용');
-INSERT INTO WEB_NOV_DETAIL (WEB_NOV_NUM, CHAPTER_NUM, PAY_OR_NOT, WEB_NOV_CONTENT)
-VALUES ('4', 5, 'Y ', '웹소설 내용');
-INSERT INTO WEB_NOV_DETAIL (WEB_NOV_NUM, CHAPTER_NUM, PAY_OR_NOT, WEB_NOV_CONTENT)
-VALUES ('4', 6, 'Y ', '웹소설 내용');
-INSERT INTO WEB_NOV_DETAIL (WEB_NOV_NUM, CHAPTER_NUM, PAY_OR_NOT, WEB_NOV_CONTENT)
-VALUES ('4', 7, 'Y ', '웹소설 내용');
-INSERT INTO WEB_NOV_DETAIL (WEB_NOV_NUM, CHAPTER_NUM, PAY_OR_NOT, WEB_NOV_CONTENT)
-VALUES ('4', 8, 'Y ', '웹소설 내용');
-INSERT INTO WEB_NOV_DETAIL (WEB_NOV_NUM, CHAPTER_NUM, PAY_OR_NOT, WEB_NOV_CONTENT)
-VALUES ('4', 9, 'Y ', '웹소설 내용');
-INSERT INTO WEB_NOV_DETAIL (WEB_NOV_NUM, CHAPTER_NUM, PAY_OR_NOT, WEB_NOV_CONTENT)
-VALUES ('4', 10, 'Y ', '웹소설 내용');
-INSERT INTO WEB_NOV_DETAIL (WEB_NOV_NUM, CHAPTER_NUM, PAY_OR_NOT, WEB_NOV_CONTENT)
-VALUES ('5', 1, 'Y ', '웹소설 내용');
-INSERT INTO WEB_NOV_DETAIL (WEB_NOV_NUM, CHAPTER_NUM, PAY_OR_NOT, WEB_NOV_CONTENT)
-VALUES ('5', 2, 'Y ', '웹소설 내용');
-INSERT INTO WEB_NOV_DETAIL (WEB_NOV_NUM, CHAPTER_NUM, PAY_OR_NOT, WEB_NOV_CONTENT)
-VALUES ('5', 3, 'Y ', '웹소설 내용');
-INSERT INTO WEB_NOV_DETAIL (WEB_NOV_NUM, CHAPTER_NUM, PAY_OR_NOT, WEB_NOV_CONTENT)
-VALUES ('5', 4, 'Y ', '웹소설 내용');
-INSERT INTO WEB_NOV_DETAIL (WEB_NOV_NUM, CHAPTER_NUM, PAY_OR_NOT, WEB_NOV_CONTENT)
-VALUES ('5', 5, 'Y ', '웹소설 내용');
-INSERT INTO WEB_NOV_DETAIL (WEB_NOV_NUM, CHAPTER_NUM, PAY_OR_NOT, WEB_NOV_CONTENT)
-VALUES ('5', 6, 'Y ', '웹소설 내용');
-INSERT INTO WEB_NOV_DETAIL (WEB_NOV_NUM, CHAPTER_NUM, PAY_OR_NOT, WEB_NOV_CONTENT)
-VALUES ('5', 7, 'Y ', '웹소설 내용');
-INSERT INTO WEB_NOV_DETAIL (WEB_NOV_NUM, CHAPTER_NUM, PAY_OR_NOT, WEB_NOV_CONTENT)
-VALUES ('5', 8, 'Y ', '웹소설 내용');
-INSERT INTO WEB_NOV_DETAIL (WEB_NOV_NUM, CHAPTER_NUM, PAY_OR_NOT, WEB_NOV_CONTENT)
-VALUES ('6', 1, 'Y ', '웹소설 내용');
-INSERT INTO WEB_NOV_DETAIL (WEB_NOV_NUM, CHAPTER_NUM, PAY_OR_NOT, WEB_NOV_CONTENT)
-VALUES ('6', 2, 'Y ', '웹소설 내용');
-INSERT INTO WEB_NOV_DETAIL (WEB_NOV_NUM, CHAPTER_NUM, PAY_OR_NOT, WEB_NOV_CONTENT)
-VALUES ('6', 3, 'Y ', '웹소설 내용');
-INSERT INTO WEB_NOV_DETAIL (WEB_NOV_NUM, CHAPTER_NUM, PAY_OR_NOT, WEB_NOV_CONTENT)
-VALUES ('6', 4, 'Y ', '웹소설 내용');
-INSERT INTO WEB_NOV_DETAIL (WEB_NOV_NUM, CHAPTER_NUM, PAY_OR_NOT, WEB_NOV_CONTENT)
-VALUES ('6', 5, 'Y ', '웹소설 내용');
-INSERT INTO WEB_NOV_DETAIL (WEB_NOV_NUM, CHAPTER_NUM, PAY_OR_NOT, WEB_NOV_CONTENT)
-VALUES ('6', 6, 'Y ', '웹소설 내용');
-INSERT INTO WEB_NOV_DETAIL (WEB_NOV_NUM, CHAPTER_NUM, PAY_OR_NOT, WEB_NOV_CONTENT)
-VALUES ('6', 7, 'Y ', '웹소설 내용');
-INSERT INTO WEB_NOV_DETAIL (WEB_NOV_NUM, CHAPTER_NUM, PAY_OR_NOT, WEB_NOV_CONTENT)
-VALUES ('7', 1, 'Y ', '웹소설 내용');
-INSERT INTO WEB_NOV_DETAIL (WEB_NOV_NUM, CHAPTER_NUM, PAY_OR_NOT, WEB_NOV_CONTENT)
-VALUES ('7', 2, 'Y ', '웹소설 내용');
-INSERT INTO WEB_NOV_DETAIL (WEB_NOV_NUM, CHAPTER_NUM, PAY_OR_NOT, WEB_NOV_CONTENT)
-VALUES ('7', 3, 'Y ', '웹소설 내용');
-INSERT INTO WEB_NOV_DETAIL (WEB_NOV_NUM, CHAPTER_NUM, PAY_OR_NOT, WEB_NOV_CONTENT)
-VALUES ('7', 4, 'Y ', '웹소설 내용');
-INSERT INTO WEB_NOV_DETAIL (WEB_NOV_NUM, CHAPTER_NUM, PAY_OR_NOT, WEB_NOV_CONTENT)
-VALUES ('7', 5, 'Y ', '웹소설 내용');
-INSERT INTO WEB_NOV_DETAIL (WEB_NOV_NUM, CHAPTER_NUM, PAY_OR_NOT, WEB_NOV_CONTENT)
-VALUES ('7', 6, 'Y ', '웹소설 내용');
-INSERT INTO WEB_NOV_DETAIL (WEB_NOV_NUM, CHAPTER_NUM, PAY_OR_NOT, WEB_NOV_CONTENT)
-VALUES ('8', 1, 'Y ', '웹소설 내용');
-INSERT INTO WEB_NOV_DETAIL (WEB_NOV_NUM, CHAPTER_NUM, PAY_OR_NOT, WEB_NOV_CONTENT)
-VALUES ('8', 2, 'Y ', '웹소설 내용');
-INSERT INTO WEB_NOV_DETAIL (WEB_NOV_NUM, CHAPTER_NUM, PAY_OR_NOT, WEB_NOV_CONTENT)
-VALUES ('8', 3, 'Y ', '웹소설 내용');
-INSERT INTO WEB_NOV_DETAIL (WEB_NOV_NUM, CHAPTER_NUM, PAY_OR_NOT, WEB_NOV_CONTENT)
-VALUES ('8', 4, 'Y ', '웹소설 내용');
-INSERT INTO WEB_NOV_DETAIL (WEB_NOV_NUM, CHAPTER_NUM, PAY_OR_NOT, WEB_NOV_CONTENT)
-VALUES ('8', 5, 'Y ', '웹소설 내용');
-INSERT INTO WEB_NOV_DETAIL (WEB_NOV_NUM, CHAPTER_NUM, PAY_OR_NOT, WEB_NOV_CONTENT)
-VALUES ('8', 6, 'Y ', '웹소설 내용');
-INSERT INTO WEB_NOV_DETAIL (WEB_NOV_NUM, CHAPTER_NUM, PAY_OR_NOT, WEB_NOV_CONTENT)
-VALUES ('9', 1, 'Y ', '웹소설 내용');
-INSERT INTO WEB_NOV_DETAIL (WEB_NOV_NUM, CHAPTER_NUM, PAY_OR_NOT, WEB_NOV_CONTENT)
-VALUES ('9', 2, 'Y ', '웹소설 내용');
-INSERT INTO WEB_NOV_DETAIL (WEB_NOV_NUM, CHAPTER_NUM, PAY_OR_NOT, WEB_NOV_CONTENT)
-VALUES ('9', 3, 'Y ', '웹소설 내용');
-INSERT INTO WEB_NOV_DETAIL (WEB_NOV_NUM, CHAPTER_NUM, PAY_OR_NOT, WEB_NOV_CONTENT)
-VALUES ('9', 4, 'Y ', '웹소설 내용');
-INSERT INTO WEB_NOV_DETAIL (WEB_NOV_NUM, CHAPTER_NUM, PAY_OR_NOT, WEB_NOV_CONTENT)
-VALUES ('9', 5, 'Y ', '웹소설 내용');
-INSERT INTO WEB_NOV_DETAIL (WEB_NOV_NUM, CHAPTER_NUM, PAY_OR_NOT, WEB_NOV_CONTENT)
-VALUES ('10', 1, 'Y ', '웹소설 내용');
-INSERT INTO WEB_NOV_DETAIL (WEB_NOV_NUM, CHAPTER_NUM, PAY_OR_NOT, WEB_NOV_CONTENT)
-VALUES ('10', 2, 'Y ', '웹소설 내용');
-INSERT INTO WEB_NOV_DETAIL (WEB_NOV_NUM, CHAPTER_NUM, PAY_OR_NOT, WEB_NOV_CONTENT)
-VALUES ('10', 3, 'Y ', '웹소설 내용');
-INSERT INTO WEB_NOV_DETAIL (WEB_NOV_NUM, CHAPTER_NUM, PAY_OR_NOT, WEB_NOV_CONTENT)
-VALUES ('10', 4, 'Y ', '웹소설 내용');
-INSERT INTO WEB_NOV_DETAIL (WEB_NOV_NUM, CHAPTER_NUM, PAY_OR_NOT, WEB_NOV_CONTENT)
-VALUES ('10', 5, 'Y ', '웹소설 내용');
-INSERT INTO WEB_NOV_DETAIL (WEB_NOV_NUM, CHAPTER_NUM, PAY_OR_NOT, WEB_NOV_CONTENT)
-VALUES ('11', 1, 'Y ', '웹소설 내용');
-INSERT INTO WEB_NOV_DETAIL (WEB_NOV_NUM, CHAPTER_NUM, PAY_OR_NOT, WEB_NOV_CONTENT)
-VALUES ('11', 2, 'Y ', '웹소설 내용');
-INSERT INTO WEB_NOV_DETAIL (WEB_NOV_NUM, CHAPTER_NUM, PAY_OR_NOT, WEB_NOV_CONTENT)
-VALUES ('11', 3, 'Y ', '웹소설 내용');
-INSERT INTO WEB_NOV_DETAIL (WEB_NOV_NUM, CHAPTER_NUM, PAY_OR_NOT, WEB_NOV_CONTENT)
-VALUES ('11', 4, 'Y ', '웹소설 내용');
-INSERT INTO WEB_NOV_DETAIL (WEB_NOV_NUM, CHAPTER_NUM, PAY_OR_NOT, WEB_NOV_CONTENT)
-VALUES ('11', 5, 'Y ', '웹소설 내용');
-INSERT INTO WEB_NOV_DETAIL (WEB_NOV_NUM, CHAPTER_NUM, PAY_OR_NOT, WEB_NOV_CONTENT)
-VALUES ('12', 1, 'Y ', '웹소설 내용');
-INSERT INTO WEB_NOV_DETAIL (WEB_NOV_NUM, CHAPTER_NUM, PAY_OR_NOT, WEB_NOV_CONTENT)
-VALUES ('12', 2, 'Y ', '웹소설 내용');
-INSERT INTO WEB_NOV_DETAIL (WEB_NOV_NUM, CHAPTER_NUM, PAY_OR_NOT, WEB_NOV_CONTENT)
-VALUES ('12', 3, 'Y ', '웹소설 내용');
-INSERT INTO WEB_NOV_DETAIL (WEB_NOV_NUM, CHAPTER_NUM, PAY_OR_NOT, WEB_NOV_CONTENT)
-VALUES ('12', 4, 'Y ', '웹소설 내용');
-INSERT INTO WEB_NOV_DETAIL (WEB_NOV_NUM, CHAPTER_NUM, PAY_OR_NOT, WEB_NOV_CONTENT)
-VALUES ('12', 5, 'Y ', '웹소설 내용');
-INSERT INTO WEB_NOV_DETAIL (WEB_NOV_NUM, CHAPTER_NUM, PAY_OR_NOT, WEB_NOV_CONTENT)
-VALUES ('13', 1, 'Y ', '웹소설 내용');
-INSERT INTO WEB_NOV_DETAIL (WEB_NOV_NUM, CHAPTER_NUM, PAY_OR_NOT, WEB_NOV_CONTENT)
-VALUES ('13', 2, 'Y ', '웹소설 내용');
-INSERT INTO WEB_NOV_DETAIL (WEB_NOV_NUM, CHAPTER_NUM, PAY_OR_NOT, WEB_NOV_CONTENT)
-VALUES ('13', 3, 'Y ', '웹소설 내용');
-INSERT INTO WEB_NOV_DETAIL (WEB_NOV_NUM, CHAPTER_NUM, PAY_OR_NOT, WEB_NOV_CONTENT)
-VALUES ('13', 4, 'Y ', '웹소설 내용');
-INSERT INTO WEB_NOV_DETAIL (WEB_NOV_NUM, CHAPTER_NUM, PAY_OR_NOT, WEB_NOV_CONTENT)
-VALUES ('13', 5, 'Y ', '웹소설 내용');
-INSERT INTO WEB_NOV_DETAIL (WEB_NOV_NUM, CHAPTER_NUM, PAY_OR_NOT, WEB_NOV_CONTENT)
-VALUES ('14', 1, 'Y ', '웹소설 내용');
-INSERT INTO WEB_NOV_DETAIL (WEB_NOV_NUM, CHAPTER_NUM, PAY_OR_NOT, WEB_NOV_CONTENT)
-VALUES ('14', 2, 'Y ', '웹소설 내용');
-INSERT INTO WEB_NOV_DETAIL (WEB_NOV_NUM, CHAPTER_NUM, PAY_OR_NOT, WEB_NOV_CONTENT)
-VALUES ('14', 3, 'Y ', '웹소설 내용');
-INSERT INTO WEB_NOV_DETAIL (WEB_NOV_NUM, CHAPTER_NUM, PAY_OR_NOT, WEB_NOV_CONTENT)
-VALUES ('14', 4, 'Y ', '웹소설 내용');
-INSERT INTO WEB_NOV_DETAIL (WEB_NOV_NUM, CHAPTER_NUM, PAY_OR_NOT, WEB_NOV_CONTENT)
-VALUES ('14', 5, 'Y ', '웹소설 내용');
-INSERT INTO WEB_NOV_DETAIL (WEB_NOV_NUM, CHAPTER_NUM, PAY_OR_NOT, WEB_NOV_CONTENT)
-VALUES ('15', 1, 'Y ', '웹소설 내용');
-INSERT INTO WEB_NOV_DETAIL (WEB_NOV_NUM, CHAPTER_NUM, PAY_OR_NOT, WEB_NOV_CONTENT)
-VALUES ('15', 2, 'Y ', '웹소설 내용');
-INSERT INTO WEB_NOV_DETAIL (WEB_NOV_NUM, CHAPTER_NUM, PAY_OR_NOT, WEB_NOV_CONTENT)
-VALUES ('15', 3, 'Y ', '웹소설 내용');
-INSERT INTO WEB_NOV_DETAIL (WEB_NOV_NUM, CHAPTER_NUM, PAY_OR_NOT, WEB_NOV_CONTENT)
-VALUES ('15', 4, 'Y ', '웹소설 내용');
-INSERT INTO WEB_NOV_DETAIL (WEB_NOV_NUM, CHAPTER_NUM, PAY_OR_NOT, WEB_NOV_CONTENT)
-VALUES ('15', 5, 'Y ', '웹소설 내용');
-INSERT INTO WEB_NOV_DETAIL (WEB_NOV_NUM, CHAPTER_NUM, PAY_OR_NOT, WEB_NOV_CONTENT)
-VALUES ('16', 1, 'Y ', '웹소설 내용');
-INSERT INTO WEB_NOV_DETAIL (WEB_NOV_NUM, CHAPTER_NUM, PAY_OR_NOT, WEB_NOV_CONTENT)
-VALUES ('16', 2, 'Y ', '웹소설 내용');
-INSERT INTO WEB_NOV_DETAIL (WEB_NOV_NUM, CHAPTER_NUM, PAY_OR_NOT, WEB_NOV_CONTENT)
-VALUES ('16', 3, 'Y ', '웹소설 내용');
-INSERT INTO WEB_NOV_DETAIL (WEB_NOV_NUM, CHAPTER_NUM, PAY_OR_NOT, WEB_NOV_CONTENT)
-VALUES ('16', 4, 'Y ', '웹소설 내용');
-INSERT INTO WEB_NOV_DETAIL (WEB_NOV_NUM, CHAPTER_NUM, PAY_OR_NOT, WEB_NOV_CONTENT)
-VALUES ('16', 5, 'Y ', '웹소설 내용');
-INSERT INTO WEB_NOV_DETAIL (WEB_NOV_NUM, CHAPTER_NUM, PAY_OR_NOT, WEB_NOV_CONTENT)
-VALUES ('17', 1, 'Y ', '웹소설 내용');
-INSERT INTO WEB_NOV_DETAIL (WEB_NOV_NUM, CHAPTER_NUM, PAY_OR_NOT, WEB_NOV_CONTENT)
-VALUES ('17', 2, 'Y ', '웹소설 내용');
-INSERT INTO WEB_NOV_DETAIL (WEB_NOV_NUM, CHAPTER_NUM, PAY_OR_NOT, WEB_NOV_CONTENT)
-VALUES ('17', 3, 'Y ', '웹소설 내용');
-INSERT INTO WEB_NOV_DETAIL (WEB_NOV_NUM, CHAPTER_NUM, PAY_OR_NOT, WEB_NOV_CONTENT)
-VALUES ('17', 4, 'Y ', '웹소설 내용');
-INSERT INTO WEB_NOV_DETAIL (WEB_NOV_NUM, CHAPTER_NUM, PAY_OR_NOT, WEB_NOV_CONTENT)
-VALUES ('17', 5, 'Y ', '웹소설 내용');
-INSERT INTO WEB_NOV_DETAIL (WEB_NOV_NUM, CHAPTER_NUM, PAY_OR_NOT, WEB_NOV_CONTENT)
-VALUES ('18', 6, 'Y ', '웹소설 내용');
-INSERT INTO WEB_NOV_DETAIL (WEB_NOV_NUM, CHAPTER_NUM, PAY_OR_NOT, WEB_NOV_CONTENT)
-VALUES ('18', 1, 'Y ', '웹소설 내용');
-INSERT INTO WEB_NOV_DETAIL (WEB_NOV_NUM, CHAPTER_NUM, PAY_OR_NOT, WEB_NOV_CONTENT)
-VALUES ('18', 2, 'Y ', '웹소설 내용');
-INSERT INTO WEB_NOV_DETAIL (WEB_NOV_NUM, CHAPTER_NUM, PAY_OR_NOT, WEB_NOV_CONTENT)
-VALUES ('18', 3, 'Y ', '웹소설 내용');
-INSERT INTO WEB_NOV_DETAIL (WEB_NOV_NUM, CHAPTER_NUM, PAY_OR_NOT, WEB_NOV_CONTENT)
-VALUES ('18', 4, 'Y ', '웹소설 내용');
-INSERT INTO WEB_NOV_DETAIL (WEB_NOV_NUM, CHAPTER_NUM, PAY_OR_NOT, WEB_NOV_CONTENT)
-VALUES ('18', 5, 'Y ', '웹소설 내용');
-INSERT INTO WEB_NOV_DETAIL (WEB_NOV_NUM, CHAPTER_NUM, PAY_OR_NOT, WEB_NOV_CONTENT)
-VALUES ('19', 1, 'Y ', '웹소설 내용');
-INSERT INTO WEB_NOV_DETAIL (WEB_NOV_NUM, CHAPTER_NUM, PAY_OR_NOT, WEB_NOV_CONTENT)
-VALUES ('19', 2, 'Y ', '웹소설 내용');
-INSERT INTO WEB_NOV_DETAIL (WEB_NOV_NUM, CHAPTER_NUM, PAY_OR_NOT, WEB_NOV_CONTENT)
-VALUES ('19', 3, 'Y ', '웹소설 내용');
-INSERT INTO WEB_NOV_DETAIL (WEB_NOV_NUM, CHAPTER_NUM, PAY_OR_NOT, WEB_NOV_CONTENT)
-VALUES ('19', 4, 'Y ', '웹소설 내용');
-INSERT INTO WEB_NOV_DETAIL (WEB_NOV_NUM, CHAPTER_NUM, PAY_OR_NOT, WEB_NOV_CONTENT)
-VALUES ('19', 5, 'Y ', '웹소설 내용');
-INSERT INTO WEB_NOV_DETAIL (WEB_NOV_NUM, CHAPTER_NUM, PAY_OR_NOT, WEB_NOV_CONTENT)
-VALUES ('20', 1, 'Y ', '웹소설 내용');
-INSERT INTO WEB_NOV_DETAIL (WEB_NOV_NUM, CHAPTER_NUM, PAY_OR_NOT, WEB_NOV_CONTENT)
-VALUES ('20', 2, 'Y ', '웹소설 내용');
-INSERT INTO WEB_NOV_DETAIL (WEB_NOV_NUM, CHAPTER_NUM, PAY_OR_NOT, WEB_NOV_CONTENT)
-VALUES ('20', 3, 'Y ', '웹소설 내용');
-INSERT INTO WEB_NOV_DETAIL (WEB_NOV_NUM, CHAPTER_NUM, PAY_OR_NOT, WEB_NOV_CONTENT)
-VALUES ('20', 4, 'Y ', '웹소설 내용');
-INSERT INTO WEB_NOV_DETAIL (WEB_NOV_NUM, CHAPTER_NUM, PAY_OR_NOT, WEB_NOV_CONTENT)
-VALUES ('20', 5, 'Y ', '웹소설 내용');
-INSERT INTO WEB_NOV_DETAIL (WEB_NOV_NUM, CHAPTER_NUM, PAY_OR_NOT, WEB_NOV_CONTENT)
-VALUES ('21', 1, 'Y ', '웹소설 내용');
-INSERT INTO WEB_NOV_DETAIL (WEB_NOV_NUM, CHAPTER_NUM, PAY_OR_NOT, WEB_NOV_CONTENT)
-VALUES ('21', 2, 'Y ', '웹소설 내용');
-INSERT INTO WEB_NOV_DETAIL (WEB_NOV_NUM, CHAPTER_NUM, PAY_OR_NOT, WEB_NOV_CONTENT)
-VALUES ('21', 3, 'Y ', '웹소설 내용');
-INSERT INTO WEB_NOV_DETAIL (WEB_NOV_NUM, CHAPTER_NUM, PAY_OR_NOT, WEB_NOV_CONTENT)
-VALUES ('21', 4, 'Y ', '웹소설 내용');
-INSERT INTO WEB_NOV_DETAIL (WEB_NOV_NUM, CHAPTER_NUM, PAY_OR_NOT, WEB_NOV_CONTENT)
-VALUES ('21', 5, 'Y ', '웹소설 내용');
-INSERT INTO WEB_NOV_DETAIL (WEB_NOV_NUM, CHAPTER_NUM, PAY_OR_NOT, WEB_NOV_CONTENT)
-VALUES ('22', 1, 'Y ', '웹소설 내용');
-INSERT INTO WEB_NOV_DETAIL (WEB_NOV_NUM, CHAPTER_NUM, PAY_OR_NOT, WEB_NOV_CONTENT)
-VALUES ('22', 2, 'Y ', '웹소설 내용');
-INSERT INTO WEB_NOV_DETAIL (WEB_NOV_NUM, CHAPTER_NUM, PAY_OR_NOT, WEB_NOV_CONTENT)
-VALUES ('22', 3, 'Y ', '웹소설 내용');
-INSERT INTO WEB_NOV_DETAIL (WEB_NOV_NUM, CHAPTER_NUM, PAY_OR_NOT, WEB_NOV_CONTENT)
-VALUES ('22', 4, 'Y ', '웹소설 내용');
-INSERT INTO WEB_NOV_DETAIL (WEB_NOV_NUM, CHAPTER_NUM, PAY_OR_NOT, WEB_NOV_CONTENT)
-VALUES ('22', 5, 'Y ', '웹소설 내용');
-INSERT INTO WEB_NOV_DETAIL (WEB_NOV_NUM, CHAPTER_NUM, PAY_OR_NOT, WEB_NOV_CONTENT)
-VALUES ('23', 1, 'Y ', '웹소설 내용');
-INSERT INTO WEB_NOV_DETAIL (WEB_NOV_NUM, CHAPTER_NUM, PAY_OR_NOT, WEB_NOV_CONTENT)
-VALUES ('23', 2, 'Y ', '웹소설 내용');
-INSERT INTO WEB_NOV_DETAIL (WEB_NOV_NUM, CHAPTER_NUM, PAY_OR_NOT, WEB_NOV_CONTENT)
-VALUES ('23', 3, 'Y ', '웹소설 내용');
-INSERT INTO WEB_NOV_DETAIL (WEB_NOV_NUM, CHAPTER_NUM, PAY_OR_NOT, WEB_NOV_CONTENT)
-VALUES ('23', 4, 'Y ', '웹소설 내용');
-INSERT INTO WEB_NOV_DETAIL (WEB_NOV_NUM, CHAPTER_NUM, PAY_OR_NOT, WEB_NOV_CONTENT)
-VALUES ('23', 5, 'Y ', '웹소설 내용');
-INSERT INTO WEB_NOV_DETAIL (WEB_NOV_NUM, CHAPTER_NUM, PAY_OR_NOT, WEB_NOV_CONTENT)
-VALUES ('23', 6, 'Y ', '웹소설 내용');
-INSERT INTO WEB_NOV_DETAIL (WEB_NOV_NUM, CHAPTER_NUM, PAY_OR_NOT, WEB_NOV_CONTENT)
-VALUES ('24', 1, 'Y ', '웹소설 내용');
-INSERT INTO WEB_NOV_DETAIL (WEB_NOV_NUM, CHAPTER_NUM, PAY_OR_NOT, WEB_NOV_CONTENT)
-VALUES ('24', 2, 'Y ', '웹소설 내용');
-INSERT INTO WEB_NOV_DETAIL (WEB_NOV_NUM, CHAPTER_NUM, PAY_OR_NOT, WEB_NOV_CONTENT)
-VALUES ('24', 3, 'Y ', '웹소설 내용');
-INSERT INTO WEB_NOV_DETAIL (WEB_NOV_NUM, CHAPTER_NUM, PAY_OR_NOT, WEB_NOV_CONTENT)
-VALUES ('24', 4, 'Y ', '웹소설 내용');
-INSERT INTO WEB_NOV_DETAIL (WEB_NOV_NUM, CHAPTER_NUM, PAY_OR_NOT, WEB_NOV_CONTENT)
-VALUES ('24', 5, 'Y ', '웹소설 내용');
-INSERT INTO WEB_NOV_DETAIL (WEB_NOV_NUM, CHAPTER_NUM, PAY_OR_NOT, WEB_NOV_CONTENT)
-VALUES ('25', 1, 'Y ', '웹소설 내용');
-INSERT INTO WEB_NOV_DETAIL (WEB_NOV_NUM, CHAPTER_NUM, PAY_OR_NOT, WEB_NOV_CONTENT)
-VALUES ('25', 2, 'Y ', '웹소설 내용');
-INSERT INTO WEB_NOV_DETAIL (WEB_NOV_NUM, CHAPTER_NUM, PAY_OR_NOT, WEB_NOV_CONTENT)
-VALUES ('25', 3, 'Y ', '웹소설 내용');
-INSERT INTO WEB_NOV_DETAIL (WEB_NOV_NUM, CHAPTER_NUM, PAY_OR_NOT, WEB_NOV_CONTENT)
-VALUES ('25', 4, 'Y ', '웹소설 내용');
-INSERT INTO WEB_NOV_DETAIL (WEB_NOV_NUM, CHAPTER_NUM, PAY_OR_NOT, WEB_NOV_CONTENT)
-VALUES ('26', 1, 'Y ', '웹소설 내용');
-INSERT INTO WEB_NOV_DETAIL (WEB_NOV_NUM, CHAPTER_NUM, PAY_OR_NOT, WEB_NOV_CONTENT)
-VALUES ('26', 2, 'Y ', '웹소설 내용');
-INSERT INTO WEB_NOV_DETAIL (WEB_NOV_NUM, CHAPTER_NUM, PAY_OR_NOT, WEB_NOV_CONTENT)
-VALUES ('26', 3, 'Y ', '웹소설 내용');
-INSERT INTO WEB_NOV_DETAIL (WEB_NOV_NUM, CHAPTER_NUM, PAY_OR_NOT, WEB_NOV_CONTENT)
-VALUES ('26', 4, 'Y ', '웹소설 내용');
-INSERT INTO WEB_NOV_DETAIL (WEB_NOV_NUM, CHAPTER_NUM, PAY_OR_NOT, WEB_NOV_CONTENT)
-VALUES ('26', 5, 'Y ', '웹소설 내용');
+
+Insert into WEB_NOV_CHAP_NUM (CHAP_NUM,CHAP_NAME) values (1,'1화');
+Insert into WEB_NOV_CHAP_NUM (CHAP_NUM,CHAP_NAME) values (2,'2화');
+Insert into WEB_NOV_CHAP_NUM (CHAP_NUM,CHAP_NAME) values (3,'3화');
+Insert into WEB_NOV_CHAP_NUM (CHAP_NUM,CHAP_NAME) values (4,'4화');
+Insert into WEB_NOV_CHAP_NUM (CHAP_NUM,CHAP_NAME) values (5,'5화');
+Insert into WEB_NOV_CHAP_NUM (CHAP_NUM,CHAP_NAME) values (6,'6화');
+Insert into WEB_NOV_CHAP_NUM (CHAP_NUM,CHAP_NAME) values (7,'7화');
+Insert into WEB_NOV_CHAP_NUM (CHAP_NUM,CHAP_NAME) values (8,'8화');
+Insert into WEB_NOV_CHAP_NUM (CHAP_NUM,CHAP_NAME) values (9,'9화');
+Insert into WEB_NOV_CHAP_NUM (CHAP_NUM,CHAP_NAME) values (10,'10화');
+
+---------------- WEB_NOV_PAGE_NUM
+CREATE TABLE WEB_NOV_PAGE_NUM
+(
+  WEB_NOV_PAGE_NUM NUMBER PRIMARY KEY,
+  WEB_NOV_PAGE_NAME VARCHAR2(320) NOT NULL
+
+);
+
+Insert into WEB_NOV_PAGE_NUM (WEB_NOV_PAGE_NUM,WEB_NOV_PAGE_NAME) values (1,'1쪽');
+Insert into WEB_NOV_PAGE_NUM (WEB_NOV_PAGE_NUM,WEB_NOV_PAGE_NAME) values (2,'2쪽');
+Insert into WEB_NOV_PAGE_NUM (WEB_NOV_PAGE_NUM,WEB_NOV_PAGE_NAME) values (3,'3쪽');
+Insert into WEB_NOV_PAGE_NUM (WEB_NOV_PAGE_NUM,WEB_NOV_PAGE_NAME) values (4,'4쪽');
+Insert into WEB_NOV_PAGE_NUM (WEB_NOV_PAGE_NUM,WEB_NOV_PAGE_NAME) values (5,'5쪽');
+Insert into WEB_NOV_PAGE_NUM (WEB_NOV_PAGE_NUM,WEB_NOV_PAGE_NAME) values (6,'6쪽');
+Insert into WEB_NOV_PAGE_NUM (WEB_NOV_PAGE_NUM,WEB_NOV_PAGE_NAME) values (7,'7쪽');
+Insert into WEB_NOV_PAGE_NUM (WEB_NOV_PAGE_NUM,WEB_NOV_PAGE_NAME) values (8,'8쪽');
+Insert into WEB_NOV_PAGE_NUM (WEB_NOV_PAGE_NUM,WEB_NOV_PAGE_NAME) values (9,'9쪽');
+Insert into WEB_NOV_PAGE_NUM (WEB_NOV_PAGE_NUM,WEB_NOV_PAGE_NAME) values (10,'10쪽');
+
+---------------WEB_NOV_CONTENT_DETAIL
+
+CREATE TABLE WEB_NOV_CONTENT_DETAIL
+(
+  WEB_NOV_NUM VARCHAR2(320) REFERENCES WEB_NOV_INFO(WEB_NOV_NUM),
+  CHAP_NUM NUMBER REFERENCES WEB_NOV_CHAP_NUM (CHAP_NUM),
+  WEB_NOV_PAGE_NUM NUMBER REFERENCES WEB_NOV_PAGE_NUM (WEB_NOV_PAGE_NUM),
+  WEB_NOV_PAGE_CONTENT CLOB
+);
 
 
 
-INSERT INTO WEB_NOV_DETAIL (WEB_NOV_NUM, CHAPTER_NUM, PAY_OR_NOT, WEB_NOV_CONTENT)
-VALUES ('27', 1, 'Y ', '웹소설 내용');
+---------------- WEB_NOV_CHAP_SEARCH
+
+CREATE TABLE WEB_NOV_CHAP_SEARCH
+(
+    WEB_NOV_NUM     NUMBER REFERENCES WEB_NOV_INFO (WEB_NOV_NUM) NOT NULL,
+    CHAP_NUM     NUMBER,
+    CHAP_WRITTEN_DATE     DATE,
+    CHAP_READABLE VARCHAR2(3)
+);
+
+
+
 
 
 COMMIT;
