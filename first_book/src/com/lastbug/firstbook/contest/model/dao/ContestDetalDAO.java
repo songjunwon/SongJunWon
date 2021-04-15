@@ -13,6 +13,7 @@ import java.util.Properties;
 import com.lastbug.firstbook.common.config.ConfigLocation;
 import com.lastbug.firstbook.contest.model.dto.ContestDTO;
 import com.lastbug.firstbook.contest.model.dto.ContestDetalDTO;
+import com.lastbug.firstbook.member.model.dto.MemberDTO;
 
 import static com.lastbug.firstbook.common.jdbc.JDBCTemplate.close;
 
@@ -53,6 +54,7 @@ public class ContestDetalDAO {
 				contest.setChapterNum(rset.getInt("CHAPTER_NUM"));
 				contest.setCompetNum(rset.getInt("COMPET_NUM"));
 				contest.setNovContent(rset.getString("NOV_CONTENT"));
+				contest.setCompetDate(rset.getString("COMPET_DATE"));
 
 				contestList.add(contest);	
 			}
@@ -65,6 +67,7 @@ public class ContestDetalDAO {
 		
 		return contestList;
 	}
+	
 	/* 공모전 정보 가져오기 */
 	public List<ContestDTO> selectContestList(Connection con, int competNum) {
 		
@@ -93,10 +96,11 @@ public class ContestDetalDAO {
 				contest.setNovTitle(rset.getString("NOV_TITLE"));
 				contest.setNovInfo(rset.getString("NOV_INFO"));
 				contest.setCompetSsn(rset.getString("COMPET_SSN"));
-				contest.setCompetNovImgaiion(rset.getString("COMPET_NOV_IMG_LOCATION"));
+				contest.setCompetNovImgLocation(rset.getString("COMPET_NOV_IMG_LOCATION"));
 				contest.setScore(rset.getInt("SCORE"));
 				contest.setCompetActYn(rset.getString("COMPET_ACT_YN"));
-
+				contest.setAgeLimit(Integer.valueOf(rset.getString("AGE_LIMIT")));
+				
 				contestList.add(contest);	
 			}
 		} catch (SQLException e) {
@@ -106,6 +110,90 @@ public class ContestDetalDAO {
 			close(pstmt);
 		}
 		return contestList;
+	}
+	
+	/* 작가정보 검색 */
+	public List<MemberDTO> selectMemberList(Connection con, int competNum) {
+		
+		PreparedStatement pstmt = null;
+		ResultSet rset = null;
+		
+		List<MemberDTO> memberList = null;
+		String query = prop.getProperty("selectMemberList");
+
+		try {
+			pstmt = con.prepareStatement(query);
+			pstmt.setInt(1, competNum);
+			
+			
+			rset = pstmt.executeQuery();
+			
+			memberList = new ArrayList<>();
+			
+			while(rset.next()) {
+				
+				MemberDTO member = new MemberDTO();
+
+				member.setMemNum(rset.getInt("MEM_NUM"));
+				member.setMemName(rset.getString("MEM_NAME"));
+				member.setMemId(rset.getString("MEM_ID"));
+				member.setMemPwd(rset.getString("MEM_PWD"));
+				member.setMemEmail(rset.getString("MEM_EMAIL"));
+				member.setMemAddress(rset.getString("MEM_ADDRESS"));
+				member.setMemBirthDate(rset.getDate("MEM_BIRTHDATE"));
+				member.setMemLoginCount(rset.getInt("MEM_LOGIN_COUNT"));
+				member.setMemCoin(rset.getInt("MEM_COIN"));
+				member.setMemCanVoteYn(rset.getString("MEM_CAN_VOTE_YN"));
+				member.setMemWithdrawYn(rset.getString("MEM_WITHDRAW_YN"));
+				member.setMemWithdrawDate(rset.getDate("MEM_WITHDRAW_DATE"));
+				member.setMemClass(rset.getString("MEM_CLASS"));
+				member.setMemBlockYn(rset.getString("MEM_BLOCK_YN"));
+				member.setMemBlockDate(rset.getDate("MEM_BLOCK_DATE"));
+				member.setMemEnrollDate(rset.getDate("MEM_ENROLL_DATE"));
+				
+
+				memberList.add(member);	
+			}
+		} catch (SQLException e) {
+			e.printStackTrace();
+		} finally {
+			close(rset);
+			close(pstmt);
+		}
+		
+		return memberList;
+	}
+	
+	/* 카테고리 검색 */
+	public String selectCategory(Connection con, int competNum) {
+		PreparedStatement pstmt = null;
+		ResultSet rset = null;
+		
+		String category = null;
+		String query = prop.getProperty("selectCategory");
+
+		try {
+			pstmt = con.prepareStatement(query);
+			pstmt.setInt(1, competNum);
+			
+			
+			rset = pstmt.executeQuery();
+			
+			category = null;
+			while(rset.next()) {
+				
+				
+				category = rset.getString("CATEGORY_NAME");
+				
+			}
+		} catch (SQLException e) {
+			e.printStackTrace();
+		} finally {
+			close(rset);
+			close(pstmt);
+		}
+		
+		return category;
 	}
 	
 }

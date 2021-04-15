@@ -74,7 +74,7 @@
                     <div class="work_row1">
                         <c:forEach items="${ requestScope.contestList }" var="contest">
                             <div class="work" id="btn">
-                                <img src="/firstbook/resources/image/contest/book_cover.png" width="125px">
+                                <img src="<c:out value="${ contest.competNovImgLocation }" />" width="125px">
                                 <div class="work_title">
                                     <c:out value="${ contest.novTitle }" />
                                 </div>

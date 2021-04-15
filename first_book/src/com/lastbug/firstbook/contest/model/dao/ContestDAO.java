@@ -59,7 +59,7 @@ public class ContestDAO {
 				contest.setNovTitle(rset.getString("NOV_TITLE"));
 				contest.setNovInfo(rset.getString("NOV_INFO"));
 				contest.setCompetSsn(rset.getString("COMPET_SSN"));
-				contest.setCompetNovImgaiion(rset.getString("COMPET_NOV_IMG_LOCATION"));
+				contest.setCompetNovImgLocation(rset.getString("COMPET_NOV_IMG_LOCATION"));
 				contest.setScore(rset.getInt("SCORE"));
 				contest.setCompetActYn(rset.getString("COMPET_ACT_YN"));
 				
@@ -104,7 +104,7 @@ public class ContestDAO {
 				contest.setNovTitle(rset.getString("NOV_TITLE"));
 				contest.setNovInfo(rset.getString("NOV_INFO"));
 				contest.setCompetSsn(rset.getString("COMPET_SSN"));
-				contest.setCompetNovImgaiion(rset.getString("COMPET_NOV_IMG_LOCATION"));
+				contest.setCompetNovImgLocation(rset.getString("COMPET_NOV_IMG_LOCATION"));
 				contest.setScore(rset.getInt("SCORE"));
 				contest.setCompetActYn(rset.getString("COMPET_ACT_YN"));
 				contestListRankEight.add(contest);	

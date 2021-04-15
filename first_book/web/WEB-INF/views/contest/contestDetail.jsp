@@ -11,6 +11,7 @@
 <link rel="stylesheet" href="/firstbook/resources/css/contest/contestDetail.css">
 <link rel="stylesheet" href="/firstbook/resources/css/common/reset.css">
 
+
 </head>
 <body>
 <div id="wrap">
@@ -20,7 +21,7 @@
         <div class="section1">
             <div class="section1_content">
                 <div class="section1_content_left">
-                    <img src="/firstbook/resources/image/contest/book_cover.png" alt="" height="350px">
+                    <img src="<c:out value="${ requestScope.contestlList[0].competNovImgLocation }" />" alt="" height="350px">
 
                 </div>
                 <div class="section1_content_right">
@@ -28,9 +29,9 @@
                         <c:out value="${ requestScope.contestlList[0].novTitle }" />
                     </div>
                     <div class="font section1_content_right_second ">
-                        판타지 15세 이용가<br>
-                        작가: 고지라군<br>
-                        #이종족#마왕#모험#개그#판타지
+                        <c:out value="${ requestScope.contestlList[0].ageLimit }" />세 이용가<br>
+                        작가: <c:out value="${ requestScope.memberList[0].memName }" /><br>
+                        #<c:out value="${ requestScope.category }" />
                     </div>
                     <div class="font section1_content_right_third">
                         작품소개
@@ -40,7 +41,9 @@
                     </div>
                     <div class="font section1_content_right_five">
                         <button type="button" class="firstBtn">첫화보기</button>
-                        <button type="button" class="firstBtn" id="voting">투표하기</button>
+                        <c:if test="${ requestScope.memberList[0].memCanVoteYn eq 'Y' }">
+                        <button type="button" class="firstBtn" id="voting">투표하기<label class="label_none"><c:out value="${ requestScope.contestlList[0].competNum }" /></label></button>
+                        </c:if>
                         <button type="button" class="secondBtn">♥</button>
                     </div>
 
@@ -55,50 +58,23 @@
         </div>
         <div class="section2">
             <div class="section2_space"></div>
+             <c:forEach items="${ requestScope.contestDetailList }" var="DetailList">
             <div class="font section2_content">
                 <div class="section2_content_img">
-                    <img src="/firstbook/resources/image/contest/book_cover.png" alt="" width="160px">
+                    <img src="<c:out value="${ requestScope.contestlList[0].competNovImgLocation }" />" alt="" width="160px">
                 </div>
                 <div class="section2_content_main">
-                    프롤로그<br>
-                    14.08.19
+                    <c:out value="${ DetailList.novContent }" /><br>
+                    <c:out value="${ DetailList.competDate }" />
                 </div>
                 <div class="section2_content_bt">
                     <button type="button" class="section2_content_btn">무료보기</button>
                 </div>
             </div>
             <div class="section2_space"></div>
-
-            <!-- 2번쨰 -->
-            <div class="font section2_content">
-                <div class="section2_content_img">
-                    <img src="/firstbook/resources/image/contest/book_cover.png" alt="" width="160px">
-                </div>
-                <div class="section2_content_main">
-                    프롤로그<br>
-                    14.08.19
-                </div>
-                <div class="section2_content_bt">
-                    <button type="button" class="section2_content_btn">무료보기</button>
-                </div>
-            </div>
-            <div class="section2_space"></div>
-
-            <!-- 3번째 -->
-            <div class="font section2_content">
-                <div class="section2_content_img">
-                    <img src="/firstbook/resources/image/contest/book_cover.png" alt="" width="160px">
-                </div>
-                <div class="section2_content_main">
-                    프롤로그<br>
-                    14.08.19
-                </div>
-                <div class="section2_content_bt">
-                    <button type="button" class="section2_content_btn">무료보기</button>
-                </div>
-            </div>
-            <div class="section2_space"></div>
-        </div>
+			</c:forEach>
+            
+            
 
     </section>
     <section>
@@ -112,7 +88,7 @@
                 <div class="section3_writing_box">
                     <textarea name="댓글달기" class="section3_writing_text" rows="6"></textarea>
                 </div>
-                <div class="section3_writing_button">
+                <div class="section3_writing_button" >
                     <button type="button" class="button">등록하기</button>
                 </div>
 
@@ -139,12 +115,11 @@
         </div>
     </section>
 </div>
-<!-- <script>
+ <script>
 		$("#voting").click(function(){
-			const competNum = $(this).find("label").text();	// 사진 게시글 번호
-			/* console.log(no); */
-			location.href="${ pageContext.servletContext.contextPath }/contest/voting?competNum=" + competNum;
+			const competNum = $(this).find("label").text();	
+			location.href="${ pageContext.servletContext.contextPath }/contest/selectVoting?competNum=" + competNum;
 		});
-</script> -->
+</script> 
 </body>
 </html>

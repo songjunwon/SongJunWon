@@ -11,6 +11,7 @@ import java.util.List;
 import com.lastbug.firstbook.contest.model.dao.ContestDetalDAO;
 import com.lastbug.firstbook.contest.model.dto.ContestDTO;
 import com.lastbug.firstbook.contest.model.dto.ContestDetalDTO;
+import com.lastbug.firstbook.member.model.dto.MemberDTO;
 
 public class ContestDetail {
 	
@@ -42,6 +43,30 @@ public class ContestDetail {
 		close(con);
 		
 		return contestList;
+	}
+	
+	/* 작가 정보 검색 */
+	public List<MemberDTO> selectMemberList(int competNum) {
+		
+		Connection con = getConnection();
+		
+		List<MemberDTO> memberList = contestDetalDAO.selectMemberList(con, competNum);
+		
+		close(con);
+		
+		return memberList;
+	}
+	
+	/* 카테고리 검색 */
+	public String selectCategory(int competNum) {
+		
+		Connection con = getConnection();
+		
+		String category = contestDetalDAO.selectCategory(con, competNum);
+		
+		close(con);
+		
+		return category;
 	}
 
 

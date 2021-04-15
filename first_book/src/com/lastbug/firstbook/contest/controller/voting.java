@@ -13,6 +13,7 @@ import com.lastbug.firstbook.contest.model.dto.ContestDTO;
 import com.lastbug.firstbook.contest.model.dto.ContestDetalDTO;
 import com.lastbug.firstbook.contest.model.service.ContestDetail;
 import com.lastbug.firstbook.contest.model.service.ContestService;
+import com.lastbug.firstbook.member.model.dto.MemberDTO;
 
 @WebServlet("/contest/voting")
 public class voting extends HttpServlet {
@@ -21,15 +22,23 @@ public class voting extends HttpServlet {
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		int competNum = Integer.valueOf(request.getParameter("competNum"));
 		
-		List<ContestDetalDTO> contestDetailList = new ContestDetail().selectContestDetal(competNum);
-		List<ContestDTO> contestlList = new ContestDetail().selectContestList(competNum);
+		List<ContestDetalDTO> contestDetailList = new ContestDetail().selectContestDetal(competNum);	//
+		List<ContestDTO> contestlList = new ContestDetail().selectContestList(competNum);				// 웹소설 정보 검색
+		List<MemberDTO> memberList = new ContestDetail().selectMemberList(competNum);					// 작가 정보 검색
+		String category = new ContestDetail().selectCategory(competNum);		
+		
+		for(ContestDTO a : contestlList) {
+			System.out.println(a);
+		}
 		
 		String path = "";
-		if(!contestDetailList.isEmpty()) {		// 공모전 작품이 검색되면
+		if(!contestDetailList.isEmpty()) {		
 			path = "/WEB-INF/views/contest/contestDetail.jsp";
 			request.setAttribute("contestDetailList", contestDetailList);
 			request.setAttribute("contestlList", contestlList);
-		} else {						  		// 공모전 실패 하면
+			request.setAttribute("memberList", memberList);
+			request.setAttribute("category", category);
+		} else {						  		
 			path = "/WEB-INF/views/common/failed.jsp";
 			request.setAttribute("contestFailed", "작품 보러가기 실패");
 		}
