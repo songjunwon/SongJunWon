@@ -43,6 +43,26 @@ public class AdminService {
 		return searchMemList;
 	}
 
+	
+
+	public int selectMemberBlockUnblock(MemberDTO mem) {
+
+		Connection con = getConnection();
+		
+		int result = adminDAO.selectMemberBlockUnblock(con, mem);
+		
+		if(result > 0) {
+			commit(con);
+		} else {
+			rollback(con);
+		}
+		
+		close(con);
+		
+		return result;
+
+	}
+
 
 	
 }

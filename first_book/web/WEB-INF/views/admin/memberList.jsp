@@ -18,7 +18,7 @@
 		<section>
 	
 	<br><br><br><br><br><br><br><br><br><br><br>	
-	
+			<form action="${ pageContext.servletContext.contextPath }/admin/block" method="post">
 	<table class="memList">
 		
 		<thead>
@@ -41,7 +41,7 @@
 		<tbody>
 		<c:forEach var="mem" items="${ requestScope.memList }">	
 		
-			<tr> <td> <input type="checkbox"> </td>
+			<tr> <td> <input type="radio" name="selectNum" value="${ mem.memNum }"> </td>
 				<td><c:out value="${ mem.memNum }"/></td>
 				<td><c:out value="${ mem.memName }"/></td>
 				<td><c:out value="${ mem.memId }"/></td>
@@ -58,9 +58,29 @@
 		</c:forEach>
 		</tbody>
 	</table>
+	<table id="t2">					
+					<tr>
+						<td> <label>차단처리 : </label>  </td>
+						<td>
+						<label>Y </label><input type="radio" id="radioBtn" name="blockCheck" value="Y">
+						<label>N </label><input type="radio" id="radioBtn" name="blockCheck" value="N">
+						</td>
+					</tr>	
+					
+					<tr>	
+					<td colspan="2"> <button type="submit" class="btn" onclick="blockButtonAction(this.innerText);">차단처리</button> </td>
+						
+					</tr>
+					 
+				</table>
+	</form>
+	
 	</section>
 	
 	
+			
+ 				
+		
 	
 	
 	
@@ -136,7 +156,7 @@
 	
 		</form>
 		
-		<form action="${ pageContext.servletContext.contextPath }/admin/block" method="post">
+<%-- 		<form action="${ pageContext.servletContext.contextPath }/admin/block" method="get">
 			
  				<table id="t2">					
 					<tr>
@@ -153,7 +173,7 @@
 					</tr>
 					 
 				</table>
-		</form>
+		</form> --%>
 			
 		</div>
 		
@@ -161,15 +181,8 @@
 	</aside>
 	
 		<script>
-		
-	       $(document).ready(function () {
-	          $('#radioBtn').click(function () {
-	            
-	            var radioVal = $('input[name="blockCheck"]:checked').val();
-	         
-	          });
-	       });
-				
+       
+	       
 			const link = "${ pageContext.servletContext.contextPath }/admin/list";
 			const searchLink = "${ pageContext.servletContext.contextPath }/admin/search";
 			const blockLink = "${ pageContext.servletContext.contextPath }/admin/block";
@@ -179,7 +192,7 @@
 			}
 
 			function blockButtonAction(text) {
-				location.href = blockLink + text
+				location.href = blockLink + text 
 			}
 	
 		</script>

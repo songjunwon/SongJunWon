@@ -38,6 +38,14 @@
 		WHERE A.MEM_ENROLL_DATE LIKE '%' || ? || '%'
 	</entry>
 
+	<entry key="selectMemberBlockUnblock">
+		UPDATE
+		       MEM_INFO A
+		   SET A.MEM_BLOCK_YN = ?
+		     , A.MEM_BLOCK_DATE = ?
+		 WHERE A.MEM_NUM = ?
+	</entry>
+
 </properties>
 
 

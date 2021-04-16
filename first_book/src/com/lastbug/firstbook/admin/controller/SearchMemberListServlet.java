@@ -25,21 +25,22 @@ public class SearchMemberListServlet extends HttpServlet {
 
 		String value = request.getParameter("memSearchValue");
 		
-		System.out.println("condition : " + condition);
-		System.out.println("value : " + value);
+//		System.out.println("condition : " + condition);
+//		System.out.println("value : " + value);
 		
-		String currentPage = request.getParameter("currentPage");
+//		String currentPage = request.getParameter("currentPage");
+		
 		
 		
 		AdminService adminService = new AdminService();
 		
 		List<MemberDTO> memList = adminService.searchMemList(condition, value);
 		
-		for(MemberDTO md : memList) {
-			
-			System.out.println("검색한 멤버" + md);
-			
-		}
+//		for(MemberDTO md : memList) {
+//			
+//			System.out.println("검색한 멤버" + md);
+//			
+//		}
 		
 		String path="";
 		

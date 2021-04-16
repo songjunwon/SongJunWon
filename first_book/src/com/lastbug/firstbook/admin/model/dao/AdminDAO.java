@@ -178,6 +178,32 @@ public class AdminDAO {
 	}
 
 
+	public int selectMemberBlockUnblock(Connection con, MemberDTO mem) {
+		
+		PreparedStatement pstmt = null;
+		int result = 0;
+		
+		String query = prop.getProperty("selectMemberBlockUnblock");
+		
+		try {
+			pstmt = con.prepareStatement(query);
+			pstmt.setString(1, mem.getMemBlockYn());
+			pstmt.setDate(2, mem.getMemBlockDate());
+			pstmt.setInt(3, mem.getMemNum());
+			
+			result = pstmt.executeUpdate();
+			
+		} catch (SQLException e) {
+			e.printStackTrace();
+		} finally {
+			close(pstmt);
+		}
+		
+		return result;
+		
+	}
+
+
 
 	
 }
