@@ -29,8 +29,9 @@ public class ShowDetailWebNovelServlet extends HttpServlet {
 		/* 앞에서 전체 웹소설 목록 중에서 선택한 웹소설 번호로 웹소설 정보 조회 */
 		WebNovelInfoDTO webDetail = webNovelService.selectWebNovelDetail(no);
 		
-		
+		System.out.println("webDetail" + webDetail);
 		List<WebNovChapSearchDTO> webNovelChap = null;
+		List<WebNovChapSearchDTO> webNovelChap2 = null;
 		
 		
 //		System.out.println("내가 선택한 회차는 " + webDetail);
@@ -40,12 +41,20 @@ public class ShowDetailWebNovelServlet extends HttpServlet {
 		if(webDetail != null) {
 			
 			webNovelChap = webNovelService.selectWebNovelallChapter(webDetail);
+			webNovelChap2 = webNovelService.selectWebNovelallChapterNotFree(webDetail);
 	
+			for(WebNovChapSearchDTO a : webNovelChap) {
+				System.out.println("a" +a);
+			}
+			for(WebNovChapSearchDTO b : webNovelChap2) {
+				System.out.println("b" + b);
+			}
 			
 //			System.out.println("회차정보가 있나? " + webNovelChap);
 			path = "/WEB-INF/views/webnovel/webDetail.jsp";
 			request.setAttribute("webnovel", webDetail);
 			request.setAttribute("webnoveldetail", webNovelChap);
+			request.setAttribute("webnoveldetail2", webNovelChap2);
 		} else {
 			path = "/WEB-INF/views/common/failed.jsp";
 			request.setAttribute("failedCode", "webnovelPerChap");

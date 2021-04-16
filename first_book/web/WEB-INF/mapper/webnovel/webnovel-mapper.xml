@@ -39,6 +39,20 @@
 		  JOIN WEB_NOV_INFO B ON (A.WEB_NOV_NUM = B.WEB_NOV_NUM)
 		  JOIN WEB_NOV_CHAP_NUM C ON (A.CHAP_NUM = C.CHAP_NUM)
 		 WHERE B.WEB_NOV_NUM = ?
+		   AND A.CHAP_NUM <![CDATA[ <  ]]> 6
+		 ORDER BY A.CHAP_NUM ASC
+	</entry>
+	<entry key="selectWebNovelallChapterNotFree">
+		SELECT  	/* com.lastbug.firstbook.webnovel.model.dao.WebNovelDAO#selectWebNovelallChapterNotFree() */
+		       A.WEB_NOV_NUM
+		     , A.CHAP_NUM
+		     , A.CHAP_WRITTEN_DATE
+		     , A.CHAP_READABLE
+		  FROM WEB_NOV_CHAP_SEARCH A
+		  JOIN WEB_NOV_INFO B ON (A.WEB_NOV_NUM = B.WEB_NOV_NUM)
+		  JOIN WEB_NOV_CHAP_NUM C ON (A.CHAP_NUM = C.CHAP_NUM)
+		 WHERE B.WEB_NOV_NUM = ?
+		   AND A.CHAP_NUM > 5
 		 ORDER BY A.CHAP_NUM ASC
 	</entry>
 	<entry key="searchWebNovelCount">
@@ -106,5 +120,4 @@
 	           COUNT(*)
 	      FROM WEB_NOV_INFO
 	</entry>
-
 </properties>

@@ -47,7 +47,7 @@ public class WebNovelService {
 		/* 조회수 증가 */
 		int result = webNovelDAO.incrementWebnovelCount(con, no);
 
-//		System.out.println("조회수 : " + result);
+		System.out.println("조회수 : " + result);
 
 		if(result > 0) {
 
@@ -156,6 +156,28 @@ public class WebNovelService {
 		close(con);
 		
 		return result;
+
+	}
+
+	public List<WebNovChapSearchDTO> selectWebNovelallChapterNotFree(WebNovelInfoDTO webDetail) {
+
+		Connection con = getConnection();
+
+		List<WebNovChapSearchDTO> webNovelChap2 = null;
+
+		webNovelChap2 = webNovelDAO.selectWebNovelallChapterNotFree(con, webDetail);
+
+		//		System.out.println("web회차 정보 service" + webNovelChap);
+
+
+		if(webNovelChap2 != null) {
+			commit(con);
+		}else {
+			rollback(con);
+		}
+
+		close(con);
+		return webNovelChap2;
 
 	}
 

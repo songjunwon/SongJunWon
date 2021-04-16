@@ -198,7 +198,7 @@
 		});
 		
 
-		$(function(){
+		<%-- $(function(){
 	         var currentPage = ${ requestScope.pageInfo.pageNo };
 	         console.log('currentPage : ' + currentPage);
 	            
@@ -243,7 +243,7 @@
 	                 });      /* ajax 종료 */
 	            }
 	         })      /* 스크롤 페이징 함수 종료 */
-	      }); 
+	      }); --%>
 		
 
 	</script>

@@ -23,38 +23,41 @@ public class ShowAllWebNovelServlet extends HttpServlet {
 		
 //		System.out.println("여기왓니?");
 		
-		String currentPage = "1";
+//		String currentPage = "1";
+//		
+//		int pageNo = 1;
+//		
+//		if(currentPage != null && !"".equals(currentPage)) {
+//			pageNo = Integer.valueOf(currentPage);
+//			
+//			/* 0보다 작은 숫자가 넘어오면 1페이지를 보여준다. */
+//			if(pageNo <= 0) {
+//				pageNo = 1;
+//			}
+//		}
 		
-		int pageNo = 1;
-		
-		if(currentPage != null && !"".equals(currentPage)) {
-			pageNo = Integer.valueOf(currentPage);
-			
-			/* 0보다 작은 숫자가 넘어오면 1페이지를 보여준다. */
-			if(pageNo <= 0) {
-				pageNo = 1;
-			}
-		}
-		
-		WebNovelService webService = new WebNovelService();
-		int totalCount = webService.selectTotalCount();
-		
-		int limit = 10;
-		
-		int buttonAmount = 5;
-		
-		PageInfoDTO pageInfo = Pagenation.getPageInfo(pageNo, totalCount, limit, buttonAmount);
-		
+//		WebNovelService webService = new WebNovelService();
+//		int totalCount = webService.selectTotalCount();
+//		
+//		int limit = 10;
+//		
+//		int buttonAmount = 5;
+//		
+//		PageInfoDTO pageInfo = Pagenation.getPageInfo(pageNo, totalCount, limit, buttonAmount);
+//		
 		List<WebNovelInfoDTO> webNovelList = new WebNovelService().selectAllNovel();
 	
-
+		for(WebNovelInfoDTO a : webNovelList) {
+			System.out.println(a);
+		}
+		
 		String path = "";
 		
 		if(!webNovelList.isEmpty()) {		// 웹소설이 조회 되었다면
 //			System.out.println("조회됨?");
 			path = "/WEB-INF/views/webnovel/webMain.jsp";
 			request.setAttribute("webNovelList", webNovelList);
-			request.setAttribute("pageInfo", pageInfo);
+//			request.setAttribute("pageInfo", pageInfo);
 		}else {							// 웹소설이 조회 되지 않았다면
 			path = "/WEB-INF/views/common/failed.jsp";
 			request.setAttribute("failedCode", "selectAllWebNovel");

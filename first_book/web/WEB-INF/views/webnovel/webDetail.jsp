@@ -66,31 +66,46 @@
             <hr>
             <h4 class="everynday">매주 <c:out value="${ requestScope.webnovel.dayOfWeek }" />요일 연재</h4>
             <br><br>
-            <table class="tab_mid">
+            	<table class="tab_mid">
+            	    <!-- 5화까지 무료! -->
             	<c:forEach var="webNovelChap" items="${ requestScope.webnoveldetail}"> 
             	<tr>
+      
                     <td class="chap_img"><img src="${ requestScope.webnovel.webNovImgLocation}" class="chap_img_real" alt="1화부터사진">
                     </td>
                     <td class="prolog">
                         <h2 class="chap_date"> 등록 날짜 :  ${ webNovelChap.webChapNumDate} </h2>                       
                     </td> 
-                    <td class="freeBtn">
-                    <!-- 5화까지 무료! -->
-                    
-                     <%-- <button class="freebtn_real" id="freebtn_real_2" type="button" onclick="webView(${ webNovelChap.webNovChapNum.webNovChapNum}, '${webNovelChap.chapReadOrNot}')" >
-                     무료보기 </button>
-                    <input type="hidden" id="webNovNum" value= "${ webNovelChap.webNovChapNum.webNovChapNum}"> 
-             		 --%>
-             		<!-- 6화부터 결제!  -->
-             
+                    <td class="freeBtn">               
                       <button class="freebtn_real" id="freebtn_real_2" type="button" onclick="webView(${ webNovelChap.webNovChapNum.webNovChapNum}, '${webNovelChap.chapReadOrNot}')" >
-                    ${ webNovelChap.webNovChapNum.webNovChapNum}화 보기 </button>
+                    무료보기 </button>
                     <input type="hidden" id="webNovNum" value= "${ webNovelChap.webNovChapNum.webNovChapNum}"> 
              		 
              		</td>
+
                 </tr>
-                </c:forEach>               
+                </c:forEach>
+                  
+                <!-- 6화부터 결제! -->
+             	<c:forEach var="webNovelChap2" items="${ requestScope.webnoveldetail2}"> 
+            	<tr>
+  
+            		<td class="chap_img"><img src="${ requestScope.webnovel.webNovImgLocation}" class="chap_img_real" alt="1화부터사진">
+                    </td>
+                    <td class="prolog">
+                        <h2 class="chap_date"> 등록 날짜 :  ${ webNovelChap2.webChapNumDate} </h2>                       
+                    </td> 
+                    <td class="freeBtn">
+            		 <button class="freebtn_real" id="freebtn_real_2" type="button" onclick="webView2(${ webNovelChap2.webNovChapNum.webNovChapNum}, '${webNovelChap.chapReadOrNot}')" >
+                    ${ webNovelChap2.webNovChapNum.webNovChapNum}화 보기 </button>
+                    <input type="hidden" id="webNovNum" value= "${ webNovelChap2.webNovChapNum.webNovChapNum}"> 
+            		</td>
+
+                </tr>
+                </c:forEach>   
+                    
             </table>
+
         </section>
         
         
@@ -125,9 +140,28 @@
    
 	const link = "${ pageContext.servletContext.contextPath}/webnovel/chapList";
 
-
+	/* 1 ~ 5화 까지 보기 */
 	function webView(var1, var2){
 			
+		var t = var1;
+		var t2 = var2;
+		console.log(t);
+		console.log(t2);
+		
+		/* 선택한 웹소설 챕터가 없는 경우 */
+		if(t2 == 'N'){
+			 alert("해당 웹소설의 " + t + "화는 준비 중에 있습니다!")
+			 
+		/* 선택한 웹소설 챕터가 있는 경우 */
+			} else if (t2 == 'Y'){
+				
+			location.href = link  + "?currentWebNov=" + ${ requestScope.webnovel.webNovNum} + "&currentChap=" + t;			
+			}
+
+		}
+	/* 6화부터 보기 */
+	function webView2(var1, var2){
+		
 		var t = var1;
 		var t2 = var2;
 		console.log(t);
@@ -151,7 +185,7 @@
 
 	}
 	
-	$("#wishBtn").click(function(){
+<%-- 	$("#wishBtn").click(function(){
 		
 		var wishlistWebnovNum = document.getElementById("wishList").value;
 		var loginMember = document.getElementById("loginMember").value;
@@ -174,7 +208,8 @@
 				}
 			});
 	
-	});
+	}); --%>
+	
 	</script> 
 	
 </body>

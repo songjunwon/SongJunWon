@@ -339,7 +339,9 @@ public class WebNovelDAO {
 			rset = stmt.executeQuery(query);
 			
 			if(rset.next()) {
-				totalCount = rset.getInt(1);
+				totalCount = rset.getInt("COUNT(*)");
+				
+				System.out.println("db" + totalCount);
 			}
 			
 		} catch (SQLException e) {
@@ -352,6 +354,57 @@ public class WebNovelDAO {
 		
 		
 		return totalCount;
+	}
+
+	public List<WebNovChapSearchDTO> selectWebNovelallChapterNotFree(Connection con, WebNovelInfoDTO webDetail) {
+		PreparedStatement pstmt = null;
+		ResultSet rset = null;
+
+//		System.out.println("webdetail" + webDetail);
+		List<WebNovChapSearchDTO> webNovelChap2 = null;
+
+		String query = prop.getProperty("selectWebNovelallChapterNotFree");
+		try {
+			pstmt = con.prepareStatement(query);
+
+			pstmt.setInt(1, webDetail.getWebNovNum());
+
+			//			System.out.println("db전 웹소설 고유 번호" + webDetail.getWebNovNum());
+
+			rset = pstmt.executeQuery();
+
+//			System.out.println("query문" + query);
+			webNovelChap2 = new ArrayList<WebNovChapSearchDTO>();
+
+			while(rset.next()) {
+				WebNovChapSearchDTO wbdDTO = new WebNovChapSearchDTO();
+				wbdDTO.setWebNovNum(new WebNovelInfoDTO());
+				wbdDTO.setWebNovChapNum(new WebNovChapNumDTO());
+
+				//				wbdDTO.setWebNovNum(rset.getInt("WEB_NOV_NUM"));
+				wbdDTO.getWebNovNum().setWebNovNum(rset.getInt("WEB_NOV_NUM"));
+				wbdDTO.getWebNovChapNum().setWebNovChapNum(rset.getInt("CHAP_NUM"));
+				wbdDTO.setWebChapNumDate(rset.getDate("CHAP_WRITTEN_DATE"));
+				wbdDTO.setChapReadOrNot(rset.getString("CHAP_READABLE"));
+
+				//				System.out.println("wbdDTO" + wbdDTO);
+
+				webNovelChap2.add(wbdDTO);
+
+				//				System.out.println("DAO챕터별 정보" + webNovelChap);
+			}
+
+		} catch (SQLException e) {
+
+			e.printStackTrace();
+		}finally {
+			close(rset);
+			close(pstmt);
+		}
+
+
+		return webNovelChap2;
+
 	}
 
 
