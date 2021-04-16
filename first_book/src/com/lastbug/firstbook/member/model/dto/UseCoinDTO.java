@@ -19,7 +19,6 @@ public class UseCoinDTO {
 
 	public UseCoinDTO(int coinUseNum, WebNovelInfoDTO webNov, int memNum, Date coinUseDate, int coinUsage,
 			int chapterNum) {
-		super();
 		this.coinUseNum = coinUseNum;
 		this.webNov = webNov;
 		this.memNum = memNum;

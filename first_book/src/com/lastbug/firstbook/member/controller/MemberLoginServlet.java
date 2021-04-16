@@ -42,10 +42,16 @@ public class MemberLoginServlet extends HttpServlet {
 //		System.out.println(loginMember);
 		
 		if(loginMember != null) {
-			HttpSession session = request.getSession();
-			session.setAttribute("loginMember", loginMember);
-			
-			response.sendRedirect(request.getContextPath());
+			int result = memberService.incrementLoginCount(requestMember);
+//			System.out.println(result);
+			if(result > 0) {
+				HttpSession session = request.getSession();
+				session.setAttribute("loginMember", loginMember);
+				response.sendRedirect(request.getContextPath());
+			} else {
+				request.setAttribute("failedCode", "loginMember");
+				request.getRequestDispatcher("/WEB-INF/views/common/failed.jsp").forward(request, response);
+			}
 		} else {
 			request.setAttribute("failedCode", "loginMember");
 			request.getRequestDispatcher("/WEB-INF/views/common/failed.jsp").forward(request, response);

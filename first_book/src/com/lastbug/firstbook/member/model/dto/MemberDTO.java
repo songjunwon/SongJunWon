@@ -23,13 +23,16 @@ public class MemberDTO implements Serializable{
 	private String memBlockYn;
 	private java.sql.Date memBlockDate;
 	private java.sql.Date memEnrollDate;
+	private String memWeeklyCoinYn;
 	
 	public MemberDTO() {
 	}
 
 	public MemberDTO(int memNum, String memName, String memId, String memPwd, String memEmail, String memAddress,
 			Date memBirthDate, int memLoginCount, int memCoin, String memCanVoteYn, String memWithdrawYn,
-			Date memWithdrawDate, String memClass, String memBlockYn, Date memBlockDate, Date memEnrollDate) {
+			Date memWithdrawDate, String memClass, String memBlockYn, Date memBlockDate, Date memEnrollDate,
+			String memWeeklyCoinYn) {
+		super();
 		this.memNum = memNum;
 		this.memName = memName;
 		this.memId = memId;
@@ -46,6 +49,7 @@ public class MemberDTO implements Serializable{
 		this.memBlockYn = memBlockYn;
 		this.memBlockDate = memBlockDate;
 		this.memEnrollDate = memEnrollDate;
+		this.memWeeklyCoinYn = memWeeklyCoinYn;
 	}
 
 	public int getMemNum() {
@@ -176,6 +180,18 @@ public class MemberDTO implements Serializable{
 		this.memEnrollDate = memEnrollDate;
 	}
 
+	public String getMemWeeklyCoinYn() {
+		return memWeeklyCoinYn;
+	}
+
+	public void setMemWeeklyCoinYn(String memWeeklyCoinYn) {
+		this.memWeeklyCoinYn = memWeeklyCoinYn;
+	}
+
+	public static long getSerialversionuid() {
+		return serialVersionUID;
+	}
+
 	@Override
 	public String toString() {
 		return "MemberDTO [memNum=" + memNum + ", memName=" + memName + ", memId=" + memId + ", memPwd=" + memPwd
@@ -183,8 +199,9 @@ public class MemberDTO implements Serializable{
 				+ ", memLoginCount=" + memLoginCount + ", memCoin=" + memCoin + ", memCanVoteYn=" + memCanVoteYn
 				+ ", memWithdrawYn=" + memWithdrawYn + ", memWithdrawDate=" + memWithdrawDate + ", memClass=" + memClass
 				+ ", memBlockYn=" + memBlockYn + ", memBlockDate=" + memBlockDate + ", memEnrollDate=" + memEnrollDate
-				+ "]";
+				+ ", memWeeklyCoinYn=" + memWeeklyCoinYn + "]";
 	}
 
+	
 	
 }

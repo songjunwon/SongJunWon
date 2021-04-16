@@ -13,6 +13,7 @@ import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import com.lastbug.firstbook.member.model.dao.MemberDAO;
 import com.lastbug.firstbook.member.model.dto.MemberDTO;
 import com.lastbug.firstbook.member.model.dto.UseCoinDTO;
+import com.lastbug.firstbook.member.model.dto.WishlistDTO;
 
 public class MemberService {
 	
@@ -62,6 +63,7 @@ public class MemberService {
 		
 		BCryptPasswordEncoder passwordEncoder = new BCryptPasswordEncoder();
 		
+//		System.out.println(requestMember.getMemPwd());
 		if(passwordEncoder.matches(requestMember.getMemPwd(), encPwd)) {
 			
 			loginMember = memberDAO.selectLoginMember(con, requestMember);
@@ -80,6 +82,127 @@ public class MemberService {
 		close(con);
 		
 		return useCoinList;
+	}
+
+	/* 회원 정보 수정용 메소드 */
+	public int updateMember(MemberDTO requestMember) {
+		
+		Connection con = getConnection();
+		
+		int result = memberDAO.updateMember(con, requestMember);
+		
+		if(result > 0) {
+			commit(con);
+		} else {
+			rollback(con);
+		}
+		
+		close(con);
+		
+		return result;
+	}
+
+	/* 회원 탈퇴용 메소드 */
+	public int deleteMember(MemberDTO requestMember) {
+		
+		Connection con = getConnection();
+		int result = 0;
+		
+		String encPwd = memberDAO.selectEncryptedPwd(con, requestMember);
+		
+		BCryptPasswordEncoder passwordEncoder = new BCryptPasswordEncoder();
+		
+		if(passwordEncoder.matches(requestMember.getMemPwd(), encPwd)) {
+			
+			result = memberDAO.deleteMember(con, requestMember);
+			
+			if(result > 0) {
+				commit(con);
+			} else {
+				rollback(con);
+			}
+		}
+		
+		close(con);
+		
+		return result;
+	}
+
+	/* 위시리스트 조회용 메소드 */
+	public List<WishlistDTO> selectWishlist(int memNum) {
+		
+		Connection con = getConnection();
+		
+		List<WishlistDTO> wishlist = memberDAO.selectWishlist(con, memNum);
+		
+		close(con);
+		
+		return wishlist;
+	}
+
+	/* 로그인 시 로그인 카운트 증가 */
+	public int incrementLoginCount(MemberDTO requestMember) {
+		
+		Connection con = getConnection();
+		
+		int result = memberDAO.incrementLoginCount(con, requestMember);
+		
+		if(result > 0) {
+			commit(con);
+		} else {
+			rollback(con);
+		}
+		
+		close(con);
+		
+		return result;
+	}
+
+	/* 무료 코인 지급용 메소드 */
+	public int incrementFreeCoin(int memNum) {
+		
+		Connection con = getConnection();
+		
+		int result = memberDAO.incrementFreeCoin(con, memNum);
+		
+		if(result > 0) {
+			commit(con);
+		} else {
+			rollback(con);
+		}
+		
+		return result;
+	}
+
+	/* 회원 정보 조회용 메소드 */
+	public MemberDTO selectMember(int memNum) {
+		
+		Connection con = getConnection();
+		
+		MemberDTO requestMember = memberDAO.selectMember(con, memNum);
+		
+		close(con);
+		
+		System.out.println("service" + requestMember);
+		
+		return requestMember;
+	}
+
+	/* 무료 코인 버튼 활성화용 메소드 */
+
+	public int updateFreeCoinYn(int memNum) {
+		
+		Connection con = getConnection();
+		
+		int result = memberDAO.updateFreeCoinYn(con, memNum);
+		
+		if(result > 0) {
+			commit(con);
+		} else {
+			rollback(con);
+		}
+		
+		return result;
 	}
 	
 	

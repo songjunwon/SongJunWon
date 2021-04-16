@@ -56,6 +56,7 @@
 		     , A.MEM_BLOCK_YN
 		     , A.MEM_BLOCK_DATE
 		     , A.MEM_ENROLL_DATE
+		     , A.MEM_WEEKLY_COIN_YN
 		  FROM MEM_INFO A
 		 WHERE A.MEM_WITHDRAW_YN = 'N'
 		   AND A.MEM_ID = ?
@@ -89,6 +90,8 @@
 		  FROM COIN_USE_HIS A
 		  JOIN WEB_NOV_INFO C ON (C.WEB_NOV_NUM = A.WEB_NOV_NUM)
 		 WHERE A.MEM_NUM = ?
+		   AND C.WEB_NOV_OPEN_OR_CLOSE = 'N'
+		 ORDER BY A.COIN_USE_DATE DESC
 	</entry>
 
 
@@ -99,7 +102,87 @@
          WHERE WEB_NOV_NUM = ?
            AND CHAP_NUM = ?
 	</entry>
-
+	<entry key="updateMember">
+		UPDATE
+		       MEM_INFO A
+		   SET A.MEM_NAME = ?
+		     , A.MEM_PWD = ?
+		     , A.MEM_EMAIL = ?
+		     , A.MEM_ADDRESS = ?
+		     , A.MEM_BIRTHDATE = ?
+		 WHERE A.MEM_ID = ?
+	</entry>
+	<entry key="deleteMember">
+		UPDATE
+		       MEM_INFO A
+		   SET A.MEM_WITHDRAW_YN = 'Y'
+		     , A.MEM_WITHDRAW_DATE = SYSDATE
+		 WHERE A.MEM_ID = ?
+	</entry>
+	<entry key="selectWishlist">
+		SELECT
+		       A.WEB_NOV_NUM
+		     , A.MEM_NUM
+		     , A.WISHLIST_DATE
+		     , B.CATEGORY_CODE
+		     , B.WEB_NOV_TITLE
+		     , B.WEB_NOV_AUTHOR
+		     , B.CHAP_PER_COIN
+		     , B.WEB_NOV_PUBLISHER
+		     , B.WEB_NOV_INFORM
+		     , B.WEB_NOV_IMG_LOCATION
+		     , B.DAY_OF_WEEK
+		     , B.WEB_NOV_OPEN_OR_CLOSE
+		     , B.FINISHED_OR_NOT
+		  FROM WISH_LIST A
+		  JOIN WEB_NOV_INFO B ON (B.WEB_NOV_NUM = A.WEB_NOV_NUM)
+		 WHERE A.MEM_NUM = ?
+		   AND B.WEB_NOV_OPEN_OR_CLOSE = 'N'
+		 ORDER BY A.WISHLIST_DATE DESC
+	</entry>
+	<entry key="incrementLoginCount">
+		UPDATE
+		       MEM_INFO A
+		   SET A.MEM_LOGIN_COUNT = MEM_LOGIN_COUNT + 1
+		 WHERE A.MEM_ID = ?
+	</entry>
+	<entry key="incrementFreeCoin">
+		UPDATE
+		       MEM_INFO A
+		   SET A.MEM_COIN = A.MEM_COIN + 20
+		   	 , A.MEM_WEEKLY_COIN_YN = 'N'
+		 WHERE A.MEM_NUM = ?
+	</entry>
+	<entry key="selectMember">
+		SELECT
+		       A.MEM_NUM
+		     , A.MEM_NAME
+		     , A.MEM_ID
+		     , A.MEM_PWD
+		     , A.MEM_EMAIL
+		     , A.MEM_ADDRESS
+		     , A.MEM_BIRTHDATE
+		     , A.MEM_LOGIN_COUNT
+		     , A.MEM_COIN
+		     , A.MEM_CAN_VOTE_YN
+		     , A.MEM_WITHDRAW_YN
+		     , A.MEM_WITHDRAW_DATE
+		     , A.MEM_CLASS
+		     , A.MEM_BLOCK_YN
+		     , A.MEM_BLOCK_DATE
+		     , A.MEM_ENROLL_DATE
+		     , A.MEM_WEEKLY_COIN_YN
+		  FROM MEM_INFO A
+		 WHERE A.MEM_WITHDRAW_YN = 'N'
+		   AND A.MEM_NUM = ?
+		   AND A.MEM_WEEKLY_COIN_YN = 'Y'
+	</entry>
+	<entry key="updateFreeCoinYn">
+		UPDATE
+		       MEM_INFO A
+		   SET A.MEM_WEEKLY_COIN_YN = 'Y'
+		 WHERE A.MEM_NUM = ?
+	</entry>
 </properties>
 
 

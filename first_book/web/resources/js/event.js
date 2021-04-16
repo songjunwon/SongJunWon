@@ -1,3 +1,4 @@
+ 
 /* window.onload = function() {
 	/* 무료보기 버튼 눌렀을 때 */
 	if(document.getElementById("freebtn_real_2")) {
@@ -10,9 +11,5 @@
 			location.href = "/firstbook/webnovel/chapList";
 		}
 	}
-	
 
-	
-}
-
-*/
+}*/

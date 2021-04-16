@@ -21,7 +21,6 @@
 
                 </div>
 
-<<<<<<< HEAD
 				<c:if test="${ empty sessionScope.loginMember }">
 	                <div class="menu_box" id="menu_box">
 	                    <nav class="nav">

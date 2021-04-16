@@ -15,6 +15,7 @@ import java.util.Properties;
 import com.lastbug.firstbook.common.config.ConfigLocation;
 import com.lastbug.firstbook.member.model.dto.MemberDTO;
 import com.lastbug.firstbook.member.model.dto.UseCoinDTO;
+import com.lastbug.firstbook.member.model.dto.WishlistDTO;
 import com.lastbug.firstbook.webnovel.model.dto.WebNovelInfoDTO;
 
 public class MemberDAO {
@@ -147,6 +148,7 @@ public class MemberDAO {
 				loginMember.setMemBlockYn(rs.getString("MEM_BLOCK_YN"));
 				loginMember.setMemBlockDate(rs.getDate("MEM_BLOCK_DATE"));
 				loginMember.setMemEnrollDate(rs.getDate("MEM_ENROLL_DATE"));
+				loginMember.setMemWeeklyCoinYn(rs.getString("MEM_WEEKLY_COIN_YN"));
 			}
 		} catch (SQLException e) {
 			e.printStackTrace();
@@ -209,6 +211,215 @@ public class MemberDAO {
 		}
 		
 		return useCoinList;
+	}
+
+	/* 회원 정보 수정용 메소드 */
+	public int updateMember(Connection con, MemberDTO requestMember) {
+
+		PreparedStatement pstmt = null;
+		int result = 0;
+		
+		String query = prop.getProperty("updateMember");
+		
+		try {
+			pstmt = con.prepareStatement(query);
+			pstmt.setString(1, requestMember.getMemName());
+			pstmt.setString(2, requestMember.getMemPwd());
+			pstmt.setString(3, requestMember.getMemEmail());
+			pstmt.setString(4, requestMember.getMemAddress());
+			pstmt.setDate(5, requestMember.getMemBirthDate());
+			pstmt.setString(6, requestMember.getMemId());
+			
+			result = pstmt.executeUpdate();
+		} catch (SQLException e) {
+			e.printStackTrace();
+		} finally {
+			close(pstmt);
+		}
+		
+		return result;
+	}
+
+	/* 회원 탈퇴용 메소드 */
+	public int deleteMember(Connection con, MemberDTO requestMember) {
+
+		PreparedStatement pstmt = null;
+		int result = 0;
+		
+		String query = prop.getProperty("deleteMember");
+		
+		try {
+			pstmt = con.prepareStatement(query);
+			pstmt.setString(1, requestMember.getMemId());
+			
+			result = pstmt.executeUpdate();
+		} catch (SQLException e) {
+			e.printStackTrace();
+		} finally {
+			close(pstmt);
+		}
+		
+		return result;
+	}
+
+	/* 위시리스트 조회용 메소드 */
+	public List<WishlistDTO> selectWishlist(Connection con, int memNum) {
+		
+		PreparedStatement pstmt = null;
+		ResultSet rs = null;
+		
+		List<WishlistDTO> wishlist = null;
+		
+		String query = prop.getProperty("selectWishlist");
+		
+		try {
+			pstmt = con.prepareStatement(query);
+			pstmt.setInt(1, memNum);
+			
+			rs = pstmt.executeQuery();
+			
+			wishlist = new ArrayList<>();
+			
+			while(rs.next()) {
+				WishlistDTO wish = new WishlistDTO();
+				WebNovelInfoDTO webNov = new WebNovelInfoDTO();
+				
+				wish.setMemNum(rs.getInt("MEM_NUM"));
+				wish.setWishlistDate(rs.getDate("WISHLIST_DATE"));
+				
+				webNov.setWebNovNum(rs.getInt("WEB_NOV_NUM"));
+				webNov.setCategoryCode(rs.getString("CATEGORY_CODE"));
+				webNov.setWebNovTitle(rs.getString("WEB_NOV_TITLE"));
+				webNov.setWebNovAuthor(rs.getString("WEB_NOV_AUTHOR"));
+				webNov.setChapPerCoin(rs.getInt("CHAP_PER_COIN"));
+				webNov.setWebNovPublisher(rs.getString("WEB_NOV_PUBLISHER"));
+				webNov.setWebNovInform(rs.getString("WEB_NOV_INFORM"));
+				webNov.setWebNovImgLocation(rs.getString("WEB_NOV_IMG_LOCATION"));
+				webNov.setDayOfWeek(rs.getString("DAY_OF_WEEK"));
+				webNov.setWebNovOpenOrClose(rs.getString("WEB_NOV_OPEN_OR_CLOSE"));
+				webNov.setFinishedOrNot(rs.getString("FINISHED_OR_NOT"));
+				
+				wish.setWebNov(webNov);
+				wishlist.add(wish);
+			}
+		} catch (SQLException e) {
+			e.printStackTrace();
+		} finally {
+			close(rs);
+			close(pstmt);
+		}
+		
+		return wishlist;
+	}
+
+	/* 로그인 횟수 증가용 메소드 */
+	public int incrementLoginCount(Connection con, MemberDTO requestMember) {
+		
+		PreparedStatement pstmt = null;
+		int result = 0;
+		
+		String query = prop.getProperty("incrementLoginCount");
+		
+		try {
+			pstmt = con.prepareStatement(query);
+			pstmt.setString(1, requestMember.getMemId());
+			
+			result = pstmt.executeUpdate();
+		} catch (SQLException e) {
+			e.printStackTrace();
+		} finally {
+			close(pstmt);
+		}
+		
+		return result;
+	}
+
+	/* 무료 코인 지급용 메소드 */
+	public int incrementFreeCoin(Connection con, int memNum) {
+		
+		PreparedStatement pstmt = null;
+		int result = 0;
+		
+		String query = prop.getProperty("incrementFreeCoin");
+		
+		try {
+			pstmt = con.prepareStatement(query);
+			pstmt.setInt(1, memNum);
+			
+			result = pstmt.executeUpdate();
+		} catch (SQLException e) {
+			e.printStackTrace();
+		}
+		
+		return result;
+	}
+
+	public MemberDTO selectMember(Connection con, int memNum) {
+		System.out.println(memNum+"번호");
+
+		PreparedStatement pstmt = null;
+		ResultSet rs = null;
+		
+		MemberDTO requestMember = null;
+		
+		String query = prop.getProperty("selectMember");
+		
+		try {
+			pstmt = con.prepareStatement(query);
+			pstmt.setInt(1, memNum);
+			
+			rs = pstmt.executeQuery();
+			
+			while(rs.next()) {
+				requestMember = new MemberDTO();
+				requestMember.setMemNum(rs.getInt("MEM_NUM"));
+				requestMember.setMemName(rs.getString("MEM_NAME"));
+				requestMember.setMemId(rs.getString("MEM_ID"));
+				requestMember.setMemPwd(rs.getString("MEM_PWD"));
+				requestMember.setMemEmail(rs.getString("MEM_EMAIL"));
+				requestMember.setMemAddress(rs.getString("MEM_ADDRESS"));
+				requestMember.setMemBirthDate(rs.getDate("MEM_BIRTHDATE"));
+				requestMember.setMemLoginCount(rs.getInt("MEM_LOGIN_COUNT"));
+				requestMember.setMemCoin(rs.getInt("MEM_COIN"));
+				requestMember.setMemCanVoteYn(rs.getString("MEM_CAN_VOTE_YN"));
+				requestMember.setMemWithdrawYn(rs.getString("MEM_WITHDRAW_YN"));
+				requestMember.setMemWithdrawDate(rs.getDate("MEM_WITHDRAW_DATE"));
+				requestMember.setMemClass(rs.getString("MEM_CLASS"));
+				requestMember.setMemBlockYn(rs.getString("MEM_BLOCK_YN"));
+				requestMember.setMemBlockDate(rs.getDate("MEM_BLOCK_DATE"));
+				requestMember.setMemEnrollDate(rs.getDate("MEM_ENROLL_DATE"));
+				requestMember.setMemWeeklyCoinYn(rs.getString("MEM_WEEKLY_COIN_YN"));
+			}
+		} catch (SQLException e) {
+			e.printStackTrace();
+		} finally {
+			close(rs);
+			close(pstmt);
+		}
+		System.out.println("dao" + requestMember);
+		return requestMember;
+	}
+
+	/* 무료 코인 버튼 활성화용 메소드 */
+	public int updateFreeCoinYn(Connection con, int memNum) {
+
+		PreparedStatement pstmt = null;
+		int result = 0;
+		
+		String query = prop.getProperty("updateFreeCoinYn");
+		
+		try {
+			pstmt = con.prepareStatement(query);
+			pstmt.setInt(1, memNum);
+			
+			result = pstmt.executeUpdate();
+		} catch (SQLException e) {
+			e.printStackTrace();
+		} finally {
+			close(pstmt);
+		}
+		
+		return result;
 	}
 }
 

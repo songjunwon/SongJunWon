@@ -17,12 +17,25 @@
 .bold {font-weight: 700;}
 
 /* main */
+.slideBanner {height: 400px; background-color: red; margin-bottom: 50px;} 
+.awards {margin-top: 50px; height: 400px;}
+.awards_box {height: 350px; width: 271px; float: left; margin-top: 20px; background-color: antiquewhite; border: 1px solid black;}
+.serialization {margin-top: 50px;}
+.serialization > ul > li {float: left;}
+/* .tab-content {} */
+.tab_box {height: 300px; width: 215px; float: left; margin-top: 20px; background-color: blanchedalmond; border: 1px solid black;}
+.e_banner {margin-top: 80px; height: 300px; background-color: gray;}
+.book {margin: 50px auto; height: 350px;}
+.book_box {height: 300px; width: 215px; float: left; margin-top: 20px; background-color: blanchedalmond; border: 1px solid black;}
 
 /* login, join */
-.login_form {text-align: center; margin: 200px auto;}
+.login_form {text-align: center; margin: 200px auto; display: block;}
 .login_title {font-size: 23px; font-weight: 500; margin-bottom: 30px;}
 .login_input_box {width : 300px; height: 40px; border: 1px solid black; line-height: 40px; margin: 15px auto; font-size: 14px; text-align: left; padding-left: 5px;}
 .login_input_box > input {width:190px; height: 30px; float: right; margin: 5px 5px;}
+.email_input_box {width : 300px; height: 40px; border: 1px solid black; line-height: 40px; margin: 15px auto; font-size: 14px; text-align: left; padding-left: 5px;}
+.email_input_box > input {width:100px; height: 30px; margin: 5px 5px;}
+.email_input_box > select {width:100px; height: 30px; margin: 5px 5px;}
 .login_form > form > button {width:300px; height: 40px; background-color: #ED1C24; color: white; font-size:19px;}
 .login_form > form > button:hover {background-color: #333333; color: white;}
 .login_nav {width: 300px; height: 40px; margin: 20px auto; font-size: 14px; border-top: 1px solid #cccccc;}
@@ -36,34 +49,45 @@
 /* mypage */
 .mypage {width: 1100px; height: 600px; border: 1px solid #d3d3d3; border-radius: 20px; margin-top: 200px; margin-bottom: 100px;}
 .my_nav {width: 150px; height: 600px; background-color: #ED1C24; border-radius: 20px 0 0 20px; padding: 10px; float: left;}
-.my_nav > ul {margin: 30px 10px; font-size: 15px; color: #fff; line-height: 30px;}
+.my_nav > ul {margin: 30px 10px; font-size: 15px; color: #fff; line-height: 30px; cursor:pointer}
 .my_nav > p {margin: 30px 10px; font-size: 15px; color: #fff; line-height: 30px;}
 .my_nav_line {border-bottom: 1px solid #fff;}
 .my_contents {width: 948px; height: 600px; float: left;}
 .my_contents div {display: none;}
 .my_contents div.on {display: block;}
 .my_home {margin: 0px auto; padding: 0px 20px;}
-.my_home > h2 {color: #000; clear: both; margin: 20px 0px;}
+.my_home > button {width:90px; height: 30px; background-color: #ED1C24; color: white; font-size:12px; font-weight: 600; margin: 20px 0 0 20px;}
+.my_home > button:hover {background-color: #333333; color: white;}
+.my_home > h2 {color: #000; clear: both; margin: 20px 0;}
+.my_home > p {color: #000; clear: both; margin-top: 20px; font-weight: 600; font-size: 19px; float: left;}
 .my_home > div {display: block; float: left; text-align: center; margin: 0px 20px 20px 20px;}
 .my_home > div > img {width: 120px; height: 160px;}
 .my_home > div > p {color: #000; font-weight: 600; font-size: 14px;}
 .my_lib {margin: 0px auto; padding: 0px 20px;}
 .my_lib > h2 {color: #000; clear: both; margin: 20px 0px;}
-.my_lib > div {display: block; float: left; text-align: center; margin: 0px 20px 20px 20px;}
-.my_lib > div > img {width: 120px; height: 160px;}
-.my_lib > div > p {color: #000; font-weight: 600; font-size: 14px;}
+.my_lib > div {display: block; width: 900px; height: 500px; overflow: auto;}
+.my_lib > div > div {display: block; float: left; text-align: center; margin: 0px 20px 20px 20px;}
+.my_lib > div > div > img {width: 120px; height: 160px;}
+.my_lib > div > div > p {color: #000; font-weight: 600; font-size: 14px;}
 .my_wish {margin: 0px auto; padding: 0px 20px;}
 .my_wish > h2 {color: #000; clear: both; margin: 20px 0px;}
-.my_wish > div {display: block; float: left; text-align: center; margin: 0px 20px 20px 20px;}
-.my_wish > div > img {width: 120px; height: 160px;}
-.my_wish > div > p {color: #000; font-weight: 600; font-size: 14px;}
-.my_member {margin: 0px auto; padding: 0px 20px;}
-.my_member > h2 {color: #000; clear: both; margin: 20px 0px;}
-.my_member > div {display: block; float: left; text-align: center; margin: 0px 20px 20px 20px;}
-.my_weblist {margin: 0px auto; padding: 0px 20px;}
-.my_weblist > h2 {color: #000; clear: both; margin: 20px 0px;}
-.my_weblist > div {display: block; float: left; text-align: center; margin: 0px 20px 20px 20px;}
+.my_wish > div {display: block; width: 900px; height: 500px; overflow: auto;}
+.my_wish > div > div {display: block; float: left; text-align: center; margin: 0px 20px 20px 20px;}
+.my_wish > div > div > img {width: 120px; height: 160px;}
+.my_wish > div > div > p {color: #000; font-weight: 600; font-size: 14px;}
 
+.my_member {margin: 0px auto; padding: 0px 20px;}
+.my_member > h2 {color: #000; margin: 20px 0px 0px 0px;}
+.my_member > p {float: left;}
+.my_member > form {height: 800px; width: 300px; margin: 0px auto;}
+.my_member > form > div {display: block;}
+.my_member > form > button {width:300px; height: 40px; background-color: #ED1C24; color: white; font-size:19px;}
+.my_member > form > button:hover {background-color: #333333; color: white;}
+.my_weblist {margin: 0px auto; padding: 0px 20px; text-align: center;}
+.my_weblist > h2 {color: #000; clear: both; margin: 20px 0px;}
+.my_weblist > div {display: block; text-align: center; margin: 0px auto; width: 600px; height: 500px; overflow: auto;}
+.my_weblist_title {width: 200px; height: 40px; background-color: red; color: white; font-size: 16px; font-weight: 600;}
+.my_weblist_body {font-size: 14px;  height: 25px; border-bottom: 1px solid #ccc;}
 
 .my_bye {margin: 0px auto; padding: 0px 20px; text-align: center;}
 .my_bye > div {display: block; margin: 150px auto; width: 300px; height: 400px;}

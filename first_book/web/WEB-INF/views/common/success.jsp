@@ -24,8 +24,31 @@
 			successMessage = "회원 가입에 성공하셨습니다!";
 			movePath = "${ pageContext.servletContext.contextPath}";
 			break;
-		
-		
+			
+		case "updateMember" : 
+			
+			successMessage = "회원 정보 수정에 성공하셨습니다!";
+			movePath = "${ pageContext.servletContext.contextPath}/member/mypage";
+			break;
+			
+		case "deleteMember" : 
+			
+			successMessage = "회원 탈퇴에 성공하셨습니다!";
+			movePath = "${ pageContext.servletContext.contextPath}/member/logout";
+			break;
+
+		case "updateFreeCoinYn" : 
+			
+			successMessage = "무료 코인 버튼 활성화!";
+			movePath = "${ pageContext.servletContext.contextPath}/member/mypage";
+			break;
+			
+		case "incrementFreeCoin" : 
+			
+			successMessage = "코인 획득!";
+			movePath = "${ pageContext.servletContext.contextPath}/member/mypage";
+			break;
+
 		}
 			alert(successMessage);
 		
