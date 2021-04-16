@@ -7,6 +7,7 @@
 <meta charset="UTF-8">
 <title>Insert title here</title>
 <script src="http://code.jquery.com/jquery-latest.min.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
 <link rel="stylesheet" href="/firstbook/resources/css/webnovel/webnovel.css">
 <link rel="stylesheet" href="/firstbook/resources/css/common/reset.css">
 <link rel="stylesheet" href="/firstbook/resources/css/member/style.css">
@@ -48,9 +49,9 @@
                 <tr>
                     <td> <button type="button" class="firstBtn" onclick="firstChap()">첫화보기</button> 
 
-                        <button  type="button" id="wishbtn" class="likeBtn" onclick="wishList()" value="">하트</button>
-                        <input class="wishList" type="hidden" id="wishList" name="wishList" value="${sessionScope.loginMember.memNum }">
-						<input class="loginMember" type="hidden" id="loginMember" name="loginMember" value="${ requestScope.webnovel.webNovNum }" >
+                        <button  type="button" id="wishBtn" class="likeBtn" >하트</button>
+                        <input class="loginMember" type="hidden" id="loginMember" name="loginMember" value="${sessionScope.loginMember.memNum }">
+						<input class="wishList" type="hidden" id="wishList" name="wishList" value="${ requestScope.webnovel.webNovNum }" >
 
                     </td>
                 </tr>
@@ -149,31 +150,31 @@
 		location.href = link  + "?currentWebNov=" + ${ requestScope.webnovel.webNovNum} + "&currentChap=" + 1;
 
 	}
-	$("#wishbtn").click(function(){
+	
+	$("#wishBtn").click(function(){
 		
-		var wishlistWebnovNum = document.getElementById("wishList");
-		var loginMember = document.getElementById("loginMember");
+		var wishlistWebnovNum = document.getElementById("wishList").value;
+		var loginMember = document.getElementById("loginMember").value;
+		console.log('wish' + wishlistWebnovNum);
+		console.log('login' + loginMember);
   
 			$.ajax({
-				url : ,
-				type : "GET",
+				url : "/firstbook/member/wishlistupdate",
+				method : "GET",
 				data : {
 					wishlistWebnovNum : wishlistWebnovNum,
-					loginMember : loginMember,
-					 success: function (result) {
-			                console.log("Success")
+					loginMember : loginMember},
+			
+				success: function (data) {
+			                console.log(data);
 					 },
-					error: function(){
-						alert("개발자야 뭐하냐");
-					}
+					error: function(error,status){
+			                console.log(error);
+			                console.log(status);
 				}
-			})
+			});
 	
-	})
-		
-		
-		
-	}
+	});
 	</script> 
 	
 </body>

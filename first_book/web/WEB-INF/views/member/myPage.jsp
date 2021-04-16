@@ -51,8 +51,9 @@
                         </c:forEach>
                         <h2>위시리스트</h2>
                         <c:forEach var="wish" items="${ requestScope.wishlist }" begin="0" end="4" step="1">
+        
                         	<div>
-	                            <img src="${ pageContext.servletContext.contextPath }${ wish.webNov.webNovImgLocation }">
+	                            <img src="${ wish.webNov.webNovImgLocation }">
 	                            <p>
 	                            	${ wish.webNov.webNovTitle }<br>
 	                            	${ wish.webNov.webNovAuthor }
@@ -80,7 +81,7 @@
                         <div>
                         <c:forEach var="wish" items="${ requestScope.wishlist }">
                         	<div>
-	                            <img src="${ pageContext.servletContext.contextPath }${ wish.webNov.webNovImgLocation }">
+	                            <img src="${ wish.webNov.webNovImgLocation }">
 	                            <p>
 	                            	${ wish.webNov.webNovTitle }<br>
 	                            	${ wish.webNov.webNovAuthor }

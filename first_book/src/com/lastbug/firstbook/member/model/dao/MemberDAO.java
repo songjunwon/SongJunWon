@@ -197,7 +197,7 @@ public class MemberDAO {
 				webNov.setWebNovInform(rs.getString("WEB_NOV_INFORM"));
 				webNov.setWebNovImgLocation(rs.getString("WEB_NOV_IMG_LOCATION"));
 				webNov.setDayOfWeek(rs.getString("DAY_OF_WEEK"));
-				webNov.setWebNovOpenOrClose(rs.getString("WEB_NOV_OPEN_OR_CLOSE"));
+				webNov.setWebNovOpenOrClose(rs.getString("WEB_NOV_IS_OPEN"));
 				webNov.setFinishedOrNot(rs.getString("FINISHED_OR_NOT"));
 				
 				useCoin.setWebNov(webNov);
@@ -296,7 +296,7 @@ public class MemberDAO {
 				webNov.setWebNovInform(rs.getString("WEB_NOV_INFORM"));
 				webNov.setWebNovImgLocation(rs.getString("WEB_NOV_IMG_LOCATION"));
 				webNov.setDayOfWeek(rs.getString("DAY_OF_WEEK"));
-				webNov.setWebNovOpenOrClose(rs.getString("WEB_NOV_OPEN_OR_CLOSE"));
+				webNov.setWebNovOpenOrClose(rs.getString("WEB_NOV_IS_OPEN"));
 				webNov.setFinishedOrNot(rs.getString("FINISHED_OR_NOT"));
 				
 				wish.setWebNov(webNov);
@@ -421,5 +421,44 @@ public class MemberDAO {
 		
 		return result;
 	}
+
+	public int updateWishList(Connection con, int weblistNum, int memNum2) {
+		
+		PreparedStatement pstmt = null;
+		int result = 0;
+		
+		String query = prop.getProperty("updateWishList");
+		
+		try {
+			pstmt = con.prepareStatement(query);
+			pstmt.setInt(1, weblistNum);
+			pstmt.setInt(2, memNum2);
+			
+			
+			result = pstmt.executeUpdate();
+		} catch (SQLException e) {
+			e.printStackTrace();
+		} finally {
+			close(pstmt);
+		}
+		
+		return result;
+	}
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 

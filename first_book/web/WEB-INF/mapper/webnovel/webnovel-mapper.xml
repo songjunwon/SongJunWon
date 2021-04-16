@@ -101,4 +101,10 @@
          WHERE A.WEB_NOV_NUM = ?
            AND A.CHAP_NUM = ?
 	</entry>
+	<entry key="selectTotalCount">
+	    SELECT
+	           COUNT(*)
+	      FROM WEB_NOV_INFO
+	</entry>
+
 </properties>

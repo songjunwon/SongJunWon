@@ -151,7 +151,7 @@ public class WebNovelService {
 		
 		int result = webNovelDAO.selectTotalCount(con);
 		
-		
+		System.out.println("select total Count" + result);
 		
 		close(con);
 		

@@ -204,6 +204,24 @@ public class MemberService {
 		
 		return result;
 	}
+
+	public int updateWishList(int weblistNum, int memNum2) {
+
+		Connection con = getConnection();
+		
+		int result = memberDAO.updateWishList(con, weblistNum, memNum2);
+		
+		if(result > 0) {
+			commit(con);
+		} else {
+			rollback(con);
+		}
+		
+		close(con);
+		
+		return result;
+
+	}
 	
 	
 }
