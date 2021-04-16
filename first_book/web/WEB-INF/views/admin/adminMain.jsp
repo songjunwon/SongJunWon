@@ -12,7 +12,7 @@
 
 
 <body>
-	<jsp:include page="adminHeader.jsp"></jsp:include>
+	<jsp:include page="adminHeader.jsp"/>
 	
 		<c:set var="now" value="<%=new java.util.Date()%>" />
 		<c:set var="sysTime"><fmt:formatDate value="${now}" pattern="yyyy-MM-dd E hh:mm:ss" /></c:set>

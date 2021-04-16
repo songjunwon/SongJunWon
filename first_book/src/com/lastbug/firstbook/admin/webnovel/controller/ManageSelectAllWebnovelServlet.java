@@ -12,7 +12,7 @@ import javax.servlet.http.HttpServletResponse;
 import com.lastbug.firstbook.admin.webnovel.model.service.AdminWebNovelService;
 import com.lastbug.firstbook.webnovel.model.dto.WebNovelInfoDTO;
 
-@WebServlet("/admin/webnovel")
+@WebServlet("/admin/webNovel")
 public class ManageSelectAllWebnovelServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 

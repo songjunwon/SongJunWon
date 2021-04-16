@@ -1,17 +1,69 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
-<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>    
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>   
+ 
 <!DOCTYPE html>
 <html>
 <head>
 <meta charset="UTF-8">
 <title>Insert title here</title>
 </head>
-
 <link rel="stylesheet" href="/firstbook/resources/css/admin/memList.css">
+<script src="http://code.jquery.com/jquery-latest.min.js"></script>
 
 <body>
 	<jsp:include page="adminHeader.jsp"></jsp:include>
+	
+	
+		<section>
+	
+	<br><br><br><br><br><br><br><br><br><br><br>	
+	
+	<table class="memList">
+		
+		<thead>
+		<tr> <th> </th>
+			<th>회원번호</th>
+			<th>회원이름</th>
+			<th>아이디</th>
+			<th>회원이메일</th>
+			<th>회원생년월일</th>
+			<th>탈퇴여부</th>
+			<th>탈퇴일자</th>
+			<th>회원분류</th>
+			<th>차단여부</th>
+			<th>차단일자</th>
+			<th>가입일자</th>
+			
+		</tr>
+		</thead>
+		
+		<tbody>
+		<c:forEach var="mem" items="${ requestScope.memList }">	
+		
+			<tr> <td> <input type="checkbox"> </td>
+				<td><c:out value="${ mem.memNum }"/></td>
+				<td><c:out value="${ mem.memName }"/></td>
+				<td><c:out value="${ mem.memId }"/></td>
+				<td><c:out value="${ mem.memEmail }"/></td>
+				<td><c:out value="${ mem.memBirthDate }"/></td>
+				<td><c:out value="${ mem.memWithdrawYn }"/></td>
+				<td><c:out value="${ mem.memWithdrawDate }"/></td>
+				<td><c:out value="${ mem.memClass }"/></td>
+				<td><c:out value="${ mem.memBlockYn }"/></td>
+				<td><c:out value="${ mem.memBlockDate }"/></td>
+				<td><c:out value="${ mem.memEnrollDate }"/></td>	
+			</tr>
+		
+		</c:forEach>
+		</tbody>
+	</table>
+	</section>
+	
+	
+	
+	
+	
 	
 	<aside>
 
@@ -42,15 +94,7 @@
 								<td> <input type="search" id="memSearchValue" name="memSearchValue" value="${requestScope.memSearchValue}"></td>
 							</tr>
 			
-							<tr>	
-								<td> <label>블랙리스트 : </label>  </td>
-								<td>
-			
-								<label>Y </label><input type="radio" name="blockCheck">
-								<label>N </label><input type="radio" name="blockCheck" checked="checked">
-			
-								</td>	
-							</tr>
+
 							<tr></tr>
 						
 						
@@ -72,16 +116,7 @@
 								
 								<td> <input type="search" id="memSearchValue" name="memSearchValue"></td>
 							</tr>
-			
-							<tr>	
-								<td> <label>블랙리스트 : </label>  </td>
-								<td>
-			
-								<label>Y </label><input type="radio" name="blockCheck">
-								<label>N </label><input type="radio" name="blockCheck" checked="checked">
-			
-								</td>	
-							</tr>
+
 							<tr></tr>
 						</c:otherwise>
 						
@@ -92,7 +127,7 @@
 				
 				<tfoot>
 				<tr>	
-					<td colspan="2"> <button type="submit" class="btn">검색</button> </td>
+					<td colspan="2"> <button type="submit" class="btn" onclick="searchPageButtonAction(this.innerText);">검색</button> </td>
 						
 				</tr>
 				</tfoot>
@@ -100,64 +135,62 @@
 			</table>
 	
 		</form>
+		
+		<form action="${ pageContext.servletContext.contextPath }/admin/block" method="post">
+			
+ 				<table id="t2">					
+					<tr>
+						<td> <label>차단처리 : </label>  </td>
+						<td>
+						<label>Y </label><input type="radio" id="radioBtn" name="blockCheck" value="Y">
+						<label>N </label><input type="radio" id="radioBtn" name="blockCheck" value="N">
+						</td>
+					</tr>	
+					
+					<tr>	
+					<td colspan="2"> <button type="submit" class="btn" onclick="blockButtonAction(this.innerText);">차단처리</button> </td>
+						
+					</tr>
+					 
+				</table>
+		</form>
+			
 		</div>
-
+		
 		
 	</aside>
 	
-	
-	<section>
+		<script>
 		
-	
-	<table class="memList">
-		
-		<thead>
-		<tr> 
-			<th>회원번호</th>
-			<th>회원이름</th>
-			<th>아이디</th>
-			<th>회원이메일</th>
-			<th>회원생년월일</th>
-			<th>탈퇴여부</th>
-			<th>탈퇴일자</th>
-			<th>회원분류</th>
-			<th>차단여부</th>
-			<th>차단일자</th>
-			<th>가입일자</th>
+	       $(document).ready(function () {
+	          $('#radioBtn').click(function () {
+	            
+	            var radioVal = $('input[name="blockCheck"]:checked').val();
+	         
+	          });
+	       });
+				
+			const link = "${ pageContext.servletContext.contextPath }/admin/list";
+			const searchLink = "${ pageContext.servletContext.contextPath }/admin/search";
+			const blockLink = "${ pageContext.servletContext.contextPath }/admin/block";
 			
-		</tr>
-		</thead>
-		
-		<tbody>
-		<c:forEach var="mem" items="${ requestScope.memList }">	
-		
-			<tr>
-				<td><c:out value="${ mem.memNum }"/></td>
-				<td><c:out value="${ mem.memName }"/></td>
-				<td><c:out value="${ mem.memId }"/></td>
-				<td><c:out value="${ mem.memEmail }"/></td>
-				<td><c:out value="${ mem.memBirthDate }"/></td>
-				<td><c:out value="${ mem.memWithdrawYn }"/></td>
-				<td><c:out value="${ mem.memWithdrawDate }"/></td>
-				<td><c:out value="${ mem.memClass }"/></td>
-				<td><c:out value="${ mem.memBlockYn }"/></td>
-				<td><c:out value="${ mem.memBlockDate }"/></td>
-				<td><c:out value="${ mem.memEnrollDate }"/></td>	
-			</tr>
-		
-		</c:forEach>
-		</tbody>
-	</table>
-	</section>
+			function searchPageButtonAction(text) {
+				location.href = searchLink + text + "&memSearchCondition=${requestScope.memSearchCondition}&msmSearchValue=${requestScope.memSearchValue}";
+			}
+
+			function blockButtonAction(text) {
+				location.href = blockLink + text
+			}
 	
-	<script type="text/javascript">
-		
-		const link = "{ pageContext.servletContext.contextPath }/admin/list"
-		const searchLink = "{ pageContext.servletContext.contextPath }/admin/search"
-		
-	</script>
-	
+		</script>
+
 	
 	
 </body>
+
+
+		
+	
+
+
 </html>
