@@ -12,9 +12,9 @@
              , A.DAY_OF_WEEK
              , A.WEB_NOV_IMG_LOCATION
              , A.FINISHED_OR_NOT
-             , A.WEB_NOV_OPEN_OR_CLOSE
+             , A.WEB_NOV_IS_OPEN
           FROM WEB_NOV_INFO A
-         ORDER BY A.WEB_NOV_COUNT ASC
+         ORDER BY A.WEB_NOV_COUNT DESC
 	</entry>
 	<entry key="selectWebNovelDetail">
         SELECT 		/* com.lastbug.firstbook.webnovel.model.dao.WebNovelDAO#selectWebNovelDetail() */
@@ -34,7 +34,7 @@
 		       A.WEB_NOV_NUM
 		     , A.CHAP_NUM
 		     , A.CHAP_WRITTEN_DATE
-		     , A.CHAP_READ_OR_NOT
+		     , A.CHAP_READABLE
 		  FROM WEB_NOV_CHAP_SEARCH A
 		  JOIN WEB_NOV_INFO B ON (A.WEB_NOV_NUM = B.WEB_NOV_NUM)
 		  JOIN WEB_NOV_CHAP_NUM C ON (A.CHAP_NUM = C.CHAP_NUM)
@@ -65,7 +65,7 @@
                              , A.CHAP_NUM
                              , A.WEB_NOV_PAGE_NUM
                              , A.WEB_NOV_PAGE_CONTENT
-                          FROM Web_CONTENT A
+                          FROM WEB_NOV_CONTENT_DETAIL A
                          ORDER BY A.WEB_NOV_PAGE_NUM ASC
                       ) B
                  WHERE B.WEB_NOV_NUM = ?
@@ -97,6 +97,8 @@
 	<entry key="searchWebNovelCount">
 	    SELECT 		/* com.lastbug.firstbook.webnovel.model.dao.WebNovelDAO#searchWebNovelCount() */
                COUNT(*)
-          FROM WEB_NOV_INFO A
+          FROM WEB_NOV_CONTENT_DETAIL A
+         WHERE A.WEB_NOV_NUM = ?
+           AND A.CHAP_NUM = ?
 	</entry>
 </properties>

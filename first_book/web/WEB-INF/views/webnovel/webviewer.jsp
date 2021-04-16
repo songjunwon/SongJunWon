@@ -37,9 +37,10 @@
 									<button id="searchStartPage" class="backbtn"
 										onclick="back(this)"><</button>
 								</c:if>
-								 <c:if test="${ requestScope.pageInfo.pageNo lt requestScope.pageInfo.maxPage }">
+								 <%-- <c:if test="${ requestScope.pageInfo.pageNo lt requestScope.pageInfo.maxPage }"> --%>
 									<button type="button" id="searchNextPage" class="nextbtn" onclick="next()">></button>
-								</c:if></td>
+								<%-- </c:if> --%>
+								</td>
 						</tr>
 					</c:when>
 				</c:choose>
@@ -93,9 +94,9 @@
 		
 		var t = ${pageInfo.pageNo};
 		/* 다음 쪽이 계속 있을 때 */
-		if(${pageInfo.pageNo}>= ${pageInfo.maxPage}){
+		if(${pageInfo.pageNo} < ${pageInfo.maxPage}){
 		location.href = link  + "?currentWebNov=${ requestScope.currentWebNov}&currentChap=${ requestScope.currentChap}&currentPage=" + (parseInt(t) + 1);
-		}else{		// 모든 내용을 봤을 때 알람!
+		}else {		// 모든 내용을 봤을 때 알람!
 			alert('${ requestScope.title.webNovTitle }의 ${ requestScope.currentChap} 화를 모두 보셨습니다! ');
 		}	
 	}

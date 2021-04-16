@@ -8,7 +8,7 @@
 </head>
 <body>
 	    <div id="wrap" >
-	    <form action="${ pageContext.servletContext.contextPath}/admin/novel/regist" method = "post" encType="multipart/form-data">
+	    <form action="${ pageContext.servletContext.contextPath}/admin/webnovel/regist" method = "post" encType="multipart/form-data">
         <div class="adminResgitTitle">
             웹소설 등록
         </div>

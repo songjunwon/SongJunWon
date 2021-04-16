@@ -47,7 +47,7 @@ public class WebNovelService {
 		/* 조회수 증가 */
 		int result = webNovelDAO.incrementWebnovelCount(con, no);
 
-		System.out.println("조회수 : " + result);
+//		System.out.println("조회수 : " + result);
 
 		if(result > 0) {
 

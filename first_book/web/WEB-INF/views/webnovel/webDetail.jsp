@@ -33,7 +33,7 @@
                                 작가 : <c:out value="${ requestScope.webnovel.webNovAuthor }"/><br> 
                                 #<c:out value="${ requestScope.webnovel.categoryName.categoryName }"/> <br><br>
                             </h3>
-                        </div>
+                       </div>
                         <div class="subtitle_div">
                             <h3 class="subtitle"> 작품소개<br><br> </h3>
                             <h3 class="subtitle_small">
@@ -47,7 +47,11 @@
                 </tr>
                 <tr>
                     <td> <button type="button" class="firstBtn" onclick="firstChap()">첫화보기</button> 
-                        <button  type="button" class="likeBtn">하트</button>
+
+                        <button  type="button" id="wishbtn" class="likeBtn" onclick="wishList()" value="">하트</button>
+                        <input class="wishList" type="hidden" id="wishList" name="wishList" value="${sessionScope.loginMember.memNum }">
+						<input class="loginMember" type="hidden" id="loginMember" name="loginMember" value="${ requestScope.webnovel.webNovNum }" >
+
                     </td>
                 </tr>
                 <tr>
@@ -141,9 +145,34 @@
 		}
 	/* 첫화보기를 눌렀을 때 */
 	function firstChap(){
-	
+
 		location.href = link  + "?currentWebNov=" + ${ requestScope.webnovel.webNovNum} + "&currentChap=" + 1;
 
+	}
+	$("#wishbtn").click(function(){
+		
+		var wishlistWebnovNum = document.getElementById("wishList");
+		var loginMember = document.getElementById("loginMember");
+  
+			$.ajax({
+				url : ,
+				type : "GET",
+				data : {
+					wishlistWebnovNum : wishlistWebnovNum,
+					loginMember : loginMember,
+					 success: function (result) {
+			                console.log("Success")
+					 },
+					error: function(){
+						alert("개발자야 뭐하냐");
+					}
+				}
+			})
+	
+	})
+		
+		
+		
 	}
 	</script> 
 	

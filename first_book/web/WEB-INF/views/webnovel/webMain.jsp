@@ -64,7 +64,7 @@
 					<c:forEach var="webnovel" items="${ requestScope.webNovelList }">
 						<c:if test="${ webnovel.dayOfWeek eq '화' }">
 							<div class="clickWebNovel" >
-								<button type="button" onclick="gogo(${ webnovel.webNovNum },'${webnovel.webNovOpenOrClose }')">
+								<button type="button" onclick="gogo(${ webnovel.webNovNum },'${webnovel.webNovOpenOrClose}')">
 								<img src="${webnovel.webNovImgLocation }">
 								<p>
 									제목 : ${ webnovel.webNovTitle }<br> 작가 : ${ webnovel.webNovAuthor }
@@ -165,21 +165,23 @@
 		function gogo(val1, val2) {
 			var t = val1;
 			var t2 = val2;
-			console.log(t2);
+			console.log(t);
+			console.log('들어가기전' + t2);
 			
 			/* 선택한 웹소설이 조회된 경우 */
-		  if(t2 == 'N ') {
+		  if(t2 == 'Y ') {
 				
 			location.href = "${ pageContext.servletContext.contextPath }/webnovel/detail?webNovNum="
 					+ parseInt(t);
+			console.log(t);
+			console.log('들어가기후' + t2);
 			/* console.log(t2); */
 			
 			/* 선택한 웹소설이 조회되지 않는경우 */
-			} else if(t2 == 'Y '){
-				
+			} else if(t2 == 'N '){
 				alert("해당 웹소설은 현재 중비 중에 있습니다.");
+				
 			location.href = "${ pageContext.servletContext.contextPath }/webnovel/list";
-			console.log(t2);
 			}
 			
 		}
@@ -215,14 +217,15 @@
 	                        if( currentPage === 1 ){
 	                           console.log(data);
 	                        } else {
-	                           /* var section = $(".section");
+	                            var section = $(".section");
 	                           
 	                           for(var i = 0 ; i < data.length ; i++){
 	                              console.log(data[i].postNo);
 	                              console.log(data[i].postTitle);
 	                              console.log(data[i].minPrice);
-	                              
-	                              var postList = $("<table>").addClass("post");
+	                           }
+	                           } 
+	                              /* var postList = $("<table>").addClass("post");
 	                              var moreList = 
 	                              $("<tr id='thumbnail'>" + "<td colspan='2px'>" + data[i].postNo + "</td>" + "<tr>"
 	                                   + "<tr id='title'>" + "<td colspan='2px'>" + data[i].postTitle + "</td>" + "<tr>"
@@ -230,9 +233,9 @@
 	                                      + "<td align='right'>" + data[i].minPrice + " 원 " +"</td>"+ "</tr>");
 	                              
 	                              postList.append(moreList);
-	                              section.append(postList); */
-	                           }
-	                        }
+	                              section.append(postList); 
+	                           } 
+	                        } */
 	                     },
 	                     error : function(error) {
 	                        console.log("에러다 개발자야 뭐하냐!");

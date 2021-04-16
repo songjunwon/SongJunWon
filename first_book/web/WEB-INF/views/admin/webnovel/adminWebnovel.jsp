@@ -112,7 +112,7 @@
 	if (document.getElementById("registNewNovel")) {
 		const $registNewNovel = document.getElementById("registNewNovel");
 		$registNewNovel.onclick = function() {
-			location.href = "/firstbook/admin/novel/regist";
+			location.href = "/firstbook/admin/webnovel/regist";
 		}
 	}
 	/* 수정용 메소드 */
@@ -164,7 +164,7 @@
 	
 	function update(){
 		document.getElementById("form").submit();
-		location.href ="${ pageContext.servletContext.contextPath}/admin/novel/update?webNovNum=" + document.getElementById("webNovNum").value 
+		location.href ="${ pageContext.servletContext.contextPath}/admin/webnovel/update?webNovNum=" + document.getElementById("webNovNum").value 
 	}
 </script>
 </body>

@@ -25,7 +25,7 @@ import com.lastbug.firstbook.webnovel.model.dto.WebNovelInfoDTO;
 import net.coobird.thumbnailator.Thumbnails;
 
 
-@WebServlet("/admin/novel/regist")
+@WebServlet("/admin/webnovel/regist")
 public class AdminRegistNewNovel extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 	private String total = "";
