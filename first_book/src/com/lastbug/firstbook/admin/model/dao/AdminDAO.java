@@ -13,6 +13,7 @@ import java.util.Properties;
 
 import com.lastbug.firstbook.common.config.ConfigLocation;
 import com.lastbug.firstbook.member.model.dto.MemberDTO;
+import com.lastbug.firstbook.webnovel.model.dto.WebNovelInfoDTO;
 
 import static com.lastbug.firstbook.common.jdbc.JDBCTemplate.*;
 
@@ -175,6 +176,28 @@ public class AdminDAO {
 		
 		return searchMemList;
 	}
-	
+
+
+
 	
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

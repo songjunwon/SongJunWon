@@ -29,10 +29,11 @@ public class ShowDetailWebNovelServlet extends HttpServlet {
 		/* 앞에서 전체 웹소설 목록 중에서 선택한 웹소설 번호로 웹소설 정보 조회 */
 		WebNovelInfoDTO webDetail = webNovelService.selectWebNovelDetail(no);
 		
+		
 		List<WebNovChapSearchDTO> webNovelChap = null;
 		
 		
-		System.out.println("내가 선택한 회차는 " + webDetail);
+//		System.out.println("내가 선택한 회차는 " + webDetail);
 		
 		String path = "";
 		/* 선택한 웹소설 조회가 null이 아닌 경우 */
@@ -41,13 +42,13 @@ public class ShowDetailWebNovelServlet extends HttpServlet {
 			webNovelChap = webNovelService.selectWebNovelallChapter(webDetail);
 	
 			
-			System.out.println("회차정보가 있나? " + webNovelChap);
+//			System.out.println("회차정보가 있나? " + webNovelChap);
 			path = "/WEB-INF/views/webnovel/webDetail.jsp";
 			request.setAttribute("webnovel", webDetail);
 			request.setAttribute("webnoveldetail", webNovelChap);
 		} else {
 			path = "/WEB-INF/views/common/failed.jsp";
-			request.setAttribute("message", "웹소설 상세 보기 조회에 실패하셨습니다.");
+			request.setAttribute("failedCode", "webnovelPerChap");
 		}
 	
 		request.getRequestDispatcher(path).forward(request, response);

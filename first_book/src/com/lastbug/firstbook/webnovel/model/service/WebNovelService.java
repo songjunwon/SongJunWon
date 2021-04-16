@@ -26,8 +26,8 @@ public class WebNovelService {
 	public List<WebNovelInfoDTO> selectAllNovel() {
 
 		Connection con = getConnection();
-		
-		System.out.println("커넥션에 왓니?");
+
+		//		System.out.println("커넥션에 왓니?");
 
 		List<WebNovelInfoDTO> webNovelList = webNovelDAO.selectAllNovel(con);
 
@@ -44,15 +44,22 @@ public class WebNovelService {
 		Connection con = getConnection();
 		WebNovelInfoDTO novelDetail = null;
 
+		/* 조회수 증가 */
+		int result = webNovelDAO.incrementWebnovelCount(con, no);
 
-		novelDetail = webNovelDAO.selectWebNovelDetail(con, no);
+		System.out.println("조회수 : " + result);
 
-		//		System.out.println("service에 선택된 자료" + novelDetail);
+		if(result > 0) {
 
-		if(novelDetail != null) {
+			novelDetail = webNovelDAO.selectWebNovelDetail(con, no);
+			if(novelDetail != null) {
 
-			return novelDetail;
-		} else {
+				commit(con);
+			} else {
+				rollback(con);
+			}
+
+		}else {
 			rollback(con);
 		}
 
@@ -60,6 +67,7 @@ public class WebNovelService {
 
 		return novelDetail;
 	}
+
 	/* 선택한 웹소설에 대한 챕터 조회용 메소드 */
 	public List<WebNovChapSearchDTO> selectWebNovelallChapter(WebNovelInfoDTO webDetail) {
 
@@ -82,6 +90,7 @@ public class WebNovelService {
 		return webNovelChap;
 	}
 
+	/* 선택한 웹소설의 챕터안에 있는 웹소설 내용 조회용 메소드 */
 	public List<WebNovContentDetailDTO> selectPerChap(PageInfoDTO pageInfo, int currentWebNovNum, int currentChapNum) {
 
 		Connection con = getConnection();
@@ -103,36 +112,51 @@ public class WebNovelService {
 	public int searchWebNovelCount(int currentWebNovNum, int currentChapNum) {
 
 		Connection con = getConnection();
-		
+
 		int totalCount = webNovelDAO.searchWebNovelCount(con, currentWebNovNum, currentChapNum);
-		
+
 		if(totalCount > 0) {
 			commit(con);
 		} else {
 			rollback(con);
 		}
-		
+
 		close(con);
-		
+
 		return totalCount;
 	}
 
+	/*  */
 	public WebNovelInfoDTO searchTitle(int currentWebNovNum) {
 
 		Connection con = getConnection();
-		
+
 		WebNovelInfoDTO title = webNovelDAO.searchTitle(con, currentWebNovNum);
-		
+
 		if(title != null) {
 			commit(con);
 		}else {
 			rollback(con);
 		}
 
+
+		close(con);
+
+		return title;
+	}
+
+	public int selectTotalCount() {
+
+		Connection con = getConnection();
+		
+		int result = webNovelDAO.selectTotalCount(con);
+		
+		
 		
 		close(con);
 		
-		return title;
+		return result;
+
 	}
 
 }

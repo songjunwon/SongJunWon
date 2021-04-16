@@ -46,7 +46,7 @@
                 <tr>
                 </tr>
                 <tr>
-                    <td> <button type="button" class="firstBtn" onclick="first2()">첫화보기</button> 
+                    <td> <button type="button" class="firstBtn" onclick="firstChap()">첫화보기</button> 
                         <button  type="button" class="likeBtn">하트</button>
                     </td>
                 </tr>
@@ -67,16 +67,24 @@
                     <td class="chap_img"><img src="${ requestScope.webnovel.webNovImgLocation}" class="chap_img_real" alt="1화부터사진">
                     </td>
                     <td class="prolog">
-                        <h2 class="chap_date"><%--  ${ webNovelChap.webNovelChapDate.webNovelChapDate}  --%></h2>                       
+                        <h2 class="chap_date"> 등록 날짜 :  ${ webNovelChap.webChapNumDate} </h2>                       
                     </td> 
                     <td class="freeBtn">
-
-                     <button class="freebtn_real" id="freebtn_real_2" type="button" value="${ webNovelChap.webNovChapNum.webNovChapNum}" onclick="test(this)">
+                    <!-- 5화까지 무료! -->
+                    
+                     <%-- <button class="freebtn_real" id="freebtn_real_2" type="button" onclick="webView(${ webNovelChap.webNovChapNum.webNovChapNum}, '${webNovelChap.chapReadOrNot}')" >
+                     무료보기 </button>
+                    <input type="hidden" id="webNovNum" value= "${ webNovelChap.webNovChapNum.webNovChapNum}"> 
+             		 --%>
+             		<!-- 6화부터 결제!  -->
+             
+                      <button class="freebtn_real" id="freebtn_real_2" type="button" onclick="webView(${ webNovelChap.webNovChapNum.webNovChapNum}, '${webNovelChap.chapReadOrNot}')" >
                     ${ webNovelChap.webNovChapNum.webNovChapNum}화 보기 </button>
                     <input type="hidden" id="webNovNum" value= "${ webNovelChap.webNovChapNum.webNovChapNum}"> 
+             		 
              		</td>
                 </tr>
-                </c:forEach>
+                </c:forEach>               
             </table>
         </section>
         
@@ -113,15 +121,27 @@
 	const link = "${ pageContext.servletContext.contextPath}/webnovel/chapList";
 
 
-	function test(testP){
+	function webView(var1, var2){
 			
-			var t = testP.value;
+		var t = var1;
+		var t2 = var2;
+		console.log(t);
+		console.log(t2);
+		
+		/* 선택한 웹소설 챕터가 없는 경우 */
+		if(t2 == 'N'){
+			 alert("해당 웹소설의 " + t + "화는 준비 중에 있습니다!")
+			 
+		/* 선택한 웹소설 챕터가 있는 경우 */
+			} else if (t2 == 'Y'){
+				
+			location.href = link  + "?currentWebNov=" + ${ requestScope.webnovel.webNovNum} + "&currentChap=" + t;			
+			}
 
-			location.href = link  + "?currentWebNov=" + ${ requestScope.webnovel.webNovNum} + "&currentChap=" + t;
 		}
-	function first2(){
+	/* 첫화보기를 눌렀을 때 */
+	function firstChap(){
 	
-
 		location.href = link  + "?currentWebNov=" + ${ requestScope.webnovel.webNovNum} + "&currentChap=" + 1;
 
 	}

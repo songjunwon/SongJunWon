@@ -23,7 +23,7 @@ public class ContestService {
 		
 
 		Connection con = getConnection();
-		String Month = "";
+		String month = "";
 		String trueMonth ="";
 		
 		
@@ -42,11 +42,10 @@ public class ContestService {
 		case "12"  : trueMonth += 4; break;
 		}
 		
-		Month = NowYear() + "Q" + trueMonth;
-		System.out.println(Month);
+		month = NowYear() + "Q" + trueMonth;
 		
 		
-		List<ContestDTO> contestList = contestDAO.selectAllContestList(con, Month);
+		List<ContestDTO> contestList = contestDAO.selectAllContestList(con, month);
 		
 		close(con);
 		
@@ -54,35 +53,105 @@ public class ContestService {
 		
 	}
 	
-	// 투표 관련 서비스
-	public int selectVoting() {
+	// 8강 올라간 인원 투표
+	public List<ContestDTO> rankEightconstList() {
+		
 		Connection con = getConnection();
+		String month = "";
+		String trueMonth ="";
 		
-		int result = contestDAO.selectVoting(con);
+		
+		switch (NowMonth()) {
+		case "01"  : trueMonth += 1; break;
+		case "02"  : trueMonth += 1; break;
+		case "03"  : trueMonth += 1; break;
+		case "04"  : trueMonth += 2; break;
+		case "05"  : trueMonth += 2; break;
+		case "06"  : trueMonth += 2; break;
+		case "07"  : trueMonth += 3; break;
+		case "08"  : trueMonth += 3; break;
+		case "09"  : trueMonth += 3; break;
+		case "10"  : trueMonth += 4; break;
+		case "11"  : trueMonth += 4; break;
+		case "12"  : trueMonth += 4; break;
+		}
+		
+		month = NowYear() + "Q" + trueMonth;
 		
 		
+		List<ContestDTO> contestListRankEight = contestDAO.rankEightconstList(con, month);
 		
 		close(con);
-		return result;
+		return contestListRankEight;
 	}
+	
+	
+	
+	
+	
+	
+	// 8강 4강 결승 보이게해주는 서비스
+	public int selectdate(List<ContestDTO> contestList) {
+		int date = 0;
+		
+		if(contestList.size() == 2) {
+			date += 1;
+		}
+		
+		return date;
+	}
+	
+	
+	
+	
 	
 	// 현재 년도 알아오는 메소드
 	public static String NowYear() {
-		//long 타입으로 System.currentTimeMillis() 데이터를 받아야합니다
 		long time = System.currentTimeMillis();
 		SimpleDateFormat dayTime = new SimpleDateFormat("yyyy");
 		String str = dayTime.format(new Date(time));
-		return str; //return은 메소드 호출 후 데이터를 반환해줍니다.
+		return str; 
 	}
 	
 	// 현재 달 알아오는 메소드 
 	public static String NowMonth() {
-		//long 타입으로 System.currentTimeMillis() 데이터를 받아야합니다
 		long time = System.currentTimeMillis(); 
 		SimpleDateFormat dayTime = new SimpleDateFormat("MM");
 		String str = dayTime.format(new Date(time));
-		return str; //return은 메소드 호출 후 데이터를 반환해줍니다.
+		return str; 
 	}
+	
+	// 8강 4강 결승 보이게해주는 메소드
+		public static String NowDate() {
+			long time = System.currentTimeMillis();
+			SimpleDateFormat dayTime = new SimpleDateFormat("MMdd");
+			String str = dayTime.format(new Date(time));
+			return str; 
+		}
+
+		public int selectdate8() {
+			int date = 0;
+			if(Integer.valueOf(NowDate()) <= 0415 && Integer.valueOf(NowDate()) >= 0630) {
+				date += 2;
+			}
+			return date;
+		}
+		
+		public int selectdate4() {
+			int date = 0;
+			if(Integer.valueOf(NowDate()) <= 0515 && Integer.valueOf(NowDate()) >= 0630) {
+				date += 3;
+			}
+			return date;
+		}
+
+		
+	
+
+	
+
+	
+
 
 	
 }

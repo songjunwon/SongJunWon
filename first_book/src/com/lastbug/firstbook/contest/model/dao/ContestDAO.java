@@ -32,18 +32,17 @@ public class ContestDAO {
 		}
 	}
 
-
-	public List<ContestDTO> selectAllContestList(Connection con, String Month) {
+	// 현재 참가자 조회
+	public List<ContestDTO> selectAllContestList(Connection con, String month) {
 		PreparedStatement pstmt = null;
 		ResultSet rset = null;
 		
 		List<ContestDTO> contestList = null;
-		System.out.println(Month);
 		String query = prop.getProperty("selectAllContestList");
 
 		try {
 			pstmt = con.prepareStatement(query);
-			pstmt.setString(1, Month);
+			pstmt.setString(1, month);
 			
 			
 			rset = pstmt.executeQuery();
@@ -60,7 +59,7 @@ public class ContestDAO {
 				contest.setNovTitle(rset.getString("NOV_TITLE"));
 				contest.setNovInfo(rset.getString("NOV_INFO"));
 				contest.setCompetSsn(rset.getString("COMPET_SSN"));
-				contest.setCompetNovImgaiion(rset.getString("COMPET_NOV_IMG_LOCATION"));
+				contest.setCompetNovImgLocation(rset.getString("COMPET_NOV_IMG_LOCATION"));
 				contest.setScore(rset.getInt("SCORE"));
 				contest.setCompetActYn(rset.getString("COMPET_ACT_YN"));
 				
@@ -78,24 +77,57 @@ public class ContestDAO {
 		return contestList;
 	}
 
-
-	public int selectVoting(Connection con) {
-		
+	// 8강 조회
+	public List<ContestDTO> rankEightconstList(Connection con, String month) {
 		PreparedStatement pstmt = null;
-		int result = 0;
+		ResultSet rset = null;
 		
-		String query = prop.getProperty("selectVoting");
+		List<ContestDTO> contestListRankEight = null;
+		String query = prop.getProperty("rankEightconstList");
 		
 		try {
 			pstmt = con.prepareStatement(query);
+			pstmt.setString(1, month);
 			
+			
+			rset = pstmt.executeQuery();
+			
+			contestListRankEight = new ArrayList<>();
+			
+			while(rset.next()) {
+			
+				ContestDTO contest = new ContestDTO();
+
+				contest.setCompetNum(rset.getInt("COMPET_NUM"));
+				contest.setMemNum(rset.getInt("MEM_NUM"));
+				contest.setCompetPaperYn(rset.getString("COMPET_PAPER_YN"));
+				contest.setNovTitle(rset.getString("NOV_TITLE"));
+				contest.setNovInfo(rset.getString("NOV_INFO"));
+				contest.setCompetSsn(rset.getString("COMPET_SSN"));
+				contest.setCompetNovImgLocation(rset.getString("COMPET_NOV_IMG_LOCATION"));
+				contest.setScore(rset.getInt("SCORE"));
+				contest.setCompetActYn(rset.getString("COMPET_ACT_YN"));
+				contestListRankEight.add(contest);	
+				
+			
+				
+			}
 		} catch (SQLException e) {
 			e.printStackTrace();
-		}finally {
+		} finally {
+			close(rset);
 			close(pstmt);
 		}
 		
-		return result;
+		return contestListRankEight;
 	}
+	
+
+	
+	
+	
+
+
+
 }
 

@@ -11,6 +11,7 @@ import java.util.Properties;
 
 import com.lastbug.firstbook.common.config.ConfigLocation;
 
+/* DB와의 연결, close(preparedStatement, ResultSet, Statement) commit, rollback 메소드를 따로 모아 놓은 클래스 */
 public class JDBCTemplate {
 	
 	public static Connection getConnection() {

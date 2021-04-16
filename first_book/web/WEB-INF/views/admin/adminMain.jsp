@@ -8,19 +8,8 @@
 <meta charset="UTF-8">
 <title>Insert title here</title>
 </head>
+<link rel="stylesheet" href="/firstbook/resources/css/admin/main.css">
 
-<style>
-	figure { text-align: left;}
-	#a1 { position: absolute; width: 1474px; height: 182px; left: 223px; top: 165px; background-color: red; }
-	#a1 table { margin-left: 50px; text-align : center; border: 1px solid #444444; border-collapse: collapse; border-spacing: 0; border-spacing: 30px;}
-	#a1 table>thead { background-color: silver; }
-	#a2 { position: absolute; left: 252px; top: 385px;}
-	#a3 { position: absolute; left: 1051px; top: 402px; }
-	#a3 table { margin-right: 50px; border: 1px solid #444444;}
-	#a4 { position: absolute; left: 252px; top: 864px; }
-	#a5 { position: absolute; width: 675px; height: 271px; left: 1022px; top: 864px; }
-	 	
-</style>
 
 <body>
 	<jsp:include page="adminHeader.jsp"></jsp:include>

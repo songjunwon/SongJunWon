@@ -13,7 +13,6 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Properties;
 
-import org.apache.jasper.tagplugins.jstl.core.Set;
 
 import com.lastbug.firstbook.common.config.ConfigLocation;
 import com.lastbug.firstbook.webnovel.model.dto.GenreCategoryDTO;
@@ -62,6 +61,13 @@ public class WebNovelDAO {
 				webNovel.setWebNovTitle(rset.getString("WEB_NOV_TITLE"));
 				webNovel.setWebNovAuthor(rset.getString("WEB_NOV_AUTHOR"));
 				webNovel.setWebNovInform(rset.getString("WEB_NOV_INFORM"));
+				webNovel.setCategoryCode(rset.getString("CATEGORY_CODE"));
+				webNovel.setWebNovPublisher(rset.getString("WEB_NOV_PUBLISHER"));
+				webNovel.setDayOfWeek(rset.getString("DAY_OF_WEEK"));
+				webNovel.setWebNovImgLocation(rset.getString("WEB_NOV_IMG_LOCATION"));
+				webNovel.setFinishedOrNot(rset.getString("FINISHED_OR_NOT"));
+				webNovel.setWebNovOpenOrClose(rset.getString("WEB_NOV_OPEN_OR_CLOSE"));
+				
 
 				webNovelList.add(webNovel);
 			}
@@ -137,7 +143,7 @@ public class WebNovelDAO {
 
 			rset = pstmt.executeQuery();
 
-			System.out.println("query문" + query);
+//			System.out.println("query문" + query);
 			webNovelChap = new ArrayList<WebNovChapSearchDTO>();
 
 			while(rset.next()) {
@@ -148,6 +154,8 @@ public class WebNovelDAO {
 				//				wbdDTO.setWebNovNum(rset.getInt("WEB_NOV_NUM"));
 				wbdDTO.getWebNovNum().setWebNovNum(rset.getInt("WEB_NOV_NUM"));
 				wbdDTO.getWebNovChapNum().setWebNovChapNum(rset.getInt("CHAP_NUM"));
+				wbdDTO.setWebChapNumDate(rset.getDate("CHAP_WRITTEN_DATE"));
+				wbdDTO.setChapReadOrNot(rset.getString("CHAP_READ_OR_NOT"));
 
 				//				System.out.println("wbdDTO" + wbdDTO);
 
@@ -220,6 +228,7 @@ public class WebNovelDAO {
 
 	}
 
+	/* 웹소설 내용이 총 몇개인지 세는 메소드 */
 	public int searchWebNovelCount(Connection con, int currentWebNovNum, int currentChapNum) {
 
 		PreparedStatement pstmt = null;
@@ -251,6 +260,7 @@ public class WebNovelDAO {
 		return webNovCount;
 	}
 
+	/* 선택한 웹소설 웹뷰어 페이지에 제목을 조회하는 메소드 */
 	public WebNovelInfoDTO searchTitle(Connection con, int currentWebNovNum) {
 
 		PreparedStatement pstmt = null;
@@ -287,6 +297,61 @@ public class WebNovelDAO {
 
 
 		return webNovelDetail;
+	}
+
+	public int incrementWebnovelCount(Connection con, int no) {
+
+		PreparedStatement pstmt = null;
+		
+		int result = 0;
+		
+		String query = prop.getProperty("incrementWebnovelCount");
+		
+		try {
+			pstmt = con.prepareStatement(query);
+			pstmt.setInt(1, no);
+			pstmt.setInt(2, no);
+			
+			result = pstmt.executeUpdate();			
+			
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		} finally {
+			close(pstmt);
+		}
+		
+		
+		return result;
+	}
+
+	public int selectTotalCount(Connection con) {
+
+		Statement stmt = null;
+		ResultSet rset = null;
+		
+		int totalCount = 0;
+		
+		String query = prop.getProperty("selectTotalCount");
+		
+		try {
+			stmt = con.createStatement();
+			rset = stmt.executeQuery(query);
+			
+			if(rset.next()) {
+				totalCount = rset.getInt(1);
+			}
+			
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}finally {
+			close(rset);
+			close(stmt);
+		}
+		
+		
+		return totalCount;
 	}
 
 

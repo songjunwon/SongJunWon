@@ -6,9 +6,17 @@
        	           C.*
               FROM COMPET_INFO C
              WHERE COMPET_SSN = ?
+               AND COMPET_ACT_YN = 'Y'
 	</entry>
-	<entry key="selectVoting">
-	  
+	<entry key="rankEightconstList">
+	  		SELECT
+                   *
+              FROM (SELECT
+                           *
+                      FROM COMPET_INFO
+                     WHERE COMPET_SSN = ? 
+                     ORDER BY SCORE DESC
+                   )
 	</entry>
 	<entry key="">
 	   
