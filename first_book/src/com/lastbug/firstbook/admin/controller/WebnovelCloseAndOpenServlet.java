@@ -25,10 +25,12 @@ public class WebnovelCloseAndOpenServlet extends HttpServlet {
 			
 			AdminWebNovelService awnService = new AdminWebNovelService();
 			
-			WebNovelInfoDTO novList = awnService.adminSelectWebNovelDetail(no);
+			
+			
+			WebNovelInfoDTO adminWebNovelList = awnService.adminSelectWebNovelDetail(no);
 						
 			
-			String CloseOrOpen = novList.getWebNovOpenOrClose();
+			String CloseOrOpen = adminWebNovelList.getWebNovOpenOrClose();
 			
 
 			
@@ -42,10 +44,22 @@ public class WebnovelCloseAndOpenServlet extends HttpServlet {
 				CloseOrOpen = "Y";
 				
 			}
+			List<WebNovelInfoDTO> adminWebNovelList2 = new AdminWebNovelService().AdminSelectAllNovel();
 			
-			int result = awnService.WebNovelCloseOrOpen(no, CloseOrOpen, novList);
+			int result = awnService.WebNovelCloseOrOpen(no, CloseOrOpen, adminWebNovelList);
 			
+			String path = "";
+			if(result > 0) {
+				path = "/WEB-INF/views/admin/webnovel/adminWebnovel.jsp";
+				request.setAttribute("successCode", "");
+				request.setAttribute("adminWebNovelList", adminWebNovelList2);
+				
+			} else {
+				path = "/WEB-INF/views/common/failed.jsp";
+				request.setAttribute("message", "공개 or 비공개처리 실패!");
+			}
 			
+			request.getRequestDispatcher(path).forward(request, response);
 			
 	}
 

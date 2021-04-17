@@ -151,7 +151,7 @@ public class AdminWebNovelDAO {
 		return webNovelUpdate;
 	}
 
-	public int WebNovelCloseOrOpen(Connection con, String closeOrOpen, WebNovelInfoDTO novList) {
+	public int WebNovelCloseOrOpen(Connection con, String closeOrOpen, WebNovelInfoDTO adminWebNovelList) {
 		
 		
 		PreparedStatement pstmt = null;
@@ -163,7 +163,7 @@ public class AdminWebNovelDAO {
 		try {							
 			pstmt = con.prepareStatement(query);
 			pstmt.setString(1, closeOrOpen);
-			pstmt.setInt(2, novList.getWebNovNum());
+			pstmt.setInt(2, adminWebNovelList.getWebNovNum());
 			
 			result = pstmt.executeUpdate();
 			
