@@ -65,6 +65,23 @@ public class AdminWebNovelService {
 		return webNovelUpdate;
 	}
 
+	public int WebNovelCloseOrOpen(int no, String closeOrOpen, WebNovelInfoDTO novList) {
+	
+		Connection con = getConnection();
+		
+		int result = adminWebNovelDAO.WebNovelCloseOrOpen(con, closeOrOpen, novList);
+		
+		if(result > 0) {
+			commit(con);
+		} else {
+			rollback(con);
+		}
+		
+		close(con);
+		
+		return result;
+	}
+
 }
 
 

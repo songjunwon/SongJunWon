@@ -18,7 +18,6 @@ public class AdminUpdateWebnovelServlet extends HttpServlet {
 	
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 
-		System.out.println("dd");
 		
 		int no = Integer.valueOf(request.getParameter("webNovNum"));
 		AdminWebNovelService webAdminService = new AdminWebNovelService();

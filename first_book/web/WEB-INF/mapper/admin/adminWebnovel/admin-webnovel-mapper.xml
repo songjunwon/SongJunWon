@@ -57,7 +57,15 @@
           FROM WEB_NOV_INFO A
          WHERE A.WEB_NOV_NUM = ?
 	</entry>
-
+	
+	<entry key="WebNovelCloseOrOpen">
+		  UPDATE
+		       WEB_NOV_INFO A
+		   SET A.WEB_NOV_IS_OPEN = ?		    
+		 WHERE A.WEB_NOV_NUM = ?	
+	</entry>
+	
+	
 </properties>
 
 

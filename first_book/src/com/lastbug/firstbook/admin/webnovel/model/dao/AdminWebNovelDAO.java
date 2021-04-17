@@ -151,6 +151,31 @@ public class AdminWebNovelDAO {
 		return webNovelUpdate;
 	}
 
+	public int WebNovelCloseOrOpen(Connection con, String closeOrOpen, WebNovelInfoDTO novList) {
+		
+		
+		PreparedStatement pstmt = null;
+		int result = 0;
+		
+		String query = prop.getProperty("WebNovelCloseOrOpen");
+		
+		
+		try {							
+			pstmt = con.prepareStatement(query);
+			pstmt.setString(1, closeOrOpen);
+			pstmt.setInt(2, novList.getWebNovNum());
+			
+			result = pstmt.executeUpdate();
+			
+		} catch (SQLException e) {
+			e.printStackTrace();
+		} finally {
+			close(pstmt);
+		}
+		
+		return result;
+	}
+
 
 
 }

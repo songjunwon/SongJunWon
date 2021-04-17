@@ -10,16 +10,15 @@
 </head>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
 <body>
-
-
+<jsp:include page="/WEB-INF/views/admin/adminHeader.jsp"/>
 	<c:set var="webNovel" value="${ requestScope.webNovelUpdate }"/>
 	
 	<form action="${ pageContext.servletContext.contextPath }/admin/webNovel" method="post">
 			
 
+	<br><br><br><br><br>			
 			
-			
-	<table border="1" align="center">
+	<table border="1" >
 					
 					<tr>
 						<td>제목</td>
@@ -35,7 +34,7 @@
 						</td>
 					</tr>
 	</table>
-			<div align="center">
+			<div align=>
 				<input type="hidden" name="noticeNo" value="${ webNovel.webNovNum }">
 				
 				<br>

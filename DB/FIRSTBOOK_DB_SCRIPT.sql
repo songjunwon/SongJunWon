@@ -35,15 +35,15 @@ CREATE TABLE MEM_INFO
     MEM_ADDRESS       VARCHAR2(320),
     MEM_BIRTHDATE     DATE                                                      NOT NULL,
     MEM_LOGIN_COUNT   NUMBER  DEFAULT 0                                         NOT NULL,
-    MEM_COIN          NUMBER  DEFAULT 0                                         NOT NULL,
-    MEM_CAN_VOTE_YN   CHAR(2) DEFAULT 'N' CHECK (MEM_CAN_VOTE_YN IN ('Y', 'N')) NOT NULL,
-    MEM_WITHDRAW_YN   CHAR(2) DEFAULT 'N' CHECK (MEM_WITHDRAW_YN IN ('Y', 'N')) NOT NULL,
+    MEM_COIN         NUMBER  DEFAULT 0                                         NOT NULL,
+    MEM_CAN_VOTE_YN  CHAR(1) DEFAULT 'N' CHECK (MEM_CAN_VOTE_YN IN('Y', 'N')) NOT NULL,
+    MEM_WITHDRAW_YN  CHAR(1) DEFAULT 'N' CHECK (MEM_WITHDRAW_YN IN('Y', 'N')) NOT NULL,
     MEM_WITHDRAW_DATE DATE,
     MEM_CLASS         VARCHAR2(10),
-    MEM_BLOCK_YN      CHAR(2) DEFAULT 'N' CHECK (MEM_BLOCK_YN IN ('Y', 'N')),
+    MEM_BLOCK_YN     CHAR(1) DEFAULT 'N' CHECK (MEM_BLOCK_YN IN('Y', 'N')),
     MEM_BLOCK_DATE    DATE,
     MEM_ENROLL_DATE   DATE                                                      NOT NULL,
-    MEM_WEEKLY_COIN_YN   CHAR(2) DEFAULT 'Y' CHECK (MEM_WEEKLY_COIN_YN IN ('Y', 'N')) NOT NULL
+    MEM_WEEKLY_COIN_YN  CHAR(1) DEFAULT 'Y' CHECK (MEM_WEEKLY_COIN_YN IN('Y', 'N')) NOT NULL
 );
 
 
@@ -219,13 +219,13 @@ CREATE TABLE COMPET_INFO
 (
     COMPET_NUM              NUMBER PRIMARY KEY,
     MEM_NUM                 NUMBER    NOT NULL,
-    COMPET_PAPER_YN         CHAR(2) DEFAULT 'Y' CHECK (COMPET_PAPER_YN IN ('Y', 'N')),
+    COMPET_PAPER_YN        CHAR(1) DEFAULT 'Y' CHECK (COMPET_PAPER_YN IN('Y', 'N')),
     NOV_TITLE               VARCHAR2(50)   NOT NULL,
     NOV_INFO                VARCHAR2(2000) NOT NULL,
-    COMPET_SSN              VARCHAR2(10)   NOT NULL,
+    COMPET_SSN             VARCHAR2(10)   NOT NULL,
     COMPET_NOV_IMG_LOCATION VARCHAR2(200),
     SCORE                   NUMBER  DEFAULT 0,
-    COMPET_ACT_YN           CHAR(2) DEFAULT 'Y' CHECK (COMPET_ACT_YN IN ('Y', 'N')),
+    COMPET_ACT_YN          CHAR(1) DEFAULT 'Y' CHECK (COMPET_ACT_YN IN ('Y', 'N')),
     AGE_LIMIT               NUMBER,
     CATEGORY_CODE       VARCHAR2(5) REFERENCES GENRE_CATEGORY(CATEGORY_CODE)
 );
@@ -457,7 +457,6 @@ COMMIT;
 
 ---------COMPET_CONTENT
 
-DELETE FROM COMPET_CONTENT;
 
 CREATE TABLE COMPET_CONTENT
 (
@@ -2047,176 +2046,175 @@ CREATE TABLE WEB_NOV_INFO
     CATEGORY_CODE         VARCHAR2(5) REFERENCES GENRE_CATEGORY (CATEGORY_CODE),
     WEB_NOV_TITLE         VARCHAR2(90),
     WEB_NOV_AUTHOR        VARCHAR2(90),
-    CHAP_PER_COIN         NUMBER,
+    CHAP_PER_COIN        NUMBER,
     WEB_NOV_PUBLISHER     VARCHAR2(26),
     WEB_NOV_INFORM        VARCHAR2(1200),
-    WEB_NOV_IMG_LOCATION  VARCHAR2(100),
-    DAY_OF_WEEK           VARCHAR2(3) CHECK (DAY_OF_WEEK IN ('월', '화', '수', '목', '금', '토', '일', '완')),
-    WEB_NOV_IS_OPEN CHAR(2) DEFAULT 'Y', CHECK (WEB_NOV_IS_OPEN IN ('Y', 'N')),
-    FINISHED_OR_NOT       CHAR(2) DEFAULT 'N',
-    CHECK (FINISHED_OR_NOT IN ('Y', 'N')),
+    WEB_NOV_IMG_LOCATION VARCHAR2(100),
+    DAY_OF_WEEK           VARCHAR2(3) CHECK (DAY_OF_WEEK IN('월', '화', '수', '목', '금', '토', '일', '완')),
+    WEB_NOV_IS_OPEN CHAR(1) DEFAULT 'Y', CHECK (WEB_NOV_IS_OPEN IN ('Y', 'N')),
+    FINISHED_OR_NOT       CHAR(1) DEFAULT 'N',
+    CHECK (FINISHED_OR_NOT IN('Y', 'N')),
     WEB_NOV_COUNT NUMBER DEFAULT 0
 );
 
-ALTER TABLE WEB_NOV_INFO MODIFY WEB_NOV_TITLE VARCHAR2(90);
 
 INSERT INTO WEB_NOV_INFO (WEB_NOV_NUM, CATEGORY_CODE, WEB_NOV_TITLE, WEB_NOV_AUTHOR, CHAP_PER_COIN, WEB_NOV_PUBLISHER,
                           WEB_NOV_INFORM, WEB_NOV_IMG_LOCATION, DAY_OF_WEEK, WEB_NOV_IS_OPEN, FINISHED_OR_NOT, WEB_NOV_COUNT)
 VALUES ('1', 'MF', '내 아들은 총잡이', '원빈', 100, '미디어그룹', '피치 못할 사정으로 총잡이 삶을 접어야 했던 베테랑 권총잡이 박찬영.', '사진경로1', '월', 'N',
-        'N ', DEFAULT);
+        'N', DEFAULT);
 INSERT INTO WEB_NOV_INFO (WEB_NOV_NUM, CATEGORY_CODE, WEB_NOV_TITLE, WEB_NOV_AUTHOR, CHAP_PER_COIN, WEB_NOV_PUBLISHER,
                           WEB_NOV_INFORM, WEB_NOV_IMG_LOCATION, DAY_OF_WEEK, WEB_NOV_IS_OPEN, FINISHED_OR_NOT, WEB_NOV_COUNT)
-VALUES ('2', 'F', '이혼 후 재혼', '인생3회차', 100, '미디어그룹', '그런 그가 아들을 낳았는데, 총잡는 모습이….금 이빨 몇 개냐??', '사진경로2', '월', 'N ',
-        'N ', DEFAULT);
+VALUES ('2', 'F', '이혼 후 재혼', '인생3회차', 100, '미디어그룹', '그런 그가 아들을 낳았는데, 총잡는 모습이….금 이빨 몇 개냐??', '사진경로2', '월', 'N',
+        'N', DEFAULT);
 INSERT INTO WEB_NOV_INFO (WEB_NOV_NUM, CATEGORY_CODE, WEB_NOV_TITLE, WEB_NOV_AUTHOR, CHAP_PER_COIN, WEB_NOV_PUBLISHER,
                           WEB_NOV_INFORM, WEB_NOV_IMG_LOCATION, DAY_OF_WEEK, WEB_NOV_IS_OPEN, FINISHED_OR_NOT, WEB_NOV_COUNT)
-VALUES ('3', 'F', '미술천재가 한국으로', '잘못된탄생', 100, '문학동네', '한국에서 천재가 태어나게 되는데… 그러나…주입식교육으로 인해 힘들어하는 그림천재', '사진경로3', '월', 'N ', 'N ', DEFAULT);
+VALUES ('3', 'F', '미술천재가 한국으로', '잘못된탄생', 100, '문학동네', '한국에서 천재가 태어나게 되는데… 그러나…주입식교육으로 인해 힘들어하는 그림천재', '사진경로3', '월', 'N', 'N', DEFAULT);
 
 INSERT INTO WEB_NOV_INFO (WEB_NOV_NUM, CATEGORY_CODE, WEB_NOV_TITLE, WEB_NOV_AUTHOR, CHAP_PER_COIN, WEB_NOV_PUBLISHER,
                           WEB_NOV_INFORM, WEB_NOV_IMG_LOCATION, DAY_OF_WEEK, WEB_NOV_IS_OPEN, FINISHED_OR_NOT, WEB_NOV_COUNT)
-VALUES ('4', 'MF', '합기도의 신', '로우엔드', 100, 'abc미디어', '늙어 사라지지 않고 대가의 경지에 오른 괴물 시간을 되돌아오다', '사진경로3', '월', 'N ', 'N ', DEFAULT);
+VALUES ('4', 'MF', '합기도의 신', '로우엔드', 100, 'abc미디어', '늙어 사라지지 않고 대가의 경지에 오른 괴물 시간을 되돌아오다', '사진경로3', '월', 'N', 'N', DEFAULT);
 
 INSERT INTO WEB_NOV_INFO (WEB_NOV_NUM, CATEGORY_CODE, WEB_NOV_TITLE, WEB_NOV_AUTHOR, CHAP_PER_COIN, WEB_NOV_PUBLISHER,
                           WEB_NOV_INFORM, WEB_NOV_IMG_LOCATION, DAY_OF_WEEK, WEB_NOV_IS_OPEN, FINISHED_OR_NOT, WEB_NOV_COUNT)
-VALUES ('5', 'MF', '재활용 보이그룹 가나다라', '저게', 100, 'abc미디어', '마약, 불법도박, 학교폭력, 음주운전. 다른 데서 사고친 멤버들만 모아놓은 재활용 보이그룹. 출근 첫날 그런 애들을 맡게 되었다.', '사진경로3', '월', 'N ', 'N ', DEFAULT);
+VALUES ('5', 'MF', '재활용 보이그룹 가나다라', '저게', 100, 'abc미디어', '마약, 불법도박, 학교폭력, 음주운전. 다른 데서 사고친 멤버들만 모아놓은 재활용 보이그룹. 출근 첫날 그런 애들을 맡게 되었다.', '사진경로3', '월', 'N', 'N', DEFAULT);
 
 INSERT INTO WEB_NOV_INFO (WEB_NOV_NUM, CATEGORY_CODE, WEB_NOV_TITLE, WEB_NOV_AUTHOR, CHAP_PER_COIN, WEB_NOV_PUBLISHER,
                           WEB_NOV_INFORM, WEB_NOV_IMG_LOCATION, DAY_OF_WEEK, WEB_NOV_IS_OPEN, FINISHED_OR_NOT, WEB_NOV_COUNT)
 VALUES ('6', 'F', '용기병', '진강현', 100, 'abc미디어', '공작가의 음모로 가문이 몰락한 제론은 그로 인해 얻게 된 빈털터리 유적에서 초고대 문명의 정수가 깃든 숨겨진 유적의 주인이 된다.
-그 유적의 비밀을 하나씩 파헤쳐 가며 기간트 라이더로 활동하면서 복수를 완성해 나간다.', '사진경로3', '월', 'N ', 'N ', DEFAULT);
+그 유적의 비밀을 하나씩 파헤쳐 가며 기간트 라이더로 활동하면서 복수를 완성해 나간다.', '사진경로3', '월', 'N', 'N', DEFAULT);
 
 INSERT INTO WEB_NOV_INFO (WEB_NOV_NUM, CATEGORY_CODE, WEB_NOV_TITLE, WEB_NOV_AUTHOR, CHAP_PER_COIN, WEB_NOV_PUBLISHER,
                           WEB_NOV_INFORM, WEB_NOV_IMG_LOCATION, DAY_OF_WEEK, WEB_NOV_IS_OPEN, FINISHED_OR_NOT, WEB_NOV_COUNT)
-VALUES ('7', 'F', '시한부 정령사가 되었다', '은의행', 100, 'abc미디어', '똥 밭에서 굴러도 이승이 낫다고 했던가. 또 한 번의 기회. 살아남기 위해서라면 무슨 짓이라도 할 것이다.', '사진경로3', '월', 'N ', 'N ', DEFAULT);
+VALUES ('7', 'F', '시한부 정령사가 되었다', '은의행', 100, 'abc미디어', '똥 밭에서 굴러도 이승이 낫다고 했던가. 또 한 번의 기회. 살아남기 위해서라면 무슨 짓이라도 할 것이다.', '사진경로3', '월', 'N', 'N', DEFAULT);
 
 INSERT INTO WEB_NOV_INFO (WEB_NOV_NUM, CATEGORY_CODE, WEB_NOV_TITLE, WEB_NOV_AUTHOR, CHAP_PER_COIN, WEB_NOV_PUBLISHER,
                           WEB_NOV_INFORM, WEB_NOV_IMG_LOCATION, DAY_OF_WEEK, WEB_NOV_IS_OPEN, FINISHED_OR_NOT, WEB_NOV_COUNT)
-VALUES ('8', 'F', '벼락 맞은 재벌 3세', '골든후드', 100, 'abc미디어', '하루 아침에 개망나니 재벌 막둥이의 열 살로 돌아갔다? 개망나니 몸으로 들어갔으니 개망나니로 살 것 인가. 아니면 재벌가에서 한 자리 두둑이 챙길 것 인가.', '사진경로3', '월', 'N ', 'N ', DEFAULT);
+VALUES ('8', 'F', '벼락 맞은 재벌 3세', '골든후드', 100, 'abc미디어', '하루 아침에 개망나니 재벌 막둥이의 열 살로 돌아갔다? 개망나니 몸으로 들어갔으니 개망나니로 살 것 인가. 아니면 재벌가에서 한 자리 두둑이 챙길 것 인가.', '사진경로3', '월', 'N', 'N', DEFAULT);
 
 INSERT INTO WEB_NOV_INFO (WEB_NOV_NUM, CATEGORY_CODE, WEB_NOV_TITLE, WEB_NOV_AUTHOR, CHAP_PER_COIN, WEB_NOV_PUBLISHER,
                           WEB_NOV_INFORM, WEB_NOV_IMG_LOCATION, DAY_OF_WEEK, WEB_NOV_IS_OPEN, FINISHED_OR_NOT, WEB_NOV_COUNT)
 VALUES ('9', 'F', '아카데미에 악마가 산다', '미디움웰던', 100, 'abc미디어', 'Lv.1 악마로 전생했다. 악마는 악한 일을 할 때 힘을 얻으니,
-어쩔 수 없이 악행을 저질러야 한다. 그런데 주변사람들이 뭔가 착각을 하는 거 같다...?', '사진경로3', '월', 'N ', 'N ', DEFAULT);
+어쩔 수 없이 악행을 저질러야 한다. 그런데 주변사람들이 뭔가 착각을 하는 거 같다...?', '사진경로3', '월', 'N', 'N', DEFAULT);
 
 INSERT INTO WEB_NOV_INFO (WEB_NOV_NUM, CATEGORY_CODE, WEB_NOV_TITLE, WEB_NOV_AUTHOR, CHAP_PER_COIN, WEB_NOV_PUBLISHER,
                           WEB_NOV_INFORM, WEB_NOV_IMG_LOCATION, DAY_OF_WEEK, WEB_NOV_IS_OPEN, FINISHED_OR_NOT, WEB_NOV_COUNT)
-VALUES ('10', 'MF', '쉐프 프랑켄슈타인', '중우중우', 100, 'abc미디어', '좋은 쉐프란 무엇일까? 희생적인 쉐프? 양질의 요리를 제공하는 쉐프?', '사진경로3', '월', 'N ', 'N ', DEFAULT);
+VALUES ('10', 'MF', '쉐프 프랑켄슈타인', '중우중우', 100, 'abc미디어', '좋은 쉐프란 무엇일까? 희생적인 쉐프? 양질의 요리를 제공하는 쉐프?', '사진경로3', '월', 'N', 'N', DEFAULT);
 
 INSERT INTO WEB_NOV_INFO (WEB_NOV_NUM, CATEGORY_CODE, WEB_NOV_TITLE, WEB_NOV_AUTHOR, CHAP_PER_COIN, WEB_NOV_PUBLISHER,
                           WEB_NOV_INFORM, WEB_NOV_IMG_LOCATION, DAY_OF_WEEK, WEB_NOV_IS_OPEN, FINISHED_OR_NOT, WEB_NOV_COUNT)
-VALUES ('11', 'SPO', '야구괴물은 지옥에서 왔다', '원썸', 100, 'abc미디어', '올타임 레전드들과 20년 조기 야구 하고왔다. 질문 안받는다.', '사진경로3', '월', 'N ', 'N ', DEFAULT);
+VALUES ('11', 'SPO', '야구괴물은 지옥에서 왔다', '원썸', 100, 'abc미디어', '올타임 레전드들과 20년 조기 야구 하고왔다. 질문 안받는다.', '사진경로3', '월', 'N', 'N', DEFAULT);
 
 INSERT INTO WEB_NOV_INFO (WEB_NOV_NUM, CATEGORY_CODE, WEB_NOV_TITLE, WEB_NOV_AUTHOR, CHAP_PER_COIN, WEB_NOV_PUBLISHER,
                           WEB_NOV_INFORM, WEB_NOV_IMG_LOCATION, DAY_OF_WEEK, WEB_NOV_IS_OPEN, FINISHED_OR_NOT, WEB_NOV_COUNT)
-VALUES ('12', 'FH', '아메리카의 독재자가 되었다', '저너머', 100, 'abc미디어', '기회의 땅, 아메리카. 전세계 정복을 꿈꾼다', '사진경로3', '월', 'N ', 'N ', DEFAULT);
+VALUES ('12', 'FH', '아메리카의 독재자가 되었다', '저너머', 100, 'abc미디어', '기회의 땅, 아메리카. 전세계 정복을 꿈꾼다', '사진경로3', '월', 'N', 'N', DEFAULT);
 
 INSERT INTO WEB_NOV_INFO (WEB_NOV_NUM, CATEGORY_CODE, WEB_NOV_TITLE, WEB_NOV_AUTHOR, CHAP_PER_COIN, WEB_NOV_PUBLISHER,
                           WEB_NOV_INFORM, WEB_NOV_IMG_LOCATION, DAY_OF_WEEK, WEB_NOV_IS_OPEN, FINISHED_OR_NOT, WEB_NOV_COUNT)
-VALUES ('13', 'F', '게으른 소드마스터', '전자렌지1', 100, 'abc미디어', '...검들기도 귀찮아. 하지만 휘두르기만 하면...!', '사진경로3', '월', 'N ', 'N ', DEFAULT);
+VALUES ('13', 'F', '게으른 소드마스터', '전자렌지1', 100, 'abc미디어', '...검들기도 귀찮아. 하지만 휘두르기만 하면...!', '사진경로3', '월', 'N', 'N', DEFAULT);
 
 INSERT INTO WEB_NOV_INFO (WEB_NOV_NUM, CATEGORY_CODE, WEB_NOV_TITLE, WEB_NOV_AUTHOR, CHAP_PER_COIN, WEB_NOV_PUBLISHER,
                           WEB_NOV_INFORM, WEB_NOV_IMG_LOCATION, DAY_OF_WEEK, WEB_NOV_IS_OPEN, FINISHED_OR_NOT, WEB_NOV_COUNT)
-VALUES ('14', 'F', '일부러 시스템 교란종이 되어보았다', '새치', 100, 'abc미디어', '어쩌다 탑에 들어가 죽었는데 시스템 오류를 일으켰다. 어라? 몬스터도 속이고 각성자도 속는다.', '사진경로3', '월', 'N ', 'N ', DEFAULT);
+VALUES ('14', 'F', '일부러 시스템 교란종이 되어보았다', '새치', 100, 'abc미디어', '어쩌다 탑에 들어가 죽었는데 시스템 오류를 일으켰다. 어라? 몬스터도 속이고 각성자도 속는다.', '사진경로3', '월', 'N', 'N', DEFAULT);
 
 INSERT INTO WEB_NOV_INFO (WEB_NOV_NUM, CATEGORY_CODE, WEB_NOV_TITLE, WEB_NOV_AUTHOR, CHAP_PER_COIN, WEB_NOV_PUBLISHER,
                           WEB_NOV_INFORM, WEB_NOV_IMG_LOCATION, DAY_OF_WEEK, WEB_NOV_IS_OPEN, FINISHED_OR_NOT, WEB_NOV_COUNT)
-VALUES ('15', 'F', '소림용사', '화산행', 100, 'abc미디어', '60억분의 1의 사나이. 영장류 최강의 격투가 모강철. 은퇴 경기를 하루 앞두고 잠든 그가 깨어난 곳은?', '사진경로3', '월', 'N ', 'N ', DEFAULT);
+VALUES ('15', 'F', '소림용사', '화산행', 100, 'abc미디어', '60억분의 1의 사나이. 영장류 최강의 격투가 모강철. 은퇴 경기를 하루 앞두고 잠든 그가 깨어난 곳은?', '사진경로3', '월', 'N', 'N', DEFAULT);
 
 
 INSERT INTO WEB_NOV_INFO (WEB_NOV_NUM, CATEGORY_CODE, WEB_NOV_TITLE, WEB_NOV_AUTHOR, CHAP_PER_COIN, WEB_NOV_PUBLISHER,
                           WEB_NOV_INFORM, WEB_NOV_IMG_LOCATION, DAY_OF_WEEK, WEB_NOV_IS_OPEN, FINISHED_OR_NOT, WEB_NOV_COUNT)
 VALUES ('16', 'MF', '신들린닥터', '노마취수술', 100, '다산북스', '의학계의 떠오르는 샛별의 등장
-의학계를 뒤집어 놓은게 있엇으니… 그것은 마취 없는 수술의 시작…', '사진경로4', '화', 'N ', 'N ', DEFAULT);
+의학계를 뒤집어 놓은게 있엇으니… 그것은 마취 없는 수술의 시작…', '사진경로4', '화', 'N', 'N', DEFAULT);
 
 INSERT INTO WEB_NOV_INFO (WEB_NOV_NUM, CATEGORY_CODE, WEB_NOV_TITLE, WEB_NOV_AUTHOR, CHAP_PER_COIN, WEB_NOV_PUBLISHER,
                           WEB_NOV_INFORM, WEB_NOV_IMG_LOCATION, DAY_OF_WEEK, WEB_NOV_IS_OPEN, FINISHED_OR_NOT, WEB_NOV_COUNT)
 VALUES ('17', 'OF', '스타용병 이영호', '나는아이언', 100, '다산북스', '게임의 인기로 인해 유저들이 늘어나면서
-게임에 관심없던 이영호라는 소년이…방배중에서...게임을 시작하는데', '사진경로5', '화', 'Y ', 'N ', DEFAULT);
+게임에 관심없던 이영호라는 소년이…방배중에서...게임을 시작하는데', '사진경로5', '화', 'Y', 'N', DEFAULT);
 
 INSERT INTO WEB_NOV_INFO (WEB_NOV_NUM, CATEGORY_CODE, WEB_NOV_TITLE, WEB_NOV_AUTHOR, CHAP_PER_COIN, WEB_NOV_PUBLISHER,
                           WEB_NOV_INFORM, WEB_NOV_IMG_LOCATION, DAY_OF_WEEK, WEB_NOV_IS_OPEN, FINISHED_OR_NOT, WEB_NOV_COUNT)
 VALUES ('18', 'ROM', '인간은 연약해', '코로나19', 100, '게임북스', '대한민국 전성기로 보였던2019년…
-예상치 못한 병이 찾아오기 시작한다!!', '사진경로6', '화', 'N ', 'N ', DEFAULT);
+예상치 못한 병이 찾아오기 시작한다!!', '사진경로6', '화', 'N', 'N', DEFAULT);
 
 INSERT INTO WEB_NOV_INFO (WEB_NOV_NUM, CATEGORY_CODE, WEB_NOV_TITLE, WEB_NOV_AUTHOR, CHAP_PER_COIN, WEB_NOV_PUBLISHER,
                           WEB_NOV_INFORM, WEB_NOV_IMG_LOCATION, DAY_OF_WEEK, WEB_NOV_IS_OPEN, FINISHED_OR_NOT, WEB_NOV_COUNT)
-VALUES ('19', 'MF', '너의 최애푸드가 보여!', '푸만두', 100, '에이비씨미디어', '사람들의 최애푸드가 보이기 시작했다.', '사진경로6', '화', 'N ', 'N ', DEFAULT);
+VALUES ('19', 'MF', '너의 최애푸드가 보여!', '푸만두', 100, '에이비씨미디어', '사람들의 최애푸드가 보이기 시작했다.', '사진경로6', '화', 'N', 'N', DEFAULT);
 
 INSERT INTO WEB_NOV_INFO (WEB_NOV_NUM, CATEGORY_CODE, WEB_NOV_TITLE, WEB_NOV_AUTHOR, CHAP_PER_COIN, WEB_NOV_PUBLISHER,
                           WEB_NOV_INFORM, WEB_NOV_IMG_LOCATION, DAY_OF_WEEK, WEB_NOV_IS_OPEN, FINISHED_OR_NOT, WEB_NOV_COUNT)
-VALUES ('20', 'MF', '전장의 선율', '예스장', 100, '에이비씨미디어', '시각장애 피아니스트 전장에 선율의 꽃을 피우다다.', '사진경로6', '화', 'N ', 'N ', DEFAULT);
+VALUES ('20', 'MF', '전장의 선율', '예스장', 100, '에이비씨미디어', '시각장애 피아니스트 전장에 선율의 꽃을 피우다다.', '사진경로6', '화', 'N', 'N', DEFAULT);
 
 INSERT INTO WEB_NOV_INFO (WEB_NOV_NUM, CATEGORY_CODE, WEB_NOV_TITLE, WEB_NOV_AUTHOR, CHAP_PER_COIN, WEB_NOV_PUBLISHER,
                           WEB_NOV_INFORM, WEB_NOV_IMG_LOCATION, DAY_OF_WEEK, WEB_NOV_IS_OPEN, FINISHED_OR_NOT, WEB_NOV_COUNT)
-VALUES ('21', 'MF', '발가락의 노래', '김동신', 100, '에이비씨미디어', '특별한 뇌 호흡, 격투의 수법을 전수받으며 점점 ‘건강한 말기 암 환자’로 변신.', '사진경로6', '화', 'N ', 'N ', DEFAULT);
+VALUES ('21', 'MF', '발가락의 노래', '김동신', 100, '에이비씨미디어', '특별한 뇌 호흡, 격투의 수법을 전수받으며 점점 ‘건강한 말기 암 환자’로 변신.', '사진경로6', '화', 'N', 'N', DEFAULT);
 
 INSERT INTO WEB_NOV_INFO (WEB_NOV_NUM, CATEGORY_CODE, WEB_NOV_TITLE, WEB_NOV_AUTHOR, CHAP_PER_COIN, WEB_NOV_PUBLISHER,
                           WEB_NOV_INFORM, WEB_NOV_IMG_LOCATION, DAY_OF_WEEK, WEB_NOV_IS_OPEN, FINISHED_OR_NOT, WEB_NOV_COUNT)
-VALUES ('22', 'MF', '약자생존', '가렌', 100, '에이비씨미디어', '변화된 지구에서 살아남아라! 오직 약한(?) 자만 생존한다!', '사진경로6', '화', 'N ', 'N ', DEFAULT);
+VALUES ('22', 'MF', '약자생존', '가렌', 100, '에이비씨미디어', '변화된 지구에서 살아남아라! 오직 약한(?) 자만 생존한다!', '사진경로6', '화', 'N', 'N', DEFAULT);
 
 INSERT INTO WEB_NOV_INFO (WEB_NOV_NUM, CATEGORY_CODE, WEB_NOV_TITLE, WEB_NOV_AUTHOR, CHAP_PER_COIN, WEB_NOV_PUBLISHER,
                           WEB_NOV_INFORM, WEB_NOV_IMG_LOCATION, DAY_OF_WEEK, WEB_NOV_IS_OPEN, FINISHED_OR_NOT, WEB_NOV_COUNT)
-VALUES ('23', 'F', '지구게임의 사령관', '야행', 100, '에이비씨미디어', '사령관님 괜찮으십니까? 뭐 사령관? 난 그냥 게이머야! 사령관 같은 게 아니라고! 우주 전략 시뮬레이션 ‘스페이스 워’의 사령관이 되어버렸다.', '사진경로6', '화', 'N ', 'N ', DEFAULT);
+VALUES ('23', 'F', '지구게임의 사령관', '야행', 100, '에이비씨미디어', '사령관님 괜찮으십니까? 뭐 사령관? 난 그냥 게이머야! 사령관 같은 게 아니라고! 우주 전략 시뮬레이션 ‘스페이스 워’의 사령관이 되어버렸다.', '사진경로6', '화', 'N', 'N', DEFAULT);
 
 INSERT INTO WEB_NOV_INFO (WEB_NOV_NUM, CATEGORY_CODE, WEB_NOV_TITLE, WEB_NOV_AUTHOR, CHAP_PER_COIN, WEB_NOV_PUBLISHER,
                           WEB_NOV_INFORM, WEB_NOV_IMG_LOCATION, DAY_OF_WEEK, WEB_NOV_IS_OPEN, FINISHED_OR_NOT, WEB_NOV_COUNT)
-VALUES ('24', 'MF', '타투', '스몰', 100, '에이비씨미디어', '문신 덕에 넘어간 세계는 몬스터를 잡으면 내공이 상승하고, 상금으로 금화까지!', '사진경로6', '화', 'N ', 'N ', DEFAULT);
+VALUES ('24', 'MF', '타투', '스몰', 100, '에이비씨미디어', '문신 덕에 넘어간 세계는 몬스터를 잡으면 내공이 상승하고, 상금으로 금화까지!', '사진경로6', '화', 'N', 'N', DEFAULT);
 
 INSERT INTO WEB_NOV_INFO (WEB_NOV_NUM, CATEGORY_CODE, WEB_NOV_TITLE, WEB_NOV_AUTHOR, CHAP_PER_COIN, WEB_NOV_PUBLISHER,
                           WEB_NOV_INFORM, WEB_NOV_IMG_LOCATION, DAY_OF_WEEK, WEB_NOV_IS_OPEN, FINISHED_OR_NOT, WEB_NOV_COUNT)
-VALUES ('25', 'F', '위키쓰는 법사', '로드롤러', 100, '에이비씨미디어', '다른 놈이 주문외울때 나는 위키 쓴다.', '사진경로6', '화', 'N ', 'N ', DEFAULT);
+VALUES ('25', 'F', '위키쓰는 법사', '로드롤러', 100, '에이비씨미디어', '다른 놈이 주문외울때 나는 위키 쓴다.', '사진경로6', '화', 'N', 'N', DEFAULT);
 
 INSERT INTO WEB_NOV_INFO (WEB_NOV_NUM, CATEGORY_CODE, WEB_NOV_TITLE, WEB_NOV_AUTHOR, CHAP_PER_COIN, WEB_NOV_PUBLISHER,
                           WEB_NOV_INFORM, WEB_NOV_IMG_LOCATION, DAY_OF_WEEK, WEB_NOV_IS_OPEN, FINISHED_OR_NOT, WEB_NOV_COUNT)
-VALUES ('26', 'MF', '왕십리역 소드마스터', '왕십리턴', 100, '에이비씨미디어', '[과천역 4번출구 던전에 입장하셨습니다.]', '사진경로6', '화', 'N ', 'N ', DEFAULT);
+VALUES ('26', 'MF', '왕십리역 소드마스터', '왕십리턴', 100, '에이비씨미디어', '[과천역 4번출구 던전에 입장하셨습니다.]', '사진경로6', '화', 'N', 'N', DEFAULT);
 
 INSERT INTO WEB_NOV_INFO (WEB_NOV_NUM, CATEGORY_CODE, WEB_NOV_TITLE, WEB_NOV_AUTHOR, CHAP_PER_COIN, WEB_NOV_PUBLISHER,
                           WEB_NOV_INFORM, WEB_NOV_IMG_LOCATION, DAY_OF_WEEK, WEB_NOV_IS_OPEN, FINISHED_OR_NOT, WEB_NOV_COUNT)
-VALUES ('27', 'MF', '책을 읽으면 레벨이 올라', '독서광', 100, '에이비씨미디어', '게임도 아니고, 책을 읽으면 경험치가 쌓인다고?', '사진경로6', '화', 'N ', 'N ', DEFAULT);
+VALUES ('27', 'MF', '책을 읽으면 레벨이 올라', '독서광', 100, '에이비씨미디어', '게임도 아니고, 책을 읽으면 경험치가 쌓인다고?', '사진경로6', '화', 'N', 'N', DEFAULT);
 
 INSERT INTO WEB_NOV_INFO (WEB_NOV_NUM, CATEGORY_CODE, WEB_NOV_TITLE, WEB_NOV_AUTHOR, CHAP_PER_COIN, WEB_NOV_PUBLISHER,
                           WEB_NOV_INFORM, WEB_NOV_IMG_LOCATION, DAY_OF_WEEK, WEB_NOV_IS_OPEN, FINISHED_OR_NOT, WEB_NOV_COUNT)
-VALUES ('28', 'MF', '인셉션 라이프', '멱살캐리', 100, '에이비씨미디어', '두개의 몸, 두개의 세계, 동기화된 미래', '사진경로6', '화', 'N ', 'N ', DEFAULT);
+VALUES ('28', 'MF', '인셉션 라이프', '멱살캐리', 100, '에이비씨미디어', '두개의 몸, 두개의 세계, 동기화된 미래', '사진경로6', '화', 'N', 'N', DEFAULT);
 
 INSERT INTO WEB_NOV_INFO (WEB_NOV_NUM, CATEGORY_CODE, WEB_NOV_TITLE, WEB_NOV_AUTHOR, CHAP_PER_COIN, WEB_NOV_PUBLISHER,
                           WEB_NOV_INFORM, WEB_NOV_IMG_LOCATION, DAY_OF_WEEK, WEB_NOV_IS_OPEN, FINISHED_OR_NOT, WEB_NOV_COUNT)
-VALUES ('29', 'F', '테이밍 슬레이브', '김태석', 100, '에이비씨미디어', '카일란 최고의 노답 직업인 소환술사?', '사진경로6', '화', 'N ', 'N ', DEFAULT);
+VALUES ('29', 'F', '테이밍 슬레이브', '김태석', 100, '에이비씨미디어', '카일란 최고의 노답 직업인 소환술사?', '사진경로6', '화', 'N', 'N', DEFAULT);
 
 INSERT INTO WEB_NOV_INFO (WEB_NOV_NUM, CATEGORY_CODE, WEB_NOV_TITLE, WEB_NOV_AUTHOR, CHAP_PER_COIN, WEB_NOV_PUBLISHER,
                           WEB_NOV_INFORM, WEB_NOV_IMG_LOCATION, DAY_OF_WEEK, WEB_NOV_IS_OPEN, FINISHED_OR_NOT, WEB_NOV_COUNT)
 VALUES ('30', 'F', '천국에서 돌아온 김대성', '귀차늠', 100, '에이비씨미디어', '지구로 돌아왔으니 이젠 유유자적 살고 싶었는데... [마수들이 절대자의 활약에 환호합니다!]
-[마수들이 절대자께 공물을 바칩니다!] 끈질긴 새끼들, 안 해! 안 한다고!', '사진경로6', '화', 'N ', 'N ', DEFAULT);
+[마수들이 절대자께 공물을 바칩니다!] 끈질긴 새끼들, 안 해! 안 한다고!', '사진경로6', '화', 'N', 'N', DEFAULT);
 
 INSERT INTO WEB_NOV_INFO (WEB_NOV_NUM, CATEGORY_CODE, WEB_NOV_TITLE, WEB_NOV_AUTHOR, CHAP_PER_COIN, WEB_NOV_PUBLISHER,
                           WEB_NOV_INFORM, WEB_NOV_IMG_LOCATION, DAY_OF_WEEK, WEB_NOV_IS_OPEN, FINISHED_OR_NOT, WEB_NOV_COUNT)
-VALUES ('31', 'ROM', '아웃사이드 인', '피셀', 100, '넥서스', '인사이드 아웃의 후속작!', '사진경로7', '수', 'N ', 'N ', DEFAULT);
+VALUES ('31', 'ROM', '아웃사이드 인', '피셀', 100, '넥서스', '인사이드 아웃의 후속작!', '사진경로7', '수', 'N', 'N', DEFAULT);
 INSERT INTO WEB_NOV_INFO (WEB_NOV_NUM, CATEGORY_CODE, WEB_NOV_TITLE, WEB_NOV_AUTHOR, CHAP_PER_COIN, WEB_NOV_PUBLISHER,
                           WEB_NOV_INFORM, WEB_NOV_IMG_LOCATION, DAY_OF_WEEK, WEB_NOV_IS_OPEN, FINISHED_OR_NOT, WEB_NOV_COUNT)
 VALUES ('32', 'SPO', '0살부터미적분', '전공은경영', 100, '미디어그룹', '2살에 덧셈뺄셈…5살에..삼각함수…
-8살에 대학 미적분을 푸는 천재의 등장….', '사진경로8', '수', 'Y ', 'N ', DEFAULT);
+8살에 대학 미적분을 푸는 천재의 등장….', '사진경로8', '수', 'Y', 'N', DEFAULT);
 INSERT INTO WEB_NOV_INFO (WEB_NOV_NUM, CATEGORY_CODE, WEB_NOV_TITLE, WEB_NOV_AUTHOR, CHAP_PER_COIN, WEB_NOV_PUBLISHER,
                           WEB_NOV_INFORM, WEB_NOV_IMG_LOCATION, DAY_OF_WEEK, WEB_NOV_IS_OPEN, FINISHED_OR_NOT, WEB_NOV_COUNT)
 VALUES ('33', 'F', '귀머거리의전설', '베토벤', 100, '김영사', '1800년 르네상스 시대에 유럽에서 음악 천재가 태어나다
-그러나..그는 얼마 못가 귀머거리가 되는데..', '사진경로9', '수', 'N ', 'Y ', DEFAULT);
+그러나..그는 얼마 못가 귀머거리가 되는데..', '사진경로9', '수', 'N', 'Y', DEFAULT);
 INSERT INTO WEB_NOV_INFO (WEB_NOV_NUM, CATEGORY_CODE, WEB_NOV_TITLE, WEB_NOV_AUTHOR, CHAP_PER_COIN, WEB_NOV_PUBLISHER,
                           WEB_NOV_INFORM, WEB_NOV_IMG_LOCATION, DAY_OF_WEEK, WEB_NOV_IS_OPEN, FINISHED_OR_NOT, WEB_NOV_COUNT)
 VALUES ('34', 'FH', '짝귀의삶', '빈센트반고흐', 100, '미디어그룹', '타짜의 세계에서….
-밑장빼다간 손모가지가 날아가는 사건이 비일비재하는데', '사진경로10', '목', 'N ', 'N ', DEFAULT);
+밑장빼다간 손모가지가 날아가는 사건이 비일비재하는데', '사진경로10', '목', 'N', 'N', DEFAULT);
 INSERT INTO WEB_NOV_INFO (WEB_NOV_NUM, CATEGORY_CODE, WEB_NOV_TITLE, WEB_NOV_AUTHOR, CHAP_PER_COIN, WEB_NOV_PUBLISHER,
                           WEB_NOV_INFORM, WEB_NOV_IMG_LOCATION, DAY_OF_WEEK, WEB_NOV_IS_OPEN, FINISHED_OR_NOT, WEB_NOV_COUNT)
 VALUES ('35', 'ROM', '금수저 백수생활', '김밥은헤븐', 100, '문학동네', 'N그룹 금수저로 태어난 K씨는…
-자신이 금수저라는 사실을 숨기고 지내는데', '사진경로11', '목', 'N ', 'N ', DEFAULT);
+자신이 금수저라는 사실을 숨기고 지내는데', '사진경로11', '목', 'N', 'N', DEFAULT);
 INSERT INTO WEB_NOV_INFO (WEB_NOV_NUM, CATEGORY_CODE, WEB_NOV_TITLE, WEB_NOV_AUTHOR, CHAP_PER_COIN, WEB_NOV_PUBLISHER,
                           WEB_NOV_INFORM, WEB_NOV_IMG_LOCATION, DAY_OF_WEEK, WEB_NOV_IS_OPEN, FINISHED_OR_NOT, WEB_NOV_COUNT)
 VALUES ('36', 'FH', '신입사원이재용', '삼성1인자', 100, '미디어그룹', 'S그룹의 예비 후계자…
-회사를 알기위해 신입사원으로 위장해서 들어가면서..', '사진경로12', '목', 'Y ', 'N ', DEFAULT);
+회사를 알기위해 신입사원으로 위장해서 들어가면서..', '사진경로12', '목', 'Y', 'N', DEFAULT);
 INSERT INTO WEB_NOV_INFO (WEB_NOV_NUM, CATEGORY_CODE, WEB_NOV_TITLE, WEB_NOV_AUTHOR, CHAP_PER_COIN, WEB_NOV_PUBLISHER,
                           WEB_NOV_INFORM, WEB_NOV_IMG_LOCATION, DAY_OF_WEEK, WEB_NOV_IS_OPEN, FINISHED_OR_NOT, WEB_NOV_COUNT)
-VALUES ('37', 'FH', '슬기로운개발생활', '야근은선택이아닌필수', 100, '게임북스', '개발자의 길을 걷게다던 P씨의 개발 이야기', '사진경로13', '금', 'N ', 'N ', DEFAULT);
+VALUES ('37', 'FH', '슬기로운개발생활', '야근은선택이아닌필수', 100, '게임북스', '개발자의 길을 걷게다던 P씨의 개발 이야기', '사진경로13', '금', 'N', 'N', DEFAULT);
 INSERT INTO WEB_NOV_INFO (WEB_NOV_NUM, CATEGORY_CODE, WEB_NOV_TITLE, WEB_NOV_AUTHOR, CHAP_PER_COIN, WEB_NOV_PUBLISHER,
                           WEB_NOV_INFORM, WEB_NOV_IMG_LOCATION, DAY_OF_WEEK, WEB_NOV_IS_OPEN, FINISHED_OR_NOT, WEB_NOV_COUNT)
 VALUES ('38', 'MF', '천생개발자', 'HTML은언어다', 100, '게임북스', '어렸을 때부터 장난감보단 코드 짜는 것에 흥미와 관심을 보였던 l씨
-성인이 되어 유명회사에 입사하게 되는데', '사진경로14', '금', 'N ', 'N ', DEFAULT);
+성인이 되어 유명회사에 입사하게 되는데', '사진경로14', '금', 'N', 'N', DEFAULT);
 INSERT INTO WEB_NOV_INFO (WEB_NOV_NUM, CATEGORY_CODE, WEB_NOV_TITLE, WEB_NOV_AUTHOR, CHAP_PER_COIN, WEB_NOV_PUBLISHER,
                           WEB_NOV_INFORM, WEB_NOV_IMG_LOCATION, DAY_OF_WEEK, WEB_NOV_IS_OPEN, FINISHED_OR_NOT, WEB_NOV_COUNT)
 VALUES ('39', 'SPO', '재벌가늦등이', '금수저라이프', 100, '넥서스', '대한민국 5대 재벌가의 집안에서 늦등이가 탄생했다
@@ -2224,49 +2222,49 @@ VALUES ('39', 'SPO', '재벌가늦등이', '금수저라이프', 100, '넥서스
 INSERT INTO WEB_NOV_INFO (WEB_NOV_NUM, CATEGORY_CODE, WEB_NOV_TITLE, WEB_NOV_AUTHOR, CHAP_PER_COIN, WEB_NOV_PUBLISHER,
                           WEB_NOV_INFORM, WEB_NOV_IMG_LOCATION, DAY_OF_WEEK, WEB_NOV_IS_OPEN, FINISHED_OR_NOT, WEB_NOV_COUNT)
 VALUES ('40', 'F', '메카닉이되었다', '마린파이어뱃', 100, '창비', '바이오닉계에서 전설이었던 M씨가
-상대 계열사인 메카닉계로 떠나게 된다!', '사진경로16', '토', 'N ', 'N ', DEFAULT);
+상대 계열사인 메카닉계로 떠나게 된다!', '사진경로16', '토', 'N', 'N', DEFAULT);
 INSERT INTO WEB_NOV_INFO (WEB_NOV_NUM, CATEGORY_CODE, WEB_NOV_TITLE, WEB_NOV_AUTHOR, CHAP_PER_COIN, WEB_NOV_PUBLISHER,
                           WEB_NOV_INFORM, WEB_NOV_IMG_LOCATION, DAY_OF_WEEK, WEB_NOV_IS_OPEN, FINISHED_OR_NOT, WEB_NOV_COUNT)
 VALUES ('41', 'MF', '축구황제가되기까지', '마이클조던', 100, '넥서스', '가난한 집안에서 태어났지만, 축구 능력 만큼은 우수했던 청년
-우연치 않게 구단주를 만나게 되는데', '사진경로17', '토', 'N ', 'Y ', DEFAULT);
+우연치 않게 구단주를 만나게 되는데', '사진경로17', '토', 'N', 'Y', DEFAULT);
 INSERT INTO WEB_NOV_INFO (WEB_NOV_NUM, CATEGORY_CODE, WEB_NOV_TITLE, WEB_NOV_AUTHOR, CHAP_PER_COIN, WEB_NOV_PUBLISHER,
                           WEB_NOV_INFORM, WEB_NOV_IMG_LOCATION, DAY_OF_WEEK, WEB_NOV_IS_OPEN, FINISHED_OR_NOT, WEB_NOV_COUNT)
 VALUES ('42', 'F', '황제의자리', '요환과페이커', 100, '문학동네', '하늘아래 두 개의 태양은 존재 하지 않는 법!!
-황제의 자리를 놓고 벌여지는 숨막히는 티키타가의 스토리!', '사진경로18', '토', 'N ', 'N ', DEFAULT);
+황제의 자리를 놓고 벌여지는 숨막히는 티키타가의 스토리!', '사진경로18', '토', 'N', 'N', DEFAULT);
 INSERT INTO WEB_NOV_INFO (WEB_NOV_NUM, CATEGORY_CODE, WEB_NOV_TITLE, WEB_NOV_AUTHOR, CHAP_PER_COIN, WEB_NOV_PUBLISHER,
                           WEB_NOV_INFORM, WEB_NOV_IMG_LOCATION, DAY_OF_WEEK, WEB_NOV_IS_OPEN, FINISHED_OR_NOT, WEB_NOV_COUNT)
 VALUES ('43', 'F', '공대생의삶', '아이작뉴턴', 100, '게임북스', '사과…영어로는 APPLE…
-그러나 그의 눈에는 사과가 아닌 다른 것이 보였다!?!?', '사진경로19', '일', 'N ', 'N ', DEFAULT);
+그러나 그의 눈에는 사과가 아닌 다른 것이 보였다!?!?', '사진경로19', '일', 'N', 'N', DEFAULT);
 INSERT INTO WEB_NOV_INFO (WEB_NOV_NUM, CATEGORY_CODE, WEB_NOV_TITLE, WEB_NOV_AUTHOR, CHAP_PER_COIN, WEB_NOV_PUBLISHER,
                           WEB_NOV_INFORM, WEB_NOV_IMG_LOCATION, DAY_OF_WEEK, WEB_NOV_IS_OPEN, FINISHED_OR_NOT, WEB_NOV_COUNT)
 VALUES ('44', 'OF', '사랑의치유사', '아웃사이더', 100, '문학동네', '유명 랩퍼로 한 때 인기를 날렸던 O씨
-어느새 음악치유사가 되가는 이야기', '사진경로20', '일', 'N ', 'N ', DEFAULT);
+어느새 음악치유사가 되가는 이야기', '사진경로20', '일', 'N', 'N', DEFAULT);
 INSERT INTO WEB_NOV_INFO (WEB_NOV_NUM, CATEGORY_CODE, WEB_NOV_TITLE, WEB_NOV_AUTHOR, CHAP_PER_COIN, WEB_NOV_PUBLISHER,
                           WEB_NOV_INFORM, WEB_NOV_IMG_LOCATION, DAY_OF_WEEK, WEB_NOV_IS_OPEN, FINISHED_OR_NOT, WEB_NOV_COUNT)
 VALUES ('45', 'OF', '지구는돈다', '갈릴레이갈릴레오', 100, '문학동네', '먼 옛날, 지구가 평평하다고 생각했던 시기에
-악동이 태어났으니….', '사진경로21', '일', 'N ', 'N ', DEFAULT);
+악동이 태어났으니….', '사진경로21', '일', 'N', 'N', DEFAULT);
 INSERT INTO WEB_NOV_INFO (WEB_NOV_NUM, CATEGORY_CODE, WEB_NOV_TITLE, WEB_NOV_AUTHOR, CHAP_PER_COIN, WEB_NOV_PUBLISHER,
                           WEB_NOV_INFORM, WEB_NOV_IMG_LOCATION, DAY_OF_WEEK, WEB_NOV_IS_OPEN, FINISHED_OR_NOT, WEB_NOV_COUNT)
-VALUES ('46', 'F', '삼국지 밖으로 가자', '중한한중', 100, '김영사', '고대 시대, 세 나라의 치열한 전투 이야기가 시작된다', '사진경로22', '완', 'N ', 'Y ', DEFAULT);
+VALUES ('46', 'F', '삼국지 밖으로 가자', '중한한중', 100, '김영사', '고대 시대, 세 나라의 치열한 전투 이야기가 시작된다', '사진경로22', '완', 'N', 'Y', DEFAULT);
 INSERT INTO WEB_NOV_INFO (WEB_NOV_NUM, CATEGORY_CODE, WEB_NOV_TITLE, WEB_NOV_AUTHOR, CHAP_PER_COIN, WEB_NOV_PUBLISHER,
                           WEB_NOV_INFORM, WEB_NOV_IMG_LOCATION, DAY_OF_WEEK, WEB_NOV_IS_OPEN, FINISHED_OR_NOT, WEB_NOV_COUNT)
-VALUES ('47', 'F', '분열하고 싶은 자', '제법좁은강', 100, '김영사', '자아분열에 대해서 고뇌하던 유명 철학가가 직접  쓴 분열 이야기', '사진경로23', '완', 'N ',
+VALUES ('47', 'F', '분열하고 싶은 자', '제법좁은강', 100, '김영사', '자아분열에 대해서 고뇌하던 유명 철학가가 직접  쓴 분열 이야기', '사진경로23', '완', 'N',
         'Y ', DEFAULT);
 INSERT INTO WEB_NOV_INFO (WEB_NOV_NUM, CATEGORY_CODE, WEB_NOV_TITLE, WEB_NOV_AUTHOR, CHAP_PER_COIN, WEB_NOV_PUBLISHER,
                           WEB_NOV_INFORM, WEB_NOV_IMG_LOCATION, DAY_OF_WEEK, WEB_NOV_IS_OPEN, FINISHED_OR_NOT, WEB_NOV_COUNT)
-VALUES ('48', 'OF', '포이즌 퀸', '유지권', 100, '문학동네', '독보다 강하고, 곰 같은 여우가 되겠다던 한 여왕의 삶의 이야기', '사진경로24', '완', 'N ', 'Y ', DEFAULT);
+VALUES ('48', 'OF', '포이즌 퀸', '유지권', 100, '문학동네', '독보다 강하고, 곰 같은 여우가 되겠다던 한 여왕의 삶의 이야기', '사진경로24', '완', 'N', 'Y', DEFAULT);
 INSERT INTO WEB_NOV_INFO (WEB_NOV_NUM, CATEGORY_CODE, WEB_NOV_TITLE, WEB_NOV_AUTHOR, CHAP_PER_COIN, WEB_NOV_PUBLISHER,
                           WEB_NOV_INFORM, WEB_NOV_IMG_LOCATION, DAY_OF_WEEK, WEB_NOV_IS_OPEN, FINISHED_OR_NOT, WEB_NOV_COUNT)
 VALUES ('49', 'FH', '거지에서 고수까지', '요비비요', 100, '창비', '매일 취준의 늪에 빠져살던 백수가
-지나가다 우연치 않게 바둑을 보게 되면서', '사진경로25', '완', 'N ', 'Y ', DEFAULT);
+지나가다 우연치 않게 바둑을 보게 되면서', '사진경로25', '완', 'N', 'Y', DEFAULT);
 INSERT INTO WEB_NOV_INFO (WEB_NOV_NUM, CATEGORY_CODE, WEB_NOV_TITLE, WEB_NOV_AUTHOR, CHAP_PER_COIN, WEB_NOV_PUBLISHER,
                           WEB_NOV_INFORM, WEB_NOV_IMG_LOCATION, DAY_OF_WEEK, WEB_NOV_IS_OPEN, FINISHED_OR_NOT, WEB_NOV_COUNT)
 VALUES ('50', 'SPO', '리멤버 더 에이지', '중금하르방', 100, '창비', '나이를 잊고 사는 나라에
-나이의 개념이 들어오면서 사람들이 혼란을 겪게 되는데', '사진경로26', '완', 'N ', 'Y ', DEFAULT);
+나이의 개념이 들어오면서 사람들이 혼란을 겪게 되는데', '사진경로26', '완', 'N', 'Y', DEFAULT);
 
 INSERT INTO WEB_NOV_INFO (WEB_NOV_NUM, CATEGORY_CODE, WEB_NOV_TITLE, WEB_NOV_AUTHOR, CHAP_PER_COIN, WEB_NOV_PUBLISHER,
                           WEB_NOV_INFORM, WEB_NOV_IMG_LOCATION, DAY_OF_WEEK, WEB_NOV_IS_OPEN, FINISHED_OR_NOT, WEB_NOV_COUNT)
-VALUES ('51', 'SPO', 'test', 'test', 100, 'test', 'test', '사진경로27', '완', 'N ', 'Y ', DEFAULT);
+VALUES ('51', 'SPO', 'test', 'test', 100, 'test', 'test', '사진경로27', '완', 'N', 'Y', DEFAULT);
 
 COMMIT;
 
@@ -2727,9 +2725,9 @@ CREATE TABLE WEB_NOV_CHAP_SEARCH
     WEB_NOV_NUM     NUMBER REFERENCES WEB_NOV_INFO (WEB_NOV_NUM) NOT NULL,
     CHAP_NUM     NUMBER,
     CHAP_WRITTEN_DATE     DATE,
-    CHAP_READABLE VARCHAR2(3) DEFAULT 'N', CHECK (CHAP_READABLE IN ('Y', 'N')),
+    CHAP_READABLE VARCHAR2(3) DEFAULT 'N', CHECK (CHAP_READABLE IN('Y', 'N')),
     CHAP_PER_PRICE NUMBER DEFAULT 0,
-    CHAP_PER_IS_USED CHAR(2),
+    CHAP_PER_IS_USED CHAR(1),
     PRIMARY KEY (WEB_NOV_NUM, CHAP_NUM)
 );
 
@@ -2923,22 +2921,22 @@ CREATE TABLE QNA (
 	POST_NUM NUMBER	NOT NULL PRIMARY KEY,
 	MEM_NUM	NUMBER NOT NULL REFERENCES MEM_INFO(MEM_NUM),
 	QNA_TITLE VARCHAR2(100) NOT NULL,
-	QNA_OPEN_YN	CHAR(2)	DEFAULT 'Y' NOT NULL CHECK(QNA_OPEN_YN IN ('Y', 'N')),
-	QNA_ANSWER_YN CHAR(2) DEFAULT 'N' NOT NULL CHECK(QNA_ANSWER_YN IN ('Y', 'N')),
+	QNA_OPEN_YN	CHAR(1)	DEFAULT 'Y' NOT NULL CHECK(QNA_OPEN_YN IN ('Y', 'N')),
+	QNA_ANSWER_YN CHAR(1) DEFAULT 'N' NOT NULL CHECK(QNA_ANSWER_YN IN('Y', 'N')),
 	QNA_DATE DATE NOT NULL,
     QNA_CONTENT VARCHAR2(4000) NOT NULL
 );
 
-Insert into QNA (POST_NUM,MEM_NUM,QNA_TITLE,QNA_OPEN_YN,QNA_ANSWER_YN,QNA_DATE,QNA_CONTENT) values (1,'7','1회 공모전 상금 수령 관련 문의드립니다','Y ','Y ',to_date('20/01/15','RR/MM/DD'),'상금 수령시 제세공과금이 있는지 궁금합니다. 5회 이후의 분량에 대한 수익 분배는 어떻게 되는지도 알고 싶어요.');
-Insert into QNA (POST_NUM,MEM_NUM,QNA_TITLE,QNA_OPEN_YN,QNA_ANSWER_YN,QNA_DATE,QNA_CONTENT) values (2,'30','질문) 코인 무료로 얻을 수 있는 방법','Y ','Y ',to_date('20/02/03','RR/MM/DD'),'코인을 다 썼어요. 혹시 무료로 코인 얻을 수 있는 방법이 있나요?? 다른데는 기다리면 무료 같은게 있던데 여긴 없나요???');
-Insert into QNA (POST_NUM,MEM_NUM,QNA_TITLE,QNA_OPEN_YN,QNA_ANSWER_YN,QNA_DATE,QNA_CONTENT) values (3,'20','예약구매 했는데 단행본 배송은 언제부터 시작되나요?','Y ','Y ',to_date('20/03/05','RR/MM/DD'),'전지적 독자시점 단행본을 신청했는데 배송관련한 기능이 아직 준비중이네요. 단행본 출시는 4월로 알고 있는데 언제쯤 받을 수 있을까요.');
-Insert into QNA (POST_NUM,MEM_NUM,QNA_TITLE,QNA_OPEN_YN,QNA_ANSWER_YN,QNA_DATE,QNA_CONTENT) values (4,'21','아진짜~~사진 억케올림','Y ','Y ',to_date('20/04/02','RR/MM/DD'),'방법~ 알려주^^');
-Insert into QNA (POST_NUM,MEM_NUM,QNA_TITLE,QNA_OPEN_YN,QNA_ANSWER_YN,QNA_DATE,QNA_CONTENT) values (5,'27','선물함 기능은 없나요??','N ','Y ',to_date('20/05/02','RR/MM/DD'),'카카오페이지와 조아라에는 선물함이 있었는데 여기는 없나보네요? 고객 혜택 서비스가 없나요?');
-Insert into QNA (POST_NUM,MEM_NUM,QNA_TITLE,QNA_OPEN_YN,QNA_ANSWER_YN,QNA_DATE,QNA_CONTENT) values (6,'12','와 진짜 재밌는데 다봐서 볼께 없네요. 업뎃 언제되죠?_?','Y ','Y ',to_date('20/06/04','RR/MM/DD'),'와 넘 재밌어서 밤새서 다 봐버렸네요. 다른 사이트는 유료라서 기다리고 있는데 혹시 여기 업뎃이 느린 이유가 있어요? 빨리 올려주면 좋겠는데 ');
-Insert into QNA (POST_NUM,MEM_NUM,QNA_TITLE,QNA_OPEN_YN,QNA_ANSWER_YN,QNA_DATE,QNA_CONTENT) values (7,'6','신고 몇 회 누적되면 블라인드 되나요?','Y ','Y ',to_date('20/07/15','RR/MM/DD'),'신고당할만한 댓글이 아닌데 신고를 5개나 받았습니다. 개수가 누적되면 처리하는 것인지, 운영자분들이 처리하는 것인지 알려주세요.');
-Insert into QNA (POST_NUM,MEM_NUM,QNA_TITLE,QNA_OPEN_YN,QNA_ANSWER_YN,QNA_DATE,QNA_CONTENT) values (8,'10','공모전 결과가 궁금한데요 차단 좀 풀어주시죠','N ','Y ',to_date('20/11/15','RR/MM/DD'),'제가 뭐 심한 말 한 것도 아니고 팩트만 말했는데 이게 왜 차단? 그리고 공모전 제출한거 업데이트 못해서 떨어지면 책임지실겁니까?');
-Insert into QNA (POST_NUM,MEM_NUM,QNA_TITLE,QNA_OPEN_YN,QNA_ANSWER_YN,QNA_DATE,QNA_CONTENT) values (9,'9','탈퇴시 제출했던 공모작품은 어떻게 되나요','N ','N ',to_date('20/12/15','RR/MM/DD'),'다른 플랫폼에 독점 계약하게 되면서 해당 사이트는 탈퇴하려 합니다. 이럴 경우 기존에 공모전 제출됐던 작품도 삭제하고 싶은데 절차가 어떻게 되나요.');
-Insert into QNA (POST_NUM,MEM_NUM,QNA_TITLE,QNA_OPEN_YN,QNA_ANSWER_YN,QNA_DATE,QNA_CONTENT) values (10,'26','배너 디자인 공모전은 없나요???','Y ','Y ',to_date('20/01/01','RR/MM/DD'),'제가 요새 포토샵과 피그마에 푹 빠졌는데 배너 디자인 공모전이 열리면 꼭 참가해보고 싶네요. 계획하고 계신게 있으시다면 일정을 알고 싶습니다.');
+Insert into QNA (POST_NUM,MEM_NUM,QNA_TITLE,QNA_OPEN_YN,QNA_ANSWER_YN,QNA_DATE,QNA_CONTENT) values (1,'7','1회 공모전 상금 수령 관련 문의드립니다','Y','Y',to_date('20/01/15','RR/MM/DD'),'상금 수령시 제세공과금이 있는지 궁금합니다. 5회 이후의 분량에 대한 수익 분배는 어떻게 되는지도 알고 싶어요.');
+Insert into QNA (POST_NUM,MEM_NUM,QNA_TITLE,QNA_OPEN_YN,QNA_ANSWER_YN,QNA_DATE,QNA_CONTENT) values (2,'30','질문) 코인 무료로 얻을 수 있는 방법','Y','Y',to_date('20/02/03','RR/MM/DD'),'코인을 다 썼어요. 혹시 무료로 코인 얻을 수 있는 방법이 있나요?? 다른데는 기다리면 무료 같은게 있던데 여긴 없나요???');
+Insert into QNA (POST_NUM,MEM_NUM,QNA_TITLE,QNA_OPEN_YN,QNA_ANSWER_YN,QNA_DATE,QNA_CONTENT) values (3,'20','예약구매 했는데 단행본 배송은 언제부터 시작되나요?','Y','Y',to_date('20/03/05','RR/MM/DD'),'전지적 독자시점 단행본을 신청했는데 배송관련한 기능이 아직 준비중이네요. 단행본 출시는 4월로 알고 있는데 언제쯤 받을 수 있을까요.');
+Insert into QNA (POST_NUM,MEM_NUM,QNA_TITLE,QNA_OPEN_YN,QNA_ANSWER_YN,QNA_DATE,QNA_CONTENT) values (4,'21','아진짜~~사진 억케올림','Y','Y',to_date('20/04/02','RR/MM/DD'),'방법~ 알려주^^');
+Insert into QNA (POST_NUM,MEM_NUM,QNA_TITLE,QNA_OPEN_YN,QNA_ANSWER_YN,QNA_DATE,QNA_CONTENT) values (5,'27','선물함 기능은 없나요??','N','Y',to_date('20/05/02','RR/MM/DD'),'카카오페이지와 조아라에는 선물함이 있었는데 여기는 없나보네요? 고객 혜택 서비스가 없나요?');
+Insert into QNA (POST_NUM,MEM_NUM,QNA_TITLE,QNA_OPEN_YN,QNA_ANSWER_YN,QNA_DATE,QNA_CONTENT) values (6,'12','와 진짜 재밌는데 다봐서 볼께 없네요. 업뎃 언제되죠?_?','Y','Y',to_date('20/06/04','RR/MM/DD'),'와 넘 재밌어서 밤새서 다 봐버렸네요. 다른 사이트는 유료라서 기다리고 있는데 혹시 여기 업뎃이 느린 이유가 있어요? 빨리 올려주면 좋겠는데 ');
+Insert into QNA (POST_NUM,MEM_NUM,QNA_TITLE,QNA_OPEN_YN,QNA_ANSWER_YN,QNA_DATE,QNA_CONTENT) values (7,'6','신고 몇 회 누적되면 블라인드 되나요?','Y','Y',to_date('20/07/15','RR/MM/DD'),'신고당할만한 댓글이 아닌데 신고를 5개나 받았습니다. 개수가 누적되면 처리하는 것인지, 운영자분들이 처리하는 것인지 알려주세요.');
+Insert into QNA (POST_NUM,MEM_NUM,QNA_TITLE,QNA_OPEN_YN,QNA_ANSWER_YN,QNA_DATE,QNA_CONTENT) values (8,'10','공모전 결과가 궁금한데요 차단 좀 풀어주시죠','N','Y',to_date('20/11/15','RR/MM/DD'),'제가 뭐 심한 말 한 것도 아니고 팩트만 말했는데 이게 왜 차단? 그리고 공모전 제출한거 업데이트 못해서 떨어지면 책임지실겁니까?');
+Insert into QNA (POST_NUM,MEM_NUM,QNA_TITLE,QNA_OPEN_YN,QNA_ANSWER_YN,QNA_DATE,QNA_CONTENT) values (9,'9','탈퇴시 제출했던 공모작품은 어떻게 되나요','N','N',to_date('20/12/15','RR/MM/DD'),'다른 플랫폼에 독점 계약하게 되면서 해당 사이트는 탈퇴하려 합니다. 이럴 경우 기존에 공모전 제출됐던 작품도 삭제하고 싶은데 절차가 어떻게 되나요.');
+Insert into QNA (POST_NUM,MEM_NUM,QNA_TITLE,QNA_OPEN_YN,QNA_ANSWER_YN,QNA_DATE,QNA_CONTENT) values (10,'26','배너 디자인 공모전은 없나요???','Y','Y',to_date('20/01/01','RR/MM/DD'),'제가 요새 포토샵과 피그마에 푹 빠졌는데 배너 디자인 공모전이 열리면 꼭 참가해보고 싶네요. 계획하고 계신게 있으시다면 일정을 알고 싶습니다.');
 
 
 CREATE TABLE "QNA_REPLY" (
@@ -2994,30 +2992,30 @@ CREATE TABLE NOTICE (
     );
 
 Insert into NOTICE (NOTICE_NUM,NOTICE_DATE,NOTICE_NAME,NOTICE_VIEW_COUNT,NOTICE_CONTENT) values (1,to_date('19/06/01','RR/MM/DD'),'FirstBook 서비스 오픈!',5417,'오랜 준비끝에 신인과 작가, 독자를 위한 웹소설 플랫폼 First Book 서비스를 오픈합니다. \n저희 서비스는 타 플랫폼에서 하지 못한 상생을 추구하기 위해 낮은 수수료를 적용하고, 출판사와 작가에게 수익이 분배되는 코인 제도를 운영할 것입니다. 독자분들을 위해 일주일에 한번씩 위클리 코인도 제공할 예정입니다. \n또한 활발한 공모전 개최로 신인들의 등용문 역할을 할 예정입니다. 공모전은 2회의 테스트 기간을 거쳐 매해 분기별 진행을 목표로 하고 있습니다. 신인분들의 많은 참여와 관심 부탁드립니다.');
-Insert into NOTICE (NOTICE_NUM,NOTICE_DATE,NOTICE_NAME,NOTICE_VIEW_COUNT,NOTICE_CONTENT) values (2,to_date('19/07/05','RR/MM/DD'),'퍼북 독자님들 위클리 코인 받아가세용~~',9752,'공짜로 소설 보는 방법, 아직도 모르셨다구요?? \n 이런이런 지금 당장 마이페이지의 위클리 코인을 확인해주세요! 위클리 코인이 활성화 돼 있지 않나요? 가입시점으로부터 일주일마다 활성화된다구요~~\n 꼭꼭 챙겨서 독자님들 지갑 잘 보존하세용 ');
-Insert into NOTICE (NOTICE_NUM,NOTICE_DATE,NOTICE_NAME,NOTICE_VIEW_COUNT,NOTICE_CONTENT) values (3,to_date('19/08/05','RR/MM/DD'),'인기 작품들의 단행본 예약구매가 진행중입니다',4827,'너혼자만 레벨업, 3인칭 작가시점 등의 유명 웹소설이 단행본으로 발매됩니다. \n 저희 퍼북에서는 이 단행본들을 무료 배송에 10% 할인가로 판매 예정입니다. 많은 독자님들의 관심 바랍니다 ^^');
-Insert into NOTICE (NOTICE_NUM,NOTICE_DATE,NOTICE_NAME,NOTICE_VIEW_COUNT,NOTICE_CONTENT) values (4,to_date('19/10/01','RR/MM/DD'),'제1회 시범 공모전)) 출품작 모집',6384,'안녕하세요 신인 루키 작가님들! \n 넘치는 재능을 뽐낼 곳을 찾고 계시다구요? \n 퍼북 공모전에 작품을 출품하세요! \n 저희는 유명 웹툰, 드라마, 영화제작사와의 협조로 MSOU 또한 준비중에 있다구요. \n 10월 15일까지 출품작과 서류를 받고 있으니 꼭 확인해서 저희에게 보내주세요! \n 면밀히 검토하여 뽑은 16개의 소설이 토너먼트로 독자님들의 선택을 받게됩니다. \n 독자님들께는 소중하고 깨끗한 한표 부탁드릴께요~~~');
+Insert into NOTICE (NOTICE_NUM,NOTICE_DATE,NOTICE_NAME,NOTICE_VIEW_COUNT,NOTICE_CONTENT) values (2,to_date('19/07/05','RR/MM/DD'),'퍼북 독자님들 위클리 코인 받아가세용~~',9752,'공짜로 소설 보는 방법, 아직도 모르셨다구요?? \N이런이런 지금 당장 마이페이지의 위클리 코인을 확인해주세요! 위클리 코인이 활성화 돼 있지 않나요? 가입시점으로부터 일주일마다 활성화된다구요~~\N꼭꼭 챙겨서 독자님들 지갑 잘 보존하세용 ');
+Insert into NOTICE (NOTICE_NUM,NOTICE_DATE,NOTICE_NAME,NOTICE_VIEW_COUNT,NOTICE_CONTENT) values (3,to_date('19/08/05','RR/MM/DD'),'인기 작품들의 단행본 예약구매가 진행중입니다',4827,'너혼자만 레벨업, 3인칭 작가시점 등의 유명 웹소설이 단행본으로 발매됩니다. \N저희 퍼북에서는 이 단행본들을 무료 배송에 10% 할인가로 판매 예정입니다. 많은 독자님들의 관심 바랍니다 ^^');
+Insert into NOTICE (NOTICE_NUM,NOTICE_DATE,NOTICE_NAME,NOTICE_VIEW_COUNT,NOTICE_CONTENT) values (4,to_date('19/10/01','RR/MM/DD'),'제1회 시범 공모전)) 출품작 모집',6384,'안녕하세요 신인 루키 작가님들! \N넘치는 재능을 뽐낼 곳을 찾고 계시다구요? \N퍼북 공모전에 작품을 출품하세요! \N저희는 유명 웹툰, 드라마, 영화제작사와의 협조로 MSOU 또한 준비중에 있다구요. \N10월 15일까지 출품작과 서류를 받고 있으니 꼭 확인해서 저희에게 보내주세요! \N면밀히 검토하여 뽑은 16개의 소설이 토너먼트로 독자님들의 선택을 받게됩니다. \N독자님들께는 소중하고 깨끗한 한표 부탁드릴께요~~~');
 Insert into NOTICE (NOTICE_NUM,NOTICE_DATE,NOTICE_NAME,NOTICE_VIEW_COUNT,NOTICE_CONTENT) values (5,to_date('19/10/16','RR/MM/DD'),'제1회 시범 공모전)) 16강 대진 발표',8396,'1회 시범 공모전 16강입니다!! 자세한 사항은 대진표를 참고해주세요!');
 Insert into NOTICE (NOTICE_NUM,NOTICE_DATE,NOTICE_NAME,NOTICE_VIEW_COUNT,NOTICE_CONTENT) values (6,to_date('19/11/01','RR/MM/DD'),'제1회 시범 공모전)) 8강 대진 발표',4156,'1회 시범 공모전 8강입니다!! 자세한 사항은 대진표를 참고해주세요!');
 Insert into NOTICE (NOTICE_NUM,NOTICE_DATE,NOTICE_NAME,NOTICE_VIEW_COUNT,NOTICE_CONTENT) values (7,to_date('19/11/15','RR/MM/DD'),'제1회 시범 공모전)) 4강 대진 발표',3462,'1회 시범 공모전 4강입니다!! 자세한 사항은 대진표를 참고해주세요!');
 Insert into NOTICE (NOTICE_NUM,NOTICE_DATE,NOTICE_NAME,NOTICE_VIEW_COUNT,NOTICE_CONTENT) values (8,to_date('19/12/01','RR/MM/DD'),'제1회 시범 공모전)) 준결승! 대진 발표',5035,'1회 시범 공모전 준결승입니다!! 자세한 사항은 대진표를 참고해주세요!');
 Insert into NOTICE (NOTICE_NUM,NOTICE_DATE,NOTICE_NAME,NOTICE_VIEW_COUNT,NOTICE_CONTENT) values (9,to_date('19/12/15','RR/MM/DD'),'제1회 시범 공모전)) 결승!!!! 대진 발표',6461,'1회 시범 공모전 결승입니다!! 자세한 사항은 대진표를 참고해주세요!');
 Insert into NOTICE (NOTICE_NUM,NOTICE_DATE,NOTICE_NAME,NOTICE_VIEW_COUNT,NOTICE_CONTENT) values (10,to_date('20/01/15','RR/MM/DD'),'제1회 시범 공모전)) 대망의 결승 결과 발표',3788,'1회 시범 공모전 결승 결과 발표입니다!! 자세한 사항은 대진표를 참고해주세요!');
-Insert into NOTICE (NOTICE_NUM,NOTICE_DATE,NOTICE_NAME,NOTICE_VIEW_COUNT,NOTICE_CONTENT) values (11,to_date('20/07/01','RR/MM/DD'),'제2회 시범 공모전)) 출품작 모집',5872,'안녕하세요 신인 루키 작가님들! \n 넘치는 재능을 뽐낼 곳을 찾고 계시다구요? \n 퍼북 공모전에 작품을 출품하세요! \n 저희는 유명 웹툰, 드라마, 영화제작사와의 협조로 MSOU 또한 준비중에 있다구요. \n 7월 15일까지 출품작과 서류를 받고 있으니 꼭 확인해서 저희에게 보내주세요! \n 면밀히 검토하여 뽑은 16개의 소설이 토너먼트로 독자님들의 선택을 받게됩니다. \n 독자님들께는 소중하고 깨끗한 한표 부탁드릴께요~~~');
+Insert into NOTICE (NOTICE_NUM,NOTICE_DATE,NOTICE_NAME,NOTICE_VIEW_COUNT,NOTICE_CONTENT) values (11,to_date('20/07/01','RR/MM/DD'),'제2회 시범 공모전)) 출품작 모집',5872,'안녕하세요 신인 루키 작가님들! \N넘치는 재능을 뽐낼 곳을 찾고 계시다구요? \N퍼북 공모전에 작품을 출품하세요! \N저희는 유명 웹툰, 드라마, 영화제작사와의 협조로 MSOU 또한 준비중에 있다구요. \N7월 15일까지 출품작과 서류를 받고 있으니 꼭 확인해서 저희에게 보내주세요! \N면밀히 검토하여 뽑은 16개의 소설이 토너먼트로 독자님들의 선택을 받게됩니다. \N독자님들께는 소중하고 깨끗한 한표 부탁드릴께요~~~');
 Insert into NOTICE (NOTICE_NUM,NOTICE_DATE,NOTICE_NAME,NOTICE_VIEW_COUNT,NOTICE_CONTENT) values (12,to_date('20/07/15','RR/MM/DD'),'제2회 시범 공모전)) 16강 대진 발표',7362,'2회 시범 공모전 16강입니다!! 자세한 사항은 대진표를 참고해주세요!');
 Insert into NOTICE (NOTICE_NUM,NOTICE_DATE,NOTICE_NAME,NOTICE_VIEW_COUNT,NOTICE_CONTENT) values (13,to_date('20/08/01','RR/MM/DD'),'제2회 시범 공모전)) 8강 대진 발표',5485,'2회 시범 공모전 8강입니다!! 자세한 사항은 대진표를 참고해주세요!');
 Insert into NOTICE (NOTICE_NUM,NOTICE_DATE,NOTICE_NAME,NOTICE_VIEW_COUNT,NOTICE_CONTENT) values (14,to_date('20/08/15','RR/MM/DD'),'제2회 시범 공모전)) 4강 대진 발표',4765,'2회 시범 공모전 4강입니다!! 자세한 사항은 대진표를 참고해주세요!');
 Insert into NOTICE (NOTICE_NUM,NOTICE_DATE,NOTICE_NAME,NOTICE_VIEW_COUNT,NOTICE_CONTENT) values (15,to_date('20/09/01','RR/MM/DD'),'제2회 시범 공모전)) 준결승! 대진 발표',3683,'2회 시범 공모전 준결승입니다!! 자세한 사항은 대진표를 참고해주세요!');
 Insert into NOTICE (NOTICE_NUM,NOTICE_DATE,NOTICE_NAME,NOTICE_VIEW_COUNT,NOTICE_CONTENT) values (16,to_date('20/09/15','RR/MM/DD'),'제2회 시범 공모전)) 결승!!!! 대진 발표',5398,'2회 시범 공모전 결승입니다!! 자세한 사항은 대진표를 참고해주세요!');
 Insert into NOTICE (NOTICE_NUM,NOTICE_DATE,NOTICE_NAME,NOTICE_VIEW_COUNT,NOTICE_CONTENT) values (17,to_date('20/09/30','RR/MM/DD'),'제2회 시범 공모전)) 대망의 결승 결과 발표',6362,'2회 시범 공모전 결승 결과 발표입니다!! 자세한 사항은 대진표를 참고해주세요!');
-Insert into NOTICE (NOTICE_NUM,NOTICE_DATE,NOTICE_NAME,NOTICE_VIEW_COUNT,NOTICE_CONTENT) values (18,to_date('20/10/01','RR/MM/DD'),'제3회 분기별 공모전)) 출품작 모집',4286,'안녕하세요 신인 루키 작가님들! \n 넘치는 재능을 뽐낼 곳을 찾고 계시다구요? \n 퍼북 공모전에 작품을 출품하세요! \n 저희는 유명 웹툰, 드라마, 영화제작사와의 협조로 MSOU 또한 준비중에 있다구요. \n 7월 15일까지 출품작과 서류를 받고 있으니 꼭 확인해서 저희에게 보내주세요! \n 면밀히 검토하여 뽑은 16개의 소설이 토너먼트로 독자님들의 선택을 받게됩니다. \n 독자님들께는 소중하고 깨끗한 한표 부탁드릴께요~~~');
+Insert into NOTICE (NOTICE_NUM,NOTICE_DATE,NOTICE_NAME,NOTICE_VIEW_COUNT,NOTICE_CONTENT) values (18,to_date('20/10/01','RR/MM/DD'),'제3회 분기별 공모전)) 출품작 모집',4286,'안녕하세요 신인 루키 작가님들! \N넘치는 재능을 뽐낼 곳을 찾고 계시다구요? \N퍼북 공모전에 작품을 출품하세요! \N저희는 유명 웹툰, 드라마, 영화제작사와의 협조로 MSOU 또한 준비중에 있다구요. \N7월 15일까지 출품작과 서류를 받고 있으니 꼭 확인해서 저희에게 보내주세요! \N면밀히 검토하여 뽑은 16개의 소설이 토너먼트로 독자님들의 선택을 받게됩니다. \N독자님들께는 소중하고 깨끗한 한표 부탁드릴께요~~~');
 Insert into NOTICE (NOTICE_NUM,NOTICE_DATE,NOTICE_NAME,NOTICE_VIEW_COUNT,NOTICE_CONTENT) values (19,to_date('20/10/15','RR/MM/DD'),'제3회 분기별 공모전)) 16강 대진 발표',3942,'3회 분기별 공모전 16강입니다!! 자세한 사항은 대진표를 참고해주세요!');
 Insert into NOTICE (NOTICE_NUM,NOTICE_DATE,NOTICE_NAME,NOTICE_VIEW_COUNT,NOTICE_CONTENT) values (20,to_date('20/10/31','RR/MM/DD'),'제3회 분기별 공모전)) 8강 대진 발표',5976,'3회 분기별 공모전 8강입니다!! 자세한 사항은 대진표를 참고해주세요!');
 Insert into NOTICE (NOTICE_NUM,NOTICE_DATE,NOTICE_NAME,NOTICE_VIEW_COUNT,NOTICE_CONTENT) values (21,to_date('20/11/01','RR/MM/DD'),'제3회 분기별 공모전)) 4강 대진 발표',6398,'3회 분기별 공모전 4강입니다!! 자세한 사항은 대진표를 참고해주세요!');
 Insert into NOTICE (NOTICE_NUM,NOTICE_DATE,NOTICE_NAME,NOTICE_VIEW_COUNT,NOTICE_CONTENT) values (22,to_date('20/11/15','RR/MM/DD'),'제3회 분기별 공모전)) 준결승! 대진 발표',4783,'3회 분기별 공모전 준결승입니다!! 자세한 사항은 대진표를 참고해주세요!');
 Insert into NOTICE (NOTICE_NUM,NOTICE_DATE,NOTICE_NAME,NOTICE_VIEW_COUNT,NOTICE_CONTENT) values (23,to_date('20/11/30','RR/MM/DD'),'제3회 분기별 공모전)) 결승!!!! 대진 발표',5962,'3회 분기별 공모전 결승입니다!! 자세한 사항은 대진표를 참고해주세요!');
 Insert into NOTICE (NOTICE_NUM,NOTICE_DATE,NOTICE_NAME,NOTICE_VIEW_COUNT,NOTICE_CONTENT) values (24,to_date('20/12/01','RR/MM/DD'),'제3회 분기별 공모전)) 대망의 결승 결과 발표',6329,'2회 시범 공모전 결승 결과 발표입니다!! 자세한 사항은 대진표를 참고해주세요!');
-Insert into NOTICE (NOTICE_NUM,NOTICE_DATE,NOTICE_NAME,NOTICE_VIEW_COUNT,NOTICE_CONTENT) values (25,to_date('20/12/15','RR/MM/DD'),'제4회 분기별 공모전)) 출품작 모집',4852,'안녕하세요 신인 루키 작가님들! \n 넘치는 재능을 뽐낼 곳을 찾고 계시다구요? \n 퍼북 공모전에 작품을 출품하세요! \n 저희는 유명 웹툰, 드라마, 영화제작사와의 협조로 MSOU 또한 준비중에 있다구요. \n 7월 15일까지 출품작과 서류를 받고 있으니 꼭 확인해서 저희에게 보내주세요! \n 면밀히 검토하여 뽑은 16개의 소설이 토너먼트로 독자님들의 선택을 받게됩니다. \n 독자님들께는 소중하고 깨끗한 한표 부탁드릴께요~~~');
+Insert into NOTICE (NOTICE_NUM,NOTICE_DATE,NOTICE_NAME,NOTICE_VIEW_COUNT,NOTICE_CONTENT) values (25,to_date('20/12/15','RR/MM/DD'),'제4회 분기별 공모전)) 출품작 모집',4852,'안녕하세요 신인 루키 작가님들! \N넘치는 재능을 뽐낼 곳을 찾고 계시다구요? \N퍼북 공모전에 작품을 출품하세요! \N저희는 유명 웹툰, 드라마, 영화제작사와의 협조로 MSOU 또한 준비중에 있다구요. \N7월 15일까지 출품작과 서류를 받고 있으니 꼭 확인해서 저희에게 보내주세요! \N면밀히 검토하여 뽑은 16개의 소설이 토너먼트로 독자님들의 선택을 받게됩니다. \N독자님들께는 소중하고 깨끗한 한표 부탁드릴께요~~~');
 Insert into NOTICE (NOTICE_NUM,NOTICE_DATE,NOTICE_NAME,NOTICE_VIEW_COUNT,NOTICE_CONTENT) values (26,to_date('20/12/31','RR/MM/DD'),'제4회 분기별 공모전)) 16강 대진 발표`',5285,'2회 시범 공모전 16강입니다!! 자세한 사항은 대진표를 참고해주세요!');
 Insert into NOTICE (NOTICE_NUM,NOTICE_DATE,NOTICE_NAME,NOTICE_VIEW_COUNT,NOTICE_CONTENT) values (27,to_date('21/01/01','RR/MM/DD'),'제4회 분기별 공모전)) 8강 대진 발표',6035,'2회 시범 공모전 8강입니다!! 자세한 사항은 대진표를 참고해주세요!');
 Insert into NOTICE (NOTICE_NUM,NOTICE_DATE,NOTICE_NAME,NOTICE_VIEW_COUNT,NOTICE_CONTENT) values (28,to_date('21/01/15','RR/MM/DD'),'제4회 분기별 공모전)) 4강 대진 발표',5647,'2회 시범 공모전 4강입니다!! 자세한 사항은 대진표를 참고해주세요!');
@@ -3047,7 +3045,7 @@ CREATE TABLE COIN_CHARGE (
 	COIN_CHARGE_DATE DATE NULL,
 	COIN_CHARGE_COUNT NUMBER NULL,
 	COIN_CHARGE_TOTAL NUMBER NULL,
-	WEEKLY_COIN_YN CHAR(2) NULL
+	WEEKLY_COIN_YN CHAR(1) NULL
 );
 
 
@@ -3062,17 +3060,17 @@ CREATE TABLE NOV_INFO (
 	NOV_PUBLISHER	VARCHAR2(20)		NULL,
 	NOV_INFORM	VARCHAR2(1200)		NULL,
 	NOV_IMG_LOCATION	VARCHAR2(100)		NULL,
-	ORDERABLE_YN	CHAR(2)		NULL,
+	ORDERABLE_YN	CHAR(1)		NULL,
 	NOV_AMOUNT	NUMBER		NULL
 );
 
-Insert into NOV_INFO (NOV_NUM,CATEGORY_CODE,NOV_TITLE,NOV_AUTHOR,NOV_PRICE,NOV_PUBLISHER,NOV_INFORM,NOV_IMG_LOCATION,ORDERABLE_YN,NOV_AMOUNT) values (1,'MF','엄빠! 나 이결혼 안할래요!','수희홍',150000,'더오리진','결혼을 약속했던 그와 하지 않겠다고 선포하는데','사진경로1','Y ',20);
-Insert into NOV_INFO (NOV_NUM,CATEGORY_CODE,NOV_TITLE,NOV_AUTHOR,NOV_PRICE,NOV_PUBLISHER,NOV_INFORM,NOV_IMG_LOCATION,ORDERABLE_YN,NOV_AMOUNT) values (2,'F','달콤한 집','달달해',175000,'문학동네','참신한 괴물 캐릭터와 강렬한 서스펜스, 숨 쉴 틈을 주지 않는 섬뜩한 연출로 웹툰 최상위권을 차지했다.','사진경로2','Y ',20);
+Insert into NOV_INFO (NOV_NUM,CATEGORY_CODE,NOV_TITLE,NOV_AUTHOR,NOV_PRICE,NOV_PUBLISHER,NOV_INFORM,NOV_IMG_LOCATION,ORDERABLE_YN,NOV_AMOUNT) values (1,'MF','엄빠! 나 이결혼 안할래요!','수희홍',150000,'더오리진','결혼을 약속했던 그와 하지 않겠다고 선포하는데','사진경로1','Y',20);
+Insert into NOV_INFO (NOV_NUM,CATEGORY_CODE,NOV_TITLE,NOV_AUTHOR,NOV_PRICE,NOV_PUBLISHER,NOV_INFORM,NOV_IMG_LOCATION,ORDERABLE_YN,NOV_AMOUNT) values (2,'F','달콤한 집','달달해',175000,'문학동네','참신한 괴물 캐릭터와 강렬한 서스펜스, 숨 쉴 틈을 주지 않는 섬뜩한 연출로 웹툰 최상위권을 차지했다.','사진경로2','Y',20);
 Insert into NOV_INFO (NOV_NUM,CATEGORY_CODE,NOV_TITLE,NOV_AUTHOR,NOV_PRICE,NOV_PUBLISHER,NOV_INFORM,NOV_IMG_LOCATION,ORDERABLE_YN,NOV_AMOUNT) values (3,'OF','강남클래스','꿀밤머리',160000,'문학동네','대한민국의 중심! 강남에서
-벌여지는 그들만의 이야기','사진경로3','Y ',25);
+벌여지는 그들만의 이야기','사진경로3','Y',25);
 Insert into NOV_INFO (NOV_NUM,CATEGORY_CODE,NOV_TITLE,NOV_AUTHOR,NOV_PRICE,NOV_PUBLISHER,NOV_INFORM,NOV_IMG_LOCATION,ORDERABLE_YN,NOV_AMOUNT) values (4,'ROM','저승과 함께','크리링',180500,'문학동네','사람은 죽고 저승에 가는데
-거기서 자신의 삶에 대해 평가를 받는데','사진경로4','Y ',25);
-Insert into NOV_INFO (NOV_NUM,CATEGORY_CODE,NOV_TITLE,NOV_AUTHOR,NOV_PRICE,NOV_PUBLISHER,NOV_INFORM,NOV_IMG_LOCATION,ORDERABLE_YN,NOV_AMOUNT) values (5,'SPO','여생','미생',215000,'더오리진','신입 여직원의 직장생활 적응기!','사진경로5','N ',0);
+거기서 자신의 삶에 대해 평가를 받는데','사진경로4','Y',25);
+Insert into NOV_INFO (NOV_NUM,CATEGORY_CODE,NOV_TITLE,NOV_AUTHOR,NOV_PRICE,NOV_PUBLISHER,NOV_INFORM,NOV_IMG_LOCATION,ORDERABLE_YN,NOV_AMOUNT) values (5,'SPO','여생','미생',215000,'더오리진','신입 여직원의 직장생활 적응기!','사진경로5','N',0);
 
 
 COMMIT;
