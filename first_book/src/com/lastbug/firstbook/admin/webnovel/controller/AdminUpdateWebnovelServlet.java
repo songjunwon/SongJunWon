@@ -24,6 +24,7 @@ public class AdminUpdateWebnovelServlet extends HttpServlet {
 		AdminWebNovelService webAdminService = new AdminWebNovelService();
 		WebNovelInfoDTO webNovelUpdate = webAdminService.adminSelectWebNovelDetail(no);
 		
+		
 		String path = "";
 		if(webNovelUpdate!= null) {
 			path = "/WEB-INF/views/admin/webnovel/webNovelUpdate.jsp";

@@ -60,7 +60,7 @@ public class AdminWebNovelDAO {
 				webNovel.setDayOfWeek(rset.getString("DAY_OF_WEEK"));
 				webNovel.setWebNovImgLocation(rset.getString("WEB_NOV_IMG_LOCATION"));
 				webNovel.setFinishedOrNot(rset.getString("FINISHED_OR_NOT"));
-				webNovel.setWebNovOpenOrClose(rset.getString("WEB_NOV_OPEN_OR_CLOSE"));
+				webNovel.setWebNovOpenOrClose(rset.getString("WEB_NOV_IS_OPEN"));
 				
 				adminWebNovelList.add(webNovel);
 				
@@ -136,7 +136,7 @@ public class AdminWebNovelDAO {
 				webNovelUpdate.setDayOfWeek(rset.getString("DAY_OF_WEEK"));
 				webNovelUpdate.setWebNovImgLocation(rset.getString("WEB_NOV_IMG_LOCATION"));
 				webNovelUpdate.setFinishedOrNot(rset.getString("FINISHED_OR_NOT"));
-				webNovelUpdate.setWebNovOpenOrClose(rset.getString("WEB_NOV_OPEN_OR_CLOSE"));
+				webNovelUpdate.setWebNovOpenOrClose(rset.getString("WEB_NOV_IS_OPEN"));
 				
 			}
 			
