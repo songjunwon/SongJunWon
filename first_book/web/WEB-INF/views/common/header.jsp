@@ -52,7 +52,7 @@
 	                            <li><a href="${ pageContext.servletContext.contextPath }/novel/list" class="main-btn">단행본</a></li>
 								<c:if test="${ sessionScope.loginMember.memId eq 'admin' }">
 
-									<li><a href="${ pageContext.servletContext.contextPath }/admin/main" class="main-btn">관리자 메인</a></li>
+									<li><a href="${ pageContext.servletContext.contextPath }/admin/main/" class="main-btn">관리자 메인</a></li>
 
 								</c:if>
 	                        </ul>

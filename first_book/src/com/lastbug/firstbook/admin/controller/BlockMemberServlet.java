@@ -38,6 +38,7 @@ public class BlockMemberServlet extends HttpServlet {
 		
 		java.sql.Date memBlockDate = Date.valueOf(time);
 		
+		/* 차단 해제의 경우 차단이 아니므로 차단 시간을 null값으로 바꾼다. */
 		if(blockCheck.equals("N")) {
 			
 			memBlockDate = null;

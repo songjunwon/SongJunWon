@@ -46,7 +46,7 @@ public class AdminDAO {
 		
 		String query = prop.getProperty("selectAllMemList");
 		
-		System.out.println(query);
+		//System.out.println(query);
 		
 		try {
 			stmt = con.createStatement();
@@ -80,7 +80,7 @@ public class AdminDAO {
 				
 			}
 			
-			System.out.println(memList);
+			//System.out.println(memList);
 			
 		} catch (SQLException e) {
 
@@ -207,23 +207,6 @@ public class AdminDAO {
 
 	
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 
