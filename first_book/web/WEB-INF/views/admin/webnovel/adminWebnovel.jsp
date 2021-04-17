@@ -15,6 +15,8 @@
 </style>
 </head>
 <body>
+<jsp:include page="/WEB-INF/views/admin/adminHeader.jsp"/>
+<br><br><br><br><br><br><br><br>
     <div id="wrap">
         <div class="top_main">        
         <section class="sec1">

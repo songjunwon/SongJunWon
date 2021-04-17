@@ -11,27 +11,19 @@
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
 <body>
 
-	111
-	<table>
-		
-		<tr>
-			<td>
-				<c:out value="${ requestScope.webNovelUpdate.webNovTitle }"/>
-				
-			</td>
-		
-		</tr>
+
+	<c:set var="webNovel" value="${ requestScope.webNovelUpdate }"/>
 	
-	</table>
-	
-	
-	
-<%-- 			<form action="${ pageContext.servletContext.contextPath }/admin/webNovel" method="post">
+	<form action="${ pageContext.servletContext.contextPath }/admin/webNovel" method="post">
+			
+
+			
 			
 	<table border="1" align="center">
+					
 					<tr>
 						<td>제목</td>
-						<td><input type="text" size="50" name="title" value="${ requestScope.webNovelUpdate.webNovTitle }"></td>
+						<td><input type="text" size="50" name="title" value="${ webNovel.webNovTitle }"></td>
 					</tr>
 
 					<tr>
@@ -39,19 +31,19 @@
 					</tr>
 					<tr>
 						<td colspan="2">
-							<textarea name="body" cols="60" rows="15" style="resize:none;" required><c:out value="${ requestScope.notice.body }"/></textarea>
+							<textarea name="body" cols="60" rows="15" style="resize:none;" required><c:out value="${ webNovel.webNovInform }"/></textarea>
 						</td>
 					</tr>
 	</table>
-		
-		<h2 align="center">공지 사항 수정</h2>
-				<input type="hidden" name="noticeNo" value="${ requestScope.notice.no }">
+			<div align="center">
+				<input type="hidden" name="noticeNo" value="${ webNovel.webNovNum }">
 				
 				<br>
 					<button type="reset" id="cancleNotice">취소하기</button>
 					<button type="submit">수정하기</button>
 			
+			</div>
 			
-			</form>  --%>
+	</form> 
 </body>
 </html>

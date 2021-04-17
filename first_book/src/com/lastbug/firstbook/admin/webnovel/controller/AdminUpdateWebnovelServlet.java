@@ -46,7 +46,6 @@ public class AdminUpdateWebnovelServlet extends HttpServlet {
 		System.out.println("title" + webtitle);
 		System.out.println("imglocation(id)" + imglocation2);
 	
-		System.out.println("dd");
 	}
 
 }
