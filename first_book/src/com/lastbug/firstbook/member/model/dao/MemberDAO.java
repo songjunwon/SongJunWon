@@ -444,6 +444,51 @@ public class MemberDAO {
 		
 		return result;
 	}
+
+	public int selectMemPoint(Connection con, int webIdajax) {
+
+		PreparedStatement pstmt = null;
+		int result = 0;
+		
+		String query = prop.getProperty("selectMemPoint");
+		
+		try {
+			pstmt = con.prepareStatement(query);
+			pstmt.setInt(1, webIdajax);
+			
+			result = pstmt.executeUpdate();
+			
+		} catch (SQLException e) {
+			e.printStackTrace();
+		}finally {
+			close(pstmt);
+		}
+		
+		return result;
+	}
+
+	public int deleteWishList(Connection con, int weblistNum, int memNum2) {
+
+		PreparedStatement pstmt = null;
+		int result = 0;
+		
+		String query = prop.getProperty("deleteWishList");
+		
+		try {
+			pstmt = con.prepareStatement(query);
+			pstmt.setInt(1, weblistNum);
+			pstmt.setInt(2, memNum2);
+			
+			
+			result = pstmt.executeUpdate();
+		} catch (SQLException e) {
+			e.printStackTrace();
+		} finally {
+			close(pstmt);
+		}
+		
+		return result;
+	}
 }
 
 

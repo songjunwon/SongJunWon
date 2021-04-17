@@ -194,6 +194,18 @@
             ?, ?, SYSDATE
           )		
 	</entry>
+	<entry key="selectMemPoint">
+	    SELECT
+               A.MEM_COIN
+          FROM MEM_INFO A
+         WHERE A.MEM_NUM = ?
+	</entry>
+	<entry key="deleteWishList">
+        DELETE
+          FROM WISH_LIST
+         WHERE WEB_NOV_NUM = ?
+           AND MEM_NUM = ?		
+	</entry>
 </properties>
 
 

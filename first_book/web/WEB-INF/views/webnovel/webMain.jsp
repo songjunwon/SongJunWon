@@ -198,52 +198,7 @@
 		});
 		
 
-		<%-- $(function(){
-	         var currentPage = ${ requestScope.pageInfo.pageNo };
-	         console.log('currentPage : ' + currentPage);
-	            
-	         $(window).scroll(function(){   
-	            if($(window).scrollTop() + $(window).height() + 3 > $(document).height()) {
-	               currentPage++;   
-	               /* console.log('currentlink' + currnetlink); */
-	                 $.ajax({
-	                    url : '/firstbook/ajax/test',
-	                     type : 'get',  
-	                     data : { 
-	                           currentPage: currentPage,
-	                           },
-	                     success : function(data) {
-	                        console.log(currentPage);
-	                        if( currentPage === 1 ){
-	                           console.log(data);
-	                        } else {
-	                            var section = $(".section");
-	                           
-	                           for(var i = 0 ; i < data.length ; i++){
-	                              console.log(data[i].postNo);
-	                              console.log(data[i].postTitle);
-	                              console.log(data[i].minPrice);
-	                           }
-	                           } 
-	                              /* var postList = $("<table>").addClass("post");
-	                              var moreList = 
-	                              $("<tr id='thumbnail'>" + "<td colspan='2px'>" + data[i].postNo + "</td>" + "<tr>"
-	                                   + "<tr id='title'>" + "<td colspan='2px'>" + data[i].postTitle + "</td>" + "<tr>"
-	                                   + "<tr id='minPrice'>" + "<td width='80px'>" + "최소입찰가" + "</td>" 
-	                                      + "<td align='right'>" + data[i].minPrice + " 원 " +"</td>"+ "</tr>");
-	                              
-	                              postList.append(moreList);
-	                              section.append(postList); 
-	                           } 
-	                        } */
-	                     },
-	                     error : function(error) {
-	                        console.log("에러다 개발자야 뭐하냐!");
-	                     }
-	                 });      /* ajax 종료 */
-	            }
-	         })      /* 스크롤 페이징 함수 종료 */
-	      }); --%>
+		
 		
 
 	</script>

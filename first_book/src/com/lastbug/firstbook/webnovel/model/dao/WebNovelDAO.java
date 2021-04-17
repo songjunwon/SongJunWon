@@ -139,7 +139,7 @@ public class WebNovelDAO {
 
 			pstmt.setInt(1, webDetail.getWebNovNum());
 
-			//			System.out.println("db전 웹소설 고유 번호" + webDetail.getWebNovNum());
+						System.out.println("db전 웹소설 고유 번호" + webDetail.getWebNovNum());
 
 			rset = pstmt.executeQuery();
 
@@ -156,12 +156,14 @@ public class WebNovelDAO {
 				wbdDTO.getWebNovChapNum().setWebNovChapNum(rset.getInt("CHAP_NUM"));
 				wbdDTO.setWebChapNumDate(rset.getDate("CHAP_WRITTEN_DATE"));
 				wbdDTO.setChapReadOrNot(rset.getString("CHAP_READABLE"));
+				wbdDTO.setChapPerPrice(rset.getInt("CHAP_PER_PRICE"));
+				wbdDTO.setChapPerIsUsed(rset.getString("CHAP_PER_IS_USED"));
 
 				//				System.out.println("wbdDTO" + wbdDTO);
 
 				webNovelChap.add(wbdDTO);
 
-				//				System.out.println("DAO챕터별 정보" + webNovelChap);
+								System.out.println("DAO챕터별 정보" + webNovelChap);
 			}
 
 		} catch (SQLException e) {
@@ -386,6 +388,8 @@ public class WebNovelDAO {
 				wbdDTO.getWebNovChapNum().setWebNovChapNum(rset.getInt("CHAP_NUM"));
 				wbdDTO.setWebChapNumDate(rset.getDate("CHAP_WRITTEN_DATE"));
 				wbdDTO.setChapReadOrNot(rset.getString("CHAP_READABLE"));
+				wbdDTO.setChapPerPrice(rset.getInt("CHAP_PER_PRICE"));
+				wbdDTO.setChapPerIsUsed(rset.getString("CHAP_PER_IS_USED"));
 
 				//				System.out.println("wbdDTO" + wbdDTO);
 
@@ -405,6 +409,67 @@ public class WebNovelDAO {
 
 		return webNovelChap2;
 
+	}
+
+	public int selectTotalChapter(Connection con, int currentWebNov) {
+
+		PreparedStatement pstmt = null;
+		ResultSet rset = null;
+		
+		int totalCount = 0;
+		
+		String query = prop.getProperty("selectTotalChapter");
+		
+		try {
+			pstmt = con.prepareStatement(query);
+			
+			pstmt.setInt(1, currentWebNov);
+			rset = pstmt.executeQuery();
+			
+			if(rset.next()) {
+				totalCount = rset.getInt("COUNT(*)");
+				
+				System.out.println("db(ajax)" + totalCount);
+			}
+			
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}finally {
+			close(rset);
+			close(pstmt);
+		}
+		
+		
+		return totalCount;
+
+	}
+
+	public int selectPerChapCoin(Connection con, int webNumajax, int webIdajax) {
+
+		PreparedStatement pstmt = null;
+		ResultSet rset = null;
+		
+		int PerChapCoin = 0;
+		
+		String query = prop.getProperty("selectPerChapCoin");
+		
+		try {
+			pstmt = con.prepareStatement(query);
+			pstmt.setInt(1, webNumajax);
+			pstmt.setInt(2, webIdajax);
+			
+			
+			
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		
+		
+		
+		
+		return 0;
 	}
 
 

@@ -181,6 +181,20 @@ public class WebNovelService {
 
 	}
 
+	public int selectTotalChapter(int currentWebNov) {
+
+		Connection con = getConnection();
+		
+		int result = webNovelDAO.selectTotalChapter(con, currentWebNov);
+		
+		System.out.println("select total Count(ajax)" + result);
+		
+		close(con);
+		
+		return result;
+
+	}
+
 }
 
 

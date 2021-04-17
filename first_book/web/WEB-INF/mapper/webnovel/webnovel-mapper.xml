@@ -35,11 +35,13 @@
 		     , A.CHAP_NUM
 		     , A.CHAP_WRITTEN_DATE
 		     , A.CHAP_READABLE
+		     , A.CHAP_PER_PRICE
+		     , A.CHAP_PER_IS_USED
 		  FROM WEB_NOV_CHAP_SEARCH A
 		  JOIN WEB_NOV_INFO B ON (A.WEB_NOV_NUM = B.WEB_NOV_NUM)
 		  JOIN WEB_NOV_CHAP_NUM C ON (A.CHAP_NUM = C.CHAP_NUM)
 		 WHERE B.WEB_NOV_NUM = ?
-		   AND A.CHAP_NUM <![CDATA[ <  ]]> 6
+		  AND A.CHAP_NUM <![CDATA[ <  ]]> 6
 		 ORDER BY A.CHAP_NUM ASC
 	</entry>
 	<entry key="selectWebNovelallChapterNotFree">
@@ -48,6 +50,8 @@
 		     , A.CHAP_NUM
 		     , A.CHAP_WRITTEN_DATE
 		     , A.CHAP_READABLE
+		     , A.CHAP_PER_PRICE
+		     , A.CHAP_PER_IS_USED
 		  FROM WEB_NOV_CHAP_SEARCH A
 		  JOIN WEB_NOV_INFO B ON (A.WEB_NOV_NUM = B.WEB_NOV_NUM)
 		  JOIN WEB_NOV_CHAP_NUM C ON (A.CHAP_NUM = C.CHAP_NUM)
@@ -119,5 +123,11 @@
 	    SELECT
 	           COUNT(*)
 	      FROM WEB_NOV_INFO
+	</entry>
+	<entry key="selectTotalChapter">
+	    SELECT
+               COUNT(*)
+          FROM WEB_NOV_CHAP_SEARCH
+         WHERE WEB_NOV_NUM = ?
 	</entry>
 </properties>

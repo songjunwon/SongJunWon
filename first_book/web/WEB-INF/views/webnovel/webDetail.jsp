@@ -70,7 +70,6 @@
             	    <!-- 5화까지 무료! -->
             	<c:forEach var="webNovelChap" items="${ requestScope.webnoveldetail}"> 
             	<tr>
-      
                     <td class="chap_img"><img src="${ requestScope.webnovel.webNovImgLocation}" class="chap_img_real" alt="1화부터사진">
                     </td>
                     <td class="prolog">
@@ -82,12 +81,11 @@
                     <input type="hidden" id="webNovNum" value= "${ webNovelChap.webNovChapNum.webNovChapNum}"> 
              		 
              		</td>
-
                 </tr>
                 </c:forEach>
                   
                 <!-- 6화부터 결제! -->
-             	<c:forEach var="webNovelChap2" items="${ requestScope.webnoveldetail2}"> 
+              <c:forEach var="webNovelChap2" items="${ requestScope.webnoveldetail2}"> 
             	<tr>
   
             		<td class="chap_img"><img src="${ requestScope.webnovel.webNovImgLocation}" class="chap_img_real" alt="1화부터사진">
@@ -96,19 +94,27 @@
                         <h2 class="chap_date"> 등록 날짜 :  ${ webNovelChap2.webChapNumDate} </h2>                       
                     </td> 
                     <td class="freeBtn">
-            		 <button class="freebtn_real" id="freebtn_real_2" type="button" onclick="webView2(${ webNovelChap2.webNovChapNum.webNovChapNum}, '${webNovelChap.chapReadOrNot}')" >
+                    <form action="notFreeForm" method="get">
+            		 <button class="freebtn_real"  type="button"  onclick="web(${ webNovelChap2.webNovChapNum.webNovChapNum}, '${webNovelChap2.chapReadOrNot}', ${ webNovelChap2.chapPerPrice }, '${webNovelChap2.chapPerIsUsed }', ${sessionScope.loginMember.memNum } )" >
                     ${ webNovelChap2.webNovChapNum.webNovChapNum}화 보기 </button>
-                    <input type="hidden" id="webNovNum" value= "${ webNovelChap2.webNovChapNum.webNovChapNum}"> 
-            		</td>
+                    <input type="hidden" name="webNovNum"  value= "${ webNovelChap2.webNovChapNum.webNovChapNum}">
 
+				<%-- 	<input type="hidden" name="webIdajax" id="webIdajax" > 
+					<input type="hidden" name="webchapNumajax" id="webchapNumajax" name="webchapNumajax" >
+					<input type="hidden" name="webNumajax" id="webNumajax" name="webNumajax" >
+					<input type="hidden" name="chapReadOrNot" id="chapReadOrNot" name="chapReadOrNot" >
+					<input type="hidden" name="chapPerPrice" id="chapPerPrice" name="chapPerPrice" >
+					<input type="hidden" name="chapPerIsUsed" id="chapPerIsUsed" name="chapPerIsUsed" > --%>
+            		</form>
+            		</td> 
                 </tr>
                 </c:forEach>   
-                    
+                    	
             </table>
 
         </section>
         
-        
+        <%-- 
         <section class="sec3">
             <hr>
             <h3 class="reply"> 댓글 <br></h3>
@@ -118,7 +124,7 @@
             <button type="submit" class="repliedbtn"> 등록하기 </button>
             <br><br>
             <table class="tab_reply">
-<%--             <c:forEach var="webnoveldetail" items="${ requestScope.webnoveldetail}"> --%>
+             <c:forEach var="webnoveldetail" items="${ requestScope.webnoveldetail}"> >
                 <tr>
                     <td class="repliedId">
                         <p class="repliedId_real"> 여행을 가본다 </p>
@@ -132,9 +138,9 @@
                         <p class="replied_real"> 아니 난 다이아급이라고!</p>
                     </td>
                 </tr>
-    <%--            </c:forEach> --%>
+             </c:forEach> 
             </table>
-        </section>
+        </section> --%>
     </div>
   <script>
    
@@ -157,27 +163,106 @@
 				
 			location.href = link  + "?currentWebNov=" + ${ requestScope.webnovel.webNovNum} + "&currentChap=" + t;			
 			}
-
 		}
+	
 	/* 6화부터 보기 */
-	function webView2(var1, var2){
-		
-		var t = var1;
-		var t2 = var2;
-		console.log(t);
-		console.log(t2);
+	 function web(var1, var2, var3, var4, var5){
+				
+		var webNovChapNum = var1;
+		var chapReadOrNot = var2;
+		var chapPerPrice = var3;
+		var chapPerIsUsed = var4;
+		var memId = var5;
+
+		console.log(webNovChapNum);
+		console.log(chapReadOrNot);
+		console.log(chapPerPrice);
+		console.log(chapPerIsUsed);
+		console.log(memId);
+
 		
 		/* 선택한 웹소설 챕터가 없는 경우 */
-		if(t2 == 'N'){
+		if(t2 == 'N' ){
 			 alert("해당 웹소설의 " + t + "화는 준비 중에 있습니다!")
 			 
 		/* 선택한 웹소설 챕터가 있는 경우 */
 			} else if (t2 == 'Y'){
 				
-			location.href = link  + "?currentWebNov=" + ${ requestScope.webnovel.webNovNum} + "&currentChap=" + t;			
+				/* 선택한 웹챕터가 결제 되지 않은 경우 */
+				if(chapPerIsUsed == 'N '){
+					
+					alert("결제 노노");
+					
+						
+					<%--	$.ajax({
+							
+							url : "/firstbook/member/chargeCoin",
+							method : "GET",
+							data : {
+								
+								webNumajax : webNumajax,
+								webchapNumajax : chapNum,
+								webIdajax : webIdajax,
+								webChapPerPriceajax : chapPerPrice,
+								chapPerIsUsedajax : chapPerIsUsed,
+								chapReadorNotajax : chapReadorNot
+							}success: function (data) {
+				                console.log(data);
+							 },
+							error: function(error,status){
+					                console.log(error);
+					                console.log(status);
+						}
+						
+						}); --%>
+						
+					
+				
+				/* 선택한 웹챕터가 결제 된 경우 */
+				}else{
+					
+					location.href = link  + "?currentWebNov=" + ${ requestScope.webnovel.webNovNum} + "&currentChap=" + chapNum;			
+				}
+				
 			}
-
-		}
+		} 
+	
+	<%-- $("#freebtn").click(function(){
+		 
+		var webchapNumajax = document.getElementById("webchapNumajax").value;
+		document.getElementById("form").submit();
+		
+	 } --%>
+	
+<%--	$("#freebtn").click(function(){
+			
+			var webNumajax = document.getElementById("webNumajax").value;
+			var webchapNumajax = document.getElementById("webchapNumajax").value;
+			var webIdajax = document.getElementById("webIdajax").value;
+			console.log('webNumajax' + webNumajax);
+			console.log('webchapNumajax' + webchapNumajax);
+			console.log('webIdajax' + webIdajax);
+	  
+				$.ajax({
+					url : "/firstbook/member/chargeCoin",
+					method : "GET",
+					data : {
+						webNumajax : webNumajax,
+						webchapNumajax : webchapNumajax
+						webIdajax : webIdajax
+						
+					},
+				
+					success: function (data) {
+				                console.log(data);
+						 },
+						error: function(error,status){
+				                console.log(error);
+				                console.log(status);
+					}
+				});
+		
+		}); --%>
 	/* 첫화보기를 눌렀을 때 */
 	function firstChap(){
 
@@ -185,30 +270,81 @@
 
 	}
 	
-<%-- 	$("#wishBtn").click(function(){
-		
-		var wishlistWebnovNum = document.getElementById("wishList").value;
-		var loginMember = document.getElementById("loginMember").value;
-		console.log('wish' + wishlistWebnovNum);
-		console.log('login' + loginMember);
-  
-			$.ajax({
-				url : "/firstbook/member/wishlistupdate",
-				method : "GET",
-				data : {
-					wishlistWebnovNum : wishlistWebnovNum,
-					loginMember : loginMember},
-			
-				success: function (data) {
-			                console.log(data);
-					 },
-					error: function(error,status){
-			                console.log(error);
-			                console.log(status);
-				}
-			});
-	
-	}); --%>
+	/* 위시리스트 버튼 ajax */
+ 	$("#wishBtn").click(function(){
+ 			
+ 			var wishlistWebnovNum = document.getElementById("wishList").value;
+ 			var loginMember = document.getElementById("loginMember").value;
+ 			console.log('wish' + wishlistWebnovNum);
+ 			console.log('login' + loginMember);
+ 	  
+ 				$.ajax({
+ 					url : "/firstbook/member/wishlistupdate",
+ 					method : "GET",
+ 					data : {
+ 						wishlistWebnovNum : wishlistWebnovNum,
+ 						loginMember : loginMember},
+ 				
+ 					success: function (data) {
+ 				
+ 						 }, 
+ 						 
+ 						error: function(error,status){
+ 				                console.log(error);
+ 				                console.log(status);
+ 					}
+ 				});			
+	}); 
+ 	
+ 	 /* n화 볼 때마다 업데이트 되는 ajax */	
+ 	<%-- $(function(){
+        var currentPage = ${ requestScope.pageInfo.pageNo };
+        console.log('currentPage : ' + currentPage);
+        var currentWebNov = ${ requestScope.webnovel.webNovNum};
+        
+        $(window).scroll(function(){   
+           if($(window).scrollTop() + $(window).height() + 3 > $(document).height()) {
+              currentPage++;   
+              /* console.log('currentlink' + currnetlink); */
+                $.ajax({
+                   url : '/firstbook/ajax/test',
+                    type : 'get',  
+                    data : { 
+                          currentPage : currentPage,
+                          currentWebNov : currentWebNov
+                          },
+                    success : function(data) {
+                       console.log(currentPage);
+                       if( currentPage === 1 ){
+                          console.log(data);
+                       } else {
+                           var section = $(".sec2");
+                          
+                          for(var i = 0 ; i < data.length ; i++){
+                             console.log(data[i].postNo);
+                             console.log(data[i].postTitle);
+                             console.log(data[i].minPrice);
+                          }
+                          } 
+                             /* var postList = $("<table>").addClass("post");
+                             var moreList = 
+                             $("<tr id='thumbnail'>" + "<td colspan='2px'>" + data[i].postNo + "</td>" + "<tr>"
+                                  + "<tr id='title'>" + "<td colspan='2px'>" + data[i].postTitle + "</td>" + "<tr>"
+                                  + "<tr id='minPrice'>" + "<td width='80px'>" + "최소입찰가" + "</td>" 
+                                     + "<td align='right'>" + data[i].minPrice + " 원 " +"</td>"+ "</tr>");
+                             
+                             postList.append(moreList);
+                             section.append(postList); 
+                          } 
+                       } */
+                    },
+                    error : function(error) {
+                       console.log("에러다 개발자야 뭐하냐!");
+                    }
+                });      /* ajax 종료 */
+           }
+        })      /* 스크롤 페이징 함수 종료 */
+     }); --%>
 	
 	</script> 
 	
