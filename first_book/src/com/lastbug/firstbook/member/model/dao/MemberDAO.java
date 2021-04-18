@@ -445,18 +445,26 @@ public class MemberDAO {
 		return result;
 	}
 
-	public int selectMemPoint(Connection con, int webIdajax) {
+	public MemberDTO selectMemPoint(Connection con, int memId) {
 
 		PreparedStatement pstmt = null;
-		int result = 0;
+		ResultSet rset = null;
+		
+		MemberDTO result = null;
 		
 		String query = prop.getProperty("selectMemPoint");
 		
 		try {
 			pstmt = con.prepareStatement(query);
-			pstmt.setInt(1, webIdajax);
+			pstmt.setInt(1, memId);
 			
-			result = pstmt.executeUpdate();
+			rset = pstmt.executeQuery();
+			
+			while(rset.next()) {
+				
+				result = new MemberDTO();
+				result.setMemCoin(rset.getInt("MEM_COIN"));
+			}
 			
 		} catch (SQLException e) {
 			e.printStackTrace();
@@ -478,6 +486,31 @@ public class MemberDAO {
 			pstmt = con.prepareStatement(query);
 			pstmt.setInt(1, weblistNum);
 			pstmt.setInt(2, memNum2);
+			
+			
+			result = pstmt.executeUpdate();
+		} catch (SQLException e) {
+			e.printStackTrace();
+		} finally {
+			close(pstmt);
+		}
+		
+		return result;
+	}
+
+	public int updateCoin(Connection con, int memId, int restCoin) {
+
+		PreparedStatement pstmt = null;
+		
+		int result = 0;
+		
+		String query = prop.getProperty("updateCoin");
+		
+		System.out.println("db저장 전 금액" + restCoin);
+		try {
+			pstmt = con.prepareStatement(query);
+			pstmt.setInt(1, restCoin);
+			pstmt.setInt(2, memId);
 			
 			
 			result = pstmt.executeUpdate();

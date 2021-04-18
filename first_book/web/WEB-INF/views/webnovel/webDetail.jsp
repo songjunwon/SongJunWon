@@ -95,7 +95,7 @@
                     </td> 
                     <td class="freeBtn">
                     <form action="notFreeForm" method="get">
-            		 <button class="freebtn_real"  type="button"  onclick="web(${ webNovelChap2.webNovChapNum.webNovChapNum}, '${webNovelChap2.chapReadOrNot}', ${ webNovelChap2.chapPerPrice }, '${webNovelChap2.chapPerIsUsed }', ${sessionScope.loginMember.memNum } )" >
+            		 <button class="freebtn_real"  type="button"  onclick="web(${ webNovelChap2.webNovChapNum.webNovChapNum}, '${webNovelChap2.chapReadOrNot}', ${ webNovelChap2.chapPerPrice }, '${webNovelChap2.chapPerIsUsed }', ${sessionScope.loginMember.memNum }, ${webNovelChap2.webNovNum.webNovNum } )" >
                     ${ webNovelChap2.webNovChapNum.webNovChapNum}화 보기 </button>
                     <input type="hidden" name="webNovNum"  value= "${ webNovelChap2.webNovChapNum.webNovChapNum}">
 
@@ -142,6 +142,7 @@
             </table>
         </section> --%>
     </div>
+    </body>
   <script>
    
 	const link = "${ pageContext.servletContext.contextPath}/webnovel/chapList";
@@ -150,29 +151,30 @@
 	function webView(var1, var2){
 			
 		var t = var1;
-		var t2 = var2;
+		var test = var2;
 		console.log(t);
-		console.log(t2);
+		console.log(test);
 		
 		/* 선택한 웹소설 챕터가 없는 경우 */
-		if(t2 == 'N'){
+		if(test == 'N'){
 			 alert("해당 웹소설의 " + t + "화는 준비 중에 있습니다!")
 			 
 		/* 선택한 웹소설 챕터가 있는 경우 */
-			} else if (t2 == 'Y'){
+			} else if (test == 'Y'){
 				
 			location.href = link  + "?currentWebNov=" + ${ requestScope.webnovel.webNovNum} + "&currentChap=" + t;			
 			}
 		}
 	
 	/* 6화부터 보기 */
-	 function web(var1, var2, var3, var4, var5){
+	 function web(var1, var2, var3, var4, var5, var6){
 				
 		var webNovChapNum = var1;
 		var chapReadOrNot = var2;
 		var chapPerPrice = var3;
 		var chapPerIsUsed = var4;
 		var memId = var5;
+		var webNovNum = var6;
 
 		console.log(webNovChapNum);
 		console.log(chapReadOrNot);
@@ -180,89 +182,40 @@
 		console.log(chapPerIsUsed);
 		console.log(memId);
 
-		
-		/* 선택한 웹소설 챕터가 없는 경우 */
-		if(t2 == 'N' ){
-			 alert("해당 웹소설의 " + t + "화는 준비 중에 있습니다!")
-			 
-		/* 선택한 웹소설 챕터가 있는 경우 */
-			} else if (t2 == 'Y'){
-				
-				/* 선택한 웹챕터가 결제 되지 않은 경우 */
-				if(chapPerIsUsed == 'N '){
-					
-					alert("결제 노노");
-					
-						
-					<%--	$.ajax({
-							
-							url : "/firstbook/member/chargeCoin",
-							method : "GET",
-							data : {
-								
-								webNumajax : webNumajax,
-								webchapNumajax : chapNum,
-								webIdajax : webIdajax,
-								webChapPerPriceajax : chapPerPrice,
-								chapPerIsUsedajax : chapPerIsUsed,
-								chapReadorNotajax : chapReadorNot
-							}success: function (data) {
-				                console.log(data);
-							 },
-							error: function(error,status){
-					                console.log(error);
-					                console.log(status);
-						}
-						
-						}); --%>
-						
-					
-				
-				/* 선택한 웹챕터가 결제 된 경우 */
-				}else{
-					
-					location.href = link  + "?currentWebNov=" + ${ requestScope.webnovel.webNovNum} + "&currentChap=" + chapNum;			
-				}
-				
-			}
-		} 
 	
-	<%-- $("#freebtn").click(function(){
-		 
-		var webchapNumajax = document.getElementById("webchapNumajax").value;
-		document.getElementById("form").submit();
-		
-	 } --%>
-	
-<%--	$("#freebtn").click(function(){
+		/* 웹소설이 준비 되지 않은 경우 */
+		if(chapReadOrNot == 'N'){
 			
-			var webNumajax = document.getElementById("webNumajax").value;
-			var webchapNumajax = document.getElementById("webchapNumajax").value;
-			var webIdajax = document.getElementById("webIdajax").value;
-			console.log('webNumajax' + webNumajax);
-			console.log('webchapNumajax' + webchapNumajax);
-			console.log('webIdajax' + webIdajax);
-	  
-				$.ajax({
-					url : "/firstbook/member/chargeCoin",
-					method : "GET",
-					data : {
-						webNumajax : webNumajax,
-						webchapNumajax : webchapNumajax
-						webIdajax : webIdajax
-						
-					},
-				
-					success: function (data) {
-				                console.log(data);
-						 },
-						error: function(error,status){
-				                console.log(error);
-				                console.log(status);
-					}
-				});
+			 alert("해당 웹소설의 " + webNovChapNum + "화는 준비 중에 있습니다!")
+			
+		/* 웹소설이 준비된 경우 */
+		} else if (chapReadOrNot == 'Y') {
+			
+		/* 선택한 웹소설을 이미 구매한 경우 */
+			if(chapPerIsUsed == 'Y '){
 		
-		}); --%>
+			location.href = link  + "?currentWebNov=" + ${ requestScope.webnovel.webNovNum} + "&currentChap=" + webNovChapNum;			
+		
+			} else if (chapPerIsUsed == 'N ' ){			// 웹소설 챕터를 추가 구매해야하는 경우
+				
+				/* 코인이 100이하여서 추가구매를 해야하는 경우 */
+				if( parseInt(${sessionScope.loginMember.memCoin}) <= parseInt(100)) {
+			
+					console.log(${sessionScope.loginMember.memCoin});
+					alert('"현재 " + ${sessionScope.loginMember.memName} + "님의 현재 코인은" + ${sessionScope.loginMember.memCoin} + "으로 웹소설을 보시려면 코인을 추가로 구매하셔야 합니다."');
+			
+					
+				/* 코인이 100이상이여서 추가구매를 하지않아도 되는 경우 */
+				} else if(  parseInt(${sessionScope.loginMember.memCoin}) > parseInt(100)) {
+					
+					location.href = "${ pageContext.servletContext.contextPath}/member/chargeCoin?memId=" + ${sessionScope.loginMember.memNum} + "&webNovNum=" + webNovNum + "&webNovChapNum=" + webNovChapNum;
+
+					return;
+				}
+			}
+		}
+	} 
+				
 	/* 첫화보기를 눌렀을 때 */
 	function firstChap(){
 
@@ -271,7 +224,7 @@
 	}
 	
 	/* 위시리스트 버튼 ajax */
- 	$("#wishBtn").click(function(){
+	$("#wishBtn").click(function(){
  			
  			var wishlistWebnovNum = document.getElementById("wishList").value;
  			var loginMember = document.getElementById("loginMember").value;
@@ -283,7 +236,8 @@
  					method : "GET",
  					data : {
  						wishlistWebnovNum : wishlistWebnovNum,
- 						loginMember : loginMember},
+ 						loginMember : loginMember
+ 						},
  				
  					success: function (data) {
  				
@@ -347,6 +301,4 @@
      }); --%>
 	
 	</script> 
-	
-</body>
 </html>

@@ -130,4 +130,30 @@
           FROM WEB_NOV_CHAP_SEARCH
          WHERE WEB_NOV_NUM = ?
 	</entry>
+	<entry key="selectPerChapCoin">
+        SELECT
+               A.CHAP_PER_PRICE
+          FROM WEB_NOV_CHAP_SEARCH A
+         WHERE WEB_NOV_NUM = ?
+           AND CHAP_NUM = ?
+	</entry>
+	<entry key="updateChap">
+       UPDATE
+              WEB_NOV_CHAP_SEARCH A
+          SET A.CHAP_PER_IS_USED = 'Y'
+        WHERE A.WEB_NOV_NUM = ?
+          AND A.CHAP_NUM = ?
+	</entry>
 </properties>
+
+
+
+
+
+
+
+
+
+
+
+

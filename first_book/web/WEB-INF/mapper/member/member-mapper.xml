@@ -206,6 +206,12 @@
          WHERE WEB_NOV_NUM = ?
            AND MEM_NUM = ?		
 	</entry>
+	<entry key="updateCoin">
+        UPDATE
+               MEM_INFO A
+           SET A.MEM_COIN = ?
+         WHERE A.MEM_NUM = ?
+	</entry>
 </properties>
 
 

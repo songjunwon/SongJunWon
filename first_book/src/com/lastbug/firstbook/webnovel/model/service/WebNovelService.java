@@ -47,7 +47,7 @@ public class WebNovelService {
 		/* 조회수 증가 */
 		int result = webNovelDAO.incrementWebnovelCount(con, no);
 
-		System.out.println("조회수 : " + result);
+//		System.out.println("조회수 : " + result);
 
 		if(result > 0) {
 
@@ -110,7 +110,6 @@ public class WebNovelService {
 
 	/* 선택한 웹소설의 챕터의 쪽수 계산 */
 	public int searchWebNovelCount(int currentWebNovNum, int currentChapNum) {
-
 		Connection con = getConnection();
 
 		int totalCount = webNovelDAO.searchWebNovelCount(con, currentWebNovNum, currentChapNum);
@@ -151,7 +150,7 @@ public class WebNovelService {
 		
 		int result = webNovelDAO.selectTotalCount(con);
 		
-		System.out.println("select total Count" + result);
+//		System.out.println("select total Count" + result);
 		
 		close(con);
 		
@@ -187,12 +186,45 @@ public class WebNovelService {
 		
 		int result = webNovelDAO.selectTotalChapter(con, currentWebNov);
 		
-		System.out.println("select total Count(ajax)" + result);
+//		System.out.println("select total Count(ajax)" + result);
 		
 		close(con);
 		
 		return result;
 
+	}
+
+	public int searchWebNovelCountPaid(int webNovNum, int webNovChapNum) {
+		Connection con = getConnection();
+
+		int totalCount = webNovelDAO.searchWebNovelCountPaid(con, webNovNum, webNovChapNum);
+
+		if(totalCount > 0) {
+			commit(con);
+		} else {
+			rollback(con);
+		}
+
+		close(con);
+
+		return totalCount;
+	}
+
+	public WebNovelInfoDTO searchTitlePaid(int webNovNum) {
+		Connection con = getConnection();
+
+		WebNovelInfoDTO title = webNovelDAO.searchTitlePaid(con, webNovNum);
+
+		if(title != null) {
+			commit(con);
+		}else {
+			rollback(con);
+		}
+
+
+		close(con);
+
+		return title;
 	}
 
 }

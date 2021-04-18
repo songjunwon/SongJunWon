@@ -159,7 +159,7 @@
 			</div>
 		</main>
 	</div>
-
+</body>
 	<script>
 		/* 선택한 웹소설 페이지로 이동하게 하는 메소드 */
 		function gogo(val1, val2) {
@@ -202,5 +202,5 @@
 		
 
 	</script>
-</body>
+
 </html>
