@@ -81,12 +81,17 @@ public class AdminWebNovelService {
 		
 		return result;
 	}
-
-	public int WebNovelModify(int no, int pg0, int pg1, String body0, String body1) {
-
+	
+	public int WebNovelModify(int no, int currentChap, int pg0, int pg1, String body0, String body1) {
+				
 		Connection con = getConnection();
+
+		System.out.println("service body0 :" + body0);
 		
-		int result = adminWebNovelDAO.WebNovelModify(con, pg0, pg1, body0, body1);
+
+		
+		int result = adminWebNovelDAO.WebNovelModify(con, no, currentChap, pg0, pg1, body0, body1);
+		
 		
 		if(result > 0) {
 			commit(con);
