@@ -28,13 +28,16 @@ public class SelectView extends HttpServlet {
 		int first = Integer.valueOf(request.getParameter("first"));	//	웹 회차
 		int second = first + 1;
 		
+		
 		List<ContestDetalDTO> selectView = new SelectViewService().selectView(competNum, chapterNum);
 		List<ContestDTO> contestList = new SelectViewService().selectContestList(competNum);
 		String NumberOfPages = String.valueOf(selectView.get(0).getNumberOfPages());
+		List<CompetContentDTO> PageNubmer = new SelectViewService().pageNubmer(NumberOfPages);
 		List<CompetContentDTO> viewPage = new SelectViewService().selectViewPage(NumberOfPages, first);
 		List<CompetContentDTO> viewPageTwo = new SelectViewService().selectViewPageTwo(NumberOfPages, second);
 		
-		
+		int lastPage = PageNubmer.size();
+	
 		String path = "";
 		if(!contestList.isEmpty()) {		// 공모전 작품이 검색되면
 			path = "/WEB-INF/views/contest/constestViewer.jsp";
@@ -45,6 +48,7 @@ public class SelectView extends HttpServlet {
 			request.setAttribute("competNum", competNum);	
 			request.setAttribute("chapterNum", chapterNum);	
 			request.setAttribute("first", first);	
+			request.setAttribute("lastPage", lastPage);	
 		} else {						// 공모전 실패 하면
 		
 			path = "/WEB-INF/views/common/failed.jsp";

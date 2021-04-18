@@ -191,8 +191,41 @@ public class SelectViewDAO {
 			close(rset);
 			close(pstmt);
 		}
-		System.out.println("22222/"+viewList);
 		return viewList;
+	}
+
+	public List<CompetContentDTO> pageNubmer(Connection con, String numberOfPages) {
+		PreparedStatement pstmt = null;
+		ResultSet rset = null;
+		
+		List<CompetContentDTO> pageNubmer = null;
+		String query = prop.getProperty("pageNubmer");
+
+		try {
+			pstmt = con.prepareStatement(query);
+			pstmt.setInt(1, Integer.valueOf(numberOfPages));
+			
+			rset = pstmt.executeQuery();
+			
+			pageNubmer = new ArrayList<>();
+			
+			while(rset.next()) {
+				
+				CompetContentDTO contest = new CompetContentDTO();
+
+				contest.setNumberOfPages(rset.getInt("NUMBER_OF_PAGES"));
+				contest.setPages(rset.getInt("PAGES"));
+				contest.setCompetContent(rset.getString("COMPET_CONTENT"));
+				
+				pageNubmer.add(contest);
+			}
+		} catch (SQLException e) {
+			e.printStackTrace();
+		} finally {
+			close(rset);
+			close(pstmt);
+		}
+		return pageNubmer;
 	}
 
 

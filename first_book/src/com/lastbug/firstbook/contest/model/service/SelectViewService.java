@@ -70,6 +70,15 @@ public class SelectViewService {
 		return selectViewPage;
 	}
 
+	public List<CompetContentDTO> pageNubmer(String numberOfPages) {
+        Connection con = getConnection();
+		
+		List<CompetContentDTO> pageNubmer = selectViewDAO.pageNubmer(con, numberOfPages);
+		
+		close(con);
+		return pageNubmer;
+	}
+
 
 	
 	

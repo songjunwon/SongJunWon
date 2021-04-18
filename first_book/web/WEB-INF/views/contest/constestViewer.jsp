@@ -37,9 +37,9 @@
 								<c:if test="${ requestScope.first != 1 }">
 									<button id="searchStartPage" class="backbtn" onclick="back(${ requestScope.competNum },${ requestScope.chapterNum })"><</button>
 								</c:if>
-
+								<c:if test="${ requestScope.first != lastPage-1 }">
 									<button type="button" id="searchNextPage" class="nextbtn" onclick="test(${ requestScope.competNum },${ requestScope.chapterNum })">></button>
-								
+								</c:if>
 								</td>
 						</tr>
 

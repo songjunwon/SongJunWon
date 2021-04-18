@@ -16,7 +16,7 @@ button {border: none;} */
 
  
 
-/* �뀒�몢由ш린以� */
+/* 테두리기준 */
 
 * {
   margin: 0;
@@ -49,13 +49,13 @@ a {
   text-decoration: none;
 }
 
-/* �뀓�뒪�듃 */
+/* 텍스트 */
 
 h1 {
   visibility: hidden;
 }
 
-/* �뀒�씠釉� */
+/* 테이블 */
 
 table {
   border-collapse: collapse;
