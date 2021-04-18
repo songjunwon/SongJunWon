@@ -77,17 +77,36 @@
 .tab_mid .freeBtn .freebtn_real {position: relative;top: 65px;width: 140px;height: 30px;border-radius: 10px;background-color: #ED1C24;
 								color: white;	font-weight: bolder;border-color: #ED1C24;border: none;}
 
+/*--------------ajax 댓글 css ----------------------*/
+.div_reply_ajax { width : auto;}
+
+
+/* 달려진 댓글 아이디  테이블*/
+.sec3 .repliedId_ajax {width: 730px;}
+
+
+/* 달려진 댓글 아이디 내용 */
+.sec3 .repliedId_real_ajax {font-family: "맑은 고딕";height: 20px;padding-left: 10px;padding-top: 2px;font-weight: 600;
+}
+
+/* 댓글 달린 시간 테이블 */
+.sec3 .repliedtime_ajax {	width: 70px;text-align: right;padding-right: 5px;}
+
+/* 댓글 달린 시간 내용 */
+.sec3  .repliedtime_real_ajax {color: #ED1C24;font-weight: 500;}
+
+.sec3 .replied_ajax {	height: 70px;}
+
+.sec3 .replied_real_ajax {font-family: "맑은 고딕";height: 20px;	padding-left: 10px;	position: relative;	top: -12px;}
+
+
+
 /* 댓글이라는 것 */
 .sec3 .reply {font-size: 20pt;font-family: "맑은 고딕";}
 
 /* 등록버튼 */
 .sec3 .repliedbtn {	height: 90px;background-color: rgb(173, 196, 130);width: 90px;float: right;color: white;
 					border-radius: 8px;}
-
-/* 전에 달린 댓글 테이블 */
-.sec3 .tab_reply {
-	
-}
 
 /* 달려진 댓글 아이디  테이블*/
 .sec3 .tab_reply .repliedId {width: 730px;}

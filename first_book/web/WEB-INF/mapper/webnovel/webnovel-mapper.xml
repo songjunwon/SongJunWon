@@ -120,29 +120,84 @@
            AND A.CHAP_NUM = ?
 	</entry>
 	<entry key="selectTotalCount">
-	    SELECT
+	    SELECT 		/* com.lastbug.firstbook.webnovel.model.dao.WebNovelDAO#selectTotalCount() */
 	           COUNT(*)
 	      FROM WEB_NOV_INFO
 	</entry>
 	<entry key="selectTotalChapter">
-	    SELECT
+	    SELECT  	/* com.lastbug.firstbook.webnovel.model.dao.WebNovelDAO#selectTotalChapter() */
                COUNT(*)
           FROM WEB_NOV_CHAP_SEARCH
          WHERE WEB_NOV_NUM = ?
 	</entry>
 	<entry key="selectPerChapCoin">
-        SELECT
+        SELECT 		/* com.lastbug.firstbook.webnovel.model.dao.WebNovelDAO#selectPerChapCoin() */
                A.CHAP_PER_PRICE
           FROM WEB_NOV_CHAP_SEARCH A
          WHERE WEB_NOV_NUM = ?
            AND CHAP_NUM = ?
 	</entry>
 	<entry key="updateChap">
-       UPDATE
-              WEB_NOV_CHAP_SEARCH A
-          SET A.CHAP_PER_IS_USED = 'Y'
-        WHERE A.WEB_NOV_NUM = ?
-          AND A.CHAP_NUM = ?
+        UPDATE  		/* com.lastbug.firstbook.webnovel.model.dao.WebNovelDAO#updateChap() */
+               WEB_NOV_CHAP_SEARCH A
+           SET A.CHAP_PER_IS_USED = 'Y'
+         WHERE A.WEB_NOV_NUM = ?
+           AND A.CHAP_NUM = ?
+	</entry>
+	<entry key="selectAllReply">
+        SELECT 		/* com.lastbug.firstbook.webnovel.model.dao.WebNovelDAO#selectAllReply() */
+               A.REPLY_NUM
+             , A.WEB_NOV_NUM
+             , A.REPLY_DATE
+             , A.MEM_NUM
+             , A.REPLY_CONTENT
+          FROM WEB_NOV_REPLY A
+         ORDER BY A.REPLY_CONTENT ASC
+	</entry>
+	<entry key="selectWebnovReply">
+        SELECT 		/* com.lastbug.firstbook.webnovel.model.dao.WebNovelDAO#selectWebnovReply() */
+              A.REPLY_NUM
+            , A.WEB_NOV_NUM
+            , B.MEM_ID
+            , A.REPLY_DATE
+            , A.MEM_NUM
+            , A.REPLY_CONTENT
+         FROM WEB_NOV_REPLY A
+         JOIN MEM_INFO B ON(A.MEM_NUM = B.MEM_NUM)
+        WHERE WEB_NOV_NUM = ?
+        ORDER BY A.REPLY_CONTENT ASC
+	</entry>
+	<entry key="insertReply">
+       INSERT 		/* com.lastbug.firstbook.webnovel.model.dao.WebNovelDAO#insertReply() */
+         INTO  WEB_NOV_REPLY A
+        (
+          REPLY_NUM
+        , WEB_NOV_NUM
+        , REPLY_DATE
+        , MEM_NUM
+        , REPLY_CONTENT
+        )
+     VALUES
+       (
+          SEQ_WEB_NOV_REPLY.NEXTVAL
+        , ?
+        , SYSDATE
+        , ?
+        , ?
+       )
+	</entry>
+	<entry key="replydata">
+        SELECT 		/* com.lastbug.firstbook.webnovel.model.dao.WebNovelDAO#seletAllNovel() */
+               A.REPLY_NUM
+             , A.WEB_NOV_NUM
+             , B.MEM_ID
+             , A.REPLY_DATE
+             , A.REPLY_CONTENT
+          FROM WEB_NOV_REPLY A
+          JOIN MEM_INFO B ON(A.MEM_NUM = B.MEM_NUM)
+         WHERE WEB_NOV_NUM = ?
+           AND B.MEM_NUM = ?
+         ORDER BY A.REPLY_NUM DESC
 	</entry>
 </properties>
 

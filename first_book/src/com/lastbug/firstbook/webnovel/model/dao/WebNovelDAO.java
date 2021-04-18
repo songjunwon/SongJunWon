@@ -15,6 +15,7 @@ import java.util.Properties;
 
 
 import com.lastbug.firstbook.common.config.ConfigLocation;
+import com.lastbug.firstbook.member.model.dto.MemberDTO;
 import com.lastbug.firstbook.webnovel.model.dto.GenreCategoryDTO;
 import com.lastbug.firstbook.webnovel.model.dto.PageInfoDTO;
 import com.lastbug.firstbook.webnovel.model.dto.WebNovChapNumDTO;
@@ -22,6 +23,7 @@ import com.lastbug.firstbook.webnovel.model.dto.WebNovChapSearchDTO;
 import com.lastbug.firstbook.webnovel.model.dto.WebNovContentDetailDTO;
 import com.lastbug.firstbook.webnovel.model.dto.WebNovPageNumDTO;
 import com.lastbug.firstbook.webnovel.model.dto.WebNovelInfoDTO;
+import com.lastbug.firstbook.webnovel.model.dto.WebnovelReplyDTO;
 
 public class WebNovelDAO {
 
@@ -569,6 +571,149 @@ public class WebNovelDAO {
 
 
 		return webNovelDetail;
+	}
+
+	public List<WebnovelReplyDTO> selectAllReply(Connection con) {
+
+		Statement stmt = null;
+		ResultSet rset = null;
+
+		List<WebnovelReplyDTO> webnovAllReply = null;
+		System.out.println("DAO는?");
+		String query = prop.getProperty("selectAllReply");
+//		System.out.println("쿼리" + query);
+
+		try {
+			stmt = con.createStatement();
+			rset = stmt.executeQuery(query);
+
+			webnovAllReply = new ArrayList<>();
+
+			while(rset.next()) {
+				WebnovelReplyDTO webNovReply = new WebnovelReplyDTO();
+				webNovReply.setMemNum(new MemberDTO());
+				webNovReply.setWebNovNum(new WebNovelInfoDTO());
+				
+				webNovReply.setReplyNum(rset.getInt("REPLY_NUM"));
+				webNovReply.getWebNovNum().setWebNovNum(rset.getInt("WEB_NOV_NUM"));
+				webNovReply.setReplyDate(rset.getDate("REPLY_DATE"));
+				webNovReply.getMemNum().setMemNum(rset.getInt("MEM_NUM"));
+			
+				webNovReply.setReplyContent(rset.getString("REPLY_CONTENT"));
+				
+				webnovAllReply.add(webNovReply);
+			}
+
+			System.out.println(webnovAllReply);
+
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}finally {
+			close(rset);
+			close(stmt);
+		}
+
+		return webnovAllReply;
+	}
+
+	public List<WebnovelReplyDTO> selectWebnovReply(Connection con, int no) {
+
+		PreparedStatement pstmt = null;
+		ResultSet rset = null;
+		List<WebnovelReplyDTO> selectWebnovReply = null;
+		String query = prop.getProperty("selectWebnovReply");
+		
+		try {
+			pstmt = con.prepareStatement(query);
+			pstmt.setInt(1, no);
+			
+			rset = pstmt.executeQuery();
+			
+			selectWebnovReply = new ArrayList<>();
+			while(rset.next()) {
+				WebnovelReplyDTO reply = new WebnovelReplyDTO();
+				reply.setWebNovNum(new WebNovelInfoDTO());
+				reply.setMemNum(new MemberDTO());
+				reply.setMemId(new MemberDTO());
+				
+				reply.setReplyNum(rset.getInt("REPLY_NUM"));
+				reply.getWebNovNum().setWebNovNum(rset.getInt("WEB_NOV_NUM"));
+				reply.setReplyDate(rset.getDate("REPLY_DATE"));
+				reply.getMemNum().setMemNum(rset.getInt("MEM_NUM"));
+				reply.setReplyContent(rset.getString("REPLY_CONTENT"));
+				reply.getMemId().setMemId(rset.getString("MEM_ID"));
+				
+				selectWebnovReply.add(reply);
+			}
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		
+		return selectWebnovReply;
+	}
+
+	public int insertReply(Connection con, String replytext, int webNovNum, int memNum) {
+
+		PreparedStatement pstmt = null;
+		int result = 0;
+		
+		String query = prop.getProperty("insertReply");
+		
+		try {
+			pstmt = con.prepareStatement(query);
+			pstmt.setInt(1, webNovNum);
+			pstmt.setInt(2, memNum);
+			pstmt.setString(3, replytext);
+			
+			result = pstmt.executeUpdate();
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		} finally {
+			close(pstmt);
+		}
+		
+		
+		return result;
+	}
+
+	public List<WebnovelReplyDTO> replydata(Connection con, String replytext, int webNovNum, int memNum) {
+		
+		
+		PreparedStatement pstmt = null;
+		ResultSet rset = null;
+		List<WebnovelReplyDTO> replydata = null;
+		String query = prop.getProperty("replydata");
+		
+		try {
+			pstmt = con.prepareStatement(query);
+			pstmt.setInt(1, webNovNum);
+			pstmt.setInt(2, memNum);
+			
+			rset = pstmt.executeQuery();
+			
+			replydata = new ArrayList<>();
+			while(rset.next()) {
+				WebnovelReplyDTO reply = new WebnovelReplyDTO();
+				reply.setWebNovNum(new WebNovelInfoDTO());
+				reply.setMemId(new MemberDTO());
+				
+				reply.setReplyNum(rset.getInt("REPLY_NUM"));
+				reply.getWebNovNum().setWebNovNum(rset.getInt("WEB_NOV_NUM"));
+				reply.setReplyDate(rset.getDate("REPLY_DATE"));
+				reply.setReplyContent(rset.getString("REPLY_CONTENT"));
+				reply.getMemId().setMemId(rset.getString("MEM_ID"));
+				
+				replydata.add(reply);
+			}
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		
+		return replydata;
 	}
 
 

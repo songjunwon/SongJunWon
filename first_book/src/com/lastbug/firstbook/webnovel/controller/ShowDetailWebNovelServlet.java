@@ -14,6 +14,7 @@ import com.lastbug.firstbook.common.paging.Pagenation;
 import com.lastbug.firstbook.webnovel.model.dto.PageInfoDTO;
 import com.lastbug.firstbook.webnovel.model.dto.WebNovChapSearchDTO;
 import com.lastbug.firstbook.webnovel.model.dto.WebNovelInfoDTO;
+import com.lastbug.firstbook.webnovel.model.dto.WebnovelReplyDTO;
 import com.lastbug.firstbook.webnovel.model.service.WebNovelService;
 
 
@@ -55,13 +56,16 @@ public class ShowDetailWebNovelServlet extends HttpServlet {
 		/* 앞에서 전체 웹소설 목록 중에서 선택한 웹소설 번호로 웹소설 정보 조회 */
 		WebNovelInfoDTO webDetail = webNovelService.selectWebNovelDetail(no);
 		
-		System.out.println("webDetail" + webDetail);
+//		System.out.println("webDetail" + webDetail);
 		List<WebNovChapSearchDTO> webNovelChap = null;
 		List<WebNovChapSearchDTO> webNovelChap2 = null;
 		
 		
+		/* 전체 댓글 불러오기 */
+		List<WebnovelReplyDTO> webnovAllReply = webNovelService.selectAllReply();
 		
-		
+		/* 해당 웹소설 댓글 불러오기 */
+		List<WebnovelReplyDTO> selectWebnovReply = webNovelService.selectWebnovReply(no);
 		
 		
 		System.out.println("내가 선택한 회차는 " + webDetail);
@@ -73,19 +77,21 @@ public class ShowDetailWebNovelServlet extends HttpServlet {
 			webNovelChap = webNovelService.selectWebNovelallChapter(webDetail);
 			webNovelChap2 = webNovelService.selectWebNovelallChapterNotFree(webDetail);
 	
-			for(WebNovChapSearchDTO a : webNovelChap) {
-				System.out.println("a" +a);
-			}
-			for(WebNovChapSearchDTO b : webNovelChap2) {
-				System.out.println("b" + b);
-			}
+//			for(WebNovChapSearchDTO a : webNovelChap) {
+//				System.out.println("a" +a);
+//			}
+//			for(WebNovChapSearchDTO b : webNovelChap2) {
+//				System.out.println("b" + b);
+//			}			request.setAttribute("pageInfo", pageInfo);
+
 			
 //			System.out.println("회차정보가 있나? " + webNovelChap);
 			path = "/WEB-INF/views/webnovel/webDetail.jsp";
 			request.setAttribute("webnovel", webDetail);
 			request.setAttribute("webnoveldetail", webNovelChap);
 			request.setAttribute("webnoveldetail2", webNovelChap2);
-			request.setAttribute("pageInfo", pageInfo);
+			request.setAttribute("webnovAllReply", webnovAllReply);
+			request.setAttribute("selectWebnovReply", selectWebnovReply);
 		} else {
 			path = "/WEB-INF/views/common/failed.jsp";
 			request.setAttribute("failedCode", "webnovelPerChap");

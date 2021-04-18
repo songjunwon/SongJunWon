@@ -114,38 +114,178 @@
 
         </section>
         
-        <%-- 
+         
         <section class="sec3">
             <hr>
             <h3 class="reply"> 댓글 <br></h3>
+            
             <div class="replydiv" width="300px">
-                <textarea name="댓글달기" class="replytext"  rows="6"></textarea>
+                <textarea name="댓글달기" class="replytext" id="replytext"  rows="6"></textarea>
             </div>
-            <button type="submit" class="repliedbtn"> 등록하기 </button>
-            <br><br>
-            <table class="tab_reply">
-             <c:forEach var="webnoveldetail" items="${ requestScope.webnoveldetail}"> >
+            
+            <button type="button" class="repliedbtn" id="repliedbtn"> 등록하기 </button>
+            <br><br><br><br>
+            
+			<div class="div_reply_ajax">
+				<%--  <tr>
+					<td class="repliedId_ajax">
+						<p class="repliedId_real_ajax">${selectWebnovReply.memId.memId }</p>
+					</td>
+					<td class="repliedtime_ajax">
+						<p class="repliedtime_real_ajax">${selectWebnovReply.replyDate }</p>
+					</td>
+				</tr>
+				<tr>
+					<td colspan="2" class="replied_ajax">
+						<p class="replied_real_ajax">${selectWebnovReply.replyContent }</p>
+					</td>
+				</tr> --%>
+			</div>
+			
+			<table class="tab_reply">
+             <c:forEach var="selectWebnovReply" items="${ requestScope.selectWebnovReply}">
                 <tr>
                     <td class="repliedId">
-                        <p class="repliedId_real"> 여행을 가본다 </p>
+                        <p class="repliedId_real"> ${selectWebnovReply.memId.memId }  </p>
                     </td>
                     <td class="repliedtime">
-                        <p class="repliedtime_real">1분전</p>
+                        <p class="repliedtime_real"> ${selectWebnovReply.replyDate }</p>
                     </td>
                 </tr>
                 <tr>
                     <td colspan="2" class="replied">
-                        <p class="replied_real"> 아니 난 다이아급이라고!</p>
+                        <p class="replied_real">  ${selectWebnovReply.replyContent }</p>
                     </td>
                 </tr>
              </c:forEach> 
             </table>
-        </section> --%>
+        </section>
     </div>
     </body>
   <script>
-   
 	const link = "${ pageContext.servletContext.contextPath}/webnovel/chapList";
+
+	/* 댓글 ajax */
+	$("#repliedbtn").click(function(){
+		
+		var replytext = document.getElementById("replytext").value; 
+		var webNovNum = '${ requestScope.webnovel.webNovNum}';
+		var memNum = '${ sessionScope.loginMember.memNum}';
+		
+		console.log(replytext);
+		console.log(webNovNum); 
+		$.ajax({
+			
+			method : "GET",
+			url : "/firstbook/webnovel/reply/send",
+			data : {
+					replytext : replytext,
+					webNovNum : webNovNum,
+					memNum : memNum
+				},
+			
+			success : function(data) {
+				 console.log(data); 
+				 var section = $(".div_reply_ajax"); 
+                
+                 for(var i = 0 ; i < data.length ; i++){
+                   console.log(data[i].replyDate);
+                   console.log(data[i].replyContent);
+                   console.log(data[i].memId.memId);
+                 
+				
+	            	var postList =  $("<table>");
+	            	var moreList = 
+	            	  $( "<tr>" + "<td class='repliedId_ajax'>" + "<p class='repliedId_real_ajax'>" + 
+		            	data[i].memId.memId + "</p>" + "</td>" + "<td class='repliedtime_ajax'>" +
+		            	"<p class='repliedtime_real_ajax'>" + data[i].replyDate + "</p>" +
+		            	"</td>" + "</tr>" + "<tr>" + "<td colspan='2' class='replied_ajax'>" +
+		            	"<p class='replied_real_ajax'>" + data[i].replyContent + "</p>" +
+		            	"</td>" + "</tr>" + "</table>" );    	
+	            	      
+	                postList.append(moreList); 
+	                section.append(postList);  
+	             } 
+	          }, 
+				error: function(error, status){
+		                console.log(error);
+		                console.log(status);
+				}
+				
+			});
+		
+		var reset = "";
+		document.getElementById("replytext").value = reset; 
+		
+	});
+	
+	<%-- $(function(){
+        var currentPage = ${ requestScope.pageInfo.pageNo };
+        console.log('currentPage : ' + currentPage);
+        var currentWebNov = ${ requestScope.webnovel.webNovNum};
+        
+        $(window).scroll(function(){   
+           if($(window).scrollTop() + $(window).height() + 3 > $(document).height()) {
+              currentPage++;   
+              /* console.log('currentlink' + currnetlink); */
+                $.ajax({
+                   url : '/firstbook/ajax/test',
+                    type : 'get',  
+                    data : { 
+                          currentPage : currentPage,
+                          currentWebNov : currentWebNov
+                          },
+                    success : function(data) {
+                       console.log(currentPage);
+                       if( currentPage === 1 ){
+                          console.log(data);
+                       } else {
+                           var section = $(".sec2");
+                          
+                          for(var i = 0 ; i < data.length ; i++){
+                             console.log(data[i].postNo);
+                             console.log(data[i].postTitle);
+                             console.log(data[i].minPrice);
+                          }
+                          } 
+                           	var postList = $("<table>").addClass("post");
+                             var moreList = 
+                             $("<tr id='thumbnail'>" + "<td colspan='2px'>" + data[i].postNo + "</td>" + "<tr>"
+                                  + "<tr id='title'>" + "<td colspan='2px'>" + data[i].postTitle + "</td>" + "<tr>"
+                                  + "<tr id='minPrice'>" + "<td width='80px'>" + "최소입찰가" + "</td>" 
+                                     + "<td align='right'>" + data[i].minPrice + " 원 " +"</td>"+ "</tr>");
+                             
+                             postList.append(moreList);
+                             section.append(postList); 
+                          } 
+                       } 
+                    },
+                    error : function(error) {
+                       console.log("에러다 개발자야 뭐하냐!");
+                    }
+                });      /* ajax 종료 */
+           }
+        })      /* 스크롤 페이징 함수 종료 */
+     }); --%>	
+	
+	
+	
+	/* 댓글 받아오는 ajax */
+	function listReply(){
+	    $.ajax({
+	        method: "GET", //get방식으로 자료를 전달한다
+	        url: "${path}/reply/list.do?bno=${dto.bno}", //컨트롤러에 있는 list.do로 맵핑하고 게시판 번호도 같이 보낸다.
+	        success: function(result){ //자료를 보내는것이 성  공했을때 출력되는 메시지
+	            //result : responseText 응답텍스트(html)
+	            $("#listReply").html(result);
+	        }
+   		});
+	}
+
+	
+	
+	
+	
 
 	/* 1 ~ 5화 까지 보기 */
 	function webView(var1, var2){
@@ -195,7 +335,8 @@
 			if(chapPerIsUsed == 'Y '){
 		
 			location.href = link  + "?currentWebNov=" + ${ requestScope.webnovel.webNovNum} + "&currentChap=" + webNovChapNum;			
-		
+			
+			return;
 			} else if (chapPerIsUsed == 'N ' ){			// 웹소설 챕터를 추가 구매해야하는 경우
 				
 				/* 코인이 100이하여서 추가구매를 해야하는 경우 */
@@ -203,6 +344,7 @@
 			
 					console.log(${sessionScope.loginMember.memCoin});
 					alert('"현재 " + ${sessionScope.loginMember.memName} + "님의 현재 코인은" + ${sessionScope.loginMember.memCoin} + "으로 웹소설을 보시려면 코인을 추가로 구매하셔야 합니다."');
+					return;
 			
 					
 				/* 코인이 100이상이여서 추가구매를 하지않아도 되는 경우 */
@@ -249,6 +391,9 @@
  					}
  				});			
 	}); 
+	
+	
+	
  	
  	 /* n화 볼 때마다 업데이트 되는 ajax */	
  	<%-- $(function(){
@@ -280,7 +425,7 @@
                              console.log(data[i].minPrice);
                           }
                           } 
-                             /* var postList = $("<table>").addClass("post");
+                           	var postList = $("<table>").addClass("post");
                              var moreList = 
                              $("<tr id='thumbnail'>" + "<td colspan='2px'>" + data[i].postNo + "</td>" + "<tr>"
                                   + "<tr id='title'>" + "<td colspan='2px'>" + data[i].postTitle + "</td>" + "<tr>"
@@ -290,7 +435,7 @@
                              postList.append(moreList);
                              section.append(postList); 
                           } 
-                       } */
+                       } 
                     },
                     error : function(error) {
                        console.log("에러다 개발자야 뭐하냐!");
