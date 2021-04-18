@@ -14,11 +14,11 @@ import com.lastbug.firstbook.contest.model.dto.ContestDTO;
 import com.lastbug.firstbook.contest.model.dto.ContestDetalDTO;
 import com.lastbug.firstbook.member.model.dto.MemberDTO;
 
-public class VotingYN {
+public class VotingYNService {
 	
 	private final VotingYNDAO votingYNDAO;
 	
-	public VotingYN() {
+	public VotingYNService() {
 		votingYNDAO = new VotingYNDAO();
 	}
 
@@ -34,7 +34,7 @@ public class VotingYN {
 	}
 
 	public String count(int competNum) {
-		System.out.println("오냐");
+		
 		Connection con = getConnection();
 		
 		int result = votingYNDAO.count(con, competNum );
@@ -43,6 +43,9 @@ public class VotingYN {
 		String tt = "확인";
 		return tt;
 	}
+
+
+
 
 	
 	

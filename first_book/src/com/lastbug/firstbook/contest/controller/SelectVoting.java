@@ -8,7 +8,7 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-import com.lastbug.firstbook.contest.model.service.VotingYN;
+import com.lastbug.firstbook.contest.model.service.VotingYNService;
 
 @WebServlet("/contest/selectVoting")
 public class SelectVoting extends HttpServlet {
@@ -20,17 +20,15 @@ public class SelectVoting extends HttpServlet {
 		String name = "qwerq";
 		
 		
-		int	YN = new VotingYN().VotingN(competNum, name);
-		String count = new VotingYN().count(competNum);
-//		
+		int	YN = new VotingYNService().VotingN(competNum, name);
+		String count = new VotingYNService().count(competNum);
+
 //		List<ContestDetalDTO> contestDetailList = new ContestDetail().selectContestDetal(competNum);	//
 //		List<ContestDTO> contestlList = new ContestDetail().selectContestList(competNum);				// 웹소설 정보 검색
 //		List<MemberDTO> memberList = new ContestDetail().selectMemberList(competNum);					// 작가 정보 검색
 //		String category = new ContestDetail().selectCategory(competNum);		
-//		
-//		for(ContestDTO a : contestlList) {
-//			System.out.println(a);
-//		}
+
+
 //		
 //		String path = "";
 //		if(!contestDetailList.isEmpty()) {		
