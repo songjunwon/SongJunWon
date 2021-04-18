@@ -16,7 +16,7 @@ button {border: none;} */
 
  
 
-/* 테두리기준 */
+/* �뀒�몢由ш린以� */
 
 * {
   margin: 0;
@@ -30,7 +30,7 @@ body {
 
   font-family: "Malgun Gothic", serif;
   background: #ffffff;
-  color: #ffffff;
+  color: #4c4c4c;
 
 }
 
@@ -49,13 +49,13 @@ a {
   text-decoration: none;
 }
 
-/* 텍스트 */
+/* �뀓�뒪�듃 */
 
 h1 {
   visibility: hidden;
 }
 
-/* 테이블 */
+/* �뀒�씠釉� */
 
 table {
   border-collapse: collapse;
