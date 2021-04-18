@@ -13,16 +13,16 @@
 <jsp:include page="/WEB-INF/views/admin/adminHeader.jsp"/>
 	<c:set var="webNovel" value="${ requestScope.webNovelUpdate }"/>
 	
-	<form action="${ pageContext.servletContext.contextPath }/admin/webNovel" method="post">
+	<form action="${ pageContext.servletContext.contextPath }/admin/novel/update" method="post">
 			
 
 	<br><br><br><br><br>			
-			
+			<h2> ${ webNovelChap.webChapNumDate} </h2>
 	<table border="1" >
 					
 					<tr>
 						<td>제목</td>
-						<td><input type="text" size="50" name="title" value="${ webNovel.webNovTitle }"></td>
+						<td><input type="text" size="50" name="title" value="${ webNovel.webNovTitle }" readonly="readonly"></td>
 					</tr>
 
 					<tr>
@@ -30,11 +30,11 @@
 					</tr>
 					<tr>
 						<td colspan="2">
-							<textarea name="body" cols="60" rows="15" style="resize:none;" required><c:out value="${ webNovel.webNovInform }"/></textarea>
+							<textarea name="body" cols="60" rows="15" style="resize:none;" required readonly><c:out value="${ webNovel.webNovInform }" /></textarea>
 						</td>
 					</tr>
 	</table>
-			<div align=>
+			<div>
 				<input type="hidden" name="noticeNo" value="${ webNovel.webNovNum }">
 				
 				<br>

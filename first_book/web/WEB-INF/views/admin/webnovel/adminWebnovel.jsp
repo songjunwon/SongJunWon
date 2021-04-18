@@ -39,7 +39,7 @@
                     </table>
                 </div>
                 <div class="admin_webnov web_list">
-                <form id="form" method="get">
+                <form id="form" method=get>
                     <table class="admin_webnov web_list_tab" >
                     	<c:forEach var="adminWebnovel" items="${ requestScope.adminWebNovelList }">
                         <tr >
