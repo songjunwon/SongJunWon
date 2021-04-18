@@ -63,6 +63,12 @@
                 WHERE NUMBER_OF_PAGES = ?
                   AND PAGES = ?
 	</entry>
+	<entry key="pageNubmer">
+               SELECT /* com.lastbug.firstbook.contest.model.dao.SelectViewDAO#"selectViewPage"()*/ 	
+                      *
+                 FROM COMPET_CONTENT
+                WHERE NUMBER_OF_PAGES = ?
+	</entry>
 	
 
 </properties>
