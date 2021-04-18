@@ -13,7 +13,6 @@ import com.lastbug.firstbook.admin.webnovel.model.service.AdminWebNovelService;
 import com.lastbug.firstbook.common.paging.Pagenation;
 import com.lastbug.firstbook.webnovel.model.dto.PageInfoDTO;
 import com.lastbug.firstbook.webnovel.model.dto.WebNovChapSearchDTO;
-import com.lastbug.firstbook.webnovel.model.dto.WebNovContentDetailDTO;
 import com.lastbug.firstbook.webnovel.model.dto.WebNovelInfoDTO;
 import com.lastbug.firstbook.webnovel.model.service.WebNovelService;
 
@@ -24,6 +23,7 @@ public class AdminUpdateWebnovelServlet extends HttpServlet {
 	
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 
+		
 		String currentPage = request.getParameter("currentPage");
 		
 		int pageNo = 1;
@@ -47,23 +47,26 @@ public class AdminUpdateWebnovelServlet extends HttpServlet {
 		PageInfoDTO pageInfo = Pagenation.getPageInfo(pageNo, totalCount, limit, buttonAmount);
 		
 		
+		WebNovelService webNovelService = new WebNovelService();
+		
+		/* 앞에서 전체 웹소설 목록 중에서 선택한 웹소설 번호로 웹소설 정보 조회 */
+
+		List<WebNovChapSearchDTO> webNovelChap = null;
+		List<WebNovChapSearchDTO> webNovelChap2 = null;
+		
+		
+		
+		
 		
 		
 		int no = Integer.valueOf(request.getParameter("webNovNum"));
 		AdminWebNovelService webAdminService = new AdminWebNovelService();
-		WebNovelInfoDTO webNovelUpdate = webAdminService.adminSelectWebNovelDetail(no);
+		WebNovelInfoDTO webDetail = webAdminService.adminSelectWebNovelDetail(no);
 		
 		
-		
-		WebNovelService webNovelService = new WebNovelService();
-		
-		WebNovelInfoDTO webDetail = webNovelService.selectWebNovelDetail(no);
-		
-		List<WebNovChapSearchDTO> webNovelChap = null;
-		List<WebNovChapSearchDTO> webNovelChap2 = null;
 		
 		if(webDetail != null) {
-			
+			System.out.println("왔어?");
 			webNovelChap = webNovelService.selectWebNovelallChapter(webDetail);
 			webNovelChap2 = webNovelService.selectWebNovelallChapterNotFree(webDetail);
 	
@@ -73,18 +76,18 @@ public class AdminUpdateWebnovelServlet extends HttpServlet {
 			for(WebNovChapSearchDTO b : webNovelChap2) {
 				System.out.println("b" + b);
 			}
+		
 		}
 		
-				
 		
 		String path = "";
-		if(webNovelUpdate!= null) {
+		if(webDetail!= null) {
 			path = "/WEB-INF/views/admin/webnovel/webNovelUpdate.jsp";
-			request.setAttribute("webNovelUpdate", webNovelUpdate);
 			request.setAttribute("webnovel", webDetail);
 			request.setAttribute("webnoveldetail", webNovelChap);
 			request.setAttribute("webnoveldetail2", webNovelChap2);
 			request.setAttribute("pageInfo", pageInfo);
+
 		} else {
 			path = "/WEB-INF/views/common/failed.jsp";
 			request.setAttribute("failedCode", "adminSelectWebNovelDetail");

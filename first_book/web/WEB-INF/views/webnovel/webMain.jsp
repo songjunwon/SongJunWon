@@ -169,7 +169,7 @@
 			console.log('들어가기전' + t2);
 			
 			/* 선택한 웹소설이 조회된 경우 */
-		  if(t2 == 'Y ') {
+		  if(t2 == 'Y') {
 				
 			location.href = "${ pageContext.servletContext.contextPath }/webnovel/detail?webNovNum="
 					+ parseInt(t);
@@ -178,7 +178,7 @@
 			/* console.log(t2); */
 			
 			/* 선택한 웹소설이 조회되지 않는경우 */
-			} else if(t2 == 'N '){
+			} else if(t2 == 'N'){
 				alert("해당 웹소설은 현재 중비 중에 있습니다.");
 				
 			location.href = "${ pageContext.servletContext.contextPath }/webnovel/list";
