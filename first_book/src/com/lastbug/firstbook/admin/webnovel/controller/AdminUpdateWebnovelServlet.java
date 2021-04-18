@@ -97,32 +97,5 @@ public class AdminUpdateWebnovelServlet extends HttpServlet {
 		
 	}
 
-	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		
-		
-		int no = Integer.valueOf(request.getParameter("webNovNum"));
-		
-		
-		
-		String path = "";
-		
-		List<WebNovelInfoDTO> adminWebNovelList = new AdminWebNovelService().AdminSelectAllNovel();
-				
-		
-		if(!adminWebNovelList.isEmpty()) {		// 관리자 페이지에서 웹소설이 조회 되었다면
-			//			System.out.println("조회됨?");
-			path = "/WEB-INF/views/admin/webnovel/adminWebnovel.jsp";
-			request.setAttribute("adminWebNovelList", adminWebNovelList);
-
-		}else {							// 관리자 페이지에서 웹소설이 조회 되지 않았다면
-			path = "/WEB-INF/views/common/failed.jsp";
-			request.setAttribute("failedCode", "adminSelectAllWebNovel");
-
-
-		}
-		request.getRequestDispatcher(path).forward(request, response);
-		
-		
-	}
 
 }

@@ -7,14 +7,23 @@
 <meta charset="UTF-8">
 <title>Insert title here</title>
 </head>
+<style>
+	.pg { border:none;border-right:0px; border-top:0px; boder-left:0px; boder-bottom:0px;
+		 width:10px;	}
+
+</style>
+
 <link rel="stylesheet"
 	href="/firstbook/resources/css/webnovel/webViewer.css">
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
 <body>
 	<jsp:include page="/WEB-INF/views/admin/adminHeader.jsp"/>
 	<br><br><br><br><br><br>
+	
+	<form action="${ pageContext.servletContext.contextPath }/admin/webModify" method="post">
 	<div id="wrap">
 		<h1>${requestScope.pageInfo.pageNo }</h1>
+		<h1> <input type="hidden" name="webNovNum" value="${ requestScope.currentWebNov }"/></h1>
 		<section class="sec1">
 			<table class="tab_viewer">
 				<c:choose>
@@ -30,7 +39,7 @@
 									test="${requestScope.pageInfo.pageNo == 1 }">
 									<button class="backbtn" disabled><</button>
 								</c:if> <c:if test="${requestScope.pageInfo.pageNo > 1 }">
-									<button id="searchStartPage" class="backbtn"
+									<button id="searchStartPage" class="backbtn" type="button"
 										onclick="back(this)"><</button>
 								</c:if>
 								 <%-- <c:if test="${ requestScope.pageInfo.pageNo lt requestScope.pageInfo.maxPage }"> --%>
@@ -41,50 +50,43 @@
 					</c:when>
 				</c:choose>
 			
-						<tr>
-				<c:forEach var="perChapter" items="${requestScope.perChap }">
-							<td colspan="2" class="page"><textarea class="pagediv1"><c:out value="${ perChapter.webNovPageContent }"/></textarea>
-                    	</td>
-				</c:forEach>
-						</tr>
-				
 				<tr>
+				    <c:forEach var="perChapter" items="${requestScope.perChap }" varStatus="status">
+				                <td colspan="2" class="page"><textarea class="pagediv1" name="body${ status.index }" style="resize:none;"><c:out value="${ perChapter.webNovPageContent }"/></textarea>
+				            </td>
+				    </c:forEach>
+				            </tr>
+				    
+				    <tr>
+				    
+				    <c:forEach var="perChapter" items="${requestScope.perChap }"  varStatus="status2">
+				        <td colspan="2" class="pageNum" >
+				            <input class="pg" name="pg${ status2.index }" value="<c:out value="${ perChapter.webNovPageNum.webNovPageNum }"/>">pg
+				        </td>
+				    </c:forEach>
 				
-				<c:forEach var="perChapter" items="${requestScope.perChap }">
-					<td colspan="2" class="pageNum">
-						<p class="page1Num_real"> <c:out value="${ perChapter.webNovPageNum.webNovPageNum }"/> pg</p>
-					</td>
-				</c:forEach>
-
+				    </tr>
+				
+				<tr>	
+				<td colspan="2"> <button type="submit" class="btn" onclick="modifyButtonAction(this.innerText);">수정하기</button> </td>
 				</tr>
+
+				
 			</table>
 		</section>
-		<%-- 	<h1>${ perChapter.webNovNum.webNovNum}</h1>
-	<h1>${ perChapter.webNovChapNum.webNovChapNum}</h1>  --%>
 
 	</div>
+	</form>
+
 
 	<script>
 /* 	 const $searchNextPage = document.getElementById("searchNextPage"); 
 	console.log($searchNextPage); */
 	const link = "${ pageContext.servletContext.contextPath }/admin/chapList"; 
-	const gobackLink = "${ pageContext.servletContext.contextPath }/admin/novel/update"; 
-	<%--	
-	if(document.getElementById("searchStartPage")){
-		const $searchStartPage = document.getElementById("searchStartPage");
-		$searchStartPage.onclick = function(){
-			location.href = searchLink + "?currentPage=${ requestScope.pageInfo.pageNo - 1 }";
-		}
-	}
-		
+	const gobackLink = "${ pageContext.servletContext.contextPath }/admin/update"; 
 	
-	if(document.getElementById("searchNextPage")){
-		const $searchNextPage = document.getElementById("searchNextPage");
-		$searchNextPage.onclick = function(){
-			location.href = searchLink + "?currentPage=${ requestScope.pageInfo.pageNo + 1 }";
-		}
-	} --%>
-	
+	const modifyLink = "${ pageContext.servletContext.contextPath }/admin/webModify";
+
 	
 	function next(){
 		
@@ -109,7 +111,13 @@
 		location.href = gobackLink  + "?webNovNum=${ requestScope.currentWebNov}";
 	}
 	
-
+	/* 수정사항 do post 처리 */
+	function modifyButtonAction(text) {
+		location.href = modifyLink + text + "?webNovNum=${ requestScope.currentWebNov}"
+	}
+	
+	
+	
 	</script>
 </body>
 </html>

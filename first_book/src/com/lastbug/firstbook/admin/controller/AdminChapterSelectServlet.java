@@ -28,6 +28,9 @@ public class AdminChapterSelectServlet extends HttpServlet {
 		int currentWebNovNum = Integer.valueOf(request.getParameter("currentWebNov"));
 		int currentChapNum = Integer.valueOf(request.getParameter("currentChap"));
 		
+		System.out.println(currentWebNovNum);
+		
+		
 //		System.out.println("현재 웹소설 번호" + currentWebNovNum);
 //		System.out.println("현재 웹소설의 챕터 번호" + currentChapNum);
 		

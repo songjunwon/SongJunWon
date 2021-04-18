@@ -176,6 +176,11 @@ public class AdminWebNovelDAO {
 		return result;
 	}
 
+	public int WebNovelModify(Connection con, int pg0, int pg1, String body0, String body1) {
+		// TODO Auto-generated method stub
+		return 0;
+	}
+
 
 
 }
