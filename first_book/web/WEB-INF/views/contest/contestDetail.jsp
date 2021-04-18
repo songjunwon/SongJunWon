@@ -37,16 +37,18 @@
                         작품소개
                     </div>
                     <div class="font section1_content_right_fourth">
-                        <c:out value="${ requestScope.contestlList[0].novInfo }" />
+                        <c:out value="${ requestScope.contestlList[0].novInfo }" /><c:out value="${ sessionScope.loginMember.memId }" />
                     </div>
                     <div class="font section1_content_right_five">
+                    <form action="${ pageContext.servletContext.contextPath }/contest/selectVoting" method="post">
                         <button type="button" class="firstBtn">첫화보기</button>
-                      <%--   <c:if test="${ requestScope.memberList[0].memCanVoteYn eq 'Y' }"> --%>
+                         <c:if test="${ sessionScope.loginMember.memCanVoteYn eq 'Y ' }"> 
                         <button type="button" class="firstBtn" id="voting">투표하기<label class="label_none"><c:out value="${ requestScope.contestlList[0].competNum }" /></label></button>
-                       <%--  </c:if> --%>
-                       <%--  <c:if test="${ requestScope.memberList[0].memCanVoteYn eq 'N' }">
+                        </c:if> 
+                         <c:if test="${ sessionScope.loginMember.memCanVoteYn eq 'N ' }">
                         <button type="button" class="firstBtn">투표완료</button>
-                        </c:if> --%>
+                        </c:if> 
+                    </form>
                         <button type="button" class="secondBtn">♥</button>
                     </div>
 
