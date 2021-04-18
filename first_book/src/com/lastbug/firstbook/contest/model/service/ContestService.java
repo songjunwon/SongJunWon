@@ -10,6 +10,7 @@ import java.util.List;
 
 import com.lastbug.firstbook.contest.model.dao.ContestDAO;
 import com.lastbug.firstbook.contest.model.dto.ContestDTO;
+import com.lastbug.firstbook.contest.model.dto.ContestSsnDTO;
 
 public class ContestService {
 	
@@ -85,8 +86,27 @@ public class ContestService {
 		return contestListRankEight;
 	}
 	
+	/* 전체 공모전 작품 보는 페이지 */
+	public List<ContestDTO> selectAllconstListTwo(String selectTwo) {
+		
+		Connection con = getConnection();
+		
+		List<ContestDTO> contestList = contestDAO.selectAllconstListTwo(con, selectTwo);
+		
+		close(con);
+		
+		return contestList;
+	}
 	
-	
+	/* 전체 시즌 공모전 코드 조회 */
+	public List<ContestSsnDTO> selectAllconstListTime() {
+		Connection con = getConnection();
+		
+		List<ContestSsnDTO> contestList = contestDAO.selectAllconstListTime(con);
+		
+		close(con);
+		return contestList;
+	}
 	
 	
 	
@@ -144,6 +164,12 @@ public class ContestService {
 			}
 			return date;
 		}
+
+	
+
+	
+
+		
 
 		
 	

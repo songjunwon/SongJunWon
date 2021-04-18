@@ -204,7 +204,7 @@ public class MemberDAO {
 				webNov.setWebNovInform(rs.getString("WEB_NOV_INFORM"));
 				webNov.setWebNovImgLocation(rs.getString("WEB_NOV_IMG_LOCATION"));
 				webNov.setDayOfWeek(rs.getString("DAY_OF_WEEK"));
-				webNov.setWebNovOpenOrClose(rs.getString("WEB_NOV_OPEN_OR_CLOSE"));
+				webNov.setWebNovOpenOrClose(rs.getString("WEB_NOV_IS_OPEN"));
 				webNov.setFinishedOrNot(rs.getString("FINISHED_OR_NOT"));
 				
 				useCoin.setWebNov(webNov);
@@ -303,7 +303,7 @@ public class MemberDAO {
 				webNov.setWebNovInform(rs.getString("WEB_NOV_INFORM"));
 				webNov.setWebNovImgLocation(rs.getString("WEB_NOV_IMG_LOCATION"));
 				webNov.setDayOfWeek(rs.getString("DAY_OF_WEEK"));
-				webNov.setWebNovOpenOrClose(rs.getString("WEB_NOV_OPEN_OR_CLOSE"));
+				webNov.setWebNovOpenOrClose(rs.getString("WEB_NOV_IS_OPEN"));
 				webNov.setFinishedOrNot(rs.getString("FINISHED_OR_NOT"));
 				
 				wish.setWebNov(webNov);
@@ -626,5 +626,121 @@ public class MemberDAO {
 		return faqDetail;
 	}
 
+	public int updateWishList(Connection con, int weblistNum, int memNum2) {
+		
+		PreparedStatement pstmt = null;
+		int result = 0;
+		
+		String query = prop.getProperty("updateWishList");
+		
+		try {
+			pstmt = con.prepareStatement(query);
+			pstmt.setInt(1, weblistNum);
+			pstmt.setInt(2, memNum2);
+			
+			
+			result = pstmt.executeUpdate();
+		} catch (SQLException e) {
+			e.printStackTrace();
+		} finally {
+			close(pstmt);
+		}
+		
+		return result;
+	}
+
+	public MemberDTO selectMemPoint(Connection con, int memId) {
+
+		PreparedStatement pstmt = null;
+		ResultSet rset = null;
+		
+		MemberDTO result = null;
+		
+		String query = prop.getProperty("selectMemPoint");
+		
+		try {
+			pstmt = con.prepareStatement(query);
+			pstmt.setInt(1, memId);
+			
+			rset = pstmt.executeQuery();
+			
+			while(rset.next()) {
+				
+				result = new MemberDTO();
+				result.setMemCoin(rset.getInt("MEM_COIN"));
+			}
+			
+		} catch (SQLException e) {
+			e.printStackTrace();
+		}finally {
+			close(pstmt);
+		}
+		
+		return result;
+	}
+
+	public int deleteWishList(Connection con, int weblistNum, int memNum2) {
+
+		PreparedStatement pstmt = null;
+		int result = 0;
+		
+		String query = prop.getProperty("deleteWishList");
+		
+		try {
+			pstmt = con.prepareStatement(query);
+			pstmt.setInt(1, weblistNum);
+			pstmt.setInt(2, memNum2);
+			
+			
+			result = pstmt.executeUpdate();
+		} catch (SQLException e) {
+			e.printStackTrace();
+		} finally {
+			close(pstmt);
+		}
+		
+		return result;
+	}
+
+	public int updateCoin(Connection con, int memId, int restCoin) {
+
+		PreparedStatement pstmt = null;
+		
+		int result = 0;
+		
+		String query = prop.getProperty("updateCoin");
+		
+//		System.out.println("db저장 전 금액" + restCoin);
+		try {
+			pstmt = con.prepareStatement(query);
+			pstmt.setInt(1, restCoin);
+			pstmt.setInt(2, memId);
+			
+			
+			result = pstmt.executeUpdate();
+		} catch (SQLException e) {
+			e.printStackTrace();
+		} finally {
+			close(pstmt);
+		}
+		
+		return result;
+	}
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 

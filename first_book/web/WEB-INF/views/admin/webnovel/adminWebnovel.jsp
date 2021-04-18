@@ -15,12 +15,14 @@
 </style>
 </head>
 <body>
+<jsp:include page="/WEB-INF/views/admin/adminHeader.jsp"/>
+<br><br><br><br><br><br><br><br>
     <div id="wrap">
         <div class="top_main">        
         <section class="sec1">
             <div class="admin_webnov web_whole_div">
                 <div class="admin_webnov web_title">
-                    <table class="admin_webnov web_title_tab"  >
+                    <table class="admin_webnov web_title_tab" >
                         <tr class="web_title_head">
                             <th class="introRadio"> </th>
                             <th class="introImg"> 이미지 </th>
@@ -37,7 +39,7 @@
                     </table>
                 </div>
                 <div class="admin_webnov web_list">
-                <form id="form" method="get">
+                <form id="form" method=get>
                     <table class="admin_webnov web_list_tab" >
                     	<c:forEach var="adminWebnovel" items="${ requestScope.adminWebNovelList }">
                         <tr >
@@ -67,7 +69,11 @@
 		                    <input class="webList" type="hidden" id="finishedOrNot" name="finishedOrNot" > -->
                        </c:forEach>
                     </table>
+                    
                  </form>
+                 
+
+                 
                 </div>
             </div>        
         </section>
@@ -100,7 +106,11 @@
                 <br><br>
                 <button class="enrollModifyDelete" type="submit" onclick="update()">수정</button>
                 <br><br>
-                <button class="enrollModifyDelete">삭제</button>
+		
+
+                <button class="enrollModifyDelete" type="submit" onclick="closeOrOpen();" >공개/비공개</button>
+             
+
             </div>
         </section>
 
@@ -162,10 +172,19 @@
 		}
 	}
 	
+	
+	
 	function update(){
 		document.getElementById("form").submit();
 		location.href ="${ pageContext.servletContext.contextPath}/admin/novel/update?webNovNum=" + document.getElementById("webNovNum").value 
 	}
+
+	function closeOrOpen(){
+		document.getElementById("form").submit();
+		location.href ="${ pageContext.servletContext.contextPath}/admin/webnovelCloseOpen?webNovNum=" + document.getElementById("webNovNum").value
+	}
+	
+
 </script>
 </body>
 </html>

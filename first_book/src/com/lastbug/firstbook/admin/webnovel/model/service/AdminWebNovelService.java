@@ -65,6 +65,42 @@ public class AdminWebNovelService {
 		return webNovelUpdate;
 	}
 
+	public int WebNovelCloseOrOpen(int no, String closeOrOpen, WebNovelInfoDTO adminWebNovelList) {
+	
+		Connection con = getConnection();
+		
+		int result = adminWebNovelDAO.WebNovelCloseOrOpen(con, closeOrOpen, adminWebNovelList);
+		
+		if(result > 0) {
+			commit(con);
+		} else {
+			rollback(con);
+		}
+		
+		close(con);
+		
+		return result;
+	}
+
+	public int WebNovelModify(int no, int pg0, int pg1, String body0, String body1) {
+
+		Connection con = getConnection();
+		
+		int result = adminWebNovelDAO.WebNovelModify(con, pg0, pg1, body0, body1);
+		
+		if(result > 0) {
+			commit(con);
+		} else {
+			rollback(con);
+		}
+		
+		close(con);
+		
+		return result;
+	
+
+	}
+
 }
 
 

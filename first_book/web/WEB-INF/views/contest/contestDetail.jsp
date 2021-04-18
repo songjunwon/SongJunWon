@@ -1,4 +1,4 @@
-<%@ page language="java" contentType="text/html; charset=UTF-8"
+ <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <!DOCTYPE html>
@@ -41,9 +41,12 @@
                     </div>
                     <div class="font section1_content_right_five">
                         <button type="button" class="firstBtn">첫화보기</button>
-                        <c:if test="${ requestScope.memberList[0].memCanVoteYn eq 'Y' }">
+                      <%--   <c:if test="${ requestScope.memberList[0].memCanVoteYn eq 'Y' }"> --%>
                         <button type="button" class="firstBtn" id="voting">투표하기<label class="label_none"><c:out value="${ requestScope.contestlList[0].competNum }" /></label></button>
-                        </c:if>
+                       <%--  </c:if> --%>
+                       <%--  <c:if test="${ requestScope.memberList[0].memCanVoteYn eq 'N' }">
+                        <button type="button" class="firstBtn">투표완료</button>
+                        </c:if> --%>
                         <button type="button" class="secondBtn">♥</button>
                     </div>
 
@@ -68,7 +71,8 @@
                     <c:out value="${ DetailList.competDate }" />
                 </div>
                 <div class="section2_content_bt">
-                    <button type="button" class="section2_content_btn">무료보기</button>
+                    <button type="button" class="section2_content_btn" 
+                    onclick="test(${ DetailList.competNum },${ DetailList.chapterNum })">무료보기</button>
                 </div>
             </div>
             <div class="section2_space"></div>
@@ -115,11 +119,31 @@
         </div>
     </section>
 </div>
- <script>
+<script>
 		$("#voting").click(function(){
 			const competNum = $(this).find("label").text();	
 			location.href="${ pageContext.servletContext.contextPath }/contest/selectVoting?competNum=" + competNum;
 		});
+		
+		
+		const link = "${ pageContext.servletContext.contextPath}/contest/SelectView";
+
+		function test(var1, var2){
+				
+			var t = var1;
+			var t2 = var2; 
+			console.log(t);
+			console.log(t2);
+			
+			/* if(t2 == 'N'){
+				 alert("해당 웹소설의 " + t + "화는 준비 중에 있습니다!")
+				 
+				} else if (t2 == 'Y'){ */
+					
+			location.href = link  + "?competNum=" + parseInt(t) +  "&chapterNum=" + parseInt(t2) + "&first=" + 1;			
+				/* } */
+
+			}
 </script> 
 </body>
 </html>

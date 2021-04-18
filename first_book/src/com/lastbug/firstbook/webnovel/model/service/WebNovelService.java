@@ -14,6 +14,7 @@ import com.lastbug.firstbook.webnovel.model.dto.PageInfoDTO;
 import com.lastbug.firstbook.webnovel.model.dto.WebNovChapSearchDTO;
 import com.lastbug.firstbook.webnovel.model.dto.WebNovContentDetailDTO;
 import com.lastbug.firstbook.webnovel.model.dto.WebNovelInfoDTO;
+import com.lastbug.firstbook.webnovel.model.dto.WebnovelReplyDTO;
 
 public class WebNovelService {
 
@@ -47,7 +48,7 @@ public class WebNovelService {
 		/* 조회수 증가 */
 		int result = webNovelDAO.incrementWebnovelCount(con, no);
 
-		System.out.println("조회수 : " + result);
+//		System.out.println("조회수 : " + result);
 
 		if(result > 0) {
 
@@ -110,7 +111,6 @@ public class WebNovelService {
 
 	/* 선택한 웹소설의 챕터의 쪽수 계산 */
 	public int searchWebNovelCount(int currentWebNovNum, int currentChapNum) {
-
 		Connection con = getConnection();
 
 		int totalCount = webNovelDAO.searchWebNovelCount(con, currentWebNovNum, currentChapNum);
@@ -126,7 +126,7 @@ public class WebNovelService {
 		return totalCount;
 	}
 
-	/*  */
+	/* 1~5화 제목 조회용 메소드 */
 	public WebNovelInfoDTO searchTitle(int currentWebNovNum) {
 
 		Connection con = getConnection();
@@ -145,17 +145,168 @@ public class WebNovelService {
 		return title;
 	}
 
+	/* 전체 웹소설안에 챕터 개수 조회용 메소드 */
 	public int selectTotalCount() {
 
 		Connection con = getConnection();
 		
 		int result = webNovelDAO.selectTotalCount(con);
 		
-		
+//		System.out.println("select total Count" + result);
 		
 		close(con);
 		
 		return result;
+
+	}
+
+	/* 선택한 웹소설 안에 있는 전체 챕터조회용 (유료) 메소드 */
+	public List<WebNovChapSearchDTO> selectWebNovelallChapterNotFree(WebNovelInfoDTO webDetail) {
+
+		Connection con = getConnection();
+
+		List<WebNovChapSearchDTO> webNovelChap2 = null;
+
+		webNovelChap2 = webNovelDAO.selectWebNovelallChapterNotFree(con, webDetail);
+
+		//		System.out.println("web회차 정보 service" + webNovelChap);
+
+
+		if(webNovelChap2 != null) {
+			commit(con);
+		}else {
+			rollback(con);
+		}
+
+		close(con);
+		return webNovelChap2;
+
+	}
+
+	/* 웹소설 안에 있는 모든 챕터 조회용 메소드 */
+	public int selectTotalChapter(int currentWebNov) {
+
+		Connection con = getConnection();
+		
+		int result = webNovelDAO.selectTotalChapter(con, currentWebNov);
+		
+//		System.out.println("select total Count(ajax)" + result);
+		
+		close(con);
+		
+		return result;
+
+	}
+	/* 6화부터 뿌려지는 웹소설 내용 조회용 메소드 */
+	public int searchWebNovelCountPaid(int webNovNum, int webNovChapNum) {
+		Connection con = getConnection();
+
+		int totalCount = webNovelDAO.searchWebNovelCountPaid(con, webNovNum, webNovChapNum);
+
+		if(totalCount > 0) {
+			commit(con);
+		} else {
+			rollback(con);
+		}
+
+		close(con);
+
+		return totalCount;
+	}
+
+	/* 6화부터 뿌려지는 제목 조회용 메소드 */
+	public WebNovelInfoDTO searchTitlePaid(int webNovNum) {
+		Connection con = getConnection();
+
+		WebNovelInfoDTO title = webNovelDAO.searchTitlePaid(con, webNovNum);
+
+		if(title != null) {
+			commit(con);
+		}else {
+			rollback(con);
+		}
+
+
+		close(con);
+
+		return title;
+	}
+
+	/* 전체 댓글 리스트 조회용 메소드 */
+	public List<WebnovelReplyDTO> selectAllReply() {
+		
+		Connection con = getConnection();
+
+		System.out.println("커넥션에 왓니?");
+
+		List<WebnovelReplyDTO> webnovAllReply = webNovelDAO.selectAllReply(con);
+
+		close(con);
+
+		//		System.out.println("service의 목록" + webNovelList);
+
+		return webnovAllReply;
+	}
+
+	/* 해당 웹소설 댓글 리스트 조회 */
+	public List<WebnovelReplyDTO> selectWebnovReply(int no) {
+
+		Connection con = getConnection();
+
+		System.out.println("커넥션에 왓니?");
+
+		List<WebnovelReplyDTO> selectWebnovReply = webNovelDAO.selectWebnovReply(con, no);
+
+		close(con);
+
+		if(selectWebnovReply != null) {
+			commit(con);
+		}else {
+			rollback(con);
+		}
+
+
+		return selectWebnovReply;
+	}
+
+	public int insertReply(String replytext, int webNovNum, int memNum) {
+
+		Connection con = getConnection();
+		
+		int insertReply = webNovelDAO.insertReply(con, replytext, webNovNum, memNum);
+		
+		
+		if(insertReply >  0) {
+			
+			commit(con);
+		} else {
+			
+			rollback(con);
+		}
+		close(con);
+		
+		
+		return insertReply;
+	}
+
+	public List<WebnovelReplyDTO> replydata(String replytext, int webNovNum, int memNum) {
+
+		Connection con = getConnection();
+		
+		List<WebnovelReplyDTO> replydata = webNovelDAO.replydata(con, replytext, webNovNum, memNum);
+		
+		
+		if(replydata != null) {
+			
+			commit(con);
+		} else {
+			
+			rollback(con);
+		}
+		close(con);
+		
+		
+		return replydata;
 
 	}
 

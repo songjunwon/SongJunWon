@@ -25,26 +25,29 @@ public class SearchMemberListServlet extends HttpServlet {
 
 		String value = request.getParameter("memSearchValue");
 		
-		System.out.println("condition : " + condition);
-		System.out.println("value : " + value);
+//		System.out.println("condition : " + condition);
+//		System.out.println("value : " + value);
+		
+//		String currentPage = request.getParameter("currentPage");
+		
 		
 		
 		AdminService adminService = new AdminService();
 		
-		List<MemberDTO> searchMemList = adminService.searchMemList(condition, value);
+		List<MemberDTO> memList = adminService.searchMemList(condition, value);
 		
-		for(MemberDTO md : searchMemList) {
-			
-			System.out.println(md);
-			
-		}
+//		for(MemberDTO md : memList) {
+//			
+//			System.out.println("검색한 멤버" + md);
+//			
+//		}
 		
 		String path="";
 		
-		if(!searchMemList.isEmpty()) {
+		if(!memList.isEmpty()) {
 			
-			path = "/WEB-INF/views/admin/list.jsp";
-			request.setAttribute("searchMemList", searchMemList);
+			path = "/WEB-INF/views/admin/memberList.jsp";
+			request.setAttribute("memList", memList);
 			request.setAttribute("memSearchCondition", condition);
 			request.setAttribute("memSearchValue" , value);
 			
@@ -58,15 +61,6 @@ public class SearchMemberListServlet extends HttpServlet {
 		request.getRequestDispatcher(path).forward(request, response);
 		
 	}
-		
-		
 	
-
-
-	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		
-		
-		
-	}
 
 }

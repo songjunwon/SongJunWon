@@ -23,7 +23,7 @@ public class ShowAllWebNovelServlet extends HttpServlet {
 		
 //		System.out.println("여기왓니?");
 		
-		String currentPage = "1";
+		String currentPage = request.getParameter("currentPage");
 		
 		int pageNo = 1;
 		
@@ -47,7 +47,10 @@ public class ShowAllWebNovelServlet extends HttpServlet {
 		
 		List<WebNovelInfoDTO> webNovelList = new WebNovelService().selectAllNovel();
 	
-
+//		for(WebNovelInfoDTO a : webNovelList) {
+//			System.out.println(a);
+//		}
+		
 		String path = "";
 		
 		if(!webNovelList.isEmpty()) {		// 웹소설이 조회 되었다면

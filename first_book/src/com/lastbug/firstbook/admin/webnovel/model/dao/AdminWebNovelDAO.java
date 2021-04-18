@@ -60,7 +60,7 @@ public class AdminWebNovelDAO {
 				webNovel.setDayOfWeek(rset.getString("DAY_OF_WEEK"));
 				webNovel.setWebNovImgLocation(rset.getString("WEB_NOV_IMG_LOCATION"));
 				webNovel.setFinishedOrNot(rset.getString("FINISHED_OR_NOT"));
-				webNovel.setWebNovOpenOrClose(rset.getString("WEB_NOV_OPEN_OR_CLOSE"));
+				webNovel.setWebNovOpenOrClose(rset.getString("WEB_NOV_IS_OPEN"));
 				
 				adminWebNovelList.add(webNovel);
 				
@@ -136,7 +136,7 @@ public class AdminWebNovelDAO {
 				webNovelUpdate.setDayOfWeek(rset.getString("DAY_OF_WEEK"));
 				webNovelUpdate.setWebNovImgLocation(rset.getString("WEB_NOV_IMG_LOCATION"));
 				webNovelUpdate.setFinishedOrNot(rset.getString("FINISHED_OR_NOT"));
-				webNovelUpdate.setWebNovOpenOrClose(rset.getString("WEB_NOV_OPEN_OR_CLOSE"));
+				webNovelUpdate.setWebNovOpenOrClose(rset.getString("WEB_NOV_IS_OPEN"));
 				
 			}
 			
@@ -149,6 +149,36 @@ public class AdminWebNovelDAO {
 		
 		
 		return webNovelUpdate;
+	}
+
+	public int WebNovelCloseOrOpen(Connection con, String closeOrOpen, WebNovelInfoDTO adminWebNovelList) {
+		
+		
+		PreparedStatement pstmt = null;
+		int result = 0;
+		
+		String query = prop.getProperty("WebNovelCloseOrOpen");
+		
+		
+		try {							
+			pstmt = con.prepareStatement(query);
+			pstmt.setString(1, closeOrOpen);
+			pstmt.setInt(2, adminWebNovelList.getWebNovNum());
+			
+			result = pstmt.executeUpdate();
+			
+		} catch (SQLException e) {
+			e.printStackTrace();
+		} finally {
+			close(pstmt);
+		}
+		
+		return result;
+	}
+
+	public int WebNovelModify(Connection con, int pg0, int pg1, String body0, String body1) {
+		// TODO Auto-generated method stub
+		return 0;
 	}
 
 

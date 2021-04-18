@@ -13,11 +13,11 @@ import com.lastbug.firstbook.contest.model.dto.ContestDTO;
 import com.lastbug.firstbook.contest.model.dto.ContestDetalDTO;
 import com.lastbug.firstbook.member.model.dto.MemberDTO;
 
-public class ContestDetail {
+public class ContestDetailService {
 	
 	private final ContestDetalDAO contestDetalDAO;
 	
-	public ContestDetail() {
+	public ContestDetailService() {
 		contestDetalDAO = new ContestDetalDAO();
 	}
 

@@ -42,6 +42,28 @@
                             ) + 1
               WHERE COMPET_NUM = ?
 	</entry>
+	<entry key="selectView">
+               SELECT /* com.lastbug.firstbook.contest.model.dao.SelectViewDAO#selectView()*/
+                      *
+                 FROM COMPET_DETAIL
+                WHERE CHAPTER_NUM = ?
+                  AND COMPET_NUM = ?
+                  
+	</entry>
+	<entry key="selectContestList">
+               SELECT /* com.lastbug.firstbook.contest.model.dao.SelectViewDAO#selectContestList()*/ 
+      				  *
+                 FROM COMPET_INFO
+                WHERE COMPET_NUM = ?
+	</entry>
+	<entry key="selectViewPages">
+               SELECT /* com.lastbug.firstbook.contest.model.dao.SelectViewDAO#"selectViewPage"()*/ 	
+                      *
+                 FROM COMPET_CONTENT
+                WHERE NUMBER_OF_PAGES = ?
+                  AND PAGES = ?
+	</entry>
+	
 
 </properties>
 

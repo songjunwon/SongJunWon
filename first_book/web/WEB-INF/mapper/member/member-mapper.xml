@@ -85,12 +85,14 @@
 		     , C.WEB_NOV_INFORM
 		     , C.WEB_NOV_IMG_LOCATION
 		     , C.DAY_OF_WEEK
-		     , C.WEB_NOV_OPEN_OR_CLOSE
+		     , C.WEB_NOV_IS_OPEN
 		     , C.FINISHED_OR_NOT
 		  FROM COIN_USE_HIS A
 		  JOIN WEB_NOV_INFO C ON (C.WEB_NOV_NUM = A.WEB_NOV_NUM)
 		 WHERE A.MEM_NUM = ?
 		   AND C.WEB_NOV_OPEN_OR_CLOSE = 'Y'
+		   AND C.WEB_NOV_IS_OPEN = 'N'
+>>>>>>> refs/remotes/origin/main
 		 ORDER BY A.COIN_USE_DATE DESC
 	</entry>
 
@@ -132,12 +134,12 @@
 		     , B.WEB_NOV_INFORM
 		     , B.WEB_NOV_IMG_LOCATION
 		     , B.DAY_OF_WEEK
-		     , B.WEB_NOV_OPEN_OR_CLOSE
+		     , B.WEB_NOV_IS_OPEN
 		     , B.FINISHED_OR_NOT
 		  FROM WISH_LIST A
 		  JOIN WEB_NOV_INFO B ON (B.WEB_NOV_NUM = A.WEB_NOV_NUM)
 		 WHERE A.MEM_NUM = ?
-		   AND B.WEB_NOV_OPEN_OR_CLOSE = 'N'
+		   AND B.WEB_NOV_IS_OPEN = 'Y'
 		 ORDER BY A.WISHLIST_DATE DESC
 	</entry>
 	<entry key="incrementLoginCount">
@@ -262,6 +264,35 @@
 		     , A.FAQ_POST_CONTENT
 		  FROM FAQ A
 		 WHERE A.POST_NUM = ?
+	</entry>
+	<entry key="updateWishList">
+        INSERT
+          INTO WISH_LIST
+          (
+            WEB_NOV_NUM, MEM_NUM, WISHLIST_DATE
+          )
+        VALUES
+          (
+            ?, ?, SYSDATE
+          )		
+	</entry>
+	<entry key="selectMemPoint">
+	    SELECT
+               A.MEM_COIN
+          FROM MEM_INFO A
+         WHERE A.MEM_NUM = ?
+	</entry>
+	<entry key="deleteWishList">
+        DELETE
+          FROM WISH_LIST
+         WHERE WEB_NOV_NUM = ?
+           AND MEM_NUM = ?		
+	</entry>
+	<entry key="updateCoin">
+        UPDATE
+               MEM_INFO A
+           SET A.MEM_COIN = ?
+         WHERE A.MEM_NUM = ?
 	</entry>
 </properties>
 

@@ -18,8 +18,11 @@
                      ORDER BY SCORE DESC
                    )
 	</entry>
-	<entry key="">
-	   
+	<entry key="selectAllContestListTime">
+               SELECT
+               COMPET_SSN
+                 FROM COMPET_INFO
+                GROUP BY COMPET_SSN
 	</entry>
 
 </properties>

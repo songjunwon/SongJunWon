@@ -24,11 +24,11 @@ public class SelectAllMemberServlet extends HttpServlet {
 		
 		List<MemberDTO> memList = adminService.selectAllMemList();
 		
-		for(MemberDTO md : memList) {
-			
-			System.out.println(md);
-			
-		}
+//		for(MemberDTO md : memList) {
+//			
+//			System.out.println(md);
+//			
+//		}
 		
 		String path="";
 		

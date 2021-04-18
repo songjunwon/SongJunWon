@@ -14,10 +14,10 @@
 	width: 140px;
 	height: 40px;
 	border-radius: 30px;
-	background-color: red;
+	background-color: #ED1C24;
 	color: white;
 	font-weight: bolder;
-	border-color: red;
+	border-color: ED1C24;
 	border: none;
 }
 .secondBtn{
@@ -25,10 +25,10 @@
     width: 40px;
 	height: 40px;
 	border-radius: 40px;
-	background-color: red;
+	background-color: #ED1C24;
 	color: white;
 	font-weight: bolder;
-	border-color: red;
+	border-color: ED1C24;
 	border: none;
     font-size: 30px;
 }

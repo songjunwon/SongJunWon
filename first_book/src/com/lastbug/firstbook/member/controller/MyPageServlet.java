@@ -28,6 +28,7 @@ public class MyPageServlet extends HttpServlet {
 			
 		List<UseCoinDTO> useCoinList = memberService.selectUseCoin(memNum);
 		List<WishlistDTO> wishlist = memberService.selectWishlist(memNum);
+		
 			
 		String path = "/WEB-INF/views/member/myPage.jsp";
 		request.setAttribute("useCoinList", useCoinList);

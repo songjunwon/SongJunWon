@@ -1,8 +1,8 @@
 @charset "UTF-8";
 
-#wrap {margin: 0px auto; width: 100%;}
+#wrap {margin: 0px auto; }
 .top_header {margin: 0px auto; width: 100%;}
-.top_main {margin: 0px auto; width: 1100px;}
+.top_main {margin: 0px auto; width: 900px;}
 .top_footer {margin: 0px auto; width: 100%; background-color: #3A3A3A;}
 .top_footer_member {margin: 0px auto; width: 100%; border-top: 1px solid #ccc;}
 
@@ -18,7 +18,7 @@
 .bold {font-weight: 700;}
 
 /* main_everyday */
-.everyday_div { text-align: center; width: 900px; height: 80px; background-color: #ED1C24; border-radius: 20px 20px 20px 20px; padding: 10px; float: left;}
+.everyday_div { text-align: center; width: 900px; height: 80px; background-color: #ED1C24; border-radius: 20px 20px 20px 20px; padding: 10px; }
 .everyday_div > button > p { font-size: 20pt; color: #fff; width: 100px; height: 50px; text-align: center; position: relative; top: 12px;}
 
 /* .everyday_div {border-bottom: 1px solid #fff;} */
@@ -28,8 +28,8 @@
 
 /* 월요일관련 css */
 .monday {margin: 0px auto; padding: 0px 20px;}
-.monday > div {display: block; float: left; text-align: center; margin: 0px 20px 20px 20px;}
-.monday > div > button > img {width: 170px; height: 250px; border-radius: 10px;}
+.monday > div {display: block; float: left; text-align: center; margin: 0px 10px 20px 10px;}
+.monday > div > button > img {width: 180px; height: 250px; border-radius: 10px;}
 .monday > div > button > p {color: #000; font-weight: 600; font-size: 16px;}
 
 /* 화요일관련 css */

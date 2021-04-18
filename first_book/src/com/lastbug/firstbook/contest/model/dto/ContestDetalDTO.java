@@ -10,18 +10,19 @@ public class ContestDetalDTO implements Serializable{
 	private int competNum;
 	private String novContent;
 	private String competDate;
+	private int numberOfPages;
 	
 	public ContestDetalDTO() {}
 
-	public ContestDetalDTO(int chapterNum, int competNum, String novContent, String competDate) {
+	public ContestDetalDTO(int chapterNum, int competNum, String novContent, String competDate, int numberOfPages) {
 		super();
 		this.chapterNum = chapterNum;
 		this.competNum = competNum;
 		this.novContent = novContent;
 		this.competDate = competDate;
+		this.numberOfPages = numberOfPages;
 	}
 
-	
 	public int getChapterNum() {
 		return chapterNum;
 	}
@@ -54,6 +55,14 @@ public class ContestDetalDTO implements Serializable{
 		this.competDate = competDate;
 	}
 
+	public int getNumberOfPages() {
+		return numberOfPages;
+	}
+
+	public void setNumberOfPages(int numberOfPages) {
+		this.numberOfPages = numberOfPages;
+	}
+
 	public static long getSerialversionuid() {
 		return serialVersionUID;
 	}
@@ -61,9 +70,12 @@ public class ContestDetalDTO implements Serializable{
 	@Override
 	public String toString() {
 		return "ContestDetalDTO [chapterNum=" + chapterNum + ", competNum=" + competNum + ", novContent=" + novContent
-				+ ", competDate=" + competDate + "]";
+				+ ", competDate=" + competDate + ", numberOfPages=" + numberOfPages + "]";
 	}
+
 	
+	
+
 	
 	
 

@@ -45,6 +45,7 @@
 					<p class="everyday_text">완작</p>
 				</button>
 			</div>
+			
 			<div class="everyday_contents">
 				<div class="monday on">
 					<c:forEach var="webnovel" items="${ requestScope.webNovelList }">
@@ -64,7 +65,7 @@
 					<c:forEach var="webnovel" items="${ requestScope.webNovelList }">
 						<c:if test="${ webnovel.dayOfWeek eq '화' }">
 							<div class="clickWebNovel" >
-								<button type="button" onclick="gogo(${ webnovel.webNovNum },'${webnovel.webNovOpenOrClose }')">
+								<button type="button" onclick="gogo(${ webnovel.webNovNum },'${webnovel.webNovOpenOrClose}')">
 								<img src="${webnovel.webNovImgLocation }">
 								<p>
 									제목 : ${ webnovel.webNovTitle }<br> 작가 : ${ webnovel.webNovAuthor }
@@ -159,27 +160,29 @@
 			</div>
 		</main>
 	</div>
-
+</body>
 	<script>
 		/* 선택한 웹소설 페이지로 이동하게 하는 메소드 */
 		function gogo(val1, val2) {
 			var t = val1;
 			var t2 = val2;
-			console.log(t2);
+			console.log(t);
+			console.log('들어가기전' + t2);
 			
 			/* 선택한 웹소설이 조회된 경우 */
-		  if(t2 == 'N ') {
+		  if(t2 == 'Y') {
 				
 			location.href = "${ pageContext.servletContext.contextPath }/webnovel/detail?webNovNum="
 					+ parseInt(t);
+			console.log(t);
+			console.log('들어가기후' + t2);
 			/* console.log(t2); */
 			
 			/* 선택한 웹소설이 조회되지 않는경우 */
-			} else if(t2 == 'Y '){
-				
+			} else if(t2 == 'N'){
 				alert("해당 웹소설은 현재 중비 중에 있습니다.");
+				
 			location.href = "${ pageContext.servletContext.contextPath }/webnovel/list";
-			console.log(t2);
 			}
 			
 		}
@@ -196,53 +199,9 @@
 		});
 		
 
-		$(function(){
-	         var currentPage = ${ requestScope.pageInfo.pageNo };
-	         console.log('currentPage : ' + currentPage);
-	            
-	         $(window).scroll(function(){   
-	            if($(window).scrollTop() + $(window).height() + 3 > $(document).height()) {
-	               currentPage++;   
-	               /* console.log('currentlink' + currnetlink); */
-	                 $.ajax({
-	                    url : '/firstbook/ajax/test',
-	                     type : 'get',  
-	                     data : { 
-	                           currentPage: currentPage,
-	                           },
-	                     success : function(data) {
-	                        console.log(currentPage);
-	                        if( currentPage === 1 ){
-	                           console.log(data);
-	                        } else {
-	                           /* var section = $(".section");
-	                           
-	                           for(var i = 0 ; i < data.length ; i++){
-	                              console.log(data[i].postNo);
-	                              console.log(data[i].postTitle);
-	                              console.log(data[i].minPrice);
-	                              
-	                              var postList = $("<table>").addClass("post");
-	                              var moreList = 
-	                              $("<tr id='thumbnail'>" + "<td colspan='2px'>" + data[i].postNo + "</td>" + "<tr>"
-	                                   + "<tr id='title'>" + "<td colspan='2px'>" + data[i].postTitle + "</td>" + "<tr>"
-	                                   + "<tr id='minPrice'>" + "<td width='80px'>" + "최소입찰가" + "</td>" 
-	                                      + "<td align='right'>" + data[i].minPrice + " 원 " +"</td>"+ "</tr>");
-	                              
-	                              postList.append(moreList);
-	                              section.append(postList); */
-	                           }
-	                        }
-	                     },
-	                     error : function(error) {
-	                        console.log("에러다 개발자야 뭐하냐!");
-	                     }
-	                 });      /* ajax 종료 */
-	            }
-	         })      /* 스크롤 페이징 함수 종료 */
-	      }); 
+		
 		
 
 	</script>
-</body>
+
 </html>
