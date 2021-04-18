@@ -83,15 +83,16 @@
                         </c:forEach>
                     </div>
 
-
                 </div>
+					<div class="tupyo">
+					<a class="tupyoa" href="${pageContext.servletContext.contextPath }/contestAll/list?competSsn=${ requestScope.contestListRankEight[0].competSsn }">
+					지난 공모전<br>작품 보기</a>
+					</div>
             </div>
         </aside>
 
 
-		<section>
-			<a href="${pageContext.servletContext.contextPath }/contestAll/list?competSsn=${ requestScope.contestListRankEight[0].competSsn }">지난 공모전 작품 보기</a>
-		</section>
+	
 
     </div>
 
