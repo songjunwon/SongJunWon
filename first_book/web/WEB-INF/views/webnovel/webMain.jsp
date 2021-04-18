@@ -45,6 +45,7 @@
 					<p class="everyday_text">완작</p>
 				</button>
 			</div>
+			
 			<div class="everyday_contents">
 				<div class="monday on">
 					<c:forEach var="webnovel" items="${ requestScope.webNovelList }">

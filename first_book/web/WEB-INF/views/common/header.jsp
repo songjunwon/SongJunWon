@@ -20,10 +20,6 @@
                     <a href="${ pageContext.servletContext.contextPath }" title="more"><img src="/firstbook/resources/image/contest/logo.png" alt="more"></a>
 
                 </div>
-                <%-- 아래는 조영석이 잠시 사용하려고 만들어 놓은 것 추후에 삭제 예정 --%>
-<li><a href="${ pageContext.servletContext.contextPath }/webnovel/list" class="main-btn">연재</a></li>
-	                            <li><a href="#" class="main-btn">완결</a></li>
-	                            <li><a href="${ pageContext.servletContext.contextPath }/admin/main" class="main-btn">관리자 메인</a></li>
 
 				<c:if test="${ empty sessionScope.loginMember }">
 	                <div class="menu_box" id="menu_box">
