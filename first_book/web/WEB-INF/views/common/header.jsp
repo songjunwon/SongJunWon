@@ -20,10 +20,6 @@
                     <a href="${ pageContext.servletContext.contextPath }" title="more"><img src="/firstbook/resources/image/contest/logo.png" alt="more"></a>
 
                 </div>
-                <%-- 아래는 조영석이 잠시 사용하려고 만들어 놓은 것 추후에 삭제 예정 --%>
-<li><a href="${ pageContext.servletContext.contextPath }/webnovel/list" class="main-btn">연재</a></li>
-	                            <li><a href="#" class="main-btn">완결</a></li>
-	                            <li><a href="${ pageContext.servletContext.contextPath }/admin/main" class="main-btn">관리자 메인</a></li>
 
 				<c:if test="${ empty sessionScope.loginMember }">
 	                <div class="menu_box" id="menu_box">
@@ -48,7 +44,7 @@
 	                            <li><a href="#" class="main-btn">완결</a></li>
 	                            <li><a href="${ pageContext.servletContext.contextPath }/contest/list" class="main-btn">공모전</a></li>
 	                            <li><a href="#" class="main-btn">이벤트</a></li>
-	                            <li><a href="${ pageContext.servletContext.contextPath }/board/list" class="main-btn">고객문의</a></li>
+	                            <li><a href="${ pageContext.servletContext.contextPath }/member/notice" class="main-btn">고객문의</a></li>
 	                            <li><a href="#" class="main-btn">단행본</a></li>
 								<c:if test="${ sessionScope.loginMember.memId eq 'admin' }">
 
@@ -63,15 +59,15 @@
                 <div class="login_box">
 	                <c:if test="${ empty sessionScope.loginMember }">
 	                    <ul>
-	                        <li><a href="${ pageContext.servletContext.contextPath }/member/regist" class="main-btn">회원가입</a></li>
 	                        <li><a href="${ pageContext.servletContext.contextPath }/member/login" class="main-btn">로그인</a></li>
+	                        <li><a href="${ pageContext.servletContext.contextPath }/member/regist" class="main-btn">회원가입</a></li>
 	                    </ul>
 	                </c:if>
 	                <c:if test="${ !empty sessionScope.loginMember }">
 	                    <ul>
-	                        <li><a href="${ pageContext.servletContext.contextPath }/member/logout" class="main-btn">로그아웃</a></li>
-	                        <li><a href="${ pageContext.servletContext.contextPath }/member/mypage" class="main-btn"><c:out value="${ sessionScope.loginMember.memName }"/>님</a></li>
 	                        <li><a href="#" class="main-btn">코인: <c:out value="${ sessionScope.loginMember.memCoin }"/></a></li>
+	                        <li><a href="${ pageContext.servletContext.contextPath }/member/mypage" class="main-btn"><c:out value="${ sessionScope.loginMember.memName }"/>님</a></li>
+	                        <li><a href="${ pageContext.servletContext.contextPath }/member/logout" class="main-btn">로그아웃</a></li>
 	                    </ul>
 	                </c:if>
                 </div>

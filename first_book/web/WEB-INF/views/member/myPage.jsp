@@ -40,26 +40,29 @@
                         <p>보유 코인 : <c:out value="${ sessionScope.loginMember.memCoin }"/></p>
                         <button id="freeCoin">무료 코인 받기</button>
                         <h2>내 서재</h2>
-                        <c:forEach var="useCoin" items="${ requestScope.useCoinList }" begin="0" end="4" step="1">
-                        	<div>
-	                            <img src="${ pageContext.servletContext.contextPath }${ useCoin.webNov.webNovImgLocation }">
-	                            <p>
-	                            	${ useCoin.webNov.webNovTitle }<br>
-	                            	${ useCoin.webNov.webNovAuthor }
-	                            </p>
-	                        </div>
-                        </c:forEach>
+                        <div class="my_home_book">
+	                        <c:forEach var="useCoin" items="${ requestScope.useCoinList }" begin="0" end="4" step="1">
+	                        	<div>
+		                            <img src="${ pageContext.servletContext.contextPath }${ useCoin.webNov.webNovImgLocation }">
+		                            <p>
+		                            	${ useCoin.webNov.webNovTitle }<br>
+		                            	${ useCoin.webNov.webNovAuthor }
+		                            </p>
+		                        </div>
+	                        </c:forEach>
+                        </div>
                         <h2>위시리스트</h2>
-                        <c:forEach var="wish" items="${ requestScope.wishlist }" begin="0" end="4" step="1">
-                        	<div>
-	                            <img src="${ pageContext.servletContext.contextPath }${ wish.webNov.webNovImgLocation }">
-	                            <p>
-	                            	${ wish.webNov.webNovTitle }<br>
-	                            	${ wish.webNov.webNovAuthor }
-	                            </p>
-	                        </div>
-                        </c:forEach>
-                        
+                        <div>
+	                        <c:forEach var="wish" items="${ requestScope.wishlist }" begin="0" end="4" step="1">
+	                        	<div>
+		                            <img src="${ pageContext.servletContext.contextPath }${ wish.webNov.webNovImgLocation }">
+		                            <p>
+		                            	${ wish.webNov.webNovTitle }<br>
+		                            	${ wish.webNov.webNovAuthor }
+		                            </p>
+		                        </div>
+	                        </c:forEach>
+                        </div>
                     </div>
                     <div class="my_lib">
                         <h2>내 서재</h2>
@@ -196,14 +199,15 @@
                 $(".my_contents > div").eq(idx).show();
             });
             
-            if(weekOfDay == 5 && hour == 15 && min == 15 && memWeeklyCoinYn == "N"){
+            /* if(weekOfDay == 5 && hour == 16 && min == 14 && memWeeklyCoinYn == "N"){
             	location.href = "${ pageContext.servletContext.contextPath }/member/updateFreeCoinYn";
-            }
+            } */
             
             if(memWeeklyCoinYn == 'N'){
             	$("#freeCoin").css("background-color","#ccc");
             	$("#freeCoin").css("color","#fff");
-            }
+            	$("#freeCoin").attr("disabled","disabled");
+            }  
             
         });
         
@@ -212,8 +216,7 @@
 				url: "/firstbook/member/freeCoin",
 				type: "get",
 				data: {
-						memNum : memNum,
-						memWeeklyCoinYn : memWeeklyCoinYn
+						memNum : memNum
 					  },
 				success: function(data){
 					if(data == "1"){
@@ -221,6 +224,7 @@
 						$("#freeCoin").css("background-color","#ccc");
 		            	$("#freeCoin").css("color","#fff");
 		            	$("#freeCoin").attr("disabled","disabled");
+		            	location.reload();
 					} else {
 						alert("코인 지급이 불가능합니다.");
 					}

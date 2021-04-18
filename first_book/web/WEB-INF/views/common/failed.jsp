@@ -55,37 +55,46 @@
 			movePath = "${ pageContext.servletContext.contextPath}/member/mypage";
 			break;
 			
-		case "updateFreeCoinYn" : 
-			failedMessage = "무료 코인 버튼 활성화 실패!";
-			movePath = "${ pageContext.servletContext.contextPath}/member/mypage";
-			break;
-			
-		case "incrementFreeCoin2" : 
-			failedMessage = "코인 획득 실패!";
-			movePath = "${ pageContext.servletContext.contextPath}/member/mypage";
-			break;
-			
-		case "incrementFreeCoin1" : 
-			failedMessage = "이번 주는 이미 받으셨습니다.";
-			movePath = "${ pageContext.servletContext.contextPath}/member/mypage";
-			break;
-
 		case "webnovelPerChap" : 
 			failedMessage = "조회된 웹소설의 챕터가 없습니다.";
 			movePath = "${ pageContext.servletContext.contextPath}";
 			break;
+			
 		case "adminSelectAllWebNovel" : 
 			failedMessage = "관리자 페이지에서 조회된 웹소설이 없습니다.";
 			movePath = "${ pageContext.servletContext.contextPath}";
 			break;
+			
 		case "adminInsertNewWebNovel" : 
 			failedMessage = "관리자 페이지에서  웹소설 등록을 실패하였습니다.";
 			movePath = "${ pageContext.servletContext.contextPath}";
 			break;
+			
 		case "adminSelectWebNovelDetail" : 
 			failedMessage = "관리자 페이지에서 웹소설 수정전 해당 웹소설 조회를 실패하였습니다.";
 			movePath = "${ pageContext.servletContext.contextPath}";
 			break;
+			
+		case "noticeSelectList" : 
+			failedMessage = "공지사항 리스트 불러오기 실패!";
+			movePath = "${ pageContext.servletContext.contextPath}";
+			break;
+
+		case "selectNoticeDetail" : 
+			failedMessage = "공지사항 디테일 불러오기 실패!";
+			movePath = "${ pageContext.servletContext.contextPath}/member/notice";
+			break;
+
+		case "faqSelectList" : 
+			failedMessage = "자주묻는질문 리스트 불러오기 실패!";
+			movePath = "${ pageContext.servletContext.contextPath}/member/notice";
+			break;
+
+		case "selectFaqDetail" : 
+			failedMessage = "공지사항 디테일 불러오기 실패!";
+			movePath = "${ pageContext.servletContext.contextPath}/member/notice";
+			break;
+			
 		}
 			alert(failedMessage);
 		

@@ -90,7 +90,7 @@
 		  FROM COIN_USE_HIS A
 		  JOIN WEB_NOV_INFO C ON (C.WEB_NOV_NUM = A.WEB_NOV_NUM)
 		 WHERE A.MEM_NUM = ?
-		   AND C.WEB_NOV_OPEN_OR_CLOSE = 'N'
+		   AND C.WEB_NOV_OPEN_OR_CLOSE = 'Y'
 		 ORDER BY A.COIN_USE_DATE DESC
 	</entry>
 
@@ -175,13 +175,93 @@
 		  FROM MEM_INFO A
 		 WHERE A.MEM_WITHDRAW_YN = 'N'
 		   AND A.MEM_NUM = ?
-		   AND A.MEM_WEEKLY_COIN_YN = 'Y'
 	</entry>
-	<entry key="updateFreeCoinYn">
+	<entry key="selectTotalCount">
+		SELECT
+		       COUNT(*)
+		  FROM NOTICE A
+		 WHERE A.NOTICE_STATUS = 'Y'
+	</entry>
+	<entry key="selectNoticeList">
+		SELECT
+		       A.RNUM
+		     , A.NOTICE_NUM
+		     , A.NOTICE_DATE
+		     , A.NOTICE_NAME
+		     , A.NOTICE_VIEW_COUNT
+		     , A.NOTICE_CONTENT
+		     , A.NOTICE_STATUS
+		  FROM (SELECT ROWNUM RNUM
+		             , B.NOTICE_NUM
+		             , B.NOTICE_DATE
+		             , B.NOTICE_NAME
+		             , B.NOTICE_VIEW_COUNT
+		             , B.NOTICE_CONTENT
+		             , B.NOTICE_STATUS
+		          FROM (SELECT C.NOTICE_NUM
+				             , C.NOTICE_DATE
+				             , C.NOTICE_NAME
+				             , C.NOTICE_VIEW_COUNT
+				             , C.NOTICE_CONTENT
+				             , C.NOTICE_STATUS
+				          FROM NOTICE C
+				         WHERE C.NOTICE_STATUS = 'Y'
+				         ORDER BY C.NOTICE_NUM DESC
+		               ) B
+		       ) A
+		 WHERE A.RNUM BETWEEN ? AND ?
+	</entry>
+	<entry key="incrementNoticeCount">
 		UPDATE
-		       MEM_INFO A
-		   SET A.MEM_WEEKLY_COIN_YN = 'Y'
-		 WHERE A.MEM_NUM = ?
+			   NOTICE A
+		   SET A.NOTICE_VIEW_COUNT = (SELECT B.NOTICE_VIEW_COUNT
+								   FROM NOTICE B
+ 								  WHERE B.NOTICE_NUM = ?
+ 								) + 1
+		 WHERE A.NOTICE_NUM = ?
+	</entry>
+	<entry key="selectNoticeDetail">
+		SELECT
+		       A.NOTICE_NUM
+		     , A.NOTICE_DATE
+		     , A.NOTICE_NAME
+		     , A.NOTICE_VIEW_COUNT
+		     , A.NOTICE_CONTENT
+		     , A.NOTICE_STATUS
+		  FROM NOTICE A
+		 WHERE A.NOTICE_NUM = ?
+	</entry>
+	<entry key="selectFAQTotalCount">
+		SELECT
+		       COUNT(*)
+		  FROM FAQ A
+	</entry>
+	<entry key="selectFAQList">
+		SELECT
+		       A.RNUM
+		     , A.POST_NUM
+		     , A.FAQ_POST_TITLE
+		     , A.FAQ_POST_CONTENT
+		  FROM (SELECT ROWNUM RNUM
+		             , B.POST_NUM
+		             , B.FAQ_POST_TITLE
+		             , B.FAQ_POST_CONTENT
+		          FROM (SELECT C.POST_NUM
+				             , C.FAQ_POST_TITLE
+				             , C.FAQ_POST_CONTENT
+				          FROM FAQ C
+				         ORDER BY C.POST_NUM DESC
+		               ) B
+		       ) A
+		 WHERE A.RNUM BETWEEN ? AND ?
+	</entry>
+	<entry key="selectFaqDetail">
+		SELECT
+		       A.POST_NUM
+		     , A.FAQ_POST_TITLE
+		     , A.FAQ_POST_CONTENT
+		  FROM FAQ A
+		 WHERE A.POST_NUM = ?
 	</entry>
 </properties>
 

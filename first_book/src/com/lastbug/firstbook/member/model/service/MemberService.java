@@ -11,9 +11,12 @@ import java.util.List;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 
 import com.lastbug.firstbook.member.model.dao.MemberDAO;
+import com.lastbug.firstbook.member.model.dto.FaqDTO;
 import com.lastbug.firstbook.member.model.dto.MemberDTO;
+import com.lastbug.firstbook.member.model.dto.NoticeDTO;
 import com.lastbug.firstbook.member.model.dto.UseCoinDTO;
 import com.lastbug.firstbook.member.model.dto.WishlistDTO;
+import com.lastbug.firstbook.webnovel.model.dto.PageInfoDTO;
 
 public class MemberService {
 	
@@ -176,34 +179,95 @@ public class MemberService {
 
 	/* 회원 정보 조회용 메소드 */
 	public MemberDTO selectMember(int memNum) {
-		
+
 		Connection con = getConnection();
 		
 		MemberDTO requestMember = memberDAO.selectMember(con, memNum);
 		
 		close(con);
 		
-		System.out.println("service" + requestMember);
-		
 		return requestMember;
 	}
 
-	/* 무료 코인 버튼 활성화용 메소드 */
+	public int selectTotalCount() {
 
-	public int updateFreeCoinYn(int memNum) {
-		
 		Connection con = getConnection();
 		
-		int result = memberDAO.updateFreeCoinYn(con, memNum);
+		int totalCount = memberDAO.selectTotalCount(con);
+		
+		close(con);
+		
+		return totalCount;
+	}
+
+	public List<NoticeDTO> selectNoticeList(PageInfoDTO pageInfo) {
+
+		Connection con = getConnection();
+		
+		List<NoticeDTO> noticeList = memberDAO.selectNoticeList(con, pageInfo);
+		
+		close(con);
+		
+		return noticeList;
+	}
+
+	public NoticeDTO selectNoticeDetail(int noticeNum) {
+
+		Connection con = getConnection();
+		
+		NoticeDTO noticeDetail = null;
+		
+		int result = memberDAO.incrementNoticeCount(con, noticeNum);
 		
 		if(result > 0) {
-			commit(con);
+			noticeDetail = memberDAO.selectNoticeDetail(con, noticeNum);
+			
+			if(noticeDetail != null) {
+				commit(con);
+			} else {
+				rollback(con);
+			}
 		} else {
 			rollback(con);
 		}
 		
-		return result;
+		close(con);
+		
+		return noticeDetail;
 	}
-	
+
+	public int selectFAQTotalCount() {
+		
+		Connection con = getConnection();
+		
+		int totalCount = memberDAO.selectFAQTotalCount(con);
+		
+		close(con);
+		
+		return totalCount;
+	}
+
+	public List<FaqDTO> selectFAQList(PageInfoDTO pageInfo) {
+		
+		Connection con = getConnection();
+		
+		List<FaqDTO> faqList = memberDAO.selectFAQList(con, pageInfo);
+		
+		close(con);
+		
+		return faqList;
+	}
+
+	public FaqDTO selectFaqDetail(int faqNum) {
+
+		Connection con = getConnection();
+		
+		FaqDTO faqDetail = memberDAO.selectFaqDetail(con, faqNum);
+			
+		
+		close(con);
+		
+		return faqDetail;
+	}	
 	
 }

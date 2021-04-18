@@ -17,7 +17,8 @@
 .bold {font-weight: 700;}
 
 /* main */
-.slideBanner {height: 400px; background-color: red; margin-bottom: 50px;} 
+h2 {color: #000;}
+.slideBanner {height: 400px; background-color: red; margin: 200px 0 50px 0;} 
 .awards {margin-top: 50px; height: 400px;}
 .awards_box {height: 350px; width: 271px; float: left; margin-top: 20px; background-color: antiquewhite; border: 1px solid black;}
 .serialization {margin-top: 50px;}
@@ -60,9 +61,10 @@
 .my_home > button:hover {background-color: #333333; color: white;}
 .my_home > h2 {color: #000; clear: both; margin: 20px 0;}
 .my_home > p {color: #000; clear: both; margin-top: 20px; font-weight: 600; font-size: 19px; float: left;}
-.my_home > div {display: block; float: left; text-align: center; margin: 0px 20px 20px 20px;}
-.my_home > div > img {width: 120px; height: 160px;}
-.my_home > div > p {color: #000; font-weight: 600; font-size: 14px;}
+.my_home > div {display: block; width: 800px; height: 200px;}
+.my_home > div > div {display: block; float: left; text-align: center; margin: 0px 20px 20px 20px;}
+.my_home > div > div > img {width: 120px; height: 160px;}
+.my_home > div > div > p {color: #000; font-weight: 600; font-size: 14px;}
 .my_lib {margin: 0px auto; padding: 0px 20px;}
 .my_lib > h2 {color: #000; clear: both; margin: 20px 0px;}
 .my_lib > div {display: block; width: 900px; height: 500px; overflow: auto;}
@@ -89,7 +91,7 @@
 .my_weblist_title {width: 200px; height: 40px; background-color: red; color: white; font-size: 16px; font-weight: 600;}
 .my_weblist_body {font-size: 14px;  height: 25px; border-bottom: 1px solid #ccc;}
 
-.my_bye {margin: 0px auto; padding: 0px 20px; text-emphasis: ;t-align: center;}
+.my_bye {margin: 0px auto; padding: 0px 20px; text-align: center;}
 .my_bye > div {display: block; margin: 150px auto; width: 300px; height: 400px;}
 .my_bye > div > h2 {color: #000; clear: both; margin: 40px 0px; font-size: 25px;}
 .my_bye > div > form > input {width:300px; height: 40px; text-align: center; margin: 20px auto; border: 1px solid black;}
@@ -106,3 +108,22 @@
 .my_booklist > div {display: block; float: left; text-align: center; margin: 0px 20px 20px 20px;}
 
 /* notice */
+.notice_area {width: 1100px; height: 900px; margin-top: 200px;}
+.left_nav {width: 230px; height: 350px; border: 1px solid #ccc; float: left;}
+.left_nav_top {width: 230px; height: 220px;}
+.left_nav_top > ul > li {margin: 20px 0px 0px 20px; font-size: 16px; font-weight: 600; color: #000;}
+.left_nav_top > ul > li > a {color: #000;}
+.left_nav_top > ul > li > a:hover {color: #ED1C24;}
+.left_nav_under {width: 230px; height: 130px; background-color: #ccc; line-height: 22px;}
+.left_nav_under > p {margin-left: 20px;}
+.notice {width: 800px; height: 800px; float: right; margin: 0px auto; border: 1px solid #ccc;}
+.notice_title_box {width: 800px; height: 50px; background-color: #ED1C24; color: #fff; text-align: center; line-height: 50px; font-size: 20px;}
+.notice_body_box {width: 800px;}
+.notice_body_box > table {margin: 40px; width: 720px;}
+.tdline {border-bottom: 1px solid #ccc; color: #000; font-size: 14px;}
+.tdline > img {width: 14px; height: 14px; float: right;}
+.notice_detail {border: 1px solid #ccc; font-size: 15px; color: #000; margin: 30px; width: 740px; height: 600px;}
+.board_button {text-align: center;}
+.board_button > button {margin: 0px 5px;}
+.board_button > button:hover {color: #ED1C24;}
+.tr_underline {border-bottom: 1px solid #ccc;}

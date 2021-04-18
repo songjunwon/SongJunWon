@@ -20,24 +20,14 @@ public class FreeCoinServlet extends HttpServlet {
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 
 		int memNum = Integer.valueOf(request.getParameter("memNum"));
-		String memWeeklyCoinYn = request.getParameter("memWeeklyCoinYn");
 		MemberService memberService = new MemberService();
 		
-		int result = 0;
+		int result =  memberService.incrementFreeCoin(memNum);
 		
-		System.out.println(memWeeklyCoinYn + memWeeklyCoinYn.equals("Y"));
-		
-		if(memWeeklyCoinYn.equals("Y")) {
+		MemberDTO member = memberService.selectMember(memNum);
+		HttpSession session = request.getSession();
+		session.setAttribute("loginMember", member);
 			
-			result = memberService.incrementFreeCoin(memNum);
-			
-			if(result > 0) {
-				MemberDTO requestMember = memberService.selectMember(memNum);
-				HttpSession session = request.getSession();
-				session.setAttribute("loginMember", requestMember);
-			} 
-		}
-		
 		response.setContentType("text/plain; charset=UTF-8");
 		PrintWriter out = response.getWriter();
 		

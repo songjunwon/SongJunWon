@@ -8,14 +8,18 @@ import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.sql.Statement;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Properties;
 
 import com.lastbug.firstbook.common.config.ConfigLocation;
+import com.lastbug.firstbook.member.model.dto.FaqDTO;
 import com.lastbug.firstbook.member.model.dto.MemberDTO;
+import com.lastbug.firstbook.member.model.dto.NoticeDTO;
 import com.lastbug.firstbook.member.model.dto.UseCoinDTO;
 import com.lastbug.firstbook.member.model.dto.WishlistDTO;
+import com.lastbug.firstbook.webnovel.model.dto.PageInfoDTO;
 import com.lastbug.firstbook.webnovel.model.dto.WebNovelInfoDTO;
 
 public class MemberDAO {
@@ -80,6 +84,9 @@ public class MemberDAO {
 			}
 		} catch (SQLException e) {
 			e.printStackTrace();
+		} finally {
+			close(rs);
+			close(pstmt);
 		}
 				
 		return result;
@@ -349,14 +356,15 @@ public class MemberDAO {
 			result = pstmt.executeUpdate();
 		} catch (SQLException e) {
 			e.printStackTrace();
+		} finally {
+			close(pstmt);
 		}
 		
 		return result;
 	}
 
 	public MemberDTO selectMember(Connection con, int memNum) {
-		System.out.println(memNum+"번호");
-
+		
 		PreparedStatement pstmt = null;
 		ResultSet rs = null;
 		
@@ -370,7 +378,7 @@ public class MemberDAO {
 			
 			rs = pstmt.executeQuery();
 			
-			while(rs.next()) {
+			if(rs.next()) {
 				requestMember = new MemberDTO();
 				requestMember.setMemNum(rs.getInt("MEM_NUM"));
 				requestMember.setMemName(rs.getString("MEM_NAME"));
@@ -390,27 +398,128 @@ public class MemberDAO {
 				requestMember.setMemEnrollDate(rs.getDate("MEM_ENROLL_DATE"));
 				requestMember.setMemWeeklyCoinYn(rs.getString("MEM_WEEKLY_COIN_YN"));
 			}
+			
 		} catch (SQLException e) {
 			e.printStackTrace();
 		} finally {
 			close(rs);
 			close(pstmt);
 		}
-		System.out.println("dao" + requestMember);
+		
 		return requestMember;
 	}
 
-	/* 무료 코인 버튼 활성화용 메소드 */
-	public int updateFreeCoinYn(Connection con, int memNum) {
+	public int selectTotalCount(Connection con) {
+
+		Statement stmt = null;
+		ResultSet rs = null;
+		
+		int totalCount = 0;
+		
+		String query = prop.getProperty("selectTotalCount");
+		
+		try {
+			stmt = con.createStatement();
+			rs = stmt.executeQuery(query);
+			
+			if(rs.next()) {
+				totalCount = rs.getInt("COUNT(*)");
+			}
+		} catch (SQLException e) {
+			e.printStackTrace();
+		} finally {
+			close(rs);
+			close(stmt);
+		}
+		
+		return totalCount;
+	}
+
+	public List<NoticeDTO> selectNoticeList(Connection con, PageInfoDTO pageInfo) {
+
+		PreparedStatement pstmt = null;
+		ResultSet rs = null;
+		
+		List<NoticeDTO> noticeList = null;
+		
+		String query = prop.getProperty("selectNoticeList");
+		
+		try {
+			pstmt = con.prepareStatement(query);
+			
+			pstmt.setInt(1, pageInfo.getStartRow());
+			pstmt.setInt(2, pageInfo.getEndRow());
+			
+			rs = pstmt.executeQuery();
+			
+			noticeList = new ArrayList<>();
+			
+			while(rs.next()) {
+				NoticeDTO notice = new NoticeDTO();
+				
+				notice.setNoticeNum(rs.getInt("NOTICE_NUM"));
+				notice.setNoticeDate(rs.getDate("NOTICE_DATE"));
+				notice.setNoticeName(rs.getString("NOTICE_NAME"));
+				notice.setNoticeViewCount(rs.getInt("NOTICE_VIEW_COUNT"));
+				notice.setNoticeContent(rs.getString("NOTICE_CONTENT"));
+				notice.setNoticeStatus(rs.getString("NOTICE_STATUS"));
+				
+				noticeList.add(notice);
+			}
+		} catch (SQLException e) {
+			e.printStackTrace();
+		} finally {
+			close(rs);
+			close(pstmt);
+		}
+		
+		return noticeList;
+	}
+
+	public NoticeDTO selectNoticeDetail(Connection con, int noticeNum) {
+
+		PreparedStatement pstmt = null;
+		ResultSet rs = null;
+		
+		NoticeDTO noticeDetail = null;
+		
+		String query = prop.getProperty("selectNoticeDetail");
+		
+		try {
+			pstmt = con.prepareStatement(query);
+			pstmt.setInt(1, noticeNum);
+			rs = pstmt.executeQuery();
+			
+			if(rs.next()) {
+				noticeDetail = new NoticeDTO();
+				noticeDetail.setNoticeNum(rs.getInt("NOTICE_NUM"));
+				noticeDetail.setNoticeDate(rs.getDate("NOTICE_DATE"));
+				noticeDetail.setNoticeName(rs.getString("NOTICE_NAME"));
+				noticeDetail.setNoticeViewCount(rs.getInt("NOTICE_VIEW_COUNT"));
+				noticeDetail.setNoticeContent(rs.getString("NOTICE_CONTENT"));
+				noticeDetail.setNoticeStatus(rs.getString("NOTICE_STATUS"));
+			}
+		} catch (SQLException e) {
+			e.printStackTrace();
+		} finally {
+			close(rs);
+			close(pstmt);
+		}
+		
+		return noticeDetail;
+	}
+
+	public int incrementNoticeCount(Connection con, int noticeNum) {
 
 		PreparedStatement pstmt = null;
 		int result = 0;
 		
-		String query = prop.getProperty("updateFreeCoinYn");
+		String query = prop.getProperty("incrementNoticeCount");
 		
 		try {
 			pstmt = con.prepareStatement(query);
-			pstmt.setInt(1, memNum);
+			pstmt.setInt(1, noticeNum);
+			pstmt.setInt(2, noticeNum);
 			
 			result = pstmt.executeUpdate();
 		} catch (SQLException e) {
@@ -421,5 +530,101 @@ public class MemberDAO {
 		
 		return result;
 	}
+
+	public int selectFAQTotalCount(Connection con) {
+
+		Statement stmt = null;
+		ResultSet rs = null;
+		
+		int totalCount = 0;
+		
+		String query = prop.getProperty("selectFAQTotalCount");
+		
+		try {
+			stmt = con.createStatement();
+			rs = stmt.executeQuery(query);
+			
+			if(rs.next()) {
+				totalCount = rs.getInt("COUNT(*)");
+			}
+		} catch (SQLException e) {
+			e.printStackTrace();
+		} finally {
+			close(rs);
+			close(stmt);
+		}
+		
+		return totalCount;
+	}
+
+	public List<FaqDTO> selectFAQList(Connection con, PageInfoDTO pageInfo) {
+		
+		PreparedStatement pstmt = null;
+		ResultSet rs = null;
+		
+		List<FaqDTO> faqList = null;
+		
+		String query = prop.getProperty("selectFAQList");
+		
+		try {
+			pstmt = con.prepareStatement(query);
+			
+			pstmt.setInt(1, pageInfo.getStartRow());
+			pstmt.setInt(2, pageInfo.getEndRow());
+			
+			rs = pstmt.executeQuery();
+			
+			faqList = new ArrayList<>();
+			
+			while(rs.next()) {
+				FaqDTO faq = new FaqDTO();
+				
+				faq.setPostNum(rs.getInt("POST_NUM"));
+				faq.setFaqPostTitle(rs.getString("FAQ_POST_TITLE"));
+				faq.setFaqPostContent(rs.getString("FAQ_POST_CONTENT"));
+				
+				faqList.add(faq);
+			}
+		} catch (SQLException e) {
+			e.printStackTrace();
+		} finally {
+			close(rs);
+			close(pstmt);
+		}
+		
+		return faqList;
+	}
+
+	public FaqDTO selectFaqDetail(Connection con, int faqNum) {
+
+		PreparedStatement pstmt = null;
+		ResultSet rs = null;
+		
+		FaqDTO faqDetail = null;
+		
+		String query = prop.getProperty("selectFaqDetail");
+		
+		try {
+			pstmt = con.prepareStatement(query);
+			pstmt.setInt(1, faqNum);
+			rs = pstmt.executeQuery();
+			
+			if(rs.next()) {
+				faqDetail = new FaqDTO();
+				
+				faqDetail.setPostNum(rs.getInt("POST_NUM"));
+				faqDetail.setFaqPostTitle(rs.getString("FAQ_POST_TITLE"));
+				faqDetail.setFaqPostContent(rs.getString("FAQ_POST_CONTENT"));
+			}
+		} catch (SQLException e) {
+			e.printStackTrace();
+		} finally {
+			close(rs);
+			close(pstmt);
+		}
+		
+		return faqDetail;
+	}
+
 }
 

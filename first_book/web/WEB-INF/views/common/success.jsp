@@ -36,12 +36,6 @@
 			movePath = "${ pageContext.servletContext.contextPath}/member/logout";
 			break;
 
-		case "updateFreeCoinYn" : 
-			
-			successMessage = "무료 코인 버튼 활성화!";
-			movePath = "${ pageContext.servletContext.contextPath}/member/mypage";
-			break;
-			
 		case "incrementFreeCoin" : 
 			
 			successMessage = "코인 획득!";
