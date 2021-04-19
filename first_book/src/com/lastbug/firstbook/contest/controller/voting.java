@@ -36,7 +36,7 @@ public class voting extends HttpServlet {
 			request.setAttribute("category", category);
 		} else {						  		
 			path = "/WEB-INF/views/common/failed.jsp";
-			request.setAttribute("contestFailed", "작품 보러가기 실패");
+			request.setAttribute("contestFailed", "viewFailed");
 		}
 		
 		request.getRequestDispatcher(path).forward(request, response);

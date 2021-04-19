@@ -37,19 +37,18 @@
                         작품소개
                     </div>
                     <div class="font section1_content_right_fourth">
-                        <c:out value="${ requestScope.contestlList[0].novInfo }" /><c:out value="${ sessionScope.loginMember.memId }" />
+                        <c:out value="${ requestScope.contestlList[0].novInfo }" />
                     </div>
                     <div class="font section1_content_right_five">
-                    <form action="${ pageContext.servletContext.contextPath }/contest/selectVoting" method="post">
+                   
                         <button type="button" class="firstBtn">첫화보기</button>
-                         <c:if test="${ sessionScope.loginMember.memCanVoteYn eq 'Y ' }"> 
-                        <button type="button" class="firstBtn" id="voting">투표하기<label class="label_none"><c:out value="${ requestScope.contestlList[0].competNum }" /></label></button>
+                        
+                        <c:if test="${ sessionScope.loginMember.memCanVoteYn eq 'Y ' }"> 
+                        <button type="button" class="firstBtn" id="voting">투표하기<label class="label_none"><c:out value="${ requestScope.contestlList[0].competNum }" />&memId=<c:out value="${ sessionScope.loginMember.memId }" />&memPwd=<c:out value="${ sessionScope.loginMember.memPwd }" /></label></button>
                         </c:if> 
-                         <c:if test="${ sessionScope.loginMember.memCanVoteYn eq 'N ' }">
+                        <c:if test="${ sessionScope.loginMember.memCanVoteYn != 'Y ' }">
                         <button type="button" class="firstBtn">투표완료</button>
                         </c:if> 
-                    </form>
-                        <button type="button" class="secondBtn">♥</button>
                     </div>
 
                 </div>
@@ -122,6 +121,7 @@
     </section>
 </div>
 <script>
+			
 		$("#voting").click(function(){
 			const competNum = $(this).find("label").text();	
 			location.href="${ pageContext.servletContext.contextPath }/contest/selectVoting?competNum=" + competNum;
@@ -137,14 +137,9 @@
 			console.log(t);
 			console.log(t2);
 			
-			/* if(t2 == 'N'){
-				 alert("해당 웹소설의 " + t + "화는 준비 중에 있습니다!")
-				 
-				} else if (t2 == 'Y'){ */
+		
 					
 			location.href = link  + "?competNum=" + parseInt(t) +  "&chapterNum=" + parseInt(t2) + "&first=" + 1;			
-				/* } */
-
 			}
 </script> 
 </body>

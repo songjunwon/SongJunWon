@@ -95,6 +95,10 @@
 			movePath = "${ pageContext.servletContext.contextPath}/member/notice";
 			break;
 			
+		case "viewFailed" : 
+			failedMessage = "공보전 조회 실패";
+			movePath = "${ pageContext.servletContext.contextPath}/contest/list";
+			break;
 		}
 			alert(failedMessage);
 		
