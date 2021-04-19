@@ -165,6 +165,37 @@ public class ContestService {
 			return date;
 		}
 
+		public List<ContestDTO> mainTopContest() {
+			Connection con = getConnection();
+			String month = "";
+			String trueMonth ="";
+			int mainTop = Integer.valueOf(NowYear());
+			
+			switch (NowMonth()) {
+			case "01"  : trueMonth += 4; mainTop-=1; break;
+			case "02"  : trueMonth += 4; mainTop-=1; break;
+			case "03"  : trueMonth += 4; mainTop-=1; break;
+			case "04"  : trueMonth += 1; break;
+			case "05"  : trueMonth += 1; break;
+			case "06"  : trueMonth += 1; break;
+			case "07"  : trueMonth += 2; break;
+			case "08"  : trueMonth += 2; break;
+			case "09"  : trueMonth += 2; break;
+			case "10"  : trueMonth += 3; break;
+			case "11"  : trueMonth += 3; break;
+			case "12"  : trueMonth += 3; break;
+			}
+			
+			month = mainTop + "Q" + trueMonth;
+			
+			
+			List<ContestDTO> contestList = contestDAO.mainTopContest(con, month);
+			
+			close(con);
+			
+			return contestList;
+		}
+
 	
 
 	
