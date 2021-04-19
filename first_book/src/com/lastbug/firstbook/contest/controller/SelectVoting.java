@@ -36,13 +36,11 @@ public class SelectVoting extends HttpServlet {
 		List<MemberDTO> memberList = new ContestDetailService().selectMemberList(competNum);					// 작가 정보 검색
 		String category = new ContestDetailService().selectCategory(competNum);		
 
-		MemberDTO requestMember = new MemberDTO();
-		requestMember.setMemId(name);
-		requestMember.setMemPwd(memPwd);
+		int memNum = ((MemberDTO)request.getSession().getAttribute("loginMember")).getMemNum();
 		
 		MemberService memberService = new MemberService();
 		
-		MemberDTO loginMember = memberService.loginCheck(requestMember);
+		MemberDTO member = memberService.selectMember(memNum);
 	
 		String path = "";
 		if(!contestDetailList.isEmpty()) {		
@@ -52,7 +50,7 @@ public class SelectVoting extends HttpServlet {
 			request.setAttribute("memberList", memberList);
 			request.setAttribute("category", category);
 			HttpSession session = request.getSession();
-			session.setAttribute("loginMember", loginMember);
+			session.setAttribute("loginMember", member);
 		} else {						  		
 			path = "/WEB-INF/views/common/failed.jsp";
 			request.setAttribute("contestFailed", "viewFailed");
