@@ -18,8 +18,7 @@ public class WebnovelCloseAndOpenServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-			
-		System.out.println("closeOrOpen");
+		
 			
 			int no = Integer.valueOf(request.getParameter("webNovNum"));
 			

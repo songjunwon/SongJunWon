@@ -14,7 +14,7 @@
 
    
     	
-        <jsp:include page="../common/header.jsp"></jsp:include>
+        <jsp:include page="adminHeader.jsp"></jsp:include>
         
                	
         	<div class="section1_content_head">

@@ -15,7 +15,7 @@
 </head>
 <body>
 <div id="wrap">
-<jsp:include page="../common/header.jsp"/>
+        <jsp:include page="adminHeader.jsp"></jsp:include>
 <div class="size_box"></div>
     <section>
         <div class="section1">

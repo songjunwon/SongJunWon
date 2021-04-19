@@ -19,6 +19,7 @@
 
 </head>
 <body>
+        <jsp:include page="adminHeader.jsp"></jsp:include>
 <br><br><br><br><br><br>
 
 <form action="${ pageContext.servletContext.contextPath }/admin/contestModify" method="post">

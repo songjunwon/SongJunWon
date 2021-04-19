@@ -30,7 +30,7 @@
                             <li><a href="${ pageContext.servletContext.contextPath }/admin/memlist">회원 조회</a></li>
                             <li><a href="${ pageContext.servletContext.contextPath }/admin/webNovel">웹소설 관리</a></li>
                             <li><a href="${ pageContext.servletContext.contextPath }/admin/novel">단행본 관리</a></li>
-                            <li><a href="${ pageContext.servletContext.contextPath }/admin/QNA">문의관리</a></li>
+                            <li><a href="${ pageContext.servletContext.contextPath }/admin/notice">문의관리</a></li>
                             <li><a href="${ pageContext.servletContext.contextPath }/admin/contest">공모전</a></li>
             
                             

@@ -15,7 +15,7 @@ import com.lastbug.firstbook.contest.model.service.ContestService;
 
 
 @WebServlet("/admin/contestAll")
-public class AllContestList extends HttpServlet {
+public class AllContestListServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 
 
