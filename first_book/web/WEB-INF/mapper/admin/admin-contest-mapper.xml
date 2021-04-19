@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE properties SYSTEM "http://java.sun.com/dtd/properties.dtd">
+<properties>
+	
+	<entry key="ContestModify">
+	       UPDATE COMPET_CONTENT
+              SET COMPET_CONTENT = (CASE WHEN PAGES = ? THEN ?
+                                         WHEN PAGES = ? THEN ?
+                                    END)
+            WHERE NUMBER_OF_PAGES = ?
+              AND PAGES BETWEEN ? AND ?
+	
+	</entry>
+	
+</properties>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

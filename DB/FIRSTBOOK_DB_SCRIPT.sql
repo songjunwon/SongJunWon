@@ -232,67 +232,198 @@ CREATE TABLE COMPET_INFO
 
 INSERT INTO COMPET_INFO (COMPET_NUM, MEM_NUM,  COMPET_PAPER_YN, NOV_TITLE, NOV_INFO, COMPET_SSN, COMPET_NOV_IMG_LOCATION,
                          SCORE, COMPET_ACT_YN, AGE_LIMIT, CATEGORY_CODE)
-VALUES ('65', '8', 'Y', '방패용사성공담', '내용1','2021Q2', '경로1', 199, 'Y' , 15, 'MF' );
+VALUES ('65', '8', 'Y', '방패용사성공담', '내용1','2021Q2', '/firstbook/resources/image/contest/competInfo/65.jpg', 199, 'Y' , 15, 'MF' );
 
 INSERT INTO COMPET_INFO (COMPET_NUM, MEM_NUM,  COMPET_PAPER_YN, NOV_TITLE, NOV_INFO, COMPET_SSN, COMPET_NOV_IMG_LOCATION,
                          SCORE, COMPET_ACT_YN, AGE_LIMIT, CATEGORY_CODE)
-VALUES ('66', '9', 'Y', '루팡 17세', '내용2','2021Q2', '경로1', 25, 'Y', 17, 'OF');
+VALUES ('66', '9', 'Y', '루팡 17세', '내용2','2021Q2', '/firstbook/resources/image/contest/competInfo/66.jpg', 25, 'Y', 17, 'OF');
 
 INSERT INTO COMPET_INFO (COMPET_NUM, MEM_NUM,  COMPET_PAPER_YN, NOV_TITLE, NOV_INFO, COMPET_SSN, COMPET_NOV_IMG_LOCATION,
                          SCORE, COMPET_ACT_YN, AGE_LIMIT, CATEGORY_CODE)
-VALUES ('67', '10', 'Y', '1412 괴도키드','내용3', '2021Q2', '경로1', 77, 'Y', 17, 'F');
+VALUES ('67', '10', 'Y', '1412 괴도키드', '내용3','2021Q2', '/firstbook/resources/image/contest/competInfo/67.jpg', 26, 'Y', 17, 'OF');
 
 INSERT INTO COMPET_INFO (COMPET_NUM, MEM_NUM,  COMPET_PAPER_YN, NOV_TITLE, NOV_INFO, COMPET_SSN, COMPET_NOV_IMG_LOCATION,
                          SCORE, COMPET_ACT_YN, AGE_LIMIT, CATEGORY_CODE)
-VALUES ('68', '11', 'Y', '어른제국의 역습','내용4', '2021Q2', '경로1', 8, 'Y', 15, 'MF');
+VALUES ('68', '11', 'Y', '어른제국의 역습','내용4', '2021Q2', '/firstbook/resources/image/contest/competInfo/68.jpg', 8, 'Y', 15, 'MF');
 
 INSERT INTO COMPET_INFO (COMPET_NUM, MEM_NUM,  COMPET_PAPER_YN, NOV_TITLE, NOV_INFO, COMPET_SSN, COMPET_NOV_IMG_LOCATION,
                          SCORE, COMPET_ACT_YN, AGE_LIMIT, CATEGORY_CODE)
-VALUES ('69', '12', 'Y', '짱구는 못말려', '내용5','2021Q2', '경로1', 7, 'Y' , 19, 'FH');
+VALUES ('69', '12', 'Y', '짱구는 못말려', '내용5','2021Q2', '/firstbook/resources/image/contest/competInfo/69.jpg', 7, 'Y' , 19, 'FH');
 
 INSERT INTO COMPET_INFO (COMPET_NUM, MEM_NUM,  COMPET_PAPER_YN, NOV_TITLE, NOV_INFO, COMPET_SSN, COMPET_NOV_IMG_LOCATION,
                          SCORE, COMPET_ACT_YN, AGE_LIMIT, CATEGORY_CODE)
-VALUES ('70', '13', 'Y', '아땀맘마 완결', '내용6','2021Q2', '경로1', 44, 'Y',12,'ROM');
+VALUES ('70', '13', 'Y', '아땀맘마 완결', '내용6','2021Q2', '/firstbook/resources/image/contest/competInfo/70.jpg', 44, 'Y',12,'ROM');
 
 INSERT INTO COMPET_INFO (COMPET_NUM, MEM_NUM,  COMPET_PAPER_YN, NOV_TITLE, NOV_INFO, COMPET_SSN, COMPET_NOV_IMG_LOCATION,
                          SCORE, COMPET_ACT_YN, AGE_LIMIT, CATEGORY_CODE)
-VALUES ('71', '14', 'Y', '오징어땅콩 맛있어', '내용7','2021Q2', '경로1', 7, 'Y', 15, 'F');
+VALUES ('71', '14', 'Y', '오징어땅콩 맛있어', '내용7','2021Q2', '/firstbook/resources/image/contest/competInfo/71.jpg', 7, 'Y', 15, 'F');
 
 INSERT INTO COMPET_INFO (COMPET_NUM, MEM_NUM,  COMPET_PAPER_YN, NOV_TITLE, NOV_INFO, COMPET_SSN, COMPET_NOV_IMG_LOCATION,
                          SCORE, COMPET_ACT_YN, AGE_LIMIT, CATEGORY_CODE)
-VALUES ('72', '15', 'Y', '떡국열차', '내용8','2021Q2', '경로1', 4, 'Y', 15, 'MF');
+VALUES ('72', '15', 'Y', '떡국열차', '내용8','2021Q2', '/firstbook/resources/image/contest/competInfo/72.jpg', 4, 'Y', 15, 'MF');
 
 INSERT INTO COMPET_INFO (COMPET_NUM, MEM_NUM,  COMPET_PAPER_YN, NOV_TITLE, NOV_INFO, COMPET_SSN, COMPET_NOV_IMG_LOCATION,
                          SCORE, COMPET_ACT_YN, AGE_LIMIT, CATEGORY_CODE)
-VALUES ('73', '8', 'Y', '호카게는 아무나 되냐?', '내용9','2021Q2', '경로1', 15, 'Y', 15, 'MF');
+VALUES ('73', '8', 'Y', '호카게는 아무나 되냐?', '내용9','2021Q2', '/firstbook/resources/image/contest/competInfo/73.jpg', 15, 'Y', 15, 'MF');
 
 INSERT INTO COMPET_INFO (COMPET_NUM, MEM_NUM,  COMPET_PAPER_YN, NOV_TITLE, NOV_INFO, COMPET_SSN, COMPET_NOV_IMG_LOCATION,
                          SCORE, COMPET_ACT_YN, AGE_LIMIT, CATEGORY_CODE)
-VALUES ('74', '9', 'Y', '난 해적왕이 될꺼냐', '내용10','2021Q2', '경로1', 25, 'Y', 12, 'SPO');
+VALUES ('74', '9', 'Y', '난 해적왕이 될꺼냐', '내용10','2021Q2', '/firstbook/resources/image/contest/competInfo/74.jpg', 25, 'Y', 12, 'SPO');
 
 INSERT INTO COMPET_INFO (COMPET_NUM, MEM_NUM,  COMPET_PAPER_YN, NOV_TITLE, NOV_INFO, COMPET_SSN, COMPET_NOV_IMG_LOCATION,
                          SCORE, COMPET_ACT_YN, AGE_LIMIT, CATEGORY_CODE)
-VALUES ('75', '10', 'Y', '원피스 딴따~','내용11', '2021Q2', '경로1', 14, 'Y',15, 'OF');
+VALUES ('75', '10', 'Y', '원피스 딴따~','내용11', '2021Q2', '/firstbook/resources/image/contest/competInfo/75.jpg', 14, 'Y',15, 'OF');
 
 INSERT INTO COMPET_INFO (COMPET_NUM, MEM_NUM,  COMPET_PAPER_YN, NOV_TITLE, NOV_INFO, COMPET_SSN, COMPET_NOV_IMG_LOCATION,
                          SCORE, COMPET_ACT_YN, AGE_LIMIT, CATEGORY_CODE)
-VALUES ('76', '11', 'Y', '디아블로 잡아본 사람','내용12', '2021Q2', '경로1', 78, 'Y', 15, 'MF');
+VALUES ('76', '11', 'Y', '디아블로 잡아본 사람','내용12', '2021Q2', '/firstbook/resources/image/contest/competInfo/76.jpg', 78, 'Y', 15, 'MF');
 
 INSERT INTO COMPET_INFO (COMPET_NUM, MEM_NUM,  COMPET_PAPER_YN, NOV_TITLE, NOV_INFO, COMPET_SSN, COMPET_NOV_IMG_LOCATION,
                          SCORE, COMPET_ACT_YN, AGE_LIMIT, CATEGORY_CODE)
-VALUES ('77', '12', 'Y', '오버 시계', '내용13','2021Q2', '경로1', 52, 'Y', 19, 'F');
+VALUES ('77', '12', 'Y', '오버 시계', '내용13','2021Q2', '/firstbook/resources/image/contest/competInfo/65.jpg', 77, 'Y', 19, 'F');
 
 INSERT INTO COMPET_INFO (COMPET_NUM, MEM_NUM,  COMPET_PAPER_YN, NOV_TITLE, NOV_INFO, COMPET_SSN, COMPET_NOV_IMG_LOCATION,
                          SCORE, COMPET_ACT_YN, AGE_LIMIT, CATEGORY_CODE)
-VALUES ('78', '13', 'Y', '리그오브레전더리링', '내용14','2021Q2', '경로1', 96, 'Y', 12, 'MF');
+VALUES ('78', '13', 'Y', '리그오브레전더리링', '내용14','2021Q2', '/firstbook/resources/image/contest/competInfo/78.jpg', 96, 'Y', 12, 'MF');
 
 INSERT INTO COMPET_INFO (COMPET_NUM, MEM_NUM,  COMPET_PAPER_YN, NOV_TITLE, NOV_INFO, COMPET_SSN, COMPET_NOV_IMG_LOCATION,
                          SCORE, COMPET_ACT_YN, AGE_LIMIT, CATEGORY_CODE)
-VALUES ('79', '14', 'Y', '메이플월드를 지켜라', '내용15','2021Q2', '경로1', 14, 'Y', 12, 'SPO');
+VALUES ('79', '14', 'Y', '메이플월드를 지켜라', '내용15','2021Q2', '/firstbook/resources/image/contest/competInfo/79.jpg', 14, 'Y', 12, 'SPO');
 
 INSERT INTO COMPET_INFO (COMPET_NUM, MEM_NUM,  COMPET_PAPER_YN, NOV_TITLE, NOV_INFO, COMPET_SSN, COMPET_NOV_IMG_LOCATION,
                          SCORE, COMPET_ACT_YN, AGE_LIMIT, CATEGORY_CODE)
-VALUES ('80', '15', 'Y', '메이플스토리 운명의소녀', '내용16','2021Q2', '경로1', 63, 'Y', 12, 'SPO');
+VALUES ('80', '15', 'Y', '메이플스토리 운명의소녀', '내용16','2021Q2', '/firstbook/resources/image/contest/competInfo/80.jpg', 63, 'Y', 12, 'SPO');
+
+
+
+INSERT INTO COMPET_INFO (COMPET_NUM, MEM_NUM, COMPET_PAPER_YN, NOV_TITLE, NOV_INFO, COMPET_SSN, COMPET_NOV_IMG_LOCATION,
+                         SCORE, COMPET_ACT_YN, AGE_LIMIT, CATEGORY_CODE)
+VALUES (  49  ,  8  , 'Y' , '방패 용사 성공담 ' , ' 내용 1 ' , '2021Q1' , '/firstbook/resources/image/contest/competInfo/65.jpg' , 199 , 'Y' , 15 , 'MF' );
+
+INSERT INTO COMPET_INFO (COMPET_NUM, MEM_NUM, COMPET_PAPER_YN, NOV_TITLE, NOV_INFO, COMPET_SSN, COMPET_NOV_IMG_LOCATION,
+                         SCORE, COMPET_ACT_YN, AGE_LIMIT, CATEGORY_CODE)
+VALUES (  50  ,  9  , 'Y' , ' 루팡 17 세 ' , ' 내용 2 ' , '2021Q1' , '/firstbook/resources/image/contest/competInfo/65.jpg' , 25 , 'Y' , 17 , 'OF' );
+
+INSERT INTO COMPET_INFO (COMPET_NUM, MEM_NUM, COMPET_PAPER_YN, NOV_TITLE, NOV_INFO, COMPET_SSN, COMPET_NOV_IMG_LOCATION,
+                         SCORE, COMPET_ACT_YN, AGE_LIMIT, CATEGORY_CODE)
+VALUES (  51  ,  10, 'Y' , ' 1412 괴도 키드 ' , ' 내용 3 ' , '2021Q1' , '/firstbook/resources/image/contest/competInfo/65.jpg' , 77 , 'Y' , 17 , 'F' );
+
+INSERT INTO COMPET_INFO (COMPET_NUM, MEM_NUM, COMPET_PAPER_YN, NOV_TITLE, NOV_INFO, COMPET_SSN, COMPET_NOV_IMG_LOCATION,
+                         SCORE, COMPET_ACT_YN, AGE_LIMIT, CATEGORY_CODE)
+VALUES (  52  ,  11 , 'Y' , ' 어른 제국의 역습 ' , ' 내용 4 ' , '2021Q1' , '/firstbook/resources/image/contest/competInfo/65.jpg' , 8 , 'Y' , 15 , 'MF' );
+
+INSERT INTO COMPET_INFO (COMPET_NUM, MEM_NUM, COMPET_PAPER_YN, NOV_TITLE, NOV_INFO, COMPET_SSN, COMPET_NOV_IMG_LOCATION,
+                         SCORE, COMPET_ACT_YN, AGE_LIMIT, CATEGORY_CODE)
+VALUES (  53  ,  12 , 'Y' , ' 짱구는 못말려 ' , ' 내용 5 ' , '2021Q1' , '/firstbook/resources/image/contest/competInfo/65.jpg' , 7 , 'Y' , 19 , 'FH' );
+
+INSERT INTO COMPET_INFO (COMPET_NUM, MEM_NUM, COMPET_PAPER_YN, NOV_TITLE, NOV_INFO, COMPET_SSN, COMPET_NOV_IMG_LOCATION,
+                         SCORE, COMPET_ACT_YN, AGE_LIMIT, CATEGORY_CODE)
+VALUES (  54  ,  13 , 'Y' , ' 아땀 맘마 완결 ' , ' 내용 6 ' , '2021Q1' , '/firstbook/resources/image/contest/competInfo/65.jpg' , 44 , 'Y' , 12 , 'ROM' );
+
+INSERT INTO COMPET_INFO (COMPET_NUM, MEM_NUM, COMPET_PAPER_YN, NOV_TITLE, NOV_INFO, COMPET_SSN, COMPET_NOV_IMG_LOCATION,
+                        SCORE, COMPET_ACT_YN, AGE_LIMIT, CATEGORY_CODE)
+VALUES (  55  ,  14 , 'Y' , ' 오징어 땅콩 맛있어 ' , ' 내용 7 ' , '2021Q1' , '/firstbook/resources/image/contest/competInfo/65.jpg' , 7 , 'Y' , 15 , 'F' );
+
+INSERT INTO COMPET_INFO (COMPET_NUM, MEM_NUM, COMPET_PAPER_YN, NOV_TITLE, NOV_INFO, COMPET_SSN, COMPET_NOV_IMG_LOCATION,
+                         SCORE, COMPET_ACT_YN, AGE_LIMIT, CATEGORY_CODE)
+VALUES (  56  ,  15 , 'Y' , ' 떡국 열차 ' , ' 내용 8 ' , '2021Q1' , '/firstbook/resources/image/contest/competInfo/65.jpg' , 4 , 'Y' , 15 , 'MF' );
+
+INSERT INTO COMPET_INFO (COMPET_NUM, MEM_NUM, COMPET_PAPER_YN, NOV_TITLE, NOV_INFO, COMPET_SSN, COMPET_NOV_IMG_LOCATION,
+                         SCORE, COMPET_ACT_YN, AGE_LIMIT, CATEGORY_CODE)
+VALUES (  57  ,  8  , 'Y' , ' 호카게는 아무나 되냐? ' , ' 내용 9 ' , '2021Q1' , '/firstbook/resources/image/contest/competInfo/65.jpg' , 15 , 'Y'  , 15 , 'MF' );
+
+INSERT INTO COMPET_INFO (COMPET_NUM, MEM_NUM, COMPET_PAPER_YN, NOV_TITLE, NOV_INFO, COMPET_SSN, COMPET_NOV_IMG_LOCATION,
+                         SCORE, COMPET_ACT_YN, AGE_LIMIT, CATEGORY_CODE)
+VALUES (  58  ,  9 , 'Y' , ' 난 해적왕이 될꺼 냐 ' , ' 내용 10 ' , '2021Q1' , '/firstbook/resources/image/contest/competInfo/65.jpg' , 25 , 'Y' , 12 , 'SPO' );
+
+INSERT INTO COMPET_INFO (COMPET_NUM, MEM_NUM, COMPET_PAPER_YN, NOV_TITLE, NOV_INFO, COMPET_SSN, COMPET_NOV_IMG_LOCATION,
+                         SCORE, COMPET_ACT_YN, AGE_LIMIT, CATEGORY_CODE)
+VALUES (  59  ,  10  , 'Y' , ' 원피스 딴따 ~ ' , ' 내용 11 ' , '2021Q1' , '/firstbook/resources/image/contest/competInfo/65.jpg' , 14 , 'Y' , 15 , 'OF' );
+
+INSERT INTO COMPET_INFO (COMPET_NUM, MEM_NUM, COMPET_PAPER_YN, NOV_TITLE, NOV_INFO, COMPET_SSN, COMPET_NOV_IMG_LOCATION,
+                         SCORE, COMPET_ACT_YN, AGE_LIMIT, CATEGORY_CODE)
+VALUES (  60  ,  11  , 'Y' , ' 디아블로 잡아 본 사람 ' , ' 내용 12 ' , '2021Q1' , '/firstbook/resources/image/contest/competInfo/65.jpg' , 78 , 'Y' , 15 , 'MF' );
+
+INSERT INTO COMPET_INFO (COMPET_NUM, MEM_NUM, COMPET_PAPER_YN, NOV_TITLE, NOV_INFO, COMPET_SSN, COMPET_NOV_IMG_LOCATION,
+                         SCORE, COMPET_ACT_YN, AGE_LIMIT, CATEGORY_CODE)
+VALUES (  61  ,  12  , 'Y' , ' 시계 오버 ' , ' 내용 13 ' , '2021Q1' , '/firstbook/resources/image/contest/competInfo/65.jpg' , 52 , 'Y' , 19 , 'F' );
+
+INSERT INTO COMPET_INFO (COMPET_NUM, MEM_NUM, COMPET_PAPER_YN, NOV_TITLE, NOV_INFO, COMPET_SSN, COMPET_NOV_IMG_LOCATION,
+                         SCORE, COMPET_ACT_YN, AGE_LIMIT, CATEGORY_CODE)
+VALUES (  62  ,  13  , 'Y' , ' 리그 오브 레전더 리링 ' , ' 내용 14 ' , '2021Q1' , '/firstbook/resources/image/contest/competInfo/65.jpg' , 96 , 'Y' , 12 , 'MF' );
+
+INSERT INTO COMPET_INFO (COMPET_NUM, MEM_NUM, COMPET_PAPER_YN, NOV_TITLE, NOV_INFO, COMPET_SSN, COMPET_NOV_IMG_LOCATION,
+                         SCORE, COMPET_ACT_YN, AGE_LIMIT, CATEGORY_CODE)
+VALUES (  63  ,  14  , 'Y' , ' 메이플 월드를 지켜라 ' , ' 내용 15 ' , '2021Q1' , '/firstbook/resources/image/contest/competInfo/65.jpg' , 14 , 'Y' , 12 , 'SPO' );
+
+INSERT INTO COMPET_INFO (COMPET_NUM, MEM_NUM, COMPET_PAPER_YN, NOV_TITLE, NOV_INFO, COMPET_SSN, COMPET_NOV_IMG_LOCATION,
+                         SCORE, COMPET_ACT_YN, AGE_LIMIT, CATEGORY_CODE)
+VALUES (  64  ,  15  , 'Y' , ' 메이플 스토리 운명의 소녀 ' , ' 내용 16 ' , '2021Q1' , '/firstbook/resources/image/contest/competInfo/65.jpg' , 63 , 'Y' , 12 , 'SPO' );
+
+INSERT INTO COMPET_INFO (COMPET_NUM, MEM_NUM, COMPET_PAPER_YN, NOV_TITLE, NOV_INFO, COMPET_SSN, COMPET_NOV_IMG_LOCATION,
+                         SCORE, COMPET_ACT_YN, AGE_LIMIT, CATEGORY_CODE)
+VALUES (  33  ,  8  , 'Y' , '방패 용사 성공담 ' , ' 내용 1 ' , '2020Q4' , '/firstbook/resources/image/contest/competInfo/70.jpg' , 199 , 'Y' , 15 , 'MF' );
+
+INSERT INTO COMPET_INFO (COMPET_NUM, MEM_NUM, COMPET_PAPER_YN, NOV_TITLE, NOV_INFO, COMPET_SSN, COMPET_NOV_IMG_LOCATION,
+                         SCORE, COMPET_ACT_YN, AGE_LIMIT, CATEGORY_CODE)
+VALUES (  34  ,  9  , 'Y' , ' 루팡 17 세 ' , ' 내용 2 ' , '2020Q4' , '/firstbook/resources/image/contest/competInfo/70.jpg' , 25 , 'Y' , 17 , 'OF' );
+
+INSERT INTO COMPET_INFO (COMPET_NUM, MEM_NUM, COMPET_PAPER_YN, NOV_TITLE, NOV_INFO, COMPET_SSN, COMPET_NOV_IMG_LOCATION,
+                         SCORE, COMPET_ACT_YN, AGE_LIMIT, CATEGORY_CODE)
+VALUES (  35  ,  10, 'Y' , ' 1412 괴도 키드 ' , ' 내용 3 ' , '2020Q4' , '/firstbook/resources/image/contest/competInfo/70.jpg' , 77 , 'Y' , 17 , 'F' );
+
+INSERT INTO COMPET_INFO (COMPET_NUM, MEM_NUM, COMPET_PAPER_YN, NOV_TITLE, NOV_INFO, COMPET_SSN, COMPET_NOV_IMG_LOCATION,
+                         SCORE, COMPET_ACT_YN, AGE_LIMIT, CATEGORY_CODE)
+VALUES (  36  ,  11 , 'Y' , ' 어른 제국의 역습 ' , ' 내용 4 ' , '2020Q4' , '/firstbook/resources/image/contest/competInfo/70.jpg' , 8 , 'Y' , 15 , 'MF' );
+
+INSERT INTO COMPET_INFO (COMPET_NUM, MEM_NUM, COMPET_PAPER_YN, NOV_TITLE, NOV_INFO, COMPET_SSN, COMPET_NOV_IMG_LOCATION,
+                         SCORE, COMPET_ACT_YN, AGE_LIMIT, CATEGORY_CODE)
+VALUES (  37  ,  12 , 'Y' , ' 짱구는 못말려 ' , ' 내용 5 ' , '2020Q4' , '/firstbook/resources/image/contest/competInfo/70.jpg' , 7 , 'Y' , 19 , 'FH' );
+
+INSERT INTO COMPET_INFO (COMPET_NUM, MEM_NUM, COMPET_PAPER_YN, NOV_TITLE, NOV_INFO, COMPET_SSN, COMPET_NOV_IMG_LOCATION,
+                         SCORE, COMPET_ACT_YN, AGE_LIMIT, CATEGORY_CODE)
+VALUES (  38  ,  13 , 'Y' , ' 아땀 맘마 완결 ' , ' 내용 6 ' , '2020Q4' , '/firstbook/resources/image/contest/competInfo/70.jpg' , 44 , 'Y' , 12 , 'ROM' );
+
+INSERT INTO COMPET_INFO (COMPET_NUM, MEM_NUM, COMPET_PAPER_YN, NOV_TITLE, NOV_INFO, COMPET_SSN, COMPET_NOV_IMG_LOCATION,
+                        SCORE, COMPET_ACT_YN, AGE_LIMIT, CATEGORY_CODE)
+VALUES (  39  ,  14 , 'Y' , ' 오징어 땅콩 맛있어 ' , ' 내용 7 ' , '2020Q4' , '/firstbook/resources/image/contest/competInfo/70.jpg' , 7 , 'Y' , 15 , 'F' );
+
+INSERT INTO COMPET_INFO (COMPET_NUM, MEM_NUM, COMPET_PAPER_YN, NOV_TITLE, NOV_INFO, COMPET_SSN, COMPET_NOV_IMG_LOCATION,
+                         SCORE, COMPET_ACT_YN, AGE_LIMIT, CATEGORY_CODE)
+VALUES (  40  ,  15 , 'Y' , ' 떡국 열차 ' , ' 내용 8 ' , '2020Q4' , '/firstbook/resources/image/contest/competInfo/70.jpg' , 4 , 'Y' , 15 , 'MF' );
+
+INSERT INTO COMPET_INFO (COMPET_NUM, MEM_NUM, COMPET_PAPER_YN, NOV_TITLE, NOV_INFO, COMPET_SSN, COMPET_NOV_IMG_LOCATION,
+                         SCORE, COMPET_ACT_YN, AGE_LIMIT, CATEGORY_CODE)
+VALUES (  41  ,  8  , 'Y' , ' 호카게는 아무나 되냐? ' , ' 내용 9 ' , '2020Q4' , '/firstbook/resources/image/contest/competInfo/70.jpg' , 15 , 'Y'  , 15 , 'MF' );
+
+INSERT INTO COMPET_INFO (COMPET_NUM, MEM_NUM, COMPET_PAPER_YN, NOV_TITLE, NOV_INFO, COMPET_SSN, COMPET_NOV_IMG_LOCATION,
+                         SCORE, COMPET_ACT_YN, AGE_LIMIT, CATEGORY_CODE)
+VALUES (  42  ,  9 , 'Y' , ' 난 해적왕이 될꺼 냐 ' , ' 내용 10 ' , '2020Q4' , '/firstbook/resources/image/contest/competInfo/70.jpg' , 25 , 'Y' , 12 , 'SPO' );
+
+INSERT INTO COMPET_INFO (COMPET_NUM, MEM_NUM, COMPET_PAPER_YN, NOV_TITLE, NOV_INFO, COMPET_SSN, COMPET_NOV_IMG_LOCATION,
+                         SCORE, COMPET_ACT_YN, AGE_LIMIT, CATEGORY_CODE)
+VALUES (  43  ,  10  , 'Y' , ' 원피스 딴따 ~ ' , ' 내용 11 ' , '2020Q4' , '/firstbook/resources/image/contest/competInfo/70.jpg' , 14 , 'Y' , 15 , 'OF' );
+
+INSERT INTO COMPET_INFO (COMPET_NUM, MEM_NUM, COMPET_PAPER_YN, NOV_TITLE, NOV_INFO, COMPET_SSN, COMPET_NOV_IMG_LOCATION,
+                         SCORE, COMPET_ACT_YN, AGE_LIMIT, CATEGORY_CODE)
+VALUES (  44  ,  11  , 'Y' , ' 디아블로 잡아 본 사람 ' , ' 내용 12 ' , '2020Q4' , '/firstbook/resources/image/contest/competInfo/70.jpg' , 78 , 'Y' , 15 , 'MF' );
+
+INSERT INTO COMPET_INFO (COMPET_NUM, MEM_NUM, COMPET_PAPER_YN, NOV_TITLE, NOV_INFO, COMPET_SSN, COMPET_NOV_IMG_LOCATION,
+                         SCORE, COMPET_ACT_YN, AGE_LIMIT, CATEGORY_CODE)
+VALUES (  45  ,  12  , 'Y' , ' 시계 오버 ' , ' 내용 13 ' , '2020Q4' , '/firstbook/resources/image/contest/competInfo/70.jpg' , 52 , 'Y' , 19 , 'F' );
+
+INSERT INTO COMPET_INFO (COMPET_NUM, MEM_NUM, COMPET_PAPER_YN, NOV_TITLE, NOV_INFO, COMPET_SSN, COMPET_NOV_IMG_LOCATION,
+                         SCORE, COMPET_ACT_YN, AGE_LIMIT, CATEGORY_CODE)
+VALUES (  46  ,  13  , 'Y' , ' 리그 오브 레전더 리링 ' , ' 내용 14 ' , '2020Q4' , '/firstbook/resources/image/contest/competInfo/70.jpg' , 96 , 'Y' , 12 , 'MF' );
+
+INSERT INTO COMPET_INFO (COMPET_NUM, MEM_NUM, COMPET_PAPER_YN, NOV_TITLE, NOV_INFO, COMPET_SSN, COMPET_NOV_IMG_LOCATION,
+                         SCORE, COMPET_ACT_YN, AGE_LIMIT, CATEGORY_CODE)
+VALUES (  47  ,  14  , 'Y' , ' 메이플 월드를 지켜라 ' , ' 내용 15 ' , '2020Q4' , '/firstbook/resources/image/contest/competInfo/70.jpg' , 14 , 'Y' , 12 , 'SPO' );
+
+INSERT INTO COMPET_INFO (COMPET_NUM, MEM_NUM, COMPET_PAPER_YN, NOV_TITLE, NOV_INFO, COMPET_SSN, COMPET_NOV_IMG_LOCATION,
+                         SCORE, COMPET_ACT_YN, AGE_LIMIT, CATEGORY_CODE)
+VALUES (  48,  15  , 'Y' , ' 메이플 스토리 운명의 소녀 ' , ' 내용 16 ' , '2020Q4' , '/firstbook/resources/image/contest/competInfo/70.jpg' , 63 , 'Y' , 12 , 'SPO' );
+
 
 COMMIT;
 
@@ -464,6 +595,7 @@ CREATE TABLE COMPET_CONTENT
     PAGES NUMBER,
     COMPET_CONTENT VARCHAR2(1000)
 );
+
 INSERT INTO COMPET_CONTENT(NUMBER_OF_PAGES,PAGES,COMPET_CONTENT)
 VALUES (651, 1, '내 어린시절 우연히
 들었던 믿지 못 할 한마디
@@ -2059,212 +2191,211 @@ CREATE TABLE WEB_NOV_INFO
 
 
 INSERT INTO WEB_NOV_INFO (WEB_NOV_NUM, CATEGORY_CODE, WEB_NOV_TITLE, WEB_NOV_AUTHOR, CHAP_PER_COIN, WEB_NOV_PUBLISHER,
-                          WEB_NOV_INFORM, WEB_NOV_IMG_LOCATION, DAY_OF_WEEK, WEB_NOV_IS_OPEN, FINISHED_OR_NOT, WEB_NOV_COUNT)
-VALUES ('1', 'MF', '내 아들은 총잡이', '원빈', 100, '미디어그룹', '피치 못할 사정으로 총잡이 삶을 접어야 했던 베테랑 권총잡이 박찬영.', '사진경로1', '월', 'N',
-        'N', DEFAULT);
+                          WEB_NOV_INFORM, WEB_NOV_IMG_LOCATION, DAY_OF_WEEK, WEB_NOV_IS_OPEN, FINISHED_OR_NOT)
+VALUES ('1', 'MF', '내 아들은 총잡이', '원빈', 100, '미디어그룹', '피치 못할 사정으로 총잡이 삶을 접어야 했던 베테랑 권총잡이 박찬영.', '/firstbook/resources/image/webnovel/monToSun/monday/webNov_1_mon.PNG', '월', 'N',
+        'N');
 INSERT INTO WEB_NOV_INFO (WEB_NOV_NUM, CATEGORY_CODE, WEB_NOV_TITLE, WEB_NOV_AUTHOR, CHAP_PER_COIN, WEB_NOV_PUBLISHER,
-                          WEB_NOV_INFORM, WEB_NOV_IMG_LOCATION, DAY_OF_WEEK, WEB_NOV_IS_OPEN, FINISHED_OR_NOT, WEB_NOV_COUNT)
-VALUES ('2', 'F', '이혼 후 재혼', '인생3회차', 100, '미디어그룹', '그런 그가 아들을 낳았는데, 총잡는 모습이….금 이빨 몇 개냐??', '사진경로2', '월', 'N',
-        'N', DEFAULT);
+                          WEB_NOV_INFORM, WEB_NOV_IMG_LOCATION, DAY_OF_WEEK, WEB_NOV_IS_OPEN, FINISHED_OR_NOT)
+VALUES ('2', 'F', '이혼 후 재혼', '인생3회차', 100, '미디어그룹', '그런 그가 아들을 낳았는데, 총잡는 모습이….금 이빨 몇 개냐??', '/firstbook/resources/image/webnovel/monToSun/monday/webNov_2_mon.PNG', '월', 'N',
+        'N');
 INSERT INTO WEB_NOV_INFO (WEB_NOV_NUM, CATEGORY_CODE, WEB_NOV_TITLE, WEB_NOV_AUTHOR, CHAP_PER_COIN, WEB_NOV_PUBLISHER,
-                          WEB_NOV_INFORM, WEB_NOV_IMG_LOCATION, DAY_OF_WEEK, WEB_NOV_IS_OPEN, FINISHED_OR_NOT, WEB_NOV_COUNT)
-VALUES ('3', 'F', '미술천재가 한국으로', '잘못된탄생', 100, '문학동네', '한국에서 천재가 태어나게 되는데… 그러나…주입식교육으로 인해 힘들어하는 그림천재', '사진경로3', '월', 'N', 'N', DEFAULT);
+                          WEB_NOV_INFORM, WEB_NOV_IMG_LOCATION, DAY_OF_WEEK, WEB_NOV_IS_OPEN, FINISHED_OR_NOT)
+VALUES ('3', 'F', '미술천재가 한국으로', '잘못된탄생', 100, '문학동네', '한국에서 천재가 태어나게 되는데…
+그러나…주입식교육으로 인해 힘들어하는 그림천재', '/firstbook/resources/image/webnovel/monToSun/monday/webNov_3_mon.PNG', '월', 'N', 'N');
 
 INSERT INTO WEB_NOV_INFO (WEB_NOV_NUM, CATEGORY_CODE, WEB_NOV_TITLE, WEB_NOV_AUTHOR, CHAP_PER_COIN, WEB_NOV_PUBLISHER,
-                          WEB_NOV_INFORM, WEB_NOV_IMG_LOCATION, DAY_OF_WEEK, WEB_NOV_IS_OPEN, FINISHED_OR_NOT, WEB_NOV_COUNT)
-VALUES ('4', 'MF', '합기도의 신', '로우엔드', 100, 'abc미디어', '늙어 사라지지 않고 대가의 경지에 오른 괴물 시간을 되돌아오다', '사진경로3', '월', 'N', 'N', DEFAULT);
+                          WEB_NOV_INFORM, WEB_NOV_IMG_LOCATION, DAY_OF_WEEK, WEB_NOV_IS_OPEN, FINISHED_OR_NOT)
+VALUES ('4', 'MF', '합기도의 신', '로우엔드', 100, 'abc미디어', '늙어 사라지지 않고 대가의 경지에 오른 괴물 시간을 되돌아오다', '사진경로3', '월', 'N', 'N');
 
 INSERT INTO WEB_NOV_INFO (WEB_NOV_NUM, CATEGORY_CODE, WEB_NOV_TITLE, WEB_NOV_AUTHOR, CHAP_PER_COIN, WEB_NOV_PUBLISHER,
-                          WEB_NOV_INFORM, WEB_NOV_IMG_LOCATION, DAY_OF_WEEK, WEB_NOV_IS_OPEN, FINISHED_OR_NOT, WEB_NOV_COUNT)
-VALUES ('5', 'MF', '재활용 보이그룹 가나다라', '저게', 100, 'abc미디어', '마약, 불법도박, 학교폭력, 음주운전. 다른 데서 사고친 멤버들만 모아놓은 재활용 보이그룹. 출근 첫날 그런 애들을 맡게 되었다.', '사진경로3', '월', 'N', 'N', DEFAULT);
+                          WEB_NOV_INFORM, WEB_NOV_IMG_LOCATION, DAY_OF_WEEK, WEB_NOV_IS_OPEN, FINISHED_OR_NOT)
+VALUES ('5', 'MF', '재활용 보이그룹 가나다라', '저게', 100, 'abc미디어', '마약, 불법도박, 학교폭력, 음주운전. 다른 데서 사고친 멤버들만 모아놓은 재활용 보이그룹.
+출근 첫날 그런 애들을 맡게 되었다.', '사진경로3', '월', 'N', 'N');
 
 INSERT INTO WEB_NOV_INFO (WEB_NOV_NUM, CATEGORY_CODE, WEB_NOV_TITLE, WEB_NOV_AUTHOR, CHAP_PER_COIN, WEB_NOV_PUBLISHER,
-                          WEB_NOV_INFORM, WEB_NOV_IMG_LOCATION, DAY_OF_WEEK, WEB_NOV_IS_OPEN, FINISHED_OR_NOT, WEB_NOV_COUNT)
+                          WEB_NOV_INFORM, WEB_NOV_IMG_LOCATION, DAY_OF_WEEK, WEB_NOV_IS_OPEN, FINISHED_OR_NOT)
 VALUES ('6', 'F', '용기병', '진강현', 100, 'abc미디어', '공작가의 음모로 가문이 몰락한 제론은 그로 인해 얻게 된 빈털터리 유적에서 초고대 문명의 정수가 깃든 숨겨진 유적의 주인이 된다.
-그 유적의 비밀을 하나씩 파헤쳐 가며 기간트 라이더로 활동하면서 복수를 완성해 나간다.', '사진경로3', '월', 'N', 'N', DEFAULT);
+그 유적의 비밀을 하나씩 파헤쳐 가며 기간트 라이더로 활동하면서 복수를 완성해 나간다.', '사진경로3', '월', 'N', 'N');
 
 INSERT INTO WEB_NOV_INFO (WEB_NOV_NUM, CATEGORY_CODE, WEB_NOV_TITLE, WEB_NOV_AUTHOR, CHAP_PER_COIN, WEB_NOV_PUBLISHER,
-                          WEB_NOV_INFORM, WEB_NOV_IMG_LOCATION, DAY_OF_WEEK, WEB_NOV_IS_OPEN, FINISHED_OR_NOT, WEB_NOV_COUNT)
-VALUES ('7', 'F', '시한부 정령사가 되었다', '은의행', 100, 'abc미디어', '똥 밭에서 굴러도 이승이 낫다고 했던가. 또 한 번의 기회. 살아남기 위해서라면 무슨 짓이라도 할 것이다.', '사진경로3', '월', 'N', 'N', DEFAULT);
+                          WEB_NOV_INFORM, WEB_NOV_IMG_LOCATION, DAY_OF_WEEK, WEB_NOV_IS_OPEN, FINISHED_OR_NOT)
+VALUES ('7', 'F', '시한부 정령사가 되었다', '은의행', 100, 'abc미디어', '똥 밭에서 굴러도 이승이 낫다고 했던가. 또 한 번의 기회. 살아남기 위해서라면 무슨 짓이라도 할 것이다.', '사진경로3', '월', 'N', 'N');
 
 INSERT INTO WEB_NOV_INFO (WEB_NOV_NUM, CATEGORY_CODE, WEB_NOV_TITLE, WEB_NOV_AUTHOR, CHAP_PER_COIN, WEB_NOV_PUBLISHER,
-                          WEB_NOV_INFORM, WEB_NOV_IMG_LOCATION, DAY_OF_WEEK, WEB_NOV_IS_OPEN, FINISHED_OR_NOT, WEB_NOV_COUNT)
-VALUES ('8', 'F', '벼락 맞은 재벌 3세', '골든후드', 100, 'abc미디어', '하루 아침에 개망나니 재벌 막둥이의 열 살로 돌아갔다? 개망나니 몸으로 들어갔으니 개망나니로 살 것 인가. 아니면 재벌가에서 한 자리 두둑이 챙길 것 인가.', '사진경로3', '월', 'N', 'N', DEFAULT);
+                          WEB_NOV_INFORM, WEB_NOV_IMG_LOCATION, DAY_OF_WEEK, WEB_NOV_IS_OPEN, FINISHED_OR_NOT)
+VALUES ('8', 'F', '벼락 맞은 재벌 3세', '골든후드', 100, 'abc미디어', '하루 아침에 개망나니 재벌 막둥이의 열 살로 돌아갔다? 개망나니 몸으로 들어갔으니 개망나니로 살 것 인가. 아니면 재벌가에서 한 자리 두둑이 챙길 것 인가.', '사진경로3', '월', 'N', 'N');
 
 INSERT INTO WEB_NOV_INFO (WEB_NOV_NUM, CATEGORY_CODE, WEB_NOV_TITLE, WEB_NOV_AUTHOR, CHAP_PER_COIN, WEB_NOV_PUBLISHER,
-                          WEB_NOV_INFORM, WEB_NOV_IMG_LOCATION, DAY_OF_WEEK, WEB_NOV_IS_OPEN, FINISHED_OR_NOT, WEB_NOV_COUNT)
+                          WEB_NOV_INFORM, WEB_NOV_IMG_LOCATION, DAY_OF_WEEK, WEB_NOV_IS_OPEN, FINISHED_OR_NOT)
 VALUES ('9', 'F', '아카데미에 악마가 산다', '미디움웰던', 100, 'abc미디어', 'Lv.1 악마로 전생했다. 악마는 악한 일을 할 때 힘을 얻으니,
-어쩔 수 없이 악행을 저질러야 한다. 그런데 주변사람들이 뭔가 착각을 하는 거 같다...?', '사진경로3', '월', 'N', 'N', DEFAULT);
+어쩔 수 없이 악행을 저질러야 한다. 그런데 주변사람들이 뭔가 착각을 하는 거 같다...?', '사진경로3', '월', 'N', 'N');
 
 INSERT INTO WEB_NOV_INFO (WEB_NOV_NUM, CATEGORY_CODE, WEB_NOV_TITLE, WEB_NOV_AUTHOR, CHAP_PER_COIN, WEB_NOV_PUBLISHER,
-                          WEB_NOV_INFORM, WEB_NOV_IMG_LOCATION, DAY_OF_WEEK, WEB_NOV_IS_OPEN, FINISHED_OR_NOT, WEB_NOV_COUNT)
-VALUES ('10', 'MF', '쉐프 프랑켄슈타인', '중우중우', 100, 'abc미디어', '좋은 쉐프란 무엇일까? 희생적인 쉐프? 양질의 요리를 제공하는 쉐프?', '사진경로3', '월', 'N', 'N', DEFAULT);
+                          WEB_NOV_INFORM, WEB_NOV_IMG_LOCATION, DAY_OF_WEEK, WEB_NOV_IS_OPEN, FINISHED_OR_NOT)
+VALUES ('10', 'MF', '쉐프 프랑켄슈타인', '중우중우', 100, 'abc미디어', '좋은 쉐프란 무엇일까? 희생적인 쉐프? 양질의 요리를 제공하는 쉐프?', '사진경로3', '월', 'N', 'N');
 
 INSERT INTO WEB_NOV_INFO (WEB_NOV_NUM, CATEGORY_CODE, WEB_NOV_TITLE, WEB_NOV_AUTHOR, CHAP_PER_COIN, WEB_NOV_PUBLISHER,
-                          WEB_NOV_INFORM, WEB_NOV_IMG_LOCATION, DAY_OF_WEEK, WEB_NOV_IS_OPEN, FINISHED_OR_NOT, WEB_NOV_COUNT)
-VALUES ('11', 'SPO', '야구괴물은 지옥에서 왔다', '원썸', 100, 'abc미디어', '올타임 레전드들과 20년 조기 야구 하고왔다. 질문 안받는다.', '사진경로3', '월', 'N', 'N', DEFAULT);
+                          WEB_NOV_INFORM, WEB_NOV_IMG_LOCATION, DAY_OF_WEEK, WEB_NOV_IS_OPEN, FINISHED_OR_NOT)
+VALUES ('11', 'SPO', '야구괴물은 지옥에서 왔다', '원썸', 100, 'abc미디어', '올타임 레전드들과 20년 조기 야구 하고왔다. 질문 안받는다.', '사진경로3', '월', 'N', 'N');
 
 INSERT INTO WEB_NOV_INFO (WEB_NOV_NUM, CATEGORY_CODE, WEB_NOV_TITLE, WEB_NOV_AUTHOR, CHAP_PER_COIN, WEB_NOV_PUBLISHER,
-                          WEB_NOV_INFORM, WEB_NOV_IMG_LOCATION, DAY_OF_WEEK, WEB_NOV_IS_OPEN, FINISHED_OR_NOT, WEB_NOV_COUNT)
-VALUES ('12', 'FH', '아메리카의 독재자가 되었다', '저너머', 100, 'abc미디어', '기회의 땅, 아메리카. 전세계 정복을 꿈꾼다', '사진경로3', '월', 'N', 'N', DEFAULT);
+                          WEB_NOV_INFORM, WEB_NOV_IMG_LOCATION, DAY_OF_WEEK, WEB_NOV_IS_OPEN, FINISHED_OR_NOT)
+VALUES ('12', 'FH', '아메리카의 독재자가 되었다', '저너머', 100, 'abc미디어', '기회의 땅, 아메리카. 전세계 정복을 꿈꾼다', '사진경로3', '월', 'N', 'N');
 
 INSERT INTO WEB_NOV_INFO (WEB_NOV_NUM, CATEGORY_CODE, WEB_NOV_TITLE, WEB_NOV_AUTHOR, CHAP_PER_COIN, WEB_NOV_PUBLISHER,
-                          WEB_NOV_INFORM, WEB_NOV_IMG_LOCATION, DAY_OF_WEEK, WEB_NOV_IS_OPEN, FINISHED_OR_NOT, WEB_NOV_COUNT)
-VALUES ('13', 'F', '게으른 소드마스터', '전자렌지1', 100, 'abc미디어', '...검들기도 귀찮아. 하지만 휘두르기만 하면...!', '사진경로3', '월', 'N', 'N', DEFAULT);
+                          WEB_NOV_INFORM, WEB_NOV_IMG_LOCATION, DAY_OF_WEEK, WEB_NOV_IS_OPEN, FINISHED_OR_NOT)
+VALUES ('13', 'F', '게으른 소드마스터', '전자렌지1', 100, 'abc미디어', '...검들기도 귀찮아. 하지만 휘두르기만 하면...!', '사진경로3', '월', 'N', 'N');
 
 INSERT INTO WEB_NOV_INFO (WEB_NOV_NUM, CATEGORY_CODE, WEB_NOV_TITLE, WEB_NOV_AUTHOR, CHAP_PER_COIN, WEB_NOV_PUBLISHER,
-                          WEB_NOV_INFORM, WEB_NOV_IMG_LOCATION, DAY_OF_WEEK, WEB_NOV_IS_OPEN, FINISHED_OR_NOT, WEB_NOV_COUNT)
-VALUES ('14', 'F', '일부러 시스템 교란종이 되어보았다', '새치', 100, 'abc미디어', '어쩌다 탑에 들어가 죽었는데 시스템 오류를 일으켰다. 어라? 몬스터도 속이고 각성자도 속는다.', '사진경로3', '월', 'N', 'N', DEFAULT);
+                          WEB_NOV_INFORM, WEB_NOV_IMG_LOCATION, DAY_OF_WEEK, WEB_NOV_IS_OPEN, FINISHED_OR_NOT)
+VALUES ('14', 'F', '일부러 시스템 교란종이 되어보았다', '새치', 100, 'abc미디어', '어쩌다 탑에 들어가 죽었는데 시스템 오류를 일으켰다. 어라? 몬스터도 속이고 각성자도 속는다.', '사진경로3', '월', 'N', 'N');
 
 INSERT INTO WEB_NOV_INFO (WEB_NOV_NUM, CATEGORY_CODE, WEB_NOV_TITLE, WEB_NOV_AUTHOR, CHAP_PER_COIN, WEB_NOV_PUBLISHER,
-                          WEB_NOV_INFORM, WEB_NOV_IMG_LOCATION, DAY_OF_WEEK, WEB_NOV_IS_OPEN, FINISHED_OR_NOT, WEB_NOV_COUNT)
-VALUES ('15', 'F', '소림용사', '화산행', 100, 'abc미디어', '60억분의 1의 사나이. 영장류 최강의 격투가 모강철. 은퇴 경기를 하루 앞두고 잠든 그가 깨어난 곳은?', '사진경로3', '월', 'N', 'N', DEFAULT);
+                          WEB_NOV_INFORM, WEB_NOV_IMG_LOCATION, DAY_OF_WEEK, WEB_NOV_IS_OPEN, FINISHED_OR_NOT)
+VALUES ('15', 'F', '소림용사', '화산행', 100, 'abc미디어', '60억분의 1의 사나이. 영장류 최강의 격투가 모강철. 은퇴 경기를 하루 앞두고 잠든 그가 깨어난 곳은?', '사진경로3', '월', 'N', 'N');
 
 
 INSERT INTO WEB_NOV_INFO (WEB_NOV_NUM, CATEGORY_CODE, WEB_NOV_TITLE, WEB_NOV_AUTHOR, CHAP_PER_COIN, WEB_NOV_PUBLISHER,
-                          WEB_NOV_INFORM, WEB_NOV_IMG_LOCATION, DAY_OF_WEEK, WEB_NOV_IS_OPEN, FINISHED_OR_NOT, WEB_NOV_COUNT)
+                          WEB_NOV_INFORM, WEB_NOV_IMG_LOCATION, DAY_OF_WEEK, WEB_NOV_IS_OPEN, FINISHED_OR_NOT)
 VALUES ('16', 'MF', '신들린닥터', '노마취수술', 100, '다산북스', '의학계의 떠오르는 샛별의 등장
-의학계를 뒤집어 놓은게 있엇으니… 그것은 마취 없는 수술의 시작…', '사진경로4', '화', 'N', 'N', DEFAULT);
+의학계를 뒤집어 놓은게 있엇으니… 그것은 마취 없는 수술의 시작…', '/firstbook/resources/image/webnovel/monToSun/tuesday/webNov_4_tues.PNG', '화', 'N', 'N');
 
 INSERT INTO WEB_NOV_INFO (WEB_NOV_NUM, CATEGORY_CODE, WEB_NOV_TITLE, WEB_NOV_AUTHOR, CHAP_PER_COIN, WEB_NOV_PUBLISHER,
-                          WEB_NOV_INFORM, WEB_NOV_IMG_LOCATION, DAY_OF_WEEK, WEB_NOV_IS_OPEN, FINISHED_OR_NOT, WEB_NOV_COUNT)
+                          WEB_NOV_INFORM, WEB_NOV_IMG_LOCATION, DAY_OF_WEEK, WEB_NOV_IS_OPEN, FINISHED_OR_NOT)
 VALUES ('17', 'OF', '스타용병 이영호', '나는아이언', 100, '다산북스', '게임의 인기로 인해 유저들이 늘어나면서
-게임에 관심없던 이영호라는 소년이…방배중에서...게임을 시작하는데', '사진경로5', '화', 'Y', 'N', DEFAULT);
+게임에 관심없던 이영호라는 소년이…방배중에서...게임을 시작하는데', '/firstbook/resources/image/webnovel/monToSun/tuesday/webNov_5_tues.PNG', '화', 'Y', 'N');
 
 INSERT INTO WEB_NOV_INFO (WEB_NOV_NUM, CATEGORY_CODE, WEB_NOV_TITLE, WEB_NOV_AUTHOR, CHAP_PER_COIN, WEB_NOV_PUBLISHER,
-                          WEB_NOV_INFORM, WEB_NOV_IMG_LOCATION, DAY_OF_WEEK, WEB_NOV_IS_OPEN, FINISHED_OR_NOT, WEB_NOV_COUNT)
+                          WEB_NOV_INFORM, WEB_NOV_IMG_LOCATION, DAY_OF_WEEK, WEB_NOV_IS_OPEN, FINISHED_OR_NOT)
 VALUES ('18', 'ROM', '인간은 연약해', '코로나19', 100, '게임북스', '대한민국 전성기로 보였던2019년…
-예상치 못한 병이 찾아오기 시작한다!!', '사진경로6', '화', 'N', 'N', DEFAULT);
+예상치 못한 병이 찾아오기 시작한다!!', '/firstbook/resources/image/webnovel/monToSun/tuesday/webNov_6_tues.PNG', '화', 'N', 'N');
 
 INSERT INTO WEB_NOV_INFO (WEB_NOV_NUM, CATEGORY_CODE, WEB_NOV_TITLE, WEB_NOV_AUTHOR, CHAP_PER_COIN, WEB_NOV_PUBLISHER,
-                          WEB_NOV_INFORM, WEB_NOV_IMG_LOCATION, DAY_OF_WEEK, WEB_NOV_IS_OPEN, FINISHED_OR_NOT, WEB_NOV_COUNT)
-VALUES ('19', 'MF', '너의 최애푸드가 보여!', '푸만두', 100, '에이비씨미디어', '사람들의 최애푸드가 보이기 시작했다.', '사진경로6', '화', 'N', 'N', DEFAULT);
+                          WEB_NOV_INFORM, WEB_NOV_IMG_LOCATION, DAY_OF_WEEK, WEB_NOV_IS_OPEN, FINISHED_OR_NOT)
+VALUES ('19', 'MF', '너의 최애푸드가 보여!', '푸만두', 100, '에이비씨미디어', '사람들의 최애푸드가 보이기 시작했다.', '사진경로6', '화', 'N', 'N');
 
 INSERT INTO WEB_NOV_INFO (WEB_NOV_NUM, CATEGORY_CODE, WEB_NOV_TITLE, WEB_NOV_AUTHOR, CHAP_PER_COIN, WEB_NOV_PUBLISHER,
-                          WEB_NOV_INFORM, WEB_NOV_IMG_LOCATION, DAY_OF_WEEK, WEB_NOV_IS_OPEN, FINISHED_OR_NOT, WEB_NOV_COUNT)
-VALUES ('20', 'MF', '전장의 선율', '예스장', 100, '에이비씨미디어', '시각장애 피아니스트 전장에 선율의 꽃을 피우다다.', '사진경로6', '화', 'N', 'N', DEFAULT);
+                          WEB_NOV_INFORM, WEB_NOV_IMG_LOCATION, DAY_OF_WEEK, WEB_NOV_IS_OPEN, FINISHED_OR_NOT)
+VALUES ('20', 'MF', '전장의 선율', '예스장', 100, '에이비씨미디어', '시각장애 피아니스트 전장에 선율의 꽃을 피우다다.', '사진경로6', '화', 'N', 'N');
 
 INSERT INTO WEB_NOV_INFO (WEB_NOV_NUM, CATEGORY_CODE, WEB_NOV_TITLE, WEB_NOV_AUTHOR, CHAP_PER_COIN, WEB_NOV_PUBLISHER,
-                          WEB_NOV_INFORM, WEB_NOV_IMG_LOCATION, DAY_OF_WEEK, WEB_NOV_IS_OPEN, FINISHED_OR_NOT, WEB_NOV_COUNT)
-VALUES ('21', 'MF', '발가락의 노래', '김동신', 100, '에이비씨미디어', '특별한 뇌 호흡, 격투의 수법을 전수받으며 점점 ‘건강한 말기 암 환자’로 변신.', '사진경로6', '화', 'N', 'N', DEFAULT);
+                          WEB_NOV_INFORM, WEB_NOV_IMG_LOCATION, DAY_OF_WEEK, WEB_NOV_IS_OPEN, FINISHED_OR_NOT)
+VALUES ('21', 'MF', '발가락의 노래', '김동신', 100, '에이비씨미디어', '특별한 뇌 호흡, 격투의 수법을 전수받으며 점점 ‘건강한 말기 암 환자’로 변신.', '사진경로6', '화', 'N', 'N');
 
 INSERT INTO WEB_NOV_INFO (WEB_NOV_NUM, CATEGORY_CODE, WEB_NOV_TITLE, WEB_NOV_AUTHOR, CHAP_PER_COIN, WEB_NOV_PUBLISHER,
-                          WEB_NOV_INFORM, WEB_NOV_IMG_LOCATION, DAY_OF_WEEK, WEB_NOV_IS_OPEN, FINISHED_OR_NOT, WEB_NOV_COUNT)
-VALUES ('22', 'MF', '약자생존', '가렌', 100, '에이비씨미디어', '변화된 지구에서 살아남아라! 오직 약한(?) 자만 생존한다!', '사진경로6', '화', 'N', 'N', DEFAULT);
+                          WEB_NOV_INFORM, WEB_NOV_IMG_LOCATION, DAY_OF_WEEK, WEB_NOV_IS_OPEN, FINISHED_OR_NOT)
+VALUES ('22', 'MF', '약자생존', '가렌', 100, '에이비씨미디어', '변화된 지구에서 살아남아라! 오직 약한(?) 자만 생존한다!', '사진경로6', '화', 'N', 'N');
 
 INSERT INTO WEB_NOV_INFO (WEB_NOV_NUM, CATEGORY_CODE, WEB_NOV_TITLE, WEB_NOV_AUTHOR, CHAP_PER_COIN, WEB_NOV_PUBLISHER,
-                          WEB_NOV_INFORM, WEB_NOV_IMG_LOCATION, DAY_OF_WEEK, WEB_NOV_IS_OPEN, FINISHED_OR_NOT, WEB_NOV_COUNT)
-VALUES ('23', 'F', '지구게임의 사령관', '야행', 100, '에이비씨미디어', '사령관님 괜찮으십니까? 뭐 사령관? 난 그냥 게이머야! 사령관 같은 게 아니라고! 우주 전략 시뮬레이션 ‘스페이스 워’의 사령관이 되어버렸다.', '사진경로6', '화', 'N', 'N', DEFAULT);
+                          WEB_NOV_INFORM, WEB_NOV_IMG_LOCATION, DAY_OF_WEEK, WEB_NOV_IS_OPEN, FINISHED_OR_NOT)
+VALUES ('23', 'F', '지구게임의 사령관', '야행', 100, '에이비씨미디어', '사령관님 괜찮으십니까? 뭐 사령관? 난 그냥 게이머야! 사령관 같은 게 아니라고! 우주 전략 시뮬레이션 ‘스페이스 워’의 사령관이 되어버렸다.', '사진경로6', '화', 'N', 'N');
 
 INSERT INTO WEB_NOV_INFO (WEB_NOV_NUM, CATEGORY_CODE, WEB_NOV_TITLE, WEB_NOV_AUTHOR, CHAP_PER_COIN, WEB_NOV_PUBLISHER,
-                          WEB_NOV_INFORM, WEB_NOV_IMG_LOCATION, DAY_OF_WEEK, WEB_NOV_IS_OPEN, FINISHED_OR_NOT, WEB_NOV_COUNT)
-VALUES ('24', 'MF', '타투', '스몰', 100, '에이비씨미디어', '문신 덕에 넘어간 세계는 몬스터를 잡으면 내공이 상승하고, 상금으로 금화까지!', '사진경로6', '화', 'N', 'N', DEFAULT);
+                          WEB_NOV_INFORM, WEB_NOV_IMG_LOCATION, DAY_OF_WEEK, WEB_NOV_IS_OPEN, FINISHED_OR_NOT)
+VALUES ('24', 'MF', '타투', '스몰', 100, '에이비씨미디어', '문신 덕에 넘어간 세계는 몬스터를 잡으면 내공이 상승하고, 상금으로 금화까지!', '사진경로6', '화', 'N', 'N');
 
 INSERT INTO WEB_NOV_INFO (WEB_NOV_NUM, CATEGORY_CODE, WEB_NOV_TITLE, WEB_NOV_AUTHOR, CHAP_PER_COIN, WEB_NOV_PUBLISHER,
-                          WEB_NOV_INFORM, WEB_NOV_IMG_LOCATION, DAY_OF_WEEK, WEB_NOV_IS_OPEN, FINISHED_OR_NOT, WEB_NOV_COUNT)
-VALUES ('25', 'F', '위키쓰는 법사', '로드롤러', 100, '에이비씨미디어', '다른 놈이 주문외울때 나는 위키 쓴다.', '사진경로6', '화', 'N', 'N', DEFAULT);
+                          WEB_NOV_INFORM, WEB_NOV_IMG_LOCATION, DAY_OF_WEEK, WEB_NOV_IS_OPEN, FINISHED_OR_NOT)
+VALUES ('25', 'F', '위키쓰는 법사', '로드롤러', 100, '에이비씨미디어', '다른 놈이 주문외울때 나는 위키 쓴다.', '사진경로6', '화', 'N', 'N');
 
 INSERT INTO WEB_NOV_INFO (WEB_NOV_NUM, CATEGORY_CODE, WEB_NOV_TITLE, WEB_NOV_AUTHOR, CHAP_PER_COIN, WEB_NOV_PUBLISHER,
-                          WEB_NOV_INFORM, WEB_NOV_IMG_LOCATION, DAY_OF_WEEK, WEB_NOV_IS_OPEN, FINISHED_OR_NOT, WEB_NOV_COUNT)
-VALUES ('26', 'MF', '왕십리역 소드마스터', '왕십리턴', 100, '에이비씨미디어', '[과천역 4번출구 던전에 입장하셨습니다.]', '사진경로6', '화', 'N', 'N', DEFAULT);
+                          WEB_NOV_INFORM, WEB_NOV_IMG_LOCATION, DAY_OF_WEEK, WEB_NOV_IS_OPEN, FINISHED_OR_NOT)
+VALUES ('26', 'MF', '왕십리역 소드마스터', '왕십리턴', 100, '에이비씨미디어', '[과천역 4번출구 던전에 입장하셨습니다.]', '사진경로6', '화', 'N', 'N');
 
 INSERT INTO WEB_NOV_INFO (WEB_NOV_NUM, CATEGORY_CODE, WEB_NOV_TITLE, WEB_NOV_AUTHOR, CHAP_PER_COIN, WEB_NOV_PUBLISHER,
-                          WEB_NOV_INFORM, WEB_NOV_IMG_LOCATION, DAY_OF_WEEK, WEB_NOV_IS_OPEN, FINISHED_OR_NOT, WEB_NOV_COUNT)
-VALUES ('27', 'MF', '책을 읽으면 레벨이 올라', '독서광', 100, '에이비씨미디어', '게임도 아니고, 책을 읽으면 경험치가 쌓인다고?', '사진경로6', '화', 'N', 'N', DEFAULT);
+                          WEB_NOV_INFORM, WEB_NOV_IMG_LOCATION, DAY_OF_WEEK, WEB_NOV_IS_OPEN, FINISHED_OR_NOT)
+VALUES ('27', 'MF', '책을 읽으면 레벨이 올라', '독서광', 100, '에이비씨미디어', '게임도 아니고, 책을 읽으면 경험치가 쌓인다고?', '사진경로6', '화', 'N', 'N');
 
 INSERT INTO WEB_NOV_INFO (WEB_NOV_NUM, CATEGORY_CODE, WEB_NOV_TITLE, WEB_NOV_AUTHOR, CHAP_PER_COIN, WEB_NOV_PUBLISHER,
-                          WEB_NOV_INFORM, WEB_NOV_IMG_LOCATION, DAY_OF_WEEK, WEB_NOV_IS_OPEN, FINISHED_OR_NOT, WEB_NOV_COUNT)
-VALUES ('28', 'MF', '인셉션 라이프', '멱살캐리', 100, '에이비씨미디어', '두개의 몸, 두개의 세계, 동기화된 미래', '사진경로6', '화', 'N', 'N', DEFAULT);
+                          WEB_NOV_INFORM, WEB_NOV_IMG_LOCATION, DAY_OF_WEEK, WEB_NOV_IS_OPEN, FINISHED_OR_NOT)
+VALUES ('28', 'MF', '인셉션 라이프', '멱살캐리', 100, '에이비씨미디어', '두개의 몸, 두개의 세계, 동기화된 미래', '사진경로6', '화', 'N', 'N');
 
 INSERT INTO WEB_NOV_INFO (WEB_NOV_NUM, CATEGORY_CODE, WEB_NOV_TITLE, WEB_NOV_AUTHOR, CHAP_PER_COIN, WEB_NOV_PUBLISHER,
-                          WEB_NOV_INFORM, WEB_NOV_IMG_LOCATION, DAY_OF_WEEK, WEB_NOV_IS_OPEN, FINISHED_OR_NOT, WEB_NOV_COUNT)
-VALUES ('29', 'F', '테이밍 슬레이브', '김태석', 100, '에이비씨미디어', '카일란 최고의 노답 직업인 소환술사?', '사진경로6', '화', 'N', 'N', DEFAULT);
+                          WEB_NOV_INFORM, WEB_NOV_IMG_LOCATION, DAY_OF_WEEK, WEB_NOV_IS_OPEN, FINISHED_OR_NOT)
+VALUES ('29', 'F', '테이밍 슬레이브', '김태석', 100, '에이비씨미디어', '카일란 최고의 노답 직업인 소환술사?', '사진경로6', '화', 'N', 'N');
 
 INSERT INTO WEB_NOV_INFO (WEB_NOV_NUM, CATEGORY_CODE, WEB_NOV_TITLE, WEB_NOV_AUTHOR, CHAP_PER_COIN, WEB_NOV_PUBLISHER,
-                          WEB_NOV_INFORM, WEB_NOV_IMG_LOCATION, DAY_OF_WEEK, WEB_NOV_IS_OPEN, FINISHED_OR_NOT, WEB_NOV_COUNT)
+                          WEB_NOV_INFORM, WEB_NOV_IMG_LOCATION, DAY_OF_WEEK, WEB_NOV_IS_OPEN, FINISHED_OR_NOT)
 VALUES ('30', 'F', '천국에서 돌아온 김대성', '귀차늠', 100, '에이비씨미디어', '지구로 돌아왔으니 이젠 유유자적 살고 싶었는데... [마수들이 절대자의 활약에 환호합니다!]
-[마수들이 절대자께 공물을 바칩니다!] 끈질긴 새끼들, 안 해! 안 한다고!', '사진경로6', '화', 'N', 'N', DEFAULT);
+[마수들이 절대자께 공물을 바칩니다!] 끈질긴 새끼들, 안 해! 안 한다고!', '사진경로6', '화', 'N', 'N');
+
 
 INSERT INTO WEB_NOV_INFO (WEB_NOV_NUM, CATEGORY_CODE, WEB_NOV_TITLE, WEB_NOV_AUTHOR, CHAP_PER_COIN, WEB_NOV_PUBLISHER,
-                          WEB_NOV_INFORM, WEB_NOV_IMG_LOCATION, DAY_OF_WEEK, WEB_NOV_IS_OPEN, FINISHED_OR_NOT, WEB_NOV_COUNT)
-VALUES ('31', 'ROM', '아웃사이드 인', '피셀', 100, '넥서스', '인사이드 아웃의 후속작!', '사진경로7', '수', 'N', 'N', DEFAULT);
+                          WEB_NOV_INFORM, WEB_NOV_IMG_LOCATION, DAY_OF_WEEK, WEB_NOV_IS_OPEN, FINISHED_OR_NOT)
+VALUES ('31', 'ROM', '아웃사이드 인', '피셀', 100, '넥서스', '인사이드 아웃의 후속작!', '/firstbook/resources/image/webnovel/monToSun/wednesday/webNov_7_wed.PNG', '수', 'N', 'N');
 INSERT INTO WEB_NOV_INFO (WEB_NOV_NUM, CATEGORY_CODE, WEB_NOV_TITLE, WEB_NOV_AUTHOR, CHAP_PER_COIN, WEB_NOV_PUBLISHER,
-                          WEB_NOV_INFORM, WEB_NOV_IMG_LOCATION, DAY_OF_WEEK, WEB_NOV_IS_OPEN, FINISHED_OR_NOT, WEB_NOV_COUNT)
+                          WEB_NOV_INFORM, WEB_NOV_IMG_LOCATION, DAY_OF_WEEK, WEB_NOV_IS_OPEN, FINISHED_OR_NOT)
 VALUES ('32', 'SPO', '0살부터미적분', '전공은경영', 100, '미디어그룹', '2살에 덧셈뺄셈…5살에..삼각함수…
-8살에 대학 미적분을 푸는 천재의 등장….', '사진경로8', '수', 'Y', 'N', DEFAULT);
+8살에 대학 미적분을 푸는 천재의 등장….', '/firstbook/resources/image/webnovel/monToSun/wednesday/webNov_8_wed.PNG', '수', 'Y', 'N');
 INSERT INTO WEB_NOV_INFO (WEB_NOV_NUM, CATEGORY_CODE, WEB_NOV_TITLE, WEB_NOV_AUTHOR, CHAP_PER_COIN, WEB_NOV_PUBLISHER,
-                          WEB_NOV_INFORM, WEB_NOV_IMG_LOCATION, DAY_OF_WEEK, WEB_NOV_IS_OPEN, FINISHED_OR_NOT, WEB_NOV_COUNT)
+                          WEB_NOV_INFORM, WEB_NOV_IMG_LOCATION, DAY_OF_WEEK, WEB_NOV_IS_OPEN, FINISHED_OR_NOT)
 VALUES ('33', 'F', '귀머거리의전설', '베토벤', 100, '김영사', '1800년 르네상스 시대에 유럽에서 음악 천재가 태어나다
-그러나..그는 얼마 못가 귀머거리가 되는데..', '사진경로9', '수', 'N', 'Y', DEFAULT);
+그러나..그는 얼마 못가 귀머거리가 되는데..', '/firstbook/resources/image/webnovel/monToSun/wednesday/webNov_9_wed.PNG', '수', 'N', 'Y');
 INSERT INTO WEB_NOV_INFO (WEB_NOV_NUM, CATEGORY_CODE, WEB_NOV_TITLE, WEB_NOV_AUTHOR, CHAP_PER_COIN, WEB_NOV_PUBLISHER,
-                          WEB_NOV_INFORM, WEB_NOV_IMG_LOCATION, DAY_OF_WEEK, WEB_NOV_IS_OPEN, FINISHED_OR_NOT, WEB_NOV_COUNT)
+                          WEB_NOV_INFORM, WEB_NOV_IMG_LOCATION, DAY_OF_WEEK, WEB_NOV_IS_OPEN, FINISHED_OR_NOT)
 VALUES ('34', 'FH', '짝귀의삶', '빈센트반고흐', 100, '미디어그룹', '타짜의 세계에서….
-밑장빼다간 손모가지가 날아가는 사건이 비일비재하는데', '사진경로10', '목', 'N', 'N', DEFAULT);
+밑장빼다간 손모가지가 날아가는 사건이 비일비재하는데', '/firstbook/resources/image/webnovel/monToSun/thursday/webNov_10_thurs.PNG', '목', 'N', 'N');
 INSERT INTO WEB_NOV_INFO (WEB_NOV_NUM, CATEGORY_CODE, WEB_NOV_TITLE, WEB_NOV_AUTHOR, CHAP_PER_COIN, WEB_NOV_PUBLISHER,
-                          WEB_NOV_INFORM, WEB_NOV_IMG_LOCATION, DAY_OF_WEEK, WEB_NOV_IS_OPEN, FINISHED_OR_NOT, WEB_NOV_COUNT)
+                          WEB_NOV_INFORM, WEB_NOV_IMG_LOCATION, DAY_OF_WEEK, WEB_NOV_IS_OPEN, FINISHED_OR_NOT)
 VALUES ('35', 'ROM', '금수저 백수생활', '김밥은헤븐', 100, '문학동네', 'N그룹 금수저로 태어난 K씨는…
-자신이 금수저라는 사실을 숨기고 지내는데', '사진경로11', '목', 'N', 'N', DEFAULT);
+자신이 금수저라는 사실을 숨기고 지내는데', '/firstbook/resources/image/webnovel/monToSun/thursday/webNov_11_thurs.PNG', '목', 'N', 'N');
 INSERT INTO WEB_NOV_INFO (WEB_NOV_NUM, CATEGORY_CODE, WEB_NOV_TITLE, WEB_NOV_AUTHOR, CHAP_PER_COIN, WEB_NOV_PUBLISHER,
-                          WEB_NOV_INFORM, WEB_NOV_IMG_LOCATION, DAY_OF_WEEK, WEB_NOV_IS_OPEN, FINISHED_OR_NOT, WEB_NOV_COUNT)
+                          WEB_NOV_INFORM, WEB_NOV_IMG_LOCATION, DAY_OF_WEEK, WEB_NOV_IS_OPEN, FINISHED_OR_NOT)
 VALUES ('36', 'FH', '신입사원이재용', '삼성1인자', 100, '미디어그룹', 'S그룹의 예비 후계자…
-회사를 알기위해 신입사원으로 위장해서 들어가면서..', '사진경로12', '목', 'Y', 'N', DEFAULT);
+회사를 알기위해 신입사원으로 위장해서 들어가면서..', '/firstbook/resources/image/webnovel/monToSun/thursday/webNov_12_thurs.PNG', '목', 'Y', 'N');
 INSERT INTO WEB_NOV_INFO (WEB_NOV_NUM, CATEGORY_CODE, WEB_NOV_TITLE, WEB_NOV_AUTHOR, CHAP_PER_COIN, WEB_NOV_PUBLISHER,
-                          WEB_NOV_INFORM, WEB_NOV_IMG_LOCATION, DAY_OF_WEEK, WEB_NOV_IS_OPEN, FINISHED_OR_NOT, WEB_NOV_COUNT)
-VALUES ('37', 'FH', '슬기로운개발생활', '야근은선택이아닌필수', 100, '게임북스', '개발자의 길을 걷게다던 P씨의 개발 이야기', '사진경로13', '금', 'N', 'N', DEFAULT);
+                          WEB_NOV_INFORM, WEB_NOV_IMG_LOCATION, DAY_OF_WEEK, WEB_NOV_IS_OPEN, FINISHED_OR_NOT)
+VALUES ('37', 'FH', '슬기로운개발생활', '야근은선택이아닌필수', 100, '게임북스', '개발자의 길을 걷게다던 P씨의 개발 이야기', '/firstbook/resources/image/webnovel/monToSun/friday/webNov_13_fri.PNG', '금', 'N', 'N');
 INSERT INTO WEB_NOV_INFO (WEB_NOV_NUM, CATEGORY_CODE, WEB_NOV_TITLE, WEB_NOV_AUTHOR, CHAP_PER_COIN, WEB_NOV_PUBLISHER,
-                          WEB_NOV_INFORM, WEB_NOV_IMG_LOCATION, DAY_OF_WEEK, WEB_NOV_IS_OPEN, FINISHED_OR_NOT, WEB_NOV_COUNT)
+                          WEB_NOV_INFORM, WEB_NOV_IMG_LOCATION, DAY_OF_WEEK, WEB_NOV_IS_OPEN, FINISHED_OR_NOT)
 VALUES ('38', 'MF', '천생개발자', 'HTML은언어다', 100, '게임북스', '어렸을 때부터 장난감보단 코드 짜는 것에 흥미와 관심을 보였던 l씨
-성인이 되어 유명회사에 입사하게 되는데', '사진경로14', '금', 'N', 'N', DEFAULT);
+성인이 되어 유명회사에 입사하게 되는데', '/firstbook/resources/image/webnovel/monToSun/friday/webNov_14_fri.PNG', '금', 'N', 'N');
 INSERT INTO WEB_NOV_INFO (WEB_NOV_NUM, CATEGORY_CODE, WEB_NOV_TITLE, WEB_NOV_AUTHOR, CHAP_PER_COIN, WEB_NOV_PUBLISHER,
-                          WEB_NOV_INFORM, WEB_NOV_IMG_LOCATION, DAY_OF_WEEK, WEB_NOV_IS_OPEN, FINISHED_OR_NOT, WEB_NOV_COUNT)
+                          WEB_NOV_INFORM, WEB_NOV_IMG_LOCATION, DAY_OF_WEEK, WEB_NOV_IS_OPEN, FINISHED_OR_NOT)
 VALUES ('39', 'SPO', '재벌가늦등이', '금수저라이프', 100, '넥서스', '대한민국 5대 재벌가의 집안에서 늦등이가 탄생했다
-그러면서 경영권자리에 첫 째가 눈독이 오르는데', '사진경로15', '금', 'Y ', 'Y ', DEFAULT);
+그러면서 경영권자리에 첫 째가 눈독이 오르는데', '/firstbook/resources/image/webnovel/monToSun/friday/webNov_15_fri.PNG', '금', 'Y', 'Y');
 INSERT INTO WEB_NOV_INFO (WEB_NOV_NUM, CATEGORY_CODE, WEB_NOV_TITLE, WEB_NOV_AUTHOR, CHAP_PER_COIN, WEB_NOV_PUBLISHER,
-                          WEB_NOV_INFORM, WEB_NOV_IMG_LOCATION, DAY_OF_WEEK, WEB_NOV_IS_OPEN, FINISHED_OR_NOT, WEB_NOV_COUNT)
+                          WEB_NOV_INFORM, WEB_NOV_IMG_LOCATION, DAY_OF_WEEK, WEB_NOV_IS_OPEN, FINISHED_OR_NOT)
 VALUES ('40', 'F', '메카닉이되었다', '마린파이어뱃', 100, '창비', '바이오닉계에서 전설이었던 M씨가
-상대 계열사인 메카닉계로 떠나게 된다!', '사진경로16', '토', 'N', 'N', DEFAULT);
+상대 계열사인 메카닉계로 떠나게 된다!', '/firstbook/resources/image/webnovel/monToSun/saturday/webNov_16_sat.PNG', '토', 'N', 'N');
 INSERT INTO WEB_NOV_INFO (WEB_NOV_NUM, CATEGORY_CODE, WEB_NOV_TITLE, WEB_NOV_AUTHOR, CHAP_PER_COIN, WEB_NOV_PUBLISHER,
-                          WEB_NOV_INFORM, WEB_NOV_IMG_LOCATION, DAY_OF_WEEK, WEB_NOV_IS_OPEN, FINISHED_OR_NOT, WEB_NOV_COUNT)
+                          WEB_NOV_INFORM, WEB_NOV_IMG_LOCATION, DAY_OF_WEEK, WEB_NOV_IS_OPEN, FINISHED_OR_NOT)
 VALUES ('41', 'MF', '축구황제가되기까지', '마이클조던', 100, '넥서스', '가난한 집안에서 태어났지만, 축구 능력 만큼은 우수했던 청년
-우연치 않게 구단주를 만나게 되는데', '사진경로17', '토', 'N', 'Y', DEFAULT);
+우연치 않게 구단주를 만나게 되는데', '/firstbook/resources/image/webnovel/monToSun/saturday/webNov_17_sat.PNG', '토', 'N', 'Y');
 INSERT INTO WEB_NOV_INFO (WEB_NOV_NUM, CATEGORY_CODE, WEB_NOV_TITLE, WEB_NOV_AUTHOR, CHAP_PER_COIN, WEB_NOV_PUBLISHER,
-                          WEB_NOV_INFORM, WEB_NOV_IMG_LOCATION, DAY_OF_WEEK, WEB_NOV_IS_OPEN, FINISHED_OR_NOT, WEB_NOV_COUNT)
+                          WEB_NOV_INFORM, WEB_NOV_IMG_LOCATION, DAY_OF_WEEK, WEB_NOV_IS_OPEN, FINISHED_OR_NOT)
 VALUES ('42', 'F', '황제의자리', '요환과페이커', 100, '문학동네', '하늘아래 두 개의 태양은 존재 하지 않는 법!!
-황제의 자리를 놓고 벌여지는 숨막히는 티키타가의 스토리!', '사진경로18', '토', 'N', 'N', DEFAULT);
+황제의 자리를 놓고 벌여지는 숨막히는 티키타가의 스토리!', '/firstbook/resources/image/webnovel/monToSun/saturday/webNov_18_sat.PNG', '토', 'N', 'N');
 INSERT INTO WEB_NOV_INFO (WEB_NOV_NUM, CATEGORY_CODE, WEB_NOV_TITLE, WEB_NOV_AUTHOR, CHAP_PER_COIN, WEB_NOV_PUBLISHER,
-                          WEB_NOV_INFORM, WEB_NOV_IMG_LOCATION, DAY_OF_WEEK, WEB_NOV_IS_OPEN, FINISHED_OR_NOT, WEB_NOV_COUNT)
+                          WEB_NOV_INFORM, WEB_NOV_IMG_LOCATION, DAY_OF_WEEK, WEB_NOV_IS_OPEN, FINISHED_OR_NOT)
 VALUES ('43', 'F', '공대생의삶', '아이작뉴턴', 100, '게임북스', '사과…영어로는 APPLE…
-그러나 그의 눈에는 사과가 아닌 다른 것이 보였다!?!?', '사진경로19', '일', 'N', 'N', DEFAULT);
+그러나 그의 눈에는 사과가 아닌 다른 것이 보였다!?!?', '/firstbook/resources/image/webnovel/monToSun/sunday/webNov_19_sun.PNG', '일', 'N', 'N');
 INSERT INTO WEB_NOV_INFO (WEB_NOV_NUM, CATEGORY_CODE, WEB_NOV_TITLE, WEB_NOV_AUTHOR, CHAP_PER_COIN, WEB_NOV_PUBLISHER,
-                          WEB_NOV_INFORM, WEB_NOV_IMG_LOCATION, DAY_OF_WEEK, WEB_NOV_IS_OPEN, FINISHED_OR_NOT, WEB_NOV_COUNT)
+                          WEB_NOV_INFORM, WEB_NOV_IMG_LOCATION, DAY_OF_WEEK, WEB_NOV_IS_OPEN, FINISHED_OR_NOT)
 VALUES ('44', 'OF', '사랑의치유사', '아웃사이더', 100, '문학동네', '유명 랩퍼로 한 때 인기를 날렸던 O씨
-어느새 음악치유사가 되가는 이야기', '사진경로20', '일', 'N', 'N', DEFAULT);
+어느새 음악치유사가 되가는 이야기', '/firstbook/resources/image/webnovel/monToSun/sunday/webNov_20_sun.PNG', '일', 'N', 'N');
 INSERT INTO WEB_NOV_INFO (WEB_NOV_NUM, CATEGORY_CODE, WEB_NOV_TITLE, WEB_NOV_AUTHOR, CHAP_PER_COIN, WEB_NOV_PUBLISHER,
-                          WEB_NOV_INFORM, WEB_NOV_IMG_LOCATION, DAY_OF_WEEK, WEB_NOV_IS_OPEN, FINISHED_OR_NOT, WEB_NOV_COUNT)
+                          WEB_NOV_INFORM, WEB_NOV_IMG_LOCATION, DAY_OF_WEEK, WEB_NOV_IS_OPEN, FINISHED_OR_NOT)
 VALUES ('45', 'OF', '지구는돈다', '갈릴레이갈릴레오', 100, '문학동네', '먼 옛날, 지구가 평평하다고 생각했던 시기에
-악동이 태어났으니….', '사진경로21', '일', 'N', 'N', DEFAULT);
+악동이 태어났으니….', '/firstbook/resources/image/webnovel/monToSun/sunday/webNov_21_sun.PNG', '일', 'N', 'N');
 INSERT INTO WEB_NOV_INFO (WEB_NOV_NUM, CATEGORY_CODE, WEB_NOV_TITLE, WEB_NOV_AUTHOR, CHAP_PER_COIN, WEB_NOV_PUBLISHER,
-                          WEB_NOV_INFORM, WEB_NOV_IMG_LOCATION, DAY_OF_WEEK, WEB_NOV_IS_OPEN, FINISHED_OR_NOT, WEB_NOV_COUNT)
-VALUES ('46', 'F', '삼국지 밖으로 가자', '중한한중', 100, '김영사', '고대 시대, 세 나라의 치열한 전투 이야기가 시작된다', '사진경로22', '완', 'N', 'Y', DEFAULT);
+                          WEB_NOV_INFORM, WEB_NOV_IMG_LOCATION, DAY_OF_WEEK, WEB_NOV_IS_OPEN, FINISHED_OR_NOT)
+VALUES ('46', 'F', '삼국지 밖으로 가자', '중한한중', 100, '김영사', '고대 시대, 세 나라의 치열한 전투 이야기가 시작된다', '사진경로22', '완', 'N', 'Y');
 INSERT INTO WEB_NOV_INFO (WEB_NOV_NUM, CATEGORY_CODE, WEB_NOV_TITLE, WEB_NOV_AUTHOR, CHAP_PER_COIN, WEB_NOV_PUBLISHER,
-                          WEB_NOV_INFORM, WEB_NOV_IMG_LOCATION, DAY_OF_WEEK, WEB_NOV_IS_OPEN, FINISHED_OR_NOT, WEB_NOV_COUNT)
+                          WEB_NOV_INFORM, WEB_NOV_IMG_LOCATION, DAY_OF_WEEK, WEB_NOV_IS_OPEN, FINISHED_OR_NOT)
 VALUES ('47', 'F', '분열하고 싶은 자', '제법좁은강', 100, '김영사', '자아분열에 대해서 고뇌하던 유명 철학가가 직접  쓴 분열 이야기', '사진경로23', '완', 'N',
-        'Y ', DEFAULT);
+        'Y');
 INSERT INTO WEB_NOV_INFO (WEB_NOV_NUM, CATEGORY_CODE, WEB_NOV_TITLE, WEB_NOV_AUTHOR, CHAP_PER_COIN, WEB_NOV_PUBLISHER,
-                          WEB_NOV_INFORM, WEB_NOV_IMG_LOCATION, DAY_OF_WEEK, WEB_NOV_IS_OPEN, FINISHED_OR_NOT, WEB_NOV_COUNT)
-VALUES ('48', 'OF', '포이즌 퀸', '유지권', 100, '문학동네', '독보다 강하고, 곰 같은 여우가 되겠다던 한 여왕의 삶의 이야기', '사진경로24', '완', 'N', 'Y', DEFAULT);
+                          WEB_NOV_INFORM, WEB_NOV_IMG_LOCATION, DAY_OF_WEEK, WEB_NOV_IS_OPEN, FINISHED_OR_NOT)
+VALUES ('48', 'OF', '포이즌 퀸', '유지권', 100, '문학동네', '독보다 강하고, 곰 같은 여우가 되겠다던 한 여왕의 삶의 이야기', '사진경로24', '완', 'N', 'Y');
 INSERT INTO WEB_NOV_INFO (WEB_NOV_NUM, CATEGORY_CODE, WEB_NOV_TITLE, WEB_NOV_AUTHOR, CHAP_PER_COIN, WEB_NOV_PUBLISHER,
-                          WEB_NOV_INFORM, WEB_NOV_IMG_LOCATION, DAY_OF_WEEK, WEB_NOV_IS_OPEN, FINISHED_OR_NOT, WEB_NOV_COUNT)
+                          WEB_NOV_INFORM, WEB_NOV_IMG_LOCATION, DAY_OF_WEEK, WEB_NOV_IS_OPEN, FINISHED_OR_NOT)
 VALUES ('49', 'FH', '거지에서 고수까지', '요비비요', 100, '창비', '매일 취준의 늪에 빠져살던 백수가
-지나가다 우연치 않게 바둑을 보게 되면서', '사진경로25', '완', 'N', 'Y', DEFAULT);
+지나가다 우연치 않게 바둑을 보게 되면서', '사진경로25', '완', 'N', 'Y');
 INSERT INTO WEB_NOV_INFO (WEB_NOV_NUM, CATEGORY_CODE, WEB_NOV_TITLE, WEB_NOV_AUTHOR, CHAP_PER_COIN, WEB_NOV_PUBLISHER,
-                          WEB_NOV_INFORM, WEB_NOV_IMG_LOCATION, DAY_OF_WEEK, WEB_NOV_IS_OPEN, FINISHED_OR_NOT, WEB_NOV_COUNT)
+                          WEB_NOV_INFORM, WEB_NOV_IMG_LOCATION, DAY_OF_WEEK, WEB_NOV_IS_OPEN, FINISHED_OR_NOT)
 VALUES ('50', 'SPO', '리멤버 더 에이지', '중금하르방', 100, '창비', '나이를 잊고 사는 나라에
-나이의 개념이 들어오면서 사람들이 혼란을 겪게 되는데', '사진경로26', '완', 'N', 'Y', DEFAULT);
-
-INSERT INTO WEB_NOV_INFO (WEB_NOV_NUM, CATEGORY_CODE, WEB_NOV_TITLE, WEB_NOV_AUTHOR, CHAP_PER_COIN, WEB_NOV_PUBLISHER,
-                          WEB_NOV_INFORM, WEB_NOV_IMG_LOCATION, DAY_OF_WEEK, WEB_NOV_IS_OPEN, FINISHED_OR_NOT, WEB_NOV_COUNT)
-VALUES ('51', 'SPO', 'test', 'test', 100, 'test', 'test', '사진경로27', '완', 'N', 'Y', DEFAULT);
+나이의 개념이 들어오면서 사람들이 혼란을 겪게 되는데', '사진경로26', '완', 'N', 'Y');
 
 COMMIT;
 
@@ -2981,14 +3112,15 @@ Insert into FAQ (POST_NUM,FAQ_POST_TITLE,FAQ_POST_CONTENT) values (8,'구매 내
 Insert into FAQ (POST_NUM,FAQ_POST_TITLE,FAQ_POST_CONTENT) values (9,'공모전에 출품하고 싶습니다. 일정은 어디서 확인하나요? ','공모전은 페이지 상단 공모전 버튼을 클릭하여 확인해보실 수 있으며, 공모전 일정은 공모전 페이지와 공지사항에서 알려드릴 예정입니다. 2020년 10월 4분기 이후로 매년분기마다 공모전이 진행되고 있습니다.');
 Insert into FAQ (POST_NUM,FAQ_POST_TITLE,FAQ_POST_CONTENT) values (10,'탈퇴는 어떻게 하나요?','회원 탈퇴는 마이페이지에서 가능합니다. 탈퇴시 보유한 코인은 자동 환불되지 않으니 환불 이후 탈퇴하시는 것을 권고드립니다. 또한 보유한 서재 또한 초기화되니 탈퇴에 앞서 신중하게 판단하시기 바랍니다.');
 
-----
+-----------NOTICE
 
 CREATE TABLE NOTICE (
 	NOTICE_NUM NUMBER NOT NULL,
 	NOTICE_DATE DATE NOT NULL,
 	NOTICE_NAME VARCHAR2(100) NOT NULL,
 	NOTICE_VIEW_COUNT NUMBER NOT NULL,
-	NOTICE_CONTENT VARCHAR2(2000) NULL
+	NOTICE_CONTENT VARCHAR2(2000) NULL,
+    NOTICE_STATUS CHAR(1)
     );
 
 Insert into NOTICE (NOTICE_NUM,NOTICE_DATE,NOTICE_NAME,NOTICE_VIEW_COUNT,NOTICE_CONTENT) values (1,to_date('19/06/01','RR/MM/DD'),'FirstBook 서비스 오픈!',5417,'오랜 준비끝에 신인과 작가, 독자를 위한 웹소설 플랫폼 First Book 서비스를 오픈합니다. \n저희 서비스는 타 플랫폼에서 하지 못한 상생을 추구하기 위해 낮은 수수료를 적용하고, 출판사와 작가에게 수익이 분배되는 코인 제도를 운영할 것입니다. 독자분들을 위해 일주일에 한번씩 위클리 코인도 제공할 예정입니다. \n또한 활발한 공모전 개최로 신인들의 등용문 역할을 할 예정입니다. 공모전은 2회의 테스트 기간을 거쳐 매해 분기별 진행을 목표로 하고 있습니다. 신인분들의 많은 참여와 관심 부탁드립니다.');
@@ -3049,7 +3181,24 @@ CREATE TABLE COIN_CHARGE (
 );
 
 
+DROP SEQUENCE SEQ_MEM_NO;
+CREATE SEQUENCE SEQ_MEM_NO
+START WITH 31;
 
+DROP SEQUENCE SEQ_WEB_CONTENT_DETAIL;
+CREATE SEQUENCE SEQ_WEB_CONTENT_DETAIL
+START WITH 100;
+
+DROP SEQUENCE SEQ_WEB_NOV_INFO;
+CREATE SEQUENCE SEQ_WEB_NOV_INFO
+START WITH 100;
+
+DROP SEQUENCE SEQ_WEB_NOV_REPLY;
+CREATE SEQUENCE SEQ_WEB_NOV_REPLY
+START WITH 50;
+
+
+------------------------------NOV_INFO
 
 CREATE TABLE NOV_INFO (
 	NOV_NUM	NUMBER		NOT NULL PRIMARY KEY ,

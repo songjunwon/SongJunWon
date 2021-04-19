@@ -31,21 +31,11 @@ public class WebnovelModifyServlet extends HttpServlet {
 		int pg1 = Integer.valueOf(request.getParameter("pg1"));
 
 		
-		System.out.println("no : " + no);
-		System.out.println("currentChap : " +currentChap);
-		System.out.println("pg0 : " + pg0);
-		System.out.println("pg1 : " +pg1);
-		System.out.println("body0 : " +body0);
-		System.out.println("body1 : " +body1);
-		
-		
 		AdminWebNovelService awnService = new AdminWebNovelService();
 		
 		int result = awnService.WebNovelModify(no, currentChap, pg0, pg1, body0, body1 );
 		
-		System.out.println(body0);
 		
-		System.out.println("result :" + result);
 		
 		List<WebNovelInfoDTO> adminWebNovelList = new AdminWebNovelService().AdminSelectAllNovel();
 				
