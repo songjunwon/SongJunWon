@@ -40,16 +40,14 @@
                         <c:out value="${ requestScope.contestlList[0].novInfo }" /><c:out value="${ sessionScope.loginMember.memId }" />
                     </div>
                     <div class="font section1_content_right_five">
-                    <form action="${ pageContext.servletContext.contextPath }/contest/selectVoting" method="post">
-                        <button type="button" class="firstBtn">첫화보기</button>
-                         <c:if test="${ sessionScope.loginMember.memCanVoteYn eq 'Y ' }"> 
-                        <button type="button" class="firstBtn" id="voting">투표하기<label class="label_none"><c:out value="${ requestScope.contestlList[0].competNum }" /></label></button>
-                        </c:if> 
-                         <c:if test="${ sessionScope.loginMember.memCanVoteYn eq 'N ' }">
-                        <button type="button" class="firstBtn">투표완료</button>
-                        </c:if> 
-                    </form>
-                        <button type="button" class="secondBtn">♥</button>
+                    <form action="${ pageContext.servletContext.contextPath }/admin/contestActiveYn" method="get">	
+                        <button type="submit" class="firstBtn">활성화/비활성화</button>            
+						&nbsp;&nbsp;&nbsp;&nbsp; 
+						<label style="font-size: 20px;">활성화 여부 : </label> 
+						
+						 	<input type="text" name="activeYn" value="${ requestScope.contestlList[0].competActYn }" style="color:red; font-size: 20px;">
+						 	<input type="hidden" name="competNum" value="${ requestScope.contestlList[0].competNum }"> 
+					</form>
                     </div>
 
                 </div>

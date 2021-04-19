@@ -59,6 +59,30 @@ public class AdminContestDAO {
 		
 
 	}
+
+	public int ContestActiveOrDeactive(Connection con, int competNum, String activeYn) {
+
+		PreparedStatement pstmt = null;
+		int result = 0;
+		
+		String query = prop.getProperty("ContestActiveOrDeactive");
+		
+		
+		try {							
+			pstmt = con.prepareStatement(query);
+			pstmt.setString(1, activeYn);
+			pstmt.setInt(2, competNum);
+			
+			result = pstmt.executeUpdate();
+			
+		} catch (SQLException e) {
+			e.printStackTrace();
+		} finally {
+			close(pstmt);
+		}
+		
+		return result;
+	}
 	
 	
 

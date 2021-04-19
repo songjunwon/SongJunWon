@@ -11,7 +11,12 @@
               AND PAGES BETWEEN ? AND ?
 	
 	</entry>
-	
+	<entry key="ContestActiveOrDeactive">
+		  UPDATE
+		       COMPET_INFO A
+		   SET A.COMPET_ACT_YN = ?		    
+		 WHERE A.COMPET_NUM = ?	
+	</entry>
 </properties>
 
 

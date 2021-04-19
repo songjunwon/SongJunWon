@@ -27,8 +27,10 @@ public class AdminContestService {
 		
 		
 		if(result > 0) {
+		
 			commit(con);
 		} else {
+		
 			rollback(con);
 		}
 		
@@ -36,6 +38,26 @@ public class AdminContestService {
 		
 		return result;
 
+	}
+
+	public int ContestActiveOrDeactive(int competNum, String activeYn) {
+		
+		Connection con = getConnection();
+		
+		int result = acDAO.ContestActiveOrDeactive(con, competNum, activeYn);
+		
+		if(result > 0) {
+		
+			commit(con);
+	
+		} else {
+		
+			rollback(con);
+		}
+		
+		close(con);
+		
+		return result;
 	}
 	
 	
