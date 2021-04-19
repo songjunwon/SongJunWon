@@ -99,6 +99,10 @@
 			failedMessage = "공보전 조회 실패";
 			movePath = "${ pageContext.servletContext.contextPath}/contest/list";
 			break;
+		case "main" : 
+			failedMessage = "메인 조회 실패";
+			movePath = "${ pageContext.servletContext.contextPath}/main/main";
+			break;
 		}
 			alert(failedMessage);
 		

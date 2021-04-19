@@ -716,6 +716,50 @@ public class WebNovelDAO {
 		return replydata;
 	}
 
+	public List<WebNovelInfoDTO> selectTopNovel(Connection con) {
+
+		Statement stmt = null;
+		ResultSet rset = null;
+
+		List<WebNovelInfoDTO> webNovelList = null;
+		String query = prop.getProperty("selectAllNovel");
+
+		try {
+			stmt = con.createStatement();
+			rset = stmt.executeQuery(query);
+
+			webNovelList = new ArrayList<>();
+
+			while(rset.next()) {
+				WebNovelInfoDTO webNovel = new WebNovelInfoDTO();
+
+				webNovel.setWebNovNum(rset.getInt("WEB_NOV_NUM"));
+				webNovel.setWebNovTitle(rset.getString("WEB_NOV_TITLE"));
+				webNovel.setWebNovAuthor(rset.getString("WEB_NOV_AUTHOR"));
+				webNovel.setWebNovInform(rset.getString("WEB_NOV_INFORM"));
+				webNovel.setCategoryCode(rset.getString("CATEGORY_CODE"));
+				webNovel.setWebNovPublisher(rset.getString("WEB_NOV_PUBLISHER"));
+				webNovel.setDayOfWeek(rset.getString("DAY_OF_WEEK"));
+				webNovel.setWebNovImgLocation(rset.getString("WEB_NOV_IMG_LOCATION"));
+				webNovel.setFinishedOrNot(rset.getString("FINISHED_OR_NOT"));
+				webNovel.setWebNovOpenOrClose(rset.getString("WEB_NOV_IS_OPEN"));
+				
+
+				webNovelList.add(webNovel);
+			}
+
+
+		} catch (SQLException e) {
+			e.printStackTrace();
+		}finally {
+			close(rset);
+			close(stmt);
+		}
+
+		return webNovelList;
+		
+	}
+
 
 }
 

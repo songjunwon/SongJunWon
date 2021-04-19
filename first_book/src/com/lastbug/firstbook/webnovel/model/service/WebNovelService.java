@@ -310,6 +310,16 @@ public class WebNovelService {
 
 	}
 
+	public List<WebNovelInfoDTO> selectTopNovel() {
+		Connection con = getConnection();
+
+		List<WebNovelInfoDTO> webNovelList = webNovelDAO.selectTopNovel(con);
+
+		close(con);
+
+		return webNovelList;
+	}
+
 }
 
 

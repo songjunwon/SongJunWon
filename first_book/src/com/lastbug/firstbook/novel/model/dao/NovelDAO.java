@@ -41,7 +41,6 @@ public class NovelDAO {
 		List<NovelDTO> NovelList = null;
 				
 		String query = prop.getProperty("selectAllNovel");
-		System.out.println("쿼리" + query);
 
 		try {
 			stmt = con.createStatement();

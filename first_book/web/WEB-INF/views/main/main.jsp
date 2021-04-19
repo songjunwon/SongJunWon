@@ -57,21 +57,15 @@
         <br clear="both">
         <div class="serialization">
             <h2>연재중</h2>
-            <ul>
-                <li>월</li>
-                <li>화</li>
-                <li>수</li>
-                <li>목</li>
-                <li>금</li>
-                <li>토</li>
-                <li>일</li>
-            </ul>
+            
             <br clear="both">
             <div class="tab-content">
-                <div class="tab_box">
-                    <img src="">
-                    <span>작품명 - 작가명</span>
+                 <c:forEach items="${ requestScope.webNovelList }" var="webNovelList">
+                <div class="awards_box">
+                    <img src="<c:out value=" ${ webNovelList.webNovImgLocation }" />"  height="286" width = "200px"><br>
+                    <c:out value="${ webNovelList.webNovTitle }" />
                 </div>
+            </c:forEach> 
                
             </div>
         </div>
