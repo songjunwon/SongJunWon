@@ -120,6 +120,7 @@
         </div>
     </section>
 </div>
+ <jsp:include page="../common/footer.jsp"/>
 <script>
 			
 		$("#voting").click(function(){
