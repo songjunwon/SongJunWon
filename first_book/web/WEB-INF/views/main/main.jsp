@@ -83,31 +83,12 @@
          <div class="top_main">
         <div class="book">
             <h2>단행본</h2>
-            <div class="book_box">
-                <img src="">
-                <span>작품명 - 작가명</span>
-                <span>가격</span>
-            </div>
-            <div class="book_box">
-                <img src="">
-                <span>작품명 - 작가명</span>
-                <span>가격</span>
-            </div>
-            <div class="book_box">
-                <img src="">
-                <span>작품명 - 작가명</span>
-                <span>가격</span>
-            </div>
-            <div class="book_box">
-                <img src="">
-                <span>작품명 - 작가명</span>
-                <span>가격</span>
-            </div>
-            <div class="book_box">
-                <img src="">
-                <span>작품명 - 작가명</span>
-                <span>가격</span>
-            </div>
+            <c:forEach items="${ requestScope.NovelList }" var="novelList">
+                <div class="awards_box">
+                    <img src="<c:out value=" ${ novelList.imgLocation }" />" width = "200px"><br>
+                    <c:out value="${ novelList.novTitle }" />
+                </div>
+            </c:forEach>
         </div>
 </div>
     </div>

@@ -12,6 +12,8 @@ import java.util.List;
 import com.lastbug.firstbook.contest.model.dto.ContestDTO;
 import com.lastbug.firstbook.contest.model.dto.ContestSsnDTO;
 import com.lastbug.firstbook.contest.model.service.ContestService;
+import com.lastbug.firstbook.novel.model.dto.NovelDTO;
+import com.lastbug.firstbook.novel.model.service.NovelService;
 
 @WebServlet("/main/main")
 public class main extends HttpServlet {
@@ -19,12 +21,13 @@ public class main extends HttpServlet {
 
 protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 	List<ContestDTO> contestList = new ContestService().mainTopContest();
-	
+	List<NovelDTO> NovelList = new NovelService().selectAllNovel();
 	
 	String path = "";
 	if(!contestList.isEmpty()) {		// 공모전 작품이 검색되면
 		path = "/WEB-INF/views/main/main.jsp";
 		request.setAttribute("contestList", contestList);
+		request.setAttribute("NovelList", NovelList);
 		
 	} else {						// 공모전 실패 하면
 	
