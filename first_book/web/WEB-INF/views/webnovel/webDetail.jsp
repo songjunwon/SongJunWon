@@ -100,7 +100,7 @@
                         <h2 class="chap_date"> 소제목 :  ${ webNovelChap2.chapPerTitle} </h2>                       
                     </td> 
                     <td class="freeBtn">
-                    <form action="notFreeForm" method="get">
+                    
             		 <button class="freebtn_real"  type="button"  onclick="web(${ webNovelChap2.webNovChapNum.webNovChapNum}, '${webNovelChap2.chapReadOrNot}', ${ webNovelChap2.chapPerPrice }, '${webNovelChap2.chapPerIsUsed }', '${sessionScope.loginMember.memId }', ${webNovelChap2.webNovNum.webNovNum }, '${sessionScope.loginMember.memPwd }' )" >
                     ${ webNovelChap2.webNovChapNum.webNovChapNum}화 보기 </button>
                     <input type="hidden" name="webNovNum"  value= "${ webNovelChap2.webNovChapNum.webNovChapNum}">
@@ -111,7 +111,7 @@
 					<input type="hidden" name="chapReadOrNot" id="chapReadOrNot" name="chapReadOrNot" >
 					<input type="hidden" name="chapPerPrice" id="chapPerPrice" name="chapPerPrice" >
 					<input type="hidden" name="chapPerIsUsed" id="chapPerIsUsed" name="chapPerIsUsed" > --%>
-            		</form>
+            		
             		</td> 
                 </tr>
                 </c:forEach>   
@@ -400,38 +400,10 @@
 				/* 코인이 100이상이여서 추가구매를 하지않아도 되는 경우 */
 				} else if( ${sessionScope.loginMember.memCoin} >= parseInt(100)) {
 					
-			<%--		$.ajax({
-						
-						method : "POST",
-						url : "/firstbook/member/chargeCoin",
-						data : {
-							memId : memId,
-							memPwd : memPwd,
-							webNovNum : webNovNum,
-							webNovChapNum : webNovChapNum
-							},
-						
-							success : function(data) {
-								 console.log(data); 
 
-
-				          }, 
-							error: function(error, status){
-					                console.log(error);
-					                console.log(status);
-							}
-							
-						});	 --%>
-					
-					
-				<%--	var currentCoin = ${ sessionScope.loginMember.memCoin};
-					
-					var perChap = 100;
-					
-					var remain = currentCoin - perChap; --%>
 					location.href = "${ pageContext.servletContext.contextPath}/member/chargeCoin?memId=${sessionScope.loginMember.memId}" + "&webNovNum=" + webNovNum + "&webNovChapNum=" + webNovChapNum; 
 
-					return; 
+					
 				}
 			}
 		}

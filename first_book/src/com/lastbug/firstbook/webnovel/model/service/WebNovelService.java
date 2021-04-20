@@ -10,6 +10,7 @@ import java.sql.Connection;
 import java.util.List;
 
 import com.lastbug.firstbook.member.model.dto.MemberDTO;
+import com.lastbug.firstbook.member.model.dto.UseCoinDTO;
 import com.lastbug.firstbook.webnovel.model.dao.WebNovelDAO;
 import com.lastbug.firstbook.webnovel.model.dto.PageInfoDTO;
 import com.lastbug.firstbook.webnovel.model.dto.WebNovChapSearchDTO;
@@ -388,6 +389,14 @@ public class WebNovelService {
 	public MemberDTO chargeCoin(int webNovNum, int webNovChapNum, String memId, int memNum) {
 
 		Connection con = getConnection();
+		
+//		UseCoinDTO webNov = webNovelDAO.selectBuyed(con, webNovNum, webNovChapNum, memNum);
+		
+//		if(!(webNov.getWebNov().getWebNovNum() == webNovNum && webNov.getChapterNum() == webNovChapNum)) {
+//			
+//			// 결제 안되었을 때
+//			
+//		}
 
 		/* 현재 적립금 조회 */
 		MemberDTO result = webNovelDAO.selectMemPoint(con, memId);
@@ -404,17 +413,18 @@ public class WebNovelService {
 		
 		/* 현재 보유코인 - 편당 코인 */
 		int restCoin = currentCoin - perChapCoin;
-		System.out.println("보유한 금액 - 편당코인" + restCoin);
+		System.out.println("보유한 금액 - 편당코인 : " + restCoin);
 
 		/* 편당 코인 차감 후 다시 넣기 */
 		int updateCoin = webnovelDAO.updateCoin(con, memId, restCoin);
-		System.out.println("옵데이트 한 후 코인" + updateCoin);
+		System.out.println("업데이트 결과 : " + updateCoin);
 		
 		/* 읽을 수 있도록 전환하기 */
-//		int updateChap = webnovelDAO.updateChap(con, webNovNum, webNovChapNum);
+		int updateChap = webnovelDAO.updateChap(con, webNovNum, webNovChapNum);
 		MemberDTO result2 = webNovelDAO.selectMemPoint(con, memId);
+		System.out.println("업데이트 후 남은 코인 : " + result2.getMemCoin());
 		
-		if(updateCoin > 0) {
+		if(updateCoin > 0 ) {
 			
 			/* 결제 내역에 추가 */
 			 int historyResult = webnovelDAO.insertPaidHistory(con, webNovNum, webNovChapNum, memNum, perChapCoin);
@@ -447,9 +457,9 @@ public class WebNovelService {
 		if(!isUpdate) {	// 등록할 때
 			if(result == 0) {	
 				result = webNovelDAO.updateWishList(con, weblistNum, memNum2);
-				System.out.println("result" + result);
+//				System.out.println("result" + result);
 				if(result > 0) {	//업데이트 성공시
-					System.out.println("등록 됨?");
+//					System.out.println("등록 됨?");
 					isUpdate = true;
 					commit(con);
 					System.out.println("boolean값(등록 후) " + isUpdate);
@@ -481,6 +491,55 @@ public class WebNovelService {
 		return result;
 
 
+	}
+
+	public MemberDTO finishedchargeCoin(int webNovNum, int webNovChapNum, String memId, int memNum) {
+		Connection con = getConnection();
+
+		/* 현재 적립금 조회 */
+		MemberDTO result = webNovelDAO.finishedselectMemPoint(con, memId);
+
+		int currentCoin = result.getMemCoin();
+		System.out.println("현재 적립급" + currentCoin);
+
+
+		/* 웹소설 편당 코인 가져오기 */
+		WebNovelDAO webnovelDAO = new WebNovelDAO();
+		WebNovChapSearchDTO webchap = webnovelDAO.finishedselectPerChapCoin(con, webNovNum, webNovChapNum);
+		int perChapCoin = webchap.getChapPerPrice();
+		System.out.println("편당 코인 " + perChapCoin);
+		
+		/* 현재 보유코인 - 편당 코인 */
+		int restCoin = currentCoin - perChapCoin;
+		System.out.println("보유한 금액 - 편당코인 : " + restCoin);
+
+		/* 편당 코인 차감 후 다시 넣기 */
+		int updateCoin = webnovelDAO.updateCoin(con, memId, restCoin);
+		System.out.println("업데이트 결과 : " + updateCoin);
+		
+		/* 읽을 수 있도록 전환하기 */
+//		int updateChap = webnovelDAO.updateChap(con, webNovNum, webNovChapNum);
+		MemberDTO result2 = webNovelDAO.finishedselectMemPoint(con, memId);
+		System.out.println("업데이트 후 남은 코인 : " + result2.getMemCoin());
+		
+		if(updateCoin > 0) {
+			
+			/* 결제 내역에 추가 */
+			 int historyResult = webnovelDAO.finishedinsertPaidHistory(con, webNovNum, webNovChapNum, memNum, perChapCoin);
+
+			 if(historyResult > 0) {
+				 
+				 commit(con);
+			 }else {
+				 rollback(con);
+			 }
+		}else {
+			rollback(con);
+		}
+
+		close(con);
+
+		return result2;
 	}
 }
 

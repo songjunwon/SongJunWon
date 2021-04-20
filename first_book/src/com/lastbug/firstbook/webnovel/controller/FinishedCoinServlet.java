@@ -1,4 +1,4 @@
-package com.lastbug.firstbook.member.controller;
+package com.lastbug.firstbook.webnovel.controller;
 
 import java.io.IOException;
 import java.util.List;
@@ -21,13 +21,13 @@ import com.lastbug.firstbook.webnovel.model.service.WebNovelService;
 /**
  * Servlet implementation class ChargeCoinServlet
  */
-@WebServlet("/member/chargeCoin")
-public class ChargeCoinServlet extends HttpServlet {
+@WebServlet("/member/finished/chargeCoin")
+public class FinishedCoinServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 
-//		System.out.println("충전 서블릿");
+
 		String memId = request.getParameter("memId");
 		int webNovNum = Integer.parseInt(request.getParameter("webNovNum"));
 		int webNovChapNum = Integer.parseInt(request.getParameter("webNovChapNum"));
@@ -58,25 +58,27 @@ public class ChargeCoinServlet extends HttpServlet {
 		
 //		MemberDTO loginMember = new MemberService().loginCheck(result);
 		String path = "";
+		MemberDTO loginMember = memService.selectMember(memNum);
 		
 
 		System.out.println("webNovChapNum" + webNovChapNum);
 //		MemberDTO memDTO = new MemberDTO();
+		
+		
 		
 //		WebNovelInfoDTO webDetail = webNovelService.selectWebNovelDetail(no);
 		
 		
 		WebNovelInfoDTO title = webService.searchTitlePaid(webNovNum);
 		
-		MemberDTO result = webService.chargeCoin(webNovNum, webNovChapNum, memId, memNum);
+		MemberDTO result = webService.finishedchargeCoin(webNovNum, webNovChapNum, memId, memNum);
 		System.out.println("현재코인" + result.getMemCoin());
 		
-		MemberDTO loginMember = memService.selectMember(memNum);
 
 			if(!perChap.isEmpty()) {
 				HttpSession session = request.getSession();
 				session.setAttribute("loginMember", loginMember);
-				path = "/WEB-INF/views/webnovel/webviewer.jsp";
+				path = "/WEB-INF/views/webnovel/finishedwebviewer.jsp";
 				request.setAttribute("perChap", perChap);
 				request.setAttribute("pageInfo", pageInfo);
 				request.setAttribute("currentWebNov", webNovNum);

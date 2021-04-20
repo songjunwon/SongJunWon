@@ -16,6 +16,7 @@ import java.util.Properties;
 
 import com.lastbug.firstbook.common.config.ConfigLocation;
 import com.lastbug.firstbook.member.model.dto.MemberDTO;
+import com.lastbug.firstbook.member.model.dto.UseCoinDTO;
 import com.lastbug.firstbook.webnovel.model.dto.GenreCategoryDTO;
 import com.lastbug.firstbook.webnovel.model.dto.PageInfoDTO;
 import com.lastbug.firstbook.webnovel.model.dto.WebNovChapNumDTO;
@@ -975,6 +976,98 @@ public class WebNovelDAO {
 		
 		return result;
 	}
+
+	public MemberDTO finishedselectMemPoint(Connection con, String memId) {
+		PreparedStatement pstmt = null;
+		ResultSet rset = null;
+		
+		MemberDTO result = null;
+		
+		String query = prop.getProperty("finishedselectMemPoint");
+		
+		try {
+			pstmt = con.prepareStatement(query);
+			pstmt.setString(1, memId);
+			
+			rset = pstmt.executeQuery();
+			
+			while(rset.next()) {
+				
+				result = new MemberDTO();
+				result.setMemCoin(rset.getInt("MEM_COIN"));
+			}
+			
+		} catch (SQLException e) {
+			e.printStackTrace();
+		}finally {
+			close(pstmt);
+		}
+		
+		return result;
+	}
+
+	public WebNovChapSearchDTO finishedselectPerChapCoin(Connection con, int webNovNum, int webNovChapNum) {
+		PreparedStatement pstmt = null;
+		ResultSet rset = null;
+		
+		WebNovChapSearchDTO PerChapCoin = null;
+		
+		String query = prop.getProperty("finishedselectPerChapCoin");
+		
+		try {
+			pstmt = con.prepareStatement(query);
+			pstmt.setInt(1, webNovNum);
+			pstmt.setInt(2, webNovChapNum);
+	
+			rset = pstmt.executeQuery();
+			
+			while(rset.next()) {
+				PerChapCoin = new WebNovChapSearchDTO();
+				
+				PerChapCoin.setChapPerPrice(rset.getInt("CHAP_PER_PRICE"));
+			}
+			
+			
+		} catch (SQLException e) {
+			e.printStackTrace();
+		}	
+		return PerChapCoin;	
+	}
+
+	public int finishedinsertPaidHistory(Connection con, int webNovNum, int webNovChapNum, int memNum,
+			int perChapCoin) {
+		
+		
+		PreparedStatement pstmt = null;
+		int result = 0;
+		
+		String query = prop.getProperty("finishedinsertPaidHistory");
+		
+		try {
+			pstmt = con.prepareStatement(query);
+			pstmt.setInt(1, webNovNum);
+			pstmt.setInt(2, memNum);
+			pstmt.setInt(3, perChapCoin);
+			pstmt.setInt(4, webNovChapNum);
+			
+			result = pstmt.executeUpdate();
+			
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		} finally {
+			close(pstmt);
+		}
+	
+		return result;
+	}
+
+	public UseCoinDTO selectBuyed(Connection con, int webNovNum, int webNovChapNum, int memNum) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+
 }
 
 

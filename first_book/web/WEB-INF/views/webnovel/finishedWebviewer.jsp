@@ -11,12 +11,13 @@
 	href="/firstbook/resources/css/webnovel/webViewer.css">
 <link rel="stylesheet" href="/firstbook/resources/css/common/reset.css">
 <link rel="stylesheet" href="/firstbook/resources/css/member/style.css">
+<link rel="shortcut icon" href="#">
 </head>
 
 
 <body>
 
-<h1>웹뷰어</h1>
+
 		
 	<br><br><br><br><br><br>
 	<div id="wrap">

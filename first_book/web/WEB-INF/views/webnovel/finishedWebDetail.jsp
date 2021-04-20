@@ -431,7 +431,7 @@
 					var perChap = 100;
 					
 					var remain = currentCoin - perChap; --%>
-					location.href = "${ pageContext.servletContext.contextPath}/member/chargeCoin?memId=${sessionScope.loginMember.memId}" + "&webNovNum=" + webNovNum + "&webNovChapNum=" + webNovChapNum; 
+					 location.href = "${ pageContext.servletContext.contextPath}/member/chargeCoin?memId=${sessionScope.loginMember.memId}" + "&webNovNum=" + webNovNum + "&webNovChapNum=" + webNovChapNum;  
 
 					return; 
 				}

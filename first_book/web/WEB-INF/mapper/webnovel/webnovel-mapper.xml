@@ -297,7 +297,41 @@
         , ?
         , ?
         )
-	</entry> 
+	</entry>
+	<entry key="finishedselectMemPoint">
+        SELECT
+               A.MEM_COIN
+          FROM MEM_INFO A
+         WHERE A.MEM_ID = ?
+    </entry>
+    <entry key="finishedselectPerChapCoin">
+       SELECT 		/* com.lastbug.firstbook.webnovel.model.dao.WebNovelDAO#finishedselectPerChapCoin() */
+              A.CHAP_PER_PRICE
+         FROM WEB_NOV_CHAP_SEARCH A
+        WHERE WEB_NOV_NUM = ?
+          AND CHAP_NUM = ?
+   </entry> 
+	<entry key="finishedinsertPaidHistory">
+		INSERT
+	      INTO COIN_USE_HIS
+         (
+               COIN_USE_NUM
+             , WEB_NOV_NUM
+             , MEM_NUM
+             , COIN_USE_DATE
+             , COIN_USAGE
+             , CHAPTER_NUM
+         )
+        VALUES
+        (
+          SEQ_COIN_USE_HIS.NEXTVAL
+        , ?
+        , ?
+        , SYSDATE
+        , ?
+        , ?
+        )
+	</entry>
 </properties>
 
 
