@@ -47,7 +47,7 @@
 					<th> 총 회원수
 				</tr>
 				<tr>
-					<td>
+					<td align="center">
 						<c:out value="${ requestScope.allMemberCount }"/>
 					</td>
 				</tr>
