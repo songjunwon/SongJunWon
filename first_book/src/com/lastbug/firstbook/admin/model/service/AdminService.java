@@ -63,6 +63,20 @@ public class AdminService {
 
 	}
 
+	public int allMemberCount() {
+
+		Connection con = getConnection();
+		
+		int allMemberCount = adminDAO.allMemberCount(con);
+		
+		
+		close(con);
+		
+		return allMemberCount;
+		
+
+	}
+
 
 	
 }

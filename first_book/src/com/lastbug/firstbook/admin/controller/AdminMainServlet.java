@@ -7,6 +7,8 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import com.lastbug.firstbook.admin.model.service.AdminService;
+
 
 @WebServlet("/admin/main")
 public class AdminMainServlet extends HttpServlet {
@@ -15,9 +17,22 @@ public class AdminMainServlet extends HttpServlet {
 
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		
+		AdminService adminService = new AdminService();
 		
+		int allMemberCount = adminService.allMemberCount();
 		
-		request.getRequestDispatcher("/WEB-INF/views/admin/adminMain.jsp").forward(request, response);
+		if(allMemberCount!=0) {
+			
+			request.setAttribute("allMemberCount", allMemberCount);
+			request.getRequestDispatcher("/WEB-INF/views/admin/adminMain.jsp").forward(request, response);
+			
+		} else {
+			
+			request.setAttribute("message", "failed");
+			
+			
+		}
+		
 	}
 
 }

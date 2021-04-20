@@ -204,6 +204,41 @@ public class AdminDAO {
 	}
 
 
+	public int allMemberCount(Connection con) {
+		
+		PreparedStatement pstmt = null;
+		
+		
+		ResultSet rset = null;
+		
+		String query = prop.getProperty("selectAllMemCount");
+		
+		int allMemberCount = 0;
+		
+		try {
+			
+			pstmt = con.prepareStatement(query);
+			
+			rset = pstmt.executeQuery();
+			
+			if(rset.next()) {
+				
+				allMemberCount = rset.getInt("COUNT(*)");
+			}
+			
+			
+			
+		} catch (SQLException e) {
+			
+			
+			e.printStackTrace();
+		}
+		
+		
+		return allMemberCount;
+	}
+
+
 
 	
 }

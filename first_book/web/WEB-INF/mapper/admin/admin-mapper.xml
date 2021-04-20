@@ -6,6 +6,14 @@
      	*
      	FROM MEM_INFO
 	</entry>
+	
+	<entry key="selectAllMemCount">
+     	SELECT /* com.lastbug.firstbook.admin.model.dao.AdminDAO#selectAllMemList()*/
+     	COUNT(*)
+     	FROM MEM_INFO
+	</entry>
+	
+	
 	<entry key="searchMemberNumber">
 		SELECT
 		*

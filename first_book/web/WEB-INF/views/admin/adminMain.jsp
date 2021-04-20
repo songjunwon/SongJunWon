@@ -40,8 +40,19 @@
 		
 		<article id="a2">
 			
-			방문자 유입현황
-		
+			<label style="font-size:30px;"> 회원관리 </label>
+			<br>
+			<table border="1">
+				<tr>
+					<th> 총 회원수
+				</tr>
+				<tr>
+					<td>
+						<c:out value="${ requestScope.allMemberCount }"/>
+					</td>
+				</tr>
+			
+			</table> 
 		</article>
 		
 		
