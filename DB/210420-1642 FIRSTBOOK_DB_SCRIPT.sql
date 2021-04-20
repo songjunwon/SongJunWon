@@ -34,7 +34,7 @@ CREATE TABLE MEM_INFO
     MEM_BIRTHDATE     DATE                                                      NOT NULL,
     MEM_LOGIN_COUNT   NUMBER  DEFAULT 0                                         NOT NULL,
     MEM_COIN         NUMBER  DEFAULT 0                                         NOT NULL,
-    MEM_CAN_VOTE_YN  CHAR(1) DEFAULT 'N' CHECK (MEM_CAN_VOTE_YN IN('Y', 'N')) NOT NULL,
+    MEM_CAN_VOTE_YN  CHAR(1) DEFAULT 'Y' CHECK (MEM_CAN_VOTE_YN IN('Y', 'N')) NOT NULL,
     MEM_WITHDRAW_YN  CHAR(1) DEFAULT 'N' CHECK (MEM_WITHDRAW_YN IN('Y', 'N')) NOT NULL,
     MEM_WITHDRAW_DATE DATE,
     MEM_CLASS         VARCHAR2(10),
@@ -314,83 +314,83 @@ VALUES (  49  ,  8  , 'Y' , '방패 용사 성공담 ' , ' 내용 1 ' , '2021Q1'
 
 INSERT INTO COMPET_INFO (COMPET_NUM, MEM_NUM, COMPET_PAPER_YN, NOV_TITLE, NOV_INFO, COMPET_SSN, COMPET_NOV_IMG_LOCATION,
                          SCORE, COMPET_ACT_YN, AGE_LIMIT, CATEGORY_CODE)
-VALUES (  50  ,  9  , 'Y' , ' 루팡 17 세 ' , ' 내용 2 ' , '2021Q1' , '/firstbook/resources/image/contest/competInfo/65.jpg' , 25 , 'Y' , 17 , 'OF' );
+VALUES (  50  ,  9  , 'Y' , ' 루팡 17 세 ' , ' 내용 2 ' , '2021Q1' , '/firstbook/resources/image/contest/competInfo/66.jpg' , 25 , 'Y' , 17 , 'OF' );
 
 INSERT INTO COMPET_INFO (COMPET_NUM, MEM_NUM, COMPET_PAPER_YN, NOV_TITLE, NOV_INFO, COMPET_SSN, COMPET_NOV_IMG_LOCATION,
                          SCORE, COMPET_ACT_YN, AGE_LIMIT, CATEGORY_CODE)
-VALUES (  51  ,  10, 'Y' , ' 1412 괴도 키드 ' , ' 내용 3 ' , '2021Q1' , '/firstbook/resources/image/contest/competInfo/65.jpg' , 77 , 'Y' , 17 , 'F' );
+VALUES (  51  ,  10, 'Y' , ' 1412 괴도 키드 ' , ' 내용 3 ' , '2021Q1' , '/firstbook/resources/image/contest/competInfo/67.jpg' , 77 , 'Y' , 17 , 'F' );
 
 INSERT INTO COMPET_INFO (COMPET_NUM, MEM_NUM, COMPET_PAPER_YN, NOV_TITLE, NOV_INFO, COMPET_SSN, COMPET_NOV_IMG_LOCATION,
                          SCORE, COMPET_ACT_YN, AGE_LIMIT, CATEGORY_CODE)
-VALUES (  52  ,  11 , 'Y' , ' 어른 제국의 역습 ' , ' 내용 4 ' , '2021Q1' , '/firstbook/resources/image/contest/competInfo/65.jpg' , 8 , 'Y' , 15 , 'MF' );
+VALUES (  52  ,  11 , 'Y' , ' 어른 제국의 역습 ' , ' 내용 4 ' , '2021Q1' , '/firstbook/resources/image/contest/competInfo/68.jpg' , 8 , 'Y' , 15 , 'MF' );
 
 INSERT INTO COMPET_INFO (COMPET_NUM, MEM_NUM, COMPET_PAPER_YN, NOV_TITLE, NOV_INFO, COMPET_SSN, COMPET_NOV_IMG_LOCATION,
                          SCORE, COMPET_ACT_YN, AGE_LIMIT, CATEGORY_CODE)
-VALUES (  53  ,  12 , 'Y' , ' 짱구는 못말려 ' , ' 내용 5 ' , '2021Q1' , '/firstbook/resources/image/contest/competInfo/65.jpg' , 7 , 'Y' , 19 , 'FH' );
+VALUES (  53  ,  12 , 'Y' , ' 짱구는 못말려 ' , ' 내용 5 ' , '2021Q1' , '/firstbook/resources/image/contest/competInfo/69.jpg' , 7 , 'Y' , 19 , 'FH' );
 
 INSERT INTO COMPET_INFO (COMPET_NUM, MEM_NUM, COMPET_PAPER_YN, NOV_TITLE, NOV_INFO, COMPET_SSN, COMPET_NOV_IMG_LOCATION,
                          SCORE, COMPET_ACT_YN, AGE_LIMIT, CATEGORY_CODE)
-VALUES (  54  ,  13 , 'Y' , ' 아땀 맘마 완결 ' , ' 내용 6 ' , '2021Q1' , '/firstbook/resources/image/contest/competInfo/65.jpg' , 44 , 'Y' , 12 , 'ROM' );
+VALUES (  54  ,  13 , 'Y' , ' 아땀 맘마 완결 ' , ' 내용 6 ' , '2021Q1' , '/firstbook/resources/image/contest/competInfo/70.jpg' , 44 , 'Y' , 12 , 'ROM' );
 
 INSERT INTO COMPET_INFO (COMPET_NUM, MEM_NUM, COMPET_PAPER_YN, NOV_TITLE, NOV_INFO, COMPET_SSN, COMPET_NOV_IMG_LOCATION,
                         SCORE, COMPET_ACT_YN, AGE_LIMIT, CATEGORY_CODE)
-VALUES (  55  ,  14 , 'Y' , ' 오징어 땅콩 맛있어 ' , ' 내용 7 ' , '2021Q1' , '/firstbook/resources/image/contest/competInfo/65.jpg' , 7 , 'Y' , 15 , 'F' );
+VALUES (  55  ,  14 , 'Y' , ' 오징어 땅콩 맛있어 ' , ' 내용 7 ' , '2021Q1' , '/firstbook/resources/image/contest/competInfo/71.jpg' , 7 , 'Y' , 15 , 'F' );
 
 INSERT INTO COMPET_INFO (COMPET_NUM, MEM_NUM, COMPET_PAPER_YN, NOV_TITLE, NOV_INFO, COMPET_SSN, COMPET_NOV_IMG_LOCATION,
                          SCORE, COMPET_ACT_YN, AGE_LIMIT, CATEGORY_CODE)
-VALUES (  56  ,  15 , 'Y' , ' 떡국 열차 ' , ' 내용 8 ' , '2021Q1' , '/firstbook/resources/image/contest/competInfo/65.jpg' , 4 , 'Y' , 15 , 'MF' );
+VALUES (  56  ,  15 , 'Y' , ' 떡국 열차 ' , ' 내용 8 ' , '2021Q1' , '/firstbook/resources/image/contest/competInfo/72.jpg' , 4 , 'Y' , 15 , 'MF' );
 
 INSERT INTO COMPET_INFO (COMPET_NUM, MEM_NUM, COMPET_PAPER_YN, NOV_TITLE, NOV_INFO, COMPET_SSN, COMPET_NOV_IMG_LOCATION,
                          SCORE, COMPET_ACT_YN, AGE_LIMIT, CATEGORY_CODE)
-VALUES (  57  ,  8  , 'Y' , ' 호카게는 아무나 되냐? ' , ' 내용 9 ' , '2021Q1' , '/firstbook/resources/image/contest/competInfo/65.jpg' , 15 , 'Y'  , 15 , 'MF' );
+VALUES (  57  ,  8  , 'Y' , ' 호카게는 아무나 되냐? ' , ' 내용 9 ' , '2021Q1' , '/firstbook/resources/image/contest/competInfo/73.jpg' , 15 , 'Y'  , 15 , 'MF' );
 
 INSERT INTO COMPET_INFO (COMPET_NUM, MEM_NUM, COMPET_PAPER_YN, NOV_TITLE, NOV_INFO, COMPET_SSN, COMPET_NOV_IMG_LOCATION,
                          SCORE, COMPET_ACT_YN, AGE_LIMIT, CATEGORY_CODE)
-VALUES (  58  ,  9 , 'Y' , ' 난 해적왕이 될꺼 냐 ' , ' 내용 10 ' , '2021Q1' , '/firstbook/resources/image/contest/competInfo/65.jpg' , 25 , 'Y' , 12 , 'SPO' );
+VALUES (  58  ,  9 , 'Y' , ' 난 해적왕이 될꺼 냐 ' , ' 내용 10 ' , '2021Q1' , '/firstbook/resources/image/contest/competInfo/74.jpg' , 25 , 'Y' , 12 , 'SPO' );
 
 INSERT INTO COMPET_INFO (COMPET_NUM, MEM_NUM, COMPET_PAPER_YN, NOV_TITLE, NOV_INFO, COMPET_SSN, COMPET_NOV_IMG_LOCATION,
                          SCORE, COMPET_ACT_YN, AGE_LIMIT, CATEGORY_CODE)
-VALUES (  59  ,  10  , 'Y' , ' 원피스 딴따 ~ ' , ' 내용 11 ' , '2021Q1' , '/firstbook/resources/image/contest/competInfo/65.jpg' , 14 , 'Y' , 15 , 'OF' );
+VALUES (  59  ,  10  , 'Y' , ' 원피스 딴따 ~ ' , ' 내용 11 ' , '2021Q1' , '/firstbook/resources/image/contest/competInfo/75.jpg' , 14 , 'Y' , 15 , 'OF' );
 
 INSERT INTO COMPET_INFO (COMPET_NUM, MEM_NUM, COMPET_PAPER_YN, NOV_TITLE, NOV_INFO, COMPET_SSN, COMPET_NOV_IMG_LOCATION,
                          SCORE, COMPET_ACT_YN, AGE_LIMIT, CATEGORY_CODE)
-VALUES (  60  ,  11  , 'Y' , ' 디아블로 잡아 본 사람 ' , ' 내용 12 ' , '2021Q1' , '/firstbook/resources/image/contest/competInfo/65.jpg' , 78 , 'Y' , 15 , 'MF' );
+VALUES (  60  ,  11  , 'Y' , ' 디아블로 잡아 본 사람 ' , ' 내용 12 ' , '2021Q1' , '/firstbook/resources/image/contest/competInfo/76.jpg' , 78 , 'Y' , 15 , 'MF' );
 
 INSERT INTO COMPET_INFO (COMPET_NUM, MEM_NUM, COMPET_PAPER_YN, NOV_TITLE, NOV_INFO, COMPET_SSN, COMPET_NOV_IMG_LOCATION,
                          SCORE, COMPET_ACT_YN, AGE_LIMIT, CATEGORY_CODE)
-VALUES (  61  ,  12  , 'Y' , ' 시계 오버 ' , ' 내용 13 ' , '2021Q1' , '/firstbook/resources/image/contest/competInfo/65.jpg' , 52 , 'Y' , 19 , 'F' );
+VALUES (  61  ,  12  , 'Y' , ' 시계 오버 ' , ' 내용 13 ' , '2021Q1' , '/firstbook/resources/image/contest/competInfo/77.jpg' , 52 , 'Y' , 19 , 'F' );
 
 INSERT INTO COMPET_INFO (COMPET_NUM, MEM_NUM, COMPET_PAPER_YN, NOV_TITLE, NOV_INFO, COMPET_SSN, COMPET_NOV_IMG_LOCATION,
                          SCORE, COMPET_ACT_YN, AGE_LIMIT, CATEGORY_CODE)
-VALUES (  62  ,  13  , 'Y' , ' 리그 오브 레전더 리링 ' , ' 내용 14 ' , '2021Q1' , '/firstbook/resources/image/contest/competInfo/65.jpg' , 96 , 'Y' , 12 , 'MF' );
+VALUES (  62  ,  13  , 'Y' , ' 리그 오브 레전더 리링 ' , ' 내용 14 ' , '2021Q1' , '/firstbook/resources/image/contest/competInfo/78.jpg' , 96 , 'Y' , 12 , 'MF' );
 
 INSERT INTO COMPET_INFO (COMPET_NUM, MEM_NUM, COMPET_PAPER_YN, NOV_TITLE, NOV_INFO, COMPET_SSN, COMPET_NOV_IMG_LOCATION,
                          SCORE, COMPET_ACT_YN, AGE_LIMIT, CATEGORY_CODE)
-VALUES (  63  ,  14  , 'Y' , ' 메이플 월드를 지켜라 ' , ' 내용 15 ' , '2021Q1' , '/firstbook/resources/image/contest/competInfo/65.jpg' , 14 , 'Y' , 12 , 'SPO' );
+VALUES (  63  ,  14  , 'Y' , ' 메이플 월드를 지켜라 ' , ' 내용 15 ' , '2021Q1' , '/firstbook/resources/image/contest/competInfo/79.jpg' , 14 , 'Y' , 12 , 'SPO' );
 
 INSERT INTO COMPET_INFO (COMPET_NUM, MEM_NUM, COMPET_PAPER_YN, NOV_TITLE, NOV_INFO, COMPET_SSN, COMPET_NOV_IMG_LOCATION,
                          SCORE, COMPET_ACT_YN, AGE_LIMIT, CATEGORY_CODE)
-VALUES (  64  ,  15  , 'Y' , ' 메이플 스토리 운명의 소녀 ' , ' 내용 16 ' , '2021Q1' , '/firstbook/resources/image/contest/competInfo/65.jpg' , 63 , 'Y' , 12 , 'SPO' );
+VALUES (  64  ,  15  , 'Y' , ' 메이플 스토리 운명의 소녀 ' , ' 내용 16 ' , '2021Q1' , '/firstbook/resources/image/contest/competInfo/80.jpg' , 63 , 'Y' , 12 , 'SPO' );
 
 INSERT INTO COMPET_INFO (COMPET_NUM, MEM_NUM, COMPET_PAPER_YN, NOV_TITLE, NOV_INFO, COMPET_SSN, COMPET_NOV_IMG_LOCATION,
                          SCORE, COMPET_ACT_YN, AGE_LIMIT, CATEGORY_CODE)
-VALUES (  33  ,  8  , 'Y' , '방패 용사 성공담 ' , ' 내용 1 ' , '2020Q4' , '/firstbook/resources/image/contest/competInfo/70.jpg' , 199 , 'Y' , 15 , 'MF' );
+VALUES (  33  ,  8  , 'Y' , '방패 용사 성공담 ' , ' 내용 1 ' , '2020Q4' , '/firstbook/resources/image/contest/competInfo/65.jpg' , 199 , 'Y' , 15 , 'MF' );
 
 INSERT INTO COMPET_INFO (COMPET_NUM, MEM_NUM, COMPET_PAPER_YN, NOV_TITLE, NOV_INFO, COMPET_SSN, COMPET_NOV_IMG_LOCATION,
                          SCORE, COMPET_ACT_YN, AGE_LIMIT, CATEGORY_CODE)
-VALUES (  34  ,  9  , 'Y' , ' 루팡 17 세 ' , ' 내용 2 ' , '2020Q4' , '/firstbook/resources/image/contest/competInfo/70.jpg' , 25 , 'Y' , 17 , 'OF' );
+VALUES (  34  ,  9  , 'Y' , ' 루팡 17 세 ' , ' 내용 2 ' , '2020Q4' , '/firstbook/resources/image/contest/competInfo/66.jpg' , 25 , 'Y' , 17 , 'OF' );
 
 INSERT INTO COMPET_INFO (COMPET_NUM, MEM_NUM, COMPET_PAPER_YN, NOV_TITLE, NOV_INFO, COMPET_SSN, COMPET_NOV_IMG_LOCATION,
                          SCORE, COMPET_ACT_YN, AGE_LIMIT, CATEGORY_CODE)
-VALUES (  35  ,  10, 'Y' , ' 1412 괴도 키드 ' , ' 내용 3 ' , '2020Q4' , '/firstbook/resources/image/contest/competInfo/70.jpg' , 77 , 'Y' , 17 , 'F' );
+VALUES (  35  ,  10, 'Y' , ' 1412 괴도 키드 ' , ' 내용 3 ' , '2020Q4' , '/firstbook/resources/image/contest/competInfo/67.jpg' , 77 , 'Y' , 17 , 'F' );
 
 INSERT INTO COMPET_INFO (COMPET_NUM, MEM_NUM, COMPET_PAPER_YN, NOV_TITLE, NOV_INFO, COMPET_SSN, COMPET_NOV_IMG_LOCATION,
                          SCORE, COMPET_ACT_YN, AGE_LIMIT, CATEGORY_CODE)
-VALUES (  36  ,  11 , 'Y' , ' 어른 제국의 역습 ' , ' 내용 4 ' , '2020Q4' , '/firstbook/resources/image/contest/competInfo/70.jpg' , 8 , 'Y' , 15 , 'MF' );
+VALUES (  36  ,  11 , 'Y' , ' 어른 제국의 역습 ' , ' 내용 4 ' , '2020Q4' , '/firstbook/resources/image/contest/competInfo/68.jpg' , 8 , 'Y' , 15 , 'MF' );
 
 INSERT INTO COMPET_INFO (COMPET_NUM, MEM_NUM, COMPET_PAPER_YN, NOV_TITLE, NOV_INFO, COMPET_SSN, COMPET_NOV_IMG_LOCATION,
                          SCORE, COMPET_ACT_YN, AGE_LIMIT, CATEGORY_CODE)
-VALUES (  37  ,  12 , 'Y' , ' 짱구는 못말려 ' , ' 내용 5 ' , '2020Q4' , '/firstbook/resources/image/contest/competInfo/70.jpg' , 7 , 'Y' , 19 , 'FH' );
+VALUES (  37  ,  12 , 'Y' , ' 짱구는 못말려 ' , ' 내용 5 ' , '2020Q4' , '/firstbook/resources/image/contest/competInfo/69.jpg' , 7 , 'Y' , 19 , 'FH' );
 
 INSERT INTO COMPET_INFO (COMPET_NUM, MEM_NUM, COMPET_PAPER_YN, NOV_TITLE, NOV_INFO, COMPET_SSN, COMPET_NOV_IMG_LOCATION,
                          SCORE, COMPET_ACT_YN, AGE_LIMIT, CATEGORY_CODE)
@@ -398,43 +398,43 @@ VALUES (  38  ,  13 , 'Y' , ' 아땀 맘마 완결 ' , ' 내용 6 ' , '2020Q4' ,
 
 INSERT INTO COMPET_INFO (COMPET_NUM, MEM_NUM, COMPET_PAPER_YN, NOV_TITLE, NOV_INFO, COMPET_SSN, COMPET_NOV_IMG_LOCATION,
                         SCORE, COMPET_ACT_YN, AGE_LIMIT, CATEGORY_CODE)
-VALUES (  39  ,  14 , 'Y' , ' 오징어 땅콩 맛있어 ' , ' 내용 7 ' , '2020Q4' , '/firstbook/resources/image/contest/competInfo/70.jpg' , 7 , 'Y' , 15 , 'F' );
+VALUES (  39  ,  14 , 'Y' , ' 오징어 땅콩 맛있어 ' , ' 내용 7 ' , '2020Q4' , '/firstbook/resources/image/contest/competInfo/71.jpg' , 7 , 'Y' , 15 , 'F' );
 
 INSERT INTO COMPET_INFO (COMPET_NUM, MEM_NUM, COMPET_PAPER_YN, NOV_TITLE, NOV_INFO, COMPET_SSN, COMPET_NOV_IMG_LOCATION,
                          SCORE, COMPET_ACT_YN, AGE_LIMIT, CATEGORY_CODE)
-VALUES (  40  ,  15 , 'Y' , ' 떡국 열차 ' , ' 내용 8 ' , '2020Q4' , '/firstbook/resources/image/contest/competInfo/70.jpg' , 4 , 'Y' , 15 , 'MF' );
+VALUES (  40  ,  15 , 'Y' , ' 떡국 열차 ' , ' 내용 8 ' , '2020Q4' , '/firstbook/resources/image/contest/competInfo/72.jpg' , 4 , 'Y' , 15 , 'MF' );
 
 INSERT INTO COMPET_INFO (COMPET_NUM, MEM_NUM, COMPET_PAPER_YN, NOV_TITLE, NOV_INFO, COMPET_SSN, COMPET_NOV_IMG_LOCATION,
                          SCORE, COMPET_ACT_YN, AGE_LIMIT, CATEGORY_CODE)
-VALUES (  41  ,  8  , 'Y' , ' 호카게는 아무나 되냐? ' , ' 내용 9 ' , '2020Q4' , '/firstbook/resources/image/contest/competInfo/70.jpg' , 15 , 'Y'  , 15 , 'MF' );
+VALUES (  41  ,  8  , 'Y' , ' 호카게는 아무나 되냐? ' , ' 내용 9 ' , '2020Q4' , '/firstbook/resources/image/contest/competInfo/73.jpg' , 15 , 'Y'  , 15 , 'MF' );
 
 INSERT INTO COMPET_INFO (COMPET_NUM, MEM_NUM, COMPET_PAPER_YN, NOV_TITLE, NOV_INFO, COMPET_SSN, COMPET_NOV_IMG_LOCATION,
                          SCORE, COMPET_ACT_YN, AGE_LIMIT, CATEGORY_CODE)
-VALUES (  42  ,  9 , 'Y' , ' 난 해적왕이 될꺼 냐 ' , ' 내용 10 ' , '2020Q4' , '/firstbook/resources/image/contest/competInfo/70.jpg' , 25 , 'Y' , 12 , 'SPO' );
+VALUES (  42  ,  9 , 'Y' , ' 난 해적왕이 될꺼 냐 ' , ' 내용 10 ' , '2020Q4' , '/firstbook/resources/image/contest/competInfo/74.jpg' , 25 , 'Y' , 12 , 'SPO' );
 
 INSERT INTO COMPET_INFO (COMPET_NUM, MEM_NUM, COMPET_PAPER_YN, NOV_TITLE, NOV_INFO, COMPET_SSN, COMPET_NOV_IMG_LOCATION,
                          SCORE, COMPET_ACT_YN, AGE_LIMIT, CATEGORY_CODE)
-VALUES (  43  ,  10  , 'Y' , ' 원피스 딴따 ~ ' , ' 내용 11 ' , '2020Q4' , '/firstbook/resources/image/contest/competInfo/70.jpg' , 14 , 'Y' , 15 , 'OF' );
+VALUES (  43  ,  10  , 'Y' , ' 원피스 딴따 ~ ' , ' 내용 11 ' , '2020Q4' , '/firstbook/resources/image/contest/competInfo/75.jpg' , 14 , 'Y' , 15 , 'OF' );
 
 INSERT INTO COMPET_INFO (COMPET_NUM, MEM_NUM, COMPET_PAPER_YN, NOV_TITLE, NOV_INFO, COMPET_SSN, COMPET_NOV_IMG_LOCATION,
                          SCORE, COMPET_ACT_YN, AGE_LIMIT, CATEGORY_CODE)
-VALUES (  44  ,  11  , 'Y' , ' 디아블로 잡아 본 사람 ' , ' 내용 12 ' , '2020Q4' , '/firstbook/resources/image/contest/competInfo/70.jpg' , 78 , 'Y' , 15 , 'MF' );
+VALUES (  44  ,  11  , 'Y' , ' 디아블로 잡아 본 사람 ' , ' 내용 12 ' , '2020Q4' , '/firstbook/resources/image/contest/competInfo/76.jpg' , 78 , 'Y' , 15 , 'MF' );
 
 INSERT INTO COMPET_INFO (COMPET_NUM, MEM_NUM, COMPET_PAPER_YN, NOV_TITLE, NOV_INFO, COMPET_SSN, COMPET_NOV_IMG_LOCATION,
                          SCORE, COMPET_ACT_YN, AGE_LIMIT, CATEGORY_CODE)
-VALUES (  45  ,  12  , 'Y' , ' 시계 오버 ' , ' 내용 13 ' , '2020Q4' , '/firstbook/resources/image/contest/competInfo/70.jpg' , 52 , 'Y' , 19 , 'F' );
+VALUES (  45  ,  12  , 'Y' , ' 시계 오버 ' , ' 내용 13 ' , '2020Q4' , '/firstbook/resources/image/contest/competInfo/77.jpg' , 52 , 'Y' , 19 , 'F' );
 
 INSERT INTO COMPET_INFO (COMPET_NUM, MEM_NUM, COMPET_PAPER_YN, NOV_TITLE, NOV_INFO, COMPET_SSN, COMPET_NOV_IMG_LOCATION,
                          SCORE, COMPET_ACT_YN, AGE_LIMIT, CATEGORY_CODE)
-VALUES (  46  ,  13  , 'Y' , ' 리그 오브 레전더 리링 ' , ' 내용 14 ' , '2020Q4' , '/firstbook/resources/image/contest/competInfo/70.jpg' , 96 , 'Y' , 12 , 'MF' );
+VALUES (  46  ,  13  , 'Y' , ' 리그 오브 레전더 리링 ' , ' 내용 14 ' , '2020Q4' , '/firstbook/resources/image/contest/competInfo/78.jpg' , 96 , 'Y' , 12 , 'MF' );
 
 INSERT INTO COMPET_INFO (COMPET_NUM, MEM_NUM, COMPET_PAPER_YN, NOV_TITLE, NOV_INFO, COMPET_SSN, COMPET_NOV_IMG_LOCATION,
                          SCORE, COMPET_ACT_YN, AGE_LIMIT, CATEGORY_CODE)
-VALUES (  47  ,  14  , 'Y' , ' 메이플 월드를 지켜라 ' , ' 내용 15 ' , '2020Q4' , '/firstbook/resources/image/contest/competInfo/70.jpg' , 14 , 'Y' , 12 , 'SPO' );
+VALUES (  47  ,  14  , 'Y' , ' 메이플 월드를 지켜라 ' , ' 내용 15 ' , '2020Q4' , '/firstbook/resources/image/contest/competInfo/79.jpg' , 14 , 'Y' , 12 , 'SPO' );
 
 INSERT INTO COMPET_INFO (COMPET_NUM, MEM_NUM, COMPET_PAPER_YN, NOV_TITLE, NOV_INFO, COMPET_SSN, COMPET_NOV_IMG_LOCATION,
                          SCORE, COMPET_ACT_YN, AGE_LIMIT, CATEGORY_CODE)
-VALUES (  48,  15  , 'Y' , ' 메이플 스토리 운명의 소녀 ' , ' 내용 16 ' , '2020Q4' , '/firstbook/resources/image/contest/competInfo/70.jpg' , 63 , 'Y' , 12 , 'SPO' );
+VALUES (  48,  15  , 'Y' , ' 메이플 스토리 운명의 소녀 ' , ' 내용 16 ' , '2020Q4' , '/firstbook/resources/image/contest/competInfo/80.jpg' , 63 , 'Y' , 12 , 'SPO' );
 
 
 COMMIT;
@@ -2333,6 +2333,24 @@ Insert into WEB_NOV_INFO (WEB_NOV_NUM,CATEGORY_CODE,WEB_NOV_TITLE,WEB_NOV_AUTHOR
 Insert into WEB_NOV_INFO (WEB_NOV_NUM,CATEGORY_CODE,WEB_NOV_TITLE,WEB_NOV_AUTHOR,CHAP_PER_COIN,WEB_NOV_PUBLISHER,WEB_NOV_INFORM,WEB_NOV_IMG_LOCATION,DAY_OF_WEEK,WEB_NOV_IS_OPEN,FINISHED_OR_NOT,WEB_NOV_COUNT) values (65,'OF','두더지 게임','스몰',100,'넥서스','카일란 최고의 노답 직업인 소환술사?','/firstbook/resources/image/webnovel/finished/두더지게임.PNG','완','N','N',0);
 Insert into WEB_NOV_INFO (WEB_NOV_NUM,CATEGORY_CODE,WEB_NOV_TITLE,WEB_NOV_AUTHOR,CHAP_PER_COIN,WEB_NOV_PUBLISHER,WEB_NOV_INFORM,WEB_NOV_IMG_LOCATION,DAY_OF_WEEK,WEB_NOV_IS_OPEN,FINISHED_OR_NOT,WEB_NOV_COUNT) values (67,'MF','슬기로운 조선 생활','미디움웰던',100,'넥서스','"게임의 인기로 인해 유저들이 늘어나면서','/firstbook/resources/image/webnovel/finished/슬기로운 조선생활.PNG','완','N','N',0);
 
+
+Insert into WEB_NOV_INFO (WEB_NOV_NUM,CATEGORY_CODE,WEB_NOV_TITLE,WEB_NOV_AUTHOR,CHAP_PER_COIN,WEB_NOV_PUBLISHER,WEB_NOV_INFORM,WEB_NOV_IMG_LOCATION,DAY_OF_WEEK,WEB_NOV_IS_OPEN,FINISHED_OR_NOT,WEB_NOV_COUNT) values (74,'MF','슬기로운 조선 생활','미디움웰던',100,'넥서스','"게임의 인기로 인해 유저들이 늘어나면서','/firstbook/resources/image/webnovel/finished/슬기로운 조선생활.PNG','금','N','N',0);
+
+Insert into WEB_NOV_INFO (WEB_NOV_NUM,CATEGORY_CODE,WEB_NOV_TITLE,WEB_NOV_AUTHOR,CHAP_PER_COIN,WEB_NOV_PUBLISHER,WEB_NOV_INFORM,WEB_NOV_IMG_LOCATION,DAY_OF_WEEK,WEB_NOV_IS_OPEN,FINISHED_OR_NOT,WEB_NOV_COUNT) values (75,'MF','슬기로운 조선 생활','미디움웰던',100,'넥서스','"게임의 인기로 인해 유저들이 늘어나면서','/firstbook/resources/image/webnovel/finished/몽골에서유럽까지.PNG','수','N','N',0);
+
+Insert into WEB_NOV_INFO (WEB_NOV_NUM,CATEGORY_CODE,WEB_NOV_TITLE,WEB_NOV_AUTHOR,CHAP_PER_COIN,WEB_NOV_PUBLISHER,WEB_NOV_INFORM,WEB_NOV_IMG_LOCATION,DAY_OF_WEEK,WEB_NOV_IS_OPEN,FINISHED_OR_NOT,WEB_NOV_COUNT) values (76,'MF','슬기로운 조선 생활','미디움웰던',100,'넥서스','"게임의 인기로 인해 유저들이 늘어나면서','/firstbook/resources/image/webnovel/finished/슬기로운 조선생활.PNG','목','N','N',0);
+
+Insert into WEB_NOV_INFO (WEB_NOV_NUM,CATEGORY_CODE,WEB_NOV_TITLE,WEB_NOV_AUTHOR,CHAP_PER_COIN,WEB_NOV_PUBLISHER,WEB_NOV_INFORM,WEB_NOV_IMG_LOCATION,DAY_OF_WEEK,WEB_NOV_IS_OPEN,FINISHED_OR_NOT,WEB_NOV_COUNT) values (77,'MF','우주 최강 전사','미디움웰던',100,'넥서스','"게임의 인기로 인해 유저들이 늘어나면서','/firstbook/resources/image/webnovel/finished/전직천하제일인.PNG','토','N','N',0);
+
+Insert into WEB_NOV_INFO (WEB_NOV_NUM,CATEGORY_CODE,WEB_NOV_TITLE,WEB_NOV_AUTHOR,CHAP_PER_COIN,WEB_NOV_PUBLISHER,WEB_NOV_INFORM,WEB_NOV_IMG_LOCATION,DAY_OF_WEEK,WEB_NOV_IS_OPEN,FINISHED_OR_NOT,WEB_NOV_COUNT) values (78,'MF','일요일은 내가 요리사','미디움웰던',100,'넥서스','"게임의 인기로 인해 유저들이 늘어나면서','/firstbook/resources/image/webnovel/finished/작가는죽었다.PNG','일','N','N',0);
+
+
+
+Insert into WEB_NOV_INFO (WEB_NOV_NUM,CATEGORY_CODE,WEB_NOV_TITLE,WEB_NOV_AUTHOR,CHAP_PER_COIN,WEB_NOV_PUBLISHER,WEB_NOV_INFORM,WEB_NOV_IMG_LOCATION,DAY_OF_WEEK,WEB_NOV_IS_OPEN,FINISHED_OR_NOT,WEB_NOV_COUNT) values (79,'MF','내래 북한 1티어','미디움웰던',100,'넥서스','"게임의 인기로 인해 유저들이 늘어나면서','/firstbook/resources/image/webnovel/monToSun/monday/아메리카독재자.PNG','완','N','N',0);
+Insert into WEB_NOV_INFO (WEB_NOV_NUM,CATEGORY_CODE,WEB_NOV_TITLE,WEB_NOV_AUTHOR,CHAP_PER_COIN,WEB_NOV_PUBLISHER,WEB_NOV_INFORM,WEB_NOV_IMG_LOCATION,DAY_OF_WEEK,WEB_NOV_IS_OPEN,FINISHED_OR_NOT,WEB_NOV_COUNT) values (80,'OF','대성이가 돌아왔다','미디움웰던',100,'넥서스','"게임의 인기로 인해 유저들이 늘어나면서','/firstbook/resources/image/webnovel/monToSun/tuesday/천국에서돌아온김대성.PNG','완','N','N',0);
+Insert into WEB_NOV_INFO (WEB_NOV_NUM,CATEGORY_CODE,WEB_NOV_TITLE,WEB_NOV_AUTHOR,CHAP_PER_COIN,WEB_NOV_PUBLISHER,WEB_NOV_INFORM,WEB_NOV_IMG_LOCATION,DAY_OF_WEEK,WEB_NOV_IS_OPEN,FINISHED_OR_NOT,WEB_NOV_COUNT) values (81,'ROM','슬기로운 조선 생활','미디움웰던',100,'넥서스','"게임의 인기로 인해 유저들이 늘어나면서','/firstbook/resources/image/webnovel/finished/슬기로운 조선생활.PNG','완','N','N',0);
+Insert into WEB_NOV_INFO (WEB_NOV_NUM,CATEGORY_CODE,WEB_NOV_TITLE,WEB_NOV_AUTHOR,CHAP_PER_COIN,WEB_NOV_PUBLISHER,WEB_NOV_INFORM,WEB_NOV_IMG_LOCATION,DAY_OF_WEEK,WEB_NOV_IS_OPEN,FINISHED_OR_NOT,WEB_NOV_COUNT) values (82,'SPO','즐거운 생활','미디움웰던',100,'넥서스','"게임의 인기로 인해 유저들이 늘어나면서','/firstbook/resources/image/webnovel/monToSun/saturday/webNov_18_sat.PNG','완','N','N',0);
+
 COMMIT;
 
 
@@ -2380,6 +2398,7 @@ Insert into WEB_NOV_PAGE_NUM (WEB_NOV_PAGE_NUM,WEB_NOV_PAGE_NAME) values (7,'7�
 Insert into WEB_NOV_PAGE_NUM (WEB_NOV_PAGE_NUM,WEB_NOV_PAGE_NAME) values (8,'8쪽');
 Insert into WEB_NOV_PAGE_NUM (WEB_NOV_PAGE_NUM,WEB_NOV_PAGE_NAME) values (9,'9쪽');
 Insert into WEB_NOV_PAGE_NUM (WEB_NOV_PAGE_NUM,WEB_NOV_PAGE_NAME) values (10,'10쪽');
+
 
 
 
@@ -4302,24 +4321,24 @@ CREATE TABLE "QNA_REPLY" (
 	"REPLY_NUM" NUMBER NOT NULL PRIMARY KEY,
 	"POST_NUM" NUMBER NOT NULL REFERENCES QNA(POST_NUM),
 	"REPLY_DATE" DATE NOT NULL,
-	"REPLY_ID" VARCHAR2(30) NOT NULL,
+	"MEM_NUM" NUMBER NOT NULL REFERENCES MEM_INFO(MEM_NUM),
 	"REPLY_CONTENT" VARCHAR2(700) NOT NULL
 );
 
-Insert into QNA_REPLY (REPLY_NUM,POST_NUM,REPLY_DATE,REPLY_ID,REPLY_CONTENT) values (1,1,to_date('20/01/15','RR/MM/DD'),'manager01','안녕하세요~ sjkim님! 당신의 첫번째 책 FirstBook 관리자입니다. 문의주신 상금은 제세공과금이 별도로 부과되며 별도로 계좌를 공지해드릴 예정입니다. 아울러 상금 수령은 sjkim님이 원하시는 계좌와 신분증 사본을 저희쪽에 보내주시면 서류 검토후 계좌 입금해 드릴 예정입니다. ^^');
-Insert into QNA_REPLY (REPLY_NUM,POST_NUM,REPLY_DATE,REPLY_ID,REPLY_CONTENT) values (2,1,to_date('20/01/16','RR/MM/DD'),'sjkim','아… 그렇군요! 답변 감사합니다 얼른 보낼께요 ㅎㅎㅎ');
-Insert into QNA_REPLY (REPLY_NUM,POST_NUM,REPLY_DATE,REPLY_ID,REPLY_CONTENT) values (3,2,to_date('20/02/03','RR/MM/DD'),'manager01','안녕하세요~jspark님! 당신의 첫번째 책 FirstBook 관리자입니다. 아쉽게도 저희 서비스는 별도의 코인 제공이 불가능한 점 양해부탁드립니다. 다만 일주일에 한번씩 위클리 코인 서비스를 운영중에 있으니 아주 잠시, 며칠만 기다려주시면 마이페이지에서 코인을 수령하실 수 있으십니다. 다시한번 저희 서비스를 이용해주셔서 감사드립니다 ^^');
-Insert into QNA_REPLY (REPLY_NUM,POST_NUM,REPLY_DATE,REPLY_ID,REPLY_CONTENT) values (4,2,to_date('20/02/04','RR/MM/DD'),'jspark','아쉽네요!! 좀만 더 참아보죠 뭐 ㅋㅋㅋ 아 다음편 보고 싶다!!!');
-Insert into QNA_REPLY (REPLY_NUM,POST_NUM,REPLY_DATE,REPLY_ID,REPLY_CONTENT) values (5,3,to_date('20/03/05','RR/MM/DD'),'manager01','안녕하세요~ coffeecanu님! 당신의 첫번째 책 FirstBook 관리자입니다. 문의하신 단행본 배송은 현재 서비스 준비중에 있습니다! 사이트 상에서 확인하시면 더욱 좋으실텐데 아쉬우시죠 ㅠㅜ 배송이 완료되면 문자나 쪽지등으로 별도의 연락을 드릴 예정입니다. ');
-Insert into QNA_REPLY (REPLY_NUM,POST_NUM,REPLY_DATE,REPLY_ID,REPLY_CONTENT) values (6,3,to_date('20/03/06','RR/MM/DD'),'coffeecanu','친절한 답변 감사합니다. 커피 한잔 하시고 오늘도 여유로운 하루 되세요.');
-Insert into QNA_REPLY (REPLY_NUM,POST_NUM,REPLY_DATE,REPLY_ID,REPLY_CONTENT) values (7,4,to_date('20/04/02','RR/MM/DD'),'manager01','안녕하세요~ cjim님! 당신의 첫번째 책 FirstBook 관리자입니다. 게시판 하단에 있는 파일 첨부 기능을 사용하시면 됩니다. 키보드의 CTRL키를 누르고 여러 개를 선택하시면 한번에 여러 사진을 올리실 수도 있습니다.');
-Insert into QNA_REPLY (REPLY_NUM,POST_NUM,REPLY_DATE,REPLY_ID,REPLY_CONTENT) values (8,4,to_date('20/04/02','RR/MM/DD'),'cjim','이야~고맙다!!!!!~~글만~~~죽어라고~~ 올릴뻔~~키키키~!!! 고맙다…………^^~~~ 사랑한다~~~~………………!!!');
-Insert into QNA_REPLY (REPLY_NUM,POST_NUM,REPLY_DATE,REPLY_ID,REPLY_CONTENT) values (9,5,to_date('20/05/02','RR/MM/DD'),'manager01','안녕하세요~ neson님! 당신의 첫번째 책 FirstBook 관리자입니다. 안타깝게도 저희는 별도의 선물함 기능은 없습니다만, 통합적으로 코인제도를 운영중에 있습니다! 마이페이지에서 위클리 코인을 기다려서 꼭 눌러주시면 무료로 소설 감상이 가능합니다. ^^');
-Insert into QNA_REPLY (REPLY_NUM,POST_NUM,REPLY_DATE,REPLY_ID,REPLY_CONTENT) values (10,5,to_date('20/05/03','RR/MM/DD'),'neson','위클리 코인 좋네요~ ㅎㅎ 답변 감사합니당');
-Insert into QNA_REPLY (REPLY_NUM,POST_NUM,REPLY_DATE,REPLY_ID,REPLY_CONTENT) values (11,6,to_date('20/06/05','RR/MM/DD'),'manager01','안녕하세요~ scyang님! 당신의 첫번째 책 FirstBook 관리자입니다. 저희 서비스를 사랑해주셔서 진심으로 감사드립니다!! FirsBook은 작가님들과 계약한 출판사, 에이전시에서 소설을 받아 업데이트하는 2차 플랫폼인 점을 알려드리고 싶습니다. 문피아나 조아라에 비하면 업데이트가 느리지만 그만큼 양질의 소설을 공급해드리려 노력하고 있으며, 공모전을 통해 신인 작가들 작품도 많이 게시중에 있습니다. 조금만 기다려주시면 금새 새로운 소설들이 업데이트 되니 양해를 부탁드리겠습니다 ^^');
-Insert into QNA_REPLY (REPLY_NUM,POST_NUM,REPLY_DATE,REPLY_ID,REPLY_CONTENT) values (12,7,to_date('20/07/15','RR/MM/DD'),'manager01','안녕하세요~ jmchun님! 당신의 첫번째 책 FirstBook 관리자입니다. 신고가 많이 누적되어 심려끼쳐드린 점 죄송하게 생각합니다. 신고에 대한 블라인드는 회원들의 재량으로 20회 누적시 이루어지지만, 차단 여부는 관리자 판단하에 이뤄집니다. 0살부터미적분에 달으신 해당 댓글은 차단과 무관한 것으로 판단되니 너무 염려 마시길 바랍니다. 향후 신고제도를 더욱 엄격히 보완하면 이런 불편한 점도 없어지실 겁니다. 조금만 기다려주세요 ^^');
-Insert into QNA_REPLY (REPLY_NUM,POST_NUM,REPLY_DATE,REPLY_ID,REPLY_CONTENT) values (13,8,to_date('20/11/15','RR/MM/DD'),'manager01','안녕하세요~ shkim님! 당신의 첫번째 책 FirstBook 관리자입니다. 안타깝게도 회원님의 차단 기간(30일) 동안은 별도의 서비스 이용이 불가능하십니다. 공모전 결과나 수상시에 제공되는 상금 등에 대한 부분은 별도로 통지 가능한 부분이라 이 부분 양해 부탁드리겠습니다.');
-Insert into QNA_REPLY (REPLY_NUM,POST_NUM,REPLY_DATE,REPLY_ID,REPLY_CONTENT) values (14,10,to_date('20/01/02','RR/MM/DD'),'manager01','안녕하세요~ tlkim님! 당신의 첫번째 책 FirstBook 관리자입니다. 마침 배너 디자인 공모전이 계획 중에 있습니다. 2021년 상반기에 시작될 예정이니 조금만 기다려주세면 곧 공지사항이 올라올겁니다. 궁금하신 사항이 해결되셨길 바랍니다.');
+Insert into QNA_REPLY (REPLY_NUM,POST_NUM,REPLY_DATE,MEM_NUM,REPLY_CONTENT) values (1,1,to_date('20/01/15','RR/MM/DD'),54,'안녕하세요~ sjkim님! 당신의 첫번째 책 FirstBook 관리자입니다. 문의주신 상금은 제세공과금이 별도로 부과되며 별도로 계좌를 공지해드릴 예정입니다. 아울러 상금 수령은 sjkim님이 원하시는 계좌와 신분증 사본을 저희쪽에 보내주시면 서류 검토후 계좌 입금해 드릴 예정입니다. ^^');
+Insert into QNA_REPLY (REPLY_NUM,POST_NUM,REPLY_DATE,MEM_NUM,REPLY_CONTENT) values (2,1,to_date('20/01/16','RR/MM/DD'),54,'아… 그렇군요! 답변 감사합니다 얼른 보낼께요 ㅎㅎㅎ');
+Insert into QNA_REPLY (REPLY_NUM,POST_NUM,REPLY_DATE,MEM_NUM,REPLY_CONTENT) values (3,2,to_date('20/02/03','RR/MM/DD'),54,'안녕하세요~jspark님! 당신의 첫번째 책 FirstBook 관리자입니다. 아쉽게도 저희 서비스는 별도의 코인 제공이 불가능한 점 양해부탁드립니다. 다만 일주일에 한번씩 위클리 코인 서비스를 운영중에 있으니 아주 잠시, 며칠만 기다려주시면 마이페이지에서 코인을 수령하실 수 있으십니다. 다시한번 저희 서비스를 이용해주셔서 감사드립니다 ^^');
+Insert into QNA_REPLY (REPLY_NUM,POST_NUM,REPLY_DATE,MEM_NUM,REPLY_CONTENT) values (4,2,to_date('20/02/04','RR/MM/DD'),54,'아쉽네요!! 좀만 더 참아보죠 뭐 ㅋㅋㅋ 아 다음편 보고 싶다!!!');
+Insert into QNA_REPLY (REPLY_NUM,POST_NUM,REPLY_DATE,MEM_NUM,REPLY_CONTENT) values (5,3,to_date('20/03/05','RR/MM/DD'),54,'안녕하세요~ coffeecanu님! 당신의 첫번째 책 FirstBook 관리자입니다. 문의하신 단행본 배송은 현재 서비스 준비중에 있습니다! 사이트 상에서 확인하시면 더욱 좋으실텐데 아쉬우시죠 ㅠㅜ 배송이 완료되면 문자나 쪽지등으로 별도의 연락을 드릴 예정입니다. ');
+Insert into QNA_REPLY (REPLY_NUM,POST_NUM,REPLY_DATE,MEM_NUM,REPLY_CONTENT) values (6,3,to_date('20/03/06','RR/MM/DD'),54,'친절한 답변 감사합니다. 커피 한잔 하시고 오늘도 여유로운 하루 되세요.');
+Insert into QNA_REPLY (REPLY_NUM,POST_NUM,REPLY_DATE,MEM_NUM,REPLY_CONTENT) values (7,4,to_date('20/04/02','RR/MM/DD'),54,'안녕하세요~ cjim님! 당신의 첫번째 책 FirstBook 관리자입니다. 게시판 하단에 있는 파일 첨부 기능을 사용하시면 됩니다. 키보드의 CTRL키를 누르고 여러 개를 선택하시면 한번에 여러 사진을 올리실 수도 있습니다.');
+Insert into QNA_REPLY (REPLY_NUM,POST_NUM,REPLY_DATE,MEM_NUM,REPLY_CONTENT) values (8,4,to_date('20/04/02','RR/MM/DD'),54,'이야~고맙다!!!!!~~글만~~~죽어라고~~ 올릴뻔~~키키키~!!! 고맙다…………^^~~~ 사랑한다~~~~………………!!!');
+Insert into QNA_REPLY (REPLY_NUM,POST_NUM,REPLY_DATE,MEM_NUM,REPLY_CONTENT) values (9,5,to_date('20/05/02','RR/MM/DD'),54,'안녕하세요~ neson님! 당신의 첫번째 책 FirstBook 관리자입니다. 안타깝게도 저희는 별도의 선물함 기능은 없습니다만, 통합적으로 코인제도를 운영중에 있습니다! 마이페이지에서 위클리 코인을 기다려서 꼭 눌러주시면 무료로 소설 감상이 가능합니다. ^^');
+Insert into QNA_REPLY (REPLY_NUM,POST_NUM,REPLY_DATE,MEM_NUM,REPLY_CONTENT) values (10,5,to_date('20/05/03','RR/MM/DD'),54,'위클리 코인 좋네요~ ㅎㅎ 답변 감사합니당');
+Insert into QNA_REPLY (REPLY_NUM,POST_NUM,REPLY_DATE,MEM_NUM,REPLY_CONTENT) values (11,6,to_date('20/06/05','RR/MM/DD'),54,'안녕하세요~ scyang님! 당신의 첫번째 책 FirstBook 관리자입니다. 저희 서비스를 사랑해주셔서 진심으로 감사드립니다!! FirsBook은 작가님들과 계약한 출판사, 에이전시에서 소설을 받아 업데이트하는 2차 플랫폼인 점을 알려드리고 싶습니다. 문피아나 조아라에 비하면 업데이트가 느리지만 그만큼 양질의 소설을 공급해드리려 노력하고 있으며, 공모전을 통해 신인 작가들 작품도 많이 게시중에 있습니다. 조금만 기다려주시면 금새 새로운 소설들이 업데이트 되니 양해를 부탁드리겠습니다 ^^');
+Insert into QNA_REPLY (REPLY_NUM,POST_NUM,REPLY_DATE,MEM_NUM,REPLY_CONTENT) values (12,7,to_date('20/07/15','RR/MM/DD'),54,'안녕하세요~ jmchun님! 당신의 첫번째 책 FirstBook 관리자입니다. 신고가 많이 누적되어 심려끼쳐드린 점 죄송하게 생각합니다. 신고에 대한 블라인드는 회원들의 재량으로 20회 누적시 이루어지지만, 차단 여부는 관리자 판단하에 이뤄집니다. 0살부터미적분에 달으신 해당 댓글은 차단과 무관한 것으로 판단되니 너무 염려 마시길 바랍니다. 향후 신고제도를 더욱 엄격히 보완하면 이런 불편한 점도 없어지실 겁니다. 조금만 기다려주세요 ^^');
+Insert into QNA_REPLY (REPLY_NUM,POST_NUM,REPLY_DATE,MEM_NUM,REPLY_CONTENT) values (13,8,to_date('20/11/15','RR/MM/DD'),54,'안녕하세요~ shkim님! 당신의 첫번째 책 FirstBook 관리자입니다. 안타깝게도 회원님의 차단 기간(30일) 동안은 별도의 서비스 이용이 불가능하십니다. 공모전 결과나 수상시에 제공되는 상금 등에 대한 부분은 별도로 통지 가능한 부분이라 이 부분 양해 부탁드리겠습니다.');
+Insert into QNA_REPLY (REPLY_NUM,POST_NUM,REPLY_DATE,MEM_NUM,REPLY_CONTENT) values (14,10,to_date('20/01/02','RR/MM/DD'),54,'안녕하세요~ tlkim님! 당신의 첫번째 책 FirstBook 관리자입니다. 마침 배너 디자인 공모전이 계획 중에 있습니다. 2021년 상반기에 시작될 예정이니 조금만 기다려주세면 곧 공지사항이 올라올겁니다. 궁금하신 사항이 해결되셨길 바랍니다.');
 
 ------FAQ
 
@@ -4482,6 +4501,10 @@ START WITH 15;
 
 DROP SEQUENCE SEQ_CHARGE_NO;
 CREATE SEQUENCE SEQ_CHARGE_NO
+START WITH 1;
+
+DROP SEQUENCE SEQ_COIN_USE_HIS;
+CREATE SEQUENCE SEQ_COIN_USE_HIS
 START WITH 1;
 
 SET SERVEROUTPUT ON;

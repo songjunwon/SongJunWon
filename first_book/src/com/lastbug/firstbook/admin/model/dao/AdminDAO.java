@@ -239,6 +239,381 @@ public class AdminDAO {
 	}
 
 
+	public int member10sCount(Connection con) {
+		
+		PreparedStatement pstmt = null;
+				
+		ResultSet rset = null;
+		
+		String query = prop.getProperty("member10sCount");
+		
+		int member10sCount = 0;
+		
+		try {
+			
+			pstmt = con.prepareStatement(query);
+			
+			rset = pstmt.executeQuery();
+			
+			if(rset.next()) {
+				
+				member10sCount = rset.getInt(1);
+			}
+			
+			
+			
+		} catch (SQLException e) {
+			
+			
+			e.printStackTrace();
+		}
+		
+		
+		return member10sCount;
+	}
+
+
+	public int member20sCount(Connection con) {
+		
+		PreparedStatement pstmt = null;
+		
+		ResultSet rset = null;
+		
+		String query = prop.getProperty("member20sCount");
+		
+		int member20sCount = 0;
+		
+		try {
+			
+			pstmt = con.prepareStatement(query);
+			
+			rset = pstmt.executeQuery();
+			
+			if(rset.next()) {
+				
+				member20sCount = rset.getInt(1);
+			}
+			
+			
+			
+		} catch (SQLException e) {
+			
+			
+			e.printStackTrace();
+		}
+		
+		
+		return member20sCount;
+	}
+
+
+	public int member30sCount(Connection con) {
+
+		PreparedStatement pstmt = null;
+		
+		ResultSet rset = null;
+		
+		String query = prop.getProperty("member30sCount");
+		
+		int member30sCount = 0;
+		
+		try {
+			
+			pstmt = con.prepareStatement(query);
+			
+			rset = pstmt.executeQuery();
+			
+			if(rset.next()) {
+				
+				member30sCount = rset.getInt(1);
+			}
+			
+			
+			
+		} catch (SQLException e) {
+			
+			
+			e.printStackTrace();
+		}
+		
+		
+		return member30sCount;
+	}
+
+
+	public int member40sCount(Connection con) {
+
+		PreparedStatement pstmt = null;
+		
+		ResultSet rset = null;
+		
+		String query = prop.getProperty("member40sCount");
+		
+		int member40sCount = 0;
+		
+		try {
+			
+			pstmt = con.prepareStatement(query);
+			
+			rset = pstmt.executeQuery();
+			
+			if(rset.next()) {
+				
+				member40sCount = rset.getInt(1);
+			}
+			
+			
+			
+		} catch (SQLException e) {
+			
+			
+			e.printStackTrace();
+		}
+		
+		
+		return member40sCount;
+	}
+
+
+	public int member50sCount(Connection con) {
+
+		PreparedStatement pstmt = null;
+		
+		ResultSet rset = null;
+		
+		String query = prop.getProperty("member50sCount");
+		
+		int member50sCount = 0;
+		
+		try {
+			
+			pstmt = con.prepareStatement(query);
+			
+			rset = pstmt.executeQuery();
+			
+			if(rset.next()) {
+				
+				member50sCount = rset.getInt(1);
+			}
+			
+			
+			
+		} catch (SQLException e) {
+			
+			
+			e.printStackTrace();
+		}
+		
+		
+		return member50sCount;
+	}
+
+
+	public int allWnCount(Connection con) {
+		
+		PreparedStatement pstmt = null;
+		
+		ResultSet rset = null;
+		
+		String query = prop.getProperty("allWnCount");
+		
+		int allWnCount = 0;
+		
+		try {
+			
+			pstmt = con.prepareStatement(query);
+			
+			rset = pstmt.executeQuery();
+			
+			if(rset.next()) {
+				
+				allWnCount = rset.getInt(1);
+			}
+			
+			
+			
+		} catch (SQLException e) {
+			
+			
+			e.printStackTrace();
+		}
+		
+		
+		return allWnCount;
+
+	}
+
+
+	public int fantasyCount(Connection con) {
+		
+		PreparedStatement pstmt = null;
+		
+		ResultSet rset = null;
+		
+		String query = prop.getProperty("fantasyCount");
+		
+		int fantasyCount = 0;
+		
+		try {
+			
+			pstmt = con.prepareStatement(query);
+			
+			rset = pstmt.executeQuery();
+			
+			if(rset.next()) {
+				
+				fantasyCount = rset.getInt(1);
+			}
+			
+			
+			
+		} catch (SQLException e) {
+			
+			
+			e.printStackTrace();
+		}
+		
+		
+		return fantasyCount;
+	}
+
+
+	public int modernFatasyCount(Connection con) {
+		
+		PreparedStatement pstmt = null;
+		
+		ResultSet rset = null;
+		
+		String query = prop.getProperty("modernFatasyCount");
+		
+		int modernFatasyCount = 0;
+		
+		try {
+			
+			pstmt = con.prepareStatement(query);
+			
+			rset = pstmt.executeQuery();
+			
+			if(rset.next()) {
+				
+				modernFatasyCount = rset.getInt(1);
+			}
+			
+			
+			
+		} catch (SQLException e) {
+			
+			
+			e.printStackTrace();
+		}
+		
+		
+		return modernFatasyCount;
+	}
+
+
+	public int sportsCount(Connection con) {
+		
+		PreparedStatement pstmt = null;
+		
+		ResultSet rset = null;
+		
+		String query = prop.getProperty("sportsCount");
+		
+		int sportsCount = 0;
+		
+		try {
+			
+			pstmt = con.prepareStatement(query);
+			
+			rset = pstmt.executeQuery();
+			
+			if(rset.next()) {
+				
+				sportsCount = rset.getInt(1);
+			}
+			
+			
+			
+		} catch (SQLException e) {
+			
+			
+			e.printStackTrace();
+		}
+		
+		
+		return sportsCount;
+	}
+
+
+	public int fantasyHistoryCount(Connection con) {
+		
+		PreparedStatement pstmt = null;
+		
+		ResultSet rset = null;
+		
+		String query = prop.getProperty("fantasyHistoryCount");
+		
+		int fantasyHistoryCount = 0;
+		
+		try {
+			
+			pstmt = con.prepareStatement(query);
+			
+			rset = pstmt.executeQuery();
+			
+			if(rset.next()) {
+				
+				fantasyHistoryCount = rset.getInt(1);
+			}
+			
+			
+			
+		} catch (SQLException e) {
+			
+			
+			e.printStackTrace();
+		}
+		
+		
+		return fantasyHistoryCount;
+	}
+
+
+	public int romanceCount(Connection con) {
+		
+		PreparedStatement pstmt = null;
+		
+		ResultSet rset = null;
+		
+		String query = prop.getProperty("romanceCount");
+		
+		int romanceCount = 0;
+		
+		try {
+			
+			pstmt = con.prepareStatement(query);
+			
+			rset = pstmt.executeQuery();
+			
+			if(rset.next()) {
+				
+				romanceCount = rset.getInt(1);
+			}
+			
+			
+			
+		} catch (SQLException e) {
+			
+			
+			e.printStackTrace();
+		}
+		
+		
+		return romanceCount;
+	}
+
+
 
 	
 }
