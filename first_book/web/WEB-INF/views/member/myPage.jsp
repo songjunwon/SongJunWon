@@ -75,7 +75,7 @@
                         <c:forEach var="useCoin" items="${ requestScope.useCoinList }">
                         	<div>
                         		<a href="${ pageContext.servletContext.contextPath }/webnovel/detail?webNovNum=${ useCoin.webNov.webNovNum }">
-	                            	<img src="${ pageContext.servletContext.contextPath }${ useCoin.webNov.webNovImgLocation }">
+	                            	<img src="${ useCoin.webNov.webNovImgLocation }">
 	                            </a>
 	                            <p>
 	                            	${ useCoin.webNov.webNovTitle } ${ useCoin.chapterNum }화<br>
