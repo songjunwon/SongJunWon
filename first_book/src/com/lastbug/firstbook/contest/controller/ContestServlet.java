@@ -35,7 +35,7 @@ protected void doGet(HttpServletRequest request, HttpServletResponse response) t
 		} else {						// 공모전 실패 하면
 		
 			path = "/WEB-INF/views/common/failed.jsp";
-			request.setAttribute("message", "공모전 조회 실패!");
+			request.setAttribute("failedCode", "viewFailed");
 		}
 		
 		request.getRequestDispatcher(path).forward(request, response);

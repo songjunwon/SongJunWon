@@ -1139,6 +1139,34 @@ public class MemberDAO {
 		
 		return result;
 	}
+
+	public int insertPaidHistory(Connection con, int webNovNum, int webNovChapNum, int memNum, int perChapCoin) {
+
+		PreparedStatement pstmt = null;
+		int result = 0;
+		
+		String query = prop.getProperty("insertPaidHistory");
+		
+		try {
+			pstmt = con.prepareStatement(query);
+			pstmt.setInt(1, webNovNum);
+			pstmt.setInt(2, memNum);
+			pstmt.setInt(3, perChapCoin);
+			pstmt.setInt(4, webNovChapNum);
+			
+			result = pstmt.executeUpdate();
+			
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		} finally {
+			close(pstmt);
+		}
+		
+		
+		
+		return result;
+	}
 	
 	
 }

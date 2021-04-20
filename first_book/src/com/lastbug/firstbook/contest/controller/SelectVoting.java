@@ -53,7 +53,7 @@ public class SelectVoting extends HttpServlet {
 			session.setAttribute("loginMember", member);
 		} else {						  		
 			path = "/WEB-INF/views/common/failed.jsp";
-			request.setAttribute("contestFailed", "viewFailed");
+			request.setAttribute("failedCode", "viewFailed");
 		}
 		
 		request.getRequestDispatcher(path).forward(request, response);

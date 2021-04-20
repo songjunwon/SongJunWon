@@ -17,7 +17,8 @@
         <jsp:include page="../common/header.jsp"></jsp:include>
         
         <section class="section1">
-        	<div class="section1_main"></div>
+        	<div class="section1_bg">
+        	<div class="section1_main"></div></div>
         	<div class="section1_content_head">
         	<div class="section1_h1">분기별 공모전 작품</div>
         	
@@ -56,6 +57,7 @@
                             </div>
                </c:forEach>
 			</div>
+		
         </section>
         
          <script>
@@ -65,8 +67,9 @@
 			location.href="${ pageContext.servletContext.contextPath }/contest/voting?competNum=" + competNum;
 		});
 	</script>
-        
+
        <jsp:include page="../common/footer.jsp"/>
+
 </body>
 
 </html>

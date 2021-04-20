@@ -499,6 +499,27 @@
 	   SET A.MEM_COIN = ?
 	 WHERE A.MEM_ID = ?
 	</entry>
+	<entry key="insertPaidHistory">
+		INSERT
+	      INTO COIN_USE_HIS
+         (
+               COIN_USE_NUM
+             , WEB_NOV_NUM
+             , MEM_NUM
+             , COIN_USE_DATE
+             , COIN_USAGE
+             , CHAPTER_NUM
+         )
+        VALUES
+        (
+          SEQ_COIN_USE_HIS.NEXTVAL
+        , ?
+        , ?
+        , SYSDATE
+        , ?
+        , ?
+        )
+	</entry>
 	
 </properties>
 

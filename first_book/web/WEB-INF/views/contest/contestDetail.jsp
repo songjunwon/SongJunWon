@@ -43,10 +43,10 @@
                    
                         <button type="button" class="firstBtn">첫화보기</button>
                         
-                        <c:if test="${ sessionScope.loginMember.memCanVoteYn eq 'Y ' }"> 
+                        <c:if test="${ sessionScope.loginMember.memCanVoteYn eq 'Y' }"> 
                         <button type="button" class="firstBtn" id="voting">투표하기<label class="label_none"><c:out value="${ requestScope.contestlList[0].competNum }" />&memId=<c:out value="${ sessionScope.loginMember.memId }" />&memPwd=<c:out value="${ sessionScope.loginMember.memPwd }" /></label></button>
                         </c:if> 
-                        <c:if test="${ sessionScope.loginMember.memCanVoteYn != 'Y ' }">
+                        <c:if test="${ sessionScope.loginMember.memCanVoteYn != 'Y' }">
                         <button type="button" class="firstBtn">투표완료</button>
                         </c:if> 
                     </div>
