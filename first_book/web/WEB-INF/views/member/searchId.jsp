@@ -25,7 +25,7 @@
                          @ 
                         <select name="memEmail2">
                         	<option value="naver.com">naver.com</option>
-                        	<option value="google.com">gmail.com</option>
+                        	<option value="gmail.com">gmail.com</option>
                         </select>
                     </div>
                     <button type="submit">
