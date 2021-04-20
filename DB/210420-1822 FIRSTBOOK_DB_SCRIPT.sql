@@ -4450,13 +4450,12 @@ CREATE TABLE NOV_INFO (
 	NOV_AMOUNT	NUMBER		NULL
 );
 
-Insert into NOV_INFO (NOV_NUM,CATEGORY_CODE,NOV_TITLE,NOV_AUTHOR,NOV_PRICE,NOV_PUBLISHER,NOV_INFORM,NOV_IMG_LOCATION,ORDERABLE_YN,NOV_AMOUNT) values (1,'MF','엄빠! 나 이결혼 안할래요!','수희홍',150000,'더오리진','결혼을 약속했던 그와 하지 않겠다고 선포하는데','사진경로1','Y',20);
-Insert into NOV_INFO (NOV_NUM,CATEGORY_CODE,NOV_TITLE,NOV_AUTHOR,NOV_PRICE,NOV_PUBLISHER,NOV_INFORM,NOV_IMG_LOCATION,ORDERABLE_YN,NOV_AMOUNT) values (2,'F','달콤한 집','달달해',175000,'문학동네','참신한 괴물 캐릭터와 강렬한 서스펜스, 숨 쉴 틈을 주지 않는 섬뜩한 연출로 웹툰 최상위권을 차지했다.','사진경로2','Y',20);
+Insert into NOV_INFO (NOV_NUM,CATEGORY_CODE,NOV_TITLE,NOV_AUTHOR,NOV_PRICE,NOV_PUBLISHER,NOV_INFORM,NOV_IMG_LOCATION,ORDERABLE_YN,NOV_AMOUNT) values (1,'MF','엄빠! 나 이결혼 안할래요!','수희홍',150000,'더오리진','결혼을 약속했던 그와 하지 않겠다고 선포하는데','/firstbook/resources/image/contest/competInfo/70.jpg','Y',20);
+Insert into NOV_INFO (NOV_NUM,CATEGORY_CODE,NOV_TITLE,NOV_AUTHOR,NOV_PRICE,NOV_PUBLISHER,NOV_INFORM,NOV_IMG_LOCATION,ORDERABLE_YN,NOV_AMOUNT) values (2,'F','달콤한 집','달달해',175000,'문학동네','참신한 괴물 캐릭터와 강렬한 서스펜스, 숨 쉴 틈을 주지 않는 섬뜩한 연출로 웹툰 최상위권을 차지했다.','/firstbook/resources/image/contest/competInfo/71.jpg','Y',20);
 Insert into NOV_INFO (NOV_NUM,CATEGORY_CODE,NOV_TITLE,NOV_AUTHOR,NOV_PRICE,NOV_PUBLISHER,NOV_INFORM,NOV_IMG_LOCATION,ORDERABLE_YN,NOV_AMOUNT) values (3,'OF','강남클래스','꿀밤머리',160000,'문학동네','대한민국의 중심! 강남에서
-벌여지는 그들만의 이야기','사진경로3','Y',25);
+벌여지는 그들만의 이야기','/firstbook/resources/image/contest/competInfo/72.jpg','Y',25);
 Insert into NOV_INFO (NOV_NUM,CATEGORY_CODE,NOV_TITLE,NOV_AUTHOR,NOV_PRICE,NOV_PUBLISHER,NOV_INFORM,NOV_IMG_LOCATION,ORDERABLE_YN,NOV_AMOUNT) values (4,'ROM','저승과 함께','크리링',180500,'문학동네','사람은 죽고 저승에 가는데
-거기서 자신의 삶에 대해 평가를 받는데','사진경로4','Y',25);
-Insert into NOV_INFO (NOV_NUM,CATEGORY_CODE,NOV_TITLE,NOV_AUTHOR,NOV_PRICE,NOV_PUBLISHER,NOV_INFORM,NOV_IMG_LOCATION,ORDERABLE_YN,NOV_AMOUNT) values (5,'SPO','여생','미생',215000,'더오리진','신입 여직원의 직장생활 적응기!','사진경로5','N',0);
+거기서 자신의 삶에 대해 평가를 받는데','/firstbook/resources/image/contest/competInfo/74.jpg','Y',25);
 
 
 COMMIT;
