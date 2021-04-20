@@ -97,8 +97,8 @@
     </div>
 
     <div class="size_box"></div>
-    <jsp:include page="../common/footer_member.jsp" />
-    
+
+     <jsp:include page="../common/footer.jsp"/>
     <script>
 		$("#btn > button").click(function(){
 			const competNum = $(this).find("label").text();	// 사진 게시글 번호

@@ -69,6 +69,7 @@
 		</section>
 
 	</div>
+	 <jsp:include page="../common/footer.jsp"/>
 <script>		
 		const link = "${ pageContext.servletContext.contextPath}/contest/SelectView";
 		function test(var1, var2){

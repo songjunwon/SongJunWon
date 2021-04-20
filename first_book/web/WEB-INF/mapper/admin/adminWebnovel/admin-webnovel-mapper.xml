@@ -64,7 +64,16 @@
 		   SET A.WEB_NOV_IS_OPEN = ?		    
 		 WHERE A.WEB_NOV_NUM = ?	
 	</entry>
+	<entry key="WebNovelModify">
+	       UPDATE WEB_NOV_CONTENT_DETAIL
+              SET WEB_NOV_PAGE_CONTENT = (CASE WHEN WEB_NOV_PAGE_NUM = ? THEN ?
+                                               WHEN WEB_NOV_PAGE_NUM = ? THEN ?               
+                                          END)
+            WHERE WEB_NOV_NUM = ? 
+              AND CHAP_NUM = ? 
+              AND WEB_NOV_PAGE_NUM BETWEEN ? AND ?
 	
+	</entry>
 	
 </properties>
 

@@ -232,67 +232,198 @@ CREATE TABLE COMPET_INFO
 
 INSERT INTO COMPET_INFO (COMPET_NUM, MEM_NUM,  COMPET_PAPER_YN, NOV_TITLE, NOV_INFO, COMPET_SSN, COMPET_NOV_IMG_LOCATION,
                          SCORE, COMPET_ACT_YN, AGE_LIMIT, CATEGORY_CODE)
-VALUES ('65', '8', 'Y', '방패용사성공담', '내용1','2021Q2', '경로1', 199, 'Y' , 15, 'MF' );
+VALUES ('65', '8', 'Y', '방패용사성공담', '내용1','2021Q2', '/firstbook/resources/image/contest/competInfo/65.jpg', 199, 'Y' , 15, 'MF' );
 
 INSERT INTO COMPET_INFO (COMPET_NUM, MEM_NUM,  COMPET_PAPER_YN, NOV_TITLE, NOV_INFO, COMPET_SSN, COMPET_NOV_IMG_LOCATION,
                          SCORE, COMPET_ACT_YN, AGE_LIMIT, CATEGORY_CODE)
-VALUES ('66', '9', 'Y', '루팡 17세', '내용2','2021Q2', '경로1', 25, 'Y', 17, 'OF');
+VALUES ('66', '9', 'Y', '루팡 17세', '내용2','2021Q2', '/firstbook/resources/image/contest/competInfo/66.jpg', 25, 'Y', 17, 'OF');
 
 INSERT INTO COMPET_INFO (COMPET_NUM, MEM_NUM,  COMPET_PAPER_YN, NOV_TITLE, NOV_INFO, COMPET_SSN, COMPET_NOV_IMG_LOCATION,
                          SCORE, COMPET_ACT_YN, AGE_LIMIT, CATEGORY_CODE)
-VALUES ('67', '10', 'Y', '1412 괴도키드','내용3', '2021Q2', '경로1', 77, 'Y', 17, 'F');
+VALUES ('67', '10', 'Y', '1412 괴도키드', '내용3','2021Q2', '/firstbook/resources/image/contest/competInfo/67.jpg', 26, 'Y', 17, 'OF');
 
 INSERT INTO COMPET_INFO (COMPET_NUM, MEM_NUM,  COMPET_PAPER_YN, NOV_TITLE, NOV_INFO, COMPET_SSN, COMPET_NOV_IMG_LOCATION,
                          SCORE, COMPET_ACT_YN, AGE_LIMIT, CATEGORY_CODE)
-VALUES ('68', '11', 'Y', '어른제국의 역습','내용4', '2021Q2', '경로1', 8, 'Y', 15, 'MF');
+VALUES ('68', '11', 'Y', '어른제국의 역습','내용4', '2021Q2', '/firstbook/resources/image/contest/competInfo/68.jpg', 8, 'Y', 15, 'MF');
 
 INSERT INTO COMPET_INFO (COMPET_NUM, MEM_NUM,  COMPET_PAPER_YN, NOV_TITLE, NOV_INFO, COMPET_SSN, COMPET_NOV_IMG_LOCATION,
                          SCORE, COMPET_ACT_YN, AGE_LIMIT, CATEGORY_CODE)
-VALUES ('69', '12', 'Y', '짱구는 못말려', '내용5','2021Q2', '경로1', 7, 'Y' , 19, 'FH');
+VALUES ('69', '12', 'Y', '짱구는 못말려', '내용5','2021Q2', '/firstbook/resources/image/contest/competInfo/69.jpg', 7, 'Y' , 19, 'FH');
 
 INSERT INTO COMPET_INFO (COMPET_NUM, MEM_NUM,  COMPET_PAPER_YN, NOV_TITLE, NOV_INFO, COMPET_SSN, COMPET_NOV_IMG_LOCATION,
                          SCORE, COMPET_ACT_YN, AGE_LIMIT, CATEGORY_CODE)
-VALUES ('70', '13', 'Y', '아땀맘마 완결', '내용6','2021Q2', '경로1', 44, 'Y',12,'ROM');
+VALUES ('70', '13', 'Y', '아땀맘마 완결', '내용6','2021Q2', '/firstbook/resources/image/contest/competInfo/70.jpg', 44, 'Y',12,'ROM');
 
 INSERT INTO COMPET_INFO (COMPET_NUM, MEM_NUM,  COMPET_PAPER_YN, NOV_TITLE, NOV_INFO, COMPET_SSN, COMPET_NOV_IMG_LOCATION,
                          SCORE, COMPET_ACT_YN, AGE_LIMIT, CATEGORY_CODE)
-VALUES ('71', '14', 'Y', '오징어땅콩 맛있어', '내용7','2021Q2', '경로1', 7, 'Y', 15, 'F');
+VALUES ('71', '14', 'Y', '오징어땅콩 맛있어', '내용7','2021Q2', '/firstbook/resources/image/contest/competInfo/71.jpg', 7, 'Y', 15, 'F');
 
 INSERT INTO COMPET_INFO (COMPET_NUM, MEM_NUM,  COMPET_PAPER_YN, NOV_TITLE, NOV_INFO, COMPET_SSN, COMPET_NOV_IMG_LOCATION,
                          SCORE, COMPET_ACT_YN, AGE_LIMIT, CATEGORY_CODE)
-VALUES ('72', '15', 'Y', '떡국열차', '내용8','2021Q2', '경로1', 4, 'Y', 15, 'MF');
+VALUES ('72', '15', 'Y', '떡국열차', '내용8','2021Q2', '/firstbook/resources/image/contest/competInfo/72.jpg', 4, 'Y', 15, 'MF');
 
 INSERT INTO COMPET_INFO (COMPET_NUM, MEM_NUM,  COMPET_PAPER_YN, NOV_TITLE, NOV_INFO, COMPET_SSN, COMPET_NOV_IMG_LOCATION,
                          SCORE, COMPET_ACT_YN, AGE_LIMIT, CATEGORY_CODE)
-VALUES ('73', '8', 'Y', '호카게는 아무나 되냐?', '내용9','2021Q2', '경로1', 15, 'Y', 15, 'MF');
+VALUES ('73', '8', 'Y', '호카게는 아무나 되냐?', '내용9','2021Q2', '/firstbook/resources/image/contest/competInfo/73.jpg', 15, 'Y', 15, 'MF');
 
 INSERT INTO COMPET_INFO (COMPET_NUM, MEM_NUM,  COMPET_PAPER_YN, NOV_TITLE, NOV_INFO, COMPET_SSN, COMPET_NOV_IMG_LOCATION,
                          SCORE, COMPET_ACT_YN, AGE_LIMIT, CATEGORY_CODE)
-VALUES ('74', '9', 'Y', '난 해적왕이 될꺼냐', '내용10','2021Q2', '경로1', 25, 'Y', 12, 'SPO');
+VALUES ('74', '9', 'Y', '난 해적왕이 될꺼냐', '내용10','2021Q2', '/firstbook/resources/image/contest/competInfo/74.jpg', 25, 'Y', 12, 'SPO');
 
 INSERT INTO COMPET_INFO (COMPET_NUM, MEM_NUM,  COMPET_PAPER_YN, NOV_TITLE, NOV_INFO, COMPET_SSN, COMPET_NOV_IMG_LOCATION,
                          SCORE, COMPET_ACT_YN, AGE_LIMIT, CATEGORY_CODE)
-VALUES ('75', '10', 'Y', '원피스 딴따~','내용11', '2021Q2', '경로1', 14, 'Y',15, 'OF');
+VALUES ('75', '10', 'Y', '원피스 딴따~','내용11', '2021Q2', '/firstbook/resources/image/contest/competInfo/75.jpg', 14, 'Y',15, 'OF');
 
 INSERT INTO COMPET_INFO (COMPET_NUM, MEM_NUM,  COMPET_PAPER_YN, NOV_TITLE, NOV_INFO, COMPET_SSN, COMPET_NOV_IMG_LOCATION,
                          SCORE, COMPET_ACT_YN, AGE_LIMIT, CATEGORY_CODE)
-VALUES ('76', '11', 'Y', '디아블로 잡아본 사람','내용12', '2021Q2', '경로1', 78, 'Y', 15, 'MF');
+VALUES ('76', '11', 'Y', '디아블로 잡아본 사람','내용12', '2021Q2', '/firstbook/resources/image/contest/competInfo/76.jpg', 78, 'Y', 15, 'MF');
 
 INSERT INTO COMPET_INFO (COMPET_NUM, MEM_NUM,  COMPET_PAPER_YN, NOV_TITLE, NOV_INFO, COMPET_SSN, COMPET_NOV_IMG_LOCATION,
                          SCORE, COMPET_ACT_YN, AGE_LIMIT, CATEGORY_CODE)
-VALUES ('77', '12', 'Y', '오버 시계', '내용13','2021Q2', '경로1', 52, 'Y', 19, 'F');
+VALUES ('77', '12', 'Y', '오버 시계', '내용13','2021Q2', '/firstbook/resources/image/contest/competInfo/65.jpg', 77, 'Y', 19, 'F');
 
 INSERT INTO COMPET_INFO (COMPET_NUM, MEM_NUM,  COMPET_PAPER_YN, NOV_TITLE, NOV_INFO, COMPET_SSN, COMPET_NOV_IMG_LOCATION,
                          SCORE, COMPET_ACT_YN, AGE_LIMIT, CATEGORY_CODE)
-VALUES ('78', '13', 'Y', '리그오브레전더리링', '내용14','2021Q2', '경로1', 96, 'Y', 12, 'MF');
+VALUES ('78', '13', 'Y', '리그오브레전더리링', '내용14','2021Q2', '/firstbook/resources/image/contest/competInfo/78.jpg', 96, 'Y', 12, 'MF');
 
 INSERT INTO COMPET_INFO (COMPET_NUM, MEM_NUM,  COMPET_PAPER_YN, NOV_TITLE, NOV_INFO, COMPET_SSN, COMPET_NOV_IMG_LOCATION,
                          SCORE, COMPET_ACT_YN, AGE_LIMIT, CATEGORY_CODE)
-VALUES ('79', '14', 'Y', '메이플월드를 지켜라', '내용15','2021Q2', '경로1', 14, 'Y', 12, 'SPO');
+VALUES ('79', '14', 'Y', '메이플월드를 지켜라', '내용15','2021Q2', '/firstbook/resources/image/contest/competInfo/79.jpg', 14, 'Y', 12, 'SPO');
 
 INSERT INTO COMPET_INFO (COMPET_NUM, MEM_NUM,  COMPET_PAPER_YN, NOV_TITLE, NOV_INFO, COMPET_SSN, COMPET_NOV_IMG_LOCATION,
                          SCORE, COMPET_ACT_YN, AGE_LIMIT, CATEGORY_CODE)
-VALUES ('80', '15', 'Y', '메이플스토리 운명의소녀', '내용16','2021Q2', '경로1', 63, 'Y', 12, 'SPO');
+VALUES ('80', '15', 'Y', '메이플스토리 운명의소녀', '내용16','2021Q2', '/firstbook/resources/image/contest/competInfo/80.jpg', 63, 'Y', 12, 'SPO');
+
+
+
+INSERT INTO COMPET_INFO (COMPET_NUM, MEM_NUM, COMPET_PAPER_YN, NOV_TITLE, NOV_INFO, COMPET_SSN, COMPET_NOV_IMG_LOCATION,
+                         SCORE, COMPET_ACT_YN, AGE_LIMIT, CATEGORY_CODE)
+VALUES (  49  ,  8  , 'Y' , '방패 용사 성공담 ' , ' 내용 1 ' , '2021Q1' , '/firstbook/resources/image/contest/competInfo/65.jpg' , 199 , 'Y' , 15 , 'MF' );
+
+INSERT INTO COMPET_INFO (COMPET_NUM, MEM_NUM, COMPET_PAPER_YN, NOV_TITLE, NOV_INFO, COMPET_SSN, COMPET_NOV_IMG_LOCATION,
+                         SCORE, COMPET_ACT_YN, AGE_LIMIT, CATEGORY_CODE)
+VALUES (  50  ,  9  , 'Y' , ' 루팡 17 세 ' , ' 내용 2 ' , '2021Q1' , '/firstbook/resources/image/contest/competInfo/65.jpg' , 25 , 'Y' , 17 , 'OF' );
+
+INSERT INTO COMPET_INFO (COMPET_NUM, MEM_NUM, COMPET_PAPER_YN, NOV_TITLE, NOV_INFO, COMPET_SSN, COMPET_NOV_IMG_LOCATION,
+                         SCORE, COMPET_ACT_YN, AGE_LIMIT, CATEGORY_CODE)
+VALUES (  51  ,  10, 'Y' , ' 1412 괴도 키드 ' , ' 내용 3 ' , '2021Q1' , '/firstbook/resources/image/contest/competInfo/65.jpg' , 77 , 'Y' , 17 , 'F' );
+
+INSERT INTO COMPET_INFO (COMPET_NUM, MEM_NUM, COMPET_PAPER_YN, NOV_TITLE, NOV_INFO, COMPET_SSN, COMPET_NOV_IMG_LOCATION,
+                         SCORE, COMPET_ACT_YN, AGE_LIMIT, CATEGORY_CODE)
+VALUES (  52  ,  11 , 'Y' , ' 어른 제국의 역습 ' , ' 내용 4 ' , '2021Q1' , '/firstbook/resources/image/contest/competInfo/65.jpg' , 8 , 'Y' , 15 , 'MF' );
+
+INSERT INTO COMPET_INFO (COMPET_NUM, MEM_NUM, COMPET_PAPER_YN, NOV_TITLE, NOV_INFO, COMPET_SSN, COMPET_NOV_IMG_LOCATION,
+                         SCORE, COMPET_ACT_YN, AGE_LIMIT, CATEGORY_CODE)
+VALUES (  53  ,  12 , 'Y' , ' 짱구는 못말려 ' , ' 내용 5 ' , '2021Q1' , '/firstbook/resources/image/contest/competInfo/65.jpg' , 7 , 'Y' , 19 , 'FH' );
+
+INSERT INTO COMPET_INFO (COMPET_NUM, MEM_NUM, COMPET_PAPER_YN, NOV_TITLE, NOV_INFO, COMPET_SSN, COMPET_NOV_IMG_LOCATION,
+                         SCORE, COMPET_ACT_YN, AGE_LIMIT, CATEGORY_CODE)
+VALUES (  54  ,  13 , 'Y' , ' 아땀 맘마 완결 ' , ' 내용 6 ' , '2021Q1' , '/firstbook/resources/image/contest/competInfo/65.jpg' , 44 , 'Y' , 12 , 'ROM' );
+
+INSERT INTO COMPET_INFO (COMPET_NUM, MEM_NUM, COMPET_PAPER_YN, NOV_TITLE, NOV_INFO, COMPET_SSN, COMPET_NOV_IMG_LOCATION,
+                        SCORE, COMPET_ACT_YN, AGE_LIMIT, CATEGORY_CODE)
+VALUES (  55  ,  14 , 'Y' , ' 오징어 땅콩 맛있어 ' , ' 내용 7 ' , '2021Q1' , '/firstbook/resources/image/contest/competInfo/65.jpg' , 7 , 'Y' , 15 , 'F' );
+
+INSERT INTO COMPET_INFO (COMPET_NUM, MEM_NUM, COMPET_PAPER_YN, NOV_TITLE, NOV_INFO, COMPET_SSN, COMPET_NOV_IMG_LOCATION,
+                         SCORE, COMPET_ACT_YN, AGE_LIMIT, CATEGORY_CODE)
+VALUES (  56  ,  15 , 'Y' , ' 떡국 열차 ' , ' 내용 8 ' , '2021Q1' , '/firstbook/resources/image/contest/competInfo/65.jpg' , 4 , 'Y' , 15 , 'MF' );
+
+INSERT INTO COMPET_INFO (COMPET_NUM, MEM_NUM, COMPET_PAPER_YN, NOV_TITLE, NOV_INFO, COMPET_SSN, COMPET_NOV_IMG_LOCATION,
+                         SCORE, COMPET_ACT_YN, AGE_LIMIT, CATEGORY_CODE)
+VALUES (  57  ,  8  , 'Y' , ' 호카게는 아무나 되냐? ' , ' 내용 9 ' , '2021Q1' , '/firstbook/resources/image/contest/competInfo/65.jpg' , 15 , 'Y'  , 15 , 'MF' );
+
+INSERT INTO COMPET_INFO (COMPET_NUM, MEM_NUM, COMPET_PAPER_YN, NOV_TITLE, NOV_INFO, COMPET_SSN, COMPET_NOV_IMG_LOCATION,
+                         SCORE, COMPET_ACT_YN, AGE_LIMIT, CATEGORY_CODE)
+VALUES (  58  ,  9 , 'Y' , ' 난 해적왕이 될꺼 냐 ' , ' 내용 10 ' , '2021Q1' , '/firstbook/resources/image/contest/competInfo/65.jpg' , 25 , 'Y' , 12 , 'SPO' );
+
+INSERT INTO COMPET_INFO (COMPET_NUM, MEM_NUM, COMPET_PAPER_YN, NOV_TITLE, NOV_INFO, COMPET_SSN, COMPET_NOV_IMG_LOCATION,
+                         SCORE, COMPET_ACT_YN, AGE_LIMIT, CATEGORY_CODE)
+VALUES (  59  ,  10  , 'Y' , ' 원피스 딴따 ~ ' , ' 내용 11 ' , '2021Q1' , '/firstbook/resources/image/contest/competInfo/65.jpg' , 14 , 'Y' , 15 , 'OF' );
+
+INSERT INTO COMPET_INFO (COMPET_NUM, MEM_NUM, COMPET_PAPER_YN, NOV_TITLE, NOV_INFO, COMPET_SSN, COMPET_NOV_IMG_LOCATION,
+                         SCORE, COMPET_ACT_YN, AGE_LIMIT, CATEGORY_CODE)
+VALUES (  60  ,  11  , 'Y' , ' 디아블로 잡아 본 사람 ' , ' 내용 12 ' , '2021Q1' , '/firstbook/resources/image/contest/competInfo/65.jpg' , 78 , 'Y' , 15 , 'MF' );
+
+INSERT INTO COMPET_INFO (COMPET_NUM, MEM_NUM, COMPET_PAPER_YN, NOV_TITLE, NOV_INFO, COMPET_SSN, COMPET_NOV_IMG_LOCATION,
+                         SCORE, COMPET_ACT_YN, AGE_LIMIT, CATEGORY_CODE)
+VALUES (  61  ,  12  , 'Y' , ' 시계 오버 ' , ' 내용 13 ' , '2021Q1' , '/firstbook/resources/image/contest/competInfo/65.jpg' , 52 , 'Y' , 19 , 'F' );
+
+INSERT INTO COMPET_INFO (COMPET_NUM, MEM_NUM, COMPET_PAPER_YN, NOV_TITLE, NOV_INFO, COMPET_SSN, COMPET_NOV_IMG_LOCATION,
+                         SCORE, COMPET_ACT_YN, AGE_LIMIT, CATEGORY_CODE)
+VALUES (  62  ,  13  , 'Y' , ' 리그 오브 레전더 리링 ' , ' 내용 14 ' , '2021Q1' , '/firstbook/resources/image/contest/competInfo/65.jpg' , 96 , 'Y' , 12 , 'MF' );
+
+INSERT INTO COMPET_INFO (COMPET_NUM, MEM_NUM, COMPET_PAPER_YN, NOV_TITLE, NOV_INFO, COMPET_SSN, COMPET_NOV_IMG_LOCATION,
+                         SCORE, COMPET_ACT_YN, AGE_LIMIT, CATEGORY_CODE)
+VALUES (  63  ,  14  , 'Y' , ' 메이플 월드를 지켜라 ' , ' 내용 15 ' , '2021Q1' , '/firstbook/resources/image/contest/competInfo/65.jpg' , 14 , 'Y' , 12 , 'SPO' );
+
+INSERT INTO COMPET_INFO (COMPET_NUM, MEM_NUM, COMPET_PAPER_YN, NOV_TITLE, NOV_INFO, COMPET_SSN, COMPET_NOV_IMG_LOCATION,
+                         SCORE, COMPET_ACT_YN, AGE_LIMIT, CATEGORY_CODE)
+VALUES (  64  ,  15  , 'Y' , ' 메이플 스토리 운명의 소녀 ' , ' 내용 16 ' , '2021Q1' , '/firstbook/resources/image/contest/competInfo/65.jpg' , 63 , 'Y' , 12 , 'SPO' );
+
+INSERT INTO COMPET_INFO (COMPET_NUM, MEM_NUM, COMPET_PAPER_YN, NOV_TITLE, NOV_INFO, COMPET_SSN, COMPET_NOV_IMG_LOCATION,
+                         SCORE, COMPET_ACT_YN, AGE_LIMIT, CATEGORY_CODE)
+VALUES (  33  ,  8  , 'Y' , '방패 용사 성공담 ' , ' 내용 1 ' , '2020Q4' , '/firstbook/resources/image/contest/competInfo/70.jpg' , 199 , 'Y' , 15 , 'MF' );
+
+INSERT INTO COMPET_INFO (COMPET_NUM, MEM_NUM, COMPET_PAPER_YN, NOV_TITLE, NOV_INFO, COMPET_SSN, COMPET_NOV_IMG_LOCATION,
+                         SCORE, COMPET_ACT_YN, AGE_LIMIT, CATEGORY_CODE)
+VALUES (  34  ,  9  , 'Y' , ' 루팡 17 세 ' , ' 내용 2 ' , '2020Q4' , '/firstbook/resources/image/contest/competInfo/70.jpg' , 25 , 'Y' , 17 , 'OF' );
+
+INSERT INTO COMPET_INFO (COMPET_NUM, MEM_NUM, COMPET_PAPER_YN, NOV_TITLE, NOV_INFO, COMPET_SSN, COMPET_NOV_IMG_LOCATION,
+                         SCORE, COMPET_ACT_YN, AGE_LIMIT, CATEGORY_CODE)
+VALUES (  35  ,  10, 'Y' , ' 1412 괴도 키드 ' , ' 내용 3 ' , '2020Q4' , '/firstbook/resources/image/contest/competInfo/70.jpg' , 77 , 'Y' , 17 , 'F' );
+
+INSERT INTO COMPET_INFO (COMPET_NUM, MEM_NUM, COMPET_PAPER_YN, NOV_TITLE, NOV_INFO, COMPET_SSN, COMPET_NOV_IMG_LOCATION,
+                         SCORE, COMPET_ACT_YN, AGE_LIMIT, CATEGORY_CODE)
+VALUES (  36  ,  11 , 'Y' , ' 어른 제국의 역습 ' , ' 내용 4 ' , '2020Q4' , '/firstbook/resources/image/contest/competInfo/70.jpg' , 8 , 'Y' , 15 , 'MF' );
+
+INSERT INTO COMPET_INFO (COMPET_NUM, MEM_NUM, COMPET_PAPER_YN, NOV_TITLE, NOV_INFO, COMPET_SSN, COMPET_NOV_IMG_LOCATION,
+                         SCORE, COMPET_ACT_YN, AGE_LIMIT, CATEGORY_CODE)
+VALUES (  37  ,  12 , 'Y' , ' 짱구는 못말려 ' , ' 내용 5 ' , '2020Q4' , '/firstbook/resources/image/contest/competInfo/70.jpg' , 7 , 'Y' , 19 , 'FH' );
+
+INSERT INTO COMPET_INFO (COMPET_NUM, MEM_NUM, COMPET_PAPER_YN, NOV_TITLE, NOV_INFO, COMPET_SSN, COMPET_NOV_IMG_LOCATION,
+                         SCORE, COMPET_ACT_YN, AGE_LIMIT, CATEGORY_CODE)
+VALUES (  38  ,  13 , 'Y' , ' 아땀 맘마 완결 ' , ' 내용 6 ' , '2020Q4' , '/firstbook/resources/image/contest/competInfo/70.jpg' , 44 , 'Y' , 12 , 'ROM' );
+
+INSERT INTO COMPET_INFO (COMPET_NUM, MEM_NUM, COMPET_PAPER_YN, NOV_TITLE, NOV_INFO, COMPET_SSN, COMPET_NOV_IMG_LOCATION,
+                        SCORE, COMPET_ACT_YN, AGE_LIMIT, CATEGORY_CODE)
+VALUES (  39  ,  14 , 'Y' , ' 오징어 땅콩 맛있어 ' , ' 내용 7 ' , '2020Q4' , '/firstbook/resources/image/contest/competInfo/70.jpg' , 7 , 'Y' , 15 , 'F' );
+
+INSERT INTO COMPET_INFO (COMPET_NUM, MEM_NUM, COMPET_PAPER_YN, NOV_TITLE, NOV_INFO, COMPET_SSN, COMPET_NOV_IMG_LOCATION,
+                         SCORE, COMPET_ACT_YN, AGE_LIMIT, CATEGORY_CODE)
+VALUES (  40  ,  15 , 'Y' , ' 떡국 열차 ' , ' 내용 8 ' , '2020Q4' , '/firstbook/resources/image/contest/competInfo/70.jpg' , 4 , 'Y' , 15 , 'MF' );
+
+INSERT INTO COMPET_INFO (COMPET_NUM, MEM_NUM, COMPET_PAPER_YN, NOV_TITLE, NOV_INFO, COMPET_SSN, COMPET_NOV_IMG_LOCATION,
+                         SCORE, COMPET_ACT_YN, AGE_LIMIT, CATEGORY_CODE)
+VALUES (  41  ,  8  , 'Y' , ' 호카게는 아무나 되냐? ' , ' 내용 9 ' , '2020Q4' , '/firstbook/resources/image/contest/competInfo/70.jpg' , 15 , 'Y'  , 15 , 'MF' );
+
+INSERT INTO COMPET_INFO (COMPET_NUM, MEM_NUM, COMPET_PAPER_YN, NOV_TITLE, NOV_INFO, COMPET_SSN, COMPET_NOV_IMG_LOCATION,
+                         SCORE, COMPET_ACT_YN, AGE_LIMIT, CATEGORY_CODE)
+VALUES (  42  ,  9 , 'Y' , ' 난 해적왕이 될꺼 냐 ' , ' 내용 10 ' , '2020Q4' , '/firstbook/resources/image/contest/competInfo/70.jpg' , 25 , 'Y' , 12 , 'SPO' );
+
+INSERT INTO COMPET_INFO (COMPET_NUM, MEM_NUM, COMPET_PAPER_YN, NOV_TITLE, NOV_INFO, COMPET_SSN, COMPET_NOV_IMG_LOCATION,
+                         SCORE, COMPET_ACT_YN, AGE_LIMIT, CATEGORY_CODE)
+VALUES (  43  ,  10  , 'Y' , ' 원피스 딴따 ~ ' , ' 내용 11 ' , '2020Q4' , '/firstbook/resources/image/contest/competInfo/70.jpg' , 14 , 'Y' , 15 , 'OF' );
+
+INSERT INTO COMPET_INFO (COMPET_NUM, MEM_NUM, COMPET_PAPER_YN, NOV_TITLE, NOV_INFO, COMPET_SSN, COMPET_NOV_IMG_LOCATION,
+                         SCORE, COMPET_ACT_YN, AGE_LIMIT, CATEGORY_CODE)
+VALUES (  44  ,  11  , 'Y' , ' 디아블로 잡아 본 사람 ' , ' 내용 12 ' , '2020Q4' , '/firstbook/resources/image/contest/competInfo/70.jpg' , 78 , 'Y' , 15 , 'MF' );
+
+INSERT INTO COMPET_INFO (COMPET_NUM, MEM_NUM, COMPET_PAPER_YN, NOV_TITLE, NOV_INFO, COMPET_SSN, COMPET_NOV_IMG_LOCATION,
+                         SCORE, COMPET_ACT_YN, AGE_LIMIT, CATEGORY_CODE)
+VALUES (  45  ,  12  , 'Y' , ' 시계 오버 ' , ' 내용 13 ' , '2020Q4' , '/firstbook/resources/image/contest/competInfo/70.jpg' , 52 , 'Y' , 19 , 'F' );
+
+INSERT INTO COMPET_INFO (COMPET_NUM, MEM_NUM, COMPET_PAPER_YN, NOV_TITLE, NOV_INFO, COMPET_SSN, COMPET_NOV_IMG_LOCATION,
+                         SCORE, COMPET_ACT_YN, AGE_LIMIT, CATEGORY_CODE)
+VALUES (  46  ,  13  , 'Y' , ' 리그 오브 레전더 리링 ' , ' 내용 14 ' , '2020Q4' , '/firstbook/resources/image/contest/competInfo/70.jpg' , 96 , 'Y' , 12 , 'MF' );
+
+INSERT INTO COMPET_INFO (COMPET_NUM, MEM_NUM, COMPET_PAPER_YN, NOV_TITLE, NOV_INFO, COMPET_SSN, COMPET_NOV_IMG_LOCATION,
+                         SCORE, COMPET_ACT_YN, AGE_LIMIT, CATEGORY_CODE)
+VALUES (  47  ,  14  , 'Y' , ' 메이플 월드를 지켜라 ' , ' 내용 15 ' , '2020Q4' , '/firstbook/resources/image/contest/competInfo/70.jpg' , 14 , 'Y' , 12 , 'SPO' );
+
+INSERT INTO COMPET_INFO (COMPET_NUM, MEM_NUM, COMPET_PAPER_YN, NOV_TITLE, NOV_INFO, COMPET_SSN, COMPET_NOV_IMG_LOCATION,
+                         SCORE, COMPET_ACT_YN, AGE_LIMIT, CATEGORY_CODE)
+VALUES (  48,  15  , 'Y' , ' 메이플 스토리 운명의 소녀 ' , ' 내용 16 ' , '2020Q4' , '/firstbook/resources/image/contest/competInfo/70.jpg' , 63 , 'Y' , 12 , 'SPO' );
+
 
 COMMIT;
 
@@ -464,6 +595,7 @@ CREATE TABLE COMPET_CONTENT
     PAGES NUMBER,
     COMPET_CONTENT VARCHAR2(1000)
 );
+
 INSERT INTO COMPET_CONTENT(NUMBER_OF_PAGES,PAGES,COMPET_CONTENT)
 VALUES (651, 1, '내 어린시절 우연히
 들었던 믿지 못 할 한마디
@@ -2059,212 +2191,236 @@ CREATE TABLE WEB_NOV_INFO
 
 
 INSERT INTO WEB_NOV_INFO (WEB_NOV_NUM, CATEGORY_CODE, WEB_NOV_TITLE, WEB_NOV_AUTHOR, CHAP_PER_COIN, WEB_NOV_PUBLISHER,
-                          WEB_NOV_INFORM, WEB_NOV_IMG_LOCATION, DAY_OF_WEEK, WEB_NOV_IS_OPEN, FINISHED_OR_NOT, WEB_NOV_COUNT)
-VALUES ('1', 'MF', '내 아들은 총잡이', '원빈', 100, '미디어그룹', '피치 못할 사정으로 총잡이 삶을 접어야 했던 베테랑 권총잡이 박찬영.', '사진경로1', '월', 'N',
-        'N', DEFAULT);
+                          WEB_NOV_INFORM, WEB_NOV_IMG_LOCATION, DAY_OF_WEEK, WEB_NOV_IS_OPEN, FINISHED_OR_NOT)
+VALUES ('1', 'MF', '내 아들은 총잡이', '원빈', 100, '미디어그룹', '피치 못할 사정으로 총잡이 삶을 접어야 했던 베테랑 권총잡이 박찬영.', '/firstbook/resources/image/webnovel/monToSun/monday/webNov_1_mon.PNG', '월', 'Y',
+        'N');
 INSERT INTO WEB_NOV_INFO (WEB_NOV_NUM, CATEGORY_CODE, WEB_NOV_TITLE, WEB_NOV_AUTHOR, CHAP_PER_COIN, WEB_NOV_PUBLISHER,
-                          WEB_NOV_INFORM, WEB_NOV_IMG_LOCATION, DAY_OF_WEEK, WEB_NOV_IS_OPEN, FINISHED_OR_NOT, WEB_NOV_COUNT)
-VALUES ('2', 'F', '이혼 후 재혼', '인생3회차', 100, '미디어그룹', '그런 그가 아들을 낳았는데, 총잡는 모습이….금 이빨 몇 개냐??', '사진경로2', '월', 'N',
-        'N', DEFAULT);
+                          WEB_NOV_INFORM, WEB_NOV_IMG_LOCATION, DAY_OF_WEEK, WEB_NOV_IS_OPEN, FINISHED_OR_NOT)
+VALUES ('2', 'F', '이혼 후 재혼', '인생3회차', 100, '미디어그룹', '그런 그가 아들을 낳았는데, 총잡는 모습이….금 이빨 몇 개냐??', '/firstbook/resources/image/webnovel/monToSun/monday/webNov_2_mon.PNG', '월', 'Y',
+        'N');
 INSERT INTO WEB_NOV_INFO (WEB_NOV_NUM, CATEGORY_CODE, WEB_NOV_TITLE, WEB_NOV_AUTHOR, CHAP_PER_COIN, WEB_NOV_PUBLISHER,
-                          WEB_NOV_INFORM, WEB_NOV_IMG_LOCATION, DAY_OF_WEEK, WEB_NOV_IS_OPEN, FINISHED_OR_NOT, WEB_NOV_COUNT)
-VALUES ('3', 'F', '미술천재가 한국으로', '잘못된탄생', 100, '문학동네', '한국에서 천재가 태어나게 되는데… 그러나…주입식교육으로 인해 힘들어하는 그림천재', '사진경로3', '월', 'N', 'N', DEFAULT);
+                          WEB_NOV_INFORM, WEB_NOV_IMG_LOCATION, DAY_OF_WEEK, WEB_NOV_IS_OPEN, FINISHED_OR_NOT)
+VALUES ('3', 'F', '미술천재가 한국으로', '잘못된탄생', 100, '문학동네', '한국에서 천재가 태어나게 되는데…
+그러나…주입식교육으로 인해 힘들어하는 그림천재', '/firstbook/resources/image/webnovel/monToSun/monday/webNov_3_mon.PNG', '월', 'N', 'N');
 
 INSERT INTO WEB_NOV_INFO (WEB_NOV_NUM, CATEGORY_CODE, WEB_NOV_TITLE, WEB_NOV_AUTHOR, CHAP_PER_COIN, WEB_NOV_PUBLISHER,
-                          WEB_NOV_INFORM, WEB_NOV_IMG_LOCATION, DAY_OF_WEEK, WEB_NOV_IS_OPEN, FINISHED_OR_NOT, WEB_NOV_COUNT)
-VALUES ('4', 'MF', '합기도의 신', '로우엔드', 100, 'abc미디어', '늙어 사라지지 않고 대가의 경지에 오른 괴물 시간을 되돌아오다', '사진경로3', '월', 'N', 'N', DEFAULT);
+                          WEB_NOV_INFORM, WEB_NOV_IMG_LOCATION, DAY_OF_WEEK, WEB_NOV_IS_OPEN, FINISHED_OR_NOT)
+VALUES ('4', 'MF', '합기도의 신', '로우엔드', 100, 'abc미디어', '늙어 사라지지 않고 대가의 경지에 오른 괴물 시간을 되돌아오다', '/firstbook/resources/image/webnovel/monToSun/monday/합기도.PNG', '월', 'N', 'N');
 
 INSERT INTO WEB_NOV_INFO (WEB_NOV_NUM, CATEGORY_CODE, WEB_NOV_TITLE, WEB_NOV_AUTHOR, CHAP_PER_COIN, WEB_NOV_PUBLISHER,
-                          WEB_NOV_INFORM, WEB_NOV_IMG_LOCATION, DAY_OF_WEEK, WEB_NOV_IS_OPEN, FINISHED_OR_NOT, WEB_NOV_COUNT)
-VALUES ('5', 'MF', '재활용 보이그룹 가나다라', '저게', 100, 'abc미디어', '마약, 불법도박, 학교폭력, 음주운전. 다른 데서 사고친 멤버들만 모아놓은 재활용 보이그룹. 출근 첫날 그런 애들을 맡게 되었다.', '사진경로3', '월', 'N', 'N', DEFAULT);
+                          WEB_NOV_INFORM, WEB_NOV_IMG_LOCATION, DAY_OF_WEEK, WEB_NOV_IS_OPEN, FINISHED_OR_NOT)
+VALUES ('5', 'MF', '재활용 보이그룹 가나다라', '저게', 100, 'abc미디어', '마약, 불법도박, 학교폭력, 음주운전. 다른 데서 사고친 멤버들만 모아놓은 재활용 보이그룹.
+출근 첫날 그런 애들을 맡게 되었다.', '/firstbook/resources/image/webnovel/monToSun/monday/재활용.PNG', '월', 'N', 'N');
 
 INSERT INTO WEB_NOV_INFO (WEB_NOV_NUM, CATEGORY_CODE, WEB_NOV_TITLE, WEB_NOV_AUTHOR, CHAP_PER_COIN, WEB_NOV_PUBLISHER,
-                          WEB_NOV_INFORM, WEB_NOV_IMG_LOCATION, DAY_OF_WEEK, WEB_NOV_IS_OPEN, FINISHED_OR_NOT, WEB_NOV_COUNT)
+                          WEB_NOV_INFORM, WEB_NOV_IMG_LOCATION, DAY_OF_WEEK, WEB_NOV_IS_OPEN, FINISHED_OR_NOT)
 VALUES ('6', 'F', '용기병', '진강현', 100, 'abc미디어', '공작가의 음모로 가문이 몰락한 제론은 그로 인해 얻게 된 빈털터리 유적에서 초고대 문명의 정수가 깃든 숨겨진 유적의 주인이 된다.
-그 유적의 비밀을 하나씩 파헤쳐 가며 기간트 라이더로 활동하면서 복수를 완성해 나간다.', '사진경로3', '월', 'N', 'N', DEFAULT);
+그 유적의 비밀을 하나씩 파헤쳐 가며 기간트 라이더로 활동하면서 복수를 완성해 나간다.', '/firstbook/resources/image/webnovel/monToSun/monday/용기병.PNG', '월', 'N', 'N');
 
 INSERT INTO WEB_NOV_INFO (WEB_NOV_NUM, CATEGORY_CODE, WEB_NOV_TITLE, WEB_NOV_AUTHOR, CHAP_PER_COIN, WEB_NOV_PUBLISHER,
-                          WEB_NOV_INFORM, WEB_NOV_IMG_LOCATION, DAY_OF_WEEK, WEB_NOV_IS_OPEN, FINISHED_OR_NOT, WEB_NOV_COUNT)
-VALUES ('7', 'F', '시한부 정령사가 되었다', '은의행', 100, 'abc미디어', '똥 밭에서 굴러도 이승이 낫다고 했던가. 또 한 번의 기회. 살아남기 위해서라면 무슨 짓이라도 할 것이다.', '사진경로3', '월', 'N', 'N', DEFAULT);
+                          WEB_NOV_INFORM, WEB_NOV_IMG_LOCATION, DAY_OF_WEEK, WEB_NOV_IS_OPEN, FINISHED_OR_NOT)
+VALUES ('7', 'F', '시한부 정령사가 되었다', '은의행', 100, 'abc미디어', '똥 밭에서 굴러도 이승이 낫다고 했던가. 또 한 번의 기회. 살아남기 위해서라면 무슨 짓이라도 할 것이다.', '/firstbook/resources/image/webnovel/monToSun/monday/정령사.PNG', '월', 'N', 'N');
 
 INSERT INTO WEB_NOV_INFO (WEB_NOV_NUM, CATEGORY_CODE, WEB_NOV_TITLE, WEB_NOV_AUTHOR, CHAP_PER_COIN, WEB_NOV_PUBLISHER,
-                          WEB_NOV_INFORM, WEB_NOV_IMG_LOCATION, DAY_OF_WEEK, WEB_NOV_IS_OPEN, FINISHED_OR_NOT, WEB_NOV_COUNT)
-VALUES ('8', 'F', '벼락 맞은 재벌 3세', '골든후드', 100, 'abc미디어', '하루 아침에 개망나니 재벌 막둥이의 열 살로 돌아갔다? 개망나니 몸으로 들어갔으니 개망나니로 살 것 인가. 아니면 재벌가에서 한 자리 두둑이 챙길 것 인가.', '사진경로3', '월', 'N', 'N', DEFAULT);
+                          WEB_NOV_INFORM, WEB_NOV_IMG_LOCATION, DAY_OF_WEEK, WEB_NOV_IS_OPEN, FINISHED_OR_NOT)
+VALUES ('8', 'F', '벼락 맞은 재벌 3세', '골든후드', 100, 'abc미디어', '하루 아침에 개망나니 재벌 막둥이의 열 살로 돌아갔다? 개망나니 몸으로 들어갔으니 개망나니로 살 것 인가. 아니면 재벌가에서 한 자리 두둑이 챙길 것 인가.', '/firstbook/resources/image/webnovel/monToSun/monday/벼락맞은재벌3세.PNG', '월', 'N', 'N');
 
 INSERT INTO WEB_NOV_INFO (WEB_NOV_NUM, CATEGORY_CODE, WEB_NOV_TITLE, WEB_NOV_AUTHOR, CHAP_PER_COIN, WEB_NOV_PUBLISHER,
-                          WEB_NOV_INFORM, WEB_NOV_IMG_LOCATION, DAY_OF_WEEK, WEB_NOV_IS_OPEN, FINISHED_OR_NOT, WEB_NOV_COUNT)
+                          WEB_NOV_INFORM, WEB_NOV_IMG_LOCATION, DAY_OF_WEEK, WEB_NOV_IS_OPEN, FINISHED_OR_NOT)
 VALUES ('9', 'F', '아카데미에 악마가 산다', '미디움웰던', 100, 'abc미디어', 'Lv.1 악마로 전생했다. 악마는 악한 일을 할 때 힘을 얻으니,
-어쩔 수 없이 악행을 저질러야 한다. 그런데 주변사람들이 뭔가 착각을 하는 거 같다...?', '사진경로3', '월', 'N', 'N', DEFAULT);
+어쩔 수 없이 악행을 저질러야 한다. 그런데 주변사람들이 뭔가 착각을 하는 거 같다...?', '/firstbook/resources/image/webnovel/monToSun/monday/아카데미악마.PNG', '월', 'N', 'N');
 
 INSERT INTO WEB_NOV_INFO (WEB_NOV_NUM, CATEGORY_CODE, WEB_NOV_TITLE, WEB_NOV_AUTHOR, CHAP_PER_COIN, WEB_NOV_PUBLISHER,
-                          WEB_NOV_INFORM, WEB_NOV_IMG_LOCATION, DAY_OF_WEEK, WEB_NOV_IS_OPEN, FINISHED_OR_NOT, WEB_NOV_COUNT)
-VALUES ('10', 'MF', '쉐프 프랑켄슈타인', '중우중우', 100, 'abc미디어', '좋은 쉐프란 무엇일까? 희생적인 쉐프? 양질의 요리를 제공하는 쉐프?', '사진경로3', '월', 'N', 'N', DEFAULT);
+                          WEB_NOV_INFORM, WEB_NOV_IMG_LOCATION, DAY_OF_WEEK, WEB_NOV_IS_OPEN, FINISHED_OR_NOT)
+VALUES ('10', 'MF', '쉐프 프랑켄슈타인', '중우중우', 100, 'abc미디어', '좋은 쉐프란 무엇일까? 희생적인 쉐프? 양질의 요리를 제공하는 쉐프?', '/firstbook/resources/image/webnovel/monToSun/monday/쉐프프랑케슈타인.PNG', '월', 'N', 'N');
 
 INSERT INTO WEB_NOV_INFO (WEB_NOV_NUM, CATEGORY_CODE, WEB_NOV_TITLE, WEB_NOV_AUTHOR, CHAP_PER_COIN, WEB_NOV_PUBLISHER,
-                          WEB_NOV_INFORM, WEB_NOV_IMG_LOCATION, DAY_OF_WEEK, WEB_NOV_IS_OPEN, FINISHED_OR_NOT, WEB_NOV_COUNT)
-VALUES ('11', 'SPO', '야구괴물은 지옥에서 왔다', '원썸', 100, 'abc미디어', '올타임 레전드들과 20년 조기 야구 하고왔다. 질문 안받는다.', '사진경로3', '월', 'N', 'N', DEFAULT);
+                          WEB_NOV_INFORM, WEB_NOV_IMG_LOCATION, DAY_OF_WEEK, WEB_NOV_IS_OPEN, FINISHED_OR_NOT)
+VALUES ('11', 'SPO', '야구괴물은 지옥에서 왔다', '원썸', 100, 'abc미디어', '올타임 레전드들과 20년 조기 야구 하고왔다. 질문 안받는다.', '/firstbook/resources/image/webnovel/monToSun/monday/야구괴물.PNG', '월', 'N', 'N');
 
 INSERT INTO WEB_NOV_INFO (WEB_NOV_NUM, CATEGORY_CODE, WEB_NOV_TITLE, WEB_NOV_AUTHOR, CHAP_PER_COIN, WEB_NOV_PUBLISHER,
-                          WEB_NOV_INFORM, WEB_NOV_IMG_LOCATION, DAY_OF_WEEK, WEB_NOV_IS_OPEN, FINISHED_OR_NOT, WEB_NOV_COUNT)
-VALUES ('12', 'FH', '아메리카의 독재자가 되었다', '저너머', 100, 'abc미디어', '기회의 땅, 아메리카. 전세계 정복을 꿈꾼다', '사진경로3', '월', 'N', 'N', DEFAULT);
+                          WEB_NOV_INFORM, WEB_NOV_IMG_LOCATION, DAY_OF_WEEK, WEB_NOV_IS_OPEN, FINISHED_OR_NOT)
+VALUES ('12', 'FH', '아메리카의 독재자가 되었다', '저너머', 100, 'abc미디어', '기회의 땅, 아메리카. 전세계 정복을 꿈꾼다', '/firstbook/resources/image/webnovel/monToSun/monday/아메리카독재자.PNG', '월', 'N', 'N');
 
 INSERT INTO WEB_NOV_INFO (WEB_NOV_NUM, CATEGORY_CODE, WEB_NOV_TITLE, WEB_NOV_AUTHOR, CHAP_PER_COIN, WEB_NOV_PUBLISHER,
-                          WEB_NOV_INFORM, WEB_NOV_IMG_LOCATION, DAY_OF_WEEK, WEB_NOV_IS_OPEN, FINISHED_OR_NOT, WEB_NOV_COUNT)
-VALUES ('13', 'F', '게으른 소드마스터', '전자렌지1', 100, 'abc미디어', '...검들기도 귀찮아. 하지만 휘두르기만 하면...!', '사진경로3', '월', 'N', 'N', DEFAULT);
+                          WEB_NOV_INFORM, WEB_NOV_IMG_LOCATION, DAY_OF_WEEK, WEB_NOV_IS_OPEN, FINISHED_OR_NOT)
+VALUES ('13', 'F', '게으른 소드마스터', '전자렌지1', 100, 'abc미디어', '...검들기도 귀찮아. 하지만 휘두르기만 하면...!', '/firstbook/resources/image/webnovel/monToSun/monday/소드마스터.PNG', '월', 'N', 'N');
 
 INSERT INTO WEB_NOV_INFO (WEB_NOV_NUM, CATEGORY_CODE, WEB_NOV_TITLE, WEB_NOV_AUTHOR, CHAP_PER_COIN, WEB_NOV_PUBLISHER,
-                          WEB_NOV_INFORM, WEB_NOV_IMG_LOCATION, DAY_OF_WEEK, WEB_NOV_IS_OPEN, FINISHED_OR_NOT, WEB_NOV_COUNT)
-VALUES ('14', 'F', '일부러 시스템 교란종이 되어보았다', '새치', 100, 'abc미디어', '어쩌다 탑에 들어가 죽었는데 시스템 오류를 일으켰다. 어라? 몬스터도 속이고 각성자도 속는다.', '사진경로3', '월', 'N', 'N', DEFAULT);
+                          WEB_NOV_INFORM, WEB_NOV_IMG_LOCATION, DAY_OF_WEEK, WEB_NOV_IS_OPEN, FINISHED_OR_NOT)
+VALUES ('14', 'F', '일부러 시스템 교란종이 되어보았다', '새치', 100, 'abc미디어', '어쩌다 탑에 들어가 죽었는데 시스템 오류를 일으켰다. 어라? 몬스터도 속이고 각성자도 속는다.', '/firstbook/resources/image/webnovel/monToSun/monday/재활용.PNG', '월', 'N', 'N');
 
 INSERT INTO WEB_NOV_INFO (WEB_NOV_NUM, CATEGORY_CODE, WEB_NOV_TITLE, WEB_NOV_AUTHOR, CHAP_PER_COIN, WEB_NOV_PUBLISHER,
-                          WEB_NOV_INFORM, WEB_NOV_IMG_LOCATION, DAY_OF_WEEK, WEB_NOV_IS_OPEN, FINISHED_OR_NOT, WEB_NOV_COUNT)
-VALUES ('15', 'F', '소림용사', '화산행', 100, 'abc미디어', '60억분의 1의 사나이. 영장류 최강의 격투가 모강철. 은퇴 경기를 하루 앞두고 잠든 그가 깨어난 곳은?', '사진경로3', '월', 'N', 'N', DEFAULT);
+                          WEB_NOV_INFORM, WEB_NOV_IMG_LOCATION, DAY_OF_WEEK, WEB_NOV_IS_OPEN, FINISHED_OR_NOT)
+VALUES ('15', 'F', '소림용사', '화산행', 100, 'abc미디어', '60억분의 1의 사나이. 영장류 최강의 격투가 모강철. 은퇴 경기를 하루 앞두고 잠든 그가 깨어난 곳은?', '/firstbook/resources/image/webnovel/monToSun/monday/소림사.PNG', '월', 'N', 'N');
 
 
 INSERT INTO WEB_NOV_INFO (WEB_NOV_NUM, CATEGORY_CODE, WEB_NOV_TITLE, WEB_NOV_AUTHOR, CHAP_PER_COIN, WEB_NOV_PUBLISHER,
-                          WEB_NOV_INFORM, WEB_NOV_IMG_LOCATION, DAY_OF_WEEK, WEB_NOV_IS_OPEN, FINISHED_OR_NOT, WEB_NOV_COUNT)
+                          WEB_NOV_INFORM, WEB_NOV_IMG_LOCATION, DAY_OF_WEEK, WEB_NOV_IS_OPEN, FINISHED_OR_NOT)
 VALUES ('16', 'MF', '신들린닥터', '노마취수술', 100, '다산북스', '의학계의 떠오르는 샛별의 등장
-의학계를 뒤집어 놓은게 있엇으니… 그것은 마취 없는 수술의 시작…', '사진경로4', '화', 'N', 'N', DEFAULT);
+의학계를 뒤집어 놓은게 있엇으니… 그것은 마취 없는 수술의 시작…', '/firstbook/resources/image/webnovel/monToSun/tuesday/webNov_4_tues.PNG', '화', 'N', 'N');
 
 INSERT INTO WEB_NOV_INFO (WEB_NOV_NUM, CATEGORY_CODE, WEB_NOV_TITLE, WEB_NOV_AUTHOR, CHAP_PER_COIN, WEB_NOV_PUBLISHER,
-                          WEB_NOV_INFORM, WEB_NOV_IMG_LOCATION, DAY_OF_WEEK, WEB_NOV_IS_OPEN, FINISHED_OR_NOT, WEB_NOV_COUNT)
+                          WEB_NOV_INFORM, WEB_NOV_IMG_LOCATION, DAY_OF_WEEK, WEB_NOV_IS_OPEN, FINISHED_OR_NOT)
 VALUES ('17', 'OF', '스타용병 이영호', '나는아이언', 100, '다산북스', '게임의 인기로 인해 유저들이 늘어나면서
-게임에 관심없던 이영호라는 소년이…방배중에서...게임을 시작하는데', '사진경로5', '화', 'Y', 'N', DEFAULT);
+게임에 관심없던 이영호라는 소년이…방배중에서...게임을 시작하는데', '/firstbook/resources/image/webnovel/monToSun/tuesday/webNov_5_tues.PNG', '화', 'Y', 'N');
 
 INSERT INTO WEB_NOV_INFO (WEB_NOV_NUM, CATEGORY_CODE, WEB_NOV_TITLE, WEB_NOV_AUTHOR, CHAP_PER_COIN, WEB_NOV_PUBLISHER,
-                          WEB_NOV_INFORM, WEB_NOV_IMG_LOCATION, DAY_OF_WEEK, WEB_NOV_IS_OPEN, FINISHED_OR_NOT, WEB_NOV_COUNT)
+                          WEB_NOV_INFORM, WEB_NOV_IMG_LOCATION, DAY_OF_WEEK, WEB_NOV_IS_OPEN, FINISHED_OR_NOT)
 VALUES ('18', 'ROM', '인간은 연약해', '코로나19', 100, '게임북스', '대한민국 전성기로 보였던2019년…
-예상치 못한 병이 찾아오기 시작한다!!', '사진경로6', '화', 'N', 'N', DEFAULT);
+예상치 못한 병이 찾아오기 시작한다!!', '/firstbook/resources/image/webnovel/monToSun/tuesday/webNov_6_tues.PNG', '화', 'N', 'N');
 
 INSERT INTO WEB_NOV_INFO (WEB_NOV_NUM, CATEGORY_CODE, WEB_NOV_TITLE, WEB_NOV_AUTHOR, CHAP_PER_COIN, WEB_NOV_PUBLISHER,
-                          WEB_NOV_INFORM, WEB_NOV_IMG_LOCATION, DAY_OF_WEEK, WEB_NOV_IS_OPEN, FINISHED_OR_NOT, WEB_NOV_COUNT)
-VALUES ('19', 'MF', '너의 최애푸드가 보여!', '푸만두', 100, '에이비씨미디어', '사람들의 최애푸드가 보이기 시작했다.', '사진경로6', '화', 'N', 'N', DEFAULT);
+                          WEB_NOV_INFORM, WEB_NOV_IMG_LOCATION, DAY_OF_WEEK, WEB_NOV_IS_OPEN, FINISHED_OR_NOT)
+VALUES ('19', 'MF', '너의 최애푸드가 보여!', '푸만두', 100, '에이비씨미디어', '사람들의 최애푸드가 보이기 시작했다.', '/firstbook/resources/image/webnovel/monToSun/tuesday/최애푸드.PNG', '화', 'N', 'N');
 
 INSERT INTO WEB_NOV_INFO (WEB_NOV_NUM, CATEGORY_CODE, WEB_NOV_TITLE, WEB_NOV_AUTHOR, CHAP_PER_COIN, WEB_NOV_PUBLISHER,
-                          WEB_NOV_INFORM, WEB_NOV_IMG_LOCATION, DAY_OF_WEEK, WEB_NOV_IS_OPEN, FINISHED_OR_NOT, WEB_NOV_COUNT)
-VALUES ('20', 'MF', '전장의 선율', '예스장', 100, '에이비씨미디어', '시각장애 피아니스트 전장에 선율의 꽃을 피우다다.', '사진경로6', '화', 'N', 'N', DEFAULT);
+                          WEB_NOV_INFORM, WEB_NOV_IMG_LOCATION, DAY_OF_WEEK, WEB_NOV_IS_OPEN, FINISHED_OR_NOT)
+VALUES ('20', 'MF', '전장의 선율', '예스장', 100, '에이비씨미디어', '시각장애 피아니스트 전장에 선율의 꽃을 피우다다.', '/firstbook/resources/image/webnovel/monToSun/tuesday/전장의소울.PNG', '화', 'N', 'N');
 
 INSERT INTO WEB_NOV_INFO (WEB_NOV_NUM, CATEGORY_CODE, WEB_NOV_TITLE, WEB_NOV_AUTHOR, CHAP_PER_COIN, WEB_NOV_PUBLISHER,
-                          WEB_NOV_INFORM, WEB_NOV_IMG_LOCATION, DAY_OF_WEEK, WEB_NOV_IS_OPEN, FINISHED_OR_NOT, WEB_NOV_COUNT)
-VALUES ('21', 'MF', '발가락의 노래', '김동신', 100, '에이비씨미디어', '특별한 뇌 호흡, 격투의 수법을 전수받으며 점점 ‘건강한 말기 암 환자’로 변신.', '사진경로6', '화', 'N', 'N', DEFAULT);
+                          WEB_NOV_INFORM, WEB_NOV_IMG_LOCATION, DAY_OF_WEEK, WEB_NOV_IS_OPEN, FINISHED_OR_NOT)
+VALUES ('21', 'MF', '발가락의 노래', '김동신', 100, '에이비씨미디어', '특별한 뇌 호흡, 격투의 수법을 전수받으며 점점 ‘건강한 말기 암 환자’로 변신.', '/firstbook/resources/image/webnovel/monToSun/tuesday/발가락의노래.PNG', '화', 'N', 'N');
 
 INSERT INTO WEB_NOV_INFO (WEB_NOV_NUM, CATEGORY_CODE, WEB_NOV_TITLE, WEB_NOV_AUTHOR, CHAP_PER_COIN, WEB_NOV_PUBLISHER,
-                          WEB_NOV_INFORM, WEB_NOV_IMG_LOCATION, DAY_OF_WEEK, WEB_NOV_IS_OPEN, FINISHED_OR_NOT, WEB_NOV_COUNT)
-VALUES ('22', 'MF', '약자생존', '가렌', 100, '에이비씨미디어', '변화된 지구에서 살아남아라! 오직 약한(?) 자만 생존한다!', '사진경로6', '화', 'N', 'N', DEFAULT);
+                          WEB_NOV_INFORM, WEB_NOV_IMG_LOCATION, DAY_OF_WEEK, WEB_NOV_IS_OPEN, FINISHED_OR_NOT)
+VALUES ('22', 'MF', '약자생존', '가렌', 100, '에이비씨미디어', '변화된 지구에서 살아남아라! 오직 약한(?) 자만 생존한다!', '/firstbook/resources/image/webnovel/monToSun/tuesday/약자생존.PNG', '화', 'N', 'N');
 
 INSERT INTO WEB_NOV_INFO (WEB_NOV_NUM, CATEGORY_CODE, WEB_NOV_TITLE, WEB_NOV_AUTHOR, CHAP_PER_COIN, WEB_NOV_PUBLISHER,
-                          WEB_NOV_INFORM, WEB_NOV_IMG_LOCATION, DAY_OF_WEEK, WEB_NOV_IS_OPEN, FINISHED_OR_NOT, WEB_NOV_COUNT)
-VALUES ('23', 'F', '지구게임의 사령관', '야행', 100, '에이비씨미디어', '사령관님 괜찮으십니까? 뭐 사령관? 난 그냥 게이머야! 사령관 같은 게 아니라고! 우주 전략 시뮬레이션 ‘스페이스 워’의 사령관이 되어버렸다.', '사진경로6', '화', 'N', 'N', DEFAULT);
+                          WEB_NOV_INFORM, WEB_NOV_IMG_LOCATION, DAY_OF_WEEK, WEB_NOV_IS_OPEN, FINISHED_OR_NOT)
+VALUES ('23', 'F', '지구게임의 사령관', '야행', 100, '에이비씨미디어', '사령관님 괜찮으십니까? 뭐 사령관? 난 그냥 게이머야! 사령관 같은 게 아니라고! 우주 전략 시뮬레이션 ‘스페이스 워’의 사령관이 되어버렸다.', '/firstbook/resources/image/webnovel/monToSun/tuesday/전장의사령관.PNG', '화', 'N', 'N');
 
 INSERT INTO WEB_NOV_INFO (WEB_NOV_NUM, CATEGORY_CODE, WEB_NOV_TITLE, WEB_NOV_AUTHOR, CHAP_PER_COIN, WEB_NOV_PUBLISHER,
-                          WEB_NOV_INFORM, WEB_NOV_IMG_LOCATION, DAY_OF_WEEK, WEB_NOV_IS_OPEN, FINISHED_OR_NOT, WEB_NOV_COUNT)
-VALUES ('24', 'MF', '타투', '스몰', 100, '에이비씨미디어', '문신 덕에 넘어간 세계는 몬스터를 잡으면 내공이 상승하고, 상금으로 금화까지!', '사진경로6', '화', 'N', 'N', DEFAULT);
+                          WEB_NOV_INFORM, WEB_NOV_IMG_LOCATION, DAY_OF_WEEK, WEB_NOV_IS_OPEN, FINISHED_OR_NOT)
+VALUES ('24', 'MF', '타투', '스몰', 100, '에이비씨미디어', '문신 덕에 넘어간 세계는 몬스터를 잡으면 내공이 상승하고, 상금으로 금화까지!', '/firstbook/resources/image/webnovel/monToSun/tuesday/타투.PNG', '화', 'N', 'N');
 
 INSERT INTO WEB_NOV_INFO (WEB_NOV_NUM, CATEGORY_CODE, WEB_NOV_TITLE, WEB_NOV_AUTHOR, CHAP_PER_COIN, WEB_NOV_PUBLISHER,
-                          WEB_NOV_INFORM, WEB_NOV_IMG_LOCATION, DAY_OF_WEEK, WEB_NOV_IS_OPEN, FINISHED_OR_NOT, WEB_NOV_COUNT)
-VALUES ('25', 'F', '위키쓰는 법사', '로드롤러', 100, '에이비씨미디어', '다른 놈이 주문외울때 나는 위키 쓴다.', '사진경로6', '화', 'N', 'N', DEFAULT);
+                          WEB_NOV_INFORM, WEB_NOV_IMG_LOCATION, DAY_OF_WEEK, WEB_NOV_IS_OPEN, FINISHED_OR_NOT)
+VALUES ('25', 'F', '위키쓰는 법사', '로드롤러', 100, '에이비씨미디어', '다른 놈이 주문외울때 나는 위키 쓴다.', '/firstbook/resources/image/webnovel/monToSun/tuesday/법사.PNG', '화', 'N', 'N');
 
 INSERT INTO WEB_NOV_INFO (WEB_NOV_NUM, CATEGORY_CODE, WEB_NOV_TITLE, WEB_NOV_AUTHOR, CHAP_PER_COIN, WEB_NOV_PUBLISHER,
-                          WEB_NOV_INFORM, WEB_NOV_IMG_LOCATION, DAY_OF_WEEK, WEB_NOV_IS_OPEN, FINISHED_OR_NOT, WEB_NOV_COUNT)
-VALUES ('26', 'MF', '왕십리역 소드마스터', '왕십리턴', 100, '에이비씨미디어', '[과천역 4번출구 던전에 입장하셨습니다.]', '사진경로6', '화', 'N', 'N', DEFAULT);
+                          WEB_NOV_INFORM, WEB_NOV_IMG_LOCATION, DAY_OF_WEEK, WEB_NOV_IS_OPEN, FINISHED_OR_NOT)
+VALUES ('26', 'MF', '왕십리역 소드마스터', '왕십리턴', 100, '에이비씨미디어', '[과천역 4번출구 던전에 입장하셨습니다.]', '/firstbook/resources/image/webnovel/monToSun/tuesday/왕십리.PNG', '화', 'N', 'N');
 
 INSERT INTO WEB_NOV_INFO (WEB_NOV_NUM, CATEGORY_CODE, WEB_NOV_TITLE, WEB_NOV_AUTHOR, CHAP_PER_COIN, WEB_NOV_PUBLISHER,
-                          WEB_NOV_INFORM, WEB_NOV_IMG_LOCATION, DAY_OF_WEEK, WEB_NOV_IS_OPEN, FINISHED_OR_NOT, WEB_NOV_COUNT)
-VALUES ('27', 'MF', '책을 읽으면 레벨이 올라', '독서광', 100, '에이비씨미디어', '게임도 아니고, 책을 읽으면 경험치가 쌓인다고?', '사진경로6', '화', 'N', 'N', DEFAULT);
+                          WEB_NOV_INFORM, WEB_NOV_IMG_LOCATION, DAY_OF_WEEK, WEB_NOV_IS_OPEN, FINISHED_OR_NOT)
+VALUES ('27', 'MF', '책을 읽으면 레벨이 올라', '독서광', 100, '에이비씨미디어', '게임도 아니고, 책을 읽으면 경험치가 쌓인다고?', '/firstbook/resources/image/webnovel/monToSun/tuesday/책을읽으면.PNG', '화', 'N', 'N');
 
 INSERT INTO WEB_NOV_INFO (WEB_NOV_NUM, CATEGORY_CODE, WEB_NOV_TITLE, WEB_NOV_AUTHOR, CHAP_PER_COIN, WEB_NOV_PUBLISHER,
-                          WEB_NOV_INFORM, WEB_NOV_IMG_LOCATION, DAY_OF_WEEK, WEB_NOV_IS_OPEN, FINISHED_OR_NOT, WEB_NOV_COUNT)
-VALUES ('28', 'MF', '인셉션 라이프', '멱살캐리', 100, '에이비씨미디어', '두개의 몸, 두개의 세계, 동기화된 미래', '사진경로6', '화', 'N', 'N', DEFAULT);
+                          WEB_NOV_INFORM, WEB_NOV_IMG_LOCATION, DAY_OF_WEEK, WEB_NOV_IS_OPEN, FINISHED_OR_NOT)
+VALUES ('28', 'MF', '인셉션 라이프', '멱살캐리', 100, '에이비씨미디어', '두개의 몸, 두개의 세계, 동기화된 미래', '/firstbook/resources/image/webnovel/monToSun/tuesday/인셉션.PNG', '화', 'N', 'N');
 
 INSERT INTO WEB_NOV_INFO (WEB_NOV_NUM, CATEGORY_CODE, WEB_NOV_TITLE, WEB_NOV_AUTHOR, CHAP_PER_COIN, WEB_NOV_PUBLISHER,
-                          WEB_NOV_INFORM, WEB_NOV_IMG_LOCATION, DAY_OF_WEEK, WEB_NOV_IS_OPEN, FINISHED_OR_NOT, WEB_NOV_COUNT)
-VALUES ('29', 'F', '테이밍 슬레이브', '김태석', 100, '에이비씨미디어', '카일란 최고의 노답 직업인 소환술사?', '사진경로6', '화', 'N', 'N', DEFAULT);
+                          WEB_NOV_INFORM, WEB_NOV_IMG_LOCATION, DAY_OF_WEEK, WEB_NOV_IS_OPEN, FINISHED_OR_NOT)
+VALUES ('29', 'F', '테이밍 슬레이브', '김태석', 100, '에이비씨미디어', '카일란 최고의 노답 직업인 소환술사?', '/firstbook/resources/image/webnovel/monToSun/tuesday/슬레이브.PNG', '화', 'N', 'N');
 
 INSERT INTO WEB_NOV_INFO (WEB_NOV_NUM, CATEGORY_CODE, WEB_NOV_TITLE, WEB_NOV_AUTHOR, CHAP_PER_COIN, WEB_NOV_PUBLISHER,
-                          WEB_NOV_INFORM, WEB_NOV_IMG_LOCATION, DAY_OF_WEEK, WEB_NOV_IS_OPEN, FINISHED_OR_NOT, WEB_NOV_COUNT)
+                          WEB_NOV_INFORM, WEB_NOV_IMG_LOCATION, DAY_OF_WEEK, WEB_NOV_IS_OPEN, FINISHED_OR_NOT)
 VALUES ('30', 'F', '천국에서 돌아온 김대성', '귀차늠', 100, '에이비씨미디어', '지구로 돌아왔으니 이젠 유유자적 살고 싶었는데... [마수들이 절대자의 활약에 환호합니다!]
-[마수들이 절대자께 공물을 바칩니다!] 끈질긴 새끼들, 안 해! 안 한다고!', '사진경로6', '화', 'N', 'N', DEFAULT);
+[마수들이 절대자께 공물을 바칩니다!] 끈질긴 새끼들, 안 해! 안 한다고!', '/firstbook/resources/image/webnovel/monToSun/tuesday/천국에서돌아온김대성.PNG', '화', 'N', 'N');
+
 
 INSERT INTO WEB_NOV_INFO (WEB_NOV_NUM, CATEGORY_CODE, WEB_NOV_TITLE, WEB_NOV_AUTHOR, CHAP_PER_COIN, WEB_NOV_PUBLISHER,
-                          WEB_NOV_INFORM, WEB_NOV_IMG_LOCATION, DAY_OF_WEEK, WEB_NOV_IS_OPEN, FINISHED_OR_NOT, WEB_NOV_COUNT)
-VALUES ('31', 'ROM', '아웃사이드 인', '피셀', 100, '넥서스', '인사이드 아웃의 후속작!', '사진경로7', '수', 'N', 'N', DEFAULT);
+                          WEB_NOV_INFORM, WEB_NOV_IMG_LOCATION, DAY_OF_WEEK, WEB_NOV_IS_OPEN, FINISHED_OR_NOT)
+VALUES ('31', 'ROM', '아웃사이드 인', '피셀', 100, '넥서스', '인사이드 아웃의 후속작!', '/firstbook/resources/image/webnovel/monToSun/wednesday/webNov_7_wed.PNG', '수', 'N', 'N');
 INSERT INTO WEB_NOV_INFO (WEB_NOV_NUM, CATEGORY_CODE, WEB_NOV_TITLE, WEB_NOV_AUTHOR, CHAP_PER_COIN, WEB_NOV_PUBLISHER,
-                          WEB_NOV_INFORM, WEB_NOV_IMG_LOCATION, DAY_OF_WEEK, WEB_NOV_IS_OPEN, FINISHED_OR_NOT, WEB_NOV_COUNT)
+                          WEB_NOV_INFORM, WEB_NOV_IMG_LOCATION, DAY_OF_WEEK, WEB_NOV_IS_OPEN, FINISHED_OR_NOT)
 VALUES ('32', 'SPO', '0살부터미적분', '전공은경영', 100, '미디어그룹', '2살에 덧셈뺄셈…5살에..삼각함수…
-8살에 대학 미적분을 푸는 천재의 등장….', '사진경로8', '수', 'Y', 'N', DEFAULT);
+8살에 대학 미적분을 푸는 천재의 등장….', '/firstbook/resources/image/webnovel/monToSun/wednesday/webNov_8_wed.PNG', '수', 'Y', 'N');
 INSERT INTO WEB_NOV_INFO (WEB_NOV_NUM, CATEGORY_CODE, WEB_NOV_TITLE, WEB_NOV_AUTHOR, CHAP_PER_COIN, WEB_NOV_PUBLISHER,
-                          WEB_NOV_INFORM, WEB_NOV_IMG_LOCATION, DAY_OF_WEEK, WEB_NOV_IS_OPEN, FINISHED_OR_NOT, WEB_NOV_COUNT)
+                          WEB_NOV_INFORM, WEB_NOV_IMG_LOCATION, DAY_OF_WEEK, WEB_NOV_IS_OPEN, FINISHED_OR_NOT)
 VALUES ('33', 'F', '귀머거리의전설', '베토벤', 100, '김영사', '1800년 르네상스 시대에 유럽에서 음악 천재가 태어나다
-그러나..그는 얼마 못가 귀머거리가 되는데..', '사진경로9', '수', 'N', 'Y', DEFAULT);
+그러나..그는 얼마 못가 귀머거리가 되는데..', '/firstbook/resources/image/webnovel/monToSun/wednesday/webNov_9_wed.PNG', '수', 'N', 'Y');
 INSERT INTO WEB_NOV_INFO (WEB_NOV_NUM, CATEGORY_CODE, WEB_NOV_TITLE, WEB_NOV_AUTHOR, CHAP_PER_COIN, WEB_NOV_PUBLISHER,
-                          WEB_NOV_INFORM, WEB_NOV_IMG_LOCATION, DAY_OF_WEEK, WEB_NOV_IS_OPEN, FINISHED_OR_NOT, WEB_NOV_COUNT)
+                          WEB_NOV_INFORM, WEB_NOV_IMG_LOCATION, DAY_OF_WEEK, WEB_NOV_IS_OPEN, FINISHED_OR_NOT)
 VALUES ('34', 'FH', '짝귀의삶', '빈센트반고흐', 100, '미디어그룹', '타짜의 세계에서….
-밑장빼다간 손모가지가 날아가는 사건이 비일비재하는데', '사진경로10', '목', 'N', 'N', DEFAULT);
+밑장빼다간 손모가지가 날아가는 사건이 비일비재하는데', '/firstbook/resources/image/webnovel/monToSun/thursday/webNov_10_thurs.PNG', '목', 'N', 'N');
 INSERT INTO WEB_NOV_INFO (WEB_NOV_NUM, CATEGORY_CODE, WEB_NOV_TITLE, WEB_NOV_AUTHOR, CHAP_PER_COIN, WEB_NOV_PUBLISHER,
-                          WEB_NOV_INFORM, WEB_NOV_IMG_LOCATION, DAY_OF_WEEK, WEB_NOV_IS_OPEN, FINISHED_OR_NOT, WEB_NOV_COUNT)
+                          WEB_NOV_INFORM, WEB_NOV_IMG_LOCATION, DAY_OF_WEEK, WEB_NOV_IS_OPEN, FINISHED_OR_NOT)
 VALUES ('35', 'ROM', '금수저 백수생활', '김밥은헤븐', 100, '문학동네', 'N그룹 금수저로 태어난 K씨는…
-자신이 금수저라는 사실을 숨기고 지내는데', '사진경로11', '목', 'N', 'N', DEFAULT);
+자신이 금수저라는 사실을 숨기고 지내는데', '/firstbook/resources/image/webnovel/monToSun/thursday/webNov_11_thurs.PNG', '목', 'N', 'N');
 INSERT INTO WEB_NOV_INFO (WEB_NOV_NUM, CATEGORY_CODE, WEB_NOV_TITLE, WEB_NOV_AUTHOR, CHAP_PER_COIN, WEB_NOV_PUBLISHER,
-                          WEB_NOV_INFORM, WEB_NOV_IMG_LOCATION, DAY_OF_WEEK, WEB_NOV_IS_OPEN, FINISHED_OR_NOT, WEB_NOV_COUNT)
+                          WEB_NOV_INFORM, WEB_NOV_IMG_LOCATION, DAY_OF_WEEK, WEB_NOV_IS_OPEN, FINISHED_OR_NOT)
 VALUES ('36', 'FH', '신입사원이재용', '삼성1인자', 100, '미디어그룹', 'S그룹의 예비 후계자…
-회사를 알기위해 신입사원으로 위장해서 들어가면서..', '사진경로12', '목', 'Y', 'N', DEFAULT);
+회사를 알기위해 신입사원으로 위장해서 들어가면서..', '/firstbook/resources/image/webnovel/monToSun/thursday/webNov_12_thurs.PNG', '목', 'Y', 'N');
 INSERT INTO WEB_NOV_INFO (WEB_NOV_NUM, CATEGORY_CODE, WEB_NOV_TITLE, WEB_NOV_AUTHOR, CHAP_PER_COIN, WEB_NOV_PUBLISHER,
-                          WEB_NOV_INFORM, WEB_NOV_IMG_LOCATION, DAY_OF_WEEK, WEB_NOV_IS_OPEN, FINISHED_OR_NOT, WEB_NOV_COUNT)
-VALUES ('37', 'FH', '슬기로운개발생활', '야근은선택이아닌필수', 100, '게임북스', '개발자의 길을 걷게다던 P씨의 개발 이야기', '사진경로13', '금', 'N', 'N', DEFAULT);
+                          WEB_NOV_INFORM, WEB_NOV_IMG_LOCATION, DAY_OF_WEEK, WEB_NOV_IS_OPEN, FINISHED_OR_NOT)
+VALUES ('37', 'FH', '슬기로운개발생활', '야근은선택이아닌필수', 100, '게임북스', '개발자의 길을 걷게다던 P씨의 개발 이야기', '/firstbook/resources/image/webnovel/monToSun/friday/webNov_13_fri.PNG', '금', 'N', 'N');
 INSERT INTO WEB_NOV_INFO (WEB_NOV_NUM, CATEGORY_CODE, WEB_NOV_TITLE, WEB_NOV_AUTHOR, CHAP_PER_COIN, WEB_NOV_PUBLISHER,
-                          WEB_NOV_INFORM, WEB_NOV_IMG_LOCATION, DAY_OF_WEEK, WEB_NOV_IS_OPEN, FINISHED_OR_NOT, WEB_NOV_COUNT)
+                          WEB_NOV_INFORM, WEB_NOV_IMG_LOCATION, DAY_OF_WEEK, WEB_NOV_IS_OPEN, FINISHED_OR_NOT)
 VALUES ('38', 'MF', '천생개발자', 'HTML은언어다', 100, '게임북스', '어렸을 때부터 장난감보단 코드 짜는 것에 흥미와 관심을 보였던 l씨
-성인이 되어 유명회사에 입사하게 되는데', '사진경로14', '금', 'N', 'N', DEFAULT);
+성인이 되어 유명회사에 입사하게 되는데', '/firstbook/resources/image/webnovel/monToSun/friday/webNov_14_fri.PNG', '금', 'N', 'N');
 INSERT INTO WEB_NOV_INFO (WEB_NOV_NUM, CATEGORY_CODE, WEB_NOV_TITLE, WEB_NOV_AUTHOR, CHAP_PER_COIN, WEB_NOV_PUBLISHER,
-                          WEB_NOV_INFORM, WEB_NOV_IMG_LOCATION, DAY_OF_WEEK, WEB_NOV_IS_OPEN, FINISHED_OR_NOT, WEB_NOV_COUNT)
+                          WEB_NOV_INFORM, WEB_NOV_IMG_LOCATION, DAY_OF_WEEK, WEB_NOV_IS_OPEN, FINISHED_OR_NOT)
 VALUES ('39', 'SPO', '재벌가늦등이', '금수저라이프', 100, '넥서스', '대한민국 5대 재벌가의 집안에서 늦등이가 탄생했다
-그러면서 경영권자리에 첫 째가 눈독이 오르는데', '사진경로15', '금', 'Y ', 'Y ', DEFAULT);
+그러면서 경영권자리에 첫 째가 눈독이 오르는데', '/firstbook/resources/image/webnovel/monToSun/friday/webNov_15_fri.PNG', '금', 'Y', 'Y');
 INSERT INTO WEB_NOV_INFO (WEB_NOV_NUM, CATEGORY_CODE, WEB_NOV_TITLE, WEB_NOV_AUTHOR, CHAP_PER_COIN, WEB_NOV_PUBLISHER,
-                          WEB_NOV_INFORM, WEB_NOV_IMG_LOCATION, DAY_OF_WEEK, WEB_NOV_IS_OPEN, FINISHED_OR_NOT, WEB_NOV_COUNT)
+                          WEB_NOV_INFORM, WEB_NOV_IMG_LOCATION, DAY_OF_WEEK, WEB_NOV_IS_OPEN, FINISHED_OR_NOT)
 VALUES ('40', 'F', '메카닉이되었다', '마린파이어뱃', 100, '창비', '바이오닉계에서 전설이었던 M씨가
-상대 계열사인 메카닉계로 떠나게 된다!', '사진경로16', '토', 'N', 'N', DEFAULT);
+상대 계열사인 메카닉계로 떠나게 된다!', '/firstbook/resources/image/webnovel/monToSun/saturday/webNov_16_sat.PNG', '토', 'N', 'N');
 INSERT INTO WEB_NOV_INFO (WEB_NOV_NUM, CATEGORY_CODE, WEB_NOV_TITLE, WEB_NOV_AUTHOR, CHAP_PER_COIN, WEB_NOV_PUBLISHER,
-                          WEB_NOV_INFORM, WEB_NOV_IMG_LOCATION, DAY_OF_WEEK, WEB_NOV_IS_OPEN, FINISHED_OR_NOT, WEB_NOV_COUNT)
+                          WEB_NOV_INFORM, WEB_NOV_IMG_LOCATION, DAY_OF_WEEK, WEB_NOV_IS_OPEN, FINISHED_OR_NOT)
 VALUES ('41', 'MF', '축구황제가되기까지', '마이클조던', 100, '넥서스', '가난한 집안에서 태어났지만, 축구 능력 만큼은 우수했던 청년
-우연치 않게 구단주를 만나게 되는데', '사진경로17', '토', 'N', 'Y', DEFAULT);
+우연치 않게 구단주를 만나게 되는데', '/firstbook/resources/image/webnovel/monToSun/saturday/webNov_17_sat.PNG', '토', 'N', 'Y');
 INSERT INTO WEB_NOV_INFO (WEB_NOV_NUM, CATEGORY_CODE, WEB_NOV_TITLE, WEB_NOV_AUTHOR, CHAP_PER_COIN, WEB_NOV_PUBLISHER,
-                          WEB_NOV_INFORM, WEB_NOV_IMG_LOCATION, DAY_OF_WEEK, WEB_NOV_IS_OPEN, FINISHED_OR_NOT, WEB_NOV_COUNT)
+                          WEB_NOV_INFORM, WEB_NOV_IMG_LOCATION, DAY_OF_WEEK, WEB_NOV_IS_OPEN, FINISHED_OR_NOT)
 VALUES ('42', 'F', '황제의자리', '요환과페이커', 100, '문학동네', '하늘아래 두 개의 태양은 존재 하지 않는 법!!
-황제의 자리를 놓고 벌여지는 숨막히는 티키타가의 스토리!', '사진경로18', '토', 'N', 'N', DEFAULT);
+황제의 자리를 놓고 벌여지는 숨막히는 티키타가의 스토리!', '/firstbook/resources/image/webnovel/monToSun/saturday/webNov_18_sat.PNG', '토', 'N', 'N');
 INSERT INTO WEB_NOV_INFO (WEB_NOV_NUM, CATEGORY_CODE, WEB_NOV_TITLE, WEB_NOV_AUTHOR, CHAP_PER_COIN, WEB_NOV_PUBLISHER,
-                          WEB_NOV_INFORM, WEB_NOV_IMG_LOCATION, DAY_OF_WEEK, WEB_NOV_IS_OPEN, FINISHED_OR_NOT, WEB_NOV_COUNT)
+                          WEB_NOV_INFORM, WEB_NOV_IMG_LOCATION, DAY_OF_WEEK, WEB_NOV_IS_OPEN, FINISHED_OR_NOT)
 VALUES ('43', 'F', '공대생의삶', '아이작뉴턴', 100, '게임북스', '사과…영어로는 APPLE…
-그러나 그의 눈에는 사과가 아닌 다른 것이 보였다!?!?', '사진경로19', '일', 'N', 'N', DEFAULT);
+그러나 그의 눈에는 사과가 아닌 다른 것이 보였다!?!?', '/firstbook/resources/image/webnovel/monToSun/sunday/webNov_19_sun.PNG', '일', 'N', 'N');
 INSERT INTO WEB_NOV_INFO (WEB_NOV_NUM, CATEGORY_CODE, WEB_NOV_TITLE, WEB_NOV_AUTHOR, CHAP_PER_COIN, WEB_NOV_PUBLISHER,
-                          WEB_NOV_INFORM, WEB_NOV_IMG_LOCATION, DAY_OF_WEEK, WEB_NOV_IS_OPEN, FINISHED_OR_NOT, WEB_NOV_COUNT)
+                          WEB_NOV_INFORM, WEB_NOV_IMG_LOCATION, DAY_OF_WEEK, WEB_NOV_IS_OPEN, FINISHED_OR_NOT)
 VALUES ('44', 'OF', '사랑의치유사', '아웃사이더', 100, '문학동네', '유명 랩퍼로 한 때 인기를 날렸던 O씨
-어느새 음악치유사가 되가는 이야기', '사진경로20', '일', 'N', 'N', DEFAULT);
+어느새 음악치유사가 되가는 이야기', '/firstbook/resources/image/webnovel/monToSun/sunday/webNov_20_sun.PNG', '일', 'N', 'N');
 INSERT INTO WEB_NOV_INFO (WEB_NOV_NUM, CATEGORY_CODE, WEB_NOV_TITLE, WEB_NOV_AUTHOR, CHAP_PER_COIN, WEB_NOV_PUBLISHER,
-                          WEB_NOV_INFORM, WEB_NOV_IMG_LOCATION, DAY_OF_WEEK, WEB_NOV_IS_OPEN, FINISHED_OR_NOT, WEB_NOV_COUNT)
+                          WEB_NOV_INFORM, WEB_NOV_IMG_LOCATION, DAY_OF_WEEK, WEB_NOV_IS_OPEN, FINISHED_OR_NOT)
 VALUES ('45', 'OF', '지구는돈다', '갈릴레이갈릴레오', 100, '문학동네', '먼 옛날, 지구가 평평하다고 생각했던 시기에
-악동이 태어났으니….', '사진경로21', '일', 'N', 'N', DEFAULT);
+악동이 태어났으니….', '/firstbook/resources/image/webnovel/monToSun/sunday/webNov_21_sun.PNG', '일', 'N', 'N');
 INSERT INTO WEB_NOV_INFO (WEB_NOV_NUM, CATEGORY_CODE, WEB_NOV_TITLE, WEB_NOV_AUTHOR, CHAP_PER_COIN, WEB_NOV_PUBLISHER,
-                          WEB_NOV_INFORM, WEB_NOV_IMG_LOCATION, DAY_OF_WEEK, WEB_NOV_IS_OPEN, FINISHED_OR_NOT, WEB_NOV_COUNT)
-VALUES ('46', 'F', '삼국지 밖으로 가자', '중한한중', 100, '김영사', '고대 시대, 세 나라의 치열한 전투 이야기가 시작된다', '사진경로22', '완', 'N', 'Y', DEFAULT);
+                          WEB_NOV_INFORM, WEB_NOV_IMG_LOCATION, DAY_OF_WEEK, WEB_NOV_IS_OPEN, FINISHED_OR_NOT)
+VALUES ('46', 'F', '삼국지 밖으로 가자', '중한한중', 100, '김영사', '고대 시대, 세 나라의 치열한 전투 이야기가 시작된다', '/firstbook/resources/image/webnovel/finished/삼국지.PNG', '완', 'Y', 'Y');
 INSERT INTO WEB_NOV_INFO (WEB_NOV_NUM, CATEGORY_CODE, WEB_NOV_TITLE, WEB_NOV_AUTHOR, CHAP_PER_COIN, WEB_NOV_PUBLISHER,
-                          WEB_NOV_INFORM, WEB_NOV_IMG_LOCATION, DAY_OF_WEEK, WEB_NOV_IS_OPEN, FINISHED_OR_NOT, WEB_NOV_COUNT)
-VALUES ('47', 'F', '분열하고 싶은 자', '제법좁은강', 100, '김영사', '자아분열에 대해서 고뇌하던 유명 철학가가 직접  쓴 분열 이야기', '사진경로23', '완', 'N',
-        'Y ', DEFAULT);
+                          WEB_NOV_INFORM, WEB_NOV_IMG_LOCATION, DAY_OF_WEEK, WEB_NOV_IS_OPEN, FINISHED_OR_NOT)
+VALUES ('47', 'F', '분열하고 싶은 자', '제법좁은강', 100, '김영사', '자아분열에 대해서 고뇌하던 유명 철학가가 직접  쓴 분열 이야기', '/firstbook/resources/image/webnovel/finished/분열하고싶은자.PNG', '완', 'N',
+        'Y');
 INSERT INTO WEB_NOV_INFO (WEB_NOV_NUM, CATEGORY_CODE, WEB_NOV_TITLE, WEB_NOV_AUTHOR, CHAP_PER_COIN, WEB_NOV_PUBLISHER,
-                          WEB_NOV_INFORM, WEB_NOV_IMG_LOCATION, DAY_OF_WEEK, WEB_NOV_IS_OPEN, FINISHED_OR_NOT, WEB_NOV_COUNT)
-VALUES ('48', 'OF', '포이즌 퀸', '유지권', 100, '문학동네', '독보다 강하고, 곰 같은 여우가 되겠다던 한 여왕의 삶의 이야기', '사진경로24', '완', 'N', 'Y', DEFAULT);
+                          WEB_NOV_INFORM, WEB_NOV_IMG_LOCATION, DAY_OF_WEEK, WEB_NOV_IS_OPEN, FINISHED_OR_NOT)
+VALUES ('48', 'OF', '포이즌 퀸', '유지권', 100, '문학동네', '독보다 강하고, 곰 같은 여우가 되겠다던 한 여왕의 삶의 이야기', '/firstbook/resources/image/webnovel/finished/포이즌퀸.PNG', '완', 'N', 'Y');
 INSERT INTO WEB_NOV_INFO (WEB_NOV_NUM, CATEGORY_CODE, WEB_NOV_TITLE, WEB_NOV_AUTHOR, CHAP_PER_COIN, WEB_NOV_PUBLISHER,
-                          WEB_NOV_INFORM, WEB_NOV_IMG_LOCATION, DAY_OF_WEEK, WEB_NOV_IS_OPEN, FINISHED_OR_NOT, WEB_NOV_COUNT)
+                          WEB_NOV_INFORM, WEB_NOV_IMG_LOCATION, DAY_OF_WEEK, WEB_NOV_IS_OPEN, FINISHED_OR_NOT)
 VALUES ('49', 'FH', '거지에서 고수까지', '요비비요', 100, '창비', '매일 취준의 늪에 빠져살던 백수가
-지나가다 우연치 않게 바둑을 보게 되면서', '사진경로25', '완', 'N', 'Y', DEFAULT);
+지나가다 우연치 않게 바둑을 보게 되면서', '/firstbook/resources/image/webnovel/finished/거지에서고수까지.PNG', '완', 'N', 'Y');
 INSERT INTO WEB_NOV_INFO (WEB_NOV_NUM, CATEGORY_CODE, WEB_NOV_TITLE, WEB_NOV_AUTHOR, CHAP_PER_COIN, WEB_NOV_PUBLISHER,
-                          WEB_NOV_INFORM, WEB_NOV_IMG_LOCATION, DAY_OF_WEEK, WEB_NOV_IS_OPEN, FINISHED_OR_NOT, WEB_NOV_COUNT)
+                          WEB_NOV_INFORM, WEB_NOV_IMG_LOCATION, DAY_OF_WEEK, WEB_NOV_IS_OPEN, FINISHED_OR_NOT)
 VALUES ('50', 'SPO', '리멤버 더 에이지', '중금하르방', 100, '창비', '나이를 잊고 사는 나라에
-나이의 개념이 들어오면서 사람들이 혼란을 겪게 되는데', '사진경로26', '완', 'N', 'Y', DEFAULT);
+나이의 개념이 들어오면서 사람들이 혼란을 겪게 되는데', '/firstbook/resources/image/webnovel/finished/리멤버.PNG', '완', 'N', 'Y');
 
-INSERT INTO WEB_NOV_INFO (WEB_NOV_NUM, CATEGORY_CODE, WEB_NOV_TITLE, WEB_NOV_AUTHOR, CHAP_PER_COIN, WEB_NOV_PUBLISHER,
-                          WEB_NOV_INFORM, WEB_NOV_IMG_LOCATION, DAY_OF_WEEK, WEB_NOV_IS_OPEN, FINISHED_OR_NOT, WEB_NOV_COUNT)
-VALUES ('51', 'SPO', 'test', 'test', 100, 'test', 'test', '사진경로27', '완', 'N', 'Y', DEFAULT);
+Insert into WEB_NOV_INFO (WEB_NOV_NUM,CATEGORY_CODE,WEB_NOV_TITLE,WEB_NOV_AUTHOR,CHAP_PER_COIN,WEB_NOV_PUBLISHER,WEB_NOV_INFORM,WEB_NOV_IMG_LOCATION,DAY_OF_WEEK,WEB_NOV_IS_OPEN,FINISHED_OR_NOT,WEB_NOV_COUNT) values (51,'F','일부러 교란종이 되어보았다','새치',100,'abc미디어','어쩌다 탑에 들어가 죽었는데 시스템 오류를 일으켰다. 어라? 몬스터도 속이고 각성자도 속는다.','/firstbook/resources/image/webnovel/monToSun/monday/재활용.PNG','월','N','N',0);
+Insert into WEB_NOV_INFO (WEB_NOV_NUM,CATEGORY_CODE,WEB_NOV_TITLE,WEB_NOV_AUTHOR,CHAP_PER_COIN,WEB_NOV_PUBLISHER,WEB_NOV_INFORM,WEB_NOV_IMG_LOCATION,DAY_OF_WEEK,WEB_NOV_IS_OPEN,FINISHED_OR_NOT,WEB_NOV_COUNT) values (52,'F','퍼펙트 클로저','중우중우',100,'게임북스','게임에 관심없던 이영호라는 소년이…방배중에서...게임을 시작하는데"','/firstbook/resources/image/webnovel/finished/퍼펙트.PNG','완','Y','N',0);
+Insert into WEB_NOV_INFO (WEB_NOV_NUM,CATEGORY_CODE,WEB_NOV_TITLE,WEB_NOV_AUTHOR,CHAP_PER_COIN,WEB_NOV_PUBLISHER,WEB_NOV_INFORM,WEB_NOV_IMG_LOCATION,DAY_OF_WEEK,WEB_NOV_IS_OPEN,FINISHED_OR_NOT,WEB_NOV_COUNT) values (53,'F','월급쟁이 에이스','원썸',100,'게임북스','"대한민국 전성기로 보였던2019년…','/firstbook/resources/image/webnovel/finished/월급쟁이에이스.PNG','완','N','N',0);
+Insert into WEB_NOV_INFO (WEB_NOV_NUM,CATEGORY_CODE,WEB_NOV_TITLE,WEB_NOV_AUTHOR,CHAP_PER_COIN,WEB_NOV_PUBLISHER,WEB_NOV_INFORM,WEB_NOV_IMG_LOCATION,DAY_OF_WEEK,WEB_NOV_IS_OPEN,FINISHED_OR_NOT,WEB_NOV_COUNT) values (56,'F','재상댁 전생천마','화산행',100,'넥서스','시각장애 피아니스트 전장에 선율의 꽃을 피우다다.','/firstbook/resources/image/webnovel/finished/재상댁.PNG','완','N','N',0);
+Insert into WEB_NOV_INFO (WEB_NOV_NUM,CATEGORY_CODE,WEB_NOV_TITLE,WEB_NOV_AUTHOR,CHAP_PER_COIN,WEB_NOV_PUBLISHER,WEB_NOV_INFORM,WEB_NOV_IMG_LOCATION,DAY_OF_WEEK,WEB_NOV_IS_OPEN,FINISHED_OR_NOT,WEB_NOV_COUNT) values (57,'F','절대자의 귀환','노마취수술',100,'문학동네','특별한 뇌 호흡, 격투의 수법을 전수받으며 점점 ‘건강한 말기 암 환자’로 변신.','/firstbook/resources/image/webnovel/finished/절대자의귀환.PNG','완','N','N',0);
+Insert into WEB_NOV_INFO (WEB_NOV_NUM,CATEGORY_CODE,WEB_NOV_TITLE,WEB_NOV_AUTHOR,CHAP_PER_COIN,WEB_NOV_PUBLISHER,WEB_NOV_INFORM,WEB_NOV_IMG_LOCATION,DAY_OF_WEEK,WEB_NOV_IS_OPEN,FINISHED_OR_NOT,WEB_NOV_COUNT) values (60,'F','나 혼자 올 마스터','푸만두',100,'문학동네','문신 덕에 넘어간 세계는 몬스터를 잡으면 내공이 상승하고, 상금으로 금화까지!','/firstbook/resources/image/webnovel/finished/나 혼자 올 마스터.PNG','완','N','N',0);
+Insert into WEB_NOV_INFO (WEB_NOV_NUM,CATEGORY_CODE,WEB_NOV_TITLE,WEB_NOV_AUTHOR,CHAP_PER_COIN,WEB_NOV_PUBLISHER,WEB_NOV_INFORM,WEB_NOV_IMG_LOCATION,DAY_OF_WEEK,WEB_NOV_IS_OPEN,FINISHED_OR_NOT,WEB_NOV_COUNT) values (61,'SPO','전설의 환생','예스장',100,'김영사','다른 놈이 주문외울때 나는 위키 쓴다.','/firstbook/resources/image/webnovel/finished/전설의환생.PNG','완','N','N',0);
+Insert into WEB_NOV_INFO (WEB_NOV_NUM,CATEGORY_CODE,WEB_NOV_TITLE,WEB_NOV_AUTHOR,CHAP_PER_COIN,WEB_NOV_PUBLISHER,WEB_NOV_INFORM,WEB_NOV_IMG_LOCATION,DAY_OF_WEEK,WEB_NOV_IS_OPEN,FINISHED_OR_NOT,WEB_NOV_COUNT) values (63,'SPO','필드의 근본','가렌',100,'게임북스','게임도 아니고, 책을 읽으면 경험치가 쌓인다고?','/firstbook/resources/image/webnovel/finished/필드의근본.PNG','완','N','N',0);
+Insert into WEB_NOV_INFO (WEB_NOV_NUM,CATEGORY_CODE,WEB_NOV_TITLE,WEB_NOV_AUTHOR,CHAP_PER_COIN,WEB_NOV_PUBLISHER,WEB_NOV_INFORM,WEB_NOV_IMG_LOCATION,DAY_OF_WEEK,WEB_NOV_IS_OPEN,FINISHED_OR_NOT,WEB_NOV_COUNT) values (64,'ROM','타이탄 마이티','야행',100,'게임북스','두개의 몸, 두개의 세계, 동기화된 미래','/firstbook/resources/image/webnovel/finished/타이탄 마이티.PNG','완','N','N',0);
+Insert into WEB_NOV_INFO (WEB_NOV_NUM,CATEGORY_CODE,WEB_NOV_TITLE,WEB_NOV_AUTHOR,CHAP_PER_COIN,WEB_NOV_PUBLISHER,WEB_NOV_INFORM,WEB_NOV_IMG_LOCATION,DAY_OF_WEEK,WEB_NOV_IS_OPEN,FINISHED_OR_NOT,WEB_NOV_COUNT) values (66,'OF','뉴욕 더스터','로드롤러',100,'창비','"지구로 돌아왔으니 이젠 유유자적 살고 싶었는데... [마수들이 절대자의 활약에 환호합니다!]','/firstbook/resources/image/webnovel/finished/뉴욕더스터.PNG','완','N','N',0);
+Insert into WEB_NOV_INFO (WEB_NOV_NUM,CATEGORY_CODE,WEB_NOV_TITLE,WEB_NOV_AUTHOR,CHAP_PER_COIN,WEB_NOV_PUBLISHER,WEB_NOV_INFORM,WEB_NOV_IMG_LOCATION,DAY_OF_WEEK,WEB_NOV_IS_OPEN,FINISHED_OR_NOT,WEB_NOV_COUNT) values (68,'MF','리스타트 이순신','중우중우',100,'문학동네','게임에 관심없던 이영호라는 소년이…방배중에서...게임을 시작하는데"','/firstbook/resources/image/webnovel/finished/리스타트 이순신.PNG','완','N','N',0);
+Insert into WEB_NOV_INFO (WEB_NOV_NUM,CATEGORY_CODE,WEB_NOV_TITLE,WEB_NOV_AUTHOR,CHAP_PER_COIN,WEB_NOV_PUBLISHER,WEB_NOV_INFORM,WEB_NOV_IMG_LOCATION,DAY_OF_WEEK,WEB_NOV_IS_OPEN,FINISHED_OR_NOT,WEB_NOV_COUNT) values (69,'MF','몽골에서 유럽까지','원썸',100,'게임북스','"대한민국 전성기로 보였던2019년…','/firstbook/resources/image/webnovel/finished/몽골에서유럽까지.PNG','완','N','N',0);
+Insert into WEB_NOV_INFO (WEB_NOV_NUM,CATEGORY_CODE,WEB_NOV_TITLE,WEB_NOV_AUTHOR,CHAP_PER_COIN,WEB_NOV_PUBLISHER,WEB_NOV_INFORM,WEB_NOV_IMG_LOCATION,DAY_OF_WEEK,WEB_NOV_IS_OPEN,FINISHED_OR_NOT,WEB_NOV_COUNT) values (70,'FH','작가는 죽었다','저너머',100,'문학동네','예상치 못한 병이 찾아오기 시작한다!!"','/firstbook/resources/image/webnovel/finished/작가는죽었다.PNG','완','N','N',0);
+Insert into WEB_NOV_INFO (WEB_NOV_NUM,CATEGORY_CODE,WEB_NOV_TITLE,WEB_NOV_AUTHOR,CHAP_PER_COIN,WEB_NOV_PUBLISHER,WEB_NOV_INFORM,WEB_NOV_IMG_LOCATION,DAY_OF_WEEK,WEB_NOV_IS_OPEN,FINISHED_OR_NOT,WEB_NOV_COUNT) values (71,'FH','영화는 돈이다','전자렌지1',100,'문학동네','사람들의 최애푸드가 보이기 시작했다.','/firstbook/resources/image/webnovel/finished/영화는돈이다.PNG','완','N','N',0);
+Insert into WEB_NOV_INFO (WEB_NOV_NUM,CATEGORY_CODE,WEB_NOV_TITLE,WEB_NOV_AUTHOR,CHAP_PER_COIN,WEB_NOV_PUBLISHER,WEB_NOV_INFORM,WEB_NOV_IMG_LOCATION,DAY_OF_WEEK,WEB_NOV_IS_OPEN,FINISHED_OR_NOT,WEB_NOV_COUNT) values (72,'ROM','나는 군단이다!','화산행',100,'김영사','시각장애 피아니스트 전장에 선율의 꽃을 피우다다.','/firstbook/resources/image/webnovel/finished/군단이다.PNG','완','N','N',0);
+Insert into WEB_NOV_INFO (WEB_NOV_NUM,CATEGORY_CODE,WEB_NOV_TITLE,WEB_NOV_AUTHOR,CHAP_PER_COIN,WEB_NOV_PUBLISHER,WEB_NOV_INFORM,WEB_NOV_IMG_LOCATION,DAY_OF_WEEK,WEB_NOV_IS_OPEN,FINISHED_OR_NOT,WEB_NOV_COUNT) values (73,'FH','블랙홀을 삼키다','노마취수술',100,'김영사','특별한 뇌 호흡, 격투의 수법을 전수받으며 점점 ‘건강한 말기 암 환자’로 변신.','/firstbook/resources/image/webnovel/finished/블랙홀.PNG','완','N','N',0);
+Insert into WEB_NOV_INFO (WEB_NOV_NUM,CATEGORY_CODE,WEB_NOV_TITLE,WEB_NOV_AUTHOR,CHAP_PER_COIN,WEB_NOV_PUBLISHER,WEB_NOV_INFORM,WEB_NOV_IMG_LOCATION,DAY_OF_WEEK,WEB_NOV_IS_OPEN,FINISHED_OR_NOT,WEB_NOV_COUNT) values (54,'F','비설재합기연','저너머',100,'넥서스','예상치 못한 병이 찾아오기 시작한다!!"','/firstbook/resources/image/webnovel/finished/비설재합기연.PNG','완','N','N',0);
+Insert into WEB_NOV_INFO (WEB_NOV_NUM,CATEGORY_CODE,WEB_NOV_TITLE,WEB_NOV_AUTHOR,CHAP_PER_COIN,WEB_NOV_PUBLISHER,WEB_NOV_INFORM,WEB_NOV_IMG_LOCATION,DAY_OF_WEEK,WEB_NOV_IS_OPEN,FINISHED_OR_NOT,WEB_NOV_COUNT) values (59,'F','IT 깡패의 귀환','코로나19',100,'문학동네','사령관님 괜찮으십니까? 뭐 사령관? 난 그냥 게이머야! 사령관 같은 게 아니라고! 우주 전략 시뮬레이션 ‘스페이스 워’의 사령관이 되어버렸다.','/firstbook/resources/image/webnovel/finished/it깡패.PNG','완','N','N',0);
+Insert into WEB_NOV_INFO (WEB_NOV_NUM,CATEGORY_CODE,WEB_NOV_TITLE,WEB_NOV_AUTHOR,CHAP_PER_COIN,WEB_NOV_PUBLISHER,WEB_NOV_INFORM,WEB_NOV_IMG_LOCATION,DAY_OF_WEEK,WEB_NOV_IS_OPEN,FINISHED_OR_NOT,WEB_NOV_COUNT) values (51,'F','대통령각하만세','미디움웰던',100,'미디어그룹','"게임의 인기로 인해 유저들이 늘어나면서','/firstbook/resources/image/webnovel/finished/대통령.PNG','완','N','N',0);
+Insert into WEB_NOV_INFO (WEB_NOV_NUM,CATEGORY_CODE,WEB_NOV_TITLE,WEB_NOV_AUTHOR,CHAP_PER_COIN,WEB_NOV_PUBLISHER,WEB_NOV_INFORM,WEB_NOV_IMG_LOCATION,DAY_OF_WEEK,WEB_NOV_IS_OPEN,FINISHED_OR_NOT,WEB_NOV_COUNT) values (55,'F','전직천하제일인','전자렌지1',100,'창비','사람들의 최애푸드가 보이기 시작했다.','/firstbook/resources/image/webnovel/finished/전직천하제일인.PNG','완','N','N',0);
+Insert into WEB_NOV_INFO (WEB_NOV_NUM,CATEGORY_CODE,WEB_NOV_TITLE,WEB_NOV_AUTHOR,CHAP_PER_COIN,WEB_NOV_PUBLISHER,WEB_NOV_INFORM,WEB_NOV_IMG_LOCATION,DAY_OF_WEEK,WEB_NOV_IS_OPEN,FINISHED_OR_NOT,WEB_NOV_COUNT) values (58,'F','조자룡 하북제패','나는아이언',100,'게임북스','변화된 지구에서 살아남아라! 오직 약한(?) 자만 생존한다!','/firstbook/resources/image/webnovel/finished/조자룡.PNG','완','N','N',0);
+Insert into WEB_NOV_INFO (WEB_NOV_NUM,CATEGORY_CODE,WEB_NOV_TITLE,WEB_NOV_AUTHOR,CHAP_PER_COIN,WEB_NOV_PUBLISHER,WEB_NOV_INFORM,WEB_NOV_IMG_LOCATION,DAY_OF_WEEK,WEB_NOV_IS_OPEN,FINISHED_OR_NOT,WEB_NOV_COUNT) values (62,'ROM','레벨업 축구황제','김동신',100,'미디어그룹','[과천역 4번출구 던전에 입장하셨습니다.]','/firstbook/resources/image/webnovel/finished/레벨업.PNG','완','N','N',0);
+Insert into WEB_NOV_INFO (WEB_NOV_NUM,CATEGORY_CODE,WEB_NOV_TITLE,WEB_NOV_AUTHOR,CHAP_PER_COIN,WEB_NOV_PUBLISHER,WEB_NOV_INFORM,WEB_NOV_IMG_LOCATION,DAY_OF_WEEK,WEB_NOV_IS_OPEN,FINISHED_OR_NOT,WEB_NOV_COUNT) values (65,'OF','두더지 게임','스몰',100,'넥서스','카일란 최고의 노답 직업인 소환술사?','/firstbook/resources/image/webnovel/finished/두더지게임.PNG','완','N','N',0);
+Insert into WEB_NOV_INFO (WEB_NOV_NUM,CATEGORY_CODE,WEB_NOV_TITLE,WEB_NOV_AUTHOR,CHAP_PER_COIN,WEB_NOV_PUBLISHER,WEB_NOV_INFORM,WEB_NOV_IMG_LOCATION,DAY_OF_WEEK,WEB_NOV_IS_OPEN,FINISHED_OR_NOT,WEB_NOV_COUNT) values (67,'MF','슬기로운 조선 생활','미디움웰던',100,'넥서스','"게임의 인기로 인해 유저들이 늘어나면서','/firstbook/resources/image/webnovel/finished/슬기로운 조선생활.PNG','완','N','N',0);
 
 COMMIT;
 
@@ -2289,6 +2445,11 @@ Insert into WEB_NOV_CHAP_NUM (CHAP_NUM,CHAP_NAME) values (7,'7화');
 Insert into WEB_NOV_CHAP_NUM (CHAP_NUM,CHAP_NAME) values (8,'8화');
 Insert into WEB_NOV_CHAP_NUM (CHAP_NUM,CHAP_NAME) values (9,'9화');
 Insert into WEB_NOV_CHAP_NUM (CHAP_NUM,CHAP_NAME) values (10,'10화');
+Insert into WEB_NOV_CHAP_NUM (CHAP_NUM,CHAP_NAME) values (11,'11화');
+Insert into WEB_NOV_CHAP_NUM (CHAP_NUM,CHAP_NAME) values (12,'12화');
+Insert into WEB_NOV_CHAP_NUM (CHAP_NUM,CHAP_NAME) values (13,'13화');
+Insert into WEB_NOV_CHAP_NUM (CHAP_NUM,CHAP_NAME) values (14,'14화');
+
 
 ---------------- WEB_NOV_PAGE_NUM
 CREATE TABLE WEB_NOV_PAGE_NUM
@@ -2312,7 +2473,7 @@ Insert into WEB_NOV_PAGE_NUM (WEB_NOV_PAGE_NUM,WEB_NOV_PAGE_NAME) values (10,'10
 
 
 ---------------WEB_NOV_CONTENT_DETAIL
- CREATE TABLE WEB_NOV_CONTENT_DETAIL
+  CREATE TABLE WEB_NOV_CONTENT_DETAIL
    (
     WEB_NOV_NUM NUMBER REFERENCES WEB_NOV_INFO(WEB_NOV_NUM),
     CHAP_NUM NUMBER REFERENCES WEB_NOV_CHAP_NUM (CHAP_NUM),
@@ -2321,6 +2482,7 @@ Insert into WEB_NOV_PAGE_NUM (WEB_NOV_PAGE_NUM,WEB_NOV_PAGE_NAME) values (10,'10
     PRIMARY KEY (WEB_NOV_NUM, CHAP_NUM, WEB_NOV_PAGE_NUM)
    );
 
+/* 1번 소설 */
 Insert into WEB_NOV_CONTENT_DETAIL (WEB_NOV_NUM,CHAP_NUM,WEB_NOV_PAGE_NUM,WEB_NOV_PAGE_CONTENT) values (1,1,1,'용풀이 싸인 가진 피부가 듣는다. 열락의 불어
 풀밭에 끝에 힘있다. 풀밭에 천지는 가슴이
  굳세게 이상의 위하여, 있는가? 새가 끓는
@@ -2717,6 +2879,1274 @@ Insert into WEB_NOV_CONTENT_DETAIL (WEB_NOV_NUM,CHAP_NUM,WEB_NOV_PAGE_NUM,WEB_NO
  이상은 눈이 끓는 낙원을 운다. 것은 싶이 보');
 
 
+/* 2번 소설 */
+Insert into WEB_NOV_CONTENT_DETAIL (WEB_NOV_NUM,CHAP_NUM,WEB_NOV_PAGE_NUM,WEB_NOV_PAGE_CONTENT) values (2,1,1,'용풀이 싸인 가진 피부가 듣는다. 열락의 불어
+풀밭에 끝에 힘있다. 풀밭에 천지는 가슴이
+ 굳세게 이상의 위하여, 있는가? 새가 끓는
+착목한는 낙원을 실로 붙잡아 쓸쓸하랴?
+사랑의 장식하는 것은 풍부하게 있는
+ 있다. 이상은 따뜻한 그들은 같이, 듣는다. 착목
+한는 노년에게서 스며들어 찬미를 그림자는
+교향악이다. 있는 얼음과 가는 것은 들어 듣는다.
+피가 행복스럽고 주며, 반짝이는 인생을 품고
+예가 그들에게 힘있다. 눈에 황금시대를 가진
+봄바람이다.');
+Insert into WEB_NOV_CONTENT_DETAIL (WEB_NOV_NUM,CHAP_NUM,WEB_NOV_PAGE_NUM,WEB_NOV_PAGE_CONTENT) values (2,1,2,'하였으며, 얼음과 봄날의 우리는 모래뿐일 피는
+ 타오르고 천고에 풀밭에 부패뿐이다. 피에
+목숨을 우리 황금시대를 우리 뭇 고동을 꽃이
+ 위하여서. 오아이스도 같이, 가장 같이, 생의
+봄날의 들어 새 못할 이것이다. 끓는 돋고, 것은
+ 봄바람을 천자만홍이 내려온 얼음에 거친
+청춘은 것이다. 하여도 방지하는 얼마나 보배를
+ 꾸며 인간에 인간은 능히 싹이 운다. 것은
+ 과실이 황금시대를 용감하고 때문이다. 소담스러운
+ 인간의 반짝이는 보이는 그와 넣는 얼음에 것이다.
+무엇을 인생을 풀이 이것이다. ');
+Insert into WEB_NOV_CONTENT_DETAIL (WEB_NOV_NUM,CHAP_NUM,WEB_NOV_PAGE_NUM,WEB_NOV_PAGE_CONTENT) values (2,1,3,'풀이 그들은 없으면, 모래뿐일 뭇 그들의 이것은
+ 쓸쓸하랴? 장식하는 위하여, 구하지 싹이 그리
+하였는가? 내는 아니한 이상은 철환하였는가?
+구하지 인간의 두손을 이성은 돋고, 따뜻한 것이다.
+거선의 무엇을 만천하의 바로 그들은 봄날의 반짝
+이는 풍부하게 때문이다. 수 오직 아니더면, 것은
+ 황금시대다. 인도하겠다는 그러므로 없으면,
+얼마나 인간의 부패뿐이다. 것은 청춘에서만 이상의
+ 살 능히 힘차게 칼이다. 붙잡아 충분히 있으며,
+사막이다.');
+Insert into WEB_NOV_CONTENT_DETAIL (WEB_NOV_NUM,CHAP_NUM,WEB_NOV_PAGE_NUM,WEB_NOV_PAGE_CONTENT) values (2,1,4,'할지니, 웅대한 인생에 물방아 청춘의 옷을 그러므로
+ 없는 위하여서. 기쁘며, 트고, 곳으로 앞이 새 방황
+하였으며, 그들은 힘있다. 스며들어 예가 돋고,
+뛰노는 용감하고 인생을 인도하겠다는 사막이다.
+ 그들을 설산에서 얼음에 것이다.보라, 그들의
+철환하였는가? 충분히 못할 가지에 인간의 풍부하게
+ 내는 기관과 피고 있는가? 봄바람을 이성은 새가
+행복스럽고 피는 바로 천고에 열매를 것이다.
+싹이 노년에게서 인간의 봄날의 있을 사막이다. 때에,
+ 인간이 같으며, 고동을 때문이다. 이상이 것이다.
+보라, 군영과 오아이스도 뜨거운지라, 이상의 ');
+Insert into WEB_NOV_CONTENT_DETAIL (WEB_NOV_NUM,CHAP_NUM,WEB_NOV_PAGE_NUM,WEB_NOV_PAGE_CONTENT) values (2,1,5,'낙원을 같은 그들의 되는 같은 날카로우나
+ 우리 할지니, 약동하다. 생의 현저하게
+ 청춘은 이상은 것이다. 가진 이상, 이것을
+ 들어 뜨거운지라, 품고 것이다. 것은 산야에
+ 하는 같지 사람은 눈이 긴지라 있는
+가치를 있다. 있는 크고 때에, 붙잡아 품고
+구할 위하여, 꽃이 때문이다. 목숨이 뭇
+ 인간이 사막이다. 그들은 눈에 이것을
+위하여 끓는다. 살 있는 피는 끓는 붙잡아
+ 오아이스도 창공에 같으며, 생의 것이다. ');
+Insert into WEB_NOV_CONTENT_DETAIL (WEB_NOV_NUM,CHAP_NUM,WEB_NOV_PAGE_NUM,WEB_NOV_PAGE_CONTENT) values (2,1,6,'대중을 황금시대를 이상 밥을 가진 풍부
+하게 우리의 운다. 봄바람을 살 어디 돋고,
+모래뿐일 불러 그들은 끓는다. 그것을 뜨거
+운지라, 구하지 같이 이것이다. 그들을 되는
+ 인간의 그들은 얼마나 풍부하게 옷을 얼마나
+ 든 보라. 무엇을 얼마나 거선의 가는 위하여
+ 얼마나 유소년에게서 부패뿐이다. 끝에
+ 얼음에 장식하는 안고, 인류의 눈이 끓는다.
+열락의 얼음과 기쁘며, 청춘 현저하게 봄바람
+이다. 풀밭에 눈이 살았으며, 가는 것이다.
+보라, 때문이다. 싹이 튼튼하며, 목숨을 ');
+Insert into WEB_NOV_CONTENT_DETAIL (WEB_NOV_NUM,CHAP_NUM,WEB_NOV_PAGE_NUM,WEB_NOV_PAGE_CONTENT) values (2,2,1,'설산에서 황금시대를 있으며, 어디 있다. 석
+가는 위하여, 군영과 피고 피가 피부가 힘차
+게 타오르고 사라지지 봄바람이다. 이상은
+이상을 그들은 끓는 청춘의 쓸쓸하랴? 날카
+로우나 하여도 뼈 우리의 것이다. 새 산야에
+그림자는 천자만홍이 피가 평화스러운 것이
+다. 인생의 무한한 온갖 불어 인간에 그들의
+ 생생하며, 있음으로써 못할 이것이다. 만천하
+의 뜨고, 기쁘며, 내려온 이상의 눈이 아름답고
+ 있다. 그들에게 우리 사람은 듣기만 반짝이는
+ 이상은 눈이 끓는 낙원을 운다. 것은 싶이 보');
+Insert into WEB_NOV_CONTENT_DETAIL (WEB_NOV_NUM,CHAP_NUM,WEB_NOV_PAGE_NUM,WEB_NOV_PAGE_CONTENT) values (2,2,2,'불러 파란 북간도에 내일 있습니다. 사랑과
+ 아무 풀이 마디씩 아스라히 가을 나는 그러
+나 너무나 버리었습니다. 릴케 아직 사람들
+의 하나에 이런 애기 가득 봅니다. 언덕 사람
+들의 가을 봅니다. 멀듯이, 당신은 걱정도 딴
+은 한 많은 까닭입니다. 라이너 덮어 걱정도
+다하지 당신은 봅니다. 이름과 이름자를 하나
+에 거외다. 말 아무 가난한 있습니다. 내린 그
+리워 둘 까닭입니다.
+의 하나에 이런 애기 가득 봅니다. 언덕 사람
+들의 가을 봅니다. 멀듯이, 당신은 걱정도 딴');
+Insert into WEB_NOV_CONTENT_DETAIL (WEB_NOV_NUM,CHAP_NUM,WEB_NOV_PAGE_NUM,WEB_NOV_PAGE_CONTENT) values (2,2,3,'아침이 남은 별 피어나듯이 책상을 패, 이 하
+나에 아스라히 계십니다. 내 이름을 사람들의
+ 있습니다. 다 계집애들의 까닭이요, 동경과 마
+디씩 새워 별 파란 있습니다. 별 위에 않은 하
+나에 까닭입니다. 아침이 계절이 가득 별을 지
+나가는 밤이 노새, 있습니다. 많은 이 토끼, 라
+이너 별 쓸쓸함과 하나에 하나에 써 버리었습
+니다. 오는 하나의 불러 가을 부끄러운 내일 파
+란 소녀들의 무덤 듯합니다. 북간도에 내일 위
+에 별 다하지 부끄러운 하나에 자랑처럼 파란
+버리었습니다. 이국 별 어머니, 하나에 이름과 ');
+Insert into WEB_NOV_CONTENT_DETAIL (WEB_NOV_NUM,CHAP_NUM,WEB_NOV_PAGE_NUM,WEB_NOV_PAGE_CONTENT) values (2,2,4,'이런 아름다운 다 그리워 이제 까닭입니다.
+토끼, 밤이 책상을 위에 했던 있습니다. 계집
+애들의 부끄러운 오는 쓸쓸함과 그러나 거외
+다. 멀리 보고, 마디씩 아스라히 봅니다. 다
+사랑과 속의 별들을 봅니다. 써 피어나듯이
+위에 사랑과 나는 봅니다. 마리아 릴케 계집
+애들의 무덤 한 봅니다. 별 별이 별들을 까닭
+입니다. 당신은 아이들의 청춘이 다하지 강
+아지, 하나에 잔디가 듯합니다. 아이들의 어
+머니, 흙으로 비둘기, 겨울이 하나에 소녀들
+의 가슴속에 이름과 봅니다. 별 우는 가을');
+Insert into WEB_NOV_CONTENT_DETAIL (WEB_NOV_NUM,CHAP_NUM,WEB_NOV_PAGE_NUM,WEB_NOV_PAGE_CONTENT) values (2,3,1,'가슴속에 경, 이런 내린 봅니다. 그러나
+불러 릴케 불러 흙으로 덮어 밤이 이런 버리
+었습니다. 이름과, 가을로 이국 까닭입니다.
+나는 아이들의 멀리 별이 이네들은 언덕 패
+, 계절이 까닭입니다. 어머님, 시와 이런 까
+닭입니다. 불러 토끼, 마디씩 남은 보고, 하
+나에 많은 거외다. 못 추억과 이름과, 슬퍼
+하는 까닭입니다. 새겨지는 말 이름과, 언덕
+ 하나에 이런 나는 듯합니다. 소학교 별 가
+난한 무엇인지 어머니, 하늘에는 계십니다
+. 가을로 멀리 쓸쓸함과 하나에 나는 아직 ');
+Insert into WEB_NOV_CONTENT_DETAIL (WEB_NOV_NUM,CHAP_NUM,WEB_NOV_PAGE_NUM,WEB_NOV_PAGE_CONTENT) values (2,3,2,'별 묻힌 소학교 까닭입니다. 프랑시스 별이
+ 계절이 보고, 오는 내 가을 그리워 동경과
+까닭입니다. 라이너 아스라히 멀리 쓸쓸함
+과 아침이 속의 멀리 있습니다. 이름과, 속
+의 말 이름과 별 그리워 쓸쓸함과 거외다.
+헤는 다 지나고 다하지 써 프랑시스 있습
+니다. 내 그리고 강아지, 하나에 계집애들
+의 걱정도 다 버리었습니다. 애기 때 어머
+니, 무엇인지 별 이름과, 있습니다. 묻힌
+ 밤을 이름을 잠, 있습니다. 남은 마디씩
+내 이름을 무성할 별이 봅니다. 계집애들');
+Insert into WEB_NOV_CONTENT_DETAIL (WEB_NOV_NUM,CHAP_NUM,WEB_NOV_PAGE_NUM,WEB_NOV_PAGE_CONTENT) values (2,3,3,'이름자를 했던 부끄러운 별을 가을로
+봅니다. 이런 다 가을 계절이 아이들의
+부끄러운 거외다. 소녀들의 덮어 그리워
+언덕 잠, 나의 북간도에 쓸쓸함과 있습니
+다. 풀이 토끼, 가을 버리었습니다. 위에
+도 지나고 경, 계십니다. 내린 이네들은
+차 가을로 이름과, 묻힌 이국 잔디가 봅
+니다. 가슴속에 자랑처럼 불러 책상을
+까닭이요, 멀리 봅니다. 사랑과 된 아침
+이 봅니다. 별 내 언덕 시와 하나의 하늘
+에는 봅니다.');
+Insert into WEB_NOV_CONTENT_DETAIL (WEB_NOV_NUM,CHAP_NUM,WEB_NOV_PAGE_NUM,WEB_NOV_PAGE_CONTENT) values (2,3,4,'많은 슬퍼하는 까닭이요, 묻힌 비둘기,
+ 것은 하나에 위에도 버리었습니다. 마
+리아 이제 자랑처럼 노루, 있습니다. 나
+는 아침이 없이 내일 사람들의 속의 가
+난한 하늘에는 이네들은 있습니다. 무
+성할 가을로 별들을 그러나 나는 묻힌
+어머니 봅니다. 않은 노루, 비둘기, 자
+랑처럼 패, 계집애들의 있습니다. 그리
+고 별을 가을로 듯합니다. 남은 어머니
+, 잔디가 이름을 계절이 한 듯합니다.
+말 별 까닭이요, 가난한 쓸쓸함과 한');
+Insert into WEB_NOV_CONTENT_DETAIL (WEB_NOV_NUM,CHAP_NUM,WEB_NOV_PAGE_NUM,WEB_NOV_PAGE_CONTENT) values (2,4,1,'위에 무덤 남은 있습니다. 하나 쉬이 언
+덕 하늘에는 같이 봅니다. 불러 헤일 가
+을 어머님, 계십니다. 소학교 밤을 언덕
+ 때 하나에 다 파란 있습니다. 이국 우
+는 계집애들의 다 속의 이제 별들을 거
+외다. 추억과 부끄러운 내 듯합니다. 책
+상을 밤이 별을 않은 위에 아침이 계십
+니다. 가슴속에 했던 계집애들의 하나
+보고, 듯합니다. 까닭이요, 계절이 보고,
+ 가난한 새겨지는 내일 이네들은 별 있
+습니다. 멀듯이, 불러 이름과 이웃 다하
+지 애기 가슴속에 계십니다. 별 하나에');
+Insert into WEB_NOV_CONTENT_DETAIL (WEB_NOV_NUM,CHAP_NUM,WEB_NOV_PAGE_NUM,WEB_NOV_PAGE_CONTENT) values (2,4,2,'하였으며, 얼음과 봄날의 우리는 모래뿐일 피는
+ 타오르고 천고에 풀밭에 부패뿐이다. 피에
+목숨을 우리 황금시대를 우리 뭇 고동을 꽃이
+ 위하여서. 오아이스도 같이, 가장 같이, 생의
+봄날의 들어 새 못할 이것이다. 끓는 돋고, 것은
+ 봄바람을 천자만홍이 내려온 얼음에 거친
+청춘은 것이다. 하여도 방지하는 얼마나 보배를
+ 꾸며 인간에 인간은 능히 싹이 운다. 것은
+ 과실이 황금시대를 용감하고 때문이다. 소담스러운
+ 인간의 반짝이는 보이는 그와 넣는 얼음에 것이다.
+무엇을 인생을 풀이 이것이다. ');
+Insert into WEB_NOV_CONTENT_DETAIL (WEB_NOV_NUM,CHAP_NUM,WEB_NOV_PAGE_NUM,WEB_NOV_PAGE_CONTENT) values (2,4,3,'풀이 그들은 없으면, 모래뿐일 뭇 그들의 이것은
+ 쓸쓸하랴? 장식하는 위하여, 구하지 싹이 그리
+하였는가? 내는 아니한 이상은 철환하였는가?
+구하지 인간의 두손을 이성은 돋고, 따뜻한 것이다.
+거선의 무엇을 만천하의 바로 그들은 봄날의 반짝
+이는 풍부하게 때문이다. 수 오직 아니더면, 것은
+ 황금시대다. 인도하겠다는 그러므로 없으면,
+얼마나 인간의 부패뿐이다. 것은 청춘에서만 이상의
+ 살 능히 힘차게 칼이다. 붙잡아 충분히 있으며,
+사막이다.');
+Insert into WEB_NOV_CONTENT_DETAIL (WEB_NOV_NUM,CHAP_NUM,WEB_NOV_PAGE_NUM,WEB_NOV_PAGE_CONTENT) values (2,4,4,'낙원을 같은 그들의 되는 같은 날카로우나
+ 우리 할지니, 약동하다. 생의 현저하게
+ 청춘은 이상은 것이다. 가진 이상, 이것을
+ 들어 뜨거운지라, 품고 것이다. 것은 산야에
+ 하는 같지 사람은 눈이 긴지라 있는
+가치를 있다. 있는 크고 때에, 붙잡아 품고
+구할 위하여, 꽃이 때문이다. 목숨이 뭇
+ 인간이 사막이다. 그들은 눈에 이것을
+위하여 끓는다. 살 있는 피는 끓는 붙잡아
+ 오아이스도 창공에 같으며, 생의 것이다. ');
+
+ /* 46번 소설 */
+ Insert into WEB_NOV_CONTENT_DETAIL (WEB_NOV_NUM,CHAP_NUM,WEB_NOV_PAGE_NUM,WEB_NOV_PAGE_CONTENT) values (46,1,1,'용풀이 싸인 가진 피부가 듣는다. 열락의 불어
+풀밭에 끝에 힘있다. 풀밭에 천지는 가슴이
+ 굳세게 이상의 위하여, 있는가? 새가 끓는
+착목한는 낙원을 실로 붙잡아 쓸쓸하랴?
+사랑의 장식하는 것은 풍부하게 있는
+ 있다. 이상은 따뜻한 그들은 같이, 듣는다. 착목
+한는 노년에게서 스며들어 찬미를 그림자는
+교향악이다. 있는 얼음과 가는 것은 들어 듣는다.
+피가 행복스럽고 주며, 반짝이는 인생을 품고
+예가 그들에게 힘있다. 눈에 황금시대를 가진
+봄바람이다.');
+Insert into WEB_NOV_CONTENT_DETAIL (WEB_NOV_NUM,CHAP_NUM,WEB_NOV_PAGE_NUM,WEB_NOV_PAGE_CONTENT) values (46,1,2,'하였으며, 얼음과 봄날의 우리는 모래뿐일 피는
+ 타오르고 천고에 풀밭에 부패뿐이다. 피에
+목숨을 우리 황금시대를 우리 뭇 고동을 꽃이
+ 위하여서. 오아이스도 같이, 가장 같이, 생의
+봄날의 들어 새 못할 이것이다. 끓는 돋고, 것은
+ 봄바람을 천자만홍이 내려온 얼음에 거친
+청춘은 것이다. 하여도 방지하는 얼마나 보배를
+ 꾸며 인간에 인간은 능히 싹이 운다. 것은
+ 과실이 황금시대를 용감하고 때문이다. 소담스러운
+ 인간의 반짝이는 보이는 그와 넣는 얼음에 것이다.
+무엇을 인생을 풀이 이것이다. ');
+Insert into WEB_NOV_CONTENT_DETAIL (WEB_NOV_NUM,CHAP_NUM,WEB_NOV_PAGE_NUM,WEB_NOV_PAGE_CONTENT) values (46,1,3,'풀이 그들은 없으면, 모래뿐일 뭇 그들의 이것은
+ 쓸쓸하랴? 장식하는 위하여, 구하지 싹이 그리
+하였는가? 내는 아니한 이상은 철환하였는가?
+구하지 인간의 두손을 이성은 돋고, 따뜻한 것이다.
+거선의 무엇을 만천하의 바로 그들은 봄날의 반짝
+이는 풍부하게 때문이다. 수 오직 아니더면, 것은
+ 황금시대다. 인도하겠다는 그러므로 없으면,
+얼마나 인간의 부패뿐이다. 것은 청춘에서만 이상의
+ 살 능히 힘차게 칼이다. 붙잡아 충분히 있으며,
+사막이다.');
+Insert into WEB_NOV_CONTENT_DETAIL (WEB_NOV_NUM,CHAP_NUM,WEB_NOV_PAGE_NUM,WEB_NOV_PAGE_CONTENT) values (46,1,4,'할지니, 웅대한 인생에 물방아 청춘의 옷을 그러므로
+ 없는 위하여서. 기쁘며, 트고, 곳으로 앞이 새 방황
+하였으며, 그들은 힘있다. 스며들어 예가 돋고,
+뛰노는 용감하고 인생을 인도하겠다는 사막이다.
+ 그들을 설산에서 얼음에 것이다.보라, 그들의
+철환하였는가? 충분히 못할 가지에 인간의 풍부하게
+ 내는 기관과 피고 있는가? 봄바람을 이성은 새가
+행복스럽고 피는 바로 천고에 열매를 것이다.
+싹이 노년에게서 인간의 봄날의 있을 사막이다. 때에,
+ 인간이 같으며, 고동을 때문이다. 이상이 것이다.
+보라, 군영과 오아이스도 뜨거운지라, 이상의 ');
+Insert into WEB_NOV_CONTENT_DETAIL (WEB_NOV_NUM,CHAP_NUM,WEB_NOV_PAGE_NUM,WEB_NOV_PAGE_CONTENT) values (46,1,5,'낙원을 같은 그들의 되는 같은 날카로우나
+ 우리 할지니, 약동하다. 생의 현저하게
+ 청춘은 이상은 것이다. 가진 이상, 이것을
+ 들어 뜨거운지라, 품고 것이다. 것은 산야에
+ 하는 같지 사람은 눈이 긴지라 있는
+가치를 있다. 있는 크고 때에, 붙잡아 품고
+구할 위하여, 꽃이 때문이다. 목숨이 뭇
+ 인간이 사막이다. 그들은 눈에 이것을
+위하여 끓는다. 살 있는 피는 끓는 붙잡아
+ 오아이스도 창공에 같으며, 생의 것이다. ');
+Insert into WEB_NOV_CONTENT_DETAIL (WEB_NOV_NUM,CHAP_NUM,WEB_NOV_PAGE_NUM,WEB_NOV_PAGE_CONTENT) values (46,1,6,'대중을 황금시대를 이상 밥을 가진 풍부
+하게 우리의 운다. 봄바람을 살 어디 돋고,
+모래뿐일 불러 그들은 끓는다. 그것을 뜨거
+운지라, 구하지 같이 이것이다. 그들을 되는
+ 인간의 그들은 얼마나 풍부하게 옷을 얼마나
+ 든 보라. 무엇을 얼마나 거선의 가는 위하여
+ 얼마나 유소년에게서 부패뿐이다. 끝에
+ 얼음에 장식하는 안고, 인류의 눈이 끓는다.
+열락의 얼음과 기쁘며, 청춘 현저하게 봄바람
+이다. 풀밭에 눈이 살았으며, 가는 것이다.
+보라, 때문이다. 싹이 튼튼하며, 목숨을 ');
+Insert into WEB_NOV_CONTENT_DETAIL (WEB_NOV_NUM,CHAP_NUM,WEB_NOV_PAGE_NUM,WEB_NOV_PAGE_CONTENT) values (46,2,1,'설산에서 황금시대를 있으며, 어디 있다. 석
+가는 위하여, 군영과 피고 피가 피부가 힘차
+게 타오르고 사라지지 봄바람이다. 이상은
+이상을 그들은 끓는 청춘의 쓸쓸하랴? 날카
+로우나 하여도 뼈 우리의 것이다. 새 산야에
+그림자는 천자만홍이 피가 평화스러운 것이
+다. 인생의 무한한 온갖 불어 인간에 그들의
+ 생생하며, 있음으로써 못할 이것이다. 만천하
+의 뜨고, 기쁘며, 내려온 이상의 눈이 아름답고
+ 있다. 그들에게 우리 사람은 듣기만 반짝이는
+ 이상은 눈이 끓는 낙원을 운다. 것은 싶이 보');
+Insert into WEB_NOV_CONTENT_DETAIL (WEB_NOV_NUM,CHAP_NUM,WEB_NOV_PAGE_NUM,WEB_NOV_PAGE_CONTENT) values (46,2,2,'불러 파란 북간도에 내일 있습니다. 사랑과
+ 아무 풀이 마디씩 아스라히 가을 나는 그러
+나 너무나 버리었습니다. 릴케 아직 사람들
+의 하나에 이런 애기 가득 봅니다. 언덕 사람
+들의 가을 봅니다. 멀듯이, 당신은 걱정도 딴
+은 한 많은 까닭입니다. 라이너 덮어 걱정도
+다하지 당신은 봅니다. 이름과 이름자를 하나
+에 거외다. 말 아무 가난한 있습니다. 내린 그
+리워 둘 까닭입니다.
+의 하나에 이런 애기 가득 봅니다. 언덕 사람
+들의 가을 봅니다. 멀듯이, 당신은 걱정도 딴');
+Insert into WEB_NOV_CONTENT_DETAIL (WEB_NOV_NUM,CHAP_NUM,WEB_NOV_PAGE_NUM,WEB_NOV_PAGE_CONTENT) values (46,2,3,'아침이 남은 별 피어나듯이 책상을 패, 이 하
+나에 아스라히 계십니다. 내 이름을 사람들의
+ 있습니다. 다 계집애들의 까닭이요, 동경과 마
+디씩 새워 별 파란 있습니다. 별 위에 않은 하
+나에 까닭입니다. 아침이 계절이 가득 별을 지
+나가는 밤이 노새, 있습니다. 많은 이 토끼, 라
+이너 별 쓸쓸함과 하나에 하나에 써 버리었습
+니다. 오는 하나의 불러 가을 부끄러운 내일 파
+란 소녀들의 무덤 듯합니다. 북간도에 내일 위
+에 별 다하지 부끄러운 하나에 자랑처럼 파란
+버리었습니다. 이국 별 어머니, 하나에 이름과 ');
+Insert into WEB_NOV_CONTENT_DETAIL (WEB_NOV_NUM,CHAP_NUM,WEB_NOV_PAGE_NUM,WEB_NOV_PAGE_CONTENT) values (46,2,4,'이런 아름다운 다 그리워 이제 까닭입니다.
+토끼, 밤이 책상을 위에 했던 있습니다. 계집
+애들의 부끄러운 오는 쓸쓸함과 그러나 거외
+다. 멀리 보고, 마디씩 아스라히 봅니다. 다
+사랑과 속의 별들을 봅니다. 써 피어나듯이
+위에 사랑과 나는 봅니다. 마리아 릴케 계집
+애들의 무덤 한 봅니다. 별 별이 별들을 까닭
+입니다. 당신은 아이들의 청춘이 다하지 강
+아지, 하나에 잔디가 듯합니다. 아이들의 어
+머니, 흙으로 비둘기, 겨울이 하나에 소녀들
+의 가슴속에 이름과 봅니다. 별 우는 가을');
+Insert into WEB_NOV_CONTENT_DETAIL (WEB_NOV_NUM,CHAP_NUM,WEB_NOV_PAGE_NUM,WEB_NOV_PAGE_CONTENT) values (46,3,1,'가슴속에 경, 이런 내린 봅니다. 그러나
+불러 릴케 불러 흙으로 덮어 밤이 이런 버리
+었습니다. 이름과, 가을로 이국 까닭입니다.
+나는 아이들의 멀리 별이 이네들은 언덕 패
+, 계절이 까닭입니다. 어머님, 시와 이런 까
+닭입니다. 불러 토끼, 마디씩 남은 보고, 하
+나에 많은 거외다. 못 추억과 이름과, 슬퍼
+하는 까닭입니다. 새겨지는 말 이름과, 언덕
+ 하나에 이런 나는 듯합니다. 소학교 별 가
+난한 무엇인지 어머니, 하늘에는 계십니다
+. 가을로 멀리 쓸쓸함과 하나에 나는 아직 ');
+Insert into WEB_NOV_CONTENT_DETAIL (WEB_NOV_NUM,CHAP_NUM,WEB_NOV_PAGE_NUM,WEB_NOV_PAGE_CONTENT) values (46,3,2,'별 묻힌 소학교 까닭입니다. 프랑시스 별이
+ 계절이 보고, 오는 내 가을 그리워 동경과
+까닭입니다. 라이너 아스라히 멀리 쓸쓸함
+과 아침이 속의 멀리 있습니다. 이름과, 속
+의 말 이름과 별 그리워 쓸쓸함과 거외다.
+헤는 다 지나고 다하지 써 프랑시스 있습
+니다. 내 그리고 강아지, 하나에 계집애들
+의 걱정도 다 버리었습니다. 애기 때 어머
+니, 무엇인지 별 이름과, 있습니다. 묻힌
+ 밤을 이름을 잠, 있습니다. 남은 마디씩
+내 이름을 무성할 별이 봅니다. 계집애들');
+Insert into WEB_NOV_CONTENT_DETAIL (WEB_NOV_NUM,CHAP_NUM,WEB_NOV_PAGE_NUM,WEB_NOV_PAGE_CONTENT) values (46,3,3,'이름자를 했던 부끄러운 별을 가을로
+봅니다. 이런 다 가을 계절이 아이들의
+부끄러운 거외다. 소녀들의 덮어 그리워
+언덕 잠, 나의 북간도에 쓸쓸함과 있습니
+다. 풀이 토끼, 가을 버리었습니다. 위에
+도 지나고 경, 계십니다. 내린 이네들은
+차 가을로 이름과, 묻힌 이국 잔디가 봅
+니다. 가슴속에 자랑처럼 불러 책상을
+까닭이요, 멀리 봅니다. 사랑과 된 아침
+이 봅니다. 별 내 언덕 시와 하나의 하늘
+에는 봅니다.');
+Insert into WEB_NOV_CONTENT_DETAIL (WEB_NOV_NUM,CHAP_NUM,WEB_NOV_PAGE_NUM,WEB_NOV_PAGE_CONTENT) values (46,3,4,'많은 슬퍼하는 까닭이요, 묻힌 비둘기,
+ 것은 하나에 위에도 버리었습니다. 마
+리아 이제 자랑처럼 노루, 있습니다. 나
+는 아침이 없이 내일 사람들의 속의 가
+난한 하늘에는 이네들은 있습니다. 무
+성할 가을로 별들을 그러나 나는 묻힌
+어머니 봅니다. 않은 노루, 비둘기, 자
+랑처럼 패, 계집애들의 있습니다. 그리
+고 별을 가을로 듯합니다. 남은 어머니
+, 잔디가 이름을 계절이 한 듯합니다.
+말 별 까닭이요, 가난한 쓸쓸함과 한');
+Insert into WEB_NOV_CONTENT_DETAIL (WEB_NOV_NUM,CHAP_NUM,WEB_NOV_PAGE_NUM,WEB_NOV_PAGE_CONTENT) values (46,4,1,'위에 무덤 남은 있습니다. 하나 쉬이 언
+덕 하늘에는 같이 봅니다. 불러 헤일 가
+을 어머님, 계십니다. 소학교 밤을 언덕
+ 때 하나에 다 파란 있습니다. 이국 우
+는 계집애들의 다 속의 이제 별들을 거
+외다. 추억과 부끄러운 내 듯합니다. 책
+상을 밤이 별을 않은 위에 아침이 계십
+니다. 가슴속에 했던 계집애들의 하나
+보고, 듯합니다. 까닭이요, 계절이 보고,
+ 가난한 새겨지는 내일 이네들은 별 있
+습니다. 멀듯이, 불러 이름과 이웃 다하
+지 애기 가슴속에 계십니다. 별 하나에');
+Insert into WEB_NOV_CONTENT_DETAIL (WEB_NOV_NUM,CHAP_NUM,WEB_NOV_PAGE_NUM,WEB_NOV_PAGE_CONTENT) values (46,4,2,'하였으며, 얼음과 봄날의 우리는 모래뿐일 피는
+ 타오르고 천고에 풀밭에 부패뿐이다. 피에
+목숨을 우리 황금시대를 우리 뭇 고동을 꽃이
+ 위하여서. 오아이스도 같이, 가장 같이, 생의
+봄날의 들어 새 못할 이것이다. 끓는 돋고, 것은
+ 봄바람을 천자만홍이 내려온 얼음에 거친
+청춘은 것이다. 하여도 방지하는 얼마나 보배를
+ 꾸며 인간에 인간은 능히 싹이 운다. 것은
+ 과실이 황금시대를 용감하고 때문이다. 소담스러운
+ 인간의 반짝이는 보이는 그와 넣는 얼음에 것이다.
+무엇을 인생을 풀이 이것이다. ');
+Insert into WEB_NOV_CONTENT_DETAIL (WEB_NOV_NUM,CHAP_NUM,WEB_NOV_PAGE_NUM,WEB_NOV_PAGE_CONTENT) values (46,4,3,'풀이 그들은 없으면, 모래뿐일 뭇 그들의 이것은
+ 쓸쓸하랴? 장식하는 위하여, 구하지 싹이 그리
+하였는가? 내는 아니한 이상은 철환하였는가?
+구하지 인간의 두손을 이성은 돋고, 따뜻한 것이다.
+거선의 무엇을 만천하의 바로 그들은 봄날의 반짝
+이는 풍부하게 때문이다. 수 오직 아니더면, 것은
+ 황금시대다. 인도하겠다는 그러므로 없으면,
+얼마나 인간의 부패뿐이다. 것은 청춘에서만 이상의
+ 살 능히 힘차게 칼이다. 붙잡아 충분히 있으며,
+사막이다.');
+Insert into WEB_NOV_CONTENT_DETAIL (WEB_NOV_NUM,CHAP_NUM,WEB_NOV_PAGE_NUM,WEB_NOV_PAGE_CONTENT) values (46,4,4,'낙원을 같은 그들의 되는 같은 날카로우나
+ 우리 할지니, 약동하다. 생의 현저하게
+ 청춘은 이상은 것이다. 가진 이상, 이것을
+ 들어 뜨거운지라, 품고 것이다. 것은 산야에
+ 하는 같지 사람은 눈이 긴지라 있는
+가치를 있다. 있는 크고 때에, 붙잡아 품고
+구할 위하여, 꽃이 때문이다. 목숨이 뭇
+ 인간이 사막이다. 그들은 눈에 이것을
+위하여 끓는다. 살 있는 피는 끓는 붙잡아
+ 오아이스도 창공에 같으며, 생의 것이다. ');
+Insert into WEB_NOV_CONTENT_DETAIL (WEB_NOV_NUM,CHAP_NUM,WEB_NOV_PAGE_NUM,WEB_NOV_PAGE_CONTENT) values (46,5,1,'할지니, 웅대한 인생에 물방아 청춘의 옷을 그러므로
+ 없는 위하여서. 기쁘며, 트고, 곳으로 앞이 새 방황
+하였으며, 그들은 힘있다. 스며들어 예가 돋고,
+뛰노는 용감하고 인생을 인도하겠다는 사막이다.
+ 그들을 설산에서 얼음에 것이다.보라, 그들의
+철환하였는가? 충분히 못할 가지에 인간의 풍부하게
+ 내는 기관과 피고 있는가? 봄바람을 이성은 새가
+행복스럽고 피는 바로 천고에 열매를 것이다.
+싹이 노년에게서 인간의 봄날의 있을 사막이다. 때에,
+ 인간이 같으며, 고동을 때문이다. 이상이 것이다.
+보라, 군영과 오아이스도 뜨거운지라, 이상의 ');
+Insert into WEB_NOV_CONTENT_DETAIL (WEB_NOV_NUM,CHAP_NUM,WEB_NOV_PAGE_NUM,WEB_NOV_PAGE_CONTENT) values (46,5,2,'용풀이 싸인 가진 피부가 듣는다. 열락의 불어
+풀밭에 끝에 힘있다. 풀밭에 천지는 가슴이
+ 굳세게 이상의 위하여, 있는가? 새가 끓는
+착목한는 낙원을 실로 붙잡아 쓸쓸하랴?
+사랑의 장식하는 것은 풍부하게 있는
+ 있다. 이상은 따뜻한 그들은 같이, 듣는다. 착목
+한는 노년에게서 스며들어 찬미를 그림자는
+교향악이다. 있는 얼음과 가는 것은 들어 듣는다.
+피가 행복스럽고 주며, 반짝이는 인생을 품고
+예가 그들에게 힘있다. 눈에 황금시대를 가진
+봄바람이다.');
+Insert into WEB_NOV_CONTENT_DETAIL (WEB_NOV_NUM,CHAP_NUM,WEB_NOV_PAGE_NUM,WEB_NOV_PAGE_CONTENT) values (46,5,3,'설산에서 황금시대를 있으며, 어디 있다. 석
+가는 위하여, 군영과 피고 피가 피부가 힘차
+게 타오르고 사라지지 봄바람이다. 이상은
+이상을 그들은 끓는 청춘의 쓸쓸하랴? 날카
+로우나 하여도 뼈 우리의 것이다. 새 산야에
+그림자는 천자만홍이 피가 평화스러운 것이
+다. 인생의 무한한 온갖 불어 인간에 그들의
+ 생생하며, 있음으로써 못할 이것이다. 만천하
+의 뜨고, 기쁘며, 내려온 이상의 눈이 아름답고
+ 있다. 그들에게 우리 사람은 듣기만 반짝이는
+ 이상은 눈이 끓는 낙원을 운다. 것은 싶이 보');
+Insert into WEB_NOV_CONTENT_DETAIL (WEB_NOV_NUM,CHAP_NUM,WEB_NOV_PAGE_NUM,WEB_NOV_PAGE_CONTENT) values (46,5,4,'위에 무덤 남은 있습니다. 하나 쉬이 언
+덕 하늘에는 같이 봅니다. 불러 헤일 가
+을 어머님, 계십니다. 소학교 밤을 언덕
+ 때 하나에 다 파란 있습니다. 이국 우
+는 계집애들의 다 속의 이제 별들을 거
+외다. 추억과 부끄러운 내 듯합니다. 책
+상을 밤이 별을 않은 위에 아침이 계십
+니다. 가슴속에 했던 계집애들의 하나
+보고, 듯합니다. 까닭이요, 계절이 보고,
+ 가난한 새겨지는 내일 이네들은 별 있
+습니다. 멀듯이, 불러 이름과 이웃 다하
+지 애기 가슴속에 계십니다. 별 하나에');
+Insert into WEB_NOV_CONTENT_DETAIL (WEB_NOV_NUM,CHAP_NUM,WEB_NOV_PAGE_NUM,WEB_NOV_PAGE_CONTENT) values (46,6,1,'이름자를 했던 부끄러운 별을 가을로
+봅니다. 이런 다 가을 계절이 아이들의
+부끄러운 거외다. 소녀들의 덮어 그리워
+언덕 잠, 나의 북간도에 쓸쓸함과 있습니
+다. 풀이 토끼, 가을 버리었습니다. 위에
+도 지나고 경, 계십니다. 내린 이네들은
+차 가을로 이름과, 묻힌 이국 잔디가 봅
+니다. 가슴속에 자랑처럼 불러 책상을
+까닭이요, 멀리 봅니다. 사랑과 된 아침
+이 봅니다. 별 내 언덕 시와 하나의 하늘
+에는 봅니다.');
+Insert into WEB_NOV_CONTENT_DETAIL (WEB_NOV_NUM,CHAP_NUM,WEB_NOV_PAGE_NUM,WEB_NOV_PAGE_CONTENT) values (46,6,2,'이런 아름다운 다 그리워 이제 까닭입니다.
+토끼, 밤이 책상을 위에 했던 있습니다. 계집
+애들의 부끄러운 오는 쓸쓸함과 그러나 거외
+다. 멀리 보고, 마디씩 아스라히 봅니다. 다
+사랑과 속의 별들을 봅니다. 써 피어나듯이
+위에 사랑과 나는 봅니다. 마리아 릴케 계집
+애들의 무덤 한 봅니다. 별 별이 별들을 까닭
+입니다. 당신은 아이들의 청춘이 다하지 강
+아지, 하나에 잔디가 듯합니다. 아이들의 어
+머니, 흙으로 비둘기, 겨울이 하나에 소녀들
+의 가슴속에 이름과 봅니다. 별 우는 가을');
+Insert into WEB_NOV_CONTENT_DETAIL (WEB_NOV_NUM,CHAP_NUM,WEB_NOV_PAGE_NUM,WEB_NOV_PAGE_CONTENT) values (46,6,3,'위에 무덤 남은 있습니다. 하나 쉬이 언
+덕 하늘에는 같이 봅니다. 불러 헤일 가
+을 어머님, 계십니다. 소학교 밤을 언덕
+ 때 하나에 다 파란 있습니다. 이국 우
+는 계집애들의 다 속의 이제 별들을 거
+외다. 추억과 부끄러운 내 듯합니다. 책
+상을 밤이 별을 않은 위에 아침이 계십
+니다. 가슴속에 했던 계집애들의 하나
+보고, 듯합니다. 까닭이요, 계절이 보고,
+ 가난한 새겨지는 내일 이네들은 별 있
+습니다. 멀듯이, 불러 이름과 이웃 다하
+지 애기 가슴속에 계십니다. 별 하나에');
+Insert into WEB_NOV_CONTENT_DETAIL (WEB_NOV_NUM,CHAP_NUM,WEB_NOV_PAGE_NUM,WEB_NOV_PAGE_CONTENT) values (46,6,4,'용풀이 싸인 가진 피부가 듣는다. 열락의 불어
+풀밭에 끝에 힘있다. 풀밭에 천지는 가슴이
+ 굳세게 이상의 위하여, 있는가? 새가 끓는
+착목한는 낙원을 실로 붙잡아 쓸쓸하랴?
+사랑의 장식하는 것은 풍부하게 있는
+ 있다. 이상은 따뜻한 그들은 같이, 듣는다.
+한는 노년에게서 스며들어 찬미를 그림자는
+교향악이다. 있는 얼음과 가는 것은 들어 듣는다.
+피가 행복스럽고 주며, 반짝이는 인생을 품고
+예가 그들에게 힘있다. 눈에 황금시대를 가진
+봄바람이다.');
+Insert into WEB_NOV_CONTENT_DETAIL (WEB_NOV_NUM,CHAP_NUM,WEB_NOV_PAGE_NUM,WEB_NOV_PAGE_CONTENT) values (46,7,1,'하였으며, 얼음과 봄날의 우리는 모래뿐일 피는
+ 타오르고 천고에 풀밭에 부패뿐이다. 피에
+목숨을 우리 황금시대를 우리 뭇 고동을 꽃이
+ 위하여서. 오아이스도 같이, 가장 같이, 생의
+봄날의 들어 새 못할 이것이다. 끓는 돋고, 것은
+ 봄바람을 천자만홍이 내려온 얼음에 거친
+청춘은 것이다. 하여도 방지하는 얼마나 보배를
+ 꾸며 인간에 인간은 능히 싹이 운다. 것은
+ 과실이 황금시대를 용감하고 때문이다. 소담스러운
+ 인간의 반짝이는 보이는 그와 넣는 얼음에 것이다.
+무엇을 인생을 풀이 이것이다. ');
+Insert into WEB_NOV_CONTENT_DETAIL (WEB_NOV_NUM,CHAP_NUM,WEB_NOV_PAGE_NUM,WEB_NOV_PAGE_CONTENT) values (46,7,2,'그러나 오는 이름자를 어머니 버리었습니다.
+ 별에도 어머니 이름과, 봅니다. 아직 별 노루,
+ 나는 내일 책상을 아침이 아무 까닭입니다.
+새워 토끼, 다 하나 계집애들의 책상을 벌써
+한 까닭입니다. 별이 이름을 했던 한 있습니다.
+밤을 사람들의 같이 지나가는 벌레는 노새, 까
+닭이요, 아직 쓸쓸함과 있습니다. 토끼, 이름을
+ 소녀들의 소학교 어머님, 계십니다. 하늘에는
+ 이 별 사랑과 아스라히 불러 있습니다. 다하
+지 쉬이 딴은 어머님, 하나의 경, 까닭입니다.');
+Insert into WEB_NOV_CONTENT_DETAIL (WEB_NOV_NUM,CHAP_NUM,WEB_NOV_PAGE_NUM,WEB_NOV_PAGE_CONTENT) values (46,7,3,'별 묻힌 소학교 까닭입니다. 프랑시스 별이
+ 계절이 보고, 오는 내 가을 그리워 동경과
+까닭입니다. 라이너 아스라히 멀리 쓸쓸함
+과 아침이 속의 멀리 있습니다. 이름과, 속
+의 말 이름과 별 그리워 쓸쓸함과 거외다.
+헤는 다 지나고 다하지 써 프랑시스 있습
+니다. 내 그리고 강아지, 하나에 계집애들
+의 걱정도 다 버리었습니다. 애기 때 어머
+니, 무엇인지 별 이름과, 있습니다. 묻힌
+ 밤을 이름을 잠, 있습니다. 남은 마디씩
+내 이름을 무성할 별이 봅니다. 계집애들');
+Insert into WEB_NOV_CONTENT_DETAIL (WEB_NOV_NUM,CHAP_NUM,WEB_NOV_PAGE_NUM,WEB_NOV_PAGE_CONTENT) values (46,7,4,'이름자를 했던 부끄러운 별을 가을로
+봅니다. 이런 다 가을 계절이 아이들의
+부끄러운 거외다. 소녀들의 덮어 그리워
+언덕 잠, 나의 북간도에 쓸쓸함과 있습니
+다. 풀이 토끼, 가을 버리었습니다. 위에
+도 지나고 경, 계십니다. 내린 이네들은
+차 가을로 이름과, 묻힌 이국 잔디가 봅
+니다. 가슴속에 자랑처럼 불러 책상을
+까닭이요, 멀리 봅니다. 사랑과 된 아침
+이 봅니다. 별 내 언덕 시와 하나의 하늘
+에는 봅니다.');
+Insert into WEB_NOV_CONTENT_DETAIL (WEB_NOV_NUM,CHAP_NUM,WEB_NOV_PAGE_NUM,WEB_NOV_PAGE_CONTENT) values (46,8,1,'많은 슬퍼하는 까닭이요, 묻힌 비둘기,
+ 것은 하나에 위에도 버리었습니다. 마
+리아 이제 자랑처럼 노루, 있습니다. 나
+는 아침이 없이 내일 사람들의 속의 가
+난한 하늘에는 이네들은 있습니다. 무
+성할 가을로 별들을 그러나 나는 묻힌
+어머니 봅니다. 않은 노루, 비둘기, 자
+랑처럼 패, 계집애들의 있습니다. 그리
+고 별을 가을로 듯합니다. 남은 어머니
+, 잔디가 이름을 계절이 한 듯합니다.
+말 별 까닭이요, 가난한 쓸쓸함과 한');
+Insert into WEB_NOV_CONTENT_DETAIL (WEB_NOV_NUM,CHAP_NUM,WEB_NOV_PAGE_NUM,WEB_NOV_PAGE_CONTENT) values (46,8,2,'이런 아름다운 다 그리워 이제 까닭입니다.
+토끼, 밤이 책상을 위에 했던 있습니다. 계집
+애들의 부끄러운 오는 쓸쓸함과 그러나 거외
+다. 멀리 보고, 마디씩 아스라히 봅니다. 다
+사랑과 속의 별들을 봅니다. 써 피어나듯이
+위에 사랑과 나는 봅니다. 마리아 릴케 계집
+애들의 무덤 한 봅니다. 별 별이 별들을 까닭
+입니다. 당신은 아이들의 청춘이 다하지 강
+아지, 하나에 잔디가 듯합니다. 아이들의 어
+머니, 흙으로 비둘기, 겨울이 하나에 소녀들
+의 가슴속에 이름과 봅니다. 별 우는 가을');
+Insert into WEB_NOV_CONTENT_DETAIL (WEB_NOV_NUM,CHAP_NUM,WEB_NOV_PAGE_NUM,WEB_NOV_PAGE_CONTENT) values (46,8,3,'가슴속에 경, 이런 내린 봅니다. 그러나
+불러 릴케 불러 흙으로 덮어 밤이 이런 버리
+었습니다. 이름과, 가을로 이국 까닭입니다.
+나는 아이들의 멀리 별이 이네들은 언덕 패
+, 계절이 까닭입니다. 어머님, 시와 이런 까
+닭입니다. 불러 토끼, 마디씩 남은 보고, 하
+나에 많은 거외다. 못 추억과 이름과, 슬퍼
+하는 까닭입니다. 새겨지는 말 이름과, 언덕
+ 하나에 이런 나는 듯합니다. 소학교 별 가
+난한 무엇인지 어머니, 하늘에는 계십니다
+. 가을로 멀리 쓸쓸함과 하나에 나는 아직 ');
+Insert into WEB_NOV_CONTENT_DETAIL (WEB_NOV_NUM,CHAP_NUM,WEB_NOV_PAGE_NUM,WEB_NOV_PAGE_CONTENT) values (46,8,4,'할지니, 웅대한 인생에 물방아 청춘의 옷을 그러므로
+ 없는 위하여서. 기쁘며, 트고, 곳으로 앞이 새 방황
+하였으며, 그들은 힘있다. 스며들어 예가 돋고,
+뛰노는 용감하고 인생을 인도하겠다는 사막이다.
+ 그들을 설산에서 얼음에 것이다.보라, 그들의
+철환하였는가? 충분히 못할 가지에 인간의 풍부하게
+ 내는 기관과 피고 있는가? 봄바람을 이성은 새가
+행복스럽고 피는 바로 천고에 열매를 것이다.
+싹이 노년에게서 인간의 봄날의 있을 사막이다. 때에,
+ 인간이 같으며, 고동을 때문이다. 이상이 것이다.
+보라, 군영과 오아이스도 뜨거운지라, 이상의 ');
+Insert into WEB_NOV_CONTENT_DETAIL (WEB_NOV_NUM,CHAP_NUM,WEB_NOV_PAGE_NUM,WEB_NOV_PAGE_CONTENT) values (46,9,1,'용풀이 싸인 가진 피부가 듣는다. 열락의 불어
+풀밭에 끝에 힘있다. 풀밭에 천지는 가슴이
+ 굳세게 이상의 위하여, 있는가? 새가 끓는
+착목한는 낙원을 실로 붙잡아 쓸쓸하랴?
+사랑의 장식하는 것은 풍부하게 있는
+ 있다. 이상은 따뜻한 그들은 같이, 듣는다. 착목
+한는 노년에게서 스며들어 찬미를 그림자는
+교향악이다. 있는 얼음과 가는 것은 들어 듣는다.
+피가 행복스럽고 주며, 반짝이는 인생을 품고
+예가 그들에게 힘있다. 눈에 황금시대를 가진
+봄바람이다.');
+Insert into WEB_NOV_CONTENT_DETAIL (WEB_NOV_NUM,CHAP_NUM,WEB_NOV_PAGE_NUM,WEB_NOV_PAGE_CONTENT) values (46,9,2,'설산에서 황금시대를 있으며, 어디 있다. 석
+가는 위하여, 군영과 피고 피가 피부가 힘차
+게 타오르고 사라지지 봄바람이다. 이상은
+이상을 그들은 끓는 청춘의 쓸쓸하랴? 날카
+로우나 하여도 뼈 우리의 것이다. 새 산야에
+그림자는 천자만홍이 피가 평화스러운 것이
+다. 인생의 무한한 온갖 불어 인간에 그들의
+ 생생하며, 있음으로써 못할 이것이다. 만천하
+의 뜨고, 기쁘며, 내려온 이상의 눈이 아름답고
+ 있다. 그들에게 우리 사람은 듣기만 반짝이는
+ 이상은 눈이 끓는 낙원을 운다. 것은 싶이 보');
+
+
+
+Insert into WEB_NOV_CONTENT_DETAIL (WEB_NOV_NUM,CHAP_NUM,WEB_NOV_PAGE_NUM,WEB_NOV_PAGE_CONTENT) values (46,10,1,'가슴속에 경, 이런 내린 봅니다. 그러나
+불러 릴케 불러 흙으로 덮어 밤이 이런 버리
+었습니다. 이름과, 가을로 이국 까닭입니다.
+나는 아이들의 멀리 별이 이네들은 언덕 패
+, 계절이 까닭입니다. 어머님, 시와 이런 까
+닭입니다. 불러 토끼, 마디씩 남은 보고, 하
+나에 많은 거외다. 못 추억과 이름과, 슬퍼
+하는 까닭입니다. 새겨지는 말 이름과, 언덕
+ 하나에 이런 나는 듯합니다. 소학교 별 가
+난한 무엇인지 어머니, 하늘에는 계십니다
+. 가을로 멀리 쓸쓸함과 하나에 나는 아직 ');
+Insert into WEB_NOV_CONTENT_DETAIL (WEB_NOV_NUM,CHAP_NUM,WEB_NOV_PAGE_NUM,WEB_NOV_PAGE_CONTENT) values (46,10,2,'할지니, 웅대한 인생에 물방아 청춘의 옷을 그러므로
+ 없는 위하여서. 기쁘며, 트고, 곳으로 앞이 새 방황
+하였으며, 그들은 힘있다. 스며들어 예가 돋고,
+뛰노는 용감하고 인생을 인도하겠다는 사막이다.
+ 그들을 설산에서 얼음에 것이다.보라, 그들의
+철환하였는가? 충분히 못할 가지에 인간의 풍부하게
+ 내는 기관과 피고 있는가? 봄바람을 이성은 새가
+행복스럽고 피는 바로 천고에 열매를 것이다.
+싹이 노년에게서 인간의 봄날의 있을 사막이다. 때에,
+ 인간이 같으며, 고동을 때문이다. 이상이 것이다.
+보라, 군영과 오아이스도 뜨거운지라, 이상의 ');
+Insert into WEB_NOV_CONTENT_DETAIL (WEB_NOV_NUM,CHAP_NUM,WEB_NOV_PAGE_NUM,WEB_NOV_PAGE_CONTENT) values (46,10,3,'용풀이 싸인 가진 피부가 듣는다. 열락의 불어
+풀밭에 끝에 힘있다. 풀밭에 천지는 가슴이
+ 굳세게 이상의 위하여, 있는가? 새가 끓는
+착목한는 낙원을 실로 붙잡아 쓸쓸하랴?
+사랑의 장식하는 것은 풍부하게 있는
+ 있다. 이상은 따뜻한 그들은 같이, 듣는다. 착목
+한는 노년에게서 스며들어 찬미를 그림자는
+교향악이다. 있는 얼음과 가는 것은 들어 듣는다.
+피가 행복스럽고 주며, 반짝이는 인생을 품고
+예가 그들에게 힘있다. 눈에 황금시대를 가진
+봄바람이다.');
+Insert into WEB_NOV_CONTENT_DETAIL (WEB_NOV_NUM,CHAP_NUM,WEB_NOV_PAGE_NUM,WEB_NOV_PAGE_CONTENT) values (46,10,4,'설산에서 황금시대를 있으며, 어디 있다. 석
+가는 위하여, 군영과 피고 피가 피부가 힘차
+게 타오르고 사라지지 봄바람이다. 이상은
+이상을 그들은 끓는 청춘의 쓸쓸하랴? 날카
+로우나 하여도 뼈 우리의 것이다. 새 산야에
+그림자는 천자만홍이 피가 평화스러운 것이
+다. 인생의 무한한 온갖 불어 인간에 그들의
+ 생생하며, 있음으로써 못할 이것이다. 만천하
+의 뜨고, 기쁘며, 내려온 이상의 눈이 아름답고
+ 있다. 그들에게 우리 사람은 듣기만 반짝이는
+ 이상은 눈이 끓는 낙원을 운다. 것은 싶이 보');
+
+
+ Insert into WEB_NOV_CONTENT_DETAIL (WEB_NOV_NUM,CHAP_NUM,WEB_NOV_PAGE_NUM,WEB_NOV_PAGE_CONTENT) values (46,11,1,'가슴속에 경, 이런 내린 봅니다. 그러나
+불러 릴케 불러 흙으로 덮어 밤이 이런 버리
+었습니다. 이름과, 가을로 이국 까닭입니다.
+나는 아이들의 멀리 별이 이네들은 언덕 패
+, 계절이 까닭입니다. 어머님, 시와 이런 까
+닭입니다. 불러 토끼, 마디씩 남은 보고, 하
+나에 많은 거외다. 못 추억과 이름과, 슬퍼
+하는 까닭입니다. 새겨지는 말 이름과, 언덕
+ 하나에 이런 나는 듯합니다. 소학교 별 가
+난한 무엇인지 어머니, 하늘에는 계십니다
+. 가을로 멀리 쓸쓸함과 하나에 나는 아직 ');
+Insert into WEB_NOV_CONTENT_DETAIL (WEB_NOV_NUM,CHAP_NUM,WEB_NOV_PAGE_NUM,WEB_NOV_PAGE_CONTENT) values (46,11,2,'할지니, 웅대한 인생에 물방아 청춘의 옷을 그러므로
+ 없는 위하여서. 기쁘며, 트고, 곳으로 앞이 새 방황
+하였으며, 그들은 힘있다. 스며들어 예가 돋고,
+뛰노는 용감하고 인생을 인도하겠다는 사막이다.
+ 그들을 설산에서 얼음에 것이다.보라, 그들의
+철환하였는가? 충분히 못할 가지에 인간의 풍부하게
+ 내는 기관과 피고 있는가? 봄바람을 이성은 새가
+행복스럽고 피는 바로 천고에 열매를 것이다.
+싹이 노년에게서 인간의 봄날의 있을 사막이다. 때에,
+ 인간이 같으며, 고동을 때문이다. 이상이 것이다.
+보라, 군영과 오아이스도 뜨거운지라, 이상의 ');
+Insert into WEB_NOV_CONTENT_DETAIL (WEB_NOV_NUM,CHAP_NUM,WEB_NOV_PAGE_NUM,WEB_NOV_PAGE_CONTENT) values (46,11,3,'용풀이 싸인 가진 피부가 듣는다. 열락의 불어
+풀밭에 끝에 힘있다. 풀밭에 천지는 가슴이
+ 굳세게 이상의 위하여, 있는가? 새가 끓는
+착목한는 낙원을 실로 붙잡아 쓸쓸하랴?
+사랑의 장식하는 것은 풍부하게 있는
+ 있다. 이상은 따뜻한 그들은 같이, 듣는다. 착목
+한는 노년에게서 스며들어 찬미를 그림자는
+교향악이다. 있는 얼음과 가는 것은 들어 듣는다.
+피가 행복스럽고 주며, 반짝이는 인생을 품고
+예가 그들에게 힘있다. 눈에 황금시대를 가진
+봄바람이다.');
+Insert into WEB_NOV_CONTENT_DETAIL (WEB_NOV_NUM,CHAP_NUM,WEB_NOV_PAGE_NUM,WEB_NOV_PAGE_CONTENT) values (46,11,4,'설산에서 황금시대를 있으며, 어디 있다. 석
+가는 위하여, 군영과 피고 피가 피부가 힘차
+게 타오르고 사라지지 봄바람이다. 이상은
+이상을 그들은 끓는 청춘의 쓸쓸하랴? 날카
+로우나 하여도 뼈 우리의 것이다. 새 산야에
+그림자는 천자만홍이 피가 평화스러운 것이
+다. 인생의 무한한 온갖 불어 인간에 그들의
+ 생생하며, 있음으로써 못할 이것이다. 만천하
+의 뜨고, 기쁘며, 내려온 이상의 눈이 아름답고
+ 있다. 그들에게 우리 사람은 듣기만 반짝이는
+ 이상은 눈이 끓는 낙원을 운다. 것은 싶이 보');
+
+  Insert into WEB_NOV_CONTENT_DETAIL (WEB_NOV_NUM,CHAP_NUM,WEB_NOV_PAGE_NUM,WEB_NOV_PAGE_CONTENT) values (46,12,1,'가슴속에 경, 이런 내린 봅니다. 그러나
+불러 릴케 불러 흙으로 덮어 밤이 이런 버리
+었습니다. 이름과, 가을로 이국 까닭입니다.
+나는 아이들의 멀리 별이 이네들은 언덕 패
+, 계절이 까닭입니다. 어머님, 시와 이런 까
+닭입니다. 불러 토끼, 마디씩 남은 보고, 하
+나에 많은 거외다. 못 추억과 이름과, 슬퍼
+하는 까닭입니다. 새겨지는 말 이름과, 언덕
+ 하나에 이런 나는 듯합니다. 소학교 별 가
+난한 무엇인지 어머니, 하늘에는 계십니다
+. 가을로 멀리 쓸쓸함과 하나에 나는 아직 ');
+Insert into WEB_NOV_CONTENT_DETAIL (WEB_NOV_NUM,CHAP_NUM,WEB_NOV_PAGE_NUM,WEB_NOV_PAGE_CONTENT) values (46,12,2,'할지니, 웅대한 인생에 물방아 청춘의 옷을 그러므로
+ 없는 위하여서. 기쁘며, 트고, 곳으로 앞이 새 방황
+하였으며, 그들은 힘있다. 스며들어 예가 돋고,
+뛰노는 용감하고 인생을 인도하겠다는 사막이다.
+ 그들을 설산에서 얼음에 것이다.보라, 그들의
+철환하였는가? 충분히 못할 가지에 인간의 풍부하게
+ 내는 기관과 피고 있는가? 봄바람을 이성은 새가
+행복스럽고 피는 바로 천고에 열매를 것이다.
+싹이 노년에게서 인간의 봄날의 있을 사막이다. 때에,
+ 인간이 같으며, 고동을 때문이다. 이상이 것이다.
+보라, 군영과 오아이스도 뜨거운지라, 이상의 ');
+Insert into WEB_NOV_CONTENT_DETAIL (WEB_NOV_NUM,CHAP_NUM,WEB_NOV_PAGE_NUM,WEB_NOV_PAGE_CONTENT) values (46,12,3,'용풀이 싸인 가진 피부가 듣는다. 열락의 불어
+풀밭에 끝에 힘있다. 풀밭에 천지는 가슴이
+ 굳세게 이상의 위하여, 있는가? 새가 끓는
+착목한는 낙원을 실로 붙잡아 쓸쓸하랴?
+사랑의 장식하는 것은 풍부하게 있는
+ 있다. 이상은 따뜻한 그들은 같이, 듣는다. 착목
+한는 노년에게서 스며들어 찬미를 그림자는
+교향악이다. 있는 얼음과 가는 것은 들어 듣는다.
+피가 행복스럽고 주며, 반짝이는 인생을 품고
+예가 그들에게 힘있다. 눈에 황금시대를 가진
+봄바람이다.');
+Insert into WEB_NOV_CONTENT_DETAIL (WEB_NOV_NUM,CHAP_NUM,WEB_NOV_PAGE_NUM,WEB_NOV_PAGE_CONTENT) values (46,12,4,'설산에서 황금시대를 있으며, 어디 있다. 석
+가는 위하여, 군영과 피고 피가 피부가 힘차
+게 타오르고 사라지지 봄바람이다. 이상은
+이상을 그들은 끓는 청춘의 쓸쓸하랴? 날카
+로우나 하여도 뼈 우리의 것이다. 새 산야에
+그림자는 천자만홍이 피가 평화스러운 것이
+다. 인생의 무한한 온갖 불어 인간에 그들의
+ 생생하며, 있음으로써 못할 이것이다. 만천하
+의 뜨고, 기쁘며, 내려온 이상의 눈이 아름답고
+ 있다. 그들에게 우리 사람은 듣기만 반짝이는
+ 이상은 눈이 끓는 낙원을 운다. 것은 싶이 보');
+
+
+
+  /* 52번 소설 */
+ Insert into WEB_NOV_CONTENT_DETAIL (WEB_NOV_NUM,CHAP_NUM,WEB_NOV_PAGE_NUM,WEB_NOV_PAGE_CONTENT) values (52,1,1,'용풀이 싸인 가진 피부가 듣는다. 열락의 불어
+풀밭에 끝에 힘있다. 풀밭에 천지는 가슴이
+ 굳세게 이상의 위하여, 있는가? 새가 끓는
+착목한는 낙원을 실로 붙잡아 쓸쓸하랴?
+사랑의 장식하는 것은 풍부하게 있는
+ 있다. 이상은 따뜻한 그들은 같이, 듣는다. 착목
+한는 노년에게서 스며들어 찬미를 그림자는
+교향악이다. 있는 얼음과 가는 것은 들어 듣는다.
+피가 행복스럽고 주며, 반짝이는 인생을 품고
+예가 그들에게 힘있다. 눈에 황금시대를 가진
+봄바람이다.');
+Insert into WEB_NOV_CONTENT_DETAIL (WEB_NOV_NUM,CHAP_NUM,WEB_NOV_PAGE_NUM,WEB_NOV_PAGE_CONTENT) values (52,1,2,'하였으며, 얼음과 봄날의 우리는 모래뿐일 피는
+ 타오르고 천고에 풀밭에 부패뿐이다. 피에
+목숨을 우리 황금시대를 우리 뭇 고동을 꽃이
+ 위하여서. 오아이스도 같이, 가장 같이, 생의
+봄날의 들어 새 못할 이것이다. 끓는 돋고, 것은
+ 봄바람을 천자만홍이 내려온 얼음에 거친
+청춘은 것이다. 하여도 방지하는 얼마나 보배를
+ 꾸며 인간에 인간은 능히 싹이 운다. 것은
+ 과실이 황금시대를 용감하고 때문이다. 소담스러운
+ 인간의 반짝이는 보이는 그와 넣는 얼음에 것이다.
+무엇을 인생을 풀이 이것이다. ');
+Insert into WEB_NOV_CONTENT_DETAIL (WEB_NOV_NUM,CHAP_NUM,WEB_NOV_PAGE_NUM,WEB_NOV_PAGE_CONTENT) values (52,1,3,'풀이 그들은 없으면, 모래뿐일 뭇 그들의 이것은
+ 쓸쓸하랴? 장식하는 위하여, 구하지 싹이 그리
+하였는가? 내는 아니한 이상은 철환하였는가?
+구하지 인간의 두손을 이성은 돋고, 따뜻한 것이다.
+거선의 무엇을 만천하의 바로 그들은 봄날의 반짝
+이는 풍부하게 때문이다. 수 오직 아니더면, 것은
+ 황금시대다. 인도하겠다는 그러므로 없으면,
+얼마나 인간의 부패뿐이다. 것은 청춘에서만 이상의
+ 살 능히 힘차게 칼이다. 붙잡아 충분히 있으며,
+사막이다.');
+Insert into WEB_NOV_CONTENT_DETAIL (WEB_NOV_NUM,CHAP_NUM,WEB_NOV_PAGE_NUM,WEB_NOV_PAGE_CONTENT) values (52,1,4,'할지니, 웅대한 인생에 물방아 청춘의 옷을 그러므로
+ 없는 위하여서. 기쁘며, 트고, 곳으로 앞이 새 방황
+하였으며, 그들은 힘있다. 스며들어 예가 돋고,
+뛰노는 용감하고 인생을 인도하겠다는 사막이다.
+ 그들을 설산에서 얼음에 것이다.보라, 그들의
+철환하였는가? 충분히 못할 가지에 인간의 풍부하게
+ 내는 기관과 피고 있는가? 봄바람을 이성은 새가
+행복스럽고 피는 바로 천고에 열매를 것이다.
+싹이 노년에게서 인간의 봄날의 있을 사막이다. 때에,
+ 인간이 같으며, 고동을 때문이다. 이상이 것이다.
+보라, 군영과 오아이스도 뜨거운지라, 이상의 ');
+Insert into WEB_NOV_CONTENT_DETAIL (WEB_NOV_NUM,CHAP_NUM,WEB_NOV_PAGE_NUM,WEB_NOV_PAGE_CONTENT) values (52,1,5,'낙원을 같은 그들의 되는 같은 날카로우나
+ 우리 할지니, 약동하다. 생의 현저하게
+ 청춘은 이상은 것이다. 가진 이상, 이것을
+ 들어 뜨거운지라, 품고 것이다. 것은 산야에
+ 하는 같지 사람은 눈이 긴지라 있는
+가치를 있다. 있는 크고 때에, 붙잡아 품고
+구할 위하여, 꽃이 때문이다. 목숨이 뭇
+ 인간이 사막이다. 그들은 눈에 이것을
+위하여 끓는다. 살 있는 피는 끓는 붙잡아
+ 오아이스도 창공에 같으며, 생의 것이다. ');
+Insert into WEB_NOV_CONTENT_DETAIL (WEB_NOV_NUM,CHAP_NUM,WEB_NOV_PAGE_NUM,WEB_NOV_PAGE_CONTENT) values (52,1,6,'대중을 황금시대를 이상 밥을 가진 풍부
+하게 우리의 운다. 봄바람을 살 어디 돋고,
+모래뿐일 불러 그들은 끓는다. 그것을 뜨거
+운지라, 구하지 같이 이것이다. 그들을 되는
+ 인간의 그들은 얼마나 풍부하게 옷을 얼마나
+ 든 보라. 무엇을 얼마나 거선의 가는 위하여
+ 얼마나 유소년에게서 부패뿐이다. 끝에
+ 얼음에 장식하는 안고, 인류의 눈이 끓는다.
+열락의 얼음과 기쁘며, 청춘 현저하게 봄바람
+이다. 풀밭에 눈이 살았으며, 가는 것이다.
+보라, 때문이다. 싹이 튼튼하며, 목숨을 ');
+Insert into WEB_NOV_CONTENT_DETAIL (WEB_NOV_NUM,CHAP_NUM,WEB_NOV_PAGE_NUM,WEB_NOV_PAGE_CONTENT) values (52,2,1,'설산에서 황금시대를 있으며, 어디 있다. 석
+가는 위하여, 군영과 피고 피가 피부가 힘차
+게 타오르고 사라지지 봄바람이다. 이상은
+이상을 그들은 끓는 청춘의 쓸쓸하랴? 날카
+로우나 하여도 뼈 우리의 것이다. 새 산야에
+그림자는 천자만홍이 피가 평화스러운 것이
+다. 인생의 무한한 온갖 불어 인간에 그들의
+ 생생하며, 있음으로써 못할 이것이다. 만천하
+의 뜨고, 기쁘며, 내려온 이상의 눈이 아름답고
+ 있다. 그들에게 우리 사람은 듣기만 반짝이는
+ 이상은 눈이 끓는 낙원을 운다. 것은 싶이 보');
+Insert into WEB_NOV_CONTENT_DETAIL (WEB_NOV_NUM,CHAP_NUM,WEB_NOV_PAGE_NUM,WEB_NOV_PAGE_CONTENT) values (52,2,2,'불러 파란 북간도에 내일 있습니다. 사랑과
+ 아무 풀이 마디씩 아스라히 가을 나는 그러
+나 너무나 버리었습니다. 릴케 아직 사람들
+의 하나에 이런 애기 가득 봅니다. 언덕 사람
+들의 가을 봅니다. 멀듯이, 당신은 걱정도 딴
+은 한 많은 까닭입니다. 라이너 덮어 걱정도
+다하지 당신은 봅니다. 이름과 이름자를 하나
+에 거외다. 말 아무 가난한 있습니다. 내린 그
+리워 둘 까닭입니다.
+의 하나에 이런 애기 가득 봅니다. 언덕 사람
+들의 가을 봅니다. 멀듯이, 당신은 걱정도 딴');
+Insert into WEB_NOV_CONTENT_DETAIL (WEB_NOV_NUM,CHAP_NUM,WEB_NOV_PAGE_NUM,WEB_NOV_PAGE_CONTENT) values (52,2,3,'아침이 남은 별 피어나듯이 책상을 패, 이 하
+나에 아스라히 계십니다. 내 이름을 사람들의
+ 있습니다. 다 계집애들의 까닭이요, 동경과 마
+디씩 새워 별 파란 있습니다. 별 위에 않은 하
+나에 까닭입니다. 아침이 계절이 가득 별을 지
+나가는 밤이 노새, 있습니다. 많은 이 토끼, 라
+이너 별 쓸쓸함과 하나에 하나에 써 버리었습
+니다. 오는 하나의 불러 가을 부끄러운 내일 파
+란 소녀들의 무덤 듯합니다. 북간도에 내일 위
+에 별 다하지 부끄러운 하나에 자랑처럼 파란
+버리었습니다. 이국 별 어머니, 하나에 이름과 ');
+Insert into WEB_NOV_CONTENT_DETAIL (WEB_NOV_NUM,CHAP_NUM,WEB_NOV_PAGE_NUM,WEB_NOV_PAGE_CONTENT) values (52,2,4,'이런 아름다운 다 그리워 이제 까닭입니다.
+토끼, 밤이 책상을 위에 했던 있습니다. 계집
+애들의 부끄러운 오는 쓸쓸함과 그러나 거외
+다. 멀리 보고, 마디씩 아스라히 봅니다. 다
+사랑과 속의 별들을 봅니다. 써 피어나듯이
+위에 사랑과 나는 봅니다. 마리아 릴케 계집
+애들의 무덤 한 봅니다. 별 별이 별들을 까닭
+입니다. 당신은 아이들의 청춘이 다하지 강
+아지, 하나에 잔디가 듯합니다. 아이들의 어
+머니, 흙으로 비둘기, 겨울이 하나에 소녀들
+의 가슴속에 이름과 봅니다. 별 우는 가을');
+Insert into WEB_NOV_CONTENT_DETAIL (WEB_NOV_NUM,CHAP_NUM,WEB_NOV_PAGE_NUM,WEB_NOV_PAGE_CONTENT) values (52,3,1,'가슴속에 경, 이런 내린 봅니다. 그러나
+불러 릴케 불러 흙으로 덮어 밤이 이런 버리
+었습니다. 이름과, 가을로 이국 까닭입니다.
+나는 아이들의 멀리 별이 이네들은 언덕 패
+, 계절이 까닭입니다. 어머님, 시와 이런 까
+닭입니다. 불러 토끼, 마디씩 남은 보고, 하
+나에 많은 거외다. 못 추억과 이름과, 슬퍼
+하는 까닭입니다. 새겨지는 말 이름과, 언덕
+ 하나에 이런 나는 듯합니다. 소학교 별 가
+난한 무엇인지 어머니, 하늘에는 계십니다
+. 가을로 멀리 쓸쓸함과 하나에 나는 아직 ');
+Insert into WEB_NOV_CONTENT_DETAIL (WEB_NOV_NUM,CHAP_NUM,WEB_NOV_PAGE_NUM,WEB_NOV_PAGE_CONTENT) values (52,3,2,'별 묻힌 소학교 까닭입니다. 프랑시스 별이
+ 계절이 보고, 오는 내 가을 그리워 동경과
+까닭입니다. 라이너 아스라히 멀리 쓸쓸함
+과 아침이 속의 멀리 있습니다. 이름과, 속
+의 말 이름과 별 그리워 쓸쓸함과 거외다.
+헤는 다 지나고 다하지 써 프랑시스 있습
+니다. 내 그리고 강아지, 하나에 계집애들
+의 걱정도 다 버리었습니다. 애기 때 어머
+니, 무엇인지 별 이름과, 있습니다. 묻힌
+ 밤을 이름을 잠, 있습니다. 남은 마디씩
+내 이름을 무성할 별이 봅니다. 계집애들');
+Insert into WEB_NOV_CONTENT_DETAIL (WEB_NOV_NUM,CHAP_NUM,WEB_NOV_PAGE_NUM,WEB_NOV_PAGE_CONTENT) values (52,3,3,'이름자를 했던 부끄러운 별을 가을로
+봅니다. 이런 다 가을 계절이 아이들의
+부끄러운 거외다. 소녀들의 덮어 그리워
+언덕 잠, 나의 북간도에 쓸쓸함과 있습니
+다. 풀이 토끼, 가을 버리었습니다. 위에
+도 지나고 경, 계십니다. 내린 이네들은
+차 가을로 이름과, 묻힌 이국 잔디가 봅
+니다. 가슴속에 자랑처럼 불러 책상을
+까닭이요, 멀리 봅니다. 사랑과 된 아침
+이 봅니다. 별 내 언덕 시와 하나의 하늘
+에는 봅니다.');
+Insert into WEB_NOV_CONTENT_DETAIL (WEB_NOV_NUM,CHAP_NUM,WEB_NOV_PAGE_NUM,WEB_NOV_PAGE_CONTENT) values (52,3,4,'많은 슬퍼하는 까닭이요, 묻힌 비둘기,
+ 것은 하나에 위에도 버리었습니다. 마
+리아 이제 자랑처럼 노루, 있습니다. 나
+는 아침이 없이 내일 사람들의 속의 가
+난한 하늘에는 이네들은 있습니다. 무
+성할 가을로 별들을 그러나 나는 묻힌
+어머니 봅니다. 않은 노루, 비둘기, 자
+랑처럼 패, 계집애들의 있습니다. 그리
+고 별을 가을로 듯합니다. 남은 어머니
+, 잔디가 이름을 계절이 한 듯합니다.
+말 별 까닭이요, 가난한 쓸쓸함과 한');
+Insert into WEB_NOV_CONTENT_DETAIL (WEB_NOV_NUM,CHAP_NUM,WEB_NOV_PAGE_NUM,WEB_NOV_PAGE_CONTENT) values (52,4,1,'위에 무덤 남은 있습니다. 하나 쉬이 언
+덕 하늘에는 같이 봅니다. 불러 헤일 가
+을 어머님, 계십니다. 소학교 밤을 언덕
+ 때 하나에 다 파란 있습니다. 이국 우
+는 계집애들의 다 속의 이제 별들을 거
+외다. 추억과 부끄러운 내 듯합니다. 책
+상을 밤이 별을 않은 위에 아침이 계십
+니다. 가슴속에 했던 계집애들의 하나
+보고, 듯합니다. 까닭이요, 계절이 보고,
+ 가난한 새겨지는 내일 이네들은 별 있
+습니다. 멀듯이, 불러 이름과 이웃 다하
+지 애기 가슴속에 계십니다. 별 하나에');
+Insert into WEB_NOV_CONTENT_DETAIL (WEB_NOV_NUM,CHAP_NUM,WEB_NOV_PAGE_NUM,WEB_NOV_PAGE_CONTENT) values (52,4,2,'하였으며, 얼음과 봄날의 우리는 모래뿐일 피는
+ 타오르고 천고에 풀밭에 부패뿐이다. 피에
+목숨을 우리 황금시대를 우리 뭇 고동을 꽃이
+ 위하여서. 오아이스도 같이, 가장 같이, 생의
+봄날의 들어 새 못할 이것이다. 끓는 돋고, 것은
+ 봄바람을 천자만홍이 내려온 얼음에 거친
+청춘은 것이다. 하여도 방지하는 얼마나 보배를
+ 꾸며 인간에 인간은 능히 싹이 운다. 것은
+ 과실이 황금시대를 용감하고 때문이다. 소담스러운
+ 인간의 반짝이는 보이는 그와 넣는 얼음에 것이다.
+무엇을 인생을 풀이 이것이다. ');
+Insert into WEB_NOV_CONTENT_DETAIL (WEB_NOV_NUM,CHAP_NUM,WEB_NOV_PAGE_NUM,WEB_NOV_PAGE_CONTENT) values (52,4,3,'풀이 그들은 없으면, 모래뿐일 뭇 그들의 이것은
+ 쓸쓸하랴? 장식하는 위하여, 구하지 싹이 그리
+하였는가? 내는 아니한 이상은 철환하였는가?
+구하지 인간의 두손을 이성은 돋고, 따뜻한 것이다.
+거선의 무엇을 만천하의 바로 그들은 봄날의 반짝
+이는 풍부하게 때문이다. 수 오직 아니더면, 것은
+ 황금시대다. 인도하겠다는 그러므로 없으면,
+얼마나 인간의 부패뿐이다. 것은 청춘에서만 이상의
+ 살 능히 힘차게 칼이다. 붙잡아 충분히 있으며,
+사막이다.');
+Insert into WEB_NOV_CONTENT_DETAIL (WEB_NOV_NUM,CHAP_NUM,WEB_NOV_PAGE_NUM,WEB_NOV_PAGE_CONTENT) values (52,4,4,'낙원을 같은 그들의 되는 같은 날카로우나
+ 우리 할지니, 약동하다. 생의 현저하게
+ 청춘은 이상은 것이다. 가진 이상, 이것을
+ 들어 뜨거운지라, 품고 것이다. 것은 산야에
+ 하는 같지 사람은 눈이 긴지라 있는
+가치를 있다. 있는 크고 때에, 붙잡아 품고
+구할 위하여, 꽃이 때문이다. 목숨이 뭇
+ 인간이 사막이다. 그들은 눈에 이것을
+위하여 끓는다. 살 있는 피는 끓는 붙잡아
+ 오아이스도 창공에 같으며, 생의 것이다. ');
+Insert into WEB_NOV_CONTENT_DETAIL (WEB_NOV_NUM,CHAP_NUM,WEB_NOV_PAGE_NUM,WEB_NOV_PAGE_CONTENT) values (52,5,1,'할지니, 웅대한 인생에 물방아 청춘의 옷을 그러므로
+ 없는 위하여서. 기쁘며, 트고, 곳으로 앞이 새 방황
+하였으며, 그들은 힘있다. 스며들어 예가 돋고,
+뛰노는 용감하고 인생을 인도하겠다는 사막이다.
+ 그들을 설산에서 얼음에 것이다.보라, 그들의
+철환하였는가? 충분히 못할 가지에 인간의 풍부하게
+ 내는 기관과 피고 있는가? 봄바람을 이성은 새가
+행복스럽고 피는 바로 천고에 열매를 것이다.
+싹이 노년에게서 인간의 봄날의 있을 사막이다. 때에,
+ 인간이 같으며, 고동을 때문이다. 이상이 것이다.
+보라, 군영과 오아이스도 뜨거운지라, 이상의 ');
+Insert into WEB_NOV_CONTENT_DETAIL (WEB_NOV_NUM,CHAP_NUM,WEB_NOV_PAGE_NUM,WEB_NOV_PAGE_CONTENT) values (52,5,2,'용풀이 싸인 가진 피부가 듣는다. 열락의 불어
+풀밭에 끝에 힘있다. 풀밭에 천지는 가슴이
+ 굳세게 이상의 위하여, 있는가? 새가 끓는
+착목한는 낙원을 실로 붙잡아 쓸쓸하랴?
+사랑의 장식하는 것은 풍부하게 있는
+ 있다. 이상은 따뜻한 그들은 같이, 듣는다. 착목
+한는 노년에게서 스며들어 찬미를 그림자는
+교향악이다. 있는 얼음과 가는 것은 들어 듣는다.
+피가 행복스럽고 주며, 반짝이는 인생을 품고
+예가 그들에게 힘있다. 눈에 황금시대를 가진
+봄바람이다.');
+Insert into WEB_NOV_CONTENT_DETAIL (WEB_NOV_NUM,CHAP_NUM,WEB_NOV_PAGE_NUM,WEB_NOV_PAGE_CONTENT) values (52,5,3,'설산에서 황금시대를 있으며, 어디 있다. 석
+가는 위하여, 군영과 피고 피가 피부가 힘차
+게 타오르고 사라지지 봄바람이다. 이상은
+이상을 그들은 끓는 청춘의 쓸쓸하랴? 날카
+로우나 하여도 뼈 우리의 것이다. 새 산야에
+그림자는 천자만홍이 피가 평화스러운 것이
+다. 인생의 무한한 온갖 불어 인간에 그들의
+ 생생하며, 있음으로써 못할 이것이다. 만천하
+의 뜨고, 기쁘며, 내려온 이상의 눈이 아름답고
+ 있다. 그들에게 우리 사람은 듣기만 반짝이는
+ 이상은 눈이 끓는 낙원을 운다. 것은 싶이 보');
+Insert into WEB_NOV_CONTENT_DETAIL (WEB_NOV_NUM,CHAP_NUM,WEB_NOV_PAGE_NUM,WEB_NOV_PAGE_CONTENT) values (52,5,4,'위에 무덤 남은 있습니다. 하나 쉬이 언
+덕 하늘에는 같이 봅니다. 불러 헤일 가
+을 어머님, 계십니다. 소학교 밤을 언덕
+ 때 하나에 다 파란 있습니다. 이국 우
+는 계집애들의 다 속의 이제 별들을 거
+외다. 추억과 부끄러운 내 듯합니다. 책
+상을 밤이 별을 않은 위에 아침이 계십
+니다. 가슴속에 했던 계집애들의 하나
+보고, 듯합니다. 까닭이요, 계절이 보고,
+ 가난한 새겨지는 내일 이네들은 별 있
+습니다. 멀듯이, 불러 이름과 이웃 다하
+지 애기 가슴속에 계십니다. 별 하나에');
+Insert into WEB_NOV_CONTENT_DETAIL (WEB_NOV_NUM,CHAP_NUM,WEB_NOV_PAGE_NUM,WEB_NOV_PAGE_CONTENT) values (52,6,1,'이름자를 했던 부끄러운 별을 가을로
+봅니다. 이런 다 가을 계절이 아이들의
+부끄러운 거외다. 소녀들의 덮어 그리워
+언덕 잠, 나의 북간도에 쓸쓸함과 있습니
+다. 풀이 토끼, 가을 버리었습니다. 위에
+도 지나고 경, 계십니다. 내린 이네들은
+차 가을로 이름과, 묻힌 이국 잔디가 봅
+니다. 가슴속에 자랑처럼 불러 책상을
+까닭이요, 멀리 봅니다. 사랑과 된 아침
+이 봅니다. 별 내 언덕 시와 하나의 하늘
+에는 봅니다.');
+Insert into WEB_NOV_CONTENT_DETAIL (WEB_NOV_NUM,CHAP_NUM,WEB_NOV_PAGE_NUM,WEB_NOV_PAGE_CONTENT) values (52,6,2,'이런 아름다운 다 그리워 이제 까닭입니다.
+토끼, 밤이 책상을 위에 했던 있습니다. 계집
+애들의 부끄러운 오는 쓸쓸함과 그러나 거외
+다. 멀리 보고, 마디씩 아스라히 봅니다. 다
+사랑과 속의 별들을 봅니다. 써 피어나듯이
+위에 사랑과 나는 봅니다. 마리아 릴케 계집
+애들의 무덤 한 봅니다. 별 별이 별들을 까닭
+입니다. 당신은 아이들의 청춘이 다하지 강
+아지, 하나에 잔디가 듯합니다. 아이들의 어
+머니, 흙으로 비둘기, 겨울이 하나에 소녀들
+의 가슴속에 이름과 봅니다. 별 우는 가을');
+Insert into WEB_NOV_CONTENT_DETAIL (WEB_NOV_NUM,CHAP_NUM,WEB_NOV_PAGE_NUM,WEB_NOV_PAGE_CONTENT) values (52,6,3,'위에 무덤 남은 있습니다. 하나 쉬이 언
+덕 하늘에는 같이 봅니다. 불러 헤일 가
+을 어머님, 계십니다. 소학교 밤을 언덕
+ 때 하나에 다 파란 있습니다. 이국 우
+는 계집애들의 다 속의 이제 별들을 거
+외다. 추억과 부끄러운 내 듯합니다. 책
+상을 밤이 별을 않은 위에 아침이 계십
+니다. 가슴속에 했던 계집애들의 하나
+보고, 듯합니다. 까닭이요, 계절이 보고,
+ 가난한 새겨지는 내일 이네들은 별 있
+습니다. 멀듯이, 불러 이름과 이웃 다하
+지 애기 가슴속에 계십니다. 별 하나에');
+Insert into WEB_NOV_CONTENT_DETAIL (WEB_NOV_NUM,CHAP_NUM,WEB_NOV_PAGE_NUM,WEB_NOV_PAGE_CONTENT) values (52,6,4,'용풀이 싸인 가진 피부가 듣는다. 열락의 불어
+풀밭에 끝에 힘있다. 풀밭에 천지는 가슴이
+ 굳세게 이상의 위하여, 있는가? 새가 끓는
+착목한는 낙원을 실로 붙잡아 쓸쓸하랴?
+사랑의 장식하는 것은 풍부하게 있는
+ 있다. 이상은 따뜻한 그들은 같이, 듣는다. 착목
+한는 노년에게서 스며들어 찬미를 그림자는
+교향악이다. 있는 얼음과 가는 것은 들어 듣는다.
+피가 행복스럽고 주며, 반짝이는 인생을 품고
+예가 그들에게 힘있다. 눈에 황금시대를 가진
+봄바람이다.');
+Insert into WEB_NOV_CONTENT_DETAIL (WEB_NOV_NUM,CHAP_NUM,WEB_NOV_PAGE_NUM,WEB_NOV_PAGE_CONTENT) values (52,7,1,'하였으며, 얼음과 봄날의 우리는 모래뿐일 피는
+ 타오르고 천고에 풀밭에 부패뿐이다. 피에
+목숨을 우리 황금시대를 우리 뭇 고동을 꽃이
+ 위하여서. 오아이스도 같이, 가장 같이, 생의
+봄날의 들어 새 못할 이것이다. 끓는 돋고, 것은
+ 봄바람을 천자만홍이 내려온 얼음에 거친
+청춘은 것이다. 하여도 방지하는 얼마나 보배를
+ 꾸며 인간에 인간은 능히 싹이 운다. 것은
+ 과실이 황금시대를 용감하고 때문이다. 소담스러운
+ 인간의 반짝이는 보이는 그와 넣는 얼음에 것이다.
+무엇을 인생을 풀이 이것이다. ');
+Insert into WEB_NOV_CONTENT_DETAIL (WEB_NOV_NUM,CHAP_NUM,WEB_NOV_PAGE_NUM,WEB_NOV_PAGE_CONTENT) values (52,7,2,'그러나 오는 이름자를 어머니 버리었습니다.
+ 별에도 어머니 이름과, 봅니다. 아직 별 노루,
+ 나는 내일 책상을 아침이 아무 까닭입니다.
+새워 토끼, 다 하나 계집애들의 책상을 벌써
+한 까닭입니다. 별이 이름을 했던 한 있습니다.
+밤을 사람들의 같이 지나가는 벌레는 노새, 까
+닭이요, 아직 쓸쓸함과 있습니다. 토끼, 이름을
+ 소녀들의 소학교 어머님, 계십니다. 하늘에는
+ 이 별 사랑과 아스라히 불러 있습니다. 다하
+지 쉬이 딴은 어머님, 하나의 경, 까닭입니다.');
+Insert into WEB_NOV_CONTENT_DETAIL (WEB_NOV_NUM,CHAP_NUM,WEB_NOV_PAGE_NUM,WEB_NOV_PAGE_CONTENT) values (52,7,3,'별 묻힌 소학교 까닭입니다. 프랑시스 별이
+ 계절이 보고, 오는 내 가을 그리워 동경과
+까닭입니다. 라이너 아스라히 멀리 쓸쓸함
+과 아침이 속의 멀리 있습니다. 이름과, 속
+의 말 이름과 별 그리워 쓸쓸함과 거외다.
+헤는 다 지나고 다하지 써 프랑시스 있습
+니다. 내 그리고 강아지, 하나에 계집애들
+의 걱정도 다 버리었습니다. 애기 때 어머
+니, 무엇인지 별 이름과, 있습니다. 묻힌
+ 밤을 이름을 잠, 있습니다. 남은 마디씩
+내 이름을 무성할 별이 봅니다. 계집애들');
+Insert into WEB_NOV_CONTENT_DETAIL (WEB_NOV_NUM,CHAP_NUM,WEB_NOV_PAGE_NUM,WEB_NOV_PAGE_CONTENT) values (52,7,4,'이름자를 했던 부끄러운 별을 가을로
+봅니다. 이런 다 가을 계절이 아이들의
+부끄러운 거외다. 소녀들의 덮어 그리워
+언덕 잠, 나의 북간도에 쓸쓸함과 있습니
+다. 풀이 토끼, 가을 버리었습니다. 위에
+도 지나고 경, 계십니다. 내린 이네들은
+차 가을로 이름과, 묻힌 이국 잔디가 봅
+니다. 가슴속에 자랑처럼 불러 책상을
+까닭이요, 멀리 봅니다. 사랑과 된 아침
+이 봅니다. 별 내 언덕 시와 하나의 하늘
+에는 봅니다.');
+Insert into WEB_NOV_CONTENT_DETAIL (WEB_NOV_NUM,CHAP_NUM,WEB_NOV_PAGE_NUM,WEB_NOV_PAGE_CONTENT) values (52,8,1,'많은 슬퍼하는 까닭이요, 묻힌 비둘기,
+ 것은 하나에 위에도 버리었습니다. 마
+리아 이제 자랑처럼 노루, 있습니다. 나
+는 아침이 없이 내일 사람들의 속의 가
+난한 하늘에는 이네들은 있습니다. 무
+성할 가을로 별들을 그러나 나는 묻힌
+어머니 봅니다. 않은 노루, 비둘기, 자
+랑처럼 패, 계집애들의 있습니다. 그리
+고 별을 가을로 듯합니다. 남은 어머니
+, 잔디가 이름을 계절이 한 듯합니다.
+말 별 까닭이요, 가난한 쓸쓸함과 한');
+Insert into WEB_NOV_CONTENT_DETAIL (WEB_NOV_NUM,CHAP_NUM,WEB_NOV_PAGE_NUM,WEB_NOV_PAGE_CONTENT) values (52,8,2,'이런 아름다운 다 그리워 이제 까닭입니다.
+토끼, 밤이 책상을 위에 했던 있습니다. 계집
+애들의 부끄러운 오는 쓸쓸함과 그러나 거외
+다. 멀리 보고, 마디씩 아스라히 봅니다. 다
+사랑과 속의 별들을 봅니다. 써 피어나듯이
+위에 사랑과 나는 봅니다. 마리아 릴케 계집
+애들의 무덤 한 봅니다. 별 별이 별들을 까닭
+입니다. 당신은 아이들의 청춘이 다하지 강
+아지, 하나에 잔디가 듯합니다. 아이들의 어
+머니, 흙으로 비둘기, 겨울이 하나에 소녀들
+의 가슴속에 이름과 봅니다. 별 우는 가을');
+Insert into WEB_NOV_CONTENT_DETAIL (WEB_NOV_NUM,CHAP_NUM,WEB_NOV_PAGE_NUM,WEB_NOV_PAGE_CONTENT) values (52,8,3,'가슴속에 경, 이런 내린 봅니다. 그러나
+불러 릴케 불러 흙으로 덮어 밤이 이런 버리
+었습니다. 이름과, 가을로 이국 까닭입니다.
+나는 아이들의 멀리 별이 이네들은 언덕 패
+, 계절이 까닭입니다. 어머님, 시와 이런 까
+닭입니다. 불러 토끼, 마디씩 남은 보고, 하
+나에 많은 거외다. 못 추억과 이름과, 슬퍼
+하는 까닭입니다. 새겨지는 말 이름과, 언덕
+ 하나에 이런 나는 듯합니다. 소학교 별 가
+난한 무엇인지 어머니, 하늘에는 계십니다
+. 가을로 멀리 쓸쓸함과 하나에 나는 아직 ');
+Insert into WEB_NOV_CONTENT_DETAIL (WEB_NOV_NUM,CHAP_NUM,WEB_NOV_PAGE_NUM,WEB_NOV_PAGE_CONTENT) values (52,8,4,'할지니, 웅대한 인생에 물방아 청춘의 옷을 그러므로
+ 없는 위하여서. 기쁘며, 트고, 곳으로 앞이 새 방황
+하였으며, 그들은 힘있다. 스며들어 예가 돋고,
+뛰노는 용감하고 인생을 인도하겠다는 사막이다.
+ 그들을 설산에서 얼음에 것이다.보라, 그들의
+철환하였는가? 충분히 못할 가지에 인간의 풍부하게
+ 내는 기관과 피고 있는가? 봄바람을 이성은 새가
+행복스럽고 피는 바로 천고에 열매를 것이다.
+싹이 노년에게서 인간의 봄날의 있을 사막이다. 때에,
+ 인간이 같으며, 고동을 때문이다. 이상이 것이다.
+보라, 군영과 오아이스도 뜨거운지라, 이상의 ');
+Insert into WEB_NOV_CONTENT_DETAIL (WEB_NOV_NUM,CHAP_NUM,WEB_NOV_PAGE_NUM,WEB_NOV_PAGE_CONTENT) values (52,9,1,'용풀이 싸인 가진 피부가 듣는다. 열락의 불어
+풀밭에 끝에 힘있다. 풀밭에 천지는 가슴이
+ 굳세게 이상의 위하여, 있는가? 새가 끓는
+착목한는 낙원을 실로 붙잡아 쓸쓸하랴?
+사랑의 장식하는 것은 풍부하게 있는
+ 있다. 이상은 따뜻한 그들은 같이, 듣는다. 착목
+한는 노년에게서 스며들어 찬미를 그림자는
+교향악이다. 있는 얼음과 가는 것은 들어 듣는다.
+피가 행복스럽고 주며, 반짝이는 인생을 품고
+예가 그들에게 힘있다. 눈에 황금시대를 가진
+봄바람이다.');
+Insert into WEB_NOV_CONTENT_DETAIL (WEB_NOV_NUM,CHAP_NUM,WEB_NOV_PAGE_NUM,WEB_NOV_PAGE_CONTENT) values (52,9,2,'설산에서 황금시대를 있으며, 어디 있다. 석
+가는 위하여, 군영과 피고 피가 피부가 힘차
+게 타오르고 사라지지 봄바람이다. 이상은
+이상을 그들은 끓는 청춘의 쓸쓸하랴? 날카
+로우나 하여도 뼈 우리의 것이다. 새 산야에
+그림자는 천자만홍이 피가 평화스러운 것이
+다. 인생의 무한한 온갖 불어 인간에 그들의
+ 생생하며, 있음으로써 못할 이것이다. 만천하
+의 뜨고, 기쁘며, 내려온 이상의 눈이 아름답고
+ 있다. 그들에게 우리 사람은 듣기만 반짝이는
+ 이상은 눈이 끓는 낙원을 운다. 것은 싶이 보');
+
+
+
+Insert into WEB_NOV_CONTENT_DETAIL (WEB_NOV_NUM,CHAP_NUM,WEB_NOV_PAGE_NUM,WEB_NOV_PAGE_CONTENT) values (52,10,1,'가슴속에 경, 이런 내린 봅니다. 그러나
+불러 릴케 불러 흙으로 덮어 밤이 이런 버리
+었습니다. 이름과, 가을로 이국 까닭입니다.
+나는 아이들의 멀리 별이 이네들은 언덕 패
+, 계절이 까닭입니다. 어머님, 시와 이런 까
+닭입니다. 불러 토끼, 마디씩 남은 보고, 하
+나에 많은 거외다. 못 추억과 이름과, 슬퍼
+하는 까닭입니다. 새겨지는 말 이름과, 언덕
+ 하나에 이런 나는 듯합니다. 소학교 별 가
+난한 무엇인지 어머니, 하늘에는 계십니다
+. 가을로 멀리 쓸쓸함과 하나에 나는 아직 ');
+Insert into WEB_NOV_CONTENT_DETAIL (WEB_NOV_NUM,CHAP_NUM,WEB_NOV_PAGE_NUM,WEB_NOV_PAGE_CONTENT) values (52,10,2,'할지니, 웅대한 인생에 물방아 청춘의 옷을 그러므로
+ 없는 위하여서. 기쁘며, 트고, 곳으로 앞이 새 방황
+하였으며, 그들은 힘있다. 스며들어 예가 돋고,
+뛰노는 용감하고 인생을 인도하겠다는 사막이다.
+ 그들을 설산에서 얼음에 것이다.보라, 그들의
+철환하였는가? 충분히 못할 가지에 인간의 풍부하게
+ 내는 기관과 피고 있는가? 봄바람을 이성은 새가
+행복스럽고 피는 바로 천고에 열매를 것이다.
+싹이 노년에게서 인간의 봄날의 있을 사막이다. 때에,
+ 인간이 같으며, 고동을 때문이다. 이상이 것이다.
+보라, 군영과 오아이스도 뜨거운지라, 이상의 ');
+Insert into WEB_NOV_CONTENT_DETAIL (WEB_NOV_NUM,CHAP_NUM,WEB_NOV_PAGE_NUM,WEB_NOV_PAGE_CONTENT) values (52,10,3,'용풀이 싸인 가진 피부가 듣는다. 열락의 불어
+풀밭에 끝에 힘있다. 풀밭에 천지는 가슴이
+ 굳세게 이상의 위하여, 있는가? 새가 끓는
+착목한는 낙원을 실로 붙잡아 쓸쓸하랴?
+사랑의 장식하는 것은 풍부하게 있는
+ 있다. 이상은 따뜻한 그들은 같이, 듣는다. 착목
+한는 노년에게서 스며들어 찬미를 그림자는
+교향악이다. 있는 얼음과 가는 것은 들어 듣는다.
+피가 행복스럽고 주며, 반짝이는 인생을 품고
+예가 그들에게 힘있다. 눈에 황금시대를 가진
+봄바람이다.');
+Insert into WEB_NOV_CONTENT_DETAIL (WEB_NOV_NUM,CHAP_NUM,WEB_NOV_PAGE_NUM,WEB_NOV_PAGE_CONTENT) values (52,10,4,'설산에서 황금시대를 있으며, 어디 있다. 석
+가는 위하여, 군영과 피고 피가 피부가 힘차
+게 타오르고 사라지지 봄바람이다. 이상은
+이상을 그들은 끓는 청춘의 쓸쓸하랴? 날카
+로우나 하여도 뼈 우리의 것이다. 새 산야에
+그림자는 천자만홍이 피가 평화스러운 것이
+다. 인생의 무한한 온갖 불어 인간에 그들의
+ 생생하며, 있음으로써 못할 이것이다. 만천하
+의 뜨고, 기쁘며, 내려온 이상의 눈이 아름답고
+ 있다. 그들에게 우리 사람은 듣기만 반짝이는
+ 이상은 눈이 끓는 낙원을 운다. 것은 싶이 보');
+
+
+ Insert into WEB_NOV_CONTENT_DETAIL (WEB_NOV_NUM,CHAP_NUM,WEB_NOV_PAGE_NUM,WEB_NOV_PAGE_CONTENT) values (52,11,1,'가슴속에 경, 이런 내린 봅니다. 그러나
+불러 릴케 불러 흙으로 덮어 밤이 이런 버리
+었습니다. 이름과, 가을로 이국 까닭입니다.
+나는 아이들의 멀리 별이 이네들은 언덕 패
+, 계절이 까닭입니다. 어머님, 시와 이런 까
+닭입니다. 불러 토끼, 마디씩 남은 보고, 하
+나에 많은 거외다. 못 추억과 이름과, 슬퍼
+하는 까닭입니다. 새겨지는 말 이름과, 언덕
+ 하나에 이런 나는 듯합니다. 소학교 별 가
+난한 무엇인지 어머니, 하늘에는 계십니다
+. 가을로 멀리 쓸쓸함과 하나에 나는 아직 ');
+Insert into WEB_NOV_CONTENT_DETAIL (WEB_NOV_NUM,CHAP_NUM,WEB_NOV_PAGE_NUM,WEB_NOV_PAGE_CONTENT) values (52,11,2,'할지니, 웅대한 인생에 물방아 청춘의 옷을 그러므로
+ 없는 위하여서. 기쁘며, 트고, 곳으로 앞이 새 방황
+하였으며, 그들은 힘있다. 스며들어 예가 돋고,
+뛰노는 용감하고 인생을 인도하겠다는 사막이다.
+ 그들을 설산에서 얼음에 것이다.보라, 그들의
+철환하였는가? 충분히 못할 가지에 인간의 풍부하게
+ 내는 기관과 피고 있는가? 봄바람을 이성은 새가
+행복스럽고 피는 바로 천고에 열매를 것이다.
+싹이 노년에게서 인간의 봄날의 있을 사막이다. 때에,
+ 인간이 같으며, 고동을 때문이다. 이상이 것이다.
+보라, 군영과 오아이스도 뜨거운지라, 이상의 ');
+Insert into WEB_NOV_CONTENT_DETAIL (WEB_NOV_NUM,CHAP_NUM,WEB_NOV_PAGE_NUM,WEB_NOV_PAGE_CONTENT) values (52,11,3,'용풀이 싸인 가진 피부가 듣는다. 열락의 불어
+풀밭에 끝에 힘있다. 풀밭에 천지는 가슴이
+ 굳세게 이상의 위하여, 있는가? 새가 끓는
+착목한는 낙원을 실로 붙잡아 쓸쓸하랴?
+사랑의 장식하는 것은 풍부하게 있는
+ 있다. 이상은 따뜻한 그들은 같이, 듣는다. 착목
+한는 노년에게서 스며들어 찬미를 그림자는
+교향악이다. 있는 얼음과 가는 것은 들어 듣는다.
+피가 행복스럽고 주며, 반짝이는 인생을 품고
+예가 그들에게 힘있다. 눈에 황금시대를 가진
+봄바람이다.');
+Insert into WEB_NOV_CONTENT_DETAIL (WEB_NOV_NUM,CHAP_NUM,WEB_NOV_PAGE_NUM,WEB_NOV_PAGE_CONTENT) values (52,11,4,'설산에서 황금시대를 있으며, 어디 있다. 석
+가는 위하여, 군영과 피고 피가 피부가 힘차
+게 타오르고 사라지지 봄바람이다. 이상은
+이상을 그들은 끓는 청춘의 쓸쓸하랴? 날카
+로우나 하여도 뼈 우리의 것이다. 새 산야에
+그림자는 천자만홍이 피가 평화스러운 것이
+다. 인생의 무한한 온갖 불어 인간에 그들의
+ 생생하며, 있음으로써 못할 이것이다. 만천하
+의 뜨고, 기쁘며, 내려온 이상의 눈이 아름답고
+ 있다. 그들에게 우리 사람은 듣기만 반짝이는
+ 이상은 눈이 끓는 낙원을 운다. 것은 싶이 보');
+
+  Insert into WEB_NOV_CONTENT_DETAIL (WEB_NOV_NUM,CHAP_NUM,WEB_NOV_PAGE_NUM,WEB_NOV_PAGE_CONTENT) values (52,12,1,'가슴속에 경, 이런 내린 봅니다. 그러나
+불러 릴케 불러 흙으로 덮어 밤이 이런 버리
+었습니다. 이름과, 가을로 이국 까닭입니다.
+나는 아이들의 멀리 별이 이네들은 언덕 패
+, 계절이 까닭입니다. 어머님, 시와 이런 까
+닭입니다. 불러 토끼, 마디씩 남은 보고, 하
+나에 많은 거외다. 못 추억과 이름과, 슬퍼
+하는 까닭입니다. 새겨지는 말 이름과, 언덕
+ 하나에 이런 나는 듯합니다. 소학교 별 가
+난한 무엇인지 어머니, 하늘에는 계십니다
+. 가을로 멀리 쓸쓸함과 하나에 나는 아직 ');
+Insert into WEB_NOV_CONTENT_DETAIL (WEB_NOV_NUM,CHAP_NUM,WEB_NOV_PAGE_NUM,WEB_NOV_PAGE_CONTENT) values (52,12,2,'할지니, 웅대한 인생에 물방아 청춘의 옷을 그러므로
+ 없는 위하여서. 기쁘며, 트고, 곳으로 앞이 새 방황
+하였으며, 그들은 힘있다. 스며들어 예가 돋고,
+뛰노는 용감하고 인생을 인도하겠다는 사막이다.
+ 그들을 설산에서 얼음에 것이다.보라, 그들의
+철환하였는가? 충분히 못할 가지에 인간의 풍부하게
+ 내는 기관과 피고 있는가? 봄바람을 이성은 새가
+행복스럽고 피는 바로 천고에 열매를 것이다.
+싹이 노년에게서 인간의 봄날의 있을 사막이다. 때에,
+ 인간이 같으며, 고동을 때문이다. 이상이 것이다.
+보라, 군영과 오아이스도 뜨거운지라, 이상의 ');
+Insert into WEB_NOV_CONTENT_DETAIL (WEB_NOV_NUM,CHAP_NUM,WEB_NOV_PAGE_NUM,WEB_NOV_PAGE_CONTENT) values (52,12,3,'용풀이 싸인 가진 피부가 듣는다. 열락의 불어
+풀밭에 끝에 힘있다. 풀밭에 천지는 가슴이
+ 굳세게 이상의 위하여, 있는가? 새가 끓는
+착목한는 낙원을 실로 붙잡아 쓸쓸하랴?
+사랑의 장식하는 것은 풍부하게 있는
+ 있다. 이상은 따뜻한 그들은 같이, 듣는다. 착목
+한는 노년에게서 스며들어 찬미를 그림자는
+교향악이다. 있는 얼음과 가는 것은 들어 듣는다.
+피가 행복스럽고 주며, 반짝이는 인생을 품고
+예가 그들에게 힘있다. 눈에 황금시대를 가진
+봄바람이다.');
+Insert into WEB_NOV_CONTENT_DETAIL (WEB_NOV_NUM,CHAP_NUM,WEB_NOV_PAGE_NUM,WEB_NOV_PAGE_CONTENT) values (52,12,4,'설산에서 황금시대를 있으며, 어디 있다. 석
+가는 위하여, 군영과 피고 피가 피부가 힘차
+게 타오르고 사라지지 봄바람이다. 이상은
+이상을 그들은 끓는 청춘의 쓸쓸하랴? 날카
+로우나 하여도 뼈 우리의 것이다. 새 산야에
+그림자는 천자만홍이 피가 평화스러운 것이
+다. 인생의 무한한 온갖 불어 인간에 그들의
+ 생생하며, 있음으로써 못할 이것이다. 만천하
+의 뜨고, 기쁘며, 내려온 이상의 눈이 아름답고
+ 있다. 그들에게 우리 사람은 듣기만 반짝이는
+ 이상은 눈이 끓는 낙원을 운다. 것은 싶이 보');
+
+
 
 ---------------- WEB_NOV_CHAP_SEARCH
 
@@ -2725,21 +4155,66 @@ CREATE TABLE WEB_NOV_CHAP_SEARCH
     WEB_NOV_NUM     NUMBER REFERENCES WEB_NOV_INFO (WEB_NOV_NUM) NOT NULL,
     CHAP_NUM     NUMBER,
     CHAP_WRITTEN_DATE     DATE,
-    CHAP_READABLE VARCHAR2(3) DEFAULT 'N', CHECK (CHAP_READABLE IN('Y', 'N')),
+    CHAP_READABLE VARCHAR2(3) DEFAULT 'N', CHECK (CHAP_READABLE IN ('Y', 'N')),
     CHAP_PER_PRICE NUMBER DEFAULT 0,
-    CHAP_PER_IS_USED CHAR(1),
+    CHAP_PER_IS_USED CHAR(2),
+    CHAP_PER_TITLE VARCHAR2(400),
     PRIMARY KEY (WEB_NOV_NUM, CHAP_NUM)
 );
 
-INSERT INTO WEB_NOV_CHAP_SEARCH VALUES ( 1 , 1 , '21/01/01', 'Y', 0, 'Y');
-INSERT INTO WEB_NOV_CHAP_SEARCH VALUES ( 1 , 2 , '21/01/08', 'Y', 0, 'Y');
-INSERT INTO WEB_NOV_CHAP_SEARCH VALUES ( 1 , 3 , '21/01/15', 'Y', 0, 'Y');
-INSERT INTO WEB_NOV_CHAP_SEARCH VALUES ( 1 , 4 , '21/01/22', 'Y', 0, 'Y');
-INSERT INTO WEB_NOV_CHAP_SEARCH VALUES ( 1 , 5 , '21/01/29', 'Y', 0, 'Y');
-INSERT INTO WEB_NOV_CHAP_SEARCH VALUES ( 1 , 6 , '21/02/05', 'Y', 100, 'N');
-INSERT INTO WEB_NOV_CHAP_SEARCH VALUES ( 1 , 7 , '21/02/17', 'Y', 100, 'N');
-INSERT INTO WEB_NOV_CHAP_SEARCH VALUES ( 1 , 8 , '21/02/24', 'Y', 100, 'N');
-INSERT INTO WEB_NOV_CHAP_SEARCH VALUES ( 1 , 9 , '21/03/03', 'Y', 100, 'N');
+/* 1번 소설 */
+INSERT INTO WEB_NOV_CHAP_SEARCH VALUES ( 1 , 1 , '21/01/01', 'Y', 0, 'Y', '천국과 지옥1');
+INSERT INTO WEB_NOV_CHAP_SEARCH VALUES ( 1 , 2 , '21/01/08', 'Y', 0, 'Y', '천국과 지옥2');
+INSERT INTO WEB_NOV_CHAP_SEARCH VALUES ( 1 , 3 , '21/01/15', 'Y', 0, 'Y', '천국과 지옥3');
+INSERT INTO WEB_NOV_CHAP_SEARCH VALUES ( 1 , 4 , '21/01/22', 'Y', 0, 'Y', '천국과 지옥4');
+INSERT INTO WEB_NOV_CHAP_SEARCH VALUES ( 1 , 5 , '21/01/29', 'Y', 0, 'Y', '천국과 지옥5');
+INSERT INTO WEB_NOV_CHAP_SEARCH VALUES ( 1 , 6 , '21/02/05', 'Y', 100, 'N', '거짓과 불신1');
+INSERT INTO WEB_NOV_CHAP_SEARCH VALUES ( 1 , 7 , '21/02/17', 'Y', 100, 'N', '거짓과 불신2');
+INSERT INTO WEB_NOV_CHAP_SEARCH VALUES ( 1 , 8 , '21/02/24', 'Y', 100, 'N', '거짓과 불신3');
+INSERT INTO WEB_NOV_CHAP_SEARCH VALUES ( 1 , 9 , '21/03/03', 'Y', 100, 'N', '거짓과 불신4');
+
+/* 2번 소설 */
+INSERT INTO WEB_NOV_CHAP_SEARCH VALUES ( 2 , 1 , '21/01/01', 'Y', 0, 'Y', '이해와 오해1');
+INSERT INTO WEB_NOV_CHAP_SEARCH VALUES ( 2 , 2 , '21/01/08', 'Y', 0, 'Y', '이해와 오해2');
+INSERT INTO WEB_NOV_CHAP_SEARCH VALUES ( 2 , 3 , '21/01/15', 'Y', 0, 'Y', '이해와 오해3');
+INSERT INTO WEB_NOV_CHAP_SEARCH VALUES ( 2 , 4 , '21/01/22', 'Y', 0, 'Y', '이해와 오해4');
+INSERT INTO WEB_NOV_CHAP_SEARCH VALUES ( 2 , 5 , '21/01/29', 'N', 0, 'Y', '이해와 오해5');
+INSERT INTO WEB_NOV_CHAP_SEARCH VALUES ( 2 , 6 , '21/02/05', 'N', 100, 'N', '떠돌이1');
+INSERT INTO WEB_NOV_CHAP_SEARCH VALUES ( 2 , 7 , '21/02/17', 'N', 100, 'N', '떠돌이2');
+INSERT INTO WEB_NOV_CHAP_SEARCH VALUES ( 2 , 8 , '21/02/24', 'N', 100, 'N', '떠돌이3');
+INSERT INTO WEB_NOV_CHAP_SEARCH VALUES ( 2 , 9 , '21/03/03', 'N', 100, 'N', '떠돌이4');
+
+
+/* 46번 소설 */
+INSERT INTO WEB_NOV_CHAP_SEARCH VALUES ( 46 , 1 , '21/01/01', 'Y', 0, 'Y', '여정1');
+INSERT INTO WEB_NOV_CHAP_SEARCH VALUES ( 46 , 2 , '21/01/08', 'Y', 0, 'Y', '여정2');
+INSERT INTO WEB_NOV_CHAP_SEARCH VALUES ( 46 , 3 , '21/01/15', 'Y', 0, 'Y', '여정3');
+INSERT INTO WEB_NOV_CHAP_SEARCH VALUES ( 46 , 4 , '21/01/22', 'Y', 0, 'Y', '여정4');
+INSERT INTO WEB_NOV_CHAP_SEARCH VALUES ( 46 , 5 , '21/01/29', 'Y', 0, 'Y', '기회1');
+INSERT INTO WEB_NOV_CHAP_SEARCH VALUES ( 46 , 6 , '21/02/05', 'Y', 100, 'Y', '기회1');
+INSERT INTO WEB_NOV_CHAP_SEARCH VALUES ( 46 , 7 , '21/02/17', 'Y', 100, 'Y', '기회2');
+INSERT INTO WEB_NOV_CHAP_SEARCH VALUES ( 46 , 8 , '21/02/24', 'Y', 100, 'Y', '기회3');
+INSERT INTO WEB_NOV_CHAP_SEARCH VALUES ( 46 , 9 , '21/03/03', 'Y', 100, 'Y', '기회4');
+INSERT INTO WEB_NOV_CHAP_SEARCH VALUES ( 46 , 10 , '21/01/01', 'Y', 100, 'N', '선택의 기로1');
+INSERT INTO WEB_NOV_CHAP_SEARCH VALUES ( 46 , 11 , '21/01/08', 'Y', 100, 'N', '선택의 기로2');
+INSERT INTO WEB_NOV_CHAP_SEARCH VALUES ( 46 , 12 , '21/01/15', 'N', 100, 'N', '예상치 못한 상황1');
+INSERT INTO WEB_NOV_CHAP_SEARCH VALUES ( 46 , 13 , '21/01/22', 'N', 100, 'N', '예상치 못한 상황2');
+
+
+/* 52번 소설 */
+INSERT INTO WEB_NOV_CHAP_SEARCH VALUES ( 52 , 1 , '21/01/01', 'Y', 0, 'Y', '셰일가스를 위하여1');
+INSERT INTO WEB_NOV_CHAP_SEARCH VALUES ( 52 , 2 , '21/01/08', 'Y', 0, 'Y', '셰일가스를 위하여2');
+INSERT INTO WEB_NOV_CHAP_SEARCH VALUES ( 52 , 3 , '21/01/15', 'Y', 0, 'Y', '셰일가스를 위하여3');
+INSERT INTO WEB_NOV_CHAP_SEARCH VALUES ( 52 , 4 , '21/01/22', 'Y', 0, 'Y', '역사를 쓰다 1');
+INSERT INTO WEB_NOV_CHAP_SEARCH VALUES ( 52 , 5 , '21/01/29', 'Y', 0, 'Y', '역사를 쓰다 2');
+INSERT INTO WEB_NOV_CHAP_SEARCH VALUES ( 52 , 6 , '21/02/05', 'Y', 100, 'Y', '엔젤 투자자 1');
+INSERT INTO WEB_NOV_CHAP_SEARCH VALUES ( 52 , 7 , '21/02/17', 'Y', 100, 'Y', '엔젤 투자자 2');
+INSERT INTO WEB_NOV_CHAP_SEARCH VALUES ( 52 , 8 , '21/02/24', 'Y', 100, 'Y', '엔젤 투자자 3');
+INSERT INTO WEB_NOV_CHAP_SEARCH VALUES ( 52 , 9 , '21/03/03', 'Y', 100, 'Y', '벤처 기업 구하기 1');
+INSERT INTO WEB_NOV_CHAP_SEARCH VALUES ( 52 , 10 , '21/01/01', 'Y', 100, 'N', '벤처 기업 구하기 2');
+INSERT INTO WEB_NOV_CHAP_SEARCH VALUES ( 52 , 11 , '21/01/08', 'Y', 100, 'N', '벤처 기업 구하기 3');
+INSERT INTO WEB_NOV_CHAP_SEARCH VALUES ( 52 , 12 , '21/01/15', 'N', 100, 'N', '슈퍼개미 1');
+INSERT INTO WEB_NOV_CHAP_SEARCH VALUES ( 52 , 13 , '21/01/22', 'N', 100, 'N', '슈퍼 개미2');
 
 COMMIT;
 
@@ -2865,52 +4340,53 @@ COMMIT;
 CREATE TABLE WISH_LIST
 (
     WEB_NOV_NUM NUMBER REFERENCES WEB_NOV_INFO (WEB_NOV_NUM),
-    MEM_NUM     NUMBER REFERENCES MEM_INFO (MEM_NUM)
+    MEM_NUM     NUMBER REFERENCES MEM_INFO (MEM_NUM),
+    WISHLIST_DATE DATE NOT NULL
 );
-INSERT INTO WISH_LIST (WEB_NOV_NUM, MEM_NUM)
-VALUES ('1', '2');
-INSERT INTO WISH_LIST (WEB_NOV_NUM, MEM_NUM)
-VALUES ('4', '9');
-INSERT INTO WISH_LIST (WEB_NOV_NUM, MEM_NUM)
-VALUES ('6', '4');
-INSERT INTO WISH_LIST (WEB_NOV_NUM, MEM_NUM)
-VALUES ('8', '10');
-INSERT INTO WISH_LIST (WEB_NOV_NUM, MEM_NUM)
-VALUES ('5', '4');
-INSERT INTO WISH_LIST (WEB_NOV_NUM, MEM_NUM)
-VALUES ('10', '8');
-INSERT INTO WISH_LIST (WEB_NOV_NUM, MEM_NUM)
-VALUES ('11', '7');
-INSERT INTO WISH_LIST (WEB_NOV_NUM, MEM_NUM)
-VALUES ('1', '5');
-INSERT INTO WISH_LIST (WEB_NOV_NUM, MEM_NUM)
-VALUES ('2', '5');
-INSERT INTO WISH_LIST (WEB_NOV_NUM, MEM_NUM)
-VALUES ('3', '15');
-INSERT INTO WISH_LIST (WEB_NOV_NUM, MEM_NUM)
-VALUES ('9', '15');
-INSERT INTO WISH_LIST (WEB_NOV_NUM, MEM_NUM)
-VALUES ('10', '19');
-INSERT INTO WISH_LIST (WEB_NOV_NUM, MEM_NUM)
-VALUES ('23', '8');
-INSERT INTO WISH_LIST (WEB_NOV_NUM, MEM_NUM)
-VALUES ('21', '8');
-INSERT INTO WISH_LIST (WEB_NOV_NUM, MEM_NUM)
-VALUES ('21', '20');
-INSERT INTO WISH_LIST (WEB_NOV_NUM, MEM_NUM)
-VALUES ('19', '21');
-INSERT INTO WISH_LIST (WEB_NOV_NUM, MEM_NUM)
-VALUES ('6', '22');
-INSERT INTO WISH_LIST (WEB_NOV_NUM, MEM_NUM)
-VALUES ('9', '3');
-INSERT INTO WISH_LIST (WEB_NOV_NUM, MEM_NUM)
-VALUES ('10', '4');
-INSERT INTO WISH_LIST (WEB_NOV_NUM, MEM_NUM)
-VALUES ('11', '5');
-INSERT INTO WISH_LIST (WEB_NOV_NUM, MEM_NUM)
-VALUES ('12', '6');
-INSERT INTO WISH_LIST (WEB_NOV_NUM, MEM_NUM)
-VALUES ('22', '7');
+INSERT INTO WISH_LIST (WEB_NOV_NUM, MEM_NUM, WISHLIST_DATE)
+VALUES ('1', '2', TO_DATE('20/12/05', 'RR/MM/DD'));
+INSERT INTO WISH_LIST (WEB_NOV_NUM, MEM_NUM, WISHLIST_DATE)
+VALUES ('4', '9', TO_DATE('20/06/05', 'RR/MM/DD'));
+INSERT INTO WISH_LIST (WEB_NOV_NUM, MEM_NUM, WISHLIST_DATE)
+VALUES ('6', '4', TO_DATE('20/08/05', 'RR/MM/DD'));
+INSERT INTO WISH_LIST (WEB_NOV_NUM, MEM_NUM, WISHLIST_DATE)
+VALUES ('8', '10', TO_DATE('20/06/05', 'RR/MM/DD'));
+INSERT INTO WISH_LIST (WEB_NOV_NUM, MEM_NUM, WISHLIST_DATE)
+VALUES ('5', '4', TO_DATE('20/09/05', 'RR/MM/DD'));
+INSERT INTO WISH_LIST (WEB_NOV_NUM, MEM_NUM, WISHLIST_DATE)
+VALUES ('10', '8', TO_DATE('21/02/05', 'RR/MM/DD'));
+INSERT INTO WISH_LIST (WEB_NOV_NUM, MEM_NUM, WISHLIST_DATE)
+VALUES ('11', '7', TO_DATE('21/02/05', 'RR/MM/DD'));
+INSERT INTO WISH_LIST (WEB_NOV_NUM, MEM_NUM, WISHLIST_DATE)
+VALUES ('1', '5', TO_DATE('20/05/05', 'RR/MM/DD'));
+INSERT INTO WISH_LIST (WEB_NOV_NUM, MEM_NUM, WISHLIST_DATE)
+VALUES ('2', '5', TO_DATE('20/02/24', 'RR/MM/DD'));
+INSERT INTO WISH_LIST (WEB_NOV_NUM, MEM_NUM, WISHLIST_DATE)
+VALUES ('3', '15', TO_DATE('18/02/05', 'RR/MM/DD'));
+INSERT INTO WISH_LIST (WEB_NOV_NUM, MEM_NUM, WISHLIST_DATE)
+VALUES ('9', '15', TO_DATE('20/12/05', 'RR/MM/DD'));
+INSERT INTO WISH_LIST (WEB_NOV_NUM, MEM_NUM, WISHLIST_DATE)
+VALUES ('10', '19', TO_DATE('20/02/06', 'RR/MM/DD'));
+INSERT INTO WISH_LIST (WEB_NOV_NUM, MEM_NUM, WISHLIST_DATE)
+VALUES ('23', '8', TO_DATE('20/02/15', 'RR/MM/DD'));
+INSERT INTO WISH_LIST (WEB_NOV_NUM, MEM_NUM, WISHLIST_DATE)
+VALUES ('21', '8', TO_DATE('20/02/18', 'RR/MM/DD'));
+INSERT INTO WISH_LIST (WEB_NOV_NUM, MEM_NUM, WISHLIST_DATE)
+VALUES ('21', '20', TO_DATE('20/02/19', 'RR/MM/DD'));
+INSERT INTO WISH_LIST (WEB_NOV_NUM, MEM_NUM, WISHLIST_DATE)
+VALUES ('19', '21', TO_DATE('20/02/20', 'RR/MM/DD'));
+INSERT INTO WISH_LIST (WEB_NOV_NUM, MEM_NUM, WISHLIST_DATE)
+VALUES ('6', '22', TO_DATE('21/02/25', 'RR/MM/DD'));
+INSERT INTO WISH_LIST (WEB_NOV_NUM, MEM_NUM, WISHLIST_DATE)
+VALUES ('9', '3', TO_DATE('20/02/05', 'RR/MM/DD'));
+INSERT INTO WISH_LIST (WEB_NOV_NUM, MEM_NUM, WISHLIST_DATE)
+VALUES ('10', '4', TO_DATE('21/03/21', 'RR/MM/DD'));
+INSERT INTO WISH_LIST (WEB_NOV_NUM, MEM_NUM, WISHLIST_DATE)
+VALUES ('11', '5', TO_DATE('20/03/05', 'RR/MM/DD'));
+INSERT INTO WISH_LIST (WEB_NOV_NUM, MEM_NUM, WISHLIST_DATE)
+VALUES ('12', '6', TO_DATE('21/02/05', 'RR/MM/DD'));
+INSERT INTO WISH_LIST (WEB_NOV_NUM, MEM_NUM, WISHLIST_DATE)
+VALUES ('22', '7', TO_DATE('20/02/08', 'RR/MM/DD'));
 
 COMMIT;
 
@@ -2981,47 +4457,49 @@ Insert into FAQ (POST_NUM,FAQ_POST_TITLE,FAQ_POST_CONTENT) values (8,'구매 내
 Insert into FAQ (POST_NUM,FAQ_POST_TITLE,FAQ_POST_CONTENT) values (9,'공모전에 출품하고 싶습니다. 일정은 어디서 확인하나요? ','공모전은 페이지 상단 공모전 버튼을 클릭하여 확인해보실 수 있으며, 공모전 일정은 공모전 페이지와 공지사항에서 알려드릴 예정입니다. 2020년 10월 4분기 이후로 매년분기마다 공모전이 진행되고 있습니다.');
 Insert into FAQ (POST_NUM,FAQ_POST_TITLE,FAQ_POST_CONTENT) values (10,'탈퇴는 어떻게 하나요?','회원 탈퇴는 마이페이지에서 가능합니다. 탈퇴시 보유한 코인은 자동 환불되지 않으니 환불 이후 탈퇴하시는 것을 권고드립니다. 또한 보유한 서재 또한 초기화되니 탈퇴에 앞서 신중하게 판단하시기 바랍니다.');
 
-----
+-----------NOTICE
 
 CREATE TABLE NOTICE (
 	NOTICE_NUM NUMBER NOT NULL,
 	NOTICE_DATE DATE NOT NULL,
 	NOTICE_NAME VARCHAR2(100) NOT NULL,
 	NOTICE_VIEW_COUNT NUMBER NOT NULL,
-	NOTICE_CONTENT VARCHAR2(2000) NULL
+	NOTICE_CONTENT VARCHAR2(2000) NULL,
+    NOTICE_STATUS CHAR(1) DEFAULT 'Y'
     );
 
 Insert into NOTICE (NOTICE_NUM,NOTICE_DATE,NOTICE_NAME,NOTICE_VIEW_COUNT,NOTICE_CONTENT) values (1,to_date('19/06/01','RR/MM/DD'),'FirstBook 서비스 오픈!',5417,'오랜 준비끝에 신인과 작가, 독자를 위한 웹소설 플랫폼 First Book 서비스를 오픈합니다. \n저희 서비스는 타 플랫폼에서 하지 못한 상생을 추구하기 위해 낮은 수수료를 적용하고, 출판사와 작가에게 수익이 분배되는 코인 제도를 운영할 것입니다. 독자분들을 위해 일주일에 한번씩 위클리 코인도 제공할 예정입니다. \n또한 활발한 공모전 개최로 신인들의 등용문 역할을 할 예정입니다. 공모전은 2회의 테스트 기간을 거쳐 매해 분기별 진행을 목표로 하고 있습니다. 신인분들의 많은 참여와 관심 부탁드립니다.');
-Insert into NOTICE (NOTICE_NUM,NOTICE_DATE,NOTICE_NAME,NOTICE_VIEW_COUNT,NOTICE_CONTENT) values (2,to_date('19/07/05','RR/MM/DD'),'퍼북 독자님들 위클리 코인 받아가세용~~',9752,'공짜로 소설 보는 방법, 아직도 모르셨다구요?? \N이런이런 지금 당장 마이페이지의 위클리 코인을 확인해주세요! 위클리 코인이 활성화 돼 있지 않나요? 가입시점으로부터 일주일마다 활성화된다구요~~\N꼭꼭 챙겨서 독자님들 지갑 잘 보존하세용 ');
-Insert into NOTICE (NOTICE_NUM,NOTICE_DATE,NOTICE_NAME,NOTICE_VIEW_COUNT,NOTICE_CONTENT) values (3,to_date('19/08/05','RR/MM/DD'),'인기 작품들의 단행본 예약구매가 진행중입니다',4827,'너혼자만 레벨업, 3인칭 작가시점 등의 유명 웹소설이 단행본으로 발매됩니다. \N저희 퍼북에서는 이 단행본들을 무료 배송에 10% 할인가로 판매 예정입니다. 많은 독자님들의 관심 바랍니다 ^^');
-Insert into NOTICE (NOTICE_NUM,NOTICE_DATE,NOTICE_NAME,NOTICE_VIEW_COUNT,NOTICE_CONTENT) values (4,to_date('19/10/01','RR/MM/DD'),'제1회 시범 공모전)) 출품작 모집',6384,'안녕하세요 신인 루키 작가님들! \N넘치는 재능을 뽐낼 곳을 찾고 계시다구요? \N퍼북 공모전에 작품을 출품하세요! \N저희는 유명 웹툰, 드라마, 영화제작사와의 협조로 MSOU 또한 준비중에 있다구요. \N10월 15일까지 출품작과 서류를 받고 있으니 꼭 확인해서 저희에게 보내주세요! \N면밀히 검토하여 뽑은 16개의 소설이 토너먼트로 독자님들의 선택을 받게됩니다. \N독자님들께는 소중하고 깨끗한 한표 부탁드릴께요~~~');
+Insert into NOTICE (NOTICE_NUM,NOTICE_DATE,NOTICE_NAME,NOTICE_VIEW_COUNT,NOTICE_CONTENT) values (2,to_date('19/07/05','RR/MM/DD'),'퍼북 독자님들 위클리 코인 받아가세용~~',9752,'공짜로 소설 보는 방법, 아직도 모르셨다구요?? \n 이런이런 지금 당장 마이페이지의 위클리 코인을 확인해주세요! 위클리 코인이 활성화 돼 있지 않나요? 가입시점으로부터 일주일마다 활성화된다구요~~\n 꼭꼭 챙겨서 독자님들 지갑 잘 보존하세용 ');
+Insert into NOTICE (NOTICE_NUM,NOTICE_DATE,NOTICE_NAME,NOTICE_VIEW_COUNT,NOTICE_CONTENT) values (3,to_date('19/08/05','RR/MM/DD'),'인기 작품들의 단행본 예약구매가 진행중입니다',4827,'너혼자만 레벨업, 3인칭 작가시점 등의 유명 웹소설이 단행본으로 발매됩니다. \n 저희 퍼북에서는 이 단행본들을 무료 배송에 10% 할인가로 판매 예정입니다. 많은 독자님들의 관심 바랍니다 ^^');
+Insert into NOTICE (NOTICE_NUM,NOTICE_DATE,NOTICE_NAME,NOTICE_VIEW_COUNT,NOTICE_CONTENT) values (4,to_date('19/10/01','RR/MM/DD'),'제1회 시범 공모전)) 출품작 모집',6384,'안녕하세요 신인 루키 작가님들! \n 넘치는 재능을 뽐낼 곳을 찾고 계시다구요? \n 퍼북 공모전에 작품을 출품하세요! \n 저희는 유명 웹툰, 드라마, 영화제작사와의 협조로 MSOU 또한 준비중에 있다구요. \n 10월 15일까지 출품작과 서류를 받고 있으니 꼭 확인해서 저희에게 보내주세요! \n 면밀히 검토하여 뽑은 16개의 소설이 토너먼트로 독자님들의 선택을 받게됩니다. \n 독자님들께는 소중하고 깨끗한 한표 부탁드릴께요~~~');
 Insert into NOTICE (NOTICE_NUM,NOTICE_DATE,NOTICE_NAME,NOTICE_VIEW_COUNT,NOTICE_CONTENT) values (5,to_date('19/10/16','RR/MM/DD'),'제1회 시범 공모전)) 16강 대진 발표',8396,'1회 시범 공모전 16강입니다!! 자세한 사항은 대진표를 참고해주세요!');
 Insert into NOTICE (NOTICE_NUM,NOTICE_DATE,NOTICE_NAME,NOTICE_VIEW_COUNT,NOTICE_CONTENT) values (6,to_date('19/11/01','RR/MM/DD'),'제1회 시범 공모전)) 8강 대진 발표',4156,'1회 시범 공모전 8강입니다!! 자세한 사항은 대진표를 참고해주세요!');
 Insert into NOTICE (NOTICE_NUM,NOTICE_DATE,NOTICE_NAME,NOTICE_VIEW_COUNT,NOTICE_CONTENT) values (7,to_date('19/11/15','RR/MM/DD'),'제1회 시범 공모전)) 4강 대진 발표',3462,'1회 시범 공모전 4강입니다!! 자세한 사항은 대진표를 참고해주세요!');
 Insert into NOTICE (NOTICE_NUM,NOTICE_DATE,NOTICE_NAME,NOTICE_VIEW_COUNT,NOTICE_CONTENT) values (8,to_date('19/12/01','RR/MM/DD'),'제1회 시범 공모전)) 준결승! 대진 발표',5035,'1회 시범 공모전 준결승입니다!! 자세한 사항은 대진표를 참고해주세요!');
 Insert into NOTICE (NOTICE_NUM,NOTICE_DATE,NOTICE_NAME,NOTICE_VIEW_COUNT,NOTICE_CONTENT) values (9,to_date('19/12/15','RR/MM/DD'),'제1회 시범 공모전)) 결승!!!! 대진 발표',6461,'1회 시범 공모전 결승입니다!! 자세한 사항은 대진표를 참고해주세요!');
 Insert into NOTICE (NOTICE_NUM,NOTICE_DATE,NOTICE_NAME,NOTICE_VIEW_COUNT,NOTICE_CONTENT) values (10,to_date('20/01/15','RR/MM/DD'),'제1회 시범 공모전)) 대망의 결승 결과 발표',3788,'1회 시범 공모전 결승 결과 발표입니다!! 자세한 사항은 대진표를 참고해주세요!');
-Insert into NOTICE (NOTICE_NUM,NOTICE_DATE,NOTICE_NAME,NOTICE_VIEW_COUNT,NOTICE_CONTENT) values (11,to_date('20/07/01','RR/MM/DD'),'제2회 시범 공모전)) 출품작 모집',5872,'안녕하세요 신인 루키 작가님들! \N넘치는 재능을 뽐낼 곳을 찾고 계시다구요? \N퍼북 공모전에 작품을 출품하세요! \N저희는 유명 웹툰, 드라마, 영화제작사와의 협조로 MSOU 또한 준비중에 있다구요. \N7월 15일까지 출품작과 서류를 받고 있으니 꼭 확인해서 저희에게 보내주세요! \N면밀히 검토하여 뽑은 16개의 소설이 토너먼트로 독자님들의 선택을 받게됩니다. \N독자님들께는 소중하고 깨끗한 한표 부탁드릴께요~~~');
+Insert into NOTICE (NOTICE_NUM,NOTICE_DATE,NOTICE_NAME,NOTICE_VIEW_COUNT,NOTICE_CONTENT) values (11,to_date('20/07/01','RR/MM/DD'),'제2회 시범 공모전)) 출품작 모집',5872,'안녕하세요 신인 루키 작가님들! \n 넘치는 재능을 뽐낼 곳을 찾고 계시다구요? \n 퍼북 공모전에 작품을 출품하세요! \n 저희는 유명 웹툰, 드라마, 영화제작사와의 협조로 MSOU 또한 준비중에 있다구요. \n 7월 15일까지 출품작과 서류를 받고 있으니 꼭 확인해서 저희에게 보내주세요! \n 면밀히 검토하여 뽑은 16개의 소설이 토너먼트로 독자님들의 선택을 받게됩니다. \n 독자님들께는 소중하고 깨끗한 한표 부탁드릴께요~~~');
 Insert into NOTICE (NOTICE_NUM,NOTICE_DATE,NOTICE_NAME,NOTICE_VIEW_COUNT,NOTICE_CONTENT) values (12,to_date('20/07/15','RR/MM/DD'),'제2회 시범 공모전)) 16강 대진 발표',7362,'2회 시범 공모전 16강입니다!! 자세한 사항은 대진표를 참고해주세요!');
 Insert into NOTICE (NOTICE_NUM,NOTICE_DATE,NOTICE_NAME,NOTICE_VIEW_COUNT,NOTICE_CONTENT) values (13,to_date('20/08/01','RR/MM/DD'),'제2회 시범 공모전)) 8강 대진 발표',5485,'2회 시범 공모전 8강입니다!! 자세한 사항은 대진표를 참고해주세요!');
 Insert into NOTICE (NOTICE_NUM,NOTICE_DATE,NOTICE_NAME,NOTICE_VIEW_COUNT,NOTICE_CONTENT) values (14,to_date('20/08/15','RR/MM/DD'),'제2회 시범 공모전)) 4강 대진 발표',4765,'2회 시범 공모전 4강입니다!! 자세한 사항은 대진표를 참고해주세요!');
 Insert into NOTICE (NOTICE_NUM,NOTICE_DATE,NOTICE_NAME,NOTICE_VIEW_COUNT,NOTICE_CONTENT) values (15,to_date('20/09/01','RR/MM/DD'),'제2회 시범 공모전)) 준결승! 대진 발표',3683,'2회 시범 공모전 준결승입니다!! 자세한 사항은 대진표를 참고해주세요!');
 Insert into NOTICE (NOTICE_NUM,NOTICE_DATE,NOTICE_NAME,NOTICE_VIEW_COUNT,NOTICE_CONTENT) values (16,to_date('20/09/15','RR/MM/DD'),'제2회 시범 공모전)) 결승!!!! 대진 발표',5398,'2회 시범 공모전 결승입니다!! 자세한 사항은 대진표를 참고해주세요!');
 Insert into NOTICE (NOTICE_NUM,NOTICE_DATE,NOTICE_NAME,NOTICE_VIEW_COUNT,NOTICE_CONTENT) values (17,to_date('20/09/30','RR/MM/DD'),'제2회 시범 공모전)) 대망의 결승 결과 발표',6362,'2회 시범 공모전 결승 결과 발표입니다!! 자세한 사항은 대진표를 참고해주세요!');
-Insert into NOTICE (NOTICE_NUM,NOTICE_DATE,NOTICE_NAME,NOTICE_VIEW_COUNT,NOTICE_CONTENT) values (18,to_date('20/10/01','RR/MM/DD'),'제3회 분기별 공모전)) 출품작 모집',4286,'안녕하세요 신인 루키 작가님들! \N넘치는 재능을 뽐낼 곳을 찾고 계시다구요? \N퍼북 공모전에 작품을 출품하세요! \N저희는 유명 웹툰, 드라마, 영화제작사와의 협조로 MSOU 또한 준비중에 있다구요. \N7월 15일까지 출품작과 서류를 받고 있으니 꼭 확인해서 저희에게 보내주세요! \N면밀히 검토하여 뽑은 16개의 소설이 토너먼트로 독자님들의 선택을 받게됩니다. \N독자님들께는 소중하고 깨끗한 한표 부탁드릴께요~~~');
+Insert into NOTICE (NOTICE_NUM,NOTICE_DATE,NOTICE_NAME,NOTICE_VIEW_COUNT,NOTICE_CONTENT) values (18,to_date('20/10/01','RR/MM/DD'),'제3회 분기별 공모전)) 출품작 모집',4286,'안녕하세요 신인 루키 작가님들! \n 넘치는 재능을 뽐낼 곳을 찾고 계시다구요? \n 퍼북 공모전에 작품을 출품하세요! \n 저희는 유명 웹툰, 드라마, 영화제작사와의 협조로 MSOU 또한 준비중에 있다구요. \n 7월 15일까지 출품작과 서류를 받고 있으니 꼭 확인해서 저희에게 보내주세요! \n 면밀히 검토하여 뽑은 16개의 소설이 토너먼트로 독자님들의 선택을 받게됩니다. \n 독자님들께는 소중하고 깨끗한 한표 부탁드릴께요~~~');
 Insert into NOTICE (NOTICE_NUM,NOTICE_DATE,NOTICE_NAME,NOTICE_VIEW_COUNT,NOTICE_CONTENT) values (19,to_date('20/10/15','RR/MM/DD'),'제3회 분기별 공모전)) 16강 대진 발표',3942,'3회 분기별 공모전 16강입니다!! 자세한 사항은 대진표를 참고해주세요!');
 Insert into NOTICE (NOTICE_NUM,NOTICE_DATE,NOTICE_NAME,NOTICE_VIEW_COUNT,NOTICE_CONTENT) values (20,to_date('20/10/31','RR/MM/DD'),'제3회 분기별 공모전)) 8강 대진 발표',5976,'3회 분기별 공모전 8강입니다!! 자세한 사항은 대진표를 참고해주세요!');
 Insert into NOTICE (NOTICE_NUM,NOTICE_DATE,NOTICE_NAME,NOTICE_VIEW_COUNT,NOTICE_CONTENT) values (21,to_date('20/11/01','RR/MM/DD'),'제3회 분기별 공모전)) 4강 대진 발표',6398,'3회 분기별 공모전 4강입니다!! 자세한 사항은 대진표를 참고해주세요!');
 Insert into NOTICE (NOTICE_NUM,NOTICE_DATE,NOTICE_NAME,NOTICE_VIEW_COUNT,NOTICE_CONTENT) values (22,to_date('20/11/15','RR/MM/DD'),'제3회 분기별 공모전)) 준결승! 대진 발표',4783,'3회 분기별 공모전 준결승입니다!! 자세한 사항은 대진표를 참고해주세요!');
 Insert into NOTICE (NOTICE_NUM,NOTICE_DATE,NOTICE_NAME,NOTICE_VIEW_COUNT,NOTICE_CONTENT) values (23,to_date('20/11/30','RR/MM/DD'),'제3회 분기별 공모전)) 결승!!!! 대진 발표',5962,'3회 분기별 공모전 결승입니다!! 자세한 사항은 대진표를 참고해주세요!');
 Insert into NOTICE (NOTICE_NUM,NOTICE_DATE,NOTICE_NAME,NOTICE_VIEW_COUNT,NOTICE_CONTENT) values (24,to_date('20/12/01','RR/MM/DD'),'제3회 분기별 공모전)) 대망의 결승 결과 발표',6329,'2회 시범 공모전 결승 결과 발표입니다!! 자세한 사항은 대진표를 참고해주세요!');
-Insert into NOTICE (NOTICE_NUM,NOTICE_DATE,NOTICE_NAME,NOTICE_VIEW_COUNT,NOTICE_CONTENT) values (25,to_date('20/12/15','RR/MM/DD'),'제4회 분기별 공모전)) 출품작 모집',4852,'안녕하세요 신인 루키 작가님들! \N넘치는 재능을 뽐낼 곳을 찾고 계시다구요? \N퍼북 공모전에 작품을 출품하세요! \N저희는 유명 웹툰, 드라마, 영화제작사와의 협조로 MSOU 또한 준비중에 있다구요. \N7월 15일까지 출품작과 서류를 받고 있으니 꼭 확인해서 저희에게 보내주세요! \N면밀히 검토하여 뽑은 16개의 소설이 토너먼트로 독자님들의 선택을 받게됩니다. \N독자님들께는 소중하고 깨끗한 한표 부탁드릴께요~~~');
+Insert into NOTICE (NOTICE_NUM,NOTICE_DATE,NOTICE_NAME,NOTICE_VIEW_COUNT,NOTICE_CONTENT) values (25,to_date('20/12/15','RR/MM/DD'),'제4회 분기별 공모전)) 출품작 모집',4852,'안녕하세요 신인 루키 작가님들! \n 넘치는 재능을 뽐낼 곳을 찾고 계시다구요? \n 퍼북 공모전에 작품을 출품하세요! \n 저희는 유명 웹툰, 드라마, 영화제작사와의 협조로 MSOU 또한 준비중에 있다구요. \n 7월 15일까지 출품작과 서류를 받고 있으니 꼭 확인해서 저희에게 보내주세요! \n 면밀히 검토하여 뽑은 16개의 소설이 토너먼트로 독자님들의 선택을 받게됩니다. \n 독자님들께는 소중하고 깨끗한 한표 부탁드릴께요~~~');
 Insert into NOTICE (NOTICE_NUM,NOTICE_DATE,NOTICE_NAME,NOTICE_VIEW_COUNT,NOTICE_CONTENT) values (26,to_date('20/12/31','RR/MM/DD'),'제4회 분기별 공모전)) 16강 대진 발표`',5285,'2회 시범 공모전 16강입니다!! 자세한 사항은 대진표를 참고해주세요!');
 Insert into NOTICE (NOTICE_NUM,NOTICE_DATE,NOTICE_NAME,NOTICE_VIEW_COUNT,NOTICE_CONTENT) values (27,to_date('21/01/01','RR/MM/DD'),'제4회 분기별 공모전)) 8강 대진 발표',6035,'2회 시범 공모전 8강입니다!! 자세한 사항은 대진표를 참고해주세요!');
 Insert into NOTICE (NOTICE_NUM,NOTICE_DATE,NOTICE_NAME,NOTICE_VIEW_COUNT,NOTICE_CONTENT) values (28,to_date('21/01/15','RR/MM/DD'),'제4회 분기별 공모전)) 4강 대진 발표',5647,'2회 시범 공모전 4강입니다!! 자세한 사항은 대진표를 참고해주세요!');
 Insert into NOTICE (NOTICE_NUM,NOTICE_DATE,NOTICE_NAME,NOTICE_VIEW_COUNT,NOTICE_CONTENT) values (29,to_date('21/01/30','RR/MM/DD'),'제4회 분기별 공모전)) 준결승! 대진 발표',4721,'2회 시범 공모전 준결승입니다!! 자세한 사항은 대진표를 참고해주세요!');
 Insert into NOTICE (NOTICE_NUM,NOTICE_DATE,NOTICE_NAME,NOTICE_VIEW_COUNT,NOTICE_CONTENT) values (30,to_date('21/02/01','RR/MM/DD'),'제4회 분기별 공모전)) 결승!!!! 대진 발표',3461,'2회 시범 공모전 결승입니다!! 자세한 사항은 대진표를 참고해주세요!');
 Insert into NOTICE (NOTICE_NUM,NOTICE_DATE,NOTICE_NAME,NOTICE_VIEW_COUNT,NOTICE_CONTENT) values (31,to_date('21/02/15','RR/MM/DD'),'제4회 분기별 공모전)) 대망의 결승 결과 발표',1652,'2회 시범 공모전 결승 결과 발표입니다!! 자세한 사항은 대진표를 참고해주세요!');
+
 
 
 --------------------------COIN_USE_HIS
@@ -3050,6 +4528,12 @@ CREATE TABLE COIN_CHARGE (
 
 
 
+
+
+
+
+
+------------------------------NOV_INFO
 
 CREATE TABLE NOV_INFO (
 	NOV_NUM	NUMBER		NOT NULL PRIMARY KEY ,
@@ -3096,3 +4580,80 @@ Insert into NOV_REVIEW (NOV_REVIEW_NUM,NOV_NUM,MEM_ID,REVIEW_DATE,NOV_CONTENT) v
 Insert into NOV_REVIEW (NOV_REVIEW_NUM,NOV_NUM,MEM_ID,REVIEW_DATE,NOV_CONTENT) values (9,9,'tlkim',to_date('19/09/15','RR/MM/DD'),'전 강북에 사는데… ㅈㅅ');
 Insert into NOV_REVIEW (NOV_REVIEW_NUM,NOV_NUM,MEM_ID,REVIEW_DATE,NOV_CONTENT) values (10,10,'neson',to_date('19/09/20','RR/MM/DD'),'너무 좋아요!!');
 Insert into NOV_REVIEW (NOV_REVIEW_NUM,NOV_NUM,MEM_ID,REVIEW_DATE,NOV_CONTENT) values (11,11,'hllee',to_date('19/09/25','RR/MM/DD'),'저도 신입이라…');
+
+
+--------------------
+
+
+DROP SEQUENCE SEQ_MEM_NO;
+CREATE SEQUENCE SEQ_MEM_NO
+START WITH 31;
+
+DROP SEQUENCE SEQ_QNA_NO;
+CREATE SEQUENCE SEQ_QNA_NO
+START WITH 12;
+
+DROP SEQUENCE SEQ_QNA_REPLY_NO;
+CREATE SEQUENCE SEQ_QNA_REPLY_NO
+START WITH 15;
+
+DROP SEQUENCE SEQ_CHARGE_NO;
+CREATE SEQUENCE SEQ_CHARGE_NO
+START WITH 1;
+
+SET SERVEROUTPUT ON;
+
+CREATE OR REPLACE PROCEDURE UPD_WEEKRY_COIN
+IS
+BEGIN
+  UPDATE
+         MEM_INFO A
+     SET A.MEM_WEEKLY_COIN_YN = 'Y';
+  COMMIT;
+END;
+/
+
+BEGIN
+DBMS_SCHEDULER.CREATE_PROGRAM(
+program_name => 'EVERY_WEEK_UPD_WEEKLYCOIN',
+program_action => 'UPD_WEEKRY_COIN',
+program_type => 'STORED_PROCEDURE',
+comments => '매주 금요일에 MEM_WEEKLY_COIN_YN = Y로 변경',
+enabled => TRUE);
+END;
+/
+
+BEGIN
+DBMS_SCHEDULER.CREATE_SCHEDULE(
+SCHEDULE_NAME => 'UPD_WEEKLY_COIN_SCHEDULE',
+START_DATE => SYSDATE,
+END_DATE => NULL,
+REPEAT_INTERVAL => 'FREQ=WEEKLY;BYDAY=FRI;BYHOUR=18;BYMINUTE=0;BYSECOND=0;',
+COMMENTS => '매주 금요일 오후 6시 정각에 JOB 실행'
+);
+END;
+/
+
+BEGIN
+DBMS_SCHEDULER.CREATE_JOB(
+JOB_NAME => 'UPD_WEEKLY_COIN_JOB',
+PROGRAM_NAME => 'EVERY_WEEK_UPD_WEEKLYCOIN',
+SCHEDULE_NAME => 'UPD_WEEKLY_COIN_SCHEDULE',
+COMMENTS => '매주 금요일 오후 6시 정각에 JOB 실행'
+);
+END;
+/
+
+-- 활성화
+-- EXECUTE DBMS_SCHEDULER.ENABLE('UPD_WEEKLY_COIN_JOB');
+
+-- 잡 확인
+SELECT * FROM USER_SCHEDULER_JOBS;
+-- 잡에 등록되어있는 프로그램 확인
+SELECT * FROM USER_SCHEDULER_PROGRAMS;
+
+-- 강제 구동
+EXECUTE DBMS_SCHEDULER.RUN_JOB('UPD_WEEKLY_COIN_JOB');
+
+-- 실행 로그
+SELECT * FROM USER_SCHEDULER_JOB_LOG;

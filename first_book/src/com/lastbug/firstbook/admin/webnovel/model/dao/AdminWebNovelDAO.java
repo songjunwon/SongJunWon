@@ -67,7 +67,7 @@ public class AdminWebNovelDAO {
 			}
 //			System.out.println(adminWebNovelList);
 		} catch (SQLException e) {
-			// TODO Auto-generated catch block
+
 			e.printStackTrace();
 		}finally {
 			close(rset);
@@ -176,9 +176,39 @@ public class AdminWebNovelDAO {
 		return result;
 	}
 
-	public int WebNovelModify(Connection con, int pg0, int pg1, String body0, String body1) {
-		// TODO Auto-generated method stub
-		return 0;
+	public int WebNovelModify(Connection con, int no, int currentChap, int pg0, int pg1, String body0, String body1) {
+		
+		PreparedStatement pstmt = null;
+		int result = 0;
+		
+		System.out.println("dao body0 :" + body0);
+		
+		String query = prop.getProperty("WebNovelModify");
+				
+		
+		try {							
+			pstmt = con.prepareStatement(query);
+			pstmt.setInt(1, pg0);
+			pstmt.setString(2, body0);
+			pstmt.setInt(3, pg1);
+			pstmt.setString(4, body1);
+			pstmt.setInt(5, no);
+			pstmt.setInt(6, currentChap);
+			pstmt.setInt(7, pg0);
+			pstmt.setInt(8, pg1);
+			
+			result = pstmt.executeUpdate();
+			
+		} catch (SQLException e) {
+			e.printStackTrace();
+		} finally {
+			close(pstmt);
+		}
+		
+		System.out.println("dao query after body0 :" + body0);
+		
+		return result;
+
 	}
 
 

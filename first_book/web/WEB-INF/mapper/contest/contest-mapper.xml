@@ -24,7 +24,21 @@
                  FROM COMPET_INFO
                 GROUP BY COMPET_SSN
 	</entry>
+	<entry key="mainTopContest">
+                <![CDATA[
+                SELECT *
+				  FROM (SELECT 
+				               * 
+				          FROM COMPET_INFO 
+				         WHERE COMPET_SSN = ?
+				         ORDER BY SCORE DESC
+				       )
+	             WHERE ROWNUM <= 4
+	             ]]>
+	             
+	
 
+	</entry>
 </properties>
 
 

@@ -8,6 +8,9 @@
 </head>
 <body>
 	<!-- forward page에서 '/'자체가 web폴더를 의미 -->
-	<jsp:forward page="/WEB-INF/views/main/main.jsp"/>
+ 	<jsp:forward page="/main/main"/> 
+	
+	
+	
 </body>
 </html>

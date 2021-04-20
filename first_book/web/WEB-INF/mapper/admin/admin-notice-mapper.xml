@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE properties SYSTEM "http://java.sun.com/dtd/properties.dtd">
+<properties>
+	
+	<entry key="NoticeModify">
+	       UPDATE NOTICE
+			  SET NOTICE_NAME = ? , NOTICE_CONTENT = ?
+			WHERE NOTICE_NUM = ?
+	
+	</entry>
+	<entry key="NoticeActDeactive">
+		  UPDATE
+		       NOTICE A
+		   SET A.NOTICE_STATUS = ?		    
+		 WHERE A.NOTICE_NUM = ?	
+	</entry>
+</properties>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

@@ -24,6 +24,7 @@
 	<div id="wrap">
 		<h1>${requestScope.pageInfo.pageNo }</h1>
 		<h1> <input type="hidden" name="webNovNum" value="${ requestScope.currentWebNov }"/></h1>
+		<h1> <input type="hidden" name="currentChap" value="${ requestScope.currentChap }"/></h1>
 		<section class="sec1">
 			<table class="tab_viewer">
 				<c:choose>

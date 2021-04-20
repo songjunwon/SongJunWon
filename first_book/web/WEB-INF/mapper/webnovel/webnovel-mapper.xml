@@ -199,10 +199,19 @@
            AND B.MEM_NUM = ?
          ORDER BY A.REPLY_NUM DESC
 	</entry>
+	<entry key="selectAllNovel">
+         <![CDATA[
+         SELECT 		/* com.lastbug.firstbook.webnovel.model.dao.WebNovelDAO#selectAllNovel() */
+                *
+           FROM (SELECT
+                        *
+                   FROM WEB_NOV_INFO 
+                  ORDER BY WEB_NOV_COUNT DESC
+                )
+          WHERE ROWNUM <= 4
+          ]]>
+	</entry>
 </properties>
-
-
-
 
 
 

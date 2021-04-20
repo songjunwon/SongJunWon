@@ -45,7 +45,9 @@
 		     , A.MEM_BLOCK_DATE = ?
 		 WHERE A.MEM_NUM = ?
 	</entry>
+	
 
+	
 </properties>
 
 
