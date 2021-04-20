@@ -32,7 +32,7 @@ public class WishLishMemServlet extends HttpServlet {
 		
 		response.setContentType("text/plain; charset=UTF-8");
 		
-		PrintWriter out = response.getWriter();
+		PrintWriter out = response.getWriter(); 
 //		
 //		out.print(false);
 		out.flush();
