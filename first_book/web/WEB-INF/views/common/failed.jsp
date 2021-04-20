@@ -137,6 +137,10 @@
 			failedMessage = "메인 조회 실패";
 			movePath = "${ pageContext.servletContext.contextPath}/main/main";
 			break;
+		case "viewFailed" : 
+			failedMessage = "공모전 조회 실패";
+			movePath = "${ pageContext.servletContext.contextPath}/contestAll/list";
+			break; "contestFailed", "viewFailed"
 		}
 			alert(failedMessage);
 		
