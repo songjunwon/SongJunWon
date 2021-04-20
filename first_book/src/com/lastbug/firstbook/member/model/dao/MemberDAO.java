@@ -14,9 +14,12 @@ import java.util.List;
 import java.util.Properties;
 
 import com.lastbug.firstbook.common.config.ConfigLocation;
+import com.lastbug.firstbook.member.model.dto.CoinChargeDTO;
 import com.lastbug.firstbook.member.model.dto.FaqDTO;
 import com.lastbug.firstbook.member.model.dto.MemberDTO;
 import com.lastbug.firstbook.member.model.dto.NoticeDTO;
+import com.lastbug.firstbook.member.model.dto.QnaDTO;
+import com.lastbug.firstbook.member.model.dto.QnaReplyDTO;
 import com.lastbug.firstbook.member.model.dto.UseCoinDTO;
 import com.lastbug.firstbook.member.model.dto.WishlistDTO;
 import com.lastbug.firstbook.webnovel.model.dto.PageInfoDTO;
@@ -199,7 +202,6 @@ public class MemberDAO {
 				webNov.setCategoryCode(rs.getString("CATEGORY_CODE"));
 				webNov.setWebNovTitle(rs.getString("WEB_NOV_TITLE"));
 				webNov.setWebNovAuthor(rs.getString("WEB_NOV_AUTHOR"));
-				webNov.setChapPerCoin(rs.getInt("CHAP_PER_COIN"));
 				webNov.setWebNovPublisher(rs.getString("WEB_NOV_PUBLISHER"));
 				webNov.setWebNovInform(rs.getString("WEB_NOV_INFORM"));
 				webNov.setWebNovImgLocation(rs.getString("WEB_NOV_IMG_LOCATION"));
@@ -298,7 +300,6 @@ public class MemberDAO {
 				webNov.setCategoryCode(rs.getString("CATEGORY_CODE"));
 				webNov.setWebNovTitle(rs.getString("WEB_NOV_TITLE"));
 				webNov.setWebNovAuthor(rs.getString("WEB_NOV_AUTHOR"));
-				webNov.setChapPerCoin(rs.getInt("CHAP_PER_COIN"));
 				webNov.setWebNovPublisher(rs.getString("WEB_NOV_PUBLISHER"));
 				webNov.setWebNovInform(rs.getString("WEB_NOV_INFORM"));
 				webNov.setWebNovImgLocation(rs.getString("WEB_NOV_IMG_LOCATION"));
@@ -363,6 +364,7 @@ public class MemberDAO {
 		return result;
 	}
 
+	/* 회원 정보 조회용 메소드 */
 	public MemberDTO selectMember(Connection con, int memNum) {
 		
 		PreparedStatement pstmt = null;
@@ -409,6 +411,7 @@ public class MemberDAO {
 		return requestMember;
 	}
 
+	/* 공지 사항 페이지네이션 구현을 위한 공지 사항 총 갯수 조회용 메소드 */
 	public int selectTotalCount(Connection con) {
 
 		Statement stmt = null;
@@ -435,6 +438,7 @@ public class MemberDAO {
 		return totalCount;
 	}
 
+	/* 페이지네이션에의해 갯수 제한을 둔 공지 사항 리스트 조회용 메소드 */
 	public List<NoticeDTO> selectNoticeList(Connection con, PageInfoDTO pageInfo) {
 
 		PreparedStatement pstmt = null;
@@ -476,6 +480,7 @@ public class MemberDAO {
 		return noticeList;
 	}
 
+	/* 공지 사항 상세 정보 출력용 메소드 */
 	public NoticeDTO selectNoticeDetail(Connection con, int noticeNum) {
 
 		PreparedStatement pstmt = null;
@@ -509,6 +514,7 @@ public class MemberDAO {
 		return noticeDetail;
 	}
 
+	/* 공지 사항 조회 수 증가용 메소드 */
 	public int incrementNoticeCount(Connection con, int noticeNum) {
 
 		PreparedStatement pstmt = null;
@@ -531,6 +537,7 @@ public class MemberDAO {
 		return result;
 	}
 
+	/* 자주 묻는 질문 페이지네이션 구현을 위한 자주 묻는 질문 총 갯수 조회용 메소드 */
 	public int selectFAQTotalCount(Connection con) {
 
 		Statement stmt = null;
@@ -557,6 +564,7 @@ public class MemberDAO {
 		return totalCount;
 	}
 
+	/* 페이지네이션에의해 갯수 제한을 둔 자주 묻는 질문 리스트 조회용 메소드 */
 	public List<FaqDTO> selectFAQList(Connection con, PageInfoDTO pageInfo) {
 		
 		PreparedStatement pstmt = null;
@@ -595,6 +603,7 @@ public class MemberDAO {
 		return faqList;
 	}
 
+	/* 자주 묻는 질문 상세 정보 출력용 메소드 */
 	public FaqDTO selectFaqDetail(Connection con, int faqNum) {
 
 		PreparedStatement pstmt = null;
@@ -626,71 +635,174 @@ public class MemberDAO {
 		return faqDetail;
 	}
 
-	public int updateWishList(Connection con, int weblistNum, int memNum2) {
-		
+	/* 1:1 질문 페이지네이션 구현을 위한 자주 묻는 질문 총 갯수 조회용 메소드 */
+	public int selectQNATotalCount(Connection con, int memNum) {
+
 		PreparedStatement pstmt = null;
-		int result = 0;
+		ResultSet rs = null;
 		
-		String query = prop.getProperty("updateWishList");
+		int totalCount = 0;
+		
+		String query = prop.getProperty("selectQNATotalCount");
 		
 		try {
 			pstmt = con.prepareStatement(query);
-			pstmt.setInt(1, weblistNum);
-			pstmt.setInt(2, memNum2);
+			pstmt.setInt(1, memNum);
 			
-			
-			result = pstmt.executeUpdate();
-		} catch (SQLException e) {
-			e.printStackTrace();
-		} finally {
-			close(pstmt);
-		}
-		
-		return result;
-	}
-
-	public MemberDTO selectMemPoint(Connection con, int memId) {
-
-		PreparedStatement pstmt = null;
-		ResultSet rset = null;
-		
-		MemberDTO result = null;
-		
-		String query = prop.getProperty("selectMemPoint");
-		
-		try {
-			pstmt = con.prepareStatement(query);
-			pstmt.setInt(1, memId);
-			
-			rset = pstmt.executeQuery();
-			
-			while(rset.next()) {
-				
-				result = new MemberDTO();
-				result.setMemCoin(rset.getInt("MEM_COIN"));
+			rs = pstmt.executeQuery();
+			if(rs.next()) {
+				totalCount = rs.getInt("COUNT(*)");
 			}
-			
 		} catch (SQLException e) {
 			e.printStackTrace();
-		}finally {
+		} finally {
+			close(rs);
 			close(pstmt);
 		}
 		
-		return result;
+		return totalCount;
 	}
 
-	public int deleteWishList(Connection con, int weblistNum, int memNum2) {
+	/* 페이지네이션에의해 갯수 제한을 둔 1:1 질문 리스트 조회용 메소드 */
+	public List<QnaDTO> selectQnaList(Connection con, PageInfoDTO pageInfo, int memNum) {
+
+		PreparedStatement pstmt = null;
+		ResultSet rs = null;
+		
+		List<QnaDTO> qnaList = null;
+		
+		String query = prop.getProperty("selectQNAList");
+		
+		try {
+			pstmt = con.prepareStatement(query);
+			
+			pstmt.setInt(1, memNum);
+			pstmt.setInt(2, pageInfo.getStartRow());
+			pstmt.setInt(3, pageInfo.getEndRow());
+			
+			rs = pstmt.executeQuery();
+			
+			qnaList = new ArrayList<>();
+			
+			while(rs.next()) {
+				QnaDTO qna = new QnaDTO();
+				MemberDTO member = new MemberDTO();
+				member.setMemName(rs.getString("MEM_NAME"));
+				
+				qna.setPostNum(rs.getInt("POST_NUM"));
+				qna.setMemNum(member);
+				qna.setQnaTitle(rs.getString("QNA_TITLE"));
+				qna.setQnaOpenYn(rs.getString("QNA_OPEN_YN"));
+				qna.setQnaAnswerYn(rs.getString("QNA_ANSWER_YN"));
+				qna.setQnaDate(rs.getDate("QNA_DATE"));
+				qna.setQnaContent(rs.getString("QNA_CONTENT"));
+				
+				qnaList.add(qna);
+			}
+		} catch (SQLException e) {
+			e.printStackTrace();
+		} finally {
+			close(rs);
+			close(pstmt);
+		}
+		
+		return qnaList;
+	}
+
+	/* 1:1 질문 상세 정보 출력용 메소드 */
+	public QnaDTO selectQnaDetail(Connection con, int qnaNum, int memNum) {
+
+		PreparedStatement pstmt = null;
+		ResultSet rs = null;
+		
+		QnaDTO qnaDetail = null;
+		
+		String query = prop.getProperty("selectQnaDetail");
+		
+		try {
+			pstmt = con.prepareStatement(query);
+			pstmt.setInt(1, memNum);
+			pstmt.setInt(2, qnaNum);
+			rs = pstmt.executeQuery();
+			
+			if(rs.next()) {
+				qnaDetail = new QnaDTO();
+				MemberDTO member = new MemberDTO();
+				member.setMemName(rs.getString("MEM_NAME"));
+				
+				qnaDetail.setPostNum(rs.getInt("POST_NUM"));
+				qnaDetail.setMemNum(member);
+				qnaDetail.setQnaTitle(rs.getString("QNA_TITLE"));
+				qnaDetail.setQnaOpenYn(rs.getString("QNA_OPEN_YN"));
+				qnaDetail.setQnaAnswerYn(rs.getString("QNA_ANSWER_YN"));
+				qnaDetail.setQnaDate(rs.getDate("QNA_DATE"));
+				qnaDetail.setQnaContent(rs.getString("QNA_CONTENT"));
+			}
+		} catch (SQLException e) {
+			e.printStackTrace();
+		} finally {
+			close(rs);
+			close(pstmt);
+		}
+		
+		return qnaDetail;
+	}
+
+	/* 1:1 질문 댓글 출력용 메소드 */
+	public List<QnaReplyDTO> selectQnaReplyList(Connection con, int postNum) {
+
+		PreparedStatement pstmt = null;
+		ResultSet rs = null;
+		
+		List<QnaReplyDTO> replyList = null;
+		
+		String query = prop.getProperty("selectQnaReplyList");
+		
+		try {
+			pstmt = con.prepareStatement(query);
+			
+			pstmt.setInt(1, postNum);
+			
+			rs = pstmt.executeQuery();
+			
+			replyList = new ArrayList<>();
+			
+			while(rs.next()) {
+				QnaReplyDTO reply = new QnaReplyDTO();
+				MemberDTO member = new MemberDTO();
+				member.setMemName(rs.getString("MEM_NAME"));
+				
+				reply.setReplyNum(rs.getInt("REPLY_NUM"));
+				reply.setPostNum(rs.getInt("POST_NUM"));
+				reply.setReplyDate(rs.getDate("REPLY_DATE"));
+				reply.setMember(member);
+				reply.setReplyContent(rs.getString("REPLY_CONTENT"));
+				
+				replyList.add(reply);
+			}
+		} catch (SQLException e) {
+			e.printStackTrace();
+		} finally {
+			close(rs);
+			close(pstmt);
+		}
+		
+		return replyList;
+	}
+
+	/* 1:1 질문 댓글 insert용 메소드 */
+	public int insertQnaReply(Connection con, QnaReplyDTO insertReply) {
 
 		PreparedStatement pstmt = null;
 		int result = 0;
 		
-		String query = prop.getProperty("deleteWishList");
+		String query = prop.getProperty("insertQnaReply");
 		
 		try {
 			pstmt = con.prepareStatement(query);
-			pstmt.setInt(1, weblistNum);
-			pstmt.setInt(2, memNum2);
-			
+			pstmt.setInt(1, insertReply.getPostNum());
+			pstmt.setInt(2, insertReply.getMember().getMemNum());
+			pstmt.setString(3, insertReply.getReplyContent());
 			
 			result = pstmt.executeUpdate();
 		} catch (SQLException e) {
@@ -702,20 +814,221 @@ public class MemberDAO {
 		return result;
 	}
 
-	public int updateCoin(Connection con, int memId, int restCoin) {
+	/* 1:1 질문 댓글 insert용 메소드 */
+	public int insertQNA(Connection con, QnaDTO qna) {
 
 		PreparedStatement pstmt = null;
-		
 		int result = 0;
 		
-		String query = prop.getProperty("updateCoin");
+		String query = prop.getProperty("insertQNA");
 		
-//		System.out.println("db저장 전 금액" + restCoin);
 		try {
 			pstmt = con.prepareStatement(query);
-			pstmt.setInt(1, restCoin);
-			pstmt.setInt(2, memId);
+			pstmt.setInt(1, qna.getMemNum().getMemNum());
+			pstmt.setString(2, qna.getQnaTitle());
+			pstmt.setString(3, qna.getQnaContent());
 			
+			result = pstmt.executeUpdate();
+		} catch (SQLException e) {
+			e.printStackTrace();
+		} finally {
+			close(pstmt);
+		}
+		
+		return result;
+	}
+
+	/* 코인 결제 후 코인 insert용 메소드 */
+	public int insertCoin(Connection con, int memNum, int amount) {
+
+		PreparedStatement pstmt = null;
+		int result = 0;
+		
+		String query = prop.getProperty("insertCoin");
+		
+		try {
+			pstmt = con.prepareStatement(query);
+			pstmt.setInt(1, memNum);
+			pstmt.setInt(2, amount);
+			pstmt.setInt(3, amount * 100);
+			
+			result = pstmt.executeUpdate();
+		} catch (SQLException e) {
+			e.printStackTrace();
+		} finally {
+			close(pstmt);
+		}
+		
+		return result;
+	}
+
+	/* 코인 결제 후 코인 충전 내역 insert용 메소드 */
+	public int updateCoinCharge(Connection con, int memNum, int amount) {
+		
+		PreparedStatement pstmt = null;
+		int result = 0;
+		
+		String query = prop.getProperty("updateCoinCharge");
+		
+		try {
+			pstmt = con.prepareStatement(query);
+			pstmt.setInt(1, amount);
+			pstmt.setInt(2, memNum);
+			
+			result = pstmt.executeUpdate();
+		} catch (SQLException e) {
+			e.printStackTrace();
+		} finally {
+			close(pstmt);
+		}
+		
+		return result;
+	}
+
+	/* 코인 충전 내역 조회용 메소드 */
+	public List<CoinChargeDTO> selectCoinCharge(Connection con, int memNum) {
+
+		PreparedStatement pstmt = null;
+		ResultSet rs = null;
+		
+		List<CoinChargeDTO> coinChargeList = null;
+		
+		String query = prop.getProperty("selectCoinCharge");
+		
+		try {
+			pstmt = con.prepareStatement(query);
+			pstmt.setInt(1, memNum);
+			
+			coinChargeList = new ArrayList<>();
+			
+			rs = pstmt.executeQuery();
+			
+			while(rs.next()) {
+				CoinChargeDTO coinCharge = new CoinChargeDTO();
+				
+				coinCharge.setCoinChargeNum(rs.getInt("COIN_CHARGE_NUM"));
+				coinCharge.setMemNum(rs.getInt("MEM_NUM"));
+				coinCharge.setCoinChargeDate(rs.getDate("COIN_CHARGE_DATE"));
+				coinCharge.setCoinChargeCount(rs.getInt("COIN_CHARGE_COUNT"));
+				coinCharge.setCoinChargeTotal(rs.getInt("COIN_CHARGE_TOTAL"));
+				coinCharge.setWeeklyCoinYn(rs.getString("WEEKLY_COIN_YN"));
+				
+				coinChargeList.add(coinCharge);
+			}
+		} catch (SQLException e) {
+			e.printStackTrace();
+		} finally {
+			close(rs);
+			close(pstmt);
+		}
+		
+		return coinChargeList;
+	}
+
+	/* 무료 코인 내역 insert용 메소드 */
+	public int insertFreeCoin(Connection con, int memNum) {
+
+		PreparedStatement pstmt = null;
+		int result = 0;
+		
+		String query = prop.getProperty("insertFreeCoin");
+		
+		try {
+			pstmt = con.prepareStatement(query);
+			pstmt.setInt(1, memNum);
+			
+			result = pstmt.executeUpdate();
+		} catch (SQLException e) {
+			e.printStackTrace();
+		} finally {
+			close(pstmt);
+		}
+		
+		return result;
+	}
+
+	/* 아이디 찾기용 메소드 */
+	public MemberDTO searchId(Connection con, MemberDTO member) {
+
+		PreparedStatement pstmt = null;
+		ResultSet rs = null;
+		
+		MemberDTO searchMember = null;
+		
+		String query = prop.getProperty("searchId");
+		
+		try {
+			pstmt = con.prepareStatement(query);
+			pstmt.setString(1, member.getMemName());
+			pstmt.setString(2, member.getMemEmail());
+			
+			rs = pstmt.executeQuery();
+			
+			searchMember = new MemberDTO();
+			
+			if(rs.next()) {
+				searchMember.setMemId(rs.getString("MEM_ID"));
+				searchMember.setMemEmail(rs.getString("MEM_EMAIL"));
+			}
+		} catch (SQLException e) {
+			e.printStackTrace();
+		} finally {
+			close(rs);
+			close(pstmt);
+		}
+		
+		return searchMember;
+	}
+
+	/* 비밀번호 찾기용 메소드 */
+	public MemberDTO searchPwd(Connection con, MemberDTO member) {
+
+		PreparedStatement pstmt = null;
+		ResultSet rs = null;
+		
+		MemberDTO searchMember = null;
+		
+		String query = prop.getProperty("searchPwd");
+		
+		try {
+			pstmt = con.prepareStatement(query);
+			pstmt.setString(1, member.getMemName());
+			pstmt.setString(2, member.getMemId());
+			pstmt.setString(3, member.getMemEmail());
+			
+			rs = pstmt.executeQuery();
+			
+			searchMember = new MemberDTO();
+			
+			if(rs.next()) {
+				searchMember.setMemName(rs.getString("MEM_NUM"));
+				searchMember.setMemName(rs.getString("MEM_NAME"));
+				searchMember.setMemId(rs.getString("MEM_ID"));
+				searchMember.setMemPwd(rs.getString("MEM_PWD"));
+				searchMember.setMemEmail(rs.getString("MEM_EMAIL"));
+			}
+		} catch (SQLException e) {
+			e.printStackTrace();
+		} finally {
+			close(rs);
+			close(pstmt);
+		}
+		System.out.println("dao : " + searchMember);
+		return searchMember;
+	}
+
+	/* 비밀번호 찾기 후 비밀번호 변경용 메소드 */
+	public int updatePassword(Connection con, String memId, String memPwd) {
+
+		PreparedStatement pstmt = null;
+		int result = 0;
+		
+		String query = prop.getProperty("updatePassword");
+		
+		try {
+			pstmt = con.prepareStatement(query);
+			pstmt.setString(1, memPwd);
+			pstmt.setString(2, memId);
 			
 			result = pstmt.executeUpdate();
 		} catch (SQLException e) {

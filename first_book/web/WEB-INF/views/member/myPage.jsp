@@ -27,6 +27,7 @@
                         <li>위시리스트</li>
                         <li>회원정보</li>
                         <li>결제내역</li>
+                        <li>충전내역</li>
                         <li>회원탈퇴</li>
                     </ul>
                     <p class="my_nav_line">단행본</p>
@@ -150,6 +151,28 @@
 		                        		<td class="my_weblist_body">${ useCoin.chapterNum }</td>
 		                        		<td class="my_weblist_body">${ useCoin.coinUsage }</td>
 		                        		<td class="my_weblist_body">${ useCoin.coinUseDate }</td>
+		                        	</tr>
+		                        </c:forEach>
+	                        	
+	                        </table>
+                        </div>
+                    </div>
+                    <div class="my_weblist">
+                        <h2>충전내역</h2>
+                        <div>
+	                        <table>
+	                        	<tr>
+	                        		<td class="my_weblist_title">충전일시</td>
+	                        		<td class="my_weblist_title">충전갯수</td>
+	                        		<td class="my_weblist_title">충전금액</td>
+	                        		<td class="my_weblist_title">무료코인여부</td>
+	                        	</tr>
+	                        	<c:forEach var="coinCharge" items="${ requestScope.coinChargelist }">
+		                        	<tr>
+		                        		<td class="my_weblist_body">${ coinCharge.coinChargeDate }</td>
+		                        		<td class="my_weblist_body">${ coinCharge.coinChargeCount }</td>
+		                        		<td class="my_weblist_body">${ coinCharge.coinChargeTotal }</td>
+		                        		<td class="my_weblist_body">${ coinCharge.weeklyCoinYn }</td>
 		                        	</tr>
 		                        </c:forEach>
 	                        	

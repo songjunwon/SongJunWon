@@ -41,7 +41,7 @@
                          @ 
                         <select name="memEmail2">
                         	<option value="naver.com">naver.com</option>
-                        	<option value="google.com">google.com</option>
+                        	<option value="gmail.com">gmail.com</option>
                         </select>
                     </div>
                     <button type="button" id="searchZipCode" class="chkButton">

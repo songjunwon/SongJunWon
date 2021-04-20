@@ -20,7 +20,7 @@
 	                    <ul>
 	                        <li><a href="${ pageContext.servletContext.contextPath }/member/notice">공지사항</a></li>
 	                        <li><a href="${ pageContext.servletContext.contextPath }/member/qna">1 : 1 문의</a></li>
-	                        <li><a href="${ pageContext.servletContext.contextPath }/member/popularQuestion">자주묻는질문</a></li>
+	                        <li><a href="${ pageContext.servletContext.contextPath }/member/faq">자주묻는질문</a></li>
 	                    </ul>
 	                </div>
 	                <div class="left_nav_under">
@@ -34,17 +34,19 @@
 	            </div>
 	            <div class="notice">
 	                <div class="notice_title_box">
-	                    공지사항
+	                    1 : 1 문의
 	                </div>
 	                <div class="notice_body_box">
 	                    <table>
-		                    <c:forEach var="notice" items="${ requestScope.noticeList }">
+		                    <c:forEach var="qna" items="${ requestScope.qnaList }">
 		                        <tr>
-		                            <td height="40" class="tdline">${ notice.noticeNum } ) ${ notice.noticeName } <img src="/firstbook/resources/image/under-arrow.png"></td>
+		                            <td height="40" class="tdline">${ qna.postNum } ) ${ qna.qnaTitle } <img src="/firstbook/resources/image/under-arrow.png"></td>
 		                        </tr>
 		                    </c:forEach>
 	                    </table>
 	                    <div class="board_button">
+	                    	<button id="insertQna">작성하기</button><br><br>
+	                    
 	                    	<button id="startPage"><<</button>
 			
 							<c:if test="${ requestScope.pageInfo.pageNo == 1 }">
@@ -81,7 +83,14 @@
     <jsp:include page="../common/footer.jsp"/>
     
     <script>
-		const link = "${ pageContext.servletContext.contextPath }/member/notice";
+		const link = "${ pageContext.servletContext.contextPath }/member/qna";
+		
+		if(document.getElementById("insertQna")){
+			const $insertQna = document.getElementById("insertQna");
+			$insertQna.onclick = function(){
+				location.href = "${ pageContext.servletContext.contextPath }/member/insertQna";
+			}
+		}
 		
 		/* 원하는 페이지 클릭시 실행되는 콜백 함수 */
 		function pageButtonAction(text){
@@ -128,7 +137,7 @@
 				$tds[i].onclick = function() {
 					var array = this.parentNode.children[0].innerText.split(' ');
 					const noticeNum = array[0];
-					location.href = "${ pageContext.servletContext.contextPath }/member/noticeDetail?no=" + noticeNum;
+					location.href = "${ pageContext.servletContext.contextPath }/member/qnaDetail?no=" + noticeNum;
 				}
 			}
 		}

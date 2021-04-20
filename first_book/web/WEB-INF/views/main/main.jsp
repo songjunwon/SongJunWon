@@ -11,8 +11,6 @@
 </head>
 <body>
 	<jsp:include page="../common/header.jsp"/>
-	
-		<body>
 	    <div id="wrap">
 	        <div id="main" class="top_main">
 	            <div id="banner" class="slideBanner">

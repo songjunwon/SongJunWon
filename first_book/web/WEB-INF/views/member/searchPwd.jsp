@@ -16,15 +16,20 @@
                 <div class="login_title">
                     비밀번호 찾기
                 </div>
-                <form action="${ pageContext.servletContext.contextPath }/member/searchId" method="post">
+                <form action="${ pageContext.servletContext.contextPath }/member/searchPwd" method="post">
                     <div class="login_input_box">
                         이름 <input type="text" name="memName" required>
                     </div>
                     <div class="login_input_box">
                         아이디 <input type="text" name="memId" required>
                     </div>
-                    <div class="login_input_box">
-                        이메일 <input type="email" name="memEmail" required>
+                    <div class="email_input_box">
+                        이메일 <input type="text" name="memEmail">
+                         @ 
+                        <select name="memEmail2">
+                        	<option value="naver.com">naver.com</option>
+                        	<option value="gmail.com">gmail.com</option>
+                        </select>
                     </div>
                     <button type="submit">
                         Search

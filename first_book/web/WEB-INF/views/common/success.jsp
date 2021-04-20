@@ -46,6 +46,21 @@
 			successMessage = "웹소설 등록을 완료하였습니다.";
 			movePath = "${ pageContext.servletContext.contextPath}/admin/webNovel";
 			break;	
+
+		case "insertQNA" : 
+			successMessage = "1:1문의 작성을 완료하였습니다.";
+			movePath = "${ pageContext.servletContext.contextPath}/member/qna";
+			break;	
+
+		case "insertCoin" : 
+			successMessage = "결제가 완료되었습니다!";
+			movePath = "${ pageContext.servletContext.contextPath}";
+			break;	
+
+		case "updatePassword" : 
+			successMessage = "비밀번호 변경이 완료되었습니다.";
+			movePath = "${ pageContext.servletContext.contextPath}";
+			break;	
 		
 		}
 			alert(successMessage);

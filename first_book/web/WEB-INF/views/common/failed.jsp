@@ -95,6 +95,40 @@
 			movePath = "${ pageContext.servletContext.contextPath}/member/notice";
 			break;
 			
+		case "qnaSelectList" : 
+			failedMessage = "자주묻는질문 리스트 불러오기 실패!";
+			movePath = "${ pageContext.servletContext.contextPath}/member/notice";
+			break;
+
+		case "selectQnaDetail" : 
+			failedMessage = "1:1문의 디테일 불러오기 실패!";
+			movePath = "${ pageContext.servletContext.contextPath}/member/qna";
+			break;
+
+		case "insertQNA" : 
+			failedMessage = "1:1문의 작성 실패!";
+			movePath = "${ pageContext.servletContext.contextPath}/member/qna";
+			break;
+
+		case "insertCoin" : 
+			failedMessage = "결제에 실패하셨습니다.";
+			movePath = "${ pageContext.servletContext.contextPath}";
+			break;
+
+		case "searchId" : 
+			failedMessage = "해당 정보에 대한 회원이 존재하지 않습니다.";
+			movePath = "${ pageContext.servletContext.contextPath}/member/searchId";
+			break;
+
+		case "searchPwd" : 
+			failedMessage = "해당 정보에 대한 회원이 존재하지 않습니다.";
+			movePath = "${ pageContext.servletContext.contextPath}/member/searchPwd";
+			break;
+
+		case "updatePassword" : 
+			failedMessage = "비밀번호 변경 실패!";
+			movePath = "${ pageContext.servletContext.contextPath}/member/searchPwd";
+			break;
 		}
 			alert(failedMessage);
 		

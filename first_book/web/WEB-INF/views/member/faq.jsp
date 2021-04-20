@@ -20,7 +20,7 @@
 	                    <ul>
 	                        <li><a href="${ pageContext.servletContext.contextPath }/member/notice">공지사항</a></li>
 	                        <li><a href="${ pageContext.servletContext.contextPath }/member/qna">1 : 1 문의</a></li>
-	                        <li><a href="${ pageContext.servletContext.contextPath }/member/popularQuestion">자주묻는질문</a></li>
+	                        <li><a href="${ pageContext.servletContext.contextPath }/member/faq">자주묻는질문</a></li>
 	                    </ul>
 	                </div>
 	                <div class="left_nav_under">
@@ -81,7 +81,7 @@
     <jsp:include page="../common/footer.jsp"/>
     
     <script>
-		const link = "${ pageContext.servletContext.contextPath }/member/notice";
+		const link = "${ pageContext.servletContext.contextPath }/member/faq";
 		
 		/* 원하는 페이지 클릭시 실행되는 콜백 함수 */
 		function pageButtonAction(text){

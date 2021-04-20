@@ -20,8 +20,13 @@
                     <div class="login_input_box">
                         이름 <input type="text" name="memName" required>
                     </div>
-                    <div class="login_input_box">
-                        이메일 <input type="email" name="memEmail" required>
+                    <div class="email_input_box">
+                        이메일 <input type="text" name="memEmail">
+                         @ 
+                        <select name="memEmail2">
+                        	<option value="naver.com">naver.com</option>
+                        	<option value="google.com">gmail.com</option>
+                        </select>
                     </div>
                     <button type="submit">
                         Search

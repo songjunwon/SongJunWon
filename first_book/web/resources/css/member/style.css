@@ -28,10 +28,19 @@ h2 {color: #000;}
 .e_banner {margin-top: 80px; height: 300px; background-color: gray;}
 .book {margin: 50px auto; height: 350px;}
 .book_box {height: 300px; width: 215px; float: left; margin-top: 20px; background-color: blanchedalmond; border: 1px solid black;}
+.pop {width: 600px; height: 450px; z-index: 10; display: none; left: 50%; top: 100px; background-color: #fff; position: fixed; border: 1px solid #ccc;}
+.pop_title {width: 150px; height: 40px; text-align: center; margin: 25px auto; background-color: #ED1C24; line-height: 40px; color: white; border-radius: 10px; font-size: 15px;}
+.pop_close {position: absolute; top: 10px; left: 570px; font-size: 20px; font-weight: 600;}
+.pop_td {width: 300px; height: 60px; font-size: 15px; color: #000; padding: 0px 20px;}
+.pop_td > div {width: 100px; height: 25px; font-size: 15px; color: #fff; background-color: #ED1C24; float: right; border-radius: 15px; line-height: 25px;}
+.pop_button {width: 100px; height: 25px; font-size: 15px; color: #fff; background-color: #ED1C24; border-radius: 15px; line-height: 25px;}
+.pop_td > div > input {width: 20px; height: 20px; vertical-align: middle; margin-bottom: 2px;}
+.pop_td > img {width: 20px; height: 20px; vertical-align: middle; margin-bottom: 2px;}
 
 /* login, join */
 .login_form {text-align: center; margin: 200px auto; display: block;}
 .login_title {font-size: 23px; font-weight: 500; margin-bottom: 30px;}
+.searchId_input_box {width : 300px; height: 80px; border: 1px solid black; margin: 0px auto; font-size: 14px; text-align: center;}
 .login_input_box {width : 300px; height: 40px; border: 1px solid black; line-height: 40px; margin: 15px auto; font-size: 14px; text-align: left; padding-left: 5px;}
 .login_input_box > input {width:190px; height: 30px; float: right; margin: 5px 5px;}
 .email_input_box {width : 300px; height: 40px; border: 1px solid black; line-height: 40px; margin: 15px auto; font-size: 14px; text-align: left; padding-left: 5px;}
@@ -127,3 +136,7 @@ h2 {color: #000;}
 .board_button > button {margin: 0px 5px;}
 .board_button > button:hover {color: #ED1C24;}
 .tr_underline {border-bottom: 1px solid #ccc;}
+.reply-zone {overflow:auto; width: 738px; height: 145px;}
+.replyContent {width : 500px; height: 20px; border:1px solid #ccc; text-align: center;}
+.replySend {margin-left: 10px;width: 50px; height: 20px;}
+.replySend:hover {color: #ED1C24;}
