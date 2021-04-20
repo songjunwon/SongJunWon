@@ -90,7 +90,7 @@
 		  JOIN WEB_NOV_INFO C ON (C.WEB_NOV_NUM = A.WEB_NOV_NUM)
 		 WHERE A.MEM_NUM = ?
 		   AND C.WEB_NOV_IS_OPEN = 'N'
-		 ORDER BY A.COIN_USE_DATE DESC
+		 ORDER BY A.WEB_NOV_NUM, A.CHAPTER_NUM DESC
 	</entry>
 	<entry key="updateMember">
 		UPDATE /* com.lastbug.firstbook.member.model.dao.MemberDAO#updateMember() */

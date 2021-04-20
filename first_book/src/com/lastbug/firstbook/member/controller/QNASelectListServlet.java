@@ -52,14 +52,10 @@ public class QNASelectListServlet extends HttpServlet {
 //		}
 		
 		String path = "";
-		if(!qnaList.isEmpty()) {
-			path = "/WEB-INF/views/member/qna.jsp";
-			request.setAttribute("qnaList", qnaList);
-			request.setAttribute("pageInfo", pageInfo);
-		} else {
-			path = "/WEB-INF/views/common/failed.jsp";
-			request.setAttribute("failedCode", "qnaSelectList");
-		}
+		path = "/WEB-INF/views/member/qna.jsp";
+		request.setAttribute("qnaList", qnaList);
+		request.setAttribute("pageInfo", pageInfo);
+		
 		
 		request.getRequestDispatcher(path).forward(request, response);
 	}

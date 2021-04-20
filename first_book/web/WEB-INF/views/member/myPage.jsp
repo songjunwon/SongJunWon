@@ -44,9 +44,11 @@
                         <div class="my_home_book">
 	                        <c:forEach var="useCoin" items="${ requestScope.useCoinList }" begin="0" end="4" step="1">
 	                        	<div>
-		                            <img src="${ pageContext.servletContext.contextPath }${ useCoin.webNov.webNovImgLocation }">
+		                        	<a href="${ pageContext.servletContext.contextPath }/webnovel/detail?webNovNum=${ useCoin.webNov.webNovNum }">
+		                            	<img src="${ useCoin.webNov.webNovImgLocation }">
+			                        </a>
 		                            <p>
-		                            	${ useCoin.webNov.webNovTitle }<br>
+		                            	${ useCoin.webNov.webNovTitle } ${ useCoin.chapterNum }화<br>
 		                            	${ useCoin.webNov.webNovAuthor }
 		                            </p>
 		                        </div>
@@ -56,7 +58,9 @@
                         <div>
 	                        <c:forEach var="wish" items="${ requestScope.wishlist }" begin="0" end="4" step="1">
 	                        	<div>
-		                            <img src="${ wish.webNov.webNovImgLocation }">
+		                        	<a href="${ pageContext.servletContext.contextPath }/webnovel/detail?webNovNum=${ wish.webNov.webNovNum }">
+			                            <img src="${ wish.webNov.webNovImgLocation }">
+			                        </a>
 		                            <p>
 		                            	${ wish.webNov.webNovTitle }<br>
 		                            	${ wish.webNov.webNovAuthor }
@@ -70,9 +74,11 @@
                         <div>
                         <c:forEach var="useCoin" items="${ requestScope.useCoinList }">
                         	<div>
-	                            <img src="${ pageContext.servletContext.contextPath }${ useCoin.webNov.webNovImgLocation }">
+                        		<a href="${ pageContext.servletContext.contextPath }/webnovel/detail?webNovNum=${ useCoin.webNov.webNovNum }">
+	                            	<img src="${ pageContext.servletContext.contextPath }${ useCoin.webNov.webNovImgLocation }">
+	                            </a>
 	                            <p>
-	                            	${ useCoin.webNov.webNovTitle }<br>
+	                            	${ useCoin.webNov.webNovTitle } ${ useCoin.chapterNum }화<br>
 	                            	${ useCoin.webNov.webNovAuthor }
 	                            </p>
 	                        </div>
@@ -84,7 +90,9 @@
                         <div>
                         <c:forEach var="wish" items="${ requestScope.wishlist }">
                         	<div>
-	                            <img src="${ wish.webNov.webNovImgLocation }">
+                        		<a href="${ pageContext.servletContext.contextPath }/webnovel/detail?webNovNum=${ wish.webNov.webNovNum }">
+	                            	<img src="${ wish.webNov.webNovImgLocation }">
+	                            </a>
 	                            <p>
 	                            	${ wish.webNov.webNovTitle }<br>
 	                            	${ wish.webNov.webNovAuthor }
