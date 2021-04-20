@@ -65,19 +65,19 @@
 .my_home > p {color: #000; clear: both; margin-top: 20px; font-weight: 600; font-size: 19px; float: left;}
 .my_home > div {display: block; width: 800px; height: 200px;}
 .my_home > div > div {display: block; float: left; text-align: center; margin: 0px 20px 20px 20px;}
-.my_home > div > div > img {width: 120px; height: 160px;}
+.my_home > div > div > a > img {width: 120px; height: 160px;}
 .my_home > div > div > p {color: #000; font-weight: 600; font-size: 14px;}
 .my_lib {margin: 0px auto; padding: 0px 20px;}
 .my_lib > h2 {color: #000; clear: both; margin: 20px 0px;}
 .my_lib > div {display: block; width: 900px; height: 500px; overflow: auto;}
 .my_lib > div > div {display: block; float: left; text-align: center; margin: 0px 20px 20px 20px;}
-.my_lib > div > div > img {width: 120px; height: 160px;}
+.my_lib > div > div > a > img {width: 120px; height: 160px;}
 .my_lib > div > div > p {color: #000; font-weight: 600; font-size: 14px;}
 .my_wish {margin: 0px auto; padding: 0px 20px;}
 .my_wish > h2 {color: #000; clear: both; margin: 20px 0px;}
 .my_wish > div {display: block; width: 900px; height: 500px; overflow: auto;}
 .my_wish > div > div {display: block; float: left; text-align: center; margin: 0px 20px 20px 20px;}
-.my_wish > div > div > img {width: 120px; height: 160px;}
+.my_wish > div > div > a > img {width: 120px; height: 160px;}
 .my_wish > div > div > p {color: #000; font-weight: 600; font-size: 14px;}
 
 .my_member {margin: 0px auto; padding: 0px 20px;}
