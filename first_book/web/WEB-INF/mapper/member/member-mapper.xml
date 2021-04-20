@@ -89,7 +89,7 @@
 		  FROM COIN_USE_HIS A
 		  JOIN WEB_NOV_INFO C ON (C.WEB_NOV_NUM = A.WEB_NOV_NUM)
 		 WHERE A.MEM_NUM = ?
-		   AND C.WEB_NOV_IS_OPEN = 'N'
+		   AND C.WEB_NOV_IS_OPEN = 'Y'
 		 ORDER BY A.COIN_USE_DATE DESC
 	</entry>
 	<entry key="updateMember">
@@ -498,6 +498,27 @@
 	       MEM_INFO A
 	   SET A.MEM_COIN = ?
 	 WHERE A.MEM_ID = ?
+	</entry>
+	<entry key="insertPaidHistory">
+		INSERT
+	      INTO COIN_USE_HIS
+         (
+               COIN_USE_NUM
+             , WEB_NOV_NUM
+             , MEM_NUM
+             , COIN_USE_DATE
+             , COIN_USAGE
+             , CHAPTER_NUM
+         )
+        VALUES
+        (
+          SEQ_COIN_USE_HIS.NEXTVAL
+        , ?
+        , ?
+        , SYSDATE
+        , ?
+        , ?
+        )
 	</entry>
 	
 </properties>

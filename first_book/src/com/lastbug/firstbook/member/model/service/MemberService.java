@@ -457,7 +457,7 @@ public class MemberService {
 		return result;
 	}
 	/* 코인 차감용 메소드 */
-	public MemberDTO chargeCoin(int webNovNum, int webNovChapNum, String memId) {
+	public MemberDTO chargeCoin(int webNovNum, int webNovChapNum, String memId, int memNum) {
 
 		Connection con = getConnection();
 
@@ -485,10 +485,21 @@ public class MemberService {
 		/* 읽을 수 있도록 전환하기 */
 //		int updateChap = webnovelDAO.updateChap(con, webNovNum, webNovChapNum);
 		MemberDTO result2 = memberDAO.selectMemPoint(con, memId);
+		
+		
+		
 
 		if(updateCoin > 0) {
+			
+			/* 결제 내역에 추가 */
+			 int historyResult = memberDAO.insertPaidHistory(con, webNovNum, webNovChapNum, memNum, perChapCoin);
 
-			commit(con);
+			 if(historyResult > 0) {
+				 
+				 commit(con);
+			 }else {
+				 rollback(con);
+			 }
 		}else {
 			rollback(con);
 		}

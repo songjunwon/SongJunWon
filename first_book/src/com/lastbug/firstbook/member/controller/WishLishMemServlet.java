@@ -23,6 +23,7 @@ public class WishLishMemServlet extends HttpServlet {
 		/* 위시리스트 저장 */
 		int weblistNum = Integer.parseInt(request.getParameter("wishlistWebnovNum"));
 		int memNum2 = Integer.parseInt(request.getParameter("loginMember"));
+
 		
 		MemberService memberService = new MemberService();
 		System.out.println("webListNum" + weblistNum);

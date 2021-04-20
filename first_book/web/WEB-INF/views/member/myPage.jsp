@@ -44,7 +44,7 @@
                         <div class="my_home_book">
 	                        <c:forEach var="useCoin" items="${ requestScope.useCoinList }" begin="0" end="4" step="1">
 	                        	<div>
-		                            <img src="${ pageContext.servletContext.contextPath }${ useCoin.webNov.webNovImgLocation }">
+		                            <img src="${ useCoin.webNov.webNovImgLocation }">
 		                            <p>
 		                            	${ useCoin.webNov.webNovTitle }<br>
 		                            	${ useCoin.webNov.webNovAuthor }
@@ -70,7 +70,7 @@
                         <div>
                         <c:forEach var="useCoin" items="${ requestScope.useCoinList }">
                         	<div>
-	                            <img src="${ pageContext.servletContext.contextPath }${ useCoin.webNov.webNovImgLocation }">
+	                            <img src="${ useCoin.webNov.webNovImgLocation }">
 	                            <p>
 	                            	${ useCoin.webNov.webNovTitle }<br>
 	                            	${ useCoin.webNov.webNovAuthor }
