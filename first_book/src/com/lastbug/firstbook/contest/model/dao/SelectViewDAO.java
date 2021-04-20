@@ -153,7 +153,7 @@ public class SelectViewDAO {
 			close(rset);
 			close(pstmt);
 		}
-		System.out.println(viewList);
+	
 		
 		return viewList;
 	}

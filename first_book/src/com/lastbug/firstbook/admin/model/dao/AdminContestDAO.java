@@ -6,10 +6,14 @@ import java.io.FileInputStream;
 import java.io.IOException;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
+import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Properties;
 
 import com.lastbug.firstbook.common.config.ConfigLocation;
+import com.lastbug.firstbook.contest.model.dto.ContestDTO;
 
 public class AdminContestDAO {
 	
@@ -82,6 +86,94 @@ public class AdminContestDAO {
 		}
 		
 		return result;
+	}
+
+	public List<ContestDTO> selectContestList(Connection con, int competNum) {
+
+		PreparedStatement pstmt = null;
+		ResultSet rset = null;
+		
+		List<ContestDTO> contestList = null;
+		String query = prop.getProperty("selectContestList");
+
+		try {
+			pstmt = con.prepareStatement(query);
+			pstmt.setInt(1, competNum);
+			
+			
+			rset = pstmt.executeQuery();
+			
+			contestList = new ArrayList<>();
+			
+			while(rset.next()) {
+				
+				ContestDTO contest = new ContestDTO();
+
+				contest.setCompetNum(rset.getInt("COMPET_NUM"));
+				contest.setMemNum(rset.getInt("MEM_NUM"));
+				contest.setCompetPaperYn(rset.getString("COMPET_PAPER_YN"));
+				contest.setNovTitle(rset.getString("NOV_TITLE"));
+				contest.setNovInfo(rset.getString("NOV_INFO"));
+				contest.setCompetSsn(rset.getString("COMPET_SSN"));
+				contest.setCompetNovImgLocation(rset.getString("COMPET_NOV_IMG_LOCATION"));
+				contest.setScore(rset.getInt("SCORE"));
+				contest.setCompetActYn(rset.getString("COMPET_ACT_YN"));
+				contest.setAgeLimit(Integer.valueOf(rset.getString("AGE_LIMIT")));
+				
+				contestList.add(contest);	
+			}
+		} catch (SQLException e) {
+			e.printStackTrace();
+		} finally {
+			close(rset);
+			close(pstmt);
+		}
+		return contestList;
+	}
+
+	public List<ContestDTO> selectAllContestList(Connection con, String month) {
+
+		PreparedStatement pstmt = null;
+		ResultSet rset = null;
+		
+		List<ContestDTO> contestList = null;
+		String query = prop.getProperty("selectAllContestList");
+
+		try {
+			pstmt = con.prepareStatement(query);
+			pstmt.setString(1, month);
+			
+			
+			rset = pstmt.executeQuery();
+			
+			contestList = new ArrayList<>();
+			
+			while(rset.next()) {
+				
+				ContestDTO contest = new ContestDTO();
+
+				contest.setCompetNum(rset.getInt("COMPET_NUM"));
+				contest.setMemNum(rset.getInt("MEM_NUM"));
+				contest.setCompetPaperYn(rset.getString("COMPET_PAPER_YN"));
+				contest.setNovTitle(rset.getString("NOV_TITLE"));
+				contest.setNovInfo(rset.getString("NOV_INFO"));
+				contest.setCompetSsn(rset.getString("COMPET_SSN"));
+				contest.setCompetNovImgLocation(rset.getString("COMPET_NOV_IMG_LOCATION"));
+				contest.setScore(rset.getInt("SCORE"));
+				contest.setCompetActYn(rset.getString("COMPET_ACT_YN"));
+				
+			
+				
+				contestList.add(contest);	
+			}
+		} catch (SQLException e) {
+			e.printStackTrace();
+		} finally {
+			close(rset);
+			close(pstmt);
+		}
+
+		return contestList;
 	}
 	
 	

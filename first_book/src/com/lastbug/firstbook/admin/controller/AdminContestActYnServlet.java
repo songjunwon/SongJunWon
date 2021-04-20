@@ -43,7 +43,12 @@ public class AdminContestActYnServlet extends HttpServlet {
 		int result = acService.ContestActiveOrDeactive(competNum, activeYn);
 		
 		List<ContestDetalDTO> contestDetailList = new ContestDetailService().selectContestDetal(competNum);	//
-		List<ContestDTO> contestlList = new ContestDetailService().selectContestList(competNum);				// 웹소설 정보 검색
+		
+		
+		List<ContestDTO> contestlList = acService.selectContestList(competNum);				// 웹소설 정보 검색
+		
+		
+		
 		List<MemberDTO> memberList = new ContestDetailService().selectMemberList(competNum);					// 작가 정보 검색
 		String category = new ContestDetailService().selectCategory(competNum);	
 		

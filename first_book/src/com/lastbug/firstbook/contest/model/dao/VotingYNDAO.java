@@ -34,10 +34,8 @@ public class VotingYNDAO {
 
 
 	public int VotingN(Connection con, String name) {
-		System.out.println("나오냐고 시파");
 		PreparedStatement pstmt = null;
 		int result = 0;
-		System.out.println(name);
 		String query = prop.getProperty("votingN");
 		
 		try {
@@ -54,7 +52,6 @@ public class VotingYNDAO {
 	}
 
 	public int count(Connection con, int competNum) {
-		System.out.println(competNum);
 		PreparedStatement pstmt = null;
 		int result = 0;
 		

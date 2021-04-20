@@ -29,7 +29,7 @@ public class CoinInsertServlet extends HttpServlet {
 		String path = "";
 		if(result > 0) {
 			MemberDTO member = memberService.selectMember(memNum);
-			HttpSession session = request.getSession();
+			HttpSession session = request.getSession(); 
 			session.setAttribute("loginMember", member);
 			path = "/WEB-INF/views/common/success.jsp";
 			request.setAttribute("successCode", "insertCoin");

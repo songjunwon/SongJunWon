@@ -17,6 +17,22 @@
 		   SET A.COMPET_ACT_YN = ?		    
 		 WHERE A.COMPET_NUM = ?	
 	</entry>
+	
+	<entry key="selectContestList">
+	  		SELECT 
+       	           C.*
+              FROM COMPET_INFO C
+             WHERE COMPET_NUM = ?
+     </entry>
+	
+	<entry key="selectAllContestList">
+			SELECT
+       	           C.*
+              FROM COMPET_INFO C
+             WHERE COMPET_SSN = ?	
+	</entry>	
+	
+	
 </properties>
 
 

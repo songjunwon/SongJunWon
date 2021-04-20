@@ -9,6 +9,7 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import com.lastbug.firstbook.admin.model.service.AdminContestService;
 import com.lastbug.firstbook.contest.model.dto.ContestDTO;
 import com.lastbug.firstbook.contest.model.dto.ContestSsnDTO;
 import com.lastbug.firstbook.contest.model.service.ContestService;
@@ -21,7 +22,12 @@ public class AdminContestServlet extends HttpServlet {
 
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		
-		List<ContestDTO> contestList = new ContestService().selectAllconstList();
+		AdminContestService acService = new AdminContestService();
+		
+		List<ContestDTO> contestList = acService.selectAllconstList();
+		
+		
+		
 		List<ContestDTO> contestListRankEight = new ContestService().rankEightconstList();
 		int date = new ContestService().selectdate(contestList);
 		int date8 = new ContestService().selectdate8();

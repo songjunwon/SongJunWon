@@ -163,9 +163,7 @@ public class ContestDAO {
 			close(rset);
 			close(pstmt);
 		}
-		for(ContestDTO c :contestList) {
-		System.out.println(c);
-		}
+		
 		return contestList;
 	}
 	
