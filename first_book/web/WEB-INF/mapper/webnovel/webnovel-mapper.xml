@@ -247,6 +247,57 @@
           WHERE ROWNUM <= 4
           ]]>
 	</entry>
+		<entry key="updateWishList">
+	INSERT
+	  INTO WISH_LIST
+	  (
+	  WEB_NOV_NUM, MEM_NUM, WISHLIST_DATE
+	  )
+	  VALUES
+	  (?, ?, SYSDATE)
+    </entry>
+
+    <entry key="selectMemPoint">
+    SELECT
+    A.MEM_COIN
+    FROM MEM_INFO A
+    WHERE A.MEM_ID = ?
+    </entry>
+
+	<entry key="deleteWishList">
+	DELETE
+	  FROM WISH_LIST
+	 WHERE WEB_NOV_NUM = ?
+	   AND MEM_NUM = ?
+	</entry>
+
+	<entry key="updateCoin">
+	UPDATE
+	       MEM_INFO A
+	   SET A.MEM_COIN = ?
+	 WHERE A.MEM_ID = ?
+	</entry>
+	<entry key="insertPaidHistory">
+		INSERT
+	      INTO COIN_USE_HIS
+         (
+               COIN_USE_NUM
+             , WEB_NOV_NUM
+             , MEM_NUM
+             , COIN_USE_DATE
+             , COIN_USAGE
+             , CHAPTER_NUM
+         )
+        VALUES
+        (
+          SEQ_COIN_USE_HIS.NEXTVAL
+        , ?
+        , ?
+        , SYSDATE
+        , ?
+        , ?
+        )
+	</entry> 
 </properties>
 
 

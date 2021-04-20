@@ -10,6 +10,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import com.lastbug.firstbook.member.model.service.MemberService;
+import com.lastbug.firstbook.webnovel.model.service.WebNovelService;
 
 /**
  * Servlet implementation class WishLishMemServlet
@@ -25,11 +26,11 @@ public class WishLishMemServlet extends HttpServlet {
 		int memNum2 = Integer.parseInt(request.getParameter("loginMember"));
 
 		
-		MemberService memberService = new MemberService();
+		WebNovelService WebNovelService = new WebNovelService();
 		System.out.println("webListNum" + weblistNum);
 		System.out.println("memNum2" + memNum2);
 		
-		int wishlistUpdate = memberService.updateWishList(weblistNum, memNum2);
+		int wishlistUpdate = WebNovelService.updateWishList(weblistNum, memNum2);
 		
 		response.setContentType("text/plain; charset=UTF-8");
 		

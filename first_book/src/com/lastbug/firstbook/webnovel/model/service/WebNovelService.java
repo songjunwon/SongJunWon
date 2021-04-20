@@ -9,6 +9,7 @@ import static com.lastbug.firstbook.common.jdbc.JDBCTemplate.rollback;
 import java.sql.Connection;
 import java.util.List;
 
+import com.lastbug.firstbook.member.model.dto.MemberDTO;
 import com.lastbug.firstbook.webnovel.model.dao.WebNovelDAO;
 import com.lastbug.firstbook.webnovel.model.dto.PageInfoDTO;
 import com.lastbug.firstbook.webnovel.model.dto.WebNovChapSearchDTO;
@@ -18,8 +19,11 @@ import com.lastbug.firstbook.webnovel.model.dto.WebnovelReplyDTO;
 
 public class WebNovelService {
 
+	static boolean isUpdate = false;
 	private final WebNovelDAO webNovelDAO;
 	public WebNovelService() {
+		
+		
 		webNovelDAO = new WebNovelDAO();
 	}
 
@@ -378,6 +382,105 @@ public class WebNovelService {
 		close(con);
 
 		return webNovelList;
+	}
+	
+	/* 코인 차감용 메소드 */
+	public MemberDTO chargeCoin(int webNovNum, int webNovChapNum, String memId, int memNum) {
+
+		Connection con = getConnection();
+
+		/* 현재 적립금 조회 */
+		MemberDTO result = webNovelDAO.selectMemPoint(con, memId);
+
+		int currentCoin = result.getMemCoin();
+		System.out.println("현재 적립급" + currentCoin);
+
+
+		/* 웹소설 편당 코인 가져오기 */
+		WebNovelDAO webnovelDAO = new WebNovelDAO();
+		WebNovChapSearchDTO webchap = webnovelDAO.selectPerChapCoin(con, webNovNum, webNovChapNum);
+		int perChapCoin = webchap.getChapPerPrice();
+		System.out.println("편당 코인 " + perChapCoin);
+		
+		/* 현재 보유코인 - 편당 코인 */
+		int restCoin = currentCoin - perChapCoin;
+		System.out.println("보유한 금액 - 편당코인" + restCoin);
+
+		/* 편당 코인 차감 후 다시 넣기 */
+		int updateCoin = webnovelDAO.updateCoin(con, memId, restCoin);
+		System.out.println("옵데이트 한 후 코인" + updateCoin);
+		
+		/* 읽을 수 있도록 전환하기 */
+//		int updateChap = webnovelDAO.updateChap(con, webNovNum, webNovChapNum);
+		MemberDTO result2 = webNovelDAO.selectMemPoint(con, memId);
+		
+		if(updateCoin > 0) {
+			
+			/* 결제 내역에 추가 */
+			 int historyResult = webnovelDAO.insertPaidHistory(con, webNovNum, webNovChapNum, memNum, perChapCoin);
+
+			 if(historyResult > 0) {
+				 
+				 commit(con);
+			 }else {
+				 rollback(con);
+			 }
+		}else {
+			rollback(con);
+		}
+
+		close(con);
+
+		return result2;
+	}
+	
+	
+	
+	public int updateWishList(int weblistNum, int memNum2) {
+
+		Connection con = getConnection();
+
+		int result = 0;
+
+		//		System.out.println("boolean값(초기값) " + isUpdate);
+		//
+		if(!isUpdate) {	// 등록할 때
+			if(result == 0) {	
+				result = webNovelDAO.updateWishList(con, weblistNum, memNum2);
+				System.out.println("result" + result);
+				if(result > 0) {	//업데이트 성공시
+					System.out.println("등록 됨?");
+					isUpdate = true;
+					commit(con);
+					System.out.println("boolean값(등록 후) " + isUpdate);
+
+				}else {
+					rollback(con);
+				}
+
+			} 
+
+		} else {	// 등록 삭제 할 때
+			System.out.println("등록 실패??");
+			if(result == 0) {
+				result = webNovelDAO.deleteWishList(con, weblistNum, memNum2);
+
+				if(result > 0) {
+					commit(con);
+					isUpdate = false;
+				}else {
+					rollback(con);
+				}
+
+			}
+
+		}
+
+		System.out.println("boolean값(리턴 전) " + isUpdate);
+
+		return result;
+
+
 	}
 }
 

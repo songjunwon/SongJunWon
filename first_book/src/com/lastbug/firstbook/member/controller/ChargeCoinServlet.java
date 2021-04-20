@@ -49,7 +49,7 @@ public class ChargeCoinServlet extends HttpServlet {
 		MemberService memService = new MemberService();
 		WebNovelService webService = new WebNovelService();
 		
-		MemberDTO result = memService.chargeCoin(webNovNum, webNovChapNum, memId, memNum);
+		MemberDTO result = webService.chargeCoin(webNovNum, webNovChapNum, memId, memNum);
 		
 //		WebNovelInfoDTO webDetail = webNovelService.selectWebNovelDetail(no);
 		
