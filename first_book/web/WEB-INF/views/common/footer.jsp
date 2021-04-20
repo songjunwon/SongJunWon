@@ -13,7 +13,7 @@
         <footer id="footer" class="top_footer">
             <div class="footer">
                 <div class="footer_logo">
-
+					<img src="/firstbook/resources/image/logo_fotter.png" alt="more">
                 </div>
                 <div class="footer_contents">
                     <p>
