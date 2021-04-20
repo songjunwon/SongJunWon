@@ -63,8 +63,8 @@
 .my_home > button:hover {background-color: #333333; color: white;}
 .my_home > h2 {color: #000; clear: both; margin: 20px 0;}
 .my_home > p {color: #000; clear: both; margin-top: 20px; font-weight: 600; font-size: 19px; float: left;}
-.my_home > div {display: block; width: 800px; height: 200px;}
-.my_home > div > div {display: block; float: left; text-align: center; margin: 0px 20px 20px 20px;}
+.my_home > div {display: block; width: 900px; height: 200px;}
+.my_home > div > div {display: block; float: left; text-align: center; margin: 0px 20px 20px 20px; width: 140px;}
 .my_home > div > div > a > img {width: 120px; height: 160px;}
 .my_home > div > div > p {color: #000; font-weight: 600; font-size: 14px;}
 .my_lib {margin: 0px auto; padding: 0px 20px;}
