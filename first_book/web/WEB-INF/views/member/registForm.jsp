@@ -25,25 +25,26 @@
                     <div class="login_input_box">
                         아이디 <input type="text" id="memId" name="memId" required>
                     </div>
-                    <p id=idCheckResult>아이디는 4글자 이상 작성해주세요.</p>
+                    <p id=idCheckResult>아이디는 영문 대소문자와 숫자 4~12자리로 작성해주세요.</p>
                     <div class="login_input_box">
                         비밀번호 <input type="password" id="memPwd" name="memPwd" required>
                     </div>
                     <div class="login_input_box">
                         비밀번호확인 <input type="password" id="memPwYn" name="memPwYn" required>
                     </div>
-                    <p id=pwCheckResult>비밀번호는 4글자 이상 작성해주세요.</p>
+                    <p id=pwCheckResult>비밀번호는 영문 대소문자와 숫자 4~12자리로 작성해주세요.</p>
                     <div class="login_input_box">
                         생년월일 <input type="date" name="memBirthDate" required>
                     </div>
                     <div class="email_input_box">
-                        이메일 <input type="text" name="memEmail">
+                        이메일 <input type="text" name="memEmail" id="memEmail">
                          @ 
                         <select name="memEmail2">
                         	<option value="naver.com">naver.com</option>
                         	<option value="gmail.com">gmail.com</option>
                         </select>
                     </div>
+                    <p id=emailCheckResult></p>
                     <button type="button" id="searchZipCode" class="chkButton">
                         주소 검색
                     </button>
@@ -73,8 +74,11 @@
 	<script src="//t1.daumcdn.net/mapjsapi/bundle/postcode/prod/postcode.v2.js"></script>
 	<script>
 		const $searchZipCode = document.getElementById("searchZipCode");
+		var regExp = /^[a-zA-z0-9]{4,12}$/;
+		var emailRegExp = /^[A-Za-z0-9_]+[A-Za-z0-9]$/;
 		var idYn = "N";
 		var pwYn = "N";
+		var emailYn = "N";
 		
 		$searchZipCode.onclick = function(){
 			
@@ -88,8 +92,8 @@
 		}
 		
 		$("#memId").keyup(function(){
-			if($("#memId").val().length > 3) {
-				var memId = $("#memId").val();
+			var memId = $("#memId").val();
+			if(regExp.test(memId)) {
 					
 				$.ajax({
 					url: "/firstbook/member/idCheck",
@@ -108,16 +112,16 @@
 						alert("code:" + request.status + "\n" + "message:" + request.responseText + "\n" + "error:" + error);
 					}
 				});
-			} else if($("#memId").val().length <= 3) {
-				$("#idCheckResult").text("아이디는 4글자 이상 작성해주세요.");
+			} else {
+				$("#idCheckResult").text("아이디는 영문 대소문자와 숫자 4~12자리로 작성해주세요.");
 				idYn = "N"
 			}	
 		});
 		
 		$("#memPwYn").keyup(function(){
-			if($("#memPwYn").val().length > 3) {
-				var memPwd = $("#memPwd").val();
-				var memPwYn = $("#memPwYn").val();
+			var memPwd = $("#memPwd").val();
+			var memPwYn = $("#memPwYn").val();
+			if(regExp.test(memPwYn)) {
 				if(memPwd == memPwYn){
 					$("#pwCheckResult").text("비밀번호가 일치합니다.");
 					pwYn = "Y"
@@ -125,16 +129,16 @@
 					$("#pwCheckResult").text("비밀번호가 일치하지않습니다.");
 					pwYn = "N"
 				}
-			} else if($("#memPwYn").val().length <= 3 ) {
-				$("#pwCheckResult").text("비밀번호는 4글자 이상 작성해주세요.");
+			} else {
+				$("#pwCheckResult").text("비밀번호는 영문 대소문자와 숫자 4~12자리로 작성해주세요.");
 				pwYn = "N"
 			}	
 		});
 		
 		$("#memPwd").keyup(function(){
-			if($("#memPwd").val().length > 3) {
-				var memPwd = $("#memPwd").val();
-				var memPwYn = $("#memPwYn").val();
+			var memPwd = $("#memPwd").val();
+			var memPwYn = $("#memPwYn").val();
+			if(regExp.test(memPwd)) {
 				if(memPwd == memPwYn){
 					$("#pwCheckResult").text("비밀번호가 일치합니다.");
 					pwYn = "Y"
@@ -142,9 +146,20 @@
 					$("#pwCheckResult").text("비밀번호가 일치하지않습니다.");
 					pwYn = "N"
 				}
-			} else if($("#memPwd").val().length <= 3 ) {
-				$("#pwCheckResult").text("비밀번호는 4글자 이상 작성해주세요.");
+			} else {
+				$("#pwCheckResult").text("비밀번호는 영문 대소문자와 숫자 4~12자리로 작성해주세요.");
 				pwYn = "N"
+			}	
+		});
+
+		$("#memEmail").keyup(function(){
+			var memEmail = $("#memEmail").val();
+			if(emailRegExp.test(memEmail)) {
+				$("#emailCheckResult").text("");
+				emailYn = "Y"
+			} else {
+				$("#emailCheckResult").text("이메일 형식이 올바르지 않습니다.");
+				emailYn = "N"
 			}	
 		});
 		
@@ -155,13 +170,21 @@
 			} else if(pwYn == "N") {
 				alert("비밀번호확인이 완료되지 않았습니다.");
 				return false;
+			} else if(emailYn == "N") {
+				alert("이메일 형식이 올바르지 않습니다.");
+				return false;
 			} else if($("#memZipCode").val() == "") {
 				alert("빈칸 없이 입력해주세요.");
+				return false;
+			} else if($("#memId").val() == $("#memPwd").val()) {
+				alert("아이디와 비밀번호는 같을 수 없습니다.");
 				return false;
 			} else {
 				return true;
 			}
 		}
+		
+		
 		
 	</script>
 </body>
