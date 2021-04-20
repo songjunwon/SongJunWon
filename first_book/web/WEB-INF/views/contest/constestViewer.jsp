@@ -19,7 +19,8 @@
 
 </head>
 <body>
-<br><br><br><br><br><br>
+<jsp:include page="../common/header.jsp"></jsp:include>
+<br><br><br><br><br><br><br>
 	 <div id="wrap">
 		<h1>${requestScope.pageInfo.pageNo }</h1>
 		<section class="sec1">
