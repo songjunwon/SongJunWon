@@ -28,8 +28,11 @@
                     <div class="banner">
                         <div class="slide-view">
                             <ul class="slide-wrap clearfix">
+                                <li class="slide slide3"></li>
                                 <li class="slide slide1"></li>
                                 <li class="slide slide2"></li>
+                                <li class="slide slide3"></li>
+                                <li class="slide slide1"></li>
                             </ul>
                         </div>
                         <div class="banner_btns_next">
@@ -96,6 +99,6 @@
     </div>
 
     <div class="size_box"></div>
-    <script src="/firstbook/resources/js/book/slide.js"></script>
+    <script src="/firstbook/resources/js/book/slideBook.js"></script>
 </body>
 </html>
