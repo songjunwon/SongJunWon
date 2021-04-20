@@ -23,8 +23,7 @@
  
         <aside>
             <div class="section2">
-                <div class="tupyo"><a class="tupyoa" href="${pageContext.servletContext.contextPath }/admin/contestAll?competSsn=${ requestScope.contestListRankEight[0].competSsn }">
-					지난 공모전<br>작품 보기</a></div>
+                
                 <div class="work_tupyo">
                     <div class="work_row1">
                         <c:forEach items="${ requestScope.contestList }" var="contest">
@@ -33,7 +32,9 @@
                                 <div class="work_title">
                                     <c:out value="${ contest.novTitle }" />
                                 </div>
-                                    <button id="btn" class="work_button" type="button">투표<label class="label_none"><c:out value="${ contest.competNum }" /></label></button>
+                                    <button id="btn" class="work_button" type="button">수정하기<label class="label_none"><c:out value="${ contest.competNum }" /></label></button>
+                             	
+                                    
                             </div>
                         </c:forEach>
                     </div>
