@@ -49,8 +49,18 @@
 					border-color: #ED1C24;border: none;}
 
 /* 좋아요 버튼 */
-.tab_main .likeBtn {width: 60px;height: 30px;border-radius: 10px;background-color: #ED1C24;color: white;font-weight: bolder;
-					border-color: #ED1C24;border: none;}
+.tab_main .likeBtn {  
+    width: 40px;
+	height: 30px;
+	border-radius: 40px;
+	background-color: #ED1C24;
+	color: white;
+	font-weight: bolder;
+	border-color: ED1C24;
+	border: none;
+    font-size: 25px;
+    position : relative;
+    top : 3px;}
 	
 /* 매주화요일 연재 */
 .everynday {font-family: "맑은 고딕";font-size: larger;}
@@ -68,7 +78,7 @@
 .tab_mid .prolog_text {	position: relative;	left: 10px;	top: -55px;	font-family: "맑은 고딕";	font-weight: 600;}
 
 /* 프롤로그 날짜 */
-.tab_mid .chap_date {position: relative;left: 10px;	top: -45px;	font-weight: 200;font-family: "맑은 고딕";}
+.tab_mid .chap_date {position: relative;left: 30px;	top: -35px;	font-weight: 200;font-family: "맑은 고딕";}
 
 /* 무료보기 칸  */
 .tab_mid .freeBtn {width: 100px;text-align: center;}
@@ -78,7 +88,7 @@
 								color: white;	font-weight: bolder;border-color: #ED1C24;border: none;}
 
 /*--------------ajax 댓글 css ----------------------*/
-.div_reply_ajax { width : auto;}
+.div_reply_ajax { width : 800px;}
 
 
 /* 달려진 댓글 아이디  테이블*/
@@ -90,34 +100,48 @@
 }
 
 /* 댓글 달린 시간 테이블 */
-.sec3 .repliedtime_ajax {	width: 70px;text-align: right;padding-right: 5px;}
+.sec3 .repliedtime_ajax {	width: 200px;text-align: right;padding-right: 5px;}
 
 /* 댓글 달린 시간 내용 */
-.sec3  .repliedtime_real_ajax {color: #ED1C24;font-weight: 500;}
+.sec3  .repliedtime_real_ajax {color: #89b5d0;font-weight: 500;}
 
 .sec3 .replied_ajax {	height: 70px;}
 
 .sec3 .replied_real_ajax {font-family: "맑은 고딕";height: 20px;	padding-left: 10px;	position: relative;	top: -12px;}
 
 
-
+.sec3 .tab_reply{
+	width : 800px;
+}
 /* 댓글이라는 것 */
 .sec3 .reply {font-size: 20pt;font-family: "맑은 고딕";}
 
 /* 등록버튼 */
-.sec3 .repliedbtn {	height: 90px;background-color: rgb(173, 196, 130);width: 90px;float: right;color: white;
+.sec3 .repliedbtn {	height: 90px;background-color: #faae5a;width: 90px;float: right;color: white;
 					border-radius: 8px;}
 
 /* 달려진 댓글 아이디  테이블*/
-.sec3 .tab_reply .repliedId {width: 730px;}
+.sec3 .tab_reply .repliedId {width: 100px;}
 /* 댓글 다는 div */
 .sec3 .replydiv {width: 700px;float: left;}
+
+/* 댓글 수정 파트 */
+.sec3 .tab_reply .repliedUpdate {width: 60px;}
+
+/* 댓글 삭제파트 */
+.sec3 .tab_reply .repliedDelete {width: 620px;}
 
 /* 달려진 댓글 아이디 내용 */
 .sec3 .tab_reply .repliedId_real {font-family: "맑은 고딕";height: 20px;padding-left: 10px;padding-top: 2px;font-weight: 600;
 }
+/* 달려진 댓글 아이디 내용 */
+.sec3 .tab_reply .repliedUpdate_real {width: 60px; color: #89b5d0; font-family: "맑은 고딕";height: 20px;padding-left: 10px;padding-top: 2px;font-weight: 600;
+}
+/* 달려진 댓글 아이디 내용 */
+.sec3 .tab_reply .repliedDelete_real { color: #89b5d0; font-family: "맑은 고딕";height: 20px;padding-left: 10px;padding-top: 2px;font-weight: 600;
+}
 
-.sec3 .tab_reply {clear: both;}
+
 
 .sec3 .replytext {resize: none;	width: 100%;
 }
@@ -125,7 +149,7 @@
 .sec3 .tab_reply .repliedtime {	width: 70px;text-align: right;padding-right: 5px;}
 
 /* 댓글 달린 시간 내용 */
-.sec3 .tab_reply .repliedtime_real {color: #ED1C24;font-weight: 500;}
+.sec3 .tab_reply .repliedtime_real {color: #89b5d0;font-weight: 500;}
 
 .sec3 .tab_reply .replied {	height: 70px;}
 

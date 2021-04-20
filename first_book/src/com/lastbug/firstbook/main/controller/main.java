@@ -24,7 +24,7 @@ public class main extends HttpServlet {
 protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 	List<ContestDTO> contestList = new ContestService().mainTopContest();
 	List<NovelDTO> NovelList = new NovelService().selectAllNovel();
-	List<WebNovelInfoDTO> webNovelList = new WebNovelService().selectTopNovel();
+//	List<WebNovelInfoDTO> webNovelList = new WebNovelService().selectTopNovel();
 
 	
 	String path = "";
@@ -32,7 +32,7 @@ protected void doGet(HttpServletRequest request, HttpServletResponse response) t
 		path = "/WEB-INF/views/main/main.jsp";
 		request.setAttribute("contestList", contestList);
 		request.setAttribute("NovelList", NovelList);
-		request.setAttribute("webNovelList", webNovelList);
+//		request.setAttribute("webNovelList", webNovelList);
 		
 	} else {						// 공모전 실패 하면
 	

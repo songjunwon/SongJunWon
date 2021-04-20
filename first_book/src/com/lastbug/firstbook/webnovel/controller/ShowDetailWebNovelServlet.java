@@ -24,8 +24,6 @@ public class ShowDetailWebNovelServlet extends HttpServlet {
 
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 
-//		System.out.println("웹소설 디테일 서블릿 왔니?");
-
 		String currentPage = request.getParameter("currentPage");
 		
 		int pageNo = 1;
@@ -39,6 +37,8 @@ public class ShowDetailWebNovelServlet extends HttpServlet {
 			}
 		}
 		
+		
+		
 		WebNovelService webService = new WebNovelService();
 		int totalCount = webService.selectTotalCount();
 		
@@ -46,7 +46,7 @@ public class ShowDetailWebNovelServlet extends HttpServlet {
 		
 		int buttonAmount = 5;
 		
-		PageInfoDTO pageInfo = Pagenation.getPageInfo(pageNo, totalCount, limit, buttonAmount);
+//		PageInfoDTO pageInfo = Pagenation.getPageInfo(pageNo, totalCount, limit, buttonAmount);
 		
 		
 		int no = Integer.valueOf(request.getParameter("webNovNum"));
@@ -56,8 +56,10 @@ public class ShowDetailWebNovelServlet extends HttpServlet {
 		/* 앞에서 전체 웹소설 목록 중에서 선택한 웹소설 번호로 웹소설 정보 조회 */
 		WebNovelInfoDTO webDetail = webNovelService.selectWebNovelDetail(no);
 		
-//		System.out.println("webDetail" + webDetail);
+		/* 1~5화 웹소설 조회 */
 		List<WebNovChapSearchDTO> webNovelChap = null;
+		
+		/* 6화부터 웹소설 조회 */
 		List<WebNovChapSearchDTO> webNovelChap2 = null;
 		
 		
@@ -77,15 +79,6 @@ public class ShowDetailWebNovelServlet extends HttpServlet {
 			webNovelChap = webNovelService.selectWebNovelallChapter(webDetail);
 			webNovelChap2 = webNovelService.selectWebNovelallChapterNotFree(webDetail);
 	
-//			for(WebNovChapSearchDTO a : webNovelChap) {
-//				System.out.println("a" +a);
-//			}
-//			for(WebNovChapSearchDTO b : webNovelChap2) {
-//				System.out.println("b" + b);
-//			}			request.setAttribute("pageInfo", pageInfo);
-
-			
-//			System.out.println("회차정보가 있나? " + webNovelChap);
 			path = "/WEB-INF/views/webnovel/webDetail.jsp";
 			request.setAttribute("webnovel", webDetail);
 			request.setAttribute("webnoveldetail", webNovelChap);

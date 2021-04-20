@@ -10,7 +10,7 @@ table td, table th { border: 0.5px solid #D6D6D6; }
 /* 확대 축소 칸 테이블 */
 .sec1 .goback { width: 150px; height: 50px; text-align: center; }
 
-.sec1 .goback .gobackToMain {width: 70px;height: 40px;border-radius: 12pt; color: white; background-color: #ED1C24;}
+.sec1 .goback .gobackToMain {width: 70px;height: 40px;border-radius: 12pt; color: white; background-color:#89b5d0;}
 
 /* 제목있는 테이블 */
 .sec1 .title{width: 600px;text-align: center;}
@@ -22,11 +22,11 @@ table td, table th { border: 0.5px solid #D6D6D6; }
 .sec1 .nextback{width: 150px;height: 50px;padding-left: 30px;}
 
 /* 다음화 버튼 */
-.sec1 .nextback .nextbtn{ color: white; background-color: #ED1C24; width: 40px; height: 40px; border-radius: 70%;
+.sec1 .nextback .nextbtn{ color: white; background-color: #89b5d0; width: 40px; height: 40px; border-radius: 70%;
    						 font-size: 25pt;}
    						 
 /* 이전화 버튼 */
-.sec1 .nextback .backbtn{ color: white; background-color: #ED1C24; width: 40px; height: 40px; border-radius: 70%;
+.sec1 .nextback .backbtn{ color: white; background-color: #89b5d0; width: 40px; height: 40px; border-radius: 70%;
   						  font-size: 25pt;}
   						  
 /* 뷰어 페이지 크기 지정  */

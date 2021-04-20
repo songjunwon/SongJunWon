@@ -9,7 +9,7 @@
 <script src="http://code.jquery.com/jquery-latest.min.js"></script>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
 <link rel="stylesheet" href="/firstbook/resources/css/webnovel/webnovel.css">
-<link rel="stylesheet" href="/firstbook/resources/css/common/reset.css">
+<link rel="stylesheet" href="/firstbook/resources/css/common/reset.css"> 
 <link rel="stylesheet" href="/firstbook/resources/css/member/style.css">
 <link rel="shortcut icon" href="#">
 </head>
@@ -32,7 +32,7 @@
                             <h2 class="title"> <c:out value="${ requestScope.webnovel.webNovTitle }"/> <br><br><br></h2>
                             <h3 class="title_small">
                                 작가 : <c:out value="${ requestScope.webnovel.webNovAuthor }"/><br> 
-                                #<c:out value="${ requestScope.webnovel.categoryName.categoryName }"/> <br><br>
+                                # <c:out value="${ requestScope.webnovel.categoryName.categoryName }"/> <br><br>
                             </h3>
                        </div>
                         <div class="subtitle_div">
@@ -49,7 +49,7 @@
                 <tr>
                     <td> <button type="button" class="firstBtn" onclick="firstChap()">첫화보기</button> 
 
-                        <button  type="button" id="wishBtn" class="likeBtn" >하트</button>
+                        <button  type="button" id="wishBtn" class="likeBtn" >♥</button>
                         <input class="loginMember" type="hidden" id="loginMember" name="loginMember" value="${sessionScope.loginMember.memNum }">
 						<input class="wishList" type="hidden" id="wishList" name="wishList" value="${ requestScope.webnovel.webNovNum }" >
 
@@ -73,7 +73,10 @@
                     <td class="chap_img"><img src="${ requestScope.webnovel.webNovImgLocation}" class="chap_img_real" alt="1화부터사진">
                     </td>
                     <td class="prolog">
-                        <h2 class="chap_date"> 등록 날짜 :  ${ webNovelChap.webChapNumDate} </h2>                       
+                        <h2 class="chap_date"> 연재 날짜 :  ${ webNovelChap.webChapNumDate} </h2>
+                        <br>  
+                        <br>                    
+                        <h2 class="chap_date"> 소제목 :  ${ webNovelChap.chapPerTitle} </h2>                         
                     </td> 
                     <td class="freeBtn">               
                       <button class="freebtn_real" id="freebtn_real_2" type="button" onclick="webView(${ webNovelChap.webNovChapNum.webNovChapNum}, '${webNovelChap.chapReadOrNot}')" >
@@ -91,11 +94,14 @@
             		<td class="chap_img"><img src="${ requestScope.webnovel.webNovImgLocation}" class="chap_img_real" alt="1화부터사진">
                     </td>
                     <td class="prolog">
-                        <h2 class="chap_date"> 등록 날짜 :  ${ webNovelChap2.webChapNumDate} </h2>                       
+                        <h2 class="chap_date"> 연재 날짜 :  ${ webNovelChap2.webChapNumDate} </h2>
+                        <br>
+                        <br>                       
+                        <h2 class="chap_date"> 소제목 :  ${ webNovelChap2.chapPerTitle} </h2>                       
                     </td> 
                     <td class="freeBtn">
                     <form action="notFreeForm" method="get">
-            		 <button class="freebtn_real"  type="button"  onclick="web(${ webNovelChap2.webNovChapNum.webNovChapNum}, '${webNovelChap2.chapReadOrNot}', ${ webNovelChap2.chapPerPrice }, '${webNovelChap2.chapPerIsUsed }', ${sessionScope.loginMember.memNum }, ${webNovelChap2.webNovNum.webNovNum } )" >
+            		 <button class="freebtn_real"  type="button"  onclick="web(${ webNovelChap2.webNovChapNum.webNovChapNum}, '${webNovelChap2.chapReadOrNot}', ${ webNovelChap2.chapPerPrice }, '${webNovelChap2.chapPerIsUsed }', '${sessionScope.loginMember.memId }', ${webNovelChap2.webNovNum.webNovNum }, '${sessionScope.loginMember.memPwd }' )" >
                     ${ webNovelChap2.webNovChapNum.webNovChapNum}화 보기 </button>
                     <input type="hidden" name="webNovNum"  value= "${ webNovelChap2.webNovChapNum.webNovChapNum}">
 
@@ -120,11 +126,13 @@
             <h3 class="reply"> 댓글 <br></h3>
             
             <div class="replydiv" width="300px">
+            	
                 <textarea name="댓글달기" class="replytext" id="replytext"  rows="6"></textarea>
+            <p><span id="count">0</span>/100</p>
             </div>
             
             <button type="button" class="repliedbtn" id="repliedbtn"> 등록하기 </button>
-            <br><br><br><br>
+            <br><br><br><br><br><br><br><br>
             
 			<div class="div_reply_ajax">
 				<%--  <tr>
@@ -148,12 +156,23 @@
                     <td class="repliedId">
                         <p class="repliedId_real"> ${selectWebnovReply.memId.memId }  </p>
                     </td>
+                    <td class="repliedUpdate">
+                    	<c:if test="${selectWebnovReply.memId.memId == sessionScope.loginMember.memId}">
+                        <button class="repliedUpdate_real"  value="${selectWebnovReply.replyNum }" onclick="doUpdateDelete(0)"> 수정 </button>
+                    	</c:if>
+                    </td>
+                    <td class="repliedDelete">
+                    	 <c:if test="${selectWebnovReply.memId.memId == sessionScope.loginMember.memId}"> 
+                        <button class="repliedDelete_real" id="replyNum" value="${selectWebnovReply.replyNum }" onclick="doUpdateDelete(1)"> 삭제 </button>
+                        <input type="hidden">
+                        </c:if> 
+                    </td>
                     <td class="repliedtime">
                         <p class="repliedtime_real"> ${selectWebnovReply.replyDate }</p>
                     </td>
                 </tr>
                 <tr>
-                    <td colspan="2" class="replied">
+                    <td colspan="4" class="replied">
                         <p class="replied_real">  ${selectWebnovReply.replyContent }</p>
                     </td>
                 </tr>
@@ -163,10 +182,46 @@
     </div>
     </body>
   <script>
+
+  /* 댓글 100자 초과시 초과되었다고 알림 */
+  $(function(){
+	
+	  $("#replytext").keyup(function(){
+		
+		  var inputLength = $(this).val().length;
+		  
+		  $("#count").text(inputLength);
+		  
+		  var replyRemain = 100 - inputLength;
+		  
+		  if(replyRemain >= 0) {
+			  
+               $("#count").parent().css("color","black");
+               
+               const target = document.getElementById('repliedbtn');
+               target.disabled = false;
+           }else{
+               $("#count").parent().css("color","red");
+               
+               const target = document.getElementById('repliedbtn');
+               target.disabled = true;
+               
+            }
+	  })
+	  
+  }) 
+  
+  	/* 챕터리스트 링크 */
 	const link = "${ pageContext.servletContext.contextPath}/webnovel/chapList";
 
 	/* 댓글 ajax */
 	$("#repliedbtn").click(function(){
+		
+		var replyText = document.getElementById("replytext").value;
+		if(replyText == ""){
+			
+			alert("댓글은 빈칸으로 작성할 수 없습니다. 댓글을 작성해주세요");
+		} else{
 		
 		var replytext = document.getElementById("replytext").value; 
 		var webNovNum = '${ requestScope.webnovel.webNovNum}';
@@ -187,7 +242,7 @@
 			success : function(data) {
 				 console.log(data); 
 				 var section = $(".div_reply_ajax"); 
-                
+				 $(".div_reply_ajax").text(""); 
                  for(var i = 0 ; i < data.length ; i++){
                    console.log(data[i].replyDate);
                    console.log(data[i].replyContent);
@@ -216,74 +271,68 @@
 		
 		var reset = "";
 		document.getElementById("replytext").value = reset; 
-		
+		}
 	});
 	
-	<%-- $(function(){
-        var currentPage = ${ requestScope.pageInfo.pageNo };
-        console.log('currentPage : ' + currentPage);
-        var currentWebNov = ${ requestScope.webnovel.webNovNum};
-        
-        $(window).scroll(function(){   
-           if($(window).scrollTop() + $(window).height() + 3 > $(document).height()) {
-              currentPage++;   
-              /* console.log('currentlink' + currnetlink); */
-                $.ajax({
-                   url : '/firstbook/ajax/test',
-                    type : 'get',  
-                    data : { 
-                          currentPage : currentPage,
-                          currentWebNov : currentWebNov
-                          },
-                    success : function(data) {
-                       console.log(currentPage);
-                       if( currentPage === 1 ){
-                          console.log(data);
-                       } else {
-                           var section = $(".sec2");
-                          
-                          for(var i = 0 ; i < data.length ; i++){
-                             console.log(data[i].postNo);
-                             console.log(data[i].postTitle);
-                             console.log(data[i].minPrice);
-                          }
-                          } 
-                           	var postList = $("<table>").addClass("post");
-                             var moreList = 
-                             $("<tr id='thumbnail'>" + "<td colspan='2px'>" + data[i].postNo + "</td>" + "<tr>"
-                                  + "<tr id='title'>" + "<td colspan='2px'>" + data[i].postTitle + "</td>" + "<tr>"
-                                  + "<tr id='minPrice'>" + "<td width='80px'>" + "최소입찰가" + "</td>" 
-                                     + "<td align='right'>" + data[i].minPrice + " 원 " +"</td>"+ "</tr>");
-                             
-                             postList.append(moreList);
-                             section.append(postList); 
-                          } 
-                       } 
-                    },
-                    error : function(error) {
-                       console.log("에러다 개발자야 뭐하냐!");
-                    }
-                });      /* ajax 종료 */
-           }
-        })      /* 스크롤 페이징 함수 종료 */
-     }); --%>	
-	
-	
-	
-	/* 댓글 받아오는 ajax */
-	function listReply(){
-	    $.ajax({
-	        method: "GET", //get방식으로 자료를 전달한다
-	        url: "${path}/reply/list.do?bno=${dto.bno}", //컨트롤러에 있는 list.do로 맵핑하고 게시판 번호도 같이 보낸다.
-	        success: function(result){ //자료를 보내는것이 성  공했을때 출력되는 메시지
-	            //result : responseText 응답텍스트(html)
-	            $("#listReply").html(result);
-	        }
-   		});
-	}
+	/* 댓글 수정 및 삭제 기능 */
+	function doUpdateDelete(value) {
+		
+		
+		var replyNum = document.getElementById("replyNum").value;
+		var webNovNum = '${ requestScope.webnovel.webNovNum}';
+		var memNum = '${ sessionScope.loginMember.memNum}';
+		/* 댓글 수정 링크 */
+		if(value == 0){	
+			
+		<%--	location.href = "${ pageContext.servletContext.contextPath}/webnovel/reply/update?" + --%>
+			
+		location.href = "#";
+			/* 댓글 삭제 링크 */
+		} else if(value == 1) {
+			
+			$.ajax({
+				
+				method : "GET",
+				url : "/firstbook/webnovel/reply/delete",
+				data : {
+					replyNum : replyNum,
+					webNovNum : webNovNum,
+					memNum : memNum
+					},
+				
+					success : function(data) {
+						 console.log(data); 
+						 var section = $(".div_reply_ajax"); 
+						 $(".div_reply_ajax").html(""); 
+		                 for(var i = 0 ; i < data.length ; i++){
+		                   console.log(data[i].replyDate);
+		                   console.log(data[i].replyContent);
+		                   console.log(data[i].memId.memId);
+		                 
+						
+			            	var postList =  $("<table>");
+			            	var moreList = 
+			            	  $( "<tr>" + "<td class='repliedId_ajax'>" + "<p class='repliedId_real_ajax'>" + 
+				            	data[i].memId.memId + "</p>" + "</td>" + 
+				            	"<p class='repliedtime_real_ajax'>" + data[i].replyDate + "</p>" +
+				            	"</td>" + "</tr>" + "<tr>" + "<td colspan='2' class='replied_ajax'>" +
+				            	"<p class='replied_real_ajax'>" + data[i].replyContent + "</p>" +
+				            	"</td>" + "</tr>" + "</table>" );    	
+			            	      
+			                postList.append(moreList); 
+			                section.append(postList);   
+			             } 
 
-	
-	
+		          }, 
+					error: function(error, status){
+			                console.log(error);
+			                console.log(status);
+					}
+					
+				});			
+			
+		}
+	}
 	
 	
 
@@ -307,7 +356,7 @@
 		}
 	
 	/* 6화부터 보기 */
-	 function web(var1, var2, var3, var4, var5, var6){
+	 function web(var1, var2, var3, var4, var5, var6, var7){
 				
 		var webNovChapNum = var1;
 		var chapReadOrNot = var2;
@@ -315,6 +364,7 @@
 		var chapPerIsUsed = var4;
 		var memId = var5;
 		var webNovNum = var6;
+		var memPwd = var7;
 
 		console.log(webNovChapNum);
 		console.log(chapReadOrNot);
@@ -340,19 +390,48 @@
 			} else if (chapPerIsUsed == 'N ' ){			// 웹소설 챕터를 추가 구매해야하는 경우
 				
 				/* 코인이 100이하여서 추가구매를 해야하는 경우 */
-				if( parseInt(${sessionScope.loginMember.memCoin}) <= parseInt(100)) {
+				if( ${sessionScope.loginMember.memCoin} < parseInt(100)) {
 			
 					console.log(${sessionScope.loginMember.memCoin});
-					alert('"현재 " + ${sessionScope.loginMember.memName} + "님의 현재 코인은" + ${sessionScope.loginMember.memCoin} + "으로 웹소설을 보시려면 코인을 추가로 구매하셔야 합니다."');
+					alert('"현재 ${sessionScope.loginMember.memName}님의 코인은 ${sessionScope.loginMember.memCoin} 코인으로 웹소설을 보시려면 코인을 추가로 구매하셔야 합니다."');
 					return;
 			
 					
 				/* 코인이 100이상이여서 추가구매를 하지않아도 되는 경우 */
-				} else if(  parseInt(${sessionScope.loginMember.memCoin}) > parseInt(100)) {
+				} else if( ${sessionScope.loginMember.memCoin} >= parseInt(100)) {
 					
-					location.href = "${ pageContext.servletContext.contextPath}/member/chargeCoin?memId=" + ${sessionScope.loginMember.memNum} + "&webNovNum=" + webNovNum + "&webNovChapNum=" + webNovChapNum;
+			<%--		$.ajax({
+						
+						method : "POST",
+						url : "/firstbook/member/chargeCoin",
+						data : {
+							memId : memId,
+							memPwd : memPwd,
+							webNovNum : webNovNum,
+							webNovChapNum : webNovChapNum
+							},
+						
+							success : function(data) {
+								 console.log(data); 
 
-					return;
+
+				          }, 
+							error: function(error, status){
+					                console.log(error);
+					                console.log(status);
+							}
+							
+						});	 --%>
+					
+					
+				<%--	var currentCoin = ${ sessionScope.loginMember.memCoin};
+					
+					var perChap = 100;
+					
+					var remain = currentCoin - perChap; --%>
+					location.href = "${ pageContext.servletContext.contextPath}/member/chargeCoin?memId=${sessionScope.loginMember.memId}" + "&webNovNum=" + webNovNum + "&webNovChapNum=" + webNovChapNum; 
+
+					return; 
 				}
 			}
 		}

@@ -18,55 +18,56 @@
 .bold {font-weight: 700;}
 
 /* main_everyday */
-.everyday_div { text-align: center; width: 900px; height: 80px; background-color: #ED1C24; border-radius: 20px 20px 20px 20px; padding: 10px; }
-.everyday_div > button > p { font-size: 20pt; color: #fff; width: 100px; height: 50px; text-align: center; position: relative; top: 12px;}
+.everyday_div { text-align: center; width: 1000px; height: 70px; background-color: #ED1C24; border-radius: 20px 20px 20px 20px; }
+.everyday_div > button  { font-size: 20pt; color: #fff; width: 120px; height: 50px; text-align: center; position: relative; top: 10px;}
+.everyday_div > button > p { font-size: 22pt; color: #fff; width: 100px; height: 50px; text-align: center; position: relative; top: 6px;}
 
 /* .everyday_div {border-bottom: 1px solid #fff;} */
-.everyday_contents {width: 900px; height: auto; float: left;  position: relative; top: 10px;}
+.everyday_contents {width: 1100px; height: auto; float: left;  position: relative; top: 10px;}
 .everyday_contents div {display: none;}
 .everyday_contents div.on {display: block;}
 
 /* 월요일관련 css */
-.monday {margin: 0px auto; padding: 0px 20px;}
-.monday > div {display: block; float: left; text-align: center; margin: 0px 10px 20px 10px;}
-.monday > div > button > img {width: 180px; height: 250px; border-radius: 10px;}
-.monday > div > button > p {color: #000; font-weight: 600; font-size: 16px;}
+.monday on{margin: 0px auto;}
+.monday > div {display: block; width:235px; float:left; text-align: center; margin: 0px 10px 20px 10px;}
+.monday > div > button > img {width: 215px; height: 250px; border-radius: 10px;}
+.monday > div > button > p {color: #000; font-weight: 600; font-size: 15px;}
 
 /* 화요일관련 css */
-.tuesday {margin: 0px auto; padding: 0px 20px;}
-.tuesday > div {display: block; float: left; text-align: center; margin: 0px 20px 20px 20px;}
-.tuesday > div > button > img {width: 170px; height: 250px; border-radius: 10px;}
-.tuesday > div > button > p {color: #000; font-weight: 600; font-size: 16px;}
+.tuesday {margin: 0px auto;}
+.tuesday > div {display: block; width:245px; float:left; text-align: center; margin: 0px 10px 20px 10px;}
+.tuesday > div > button > img {width: 215px; height: 250px; border-radius: 10px;}
+.tuesday > div > button > p {color: #000; font-weight: 600; font-size: 15px;}
 
 /* 수요일관련 css */
-.wednesday {margin: 0px auto; padding: 0px 20px;}
-.wednesday > div {display: block; float: left; text-align: center; margin: 0px 20px 20px 20px;}
-.wednesday > div > button > img {width: 170px; height: 250px; border-radius: 10px;}
-.wednesday > div > button > p {color: #000; font-weight: 600; font-size: 16px;}
+.wednesday {margin: 0px auto;}
+.wednesday > div {display: block; width:240px; float:left; text-align: center; margin: 0px 10px 20px 10px;}
+.wednesday > div > button > img {width: 215px; height: 250px; border-radius: 10px;}
+.wednesday > div > button > p {color: #000; font-weight: 600; font-size: 15px;}
 
 /* 목요일관련 css */
-.thursday {margin: 0px auto; padding: 0px 20px;}
-.thursday > div {display: block; float: left; text-align: center; margin: 0px 20px 20px 20px;}
-.thursday > div > button > img {width: 170px; height: 250px; border-radius: 10px;}
-.thursday > div > button > p {color: #000; font-weight: 600; font-size: 16px;}
+.thursday {margin: 0px auto;}
+.thursday > div {display: block; width:240px; float:left; text-align: center; margin: 0px 10px 20px 10px;}
+.thursday > div > button > img {width: 215px; height: 250px; border-radius: 10px;}
+.thursday > div > button > p {color: #000; font-weight: 600; font-size: 15px;}
 
 /* 금요일관련 css */
-.friday {margin: 0px auto; padding: 0px 20px;}
-.friday > div {display: block; float: left; text-align: center; margin: 0px 20px 20px 20px;}
-.friday > div > button > img {width: 170px; height: 250px; border-radius: 10px;}
-.friday > div > button > p {color: #000; font-weight: 600; font-size: 16px;}
+.friday {margin: 0px auto;}
+.friday > div {display: block; width:240px; float:left; text-align: center; margin: 0px 10px 20px 10px;}
+.friday > div > button > img {width: 215px; height: 250px; border-radius: 10px;}
+.friday > div > button > p {color: #000; font-weight: 600; font-size: 15px;}
 
 /* 토요일관련 css */
-.saturday {margin: 0px auto; padding: 0px 20px;}
-.saturday > div {display: block; float: left; text-align: center; margin: 0px 20px 20px 20px;}
-.saturday > div > button > img {width: 170px; height: 250px; border-radius: 10px;}
-.saturday > div > button > p {color: #000; font-weight: 600; font-size: 16px;}
+.saturday {margin: 0px auto;}
+.saturday > div {display: block; width:240px; float:left; text-align: center; margin: 0px 10px 20px 10px;}
+.saturday > div > button > img {width: 215px; height: 250px; border-radius: 10px;}
+.saturday > div > button > p {color: #000; font-weight: 600; font-size: 15px;}
 
 /* 일요일관련 css */
-.sunday {margin: 0px auto; padding: 0px 20px;}
-.sunday > div {display: block; float: left; text-align: center; margin: 0px 20px 20px 20px;}
-.sunday > div > button > img {width: 170px; height: 250px; border-radius: 10px;}
-.sunday > div > button > p {color: #000; font-weight: 600; font-size: 16px;}
+.sunday {margin: 0px auto;}
+.sunday > div {display: block; width:240px; float:left; text-align: center; margin: 0px 10px 20px 10px;}
+.sunday > div > button > img {width: 215px; height: 250px; border-radius: 10px;}
+.sunday > div > button > p {color: #000; font-weight: 600; font-size: 15px;}
 
 /* 완작관련 css */
 .finished {margin: 0px auto; padding: 0px 20px;}

@@ -16,23 +16,7 @@ public class WebNovChapSearchDTO implements Serializable {
 	private String chapReadOrNot;
 	private int chapPerPrice;
 	private String chapPerIsUsed;
-
-	@Override
-	public String toString() {
-		return "WebNovChapSearchDTO [webNovNum=" + webNovNum + ", webNovChapNum=" + webNovChapNum + ", webChapNumDate="
-				+ webChapNumDate + ", chapReadOrNot=" + chapReadOrNot + ", chapPerPrice=" + chapPerPrice
-				+ ", chapPerIsUsed=" + chapPerIsUsed + "]";
-	}
-
-	public WebNovChapSearchDTO(WebNovelInfoDTO webNovNum, WebNovChapNumDTO webNovChapNum, Date webChapNumDate,
-			String chapReadOrNot, int chapPerPrice, String chapPerIsUsed) {
-		this.webNovNum = webNovNum;
-		this.webNovChapNum = webNovChapNum;
-		this.webChapNumDate = webChapNumDate;
-		this.chapReadOrNot = chapReadOrNot;
-		this.chapPerPrice = chapPerPrice;
-		this.chapPerIsUsed = chapPerIsUsed;
-	}
+	private String chapPerTitle;
 
 	public static long getSerialversionuid() {
 		return serialVersionUID;
@@ -62,6 +46,10 @@ public class WebNovChapSearchDTO implements Serializable {
 		return chapPerIsUsed;
 	}
 
+	public String getChapPerTitle() {
+		return chapPerTitle;
+	}
+
 	public void setWebNovNum(WebNovelInfoDTO webNovNum) {
 		this.webNovNum = webNovNum;
 	}
@@ -85,6 +73,27 @@ public class WebNovChapSearchDTO implements Serializable {
 	public void setChapPerIsUsed(String chapPerIsUsed) {
 		this.chapPerIsUsed = chapPerIsUsed;
 	}
-	
+
+	public void setChapPerTitle(String chapPerTitle) {
+		this.chapPerTitle = chapPerTitle;
+	}
+
+	@Override
+	public String toString() {
+		return "WebNovChapSearchDTO [webNovNum=" + webNovNum + ", webNovChapNum=" + webNovChapNum + ", webChapNumDate="
+				+ webChapNumDate + ", chapReadOrNot=" + chapReadOrNot + ", chapPerPrice=" + chapPerPrice
+				+ ", chapPerIsUsed=" + chapPerIsUsed + ", chapPerTitle=" + chapPerTitle + "]";
+	}
+
+	public WebNovChapSearchDTO(WebNovelInfoDTO webNovNum, WebNovChapNumDTO webNovChapNum, Date webChapNumDate,
+			String chapReadOrNot, int chapPerPrice, String chapPerIsUsed, String chapPerTitle) {
+		this.webNovNum = webNovNum;
+		this.webNovChapNum = webNovChapNum;
+		this.webChapNumDate = webChapNumDate;
+		this.chapReadOrNot = chapReadOrNot;
+		this.chapPerPrice = chapPerPrice;
+		this.chapPerIsUsed = chapPerIsUsed;
+		this.chapPerTitle = chapPerTitle;
+	}
 	
 }

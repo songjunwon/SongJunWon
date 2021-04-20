@@ -14,7 +14,7 @@
 <body>
 	<!-- header 삽입 해야 함 -->
 	<jsp:include page="../common/header.jsp" />
-	<br><br><br><br><br><br>
+	<br><br><br><br><br><br><br><br>
 
 	<div id="wrap">
 		<main id="main" class="top_main">
@@ -40,9 +40,6 @@
 				</button>
 				<button class="button">
 					<p class="everyday_text">일요일</p>
-				</button>
-				<button class="button">
-					<p class="everyday_text">완작</p>
 				</button>
 			</div>
 			
@@ -145,7 +142,6 @@
 						</c:if>
 					</c:forEach>
 				</div>
-				<div class="finished">
 	<%-- 				<c:forEach var="webnovel" items="${ requestScope.webNovelList }">
 						<c:if test="${ webnovel.dayOfWeek eq '완' }">
 							<div class="clickWebNovel">
@@ -156,7 +152,6 @@
 							</div>
 						</c:if>
 					</c:forEach> --%>
-				</div>
 			</div>
 		</main>
 	</div>

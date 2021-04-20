@@ -34,7 +34,7 @@ public class WebNovelService {
 
 		close(con);
 
-		//		System.out.println("service의 목록" + webNovelList);
+//				System.out.println("service의 목록" + webNovelList);
 
 		return webNovelList;
 	}
@@ -197,6 +197,7 @@ public class WebNovelService {
 		return result;
 
 	}
+	
 	/* 6화부터 뿌려지는 웹소설 내용 조회용 메소드 */
 	public int searchWebNovelCountPaid(int webNovNum, int webNovChapNum) {
 		Connection con = getConnection();
@@ -269,6 +270,7 @@ public class WebNovelService {
 		return selectWebnovReply;
 	}
 
+	/* 입력한 댓글 저장하는 메소드 */
 	public int insertReply(String replytext, int webNovNum, int memNum) {
 
 		Connection con = getConnection();
@@ -289,6 +291,7 @@ public class WebNovelService {
 		return insertReply;
 	}
 
+	/* 댓글 조회용 메소드 (ajax) */
 	public List<WebnovelReplyDTO> replydata(String replytext, int webNovNum, int memNum) {
 
 		Connection con = getConnection();
@@ -310,16 +313,62 @@ public class WebNovelService {
 
 	}
 
-	public List<WebNovelInfoDTO> selectTopNovel() {
+	/* 완작 웹소설 조회용 메소드 */
+	public List<WebNovelInfoDTO> selectFinishedAllNovel() {
+		
 		Connection con = getConnection();
 
-		List<WebNovelInfoDTO> webNovelList = webNovelDAO.selectTopNovel(con);
+		//		System.out.println("커넥션에 왓니?");
+
+		List<WebNovelInfoDTO> webNovelFinishedList = webNovelDAO.selectFinishedAllNovel(con);
 
 		close(con);
 
-		return webNovelList;
+		//		System.out.println("service의 목록" + webNovelList);
+
+		return webNovelFinishedList;
 	}
 
+	public int deleteReply(int replyNum) {
+
+		Connection con = getConnection();
+		
+		int result = webNovelDAO.deleteReply(con, replyNum);
+		
+		
+		if(result >  0) {
+			
+			commit(con);
+		} else {
+			
+			rollback(con);
+		}
+		close(con);
+		
+		
+		return result;
+	}
+
+	public List<WebnovelReplyDTO> replydata(int webNovNum, int memNum) {
+
+		Connection con = getConnection();
+		
+		List<WebnovelReplyDTO> replydata = webNovelDAO.replydata(con, webNovNum, memNum);
+		
+		
+		if(replydata != null) {
+			
+			commit(con);
+		} else {
+			
+			rollback(con);
+		}
+		close(con);
+		
+		
+		return replydata;
+
+	}
 }
 
 

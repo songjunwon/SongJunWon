@@ -29,9 +29,6 @@ public class WebnovelAjaxServlet extends HttpServlet {
 		
 		Gson gson = new Gson();
 
-		/* toJson으로 json문자열을 만들 수 있다. */
-//		System.out.println(jsonString);
-		
 		int pageNo = 1;
 		
 		if(currentPage != null && !"".equals(currentPage)) {
@@ -52,19 +49,16 @@ public class WebnovelAjaxServlet extends HttpServlet {
 		PageInfoDTO pageInfo = Pagenation.getPageInfo(pageNo, totalCount, limit, buttonAmount);
 		
 		WebNovelInfoDTO webDetail = webService.selectWebNovelDetail(currentWebNov);
-		List<WebNovChapSearchDTO> webNovelChap = null;
+
 		List<WebNovChapSearchDTO> webNovelChap2 = null;
 		
 			if(webDetail != null) {
 			
 			webNovelChap2 = webService.selectWebNovelallChapterNotFree(webDetail);
 			
-			
 			}
-		
-
-		
-		String jsonString= gson.toJson(currentPage);
+			
+		String jsonString= gson.toJson(webNovelChap2);
 		
 		
 		if(pageNo == 1) {
@@ -75,7 +69,6 @@ public class WebnovelAjaxServlet extends HttpServlet {
 			pageInfo.setEndRow(pageInfo.getPageNo() * 10); 
 		}
 		 
-
 		response.setContentType("application/json; charset=UTF-8");
 		PrintWriter out = response.getWriter();
 

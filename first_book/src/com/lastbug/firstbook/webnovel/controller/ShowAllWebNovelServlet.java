@@ -47,9 +47,9 @@ public class ShowAllWebNovelServlet extends HttpServlet {
 		
 		List<WebNovelInfoDTO> webNovelList = new WebNovelService().selectAllNovel();
 	
-//		for(WebNovelInfoDTO a : webNovelList) {
-//			System.out.println(a);
-//		}
+		for(WebNovelInfoDTO a : webNovelList) {
+			System.out.println(a);
+		}
 		
 		String path = "";
 		

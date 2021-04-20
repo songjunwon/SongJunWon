@@ -11,6 +11,7 @@
 <title>Insert title here</title>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
 <link rel="stylesheet" href="/firstbook/resources/css/contest/header.css">
+<link rel="stylesheet" href="/firstbook/resources/css/member/style.css">
 </head>
 <body>
 	
@@ -41,7 +42,7 @@
 	                    <nav class="nav">
 	                        <ul>
 	                            <li><a href="${ pageContext.servletContext.contextPath }/webnovel/list" class="main-btn">연재</a></li>
-	                            <li><a href="#" class="main-btn">완결</a></li>
+	                            <li><a href="${ pageContext.servletContext.contextPath }/webnovel/finished" class="main-btn">완결</a></li>
 	                            <li><a href="${ pageContext.servletContext.contextPath }/contest/list" class="main-btn">공모전</a></li>
 	                            <li><a href="#" class="main-btn">이벤트</a></li>
 	                            <li><a href="${ pageContext.servletContext.contextPath }/member/notice" class="main-btn">고객문의</a></li>

@@ -1039,6 +1039,108 @@ public class MemberDAO {
 		
 		return result;
 	}
+	
+	public int updateWishList(Connection con, int weblistNum, int memNum2) {
+		
+		PreparedStatement pstmt = null;
+		int result = 0;
+		
+		String query = prop.getProperty("updateWishList");
+		
+		try {
+			pstmt = con.prepareStatement(query);
+			pstmt.setInt(1, weblistNum);
+			pstmt.setInt(2, memNum2);
+			
+			
+			result = pstmt.executeUpdate();
+		} catch (SQLException e) {
+			e.printStackTrace();
+		} finally {
+			close(pstmt);
+		}
+		
+		return result;
+	}
+	public MemberDTO selectMemPoint(Connection con, String memId) {
+
+		PreparedStatement pstmt = null;
+		ResultSet rset = null;
+		
+		MemberDTO result = null;
+		
+		String query = prop.getProperty("selectMemPoint");
+		
+		try {
+			pstmt = con.prepareStatement(query);
+			pstmt.setString(1, memId);
+			
+			rset = pstmt.executeQuery();
+			
+			while(rset.next()) {
+				
+				result = new MemberDTO();
+				result.setMemCoin(rset.getInt("MEM_COIN"));
+			}
+			
+		} catch (SQLException e) {
+			e.printStackTrace();
+		}finally {
+			close(pstmt);
+		}
+		
+		return result;
+	}
+
+	public int deleteWishList(Connection con, int weblistNum, int memNum2) {
+
+		PreparedStatement pstmt = null;
+		int result = 0;
+		
+		String query = prop.getProperty("deleteWishList");
+		
+		try {
+			pstmt = con.prepareStatement(query);
+			pstmt.setInt(1, weblistNum);
+			pstmt.setInt(2, memNum2);
+			
+			
+			result = pstmt.executeUpdate();
+		} catch (SQLException e) {
+			e.printStackTrace();
+		} finally {
+			close(pstmt);
+		}
+		
+		return result;
+	}
+
+	public int updateCoin(Connection con, String memId, int restCoin) {
+
+		PreparedStatement pstmt = null;
+		
+		int result = 0;
+		
+		String query = prop.getProperty("updateCoin");
+		
+//		System.out.println("db저장 전 금액" + restCoin);
+		try {
+			pstmt = con.prepareStatement(query);
+			pstmt.setInt(1, restCoin);
+			pstmt.setString(2, memId);
+			
+			
+			result = pstmt.executeUpdate();
+		} catch (SQLException e) {
+			e.printStackTrace();
+		} finally {
+			close(pstmt);
+		}
+		
+		return result;
+	}
+	
+	
 }
 
 

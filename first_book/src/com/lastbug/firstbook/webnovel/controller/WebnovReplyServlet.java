@@ -11,6 +11,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import com.google.gson.Gson;
+import com.google.gson.GsonBuilder;
 import com.lastbug.firstbook.webnovel.model.dto.WebnovelReplyDTO;
 import com.lastbug.firstbook.webnovel.model.service.WebNovelService;
 
@@ -34,8 +35,12 @@ public class WebnovReplyServlet extends HttpServlet {
 		int replyinsert = webService.insertReply(replytext, webNovNum, memNum);
 		List<WebnovelReplyDTO> replydata = webService.replydata(replytext, webNovNum, memNum);
 		
+
 	
-		Gson gson = new Gson();
+		Gson gson = new GsonBuilder()
+						.setDateFormat("yyyy년MM월dd일")
+						.serializeNulls()
+						.create();
 		
 		String jsonString= gson.toJson(replydata);
 

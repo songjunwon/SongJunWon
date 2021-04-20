@@ -8,6 +8,7 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 
 import com.lastbug.firstbook.common.paging.Pagenation;
 import com.lastbug.firstbook.member.model.dto.MemberDTO;
@@ -26,16 +27,23 @@ public class ChargeCoinServlet extends HttpServlet {
 
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 
-		int memId = Integer.parseInt(request.getParameter("memId"));
+
+		String memId = request.getParameter("memId");
 		int webNovNum = Integer.parseInt(request.getParameter("webNovNum"));
 		int webNovChapNum = Integer.parseInt(request.getParameter("webNovChapNum"));
+//		int remain = Integer.parseInt(request.getParameter("remain"));
 //		int webNovNum = Integer.parseInt(request.getParameter("webNovNum"));
 //		int memId = Integer.parseInt(request.getParameter("memId"));
 //		int chapPerPrice = Integer.parseInt(request.getParameter("chapPerPrice"));
 //		String chapPerIsUsed = request.getParameter("chapPerIsUsed");
 //		String chapReadOrNot = request.getParameter("chapReadOrNot");
 		
+		int memNum = ((MemberDTO)request.getSession().getAttribute("loginMember")).getMemNum();
+		MemberService memberService = new MemberService();
 		
+		MemberDTO loginMember = memberService.selectMember(memNum);
+		
+
 		System.out.println("webNovChapNum" + webNovChapNum);
 //		MemberDTO memDTO = new MemberDTO();
 		MemberService memService = new MemberService();
@@ -71,9 +79,12 @@ public class ChargeCoinServlet extends HttpServlet {
 		/* 각 페이지 (웹뷰어에서 2페이지씩 보여지도록)에 보여줄 웹소설 챕터별 내용 뽑아오기 */
 		List<WebNovContentDetailDTO> perChap = webService.selectPerChap(pageInfo, webNovNum, webNovChapNum);
 	
+//		MemberDTO loginMember = new MemberService().loginCheck(result);
 		String path = "";
 
 			if(!perChap.isEmpty()) {
+				HttpSession session = request.getSession();
+				session.setAttribute("loginMember", loginMember);
 				path = "/WEB-INF/views/webnovel/webviewer.jsp";
 				request.setAttribute("perChap", perChap);
 				request.setAttribute("pageInfo", pageInfo);

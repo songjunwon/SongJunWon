@@ -37,11 +37,12 @@
 		     , A.CHAP_READABLE
 		     , A.CHAP_PER_PRICE
 		     , A.CHAP_PER_IS_USED
+		     , A.CHAP_PER_TITLE
 		  FROM WEB_NOV_CHAP_SEARCH A
 		  JOIN WEB_NOV_INFO B ON (A.WEB_NOV_NUM = B.WEB_NOV_NUM)
 		  JOIN WEB_NOV_CHAP_NUM C ON (A.CHAP_NUM = C.CHAP_NUM)
 		 WHERE B.WEB_NOV_NUM = ?
-		  AND A.CHAP_NUM <![CDATA[ <  ]]> 6
+		  AND A.CHAP_NUM <![CDATA[ <  ]]> 5
 		 ORDER BY A.CHAP_NUM ASC
 	</entry>
 	<entry key="selectWebNovelallChapterNotFree">
@@ -52,6 +53,7 @@
 		     , A.CHAP_READABLE
 		     , A.CHAP_PER_PRICE
 		     , A.CHAP_PER_IS_USED
+		     , A.CHAP_PER_TITLE
 		  FROM WEB_NOV_CHAP_SEARCH A
 		  JOIN WEB_NOV_INFO B ON (A.WEB_NOV_NUM = B.WEB_NOV_NUM)
 		  JOIN WEB_NOV_CHAP_NUM C ON (A.CHAP_NUM = C.CHAP_NUM)
@@ -152,7 +154,7 @@
              , A.MEM_NUM
              , A.REPLY_CONTENT
           FROM WEB_NOV_REPLY A
-         ORDER BY A.REPLY_CONTENT ASC
+          ORDER BY A.REPLY_NUM DESC
 	</entry>
 	<entry key="selectWebnovReply">
         SELECT 		/* com.lastbug.firstbook.webnovel.model.dao.WebNovelDAO#selectWebnovReply() */
@@ -165,7 +167,7 @@
          FROM WEB_NOV_REPLY A
          JOIN MEM_INFO B ON(A.MEM_NUM = B.MEM_NUM)
         WHERE WEB_NOV_NUM = ?
-        ORDER BY A.REPLY_CONTENT ASC
+        ORDER BY A.REPLY_NUM DESC
 	</entry>
 	<entry key="insertReply">
        INSERT 		/* com.lastbug.firstbook.webnovel.model.dao.WebNovelDAO#insertReply() */
@@ -187,7 +189,7 @@
        )
 	</entry>
 	<entry key="replydata">
-        SELECT 		/* com.lastbug.firstbook.webnovel.model.dao.WebNovelDAO#seletAllNovel() */
+        SELECT 		/* com.lastbug.firstbook.webnovel.model.dao.WebNovelDAO#replydata() */
                A.REPLY_NUM
              , A.WEB_NOV_NUM
              , B.MEM_ID
@@ -199,19 +201,44 @@
            AND B.MEM_NUM = ?
          ORDER BY A.REPLY_NUM DESC
 	</entry>
-	<entry key="selectAllNovel">
-         <![CDATA[
-         SELECT 		/* com.lastbug.firstbook.webnovel.model.dao.WebNovelDAO#selectAllNovel() */
-                *
-           FROM (SELECT
-                        *
-                   FROM WEB_NOV_INFO 
-                  ORDER BY WEB_NOV_COUNT DESC
-                )
-          WHERE ROWNUM <= 4
-          ]]>
+	<entry key="selectFinishedAllNovel">
+        SELECT 		/* com.lastbug.firstbook.webnovel.model.dao.WebNovelDAO#selectFinishedAllNovel() */
+               A.WEB_NOV_NUM
+             , A.WEB_NOV_TITLE
+             , A.WEB_NOV_AUTHOR
+             , A.WEB_NOV_INFORM
+             , A.CATEGORY_CODE
+             , A.WEB_NOV_PUBLISHER
+             , A.DAY_OF_WEEK
+             , A.WEB_NOV_IMG_LOCATION
+             , A.FINISHED_OR_NOT
+             , A.WEB_NOV_IS_OPEN
+          FROM WEB_NOV_INFO A
+         WHERE A.DAY_OF_WEEK = '완'	
+         ORDER BY A.WEB_NOV_COUNT DESC
+	</entry>
+	<entry key="deleteReply">
+	    DELETE  	/* com.lastbug.firstbook.webnovel.model.dao.WebNovelDAO#deleteReply() */
+          FROM WEB_NOV_REPLY
+         WHERE REPLY_NUM = ?
+	</entry>
+	<entry key="replydata_delete">
+       SELECT 		/* com.lastbug.firstbook.webnovel.model.dao.WebNovelDAO#replydata_delete() */
+              A.REPLY_NUM
+            , A.WEB_NOV_NUM
+            , B.MEM_ID
+            , A.REPLY_DATE
+            , A.REPLY_CONTENT
+         FROM WEB_NOV_REPLY A
+         JOIN MEM_INFO B ON(A.MEM_NUM = B.MEM_NUM)
+        WHERE A.WEB_NOV_NUM = ?
+          AND B.MEM_NUM = ?
+        ORDER BY A.REPLY_NUM DESC
 	</entry>
 </properties>
+
+
+
 
 
 

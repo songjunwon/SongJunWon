@@ -1,5 +1,5 @@
  
-/* window.onload = function() {
+ window.onload = function() {
 	/* 무료보기 버튼 눌렀을 때 */
 	if(document.getElementById("freebtn_real_2")) {
 			/* $를 안해줘도 되지만 명시적으로 해줌으로써 객체임을 알림 */
@@ -12,4 +12,4 @@
 		}
 	}
 
-}*/
+}
