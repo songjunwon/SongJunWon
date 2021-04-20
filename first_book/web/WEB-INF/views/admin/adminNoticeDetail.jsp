@@ -66,7 +66,7 @@
 	                                	onclick="modify()">수정</button>
 	                                	
 	                                	<button type="button" style="color:red; font-size: 20px; border : solid 1px"
-	                                	onclick="deactive()">삭제</button>
+	                                	onclick="deactive()">활성화/비활성화</button>
 	                                </td>
 	                                
 	                            </tr>

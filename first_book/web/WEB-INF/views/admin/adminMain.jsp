@@ -13,53 +13,26 @@
 
 <body>
 	<jsp:include page="adminHeader.jsp"/>
-	
-		<c:set var="now" value="<%=new java.util.Date()%>" />
-		<c:set var="sysTime"><fmt:formatDate value="${now}" pattern="yyyy-MM-dd E hh:mm:ss" /></c:set>
-	
+		
+
 	
 		<section>
-				
-		<article id="a1">
 		
-		<figure>
-			<figcaption>
-			오늘의 할일&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-			&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<c:out value="${sysTime}" />
-			</figcaption>
-		</figure>
-		
-		<table>
-			
-			<thead>
-				<tr>
-					<th>입금전</th>
-					<th>배송준비중</th>
-					<th>배송대기</th>
-					<th>배송중</th>
-					<th>취소</th>
-					<th>교환</th>
-					<th>반품</th>
-					<th>환불전</th>
-					<th>게시물관리</th>
-				
-				</tr>
-			</thead>
 
-				<tr>
-					<td>-</td>
-					<td>-</td>
-					<td>-</td>
-					<td>-</td>
-					<td>-</td>
-					<td>-</td>
-					<td>-</td>
-					<td>-</td>
-					<td>-</td>
-				
-				</tr>
+		<c:set var="now" value="<%=new java.util.Date()%>" />
+		 <c:set var="sysTime"><fmt:formatDate value="${now}" pattern="yyyy-MM-dd E hh:mm:ss" /></c:set>
+	
 		
-		</table>
+		<article id="a1">
+		<div id="date">
+			<figure>
+				<figcaption>
+				<label style="color:white; font-size:50px;"> 관리 현황표 </label> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+				&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<label style="color:white;">현재시각 :</label>
+				&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<c:out value="${sysTime}" />
+				</figcaption>
+			</figure>
+		</div>
 		
 		</article>
 		

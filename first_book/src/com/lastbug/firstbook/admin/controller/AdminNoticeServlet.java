@@ -9,6 +9,7 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import com.lastbug.firstbook.admin.model.service.AdminNoticeService;
 import com.lastbug.firstbook.common.paging.Pagenation;
 import com.lastbug.firstbook.member.model.dto.NoticeDTO;
 import com.lastbug.firstbook.member.model.service.MemberService;
@@ -43,7 +44,9 @@ public class AdminNoticeServlet extends HttpServlet {
 		
 		PageInfoDTO pageInfo = Pagenation.getPageInfo(pageNo, totalCount, limit, buttonAmount);
 		
-		List<NoticeDTO> noticeList = memberService.selectNoticeList(pageInfo);
+		AdminNoticeService anService = new AdminNoticeService();
+		
+		List<NoticeDTO> noticeList = anService.selectNoticeList(pageInfo);
 		
 //		for(NoticeDTO n : noticeList) {
 //			System.out.println("한 페이지에 보여질 게시글들 : " + n);

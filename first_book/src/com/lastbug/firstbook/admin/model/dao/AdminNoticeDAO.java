@@ -6,10 +6,15 @@ import java.io.FileInputStream;
 import java.io.IOException;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
+import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Properties;
 
 import com.lastbug.firstbook.common.config.ConfigLocation;
+import com.lastbug.firstbook.member.model.dto.NoticeDTO;
+import com.lastbug.firstbook.webnovel.model.dto.PageInfoDTO;
 
 public class AdminNoticeDAO {
 
@@ -77,6 +82,47 @@ private final Properties prop;
 		
 		
 		return result;
+	}
+
+	public List<NoticeDTO> selectNoticeList(Connection con, PageInfoDTO pageInfo) {
+	
+		PreparedStatement pstmt = null;
+		ResultSet rs = null;
+		
+		List<NoticeDTO> noticeList = null;
+		
+		String query = prop.getProperty("selectNoticeList");
+		
+		try {
+			pstmt = con.prepareStatement(query);
+			
+			pstmt.setInt(1, pageInfo.getStartRow());
+			pstmt.setInt(2, pageInfo.getEndRow());
+			
+			rs = pstmt.executeQuery();
+			
+			noticeList = new ArrayList<>();
+			
+			while(rs.next()) {
+				NoticeDTO notice = new NoticeDTO();
+				
+				notice.setNoticeNum(rs.getInt("NOTICE_NUM"));
+				notice.setNoticeDate(rs.getDate("NOTICE_DATE"));
+				notice.setNoticeName(rs.getString("NOTICE_NAME"));
+				notice.setNoticeViewCount(rs.getInt("NOTICE_VIEW_COUNT"));
+				notice.setNoticeContent(rs.getString("NOTICE_CONTENT"));
+				notice.setNoticeStatus(rs.getString("NOTICE_STATUS"));
+				
+				noticeList.add(notice);
+			}
+		} catch (SQLException e) {
+			e.printStackTrace();
+		} finally {
+			close(rs);
+			close(pstmt);
+		}
+		
+		return noticeList;
 	}
 	
 	

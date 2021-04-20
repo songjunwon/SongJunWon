@@ -6,8 +6,11 @@ import static com.lastbug.firstbook.common.jdbc.JDBCTemplate.getConnection;
 import static com.lastbug.firstbook.common.jdbc.JDBCTemplate.rollback;
 
 import java.sql.Connection;
+import java.util.List;
 
 import com.lastbug.firstbook.admin.model.dao.AdminNoticeDAO;
+import com.lastbug.firstbook.member.model.dto.NoticeDTO;
+import com.lastbug.firstbook.webnovel.model.dto.PageInfoDTO;
 
 public class AdminNoticeService {
 	
@@ -66,6 +69,18 @@ public class AdminNoticeService {
 		return result;
 		
 		
+	}
+
+
+	public List<NoticeDTO> selectNoticeList(PageInfoDTO pageInfo) {
+		
+		Connection con = getConnection();
+		
+		List<NoticeDTO> noticeList = anDAO.selectNoticeList(con, pageInfo);
+		
+		close(con);
+		
+		return noticeList;
 	}
 
 }
