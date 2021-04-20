@@ -52,7 +52,7 @@ public class SelectView extends HttpServlet {
 		} else {						// 공모전 실패 하면
 		
 			path = "/WEB-INF/views/common/failed.jsp";
-			request.setAttribute("message", "다음페이지가 없습니다");
+			request.setAttribute("contestFailed", "viewFailed");
 		}
 		
 		request.getRequestDispatcher(path).forward(request, response);

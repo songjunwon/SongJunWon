@@ -32,7 +32,7 @@ protected void doGet(HttpServletRequest request, HttpServletResponse response) t
 		request.setAttribute("contestListTime", contestListTime);	
 		}else {						
 			path = "/WEB-INF/views/common/failed.jsp";
-			request.setAttribute("message", "공모전 조회 실패!");
+			request.setAttribute("contestFailed", "viewFailed");
 		}
 		
 		request.getRequestDispatcher(path).forward(request, response);
