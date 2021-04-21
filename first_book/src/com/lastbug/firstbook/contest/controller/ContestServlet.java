@@ -20,9 +20,26 @@ protected void doGet(HttpServletRequest request, HttpServletResponse response) t
 		
 	List<ContestDTO> contestList = new ContestService().selectAllconstList();
 	List<ContestDTO> contestListRankEight = new ContestService().rankEightconstList();
-	int date = new ContestService().selectdate(contestList);
+	int date = new ContestService().selectdate();
 	int date8 = new ContestService().selectdate8();
 	int date4 = new ContestService().selectdate4();
+	int number = 15;
+	
+	if(date8 == 2) {
+		number = 7;
+	} 
+	if(date4 == 3) {
+		number = 3;
+	} 
+	if(date == 1) {
+		number = 1;
+	}
+	
+	
+	System.out.println(date);
+	System.out.println(date8);
+	System.out.println(date4);
+	
 		String path = "";
 		if(!contestList.isEmpty()) {		// 공모전 작품이 검색되면
 			path = "/WEB-INF/views/contest/contestForm.jsp";
@@ -31,6 +48,7 @@ protected void doGet(HttpServletRequest request, HttpServletResponse response) t
 			request.setAttribute("date", date);
 			request.setAttribute("date8", date8);
 			request.setAttribute("date4", date4);
+			request.setAttribute("number", number);
 			
 		} else {						// 공모전 실패 하면
 		

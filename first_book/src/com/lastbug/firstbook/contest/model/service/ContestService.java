@@ -111,13 +111,11 @@ public class ContestService {
 	
 	
 	// 8강 4강 결승 보이게해주는 서비스
-	public int selectdate(List<ContestDTO> contestList) {
+	public int selectdate() {
 		int date = 0;
-		
-		if(contestList.size() == 2) {
+		if(Integer.valueOf(NowDate()) > 515 && Integer.valueOf(NowDate()) < 630) {
 			date += 1;
 		}
-		
 		return date;
 	}
 	
@@ -151,7 +149,7 @@ public class ContestService {
 
 		public int selectdate8() {
 			int date = 0;
-			if(Integer.valueOf(NowDate()) <= 0415 && Integer.valueOf(NowDate()) >= 0630) {
+			if(Integer.valueOf(NowDate()) > 415 && Integer.valueOf(NowDate()) < 630) {
 				date += 2;
 			}
 			return date;
@@ -159,7 +157,7 @@ public class ContestService {
 		
 		public int selectdate4() {
 			int date = 0;
-			if(Integer.valueOf(NowDate()) <= 0515 && Integer.valueOf(NowDate()) >= 0630) {
+			if(Integer.valueOf(NowDate()) > 415 && Integer.valueOf(NowDate()) < 630) {
 				date += 3;
 			}
 			return date;
@@ -194,6 +192,11 @@ public class ContestService {
 			close(con);
 			
 			return contestList;
+		}
+
+		public int selectdate2(List<ContestDTO> contestList) {
+			// TODO Auto-generated method stub
+			return 0;
 		}
 
 	

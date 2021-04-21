@@ -19,10 +19,7 @@ public class ContestAllServlet extends HttpServlet {
 
 protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		String select = request.getParameter("competSsn");
-		
 		List<ContestDTO> contestList = new ContestService().selectAllconstListTwo(select);
-		
-		
 		List<ContestSsnDTO> contestListTime = new ContestService().selectAllconstListTime();
 		 
 		String path = null;

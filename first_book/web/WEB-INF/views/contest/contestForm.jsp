@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8" %>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+
 <!DOCTYPE html>
 <html>
 
@@ -12,12 +13,8 @@
 </head>
 
 <body>
-
-  
     <div id="wrap">
-    	
         <jsp:include page="../common/header.jsp"></jsp:include>
-
         <div class="size_box"></div>
         <section>
             <div class="section">
@@ -38,9 +35,9 @@
                 <div class="rank rank14"><c:out value="${ requestScope.contestListRankEight[13].novTitle }" /></div>
                 <div class="rank rank15"><c:out value="${ requestScope.contestListRankEight[14].novTitle }" /></div>
                 <div class="rank rank16"><c:out value="${ requestScope.contestListRankEight[15].novTitle }" /></div> 
-                
                 <!-- 8강 -->
-                <c:if test="${ sessionScope.date eq '2'}">
+               
+                <c:if test="${ requestScope.date8 eq '2'}">
                  <div class="rank rank17"><c:out value="${ requestScope.contestListRankEight[0].novTitle }" /></div>
                  <div class="rank rank18"><c:out value="${ requestScope.contestListRankEight[1].novTitle }" /></div>
                  <div class="rank rank19"><c:out value="${ requestScope.contestListRankEight[0].novTitle }" /></div>
@@ -51,20 +48,17 @@
                  <div class="rank rank24"><c:out value="${ requestScope.contestListRankEight[5].novTitle }" /></div>
                  </c:if>
                  <!-- 4강 -->
-                 <c:if test="${ sessionScope.date eq '3'}">
+                 <c:if test="${ requestScope.date4 eq '3'}">
                  <div class="rank rank25"><c:out value="${ requestScope.contestListRankEight[0].novTitle }" /></div>
                  <div class="rank rank26"><c:out value="${ requestScope.contestListRankEight[1].novTitle }" /></div>
                  <div class="rank rank27"><c:out value="${ requestScope.contestListRankEight[2].novTitle }" /></div>
                  <div class="rank rank28"><c:out value="${ requestScope.contestListRankEight[3].novTitle }" /></div>
                  </c:if>
-                 
                  <!-- 결승전 -->
-                 <c:if test="${ sessionScope.date eq '1'}">
+                 <c:if test="${ requestScope.date eq '1'}">
                  <div class="rank29"><c:out value="${ requestScope.contestListRankEight[0].novTitle }" /></div>
                  <div class="rank30"><c:out value="${ requestScope.contestListRankEight[1].novTitle }" /></div>
                  </c:if>
-                
-                
             </div>
         </section>
         <aside>
@@ -72,17 +66,20 @@
                 <div class="tupyo">투<br>표<br>하<br>기</div>
                 <div class="work_tupyo">
                     <div class="work_row1">
-                        <c:forEach items="${ requestScope.contestList }" var="contest">
+                    <!-- 16강 -->
+                    <c:forEach items="${ requestScope.contestList }" var="contest" begin="0" end="${ requestScope.number }" step="1">
                             <div class="work" id="btn">
-                                <img src="<c:out value="${ contest.competNovImgLocation }" />" width="125px">
+                                <img src="<c:out value="${ contest.competNovImgLocation}" />" width="125px">
                                 <div class="work_title">
                                     <c:out value="${ contest.novTitle }" />
                                 </div>
                                     <button id="btn" class="work_button" type="button">투표<label class="label_none"><c:out value="${ contest.competNum }" /></label></button>
                             </div>
-                        </c:forEach>
+                        </c:forEach>      
+                     
+                    
+               
                     </div>
-
                 </div>
 					<div class="tupyo">
 					<a class="tupyoa" href="${pageContext.servletContext.contextPath }/contestAll/list?competSsn=${ requestScope.contestListRankEight[0].competSsn }">
@@ -90,21 +87,15 @@
 					</div>
             </div>
         </aside>
-
-
-	
-
     </div>
-
     <div class="size_box"></div>
-
      <jsp:include page="../common/footer.jsp"/>
     <script>
 		$("#btn > button").click(function(){
-			const competNum = $(this).find("label").text();	// 사진 게시글 번호
+			const competNum = $(this).find("label").text(); // 사진 게시글 번호
 			/* console.log(no); */
 			location.href="${ pageContext.servletContext.contextPath }/contest/voting?competNum=" + competNum;
-		});
+});
 	</script>
 </body>
 
