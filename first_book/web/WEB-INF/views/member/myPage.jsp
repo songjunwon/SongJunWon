@@ -211,6 +211,7 @@
         </main>
     </div>
     <jsp:include page="../common/footer.jsp"/>
+    <script src="//t1.daumcdn.net/mapjsapi/bundle/postcode/prod/postcode.v2.js"></script>
     <script>
     	const memNum = ${ sessionScope.loginMember.memNum };
     	const memWeeklyCoinYn = "${ sessionScope.loginMember.memWeeklyCoinYn }";
@@ -267,6 +268,24 @@
         	
         	});
         });
+    	
+    	const $searchZipCode = document.getElementById("searchZipCode");
+    		
+    	$searchZipCode.onclick = function(){
+    			
+    		new daum.Postcode({
+    				
+    			oncomplete : function(data){
+    					
+    				document.getElementById("memZipCode").value = data.zonecode;
+    				document.getElementById("memAddress").value = data.address;
+    				document.getElementById("memDetailAddress").focus();
+    					
+    			}
+    				
+    		}).open();
+    			
+    	}
     </script>
 </body>
 </html>

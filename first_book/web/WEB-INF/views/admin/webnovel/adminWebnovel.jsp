@@ -78,7 +78,7 @@
             </div>        
         </section>
         <section class="sec2">
-            <div class="sec2 search_div">
+      <!--       <div class="sec2 search_div">
                 <div class="sec2 search_div search_div_real">
                     작품조회
                 </div> 
@@ -96,10 +96,10 @@
                 </table>
                 <div class="sec2 search_btn_div">
                     <button class="searchBtn">조회</button>
-                </div>               
-            </div>
+                </div>              
+            </div>    -->
         </section>
-        <section class="sec3">
+        <section class="sec3" style="position: absolute; left:1200px; top:500px;">
             <div class="enrollModifyDeletePosition">
                 <br><br>
                 <button class="enrollModifyDelete" id="registNewNovel">작품 등록</button>

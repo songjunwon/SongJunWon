@@ -59,6 +59,7 @@
 		     , A.MEM_WEEKLY_COIN_YN
 		  FROM MEM_INFO A
 		 WHERE A.MEM_WITHDRAW_YN = 'N'
+		   AND A.MEM_BLOCK_YN = 'N'
 		   AND A.MEM_ID = ?
 	</entry>
 	<entry key="selectEncryptedPwd">
@@ -66,6 +67,7 @@
 	           A.MEM_PWD
 	      FROM MEM_INFO A
 	     WHERE A.MEM_WITHDRAW_YN = 'N'
+	       AND A.MEM_BLOCK_YN = 'N'
 	       AND A.MEM_ID = ?
 	</entry>
 

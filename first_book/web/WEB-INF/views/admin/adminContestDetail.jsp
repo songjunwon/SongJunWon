@@ -72,7 +72,7 @@
                 </div>
                 <div class="section2_content_bt">
                     <button type="button" class="section2_content_btn" 
-                    onclick="test(${ DetailList.competNum },${ DetailList.chapterNum })">무료보기</button>
+                    onclick="test(${ DetailList.competNum },${ DetailList.chapterNum })">수정하기</button>
                 </div>
             </div>
             <div class="section2_space"></div>

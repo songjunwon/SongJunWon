@@ -29,7 +29,7 @@ public class AdminContestServlet extends HttpServlet {
 		
 		
 		List<ContestDTO> contestListRankEight = new ContestService().rankEightconstList();
-		int date = new ContestService().selectdate(contestList);
+		int date = new ContestService().selectdate();
 		int date8 = new ContestService().selectdate8();
 		int date4 = new ContestService().selectdate4();
 			String path = "";

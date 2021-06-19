@@ -113,7 +113,7 @@ public class ContestService {
 	// 8강 4강 결승 보이게해주는 서비스
 	public int selectdate() {
 		int date = 0;
-		if(Integer.valueOf(NowDate()) > 515 && Integer.valueOf(NowDate()) < 630) {
+		if(Integer.valueOf(NowDate()) > 415 && Integer.valueOf(NowDate()) < 630) {
 			date += 1;
 		}
 		return date;
